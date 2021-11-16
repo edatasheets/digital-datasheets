@@ -8,5 +8,3 @@ Document types include:
 * Specification for pin properties
 * Sample .json format for different types of digital datasheets
 
-** This is not an officially supported Google product. **
-
