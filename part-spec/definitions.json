@@ -1,250 +1,265 @@
 {
-    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/definitions.json",
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "definitions": {
-        "pinSpec": {
-            "type": "object",
-            "required": ["number", "name"],
-            "properties": {
-                "terminal_identifier": {
-                    "description": "pin or ball number as defined by datasheet",
-                    "type": "string"
-                },
-                "name": {
-                    "description": "name of pin as defined by datasheet",
-                    "type": "string"
-                },
-                "standardized_name" : {
-                    "description": "standard name of pin",
-                    "type": "string",
-                    "enum": [
-                        "d",
-                        "g",
-                        "s",
-                        "a",
-                        "k",
-                        "vdd",
-                        "vss"
-                    ]
-                },
-                "description": {
-                    "description": "human readable description of a pin's use",
-                    "type": "string"
-                },
-                "functions" : {
-                    "description": "list of function objects that can apply to an individual pin",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/pinFunction"
-                    }
-                },
-                "polarity": {
-                    "description": "whether the active state of a pin is high or low",
-                    "type": "string",
-                    "enum": [
-                        "high",
-                        "low"
-                    ]
-                },
-                "vihMin": {
-                    "description": "minimum voltage at which an input is read as high",
-                    "comment": "units of volts",
-                    "$ref": "#/definitions/unit"
-                },
-                "vilMax": {
-                    "description": "maximum voltage at which an input is read as low",
-                    "comment": "units of volts",
-                    "$ref": "#/definitions/unit"
-                },
-                "vol": {
-                    "description": "voltage ouput low or minimum voltage of a high output",
-                    "comment": "units of volts",
-                    "$ref": "#/definitions/unit"
-                },
-                "voh": {
-                    "description": "voltage ouput high or maximum voltage of a high output",
-                    "comment": "units of volts",
-                    "$ref": "#/definitions/unit"
-                },
-                "abs_vmax": { 
-                    "description": "absolute maximum voltage that can be applied to a pin",
-                    "comment": "units of volts",
-                    "$ref": "#/definitions/unit"
-                },
-                "abs_vmin": {
-                    "description": "absolute minimum voltage that can be applied to a pin",
-                    "comment": "units of volts",
-                    "$ref": "#/definitions/unit"
-                },
-                "vmax": {
-                    "description": "maximum continuous voltage that can safely be applied to a pin",
-                    "comment": "units of volts",
-                    "$ref": "#/definitions/unit"
-                },
-                "imax": {
-                    "description": "maximum continuous current that can safely be drawn from a pin",
-                    "comment": "units of amps",
-                    "$ref": "#/definitions/unit"
-                },
-                "inputLeakage": {
-                    "description": "maximum current draw into a high impedance input pin",
-                    "comment": "units of amps",
-                    "$ref": "#/definitions/unit"
-                },
-                "dcResistance": {
-                    "description": "resistance of a pin of a connector",
-                    "comment": "units of ohms",
-                    "$ref": "#/definitions/unit"
-                },
-                "voltageOptions": {
-                    "description": "list of voltage levels supported by a pin",
-                    "comment": "units of volts",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/unit"
-                    }
-                },
-                "floatUnused": {
-                    "description": "description of whether pin can safely be floated if it is not used",
-                    "type": "boolean"
-                },
-                "externalComponents": {
-                    "description": "list of external component structures recommended to be attached to a pin",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/externalComponents"
-                    }
-                }
-            }
+  "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/definitions.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "pinSpec": {
+      "type": "object",
+      "required": [
+        "number",
+        "name"
+      ],
+      "properties": {
+        "terminal_identifier": {
+          "description": "pin or ball number as defined by datasheet",
+          "type": "string"
+        },
+        "name": {
+          "description": "name given to the signal appearing at the terminal of a component",
+          "type": "string"
+        },
+        "standardized_name": {
+          "description": "standard name of pin",
+          "type": "string",
+          "enum": [
+            "d",
+            "g",
+            "s",
+            "a",
+            "k",
+            "vdd",
+            "vss"
+          ]
+        },
+        "description": {
+          "description": "description of the signal appearing at the terminal of an electric/electronic component",
+          "type": "string"
+        },
+        "functions": {
+          "description": "list of function objects that can apply to an individual pin",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/pinFunction"
+          }
+        },
+        "vihMin": {
+          "description": "minimum voltage at which an input is read as high",
+          "comment": "units of volts",
+          "$ref": "#/definitions/unit"
+        },
+        "vilMax": {
+          "description": "maximum voltage at which an input is read as low",
+          "comment": "units of volts",
+          "$ref": "#/definitions/unit"
+        },
+        "vol": {
+          "description": "voltage ouput low or minimum voltage of a high output",
+          "comment": "units of volts",
+          "$ref": "#/definitions/unit"
+        },
+        "voh": {
+          "description": "voltage ouput high or maximum voltage of a high output",
+          "comment": "units of volts",
+          "$ref": "#/definitions/unit"
+        },
+        "abs_vmax": {
+          "description": "absolute maximum voltage that can be applied to a pin",
+          "comment": "units of volts",
+          "$ref": "#/definitions/unit"
+        },
+        "abs_vmin": {
+          "description": "absolute minimum voltage that can be applied to a pin",
+          "comment": "units of volts",
+          "$ref": "#/definitions/unit"
+        },
+        "vmax": {
+          "description": "maximum continuous voltage that can safely be applied to a pin",
+          "comment": "units of volts",
+          "$ref": "#/definitions/unit"
+        },
+        "imax": {
+          "description": "maximum continuous current that can safely be drawn from a pin",
+          "comment": "units of amps",
+          "$ref": "#/definitions/unit"
+        },
+        "inputLeakage": {
+          "description": "maximum current draw into a high impedance input pin",
+          "comment": "units of amps",
+          "$ref": "#/definitions/unit"
+        },
+        "outputLeakage": {
+          "description": "maximum current flow from a pin during the off state",
+          "comment": "units of amps",
+          "$ref": "#/definitions/unit"
+        },
+        "dcResistance": {
+          "description": "resistance of a pin of a connector",
+          "comment": "units of ohms",
+          "$ref": "#/definitions/unit"
+        },
+        "voltageOptions": {
+          "description": "list of voltage levels supported by a pin",
+          "comment": "units of volts",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/unit"
+          }
+        },
+        "floatUnused": {
+          "description": "description of whether pin can safely be floated if it is not used",
+          "type": "boolean"
         },
         "externalComponents": {
-            "type": "object",
-            "required": ["type", "configuration"],
-            "properties": {
-                "type" : {
-                    "description": "type of component connected to a pin",
-                    "type": "string",
-                    "enum": [
-                        "resistor",
-                        "capacitor",
-                        "fet",
-                        "diode"
-                    ]
-                },
-                "configuration" : {
-                    "description": "electrical configuration of component connected to pin with respect to the pin",
-                    "examples": [
-                        "pu (pull up to power)",
-                        "pd (pull down to ground)",
-                        "series (in series)"
-                    ],
-                    "enum": [
-                        "pu",
-                        "pd",
-                        "series"
-                    ],
-                    "type": "string"
-                },
-                "minValue": {
-                    "description": "minimum value of component if a range is specified",
-                    "$ref": "#/definitions/unit"
-                },
-                "maxValue": {
-                    "description": "maximum value of component if a range is specified",
-                    "$ref": "#/definitions/unit"
-                },
-                "value": {
-                    "description": "value of component if a range is not specified",
-                    "$ref": "#/definitions/unit"
-                },
-                "componentUnit": {
-                    "description": "unit of min/max value",
-                    "type": "string",
-                    "enum": [
-                        "ohms",
-                        "kilo ohms",
-                        "mega ohms",
-                        "micro farads",
-                        "pico farads",
-                        "micro heneries"
-                    ]
-                },
-                "connectionPin": {
-                    "description": "name of pin to which an external component should be pulled up",
-                    "comment": "mostly commonly power or ground pin",
-                    "type": "string"
-                },
-                "dependencies": {
-                    "componentUnit": ["minValue", "maxValue", "value"]
-                }
-            }
-        },
-        "pinFunction": {
-            "type": "object",
-            "properties": {
-                "function" : {
-                    "description": "function of a pin",
-                    "examples": [
-                        "i2c",
-                        "spi",
-                        "gpio"
-                    ],
-                    "type": "string"
-                },
-                "direction" : {
-                    "description": "direction and electrical characteristics of a pin's function",
-                    "examples": [
-                        "in (input)",
-                        "out (output, push-pull)",
-                        "od (output, open-drain)",
-                        "iod (input or output, open-drain)",
-                        "inout (input or output, push-pull)",
-                        "analog",
-                        "power",
-                        "ground"
-                    ],
-                    "enum": [
-                        "in",
-                        "out",
-                        "od",
-                        "iod",
-                        "inout",
-                        "analog",
-                        "power",
-                        "ground"
-                    ],
-                    "type": "string"
-                }
-            }
-        },
-        "unit": {
-            "type": "object",
-            "properties": {
-                "siUnit": {
-                    "description": "name of SI unit of measure",
-                    "enum": [
-                        "volts",
-                        "amps",
-                        "ohms",
-                        "coulomb",
-                        "henries",
-                        "farads"
-                    ],
-                    "type": "string"
-                },
-                "value": {
-                    "description": "unit quantity corresponding to unit text - example 40mV would have a value of 40",
-                    "type": "number"
-                },
-                "unitText": {
-                    "description": "human readable text describing value",
-                    "type": "string"
-                },
-                "unitFactor": {
-                    "description": "multiplier on the value to achieve the SI unit - example for 40mV the unitFactor would be 0.001",
-                    "type": "number"
-                }
-            }
+          "description": "list of external component structures recommended to be attached to a pin",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/externalComponents"
+          }
         }
+      }
+    },
+    "externalComponents": {
+      "type": "object",
+      "required": [
+        "type",
+        "configuration"
+      ],
+      "properties": {
+        "type": {
+          "description": "type of component connected to a pin",
+          "type": "string",
+          "enum": [
+            "resistor",
+            "capacitor",
+            "fet",
+            "diode"
+          ]
+        },
+        "configuration": {
+          "description": "electrical configuration of component connected to pin with respect to the pin",
+          "examples": [
+            "pu (pull up to power)",
+            "pd (pull down to ground)",
+            "series (in series)"
+          ],
+          "enum": [
+            "pu",
+            "pd",
+            "series"
+          ],
+          "type": "string"
+        },
+        "minValue": {
+          "description": "minimum value of component if a range is specified",
+          "$ref": "#/definitions/unit"
+        },
+        "maxValue": {
+          "description": "maximum value of component if a range is specified",
+          "$ref": "#/definitions/unit"
+        },
+        "value": {
+          "description": "value of component if a range is not specified",
+          "$ref": "#/definitions/unit"
+        },
+        "componentUnit": {
+          "description": "unit of min/max value",
+          "type": "string",
+          "enum": [
+            "ohms",
+            "kilo ohms",
+            "mega ohms",
+            "micro farads",
+            "pico farads",
+            "micro heneries"
+          ]
+        },
+        "connectionPin": {
+          "description": "name of pin to which an external component should be pulled up",
+          "comment": "mostly commonly power or ground pin",
+          "type": "string"
+        },
+        "dependencies": {
+          "componentUnit": [
+            "minValue",
+            "maxValue",
+            "value"
+          ]
+        }
+      }
+    },
+    "pinFunction": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "description": "function of a pin",
+          "examples": [
+            "i2c",
+            "spi",
+            "gpio"
+          ],
+          "type": "string"
+        },
+        "direction": {
+          "description": "direction and electrical characteristics of a pin's function",
+          "examples": [
+            "in (input)",
+            "out (output, push-pull)",
+            "od (output, open-drain)",
+            "iod (input or output, open-drain)",
+            "inout (input or output, push-pull)",
+            "analog",
+            "power",
+            "ground"
+          ],
+          "enum": [
+            "in",
+            "out",
+            "od",
+            "iod",
+            "inout",
+            "analog",
+            "power",
+            "ground"
+          ],
+          "type": "string"
+        },
+        "polarity": {
+          "description": "whether the active state of a pin is high or low",
+          "type": "string",
+          "enum": [
+            "high",
+            "low"
+          ]
+        }
+      }
+    },
+    "unit": {
+      "type": "object",
+      "properties": {
+        "siUnit": {
+          "description": "name of SI unit of measure",
+          "enum": [
+            "volts",
+            "amps",
+            "ohms",
+            "coulomb",
+            "henries",
+            "farads"
+          ],
+          "type": "string"
+        },
+        "value": {
+          "description": "unit quantity corresponding to unit text - example 40mV would have a value of 40",
+          "type": "number"
+        },
+        "unitText": {
+          "description": "human readable text describing value",
+          "type": "string"
+        },
+        "unitFactor": {
+          "description": "multiplier on the value to achieve the SI unit - example for 40mV the unitFactor would be 0.001",
+          "type": "number"
+        }
+      }
     }
+  }
 }
