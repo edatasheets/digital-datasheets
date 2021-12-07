@@ -1,0 +1,79 @@
+{
+    "partType": "EC",
+    "manufacturer": "ITE",
+    "mpn": "IT81202E",
+    "datasheetVersion": "C0.3.2",
+    "releaseDate": null,
+    "pins": [
+        {
+            "_comment_1_ForWG":" Option1 : Use Arrays",
+            "terminal_identifier": "5",
+            "name": ["ALERT#","SERIRQ","GPM6"],
+            "standardized_name": null,
+            "description": "multiplexed pin",
+            "function":["SPI", "IRQ", "GPIO"],
+            "_comment_2_ForWG": "using GPIO here but the ITE datasheet has specific notations for the GPIO: PIO & EIO",
+            "direction":["inout","in","in"],
+            "polarity": ["low","high","high"],
+            "floatUnused": ["no", "no", "no"],
+            "voltageOptions": {
+                "value":[1.8, 3.3],
+                "unitText": "V",
+                "unitFactor": 1
+            },
+
+            "vihMin":{
+                "_Comment_1_ForWG": "Each voltageOption has a different value. Need to see how to best implement.",
+                "value":[1.35,2],
+                "_Comment_2_ForWG": "Note that for 1.8V, vihMin is listed as 0.75*VSUP",
+                "unitText": "V",
+                "unitFactor":1
+            },
+            
+            "vilMax":{
+                "value":[0.45,0.8],
+                "_Comment_1_ForWG": "Note that for 1.8V, vilmax is listed as 0.25*VSUP",
+                "unitText": "V",
+                "unitFactor":1
+            },
+            "vol":{
+                "value":[0.4, 0.4],
+                "unitText": "V",
+                "unitFactor":1
+            },
+            "voh": {
+                "value":[1.35, 2.4],
+                "_Comment_1_ForWG": "Note that for 1.8V, voh is listed as 0.75*VSUP",
+                "unitText": "V",
+                "unitFactor":1  
+            },
+            "absoluteVmax": {
+                "value": 3.6,
+                "unitText": "V",
+                "unitFactor": 1,
+                "_Comment_1_ForWG": "This is listed as VSUP+0.3V"
+            },
+            "absoluteVmin": {
+                "value": -0.3,
+                "unitText": "V",
+                "unitFactor": 1
+            },
+            "recommendedVmax": null,
+            "recommendedVmin": null,
+            "imax": null,
+            "inputLeakage":{
+                "minValue": -10,
+                  "value" : 1,
+            "_Comment_1_ForWG": "This is listed as +/- 1uA. Need to discuss how to represent",
+                 "maxValue": 10,
+                 "unitText": "A",
+                 "unitFactor": 1e-6  
+            },
+            "outputLeakage": null,
+            "dcResistance": null,
+            "externalComponent": null,
+            "_comment_forWG": " Need to follow up with ITE to understand additional parameters listed: Schmitth Trigger Positive/Negative,.."
+        }
+       
+    ]
+}

@@ -1,0 +1,276 @@
+{
+    "partType": "loadSwitch",
+    "manufacturer": "Fairchild",
+    "mpn": "FPF2024",
+    "datasheetVersion": "Rev1.1",
+    "releaseDate": "2016-04",
+    "pins": [
+        {
+            "pinIdentifier": "A1",
+            "name": "Vout",
+            "description": "Switch Output. Ouput of the power switch",
+            "function": "power",
+            "direction": "output",
+            "absoluteVmax": {
+                "value": 6,
+                "unitText": "V",
+                "unitFactor": 1
+            },
+            "absoluteVmin": {
+                "value": -0.3,
+                "unitText": "V",
+                "unitFactor": 1
+            },
+            "externalComponent": {
+                "type": "capacitor",
+                "configuration": "pd",
+                "value": 0.1,
+                "unitText": "uF",
+                "unitFactor": 1e-6
+            }
+        },
+        {
+            "pinIdentifier": "A2",
+            "name": "Vin",
+            "description": "Switch input. Input to the power switch and the supply voltage for the IC",
+            "function": "power",
+            "direction": "input",
+            "absoluteVmax": {
+                "value": 6,
+                "unitText": "V",
+                "unitFactor": 1
+            },
+            "absoluteVmin": {
+                "value": -0.3,
+                "unitText": "V",
+                "unitFactor": 1
+            },
+            "recommendedVmax": {
+                "value": 5.5,
+                "unitText": "V",
+                "unitFactor": 1
+            },
+            "recommendedVmin": {
+                "value": 1.6,
+                "unitText": "V",
+                "unitFactor": 1
+            },
+            "externalComponent": {
+                "type": "capacitor",
+                "configuration": "pd",
+                "value": 1,
+                "unitText": "uF",
+                "unitFactor": 1e-6
+            }
+        },
+        {
+            "pinIdentifier": "B1",
+            "name": "GND",
+            "description": "ground",
+            "function": "ground",
+            "direction": "ground",
+            "absoluteVmax": {
+                "value": 6,
+                "unitText": "V",
+                "unitFactor": 1
+            },
+            "absoluteVmin": {
+                "value": -0.3,
+                "unitText": "V",
+                "unitFactor": 1
+            }
+        },
+        {
+            "pinIdentifier": "B2",
+            "name": "NC",
+            "description": "No Connect",
+            "floatUnused": "true"
+        },
+        {
+            "pinIdentifier": "C1",
+            "name": "FLAGB",
+            "description": "Fault Output. FLAGB indicates an over-current, supply under-voltage or over-temperature state.",
+            "function": "GPIO",
+            "direction": "od",
+            "polarity": "low",
+            "floatUnused": "false",
+            "vol": [
+                {
+                    "volValue": {
+                        "max": 0.1,
+                        "typical": 0.2,
+                        "unitText": "V",
+                        "unitFactor": 1
+                    },
+                    "testConditions": {
+                        "firstCondition": {
+                            "pinName": "Vin",
+                            "typical": 5.5,
+                            "unitText": "V",
+                            "unitFactor": 1
+                        },
+                        "secondCondition": {
+                            "parameter": "Isink",
+                            "typical": 1,
+                            "unitText": "mA",
+                            "unitFactor": 1e-3
+                        }
+                    }
+                },
+                {
+                    "volValue": {
+                        "max": 0.1,
+                        "typical": 0.3,
+                        "unitText": "V",
+                        "unitFactor": 1
+                    },
+                    "testConditions": {
+                        "firstCondition": {
+                            "pinName": "Vin",
+                            "typical": 1.6,
+                            "unitText": "V",
+                            "unitFactor": 1
+                        },
+                        "secondCondition": {
+                            "parameter": "Isink",
+                            "typical": 1,
+                            "unitText": "mA",
+                            "unitFactor": 1e-3
+                        }
+                    }
+                }
+            ],
+            "absoluteVmax": {
+                "value": 6,
+                "unitText": "V",
+                "unitFactor": 1
+            },
+            "absoluteVmin": {
+                "value": -0.3,
+                "unitText": "V",
+                "unitFactor": 1
+            },
+            "outputLeakage": {
+                "value": {
+                    "max": 1,
+                    "unitText": "uA",
+                    "unitFactor": 1e-6
+                },
+                "testConditions": {
+                    "firstCondition": {
+                        "pinName": "Vin",
+                        "typical": 5.5,
+                        "unitText": "V",
+                        "unitFactor": 1
+                    }
+                }
+            },
+            "externalComponent": {
+                "type": "resistor",
+                "configuration": "pu",
+                "puRail": "Vin",
+                "value": 100,
+                "unitText": "Kohms",
+                "unitFactor": 1e3
+            }
+        },
+        {
+            "pinIdentifier": "C2",
+            "name": "ON",
+            "description": "ON/OFF Control INput",
+            "function": "GPIO",
+            "direction": "in",
+            "polarity": "high",
+            "floatUnused": "false",
+            "vihMin": [
+                {
+                    "Value": {
+                        "min": 0.8,
+                        "unitText": "V",
+                        "unitFactor": 1
+                    },
+                    "testConditions": {
+                        "firstCondition": {
+                            "pinName": "Vin",
+                            "typical": 1.6,
+                            "unitText": "V",
+                            "unitFactor": 1
+                        }
+                    }
+                },
+                {
+                    "Value": {
+                        "min": 1.5,
+                        "unitText": "V",
+                        "unitFactor": 1
+                    },
+                    "testConditions": {
+                        "firstCondition": {
+                            "pinName": "Vin",
+                            "typical": 5.5,
+                            "unitText": "V",
+                            "unitFactor": 1
+                        }
+                    }
+                }
+            ],
+            "vilMax": [
+                {
+                    "Value": {
+                        "max": 0.45,
+                        "unitText": "V",
+                        "unitFactor": 1
+                    },
+                    "testConditions": {
+                        "firstCondition": {
+                            "pinName": "Vin",
+                            "typical": 1.6,
+                            "unitText": "V",
+                            "unitFactor": 1
+                        }
+                    }
+                },
+                {
+                    "Value": {
+                        "max": 0.9,
+                        "unitText": "V",
+                        "unitFactor": 1
+                    },
+                    "testConditions": {
+                        "firstCondition": {
+                            "pinName": "Vin",
+                            "typical": 5.5,
+                            "unitText": "V",
+                            "unitFactor": 1
+                        }
+                    }
+                }
+            ],
+            "absoluteVmax": {
+                "value": 6,
+                "unitText": "V",
+                "unitFactor": 1
+            },
+            "absoluteVmin": {
+                "value": -0.3,
+                "unitText": "V",
+                "unitFactor": 1
+            },
+            "inputLeakage": {
+                "value": {
+                    "max": 1,
+                    "unitText": "uA",
+                    "unitFactor": 1e-6
+                },
+                "testConditions": {
+                    "firstCondition": {
+                        "pinName": "Vin",
+                        "typical": 5.5,
+                        "unitText": "V",
+                        "unitFactor": 1
+                    }
+                }
+            }
+        }
+    ]
+}

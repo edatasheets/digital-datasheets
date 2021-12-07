@@ -1,0 +1,35 @@
+{
+    "partType": "diode",
+    "manufacturer": "Nexperia",
+    "mpn": "PMEG4010ESB",
+    "datasheetVersion": "v3",
+    "releaseDate": "2015-11-27",
+    "type": "schottky",
+    "pins": [
+        {
+            "terminal_identifier": "1",
+            "name": "K",
+            "_notefromWG": "Examples:Signal_name/ Symbol_name",
+            "standardized_name": "K",
+            "description": "cathode",
+            "function": null,
+            "direction": "output",
+            "direction_updated": "analog",
+            "polarity": null,
+            "floatUnused": "no"
+     
+        },
+        {
+            "terminal_dentifier": "2",
+            "name": "anode",
+            "standardized_name": "A",
+            "description": "anode",
+            "function": null,
+            "direction": "input",
+            "polarity": null,
+            "floatUnused": "no"
+        }
+            
+      
+    ]
+}
