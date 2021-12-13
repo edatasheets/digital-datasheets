@@ -8,14 +8,33 @@
         {
             "_comment_1_ForWG":" Option1 : Use Arrays",
             "terminal_identifier": "5",
-            "name": ["ALERT#","SERIRQ","GPM6"],
+            "name":"ALERT#/SERIRQ/GPM6",
             "standardized_name": null,
-            "description": "multiplexed pin",
-            "function":["SPI", "IRQ", "GPIO"],
+            "description":"multiplexed pin",
             "_comment_2_ForWG": "using GPIO here but the ITE datasheet has specific notations for the GPIO: PIO & EIO",
-            "direction":["inout","in","in"],
-            "polarity": ["low","high","high"],
-            "floatUnused": ["no", "no", "no"],
+            "numberOfFunction":3,
+            "functionProperties":[
+               
+                {
+                    "perFunctionName":"ALERT#",
+                    "function":"SPI",
+                    "direction":"inout",
+                    "polarity":"low"
+                },
+                {
+                    "perFunctionName":"SERIRQ",
+                    "function":"IRQ",
+                    "direction":"in",
+                    "polarity":"high"
+                },
+                {
+                    "perFunctionName":"GPM6",
+                    "function":"GPIO",
+                    "direction":"in",
+                    "polarity":"high"
+                }
+                ],
+            "floatUnused": "no",
             "voltageOptions": {
                 "value":[1.8, 3.3],
                 "unitText": "V",
