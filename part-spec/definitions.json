@@ -34,7 +34,11 @@
           "description": "description of the signal appearing at the terminal of an electric/electronic component",
           "type": "string"
         },
-        "functions": {
+        "numberOfSupportedFunctions": {
+          "description": "the total number of functions supported by this pin",
+          "type": "number"
+        },
+        "functionProperities": {
           "description": "list of function objects that can apply to an individual pin",
           "type": "array",
           "items": {
@@ -169,7 +173,7 @@
             "mega ohms",
             "micro farads",
             "pico farads",
-            "micro heneries"
+            "micro henries"
           ]
         },
         "connectionPin": {
@@ -189,12 +193,21 @@
     "pinFunction": {
       "type": "object",
       "properties": {
-        "function": {
-          "description": "function of a pin",
+        "perFunctionName": {
+          "description": "name of the function of a pin",
+          "examples": [
+            "UART5_TX",
+            "SPI3_MOSI",
+            "PC12"
+          ],
+          "type": "string"
+        },
+        "interfaceType": {
+          "description": "type of interface enabled by pin",
           "examples": [
             "i2c",
-            "spi",
-            "gpio"
+            "uart",
+            "usb2"
           ],
           "type": "string"
         },
@@ -247,7 +260,7 @@
           ],
           "type": "string"
         },
-        "value": {
+        "absoluteValue": {
           "description": "unit quantity corresponding to unit text - example 40mV would have a value of 40",
           "type": "number"
         },
@@ -257,6 +270,16 @@
         },
         "unitFactor": {
           "description": "multiplier on the value to achieve the SI unit - example for 40mV the unitFactor would be 0.001",
+          "type": "number"
+        },
+        "relativeValueReference": {
+          "description": "if unit quantity is based on another reference, value of the reference",
+          "example": "VDD1",
+          "type": "string"
+        },
+        "relativeValueMultiplier": {
+          "description": "if a unit quantity is based on another reference, the muliplier of the reference",
+          "example": "1.2",
           "type": "number"
         }
       }
