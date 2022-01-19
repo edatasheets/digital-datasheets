@@ -425,7 +425,9 @@
                 }
             },
             "dependencies": {
-                "vconnPowerLimit": ["vconnPowerSupport"]
+                "vconnPowerLimit": [
+                    "vconnPowerSupport"
+                ]
             }
         },
         {
@@ -547,7 +549,9 @@
                 }
             },
             "dependencies": {
-                "vconnPowerLimit": ["vconnPowerSupport"]
+                "vconnPowerLimit": [
+                    "vconnPowerSupport"
+                ]
             }
         },
         {
@@ -766,6 +770,155 @@
                     "description": "output voltage level of level shifter",
                     "comment": "units of volts",
                     "type": "number"
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "boolean"
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "boolean"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "multiplexer",
+            "type": "object",
+            "required": [
+                "partType",
+                "manufacturer",
+                "mpn",
+                "datasheetVersion"
+            ],
+            "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "mux"
+                    ]
+                },
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "numberChannels": {
+                    "description": "number of lanes supported by mux",
+                    "type": "number"
+                },
+                "onResistance": {
+                    "description": "nominal DC resistance of analog mux channel when enabled",
+                    "$ref": "definitions.json#/unit"
+                },
+                "onCapacitance": {
+                    "description": "nominal capacitance of analog mux channel when enabled",
+                    "$ref": "definitions.json#/unit"
+                },
+                "propagationDelay": {
+                    "description": "time between input changing to output changing",
+                    "$ref": "definitions.json#/unit"
+                },
+                "pinPairs": {
+                    "description": "mapping of output pin to input pin(s)",
+                    "type": "object",
+                    "input": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "output": {
+                        "type": "string"
+                    }
+                },
+                "rohs": {
+                    "description": "whether a part is rohs compliant",
+                    "type": "boolean"
+                },
+                "automotive": {
+                    "description": "whether a part is automotive qualified",
+                    "type": "boolean"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "buffer",
+            "type": "object",
+            "required": [
+                "partType",
+                "manufacturer",
+                "mpn",
+                "datasheetVersion"
+            ],
+            "properties": {
+                "partType": {
+                    "description": "part type",
+                    "type": "string",
+                    "enum": [
+                        "buffer"
+                    ]
+                },
+                "manufacturer": {
+                    "description": "company that manufacturers the part",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "manufacturer part number",
+                    "type": "string"
+                },
+                "datasheetVersion": {
+                    "description": "datasheet version encoded in this document",
+                    "type": "string"
+                },
+                "eolDate": {
+                    "description": "date this part will no longer be supported by manufacturer",
+                    "type": "string",
+                    "format": "date"
+                },
+                "numberChannels": {
+                    "description": "number of lanes supported by buffer",
+                    "type": "number"
+                },
+                "propagationDelay": {
+                    "description": "time between input changing to output changing",
+                    "$ref": "definitions.json#/unit"
+                },
+                "pinPairs": {
+                    "description": "mapping of output pin to input",
+                    "type": "object",
+                    "input": {
+                        "type": "string"
+                    },
+                    "output": {
+                        "type": "string"
+                    }
                 },
                 "rohs": {
                     "description": "whether a part is rohs compliant",
