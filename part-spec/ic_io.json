@@ -840,15 +840,18 @@
                 },
                 "pinPairs": {
                     "description": "mapping of output pin to input pin(s)",
-                    "type": "object",
-                    "input": {
-                        "type": "array",
-                        "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "input": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "output": {
                             "type": "string"
                         }
-                    },
-                    "output": {
-                        "type": "string"
                     }
                 },
                 "rohs": {
@@ -911,13 +914,16 @@
                     "$ref": "definitions.json#/unit"
                 },
                 "pinPairs": {
-                    "description": "mapping of output pin to input",
-                    "type": "object",
-                    "input": {
-                        "type": "string"
-                    },
-                    "output": {
-                        "type": "string"
+                    "description": "mapping of output pin to input pin",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "input": {
+                            "type": "string"
+                        },
+                        "output": {
+                            "type": "string"
+                        }
                     }
                 },
                 "rohs": {
