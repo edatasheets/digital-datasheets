@@ -206,8 +206,17 @@
           "description": "type of interface enabled by pin",
           "examples": [
             "i2c",
+            "spi",
             "uart",
-            "usb2"
+            "usb2",
+            "usb3",
+            "usb4",
+            "pcie",
+            "sdio",
+            "memory",
+            "emmc",
+            "annode",
+            "cathode"
           ],
           "type": "string"
         },
@@ -251,12 +260,18 @@
         "siUnit": {
           "description": "name of SI unit of measure",
           "enum": [
-            "volts",
-            "amps",
-            "ohms",
+            "volt",
+            "amp",
+            "ohm",
             "coulomb",
-            "henries",
-            "farads"
+            "henry",
+            "farad",
+            "second",
+            "watt",
+            "joule",
+            "celsius",
+            "meter",
+            "gram"
           ],
           "type": "string"
         },
@@ -277,12 +292,24 @@
           "example": "VDD1",
           "type": "string"
         },
-        "relativeValueMultiplier": {
-          "description": "if a unit quantity is based on another reference, the muliplier of the reference",
+        "relativeValueModifier": {
+          "description": "if a unit quantity is based on another reference, the value that edits that reference",
           "example": "1.2",
           "type": "number"
-        }
-      }
+        },
+        "relativeValueOperator": {
+        	"description": "if a unit quantity is based on another reference, the operation that is performed with the modifier",
+        	"example": "multiply",
+        	"type": "string",
+        	"enum": [
+						"multiply",
+						"add",
+						"subtract"
+						],
+      },
+      "tbd": {
+      	"description": "a boolean representing whether a value has been defined",
+      	"type" : "boolean"
     }
   }
 }
