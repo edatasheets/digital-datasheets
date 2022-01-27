@@ -9,7 +9,7 @@
         "name"
       ],
       "properties": {
-        "terminal_identifier": {
+        "terminalIdentifier": {
           "description": "pin or ball number as defined by datasheet",
           "type": "string"
         },
