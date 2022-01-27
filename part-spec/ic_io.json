@@ -838,7 +838,7 @@
                     "description": "time between input changing to output changing",
                     "$ref": "definitions.json#/unit"
                 },
-                "pinPairs": {
+                "pinPaths": {
                     "description": "mapping of output pin to input pin(s)",
                     "type": "array",
                     "items": {
@@ -913,13 +913,16 @@
                     "description": "time between input changing to output changing",
                     "$ref": "definitions.json#/unit"
                 },
-                "pinPairs": {
-                    "description": "mapping of output pin to input pin",
+               "pinPaths": {
+                    "description": "mapping of output pin to input pin(s)",
                     "type": "array",
                     "items": {
                         "type": "object",
                         "input": {
-                            "type": "string"
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "output": {
                             "type": "string"
