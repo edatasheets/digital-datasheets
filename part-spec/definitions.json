@@ -17,7 +17,7 @@
           "description": "name given to the signal appearing at the terminal of a component",
           "type": "string"
         },
-        "standardized_name": {
+        "standardizedName": {
           "description": "standard name of pin",
           "type": "string",
           "enum": [
@@ -38,7 +38,7 @@
           "description": "the total number of functions supported by this pin",
           "type": "number"
         },
-        "functionProperities": {
+        "functionProperties": {
           "description": "list of function objects that can apply to an individual pin",
           "type": "array",
           "items": {
@@ -46,31 +46,41 @@
           }
         },
         "vihMin": {
-          "description": "minimum voltage at which an input is read as high",
+          "description": "the least positive (most negative) value of high-level input voltage for which operation of the logic element within specification limits is to be expected",
+          "comment": "units of volts",
+          "$ref": "#/definitions/unit"
+        },
+        "vihMax": {
+          "description": "the most positive (least negative) value of high-level input voltage for which operation of the logic element within specification limits is to be expected",
           "comment": "units of volts",
           "$ref": "#/definitions/unit"
         },
         "vilMax": {
-          "description": "maximum voltage at which an input is read as low",
+          "description": "the most positive (least negative) value of low-level input voltage for which operation of the logic element within specification limits is to be expected",
+          "comment": "units of volts",
+          "$ref": "#/definitions/unit"
+        },
+        "vilMin": {
+          "description": "the least positive (most negative) value of low-level input voltage for which operation of the logic element within specification limits is to be expected",
           "comment": "units of volts",
           "$ref": "#/definitions/unit"
         },
         "vol": {
-          "description": "voltage ouput low or minimum voltage of a high output",
+          "description": "the voltage level at an output terminal with input conditions applied that, according to the product specification, will establish a low level at the output",
           "comment": "units of volts",
           "$ref": "#/definitions/unit"
         },
         "voh": {
-          "description": "voltage ouput high or maximum voltage of a high output",
+          "description": "the voltage level at an output terminal with input conditions applied that, according to the product specification, will establish a high level at the output",
           "comment": "units of volts",
           "$ref": "#/definitions/unit"
         },
-        "abs_vmax": {
-          "description": "absolute maximum voltage that can be applied to a pin",
+        "absVmax": {
+          "description": "maximum voltage rating beyond which damage to the device may occur",
           "comment": "units of volts",
           "$ref": "#/definitions/unit"
         },
-        "abs_vmin": {
+        "absVmin": {
           "description": "absolute minimum voltage that can be applied to a pin",
           "comment": "units of volts",
           "$ref": "#/definitions/unit"
@@ -138,11 +148,11 @@
     "externalComponents": {
       "type": "object",
       "required": [
-        "type",
+        "componentType",
         "configuration"
       ],
       "properties": {
-        "type": {
+        "componentType": {
           "description": "type of external component required to be connected to a pin",
           "type": "string",
           "enum": [
@@ -331,7 +341,7 @@
 						"subtract"
 						],
       },
-      "tbd": {
+      "valueDefined": {
       	"description": "a boolean representing whether a value has been defined",
       	"type" : "boolean"
     }
