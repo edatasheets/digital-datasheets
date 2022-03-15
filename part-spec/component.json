@@ -1,0 +1,46 @@
+{
+	"$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/ic misc.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"title": "component",
+	"required": [
+		"partType",
+		"manufacturer",
+		"mpn",
+		"datasheetVersion"
+	],
+	"properties": {
+	"partType": {
+		"description": "part type",
+		"type": "string",
+		"examples": [
+			"resistor",
+			"embeddedController",
+			"transistor",
+			"connector",
+			"speakerAmplifier",
+			"mux",
+			"andGate"
+		]
+	},
+	"manufacturer": {
+		"description": "company that manufacturers the part",
+		"type": "string"
+	},
+	"mpn": {
+		"description": "manufacturer part number",
+		"type": "string"
+	},
+	"datasheetVersion": {
+		"description": "datasheet version encoded in this document",
+		"type": "string"
+	},
+	"pins": {
+		"description": "array of pin objects with associated properties",
+		"type": "array",
+		"items": {
+			"$ref": "definitions.json#/pinSpec"
+		}
+	}
+ }
+}
