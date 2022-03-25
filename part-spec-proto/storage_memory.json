@@ -288,7 +288,7 @@
                     "type": "number"
                 },
                 "interface": {
-                    "description": "interace of rom to host",
+                    "description": "interface of rom to host",
                     "type": "string",
                     "examples": [
                         "spi",
