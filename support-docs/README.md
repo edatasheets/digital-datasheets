@@ -3,10 +3,10 @@ As the demand for hardware design automation tools increases, there is a need fo
 Defining a common digital datasheet specification reduces the burden for component vendors to deliver multiple datasheets to support different tools and encourages reuse of tools across multiple designs. 
 
 1.1	Objectives
-A part manufacturer creates a datasheet to document the information users need to know about a component. This information can include the performance, electrical characteristics, size, orientation, packaging, and order details.  A digital datasheet is a machine-readable version of the datasheet. The objective of this specification is to standardize the format and the rules used to create digital datasheets. 
+Part manufacturers create datasheets to document component information including performance, electrical characteristics, size, orientation, packaging, etc. Digital datasheets contain this information in a machine readable format.The objective of this specification is to create a uniform, machine-readable format for representing component datasheets.
 
 1.2	Scope
-This document targets digital datasheet producers including components vendors and tools implementers who are parsing existing datasheets and converting them into machine readable formats. This document is also intended for tool implementers who will consume these digital datasheets to automate designs. The specification will include common classes of components used in designs. Some examples are included in the appendices to help the users better understand how to implement the specification. 
+This document is intended for digital datasheet producers such as components vendors as well as people who will consume these digital datasheets to automate designs such as tool creators.The specification will include common classes of components used in designs. Some examples are included in the appendices to provide context for future additions to this specification.
 
 1.3	Keywords
 Required: The field is required in the component digital datasheet.
@@ -52,17 +52,14 @@ They include:
 |relativeValueOperator|if a unit quantity is based on another reference, the operation that is performed with the modifier|String| |
 |valueDefined|a boolean representing whether a value has been defined|Boolean| |
 
-3.5	Terms and Definitions
-The terms and definitions used for electronic components shall follow the JEDEC standards.
+3.5	Missing Values
+Missing fields shall be left blank.
 
-3.6	Missing Values
-Missing fields shall be represented by the NULL character.
-
-3.7	Pins Specifications
+3.6	Pins Specifications
 The pins specification is included in Github at:
 Table below shows the list of properties used to describe pins
 
-|Pin Property|Description|Data Type|Required or Optional|
+|Pin Property|Description|Data Type|Required?|
 |:----|:----|:----|:----|
 |terminalIdentifier|Pin or ball number as defined by datasheet|String|Yes|
 |name|Name given to the signal appearing at the terminal of a component"|String|Yes|
