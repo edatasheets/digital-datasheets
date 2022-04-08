@@ -1,3 +1,10 @@
+## Contents
+* [Specification: component level](part-spec/component.json)
+* [Specification: pin level](part-spec/definitions.json)
+* [Component examples](support-doc/examples.md)
+
+
+## Background
 1	Introduction 
 As the demand for hardware design automation tools increases, there is a need for machine readable datasheets. 
 Defining a common digital datasheet specification reduces the burden for component vendors to deliver multiple datasheets to support different tools and encourages reuse of tools across multiple designs. 
