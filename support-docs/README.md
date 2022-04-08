@@ -1,7 +1,7 @@
 ## Contents
 * [Specification: component level](part-spec/component.json)
 * [Specification: pin level](part-spec/definitions.json)
-* [Component examples](support-doc/examples.md)
+* [Component examples](support-docs/examples.md)
 
 
 ## Background
