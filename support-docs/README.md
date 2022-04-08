@@ -29,8 +29,8 @@ A digital datasheet shall be written in the JSON (JavaScript Object Notation) fo
 A digital datasheet shall include the following information:
 The manufacturer’s name
 The Manufacturer Part Number (MPN)
-The datasheet release date
-The datasheet version
+Information to identify the source datasheet
+The datasheet version given by date or GUID 
 The component part type. See appendix for examples.
 List of Component Pins as defined by the specification.
 

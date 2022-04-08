@@ -28,7 +28,7 @@
 			]
 		},
 		"manufacturer": {
-			"description": "company that manufacturers the part",
+			"description": "company that manufactures the part",
 			"type": "string"
 		},
 		"componentName": {

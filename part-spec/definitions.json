@@ -220,7 +220,7 @@
         "description": "name of the function of a pin",
         "examples": [
           "UART5_TX",
-          "SPI3_MOSI",
+          "SPI3_COPI",
           "PC12"
         ],
         "type": "string"
@@ -314,7 +314,7 @@
         "type": "number"
       },
       "unitText": {
-        "description": "human readable text describing value",
+        "description": "human readable text describing value - example 40mV would have a value of mV",
         "type": "string"
       },
       "unitFactor": {
