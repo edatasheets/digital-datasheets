@@ -4,8 +4,17 @@ Single Inverter Example
 {
     "partType": "inverter",
     "manufacturer": "ACME Components",
-    "mpn": "abc123",
-    "datasheetVersion": "v0.3",
+    "componentName": "abc123",
+    "orderableMPN": "abc123,45",
+    "sourceDatasheetID": {
+        "publishedDate": "2021-05-23",
+        "datasheetURI": "www.acmecomponents.com/abc123datasheet"
+    },
+    "digitalDatasheetID": {
+        "publishedDate": "2022-03-21",
+        "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+    },
+    "status": "active",
     "pins": [
         {
             "terminalIdentifier": "1",
