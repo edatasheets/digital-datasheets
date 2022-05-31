@@ -6,6 +6,7 @@
                 "description": "title of a graph",
                 "type": "string"
             },
+<<<<<<< HEAD
             "xUnits": {
                 "description": "x-axis units",
                 "type": "string"
@@ -26,6 +27,32 @@
                 "description": "total number of curves in graph",
                 "type": "number"
             },
+=======
+            "xLabel": {
+                "description": "x-axis data",
+                "type": "array"
+            },
+            "xLabelUnits": {
+                "description": "x-axis units",
+                "type": "string"
+            },
+            "xLabelTitle": {
+                "description": "x-axis title",
+                "type": "string"
+            },
+            "yLabel": {
+                "description": "y-axis data",
+                "type": "array"
+            },
+            "yLabelUnits": {
+                "description": "y-axis units",
+                "type": "string"
+            },
+            "yLabelTitle": {
+                "description": "y-axis title",
+                "type": "string"
+            },
+>>>>>>> 1626420 (add power.json to include defintion for switching converter)
             "data": {
                 "description": "array of curve objects representing actual data being plotted",
                 "type": "array",
