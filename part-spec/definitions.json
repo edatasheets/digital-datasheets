@@ -305,7 +305,8 @@
           "joule",
           "celsius",
           "meter",
-          "gram"
+          "gram",
+          "hertz"
         ],
         "type": "string"
       },
