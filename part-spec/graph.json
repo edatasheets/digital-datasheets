@@ -6,10 +6,6 @@
                 "description": "title of a graph",
                 "type": "string"
             },
-            "xLabel": {
-                "description": "x-axis data",
-                "type": "array"
-            },
             "xLabelUnits": {
                 "description": "x-axis units",
                 "type": "string"
@@ -18,10 +14,6 @@
                 "description": "x-axis title",
                 "type": "string"
             },
-            "yLabel": {
-                "description": "y-axis data",
-                "type": "array"
-            },
             "yLabelUnits": {
                 "description": "y-axis units",
                 "type": "string"
@@ -29,6 +21,10 @@
             "yLabelTitle": {
                 "description": "y-axis title",
                 "type": "string"
+            },
+            "numberOfCurves": {
+                "description": "total number of curves in graph",
+                "type": "number"
             },
             "data": {
                 "description": "array of curve objects representing actual data being plotted",
