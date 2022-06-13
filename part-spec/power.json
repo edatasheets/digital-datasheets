@@ -87,33 +87,41 @@
                 "comment": "units of volts",
                 "$ref": "#/definitions/unit"
             },
+            "maxLoadCurrent": {
+                "description": "maximum load current supported by regulator",
+                "comment": "units of amps",
+                "$ref": "#/definitions/unit"
+            },
+            "minLoadCurrent": {
+                "description": "minimum load current supported by regulator",
+                "comment": "units of amps",
+                "$ref": "#/definitions/unit"
+            },
             "voutAccuracy": {
                 "description": "output voltage variation at no load",
                 "comment": "units of %",
-                "type": "number"
+                "type": "#/definitions/unit"
             },
             "loadRegulation": {
                 "description": "output voltage variation from no load to full load ",
-                "comment": "units of %",
-                "type": "number"
+                "type": "#/definitions/unit"
             },
             "lineRegulation": {
                 "description": "output voltage variation from minimum input voltage to maximum input voltage ",
-                "comment": "units of %",
-                "type": "number"
+                "type": "#/definitions/unit"
             },
-            "Iq": {
-                "description": "quiescent current of voltage regulator at no load",
+            "quiescentCurrent": {
+                "description": "quiescent current (Iq) of voltage regulator at no load",
                 "comment": "units of amps",
                 "$ref": "#/definitions/unit"
             },
-            "Isd": {
-                "description": "shutdown current of voltage regulato",
+            "shutDownCurrent": {
+                "description": "shutdown current (Isd) of voltage regulato",
                 "comment": "units of amps",
                 "$ref": "#/definitions/unit"
             },
-            "fsw": {
-                "description": "swtiching frequency of voltage regulator",
+            "switchingFrequency": {
+                "description": "swtiching frequency (fsw) of voltage regulator",
                 "comment": "units of hertz",
                 "$ref": "#/definitions/unit"
             },
@@ -151,38 +159,38 @@
                 "description": "whether the regulator contains integrated switching mosfets",
                 "type": "boolean"
             },
-            "uvloTresholdRising": {
-                "description": "Undervoltage Lockout Out Threshold with input voltage rising",
+            "undervoltageLockoutTresholdRising": {
+                "description": "Undervoltage Lockout Out (UVLO) Threshold with input voltage rising",
                 "comment": "units of Volts",
                 "$ref": "#/definitions/unit"
             },
-            "uvloTresholdFalling": {
-                "description": "Undervoltage Lockout Out Threshold with input voltage falling",
+            "undervoltageLockoutTresholdFalling": {
+                "description": "Undervoltage Lockout Out (UVLO) Threshold with input voltage falling",
                 "comment": "units of Volts",
                 "$ref": "#/definitions/unit"
             },
-            "ovpTresholdRising": {
-                "description": "Overvoltage Protection Threshold with input voltage rising",
+            "overvoltageProtectionTresholdRising": {
+                "description": "Overvoltage Protection (OVP) Threshold with input voltage rising",
                 "comment": "units of Volts",
                 "$ref": "#/definitions/unit"
             },
-            "ovpTresholdFalling": {
-                "description": "Overvoltage Protection Threshold with input voltage falling",
+            "overvoltageProtectionTresholdFalling": {
+                "description": "Overvoltage Protection (OVP) Threshold with input voltage falling",
                 "comment": "units of Volts",
                 "$ref": "#/definitions/unit"
             },
-            "tsdRising": {
-                "description": "Thermal Shudown Threshold with temperature rising",
+            "thermalShudownRising": {
+                "description": "Thermal Shudown (tsd) Threshold with temperature rising",
                 "comment": "units of celsius",
                 "$ref": "#/definitions/unit"
             },
-            "tsdFalling": {
-                "description": "Thermal Shudown Threshold with temperature falling",
+            "thermalShudownFalling": {
+                "description": "Thermal Shudown (tsd) Threshold with temperature falling",
                 "comment": "units of celsius",
                 "$ref": "#/definitions/unit"
             },
-            "tsdHysteresis": {
-                "description": "Thermal Shutdown Hysteresis",
+            "thermalShudownHysteresis": {
+                "description": "Thermal Shutdown (tsd) Hysteresis",
                 "comment": "units of celsius",
                 "$ref": "#/definitions/unit"
             },

@@ -306,7 +306,8 @@
           "celsius",
           "meter",
           "gram",
-          "hertz"
+          "hertz",
+          "percentage"
         ],
         "type": "string"
       },
