@@ -453,5 +453,41 @@
         "type": "boolean"
       }
     }
+  },
+  "package": {
+    "type": "object",
+    "properties": {
+      "length": {
+        "description": "length of a side of a package",
+        "type": "number"
+      },
+      "width": {
+        "description": "width of a side of a package",
+        "type": "number"
+      },
+      "height": {
+        "description": "height of a package",
+        "type": "number"
+      },
+      "dimensionUnit": {
+        "description": "unit used to describe package dimensions",
+        "enum": [
+          "mils",
+          "milimeter",
+          "inches",
+          "centimeter"
+        ]
+      },
+      "standardPackageType": {
+        "description": "name of standard package type (imperial)",
+        "enum": [
+          "0201",
+          "0402",
+          "0603",
+          "0805",
+          "1206"
+        ]
+      }
+    }
   }
 }
