@@ -65,7 +65,9 @@ They include:
 Missing fields shall be left blank.
 
 #### 3.6	Pins Specifications
+
 The pins specification is included in Github at:https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/definitions.json
+
 Table below shows the list of properties used to describe pins
 
 |Pin Property|Description|Data Type|Required?|
@@ -105,6 +107,7 @@ Table below shows the list of properties used to describe pins
 |direction|Direction of a pin's function|String| |
 |electricalConfiguration|Electrical configuration of a pin|String| |
 |polarity|Whether the active state of a pin is high or low|String| |
+
 
 #### 3.7	Graph Specifications
 Datasheets include additional information through figures, graphs. Examples include but are not limited to efficiency vs load curves, power derating curves. A graph object and a curve object are specified to capture that information in the digital datasheet. The graph object focuses on defining the type of data captured, including title and axis information. The curve object focuses on capturing the data. Multiple curve objects may be included in a graph object to capture relationships between variables under different conditions. Examples include load current vs efficiency curves for different input voltages.Properties used to specify a curve object are included in the table below:
@@ -231,5 +234,6 @@ The table below gives a description of the properties used to specify a Buck (st
 |pinSpec|Pins definition of the converter|object| |
 |package|Package definition of the converter|Object| |
 |complianceList|List of compliances met by the converter component|Array| |
+
 
 

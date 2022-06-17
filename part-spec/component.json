@@ -1,46 +1,105 @@
 {
-	"$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/ic misc.json",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"type": "object",
 	"title": "component",
 	"required": [
 		"partType",
 		"manufacturer",
-		"mpn",
-		"datasheetVersion"
+		"orderableMPN",
+		"sourceDatasheetID",
+		"digitalDatasheetID"
 	],
 	"properties": {
-	"partType": {
-		"description": "part type",
-		"type": "string",
-		"examples": [
-			"resistor",
-			"embeddedController",
-			"transistor",
-			"connector",
-			"speakerAmplifier",
-			"mux",
-			"andGate"
-		]
+		"partType": {
+			"description": "part type",
+			"type": "string",
+			"examples": [
+				"capacitor",
+				"connector",
+				"diode",
+				"inductor",
+				"logicGate",
+				"microController",
+				"mux",
+				"resistor",
+				"speakerAmplifier",
+				"transistor"
+			]
+		},
+		"manufacturer": {
+			"description": "company that manufactures the part",
+			"type": "string"
+		},
+		"componentName": {
+			"description": "base part name that describes the form and fit of a component",
+			"type": "string"
+		},
+		"orderableMPN": {
+			"description": "orderable manufacturer part number",
+			"type": "string"
+		},
+		"sourceDatasheetID": {
+			"description": "methods for identifying the human-readable source information for a digital datasheet",
+			"$ref": "#/$defs/sourceDatasheetID"
+		},
+		"digitalDatasheetID": {
+			"description": "methods for identifying the version of the digital datasheet",
+			"$ref": "#/$defs/digitalDatasheetID"
+		},
+		"status": {
+			"description": "production status of a component",
+			"examples": [
+				"preProduction",
+				"active",
+				"EOL"
+			],
+			"type": "string"
+		},
+		"pins": {
+			"description": "array of pin objects with associated properties",
+			"type": "array",
+			"items": {
+				"$ref": "definitions.json#/pinSpec"
+			}
+		}
 	},
-	"manufacturer": {
-		"description": "company that manufacturers the part",
-		"type": "string"
-	},
-	"mpn": {
-		"description": "manufacturer part number",
-		"type": "string"
-	},
-	"datasheetVersion": {
-		"description": "datasheet version encoded in this document",
-		"type": "string"
-	},
-	"pins": {
-		"description": "array of pin objects with associated properties",
-		"type": "array",
-		"items": {
-			"$ref": "definitions.json#/pinSpec"
+	"$defs": {
+		"sourceDatasheetID": {
+			"type": "object",
+			"properties": {
+				"publishedDate": {
+					"description": "date the source datasheet was published",
+					"example": "2022-03-31",
+					"type": "string"
+				},
+				"version": {
+					"description": "version of the source datasheet",
+					"type": "string"
+				},
+				"datasheetURI": {
+					"description": "uri to the source datasheet pdf or html view",
+					"type": "string"
+				},
+				"productURI": {
+					"description": "uri to the source datasheet's product page'",
+					"type": "string"
+				}
+			}
+		},
+		"digitalDatasheetID": {
+			"type": "object",
+			"properties": {
+				"publishedDate": {
+					"description": "date the digital datasheet was published",
+					"example": "2022-03-31",
+					"type": "string"
+				},
+				"guid": {
+					"description": "vendor defined guid (see https://www.guidgenerator.com/) to uniquely identify digital datasheet version",
+					"type": "string"
+				}
+			}
 		}
 	}
- }
 }
+
