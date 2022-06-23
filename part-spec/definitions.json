@@ -366,19 +366,26 @@
         "description": "unit used to describe package dimensions",
         "enum": [
           "mils",
-          "milimeter",
-          "inches",
-          "centimeter"
+          "milimeter"
         ]
       },
-      "standardPackageType": {
-        "description": "name of standard package type (imperial)",
+      "standardPackageSize": {
+        "description": "name of standard package size (imperial)",
         "enum": [
           "0201",
           "0402",
           "0603",
           "0805",
           "1206"
+        ]
+      },
+      "standardPackageType": {
+        "description": "name of standard package types",
+        "example": [
+          "bga",
+          "wcsp",
+          "qfn",
+          "tssop"
         ]
       }
     }
