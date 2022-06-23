@@ -8,48 +8,13 @@
             "title": "resistor",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "orderableMPN",
-                "sourceDatasheetID",
-                "digitalDatasheetID"
+                "componentID",
+                "value"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "resistor"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufactures the part",
-                    "type": "string"
-                },
-                "componentName": {
-                    "description": "base part name that describes the form and fit of a component",
-                    "type": "string"
-                },
-                "orderableMPN": {
-                    "description": "orderable manufacturer part number",
-                    "type": "string"
-                },
-                "sourceDatasheetID": {
-                    "description": "methods for identifying the human-readable source information for a digital datasheet",
-                    "$ref": "#/$defs/sourceDatasheetID"
-                },
-                "digitalDatasheetID": {
-                    "description": "methods for identifying the version of the digital datasheet",
-                    "$ref": "#/$defs/digitalDatasheetID"
-                },
-                "status": {
-                    "description": "production status of a component",
-                    "examples": [
-                        "preProduction",
-                        "active",
-                        "EOL"
-                    ],
-                    "type": "string"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -61,54 +26,50 @@
                 "value": {
                     "description": "resistor value",
                     "comment": "units of ohms",
-                    "$ref": "#/definitions/unit"
+                    "$ref": "definitions.json#/unit"
                 },
                 "tolerance": {
                     "description": "nominal tolerance of a resistor",
                     "comment": "units of %",
-                    "$ref": "#/definitions/unit"
+                    "$ref": "definitions.json#/unit"
                 },
                 "powerRating": {
                     "description": "measure of power a resistor can dissipate indefinitely without degrading performance",
                     "comment": "units of watts",
-                    "$ref": "#/definitions/unit"
+                    "$ref": "definitions.json#/unit"
                 },
                 "temperatureCoefficient": {
                     "description": "change in resistance when the temperature is changed",
-                    "comment": "units of ohms/degree",
+                    "comment": "units of ohms/degree (Celsius or Kelvin)",
                     "type": "number"
                 },
                 "maxOverloadVoltage": {
                     "description": "maximum voltage that can be applied to the resistor for a short period of time",
                     "comment": "units of volts",
-                    "$ref": "#/definitions/unit"
+                    "$ref": "definitions.json#/unit"
                 },
                 "maxLimitingElementVoltage": {
                     "description": "maximum voltage value that can be applied continuously to the resistor",
                     "comment": "units of volts",
-                    "$ref": "#/definitions/unit"
+                    "$ref": "definitions.json#/unit"
                 },
                 "minTemperature": {
                     "description": "minimum temperature under which a resistor can be expected to reliably operate",
-                    "comment": "units of degrees celsius",
-                    "$ref": "#/definitions/unit"
+                    "comment": "units of degrees (Celsius or Kelvin)",
+                    "$ref": "definitions.json#/unit"
                 },
                 "maxTemperature": {
                     "description": "maximum temperature under which a resistor can be expected to reliably operate",
-                    "comment": "units of degrees celsius",
-                    "$ref": "#/definitions/unit"
+                    "comment": "units of degrees (Celsius or Kelvin)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "resistorDerating": {
+                    "description": "graph object to capture resistance changes with temperature",
+                    "$ref": "definitions.json#/graphDefiniton"
                 },
                 "package": {
                     "description": "package size of resistor",
-                    "$ref": "#/definitions/package"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                    "$ref": "graph.json#/package"
                 }
             }
         },
@@ -116,48 +77,13 @@
             "title": "capacitor",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "orderableMPN",
-                "sourceDatasheetID",
-                "digitalDatasheetID"
+                "componentID",
+                "value"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "capacitor"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufactures the part",
-                    "type": "string"
-                },
-                "componentName": {
-                    "description": "base part name that describes the form and fit of a component",
-                    "type": "string"
-                },
-                "orderableMPN": {
-                    "description": "orderable manufacturer part number",
-                    "type": "string"
-                },
-                "sourceDatasheetID": {
-                    "description": "methods for identifying the human-readable source information for a digital datasheet",
-                    "$ref": "#/$defs/sourceDatasheetID"
-                },
-                "digitalDatasheetID": {
-                    "description": "methods for identifying the version of the digital datasheet",
-                    "$ref": "#/$defs/digitalDatasheetID"
-                },
-                "status": {
-                    "description": "production status of a component",
-                    "examples": [
-                        "preProduction",
-                        "active",
-                        "EOL"
-                    ],
-                    "type": "string"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -169,17 +95,17 @@
                 "value": {
                     "description": "capacitor value",
                     "comment": "units of farads",
-                    "$ref": "#/definitions/unit"
+                    "$ref": "definitions.json#/unit"
                 },
                 "tolerance": {
                     "description": "nominal tolerance of a capacitor",
                     "comment": "units of %",
-                    "$ref": "#/definitions/unit"
+                    "$ref": "definitions.json#/unit"
                 },
                 "ratedVoltage": {
                     "description": "maximum voltage which may be applied continuously to a capacitance",
                     "comment": "units of volts",
-                    "$ref": "#/definitions/unit"
+                    "$ref": "definitions.json#/unit"
                 },
                 "dielectric": {
                     "description": "dielectric material used in the capacitor",
@@ -197,34 +123,30 @@
                 "equivalentSerieResistance": {
                     "description": "equivalent series resistance (ESR) of the capacitor",
                     "comment": "units of ohms",
-                    "$ref": "#/definitions/unit"
+                    "$ref": "definitions.json#/unit"
                 },
                 "temperatureCoefficient": {
                     "description": "change in capacitance when the temperature is changed",
-                    "comment": "units of farads/degree",
+                    "comment": "units of farads/degree (Celsius or Kelvin)",
                     "type": "number"
                 },
                 "minTemperature": {
                     "description": "minimum temperature under which a capacitor can be expected to reliably operate",
-                    "comment": "units of degrees celsius",
-                    "$ref": "#/definitions/unit"
+                    "comment": "units of degrees (Celsius or Kelvin)",
+                    "$ref": "definitions.json#/unit"
                 },
                 "maxTemperature": {
                     "description": "maximum temperature under which a capacitor can be expected to reliably operate",
-                    "comment": "units of degrees celsius",
-                    "$ref": "#/definitions/unit"
+                    "comment": "units of degrees (Celsius or Kelvin)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "capacitorDerating": {
+                    "description": "graph object to capture capacitance changes with voltage",
+                    "$ref": "definitions.json#/graphDefiniton"
                 },
                 "package": {
                     "description": "package size of capacitor",
-                    "$ref": "#/definitions/package"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                    "$ref": "definitions.json#/package"
                 }
             }
         },
@@ -232,48 +154,13 @@
             "title": "inductor",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "orderableMPN",
-                "sourceDatasheetID",
-                "digitalDatasheetID"
+                "componentID",
+                "value"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "inductor"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufactures the part",
-                    "type": "string"
-                },
-                "componentName": {
-                    "description": "base part name that describes the form and fit of a component",
-                    "type": "string"
-                },
-                "orderableMPN": {
-                    "description": "orderable manufacturer part number",
-                    "type": "string"
-                },
-                "sourceDatasheetID": {
-                    "description": "methods for identifying the human-readable source information for a digital datasheet",
-                    "$ref": "#/$defs/sourceDatasheetID"
-                },
-                "digitalDatasheetID": {
-                    "description": "methods for identifying the version of the digital datasheet",
-                    "$ref": "#/$defs/digitalDatasheetID"
-                },
-                "status": {
-                    "description": "production status of a component",
-                    "examples": [
-                        "preProduction",
-                        "active",
-                        "EOL"
-                    ],
-                    "type": "string"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -285,64 +172,64 @@
                 "value": {
                     "description": "inductor value",
                     "comment": "units of henry",
-                    "$ref": "#/definitions/unit"
+                    "$ref": "definitions.json#/unit"
                 },
                 "tolerance": {
                     "description": "nominal tolerance of a inductor",
                     "comment": "units of %",
-                    "$ref": "#/definitions/unit"
+                    "$ref": "definitions.json#/unit"
                 },
                 "ratedCurrent": {
                     "description": "maximum continuous current the inductor can handle",
                     "comment": "units of amps",
-                    "$ref": "#/definitions/unit"
+                    "$ref": "definitions.json#/unit"
                 },
                 "saturationCurrent": {
                     "description": "current where the inductor enters the magnetic state, and the inductance drops a specified amount",
                     "comment": "units of amps",
-                    "$ref": "#/definitions/unit"
+                    "$ref": "definitions.json#/unit"
                 },
                 "rmsCurrent": {
                     "description": "DC current that produces an inductor temperature rise of 40 degrees Celsius",
                     "comment": "units of amps",
-                    "$ref": "#/definitions/unit"
+                    "$ref": "definitions.json#/unit"
                 },
                 "selfResonantFrequency": {
                     "description": "frequency at which the inductor becomes a capacitor",
                     "comment": "units of hertz",
-                    "$ref": "#/definitions/unit"
+                    "$ref": "definitions.json#/unit"
                 },
                 "dcResistance": {
                     "description": "DC resistance of the inductor",
                     "comment": "units of ohms",
-                    "$ref": "#/definitions/unit"
+                    "$ref": "definitions.json#/unit"
                 },
                 "temperatureCoefficient": {
                     "description": "change in inductance when the temperature is changed",
-                    "comment": "units of henry/degree",
+                    "comment": "units of henry/degree (Celsius or Kelvin)",
                     "type": "number"
                 },
                 "minTemperature": {
                     "description": "minimum temperature under which a inductor can be expected to reliably operate",
-                    "comment": "units of degrees celsius",
-                    "$ref": "#/definitions/unit"
+                    "comment": "units of degrees (Celsius or Kelvin)",
+                    "$ref": "definitions.json#/unit"
                 },
                 "maxTemperature": {
                     "description": "maximum temperature under which a inductor can be expected to reliably operate",
-                    "comment": "units of degrees celsius",
-                    "$ref": "#/definitions/unit"
+                    "comment": "units of degrees (Celsius or Kelvin)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "saturationCurve": {
+                    "description": "graph object to capture inductor saturation with current",
+                    "$ref": "definitions.json#/graphDefiniton"
+                },
+                "resonantFrequencyCurve": {
+                    "description": "graph object to capture inductor resonant frequency",
+                    "$ref": "definitions.json#/graphDefiniton"
                 },
                 "package": {
                     "description": "package size of inductor",
-                    "$ref": "#/definitions/package"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                    "$ref": "definitions.json#/package"
                 }
             }
         }

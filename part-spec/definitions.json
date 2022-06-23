@@ -2,6 +2,111 @@
   "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/definitions.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
+    "componentID": {
+      "type": "object",
+      "required": [
+        "partType",
+        "manufacturer",
+        "orderableMPN",
+        "sourceDatasheetID",
+        "digitalDatasheetID"
+      ],
+      "properties": {
+        "partType": {
+          "description": "part type",
+          "type": "string",
+          "examples": [
+            "capacitor",
+            "connector",
+            "diode",
+            "inductor",
+            "logicGate",
+            "microController",
+            "mux",
+            "resistor",
+            "speakerAmplifier",
+            "transistor"
+          ]
+        },
+        "manufacturer": {
+          "description": "company that manufactures the part",
+          "type": "string"
+        },
+        "componentName": {
+          "description": "base part name that describes the form and fit of a component",
+          "type": "string"
+        },
+        "orderableMPN": {
+          "description": "orderable manufacturer part number",
+          "type": "string"
+        },
+        "sourceDatasheetID": {
+          "description": "methods for identifying the human-readable source information for a digital datasheet",
+          "$ref": "#/definitions/sourceDatasheetID"
+        },
+        "digitalDatasheetID": {
+          "description": "methods for identifying the version of the digital datasheet",
+          "$ref": "#/definitions/digitalDatasheetID"
+        },
+        "status": {
+          "description": "production status of a component",
+          "examples": [
+            "preProduction",
+            "active",
+            "EOL"
+          ],
+          "type": "string"
+        },
+        "complianceList": {
+          "description": "list of standards the part complies with",
+          "examples": [
+            "AEC-Q100",
+            "AEC-Q101",
+            "ROHS"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sourceDatasheetID": {
+      "type": "object",
+      "properties": {
+        "publishedDate": {
+          "description": "date the source datasheet was published",
+          "example": "2022-03-31",
+          "type": "string"
+        },
+        "version": {
+          "description": "version of the source datasheet",
+          "type": "string"
+        },
+        "datasheetURI": {
+          "description": "uri to the source datasheet pdf or html view",
+          "type": "string"
+        },
+        "productURI": {
+          "description": "uri to the source datasheet's product page'",
+          "type": "string"
+        }
+      }
+    },
+    "digitalDatasheetID": {
+      "type": "object",
+      "properties": {
+        "publishedDate": {
+          "description": "date the digital datasheet was published",
+          "example": "2022-03-31",
+          "type": "string"
+        },
+        "guid": {
+          "description": "vendor defined guid (see https://www.guidgenerator.com/) to uniquely identify digital datasheet version",
+          "type": "string"
+        }
+      }
+    },
     "pinSpec": {
       "type": "object",
       "required": [
@@ -211,139 +316,139 @@
           "value"
         ]
       }
-    }
-  },
-  "pinFunction": {
-    "type": "object",
-    "properties": {
-      "perFunctionName": {
-        "description": "name of the function of a pin",
-        "examples": [
-          "UART5_TX",
-          "SPI3_COPI",
-          "PC12"
-        ],
-        "type": "string"
-      },
-      "interfaceType": {
-        "description": "type of interface enabled by pin",
-        "examples": [
-          "i2c",
-          "spi",
-          "uart",
-          "usb2",
-          "usb3",
-          "usb4",
-          "pcie",
-          "sdio",
-          "memory",
-          "emmc",
-          "annode",
-          "cathode"
-        ],
-        "type": "string"
-      },
-      "pinUsage": {
-        "description": "standardized usage of pin",
-        "examples": [
-          "UART_TX",
-          "UART_RX",
-          "SPI_COPI",
-          "SPI_CLK",
-          "SPI_CS",
-          "SPI_CIPO",
-          "I2C_SCL",
-          "I2C_SDA"
-        ],
-        "type": "string"
-      },
-      "direction": {
-        "description": "direction of a pin's function",
-        "enum": [
-          "in",
-          "out",
-          "bidir"
-        ],
-        "type": "string"
-      },
-      "electricalConfiguration": {
-        "description": "electrical configuration of a pin",
-        "examples": [
-          "open-drain",
-          "push-pull",
-          "analog",
-          "power",
-          "ground",
-          "high-impedance"
-        ],
-        "type": "string"
-      },
-      "polarity": {
-        "description": "whether the active state of a pin is high or low",
-        "type": "string",
-        "enum": [
-          "high",
-          "low"
-        ]
+    },
+    "pinFunction": {
+      "type": "object",
+      "properties": {
+        "perFunctionName": {
+          "description": "name of the function of a pin",
+          "examples": [
+            "UART5_TX",
+            "SPI3_COPI",
+            "PC12"
+          ],
+          "type": "string"
+        },
+        "interfaceType": {
+          "description": "type of interface enabled by pin",
+          "examples": [
+            "i2c",
+            "spi",
+            "uart",
+            "usb2",
+            "usb3",
+            "usb4",
+            "pcie",
+            "sdio",
+            "memory",
+            "emmc",
+            "annode",
+            "cathode"
+          ],
+          "type": "string"
+        },
+        "pinUsage": {
+          "description": "standardized usage of pin",
+          "examples": [
+            "UART_TX",
+            "UART_RX",
+            "SPI_COPI",
+            "SPI_CLK",
+            "SPI_CS",
+            "SPI_CIPO",
+            "I2C_SCL",
+            "I2C_SDA"
+          ],
+          "type": "string"
+        },
+        "direction": {
+          "description": "direction of a pin's function",
+          "enum": [
+            "in",
+            "out",
+            "bidir"
+          ],
+          "type": "string"
+        },
+        "electricalConfiguration": {
+          "description": "electrical configuration of a pin",
+          "examples": [
+            "open-drain",
+            "push-pull",
+            "analog",
+            "power",
+            "ground",
+            "high-impedance"
+          ],
+          "type": "string"
+        },
+        "polarity": {
+          "description": "whether the active state of a pin is high or low",
+          "type": "string",
+          "enum": [
+            "high",
+            "low"
+          ]
+        }
       }
-    }
-  },
-  "unit": {
-    "type": "object",
-    "properties": {
-      "siUnit": {
-        "description": "name of SI unit of measure",
-        "enum": [
-          "volt",
-          "amp",
-          "ohm",
-          "coulomb",
-          "henry",
-          "farad",
-          "second",
-          "watt",
-          "joule",
-          "celsius",
-          "meter",
-          "gram"
-        ],
-        "type": "string"
-      },
-      "absoluteValue": {
-        "description": "unit quantity corresponding to unit text - example 40mV would have a value of 40",
-        "type": "number"
-      },
-      "unitText": {
-        "description": "human readable text describing value - example 40mV would have a value of mV",
-        "type": "string"
-      },
-      "unitFactor": {
-        "description": "multiplier on the value to achieve the SI unit - example for 40mV the unitFactor would be 0.001",
-        "type": "number"
-      },
-      "relativeValueReference": {
-        "description": "if unit quantity is based on another reference, value of the reference",
-        "example": "VDD1",
-        "type": "string"
-      },
-      "relativeValueModifier": {
-        "description": "if a unit quantity is based on another reference, the value that edits that reference",
-        "example": "1.2",
-        "type": "number"
-      },
-      "relativeValueOperator": {
-        "description": "if a unit quantity is based on another reference, the operation that is performed with the modifier",
-        "example": "multiply",
-        "type": "string",
-        "enum": [
-          "multiply",
-          "add",
-          "subtract"
-        ]
-      },
-      "valueDefined": {
-        "description": "a boolean representing whether a value has been defined",
-        "type": "boolean"
+    },
+    "unit": {
+      "type": "object",
+      "properties": {
+        "siUnit": {
+          "description": "name of SI unit of measure",
+          "enum": [
+            "volt",
+            "amp",
+            "ohm",
+            "coulomb",
+            "henry",
+            "farad",
+            "second",
+            "watt",
+            "joule",
+            "celsius",
+            "meter",
+            "gram"
+          ],
+          "type": "string"
+        },
+        "absoluteValue": {
+          "description": "unit quantity corresponding to unit text - example 40mV would have a value of 40",
+          "type": "number"
+        },
+        "unitText": {
+          "description": "human readable text describing value - example 40mV would have a value of mV",
+          "type": "string"
+        },
+        "unitFactor": {
+          "description": "multiplier on the value to achieve the SI unit - example for 40mV the unitFactor would be 0.001",
+          "type": "number"
+        },
+        "relativeValueReference": {
+          "description": "if unit quantity is based on another reference, value of the reference",
+          "example": "VDD1",
+          "type": "string"
+        },
+        "relativeValueModifier": {
+          "description": "if a unit quantity is based on another reference, the value that edits that reference",
+          "example": "1.2",
+          "type": "number"
+        },
+        "relativeValueOperator": {
+          "description": "if a unit quantity is based on another reference, the operation that is performed with the modifier",
+          "example": "multiply",
+          "type": "string",
+          "enum": [
+            "multiply",
+            "add",
+            "subtract"
+          ]
+        },
+        "valueDefined": {
+          "description": "a boolean representing whether a value has been defined",
+          "type": "boolean"
+        }
       }
     }
   }
