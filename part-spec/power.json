@@ -8,203 +8,183 @@
             "title": "switching converter",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "orderableMPN",
-                "sourceDatasheetID",
-                "digitalDatasheetID"
+                "componentID",
+                "regulatorTopology",
+                "vinMin",
+                "vinMax",
+                "voutMin",
+                "voutMax",
+                "maxLoadCurrent"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "switchingConverter"
-                    ]
-                }
-            },
-            "manufacturer": {
-                "description": "company that manufactures the part",
-                "type": "string"
-            },
-            "componentName": {
-                "description": "base part name that describes the form and fit of a component",
-                "type": "string"
-            },
-            "orderableMPN": {
-                "description": "orderable manufacturer part number",
-                "type": "string"
-            },
-            "sourceDatasheetID": {
-                "description": "methods for identifying the human-readable source information for a digital datasheet",
-                "$ref": "#/$defs/sourceDatasheetID"
-            },
-            "digitalDatasheetID": {
-                "description": "methods for identifying the version of the digital datasheet",
-                "$ref": "#/$defs/digitalDatasheetID"
-            },
-            "status": {
-                "description": "production status of a component",
-                "examples": [
-                    "preProduction",
-                    "active",
-                    "EOL"
-                ],
-                "type": "string"
-            },
-            "regulatorTopology": {
-                "description": "switching voltage regulator topology",
-                "examples": [
-                    "buck",
-                    "boost",
-                    "buck-boost",
-                    "other"
-                ],
-                "type": "string"
-            },
-            "vinMin": {
-                "description": "minimum input voltage under which the part can be expected to operate properly",
-                "comment": "units of volts",
-                "$ref": "#/definitions/unit"
-            },
-            "vinMax": {
-                "description": "maximum input voltage under which the part can be expected to operate properly",
-                "comment": "units of volts",
-                "$ref": "#/definitions/unit"
-            },
-            "voutMin": {
-                "description": "minimum output voltage the part can regulate",
-                "comment": "units of volts",
-                "$ref": "#/definitions/unit"
-            },
-            "voutMax": {
-                "description": "maximum output voltage the part can regulate",
-                "comment": "units of volts",
-                "$ref": "#/definitions/unit"
-            },
-            "feedbackVoltage": {
-                "description": "voltage comparison point at the feedback node",
-                "comment": "units of volts",
-                "$ref": "#/definitions/unit"
-            },
-            "maxLoadCurrent": {
-                "description": "maximum load current supported by regulator",
-                "comment": "units of amps",
-                "$ref": "#/definitions/unit"
-            },
-            "minLoadCurrent": {
-                "description": "minimum load current supported by regulator",
-                "comment": "units of amps",
-                "$ref": "#/definitions/unit"
-            },
-            "voutAccuracy": {
-                "description": "output voltage variation at no load",
-                "comment": "units of %",
-                "type": "#/definitions/unit"
-            },
-            "loadRegulation": {
-                "description": "output voltage variation from no load to full load ",
-                "type": "#/definitions/unit"
-            },
-            "lineRegulation": {
-                "description": "output voltage variation from minimum input voltage to maximum input voltage ",
-                "type": "#/definitions/unit"
-            },
-            "quiescentCurrent": {
-                "description": "quiescent current (Iq) of voltage regulator at no load",
-                "comment": "units of amps",
-                "$ref": "#/definitions/unit"
-            },
-            "shutDownCurrent": {
-                "description": "shutdown current (Isd) of voltage regulato",
-                "comment": "units of amps",
-                "$ref": "#/definitions/unit"
-            },
-            "switchingFrequency": {
-                "description": "swtiching frequency (fsw) of voltage regulator",
-                "comment": "units of hertz",
-                "$ref": "#/definitions/unit"
-            },
-            "ilimHSFET": {
-                "description": "maximum sustained current output current under which the high side FET will operate properly",
-                "comment": "units of amps",
-                "$ref": "#/definitions/unit"
-            },
-            "ilimLSFET": {
-                "description": "maximum sustained current output current under which the low side FET will operate properly",
-                "comment": "units of amps",
-                "$ref": "#/definitions/unit"
-            },
-            "rdsonHSFET": {
-                "description": "high side FET on-resistance",
-                "comment": "units of ohms",
-                "$ref": "#/definitions/unit"
-            },
-            "rdsonLSFET": {
-                "description": "low side FET on-resistance",
-                "comment": "units of ohms",
-                "$ref": "#/definitions/unit"
-            },
-            "enableTime": {
-                "description": "time between enable asserted and output voltage rising to 10% nominal",
-                "comment": "units of seconds",
-                "$ref": "#/definitions/unit"
-            },
-            "rampTime": {
-                "description": "time for output voltage to go from 10% vout nominal to 90% vout nominal",
-                "comment": "units of seconds",
-                "$ref": "#/definitions/unit"
-            },
-            "integratedFets": {
-                "description": "whether the regulator contains integrated switching mosfets",
-                "type": "boolean"
-            },
-            "undervoltageLockoutTresholdRising": {
-                "description": "Undervoltage Lockout Out (UVLO) Threshold with input voltage rising",
-                "comment": "units of Volts",
-                "$ref": "#/definitions/unit"
-            },
-            "undervoltageLockoutTresholdFalling": {
-                "description": "Undervoltage Lockout Out (UVLO) Threshold with input voltage falling",
-                "comment": "units of Volts",
-                "$ref": "#/definitions/unit"
-            },
-            "overvoltageProtectionTresholdRising": {
-                "description": "Overvoltage Protection (OVP) Threshold with input voltage rising",
-                "comment": "units of Volts",
-                "$ref": "#/definitions/unit"
-            },
-            "overvoltageProtectionTresholdFalling": {
-                "description": "Overvoltage Protection (OVP) Threshold with input voltage falling",
-                "comment": "units of Volts",
-                "$ref": "#/definitions/unit"
-            },
-            "thermalShudownRising": {
-                "description": "Thermal Shudown (tsd) Threshold with temperature rising",
-                "comment": "units of celsius",
-                "$ref": "#/definitions/unit"
-            },
-            "thermalShudownFalling": {
-                "description": "Thermal Shudown (tsd) Threshold with temperature falling",
-                "comment": "units of celsius",
-                "$ref": "#/definitions/unit"
-            },
-            "thermalShudownHysteresis": {
-                "description": "Thermal Shutdown (tsd) Hysteresis",
-                "comment": "units of celsius",
-                "$ref": "#/definitions/unit"
-            },
-            "efficiency": {
-                "description": "power efficiency of regulator",
-                "$ref": "#/graph/graphDefiniton"
-            },
-            "pins": {
-                "description": "array of pin objects with associated properties",
-                "type": "array",
-                "items": {
-                    "$ref": "definitions.json#/pinSpec"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "regulatorTopology": {
+                    "description": "switching voltage regulator topology",
+                    "examples": [
+                        "buck",
+                        "boost",
+                        "buck-boost",
+                        "other"
+                    ],
+                    "type": "string"
+                },
+                "vinMin": {
+                    "description": "minimum input voltage under which the part can be expected to operate properly",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "vinMax": {
+                    "description": "maximum input voltage under which the part can be expected to operate properly",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "voutMin": {
+                    "description": "minimum output voltage the part can regulate",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "voutMax": {
+                    "description": "maximum output voltage the part can regulate",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "feedbackVoltage": {
+                    "description": "voltage comparison point at the feedback node",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "maxLoadCurrent": {
+                    "description": "maximum load current supported by regulator",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "minLoadCurrent": {
+                    "description": "minimum load current supported by regulator",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "voutAccuracy": {
+                    "description": "output voltage variation at no load",
+                    "$ref": "definitions.json#/unit"
+                },
+                "loadRegulation": {
+                    "description": "output voltage variation from no load to full load ",
+                    "$ref": "definitions.json#/unit"
+                },
+                "lineRegulation": {
+                    "description": "output voltage variation from minimum input voltage to maximum input voltage ",
+                    "$ref": "definitions.json#/unit"
+                },
+                "quiescentCurrent": {
+                    "description": "quiescent current (Iq) of voltage regulator at no load",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "shutDownCurrent": {
+                    "description": "shutdown current (Isd) of voltage regulator",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "switchingFrequency": {
+                    "description": "swtiching frequency (fsw) of voltage regulator",
+                    "comment": "units of hertz",
+                    "$ref": "definitions.json#/unit"
+                },
+                "enableTime": {
+                    "description": "time between enable asserted and output voltage rising to 10% nominal",
+                    "comment": "units of seconds",
+                    "$ref": "definitions.json#/unit"
+                },
+                "rampTime": {
+                    "description": "time for output voltage to go from 10% vout nominal to 90% vout nominal",
+                    "comment": "units of seconds",
+                    "$ref": "definitions.json#/unit"
+                },
+                "integratedFets": {
+                    "description": "whether the regulator contains integrated switching mosfets",
+                    "type": "boolean"
+                },
+                "integratedFetProperties": {
+                    "description": "describes integrated fet current limits and rdson properties",
+                    "$ref": "#/$defs/powerFetProperities"
+                },
+                "undervoltageLockoutTresholdRising": {
+                    "description": "Undervoltage Lockout Out (UVLO) Threshold with input voltage rising",
+                    "comment": "units of Volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "undervoltageLockoutTresholdFalling": {
+                    "description": "Undervoltage Lockout Out (UVLO) Threshold with input voltage falling",
+                    "comment": "units of Volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "overvoltageProtectionTresholdRising": {
+                    "description": "Overvoltage Protection (OVP) Threshold with input voltage rising",
+                    "comment": "units of Volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "overvoltageProtectionTresholdFalling": {
+                    "description": "Overvoltage Protection (OVP) Threshold with input voltage falling",
+                    "comment": "units of Volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "thermalShudownRising": {
+                    "description": "Thermal Shudown (tsd) Threshold with temperature rising",
+                    "comment": "units of celsius",
+                    "$ref": "definitions.json#/unit"
+                },
+                "thermalShudownFalling": {
+                    "description": "Thermal Shudown (tsd) Threshold with temperature falling",
+                    "comment": "units of celsius",
+                    "$ref": "definitions.json#/unit"
+                },
+                "thermalShudownHysteresis": {
+                    "description": "Thermal Shutdown (tsd) Hysteresis",
+                    "comment": "units of celsius",
+                    "$ref": "definitions.json#/unit"
+                },
+                "efficiency": {
+                    "description": "power efficiency of regulator",
+                    "$ref": "graph.json#/graphDefiniton"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
                 }
             }
         }
-    ]
+    ],
+    "$defs": {
+        "powerFetProperties": {
+            "type": "object",
+            "properties": {
+                "ilimHSFET": {
+                    "description": "maximum sustained current output current under which the high side FET will operate properly",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "ilimLSFET": {
+                    "description": "maximum sustained current output current under which the low side FET will operate properly",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "rdsonHSFET": {
+                    "description": "high side FET on-resistance",
+                    "comment": "units of ohms",
+                    "$ref": "definitions.json#/unit"
+                },
+                "rdsonLSFET": {
+                    "description": "low side FET on-resistance",
+                    "comment": "units of ohms",
+                    "$ref": "definitions.json#/unit"
+                }
+            }
+        }
+    }
 }
