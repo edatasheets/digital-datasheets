@@ -125,6 +125,7 @@ Properties used to specify a graph object are included below:
 |xLabel|x-axis title|String|Yes|
 |yUnits|y-axis units|string|Yes|
 |yLabel|y-axis title|String|Yes|
+|numberOfCurves|total number of curves in graph|Number|Yes|
 
 #### 3.8	Physical Package Specifications
 The digital datasheet has specifications to capture the first level physical package specifications. Properties used to specify a package are included below:
@@ -197,8 +198,18 @@ The table below gives a description of the properties used to specify an inducto
 |resonantFrequencyCurve|Graph to capture resonant frequency curve|Object| |
 
 #### 3.10	Power Components Specifications
-The The power component specification is included in Github at: https://github.com/edatasheets/edatasheets.github.io/tree/main/part-spec
-#### 3.10.1	 Switching Regulators Specifications
+The power component specification is included in Github at: https://github.com/edatasheets/edatasheets.github.io/tree/main/part-spec
+
+#### 3.10.1	 Power FET Specifications
+Power FETs are important components of swithing regulators. They can be integrated in the regulator or external to the regulator. The table below gives a description of the properties used to specify FETs in a digital datasheet. 
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|ilimHSFET|High Side FET maximum current above which the output voltage starts dropping |Number| |
+|ilimLSFET|Low Side FET maximum current above which the output voltage starts dropping|Number| |
+|rdsonHSFET|High side FET on-resistance|Number| |
+|rdsonLSFET|Low side FET on-resistance|Number| |
+
+#### 3.10.2	 Switching Regulator Specifications
 The table below gives a description of the properties used to specify a switching regulator in a digital datasheet.
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -215,12 +226,9 @@ The table below gives a description of the properties used to specify a switchin
 |lineRegulation|Output voltage variation from minimum input voltage to maximum input voltage|Number| |
 |quiescentCurrent|Quiescent current of voltage regulator at no load|Number| |
 |shutdownCurrent |Shutdown current of voltage regulator|Number| |
-|fsw|Switching frequency of voltage regulator|Number| |
-|IntegratedFets|Describes whether the FETs are integrated in the regulator package|Boolean| |
-|ilimHSFET|High Side FET maximum current above which the output voltage starts dropping |Number| |
-|ilimLSFET|Low Side FET maximum current above which the output voltage starts dropping|Number| |
-|rdsonHSFET|High side FET on-resistance|Number| |
-|rdsonLSFET|Low side FET on-resistance|Number| |
+|switchingFrequency|Switching frequency of voltage regulator|Number| |
+|integratedFets|Describes whether the FETs are integrated in the regulator package|Boolean| |
+|powerFetProperties| Current limits and rdson values for the integrated FETs|Object| |
 |enableTime|Time between enable asserted and output voltage rising to 10% nominal|Number| |
 |rampTime|Time for output to go from 10% nominal output voltage to 90%nominal output voltage|Number| |
 |underVoltageLockoutThresholdRising|Undervoltage Lockout threshold with input voltage rising|Number| |
