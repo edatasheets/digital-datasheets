@@ -50,7 +50,7 @@ A digital datasheet shall follow the international standard notation, YYYY-MM-DD
 The digital datasheet shall follow the International System of Units, SI except for specific cases, like package dimensions, where the imperial system of units may be used. These specific cases will be addressed in the specifications.
 Properties used the represent units in the datasheets are listed in Github: 
 They include:
-|Unit Property|Description|Data Type|Required?|
+|Unit Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
 |siUnit|Name of the SI unit of measure|String|Yes|
 |absoluteValue|Unit quantity corresponding to unit text|Number|Yes|
@@ -70,7 +70,7 @@ The pins specification is included in Github at:https://github.com/edatasheets/e
 
 Table below shows the list of properties used to describe pins
 
-|Pin Property|Description|Data Type|Required?|
+|Pin Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
 |terminalIdentifier|Pin or ball number as defined by datasheet|String|Yes|
 |name|Name given to the signal appearing at the terminal of a component"|String|Yes|
@@ -110,15 +110,15 @@ Table below shows the list of properties used to describe pins
 
 
 #### 3.7	Graph Specifications
-Datasheets include additional information through figures, graphs. Examples include but are not limited to efficiency vs load curves, power derating curves. A graph object and a curve object are specified to capture that information in the digital datasheet. The graph object focuses on defining the type of data captured, including title and axis information. The curve object focuses on capturing the data. Multiple curve objects may be included in a graph object to capture relationships between variables under different conditions. Examples include load current vs efficiency curves for different input voltages.Properties used to specify a curve object are included in the table below:
-|Property|Description|Data Type|Required?|
+Datasheets include additional information through figures and graphs. Examples include but are not limited to efficiency vs load curves and power derating curves. A graph object and a curve object are specified to capture that information in the digital datasheet. The graph object focuses on defining the type of data captured, including title and axis information. The curve object focuses on capturing the data. Multiple curve objects may be included in a graph object to capture relationships between variables under different conditions. Examples include load current vs efficiency curves for different input voltages.Properties used to specify a curve object are included in the table below:
+|Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|label|Description of the data in a curve|string|Yes|
-|xData|x value of data being plotted|array|Yes|
-|yData|y value of data being plotted|array|Yes|
+|label|Description of the data in a curve|string| |
+|xData|x value of data being plotted|array of numbers|Yes|
+|yData|y value of data being plotted|array of numbers|Yes|
 
 Properties used to specify a graph object are included below:
-|Property|Description|Data Type|Required?|
+|Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
 |title|Title of a graph|string|Yes|
 |xUnits|x-axis units|string|Yes|
@@ -128,42 +128,42 @@ Properties used to specify a graph object are included below:
 
 #### 3.8	Physical Package Specifications
 The digital datasheet has specifications to capture the first level physical package specifications. Properties used to specify a package are included below:
-|Property|Description|Data Type|Required?|
+|Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
 |length|Length of the package|Number|Yes|
 |width|Width of the package|Number|Yes|
 |height|Height of the package|Number|Yes|
-|dimensionUnit|Unit used to describe the package dimensions|String|Yes|
+|dimensionUnit|Unit (mm or mil) used to describe the package dimensions|String|Yes|
 |standardPackageSize|Standard name used to designate the package size|String| |
 |standardPackageType|Standard name used to designate the package type|String| |
 
 #### 3.9	Passive Components Specifications
-The passive components digital datasheet specifications are included in GitHub: https://github.com/edatasheets/edatasheets.github.io
+The passive components digital datasheet specifications are included in GitHub: https://github.com/edatasheets/edatasheets.github.io/tree/main/part-spec
 
 #### 3.9.1	Resistor Specifications
 The table below give a description of the properties used to specify a resistor in a digital datasheet.
-|Property|Description|Data Type|Required?|
+|Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|Value|Resistance value|Number|Yes|
-|Tolerance|Nominal tolerance of a resistor|Number| |
+|value|Resistance value|Number|Yes|
+|tolerance|Nominal tolerance of a resistor|Number| |
 |powerRating|Maximum power a resistor can dissipate without degrading performance|Number| |
 |temperatureCoefficient|Change in resistance when the temperature is changed|Number| |
 |maxOverloadVoltage|Maximum voltage that can be applied to the resistor for a short period of time|Number| |
-|maxLimitingElementVoltage|Maximum voltage value that can be applied continuously to the resistor.|Number| |
+|maxLimitingElementVoltage|Maximum voltage value that can be applied continuously to the resistor|Number| |
 |pinSpec|Pins definition of the resistor|object| |
 |package|Package definition of the resistor|Object| |
 |minTemperature|Minimum temperature under which a resistor can be expected to reliably operate|Number| |
 |maxTemperature|Maximum temperature under which a resistor can be expected to reliably operate|Number| |
 |complianceList|List of compliances met by the resistor|Array| |
-|resistorDerating|Graph to capture resistor derating|Object| |
+|resistorDerating|Graph to capture resistor derating under temperature|Object| |
 
 
 #### 3.9.2	Capacitor Specifications
 The table below gives a description of the properties used to specify a capacitor in a digital datasheet.
-|Property|Description|Data Type|Required?|
+|Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|Value|Capacitance value|Number|Yes|
-|Tolerance|Nominal tolerance of a capacitor|Number| |
+|value|Capacitance value|Number|Yes|
+|tolerance|Nominal tolerance of a capacitor|Number| |
 |ratedVoltage|Maximum voltage which may be applied continuously to a capacitance |Number| |
 |dielectric|Dielectric material used in the capacitor|String| |
 |polarized|Describes whether the capacitor is polarized|Boolean| |
@@ -178,10 +178,10 @@ The table below gives a description of the properties used to specify a capacito
 
 #### 3.9.3	Inductor Specifications
 The table below gives a description of the properties used to specify an inductor in a digital datasheet.
-|Property|Description|Data Type|Required?|
+|Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|Value|Inductance value|Number|Yes|
-|Tolerance|Nominal tolerance of an Inductor|Number| |
+|value|Inductance value|Number|Yes|
+|tolerance|Nominal tolerance of an Inductor|Number| |
 |ratedCurrent|Maximum continuous current the inductor can handle|Number| |
 |saturationCurrent|Current where the inductor enters the magnetic state, and the inductance drops a specified amount |Number| |
 |rmsCurrent|DC current that produces an inductor temperature rise of 40 degrees Celsius|Number| |
@@ -193,14 +193,14 @@ The table below gives a description of the properties used to specify an inducto
 |pinSpec|Pins definition of the inductor|object| |
 |package|Package definition of the inductor|Object| |
 |complianceList|List of compliances met by the inductor component|Array| |
-|saturationCurve|Graph to capture saturation curve|Object| |
+|saturationCurve|Graph to capture current saturation curve|Object| |
 |resonantFrequencyCurve|Graph to capture resonant frequency curve|Object| |
 
 #### 3.10	Power Components Specifications
-The The power component specification is included in Github at: https://github.com/edatasheets/edatasheets.github.io
-#### 3.10.1	Buck Converter Specification
-The table below gives a description of the properties used to specify a Buck (step down) switching converter in a digital datasheet.
-|Property|Description|Data Type|Required?|
+The The power component specification is included in Github at: https://github.com/edatasheets/edatasheets.github.io/tree/main/part-spec
+#### 3.10.1	 Switching Regulators Specifications
+The table below gives a description of the properties used to specify a switching regulator in a digital datasheet.
+|Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
 |regulatorTopology|Switching regulator topology|String|Yes|
 |vinMin|Minimum input voltage under which the part can be expected to operate properly |Number|Yes|
@@ -230,10 +230,10 @@ The table below gives a description of the properties used to specify a Buck (st
 |thermalShutdownThresholdRising|Thermal Shutdown Threshold with temperature rising|Number| |
 |thermalShutdownThresholdFalling|Thermal Shutdown Threshold with temperature Falling|Number| |
 |thermalShutdownHysteresis|Thermal Shutdown Hysteresis|Number| |
-|efficiency|Power efficiency of the regulator|object| |
-|pinSpec|Pins definition of the converter|object| |
-|package|Package definition of the converter|Object| |
-|complianceList|List of compliances met by the converter component|Array| |
+|efficiency|Power efficiency Graph of the switching regulator|object| |
+|pinSpec|Pins definition of the switching regulator|object| |
+|package|Package definition of the switching regulator|Object| |
+|complianceList|List of compliances met by the switching regulator component|Array| |
 
 
 
