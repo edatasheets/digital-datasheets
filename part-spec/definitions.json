@@ -50,10 +50,10 @@
         },
         "status": {
           "description": "production status of a component",
-          "examples": [
-            "preProduction",
-            "active",
-            "EOL"
+          "enum": [
+            "development",
+            "production",
+            "end-of-life"
           ],
           "type": "string"
         },
