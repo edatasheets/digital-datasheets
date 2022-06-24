@@ -156,7 +156,7 @@ The table below give a description of the properties used to specify a resistor 
 |minTemperature|Minimum temperature under which a resistor can be expected to reliably operate|Number| |
 |maxTemperature|Maximum temperature under which a resistor can be expected to reliably operate|Number| |
 |complianceList|List of compliances met by the resistor|Array| |
-|resistorDerating|Graph to capture resistor derating under temperature|Object| |
+|resistorDerating|Graph to capture resistor derating with temperature|Object| |
 
 
 #### 3.9.2	Capacitor Specifications
@@ -175,7 +175,7 @@ The table below gives a description of the properties used to specify a capacito
 |pinSpec|Pins definition of the capacitor|object| |
 |package|Package definition of the capacitor|Object| |
 |complianceList|List of compliances met by the capacitor component|Array| |
-|capacitorDerating|Graph to capture capacitor derating|Object| |
+|capacitorDerating|Graph to capture capacitor derating with voltage|Object| |
 
 #### 3.9.3	Inductor Specifications
 The table below gives a description of the properties used to specify an inductor in a digital datasheet.
