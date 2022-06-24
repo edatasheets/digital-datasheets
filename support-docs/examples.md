@@ -305,10 +305,11 @@ Inductor Example
     },
     "saturationCurve": {
         "title": "DC Bias Curve for abc123",
-        "xLabelUnits": "Amps",
-        "xLabelTitle": "Current",
-        "yLabelUnits": "uH",
-        "yLabelTitle": "Inductance",
+        "xUnits": "Amps",
+        "xLabel": "Current",
+        "yUnits": "uH",
+        "yLabel": "Inductance",
+        "numberOfCurves": 1,
         "data": {
             "label": "20 degrees C",
             "xData": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -407,7 +408,7 @@ Buck Example
         "length": 5,
         "width": 5,
         "height": 1, 
-        "dimensionUnit": "milimeter" 
+        "dimensionUnit": "millimeter" 
     },
     "pins": [
         {
