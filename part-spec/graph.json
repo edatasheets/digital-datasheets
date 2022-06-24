@@ -6,19 +6,19 @@
                 "description": "title of a graph",
                 "type": "string"
             },
-            "xLabelUnits": {
+            "xUnits": {
                 "description": "x-axis units",
                 "type": "string"
             },
-            "xLabelTitle": {
+            "xLabel": {
                 "description": "x-axis title",
                 "type": "string"
             },
-            "yLabelUnits": {
+            "yUnits": {
                 "description": "y-axis units",
                 "type": "string"
             },
-            "yLabelTitle": {
+            "yLabel": {
                 "description": "y-axis title",
                 "type": "string"
             },
