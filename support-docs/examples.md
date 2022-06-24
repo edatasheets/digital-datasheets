@@ -2,19 +2,21 @@ Single Inverter Example
 
 ```json
 {
-    "partType": "inverter",
-    "manufacturer": "ACME Components",
-    "componentName": "abc123",
-    "orderableMPN": "abc123,45",
-    "sourceDatasheetID": {
-        "publishedDate": "2021-05-23",
-        "datasheetURI": "www.acmecomponents.com/abc123datasheet"
+    "componentID": {
+        "partType": "inverter",
+        "manufacturer": "ACME Components",
+        "componentName": "abc123",
+        "orderableMPN": "abc123,45",
+        "sourceDatasheetID": {
+            "publishedDate": "2021-05-23",
+            "datasheetURI": "www.acmecomponents.com/abc123datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2022-03-21",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active",
     },
-    "digitalDatasheetID": {
-        "publishedDate": "2022-03-21",
-        "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
-    },
-    "status": "active",
     "pins": [
         {
             "terminalIdentifier": "1",
@@ -250,7 +252,7 @@ Single Complex Pin Example
         "componentType": "resistor",
         "configuration": "pu",
         "minValue": {
-            "siUnit": "ohms",
+            "siUnit": "ohm",
             "absoluteValue": 20,
             "unitText": "Kohms",
             "unitFactor": 1E3,
@@ -260,3 +262,172 @@ Single Complex Pin Example
 }
 
 ```
+
+Inductor Example
+
+```json
+{
+    "componentID": {
+        "partType": "inductor",
+        "manufacturer": "ACME Components",
+        "componentName": "abc123",
+        "orderableMPN": "abc123,45",
+        "sourceDatasheetID": {
+            "publishedDate": "2021-05-23",
+            "datasheetURI": "www.acmecomponents.com/abc123datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2022-03-21",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active",
+    },
+    "value": {
+        "siUnit": "henry",
+        "absoluteValue": 10,
+        "unitText": "uH",
+        "unitFactor": 1E-6,
+        "valueDefined": true
+    },
+    "ratedCurrent": {
+        "siUnit": "amp",
+        "absoluteValue": 4,
+        "unitText": "A",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "saturationCurrent": {
+        "siUnit": "amp",
+        "absoluteValue": 6,
+        "unitText": "A",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "saturationCurve": {
+        "title": "DC Bias Curve for abc123",
+        "xUnits": "Amps",
+        "xLabel": "Current",
+        "yUnits": "uH",
+        "yLabel": "Inductance",
+        "numberOfCurves": 1,
+        "data": {
+            "label": "20 degrees C",
+            "xData": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+            "yData": [10, 9.9, 9.7, 9.5, 9.3, 9, 7, 5, 2.5, 2]
+        }
+    },
+    "package": {
+        "standardPackageSize": "0805"  
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "1"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "2"
+        }
+    ]
+}
+```
+
+Buck Example
+
+```json
+{
+    "componentID": {
+        "partType": "inductor",
+        "manufacturer": "ACME Components",
+        "componentName": "abc123",
+        "orderableMPN": "abc123,45",
+        "sourceDatasheetID": {
+            "publishedDate": "2021-05-23",
+            "datasheetURI": "www.acmecomponents.com/abc123datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2022-03-21",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active",
+    },
+    "regulatorTopology": "buck",
+    "vinMin": {
+        "siUnit": "volt",
+        "absoluteValue": 12,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "vinMax": {
+        "siUnit": "volt",
+        "absoluteValue": 18,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "voutMax": {
+        "siUnit": "volt",
+        "absoluteValue": 8,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "voutMin": {
+        "siUnit": "volt",
+        "absoluteValue": 4,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "maxLoadCurrent": {
+        "siUnit": "amp",
+        "absoluteValue": 5,
+        "unitText": "A",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "integratedFets": true,
+    "integratedFetProperties": {
+        "rdsonHSFET": {
+            "siUnit": "ohm",
+            "absoluteValue": 5,
+            "unitText": "mOhm",
+            "unitFactor": 1E-3,
+            "valueDefined": true
+        },
+        "rdsonLSFET": {
+            "siUnit": "ohm",
+            "absoluteValue": 3.5,
+            "unitText": "mOhm",
+            "unitFactor": 1E-3,
+            "valueDefined": true
+        },
+    },
+    "package": {
+        "length": 5,
+        "width": 5,
+        "height": 1, 
+        "dimensionUnit": "millimeter" 
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "Vin"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "Vout"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "GND"
+        },
+         {
+            "terminalIdentifier": "4",
+            "name": "VFB"
+        }
+    ]
+}
+```
+
