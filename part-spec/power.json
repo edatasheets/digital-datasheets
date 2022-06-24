@@ -5,7 +5,7 @@
     "title": "power",
     "oneOf": [
         {
-            "title": "switching converter",
+            "title": "switching regulator",
             "type": "object",
             "required": [
                 "componentID",
@@ -83,7 +83,7 @@
                     "comment": "units of amps",
                     "$ref": "definitions.json#/unit"
                 },
-                "shutDownCurrent": {
+                "shutdownCurrent": {
                     "description": "shutdown current (Isd) of voltage regulator",
                     "comment": "units of amps",
                     "$ref": "definitions.json#/unit"
@@ -111,22 +111,22 @@
                     "description": "describes integrated fet current limits and rdson properties",
                     "$ref": "#/$defs/powerFetProperities"
                 },
-                "undervoltageLockoutTresholdRising": {
+                "undervoltageLockoutThresholdRising": {
                     "description": "Undervoltage Lockout Out (UVLO) Threshold with input voltage rising",
                     "comment": "units of Volts",
                     "$ref": "definitions.json#/unit"
                 },
-                "undervoltageLockoutTresholdFalling": {
+                "undervoltageLockoutThresholdFalling": {
                     "description": "Undervoltage Lockout Out (UVLO) Threshold with input voltage falling",
                     "comment": "units of Volts",
                     "$ref": "definitions.json#/unit"
                 },
-                "overvoltageProtectionTresholdRising": {
+                "overvoltageProtectionThresholdRising": {
                     "description": "Overvoltage Protection (OVP) Threshold with input voltage rising",
                     "comment": "units of Volts",
                     "$ref": "definitions.json#/unit"
                 },
-                "overvoltageProtectionTresholdFalling": {
+                "overvoltageProtectionThresholdFalling": {
                     "description": "Overvoltage Protection (OVP) Threshold with input voltage falling",
                     "comment": "units of Volts",
                     "$ref": "definitions.json#/unit"
@@ -155,6 +155,12 @@
                     "type": "array",
                     "items": {
                         "$ref": "definitions.json#/pinSpec"
+                    }
+                },
+                "package": {
+                    "description": "component's package size and description",
+                    "items": {
+                        "$ref": "definitions.json#/package"
                     }
                 }
             }
