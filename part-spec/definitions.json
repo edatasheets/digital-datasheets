@@ -366,7 +366,7 @@
         "description": "unit used to describe package dimensions",
         "enum": [
           "mils",
-          "milimeter"
+          "millimeter"
         ]
       },
       "standardPackageSize": {
