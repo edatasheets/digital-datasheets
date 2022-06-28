@@ -32,12 +32,12 @@
                     "type": "string"
                 },
                 "vinMin": {
-                    "description": "minimum input voltage under which the part can be expected to operate properly",
+                    "description": "minimum input voltage under which the part can be expected to operate without output dropping",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
                 "vinMax": {
-                    "description": "maximum input voltage under which the part can be expected to operate properly",
+                    "description": "maximum input voltage under which the part can be expected to operate without output dropping",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
@@ -131,12 +131,12 @@
                     "comment": "units of Volts",
                     "$ref": "definitions.json#/unit"
                 },
-                "thermalShudownRising": {
+                "thermalShudownThresholdRising": {
                     "description": "Thermal Shudown (tsd) Threshold with temperature rising",
                     "comment": "units of celsius",
                     "$ref": "definitions.json#/unit"
                 },
-                "thermalShudownFalling": {
+                "thermalShudownThresholdFalling": {
                     "description": "Thermal Shudown (tsd) Threshold with temperature falling",
                     "comment": "units of celsius",
                     "$ref": "definitions.json#/unit"
