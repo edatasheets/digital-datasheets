@@ -391,64 +391,66 @@
           ]
         }
       }
-    },
-    "unit": {
-      "type": "object",
-      "properties": {
-        "siUnit": {
-          "description": "name of SI unit of measure",
-          "enum": [
-            "volt",
-            "amp",
-            "ohm",
-            "coulomb",
-            "henry",
-            "farad",
-            "second",
-            "watt",
-            "joule",
-            "celsius",
-            "meter",
-            "gram"
-          ],
-          "type": "string"
-        },
-        "absoluteValue": {
-          "description": "unit quantity corresponding to unit text - example 40mV would have a value of 40",
-          "type": "number"
-        },
-        "unitText": {
-          "description": "human readable text describing value - example 40mV would have a value of mV",
-          "type": "string"
-        },
-        "unitFactor": {
-          "description": "multiplier on the value to achieve the SI unit - example for 40mV the unitFactor would be 0.001",
-          "type": "number"
-        },
-        "relativeValueReference": {
-          "description": "if unit quantity is based on another reference, value of the reference",
-          "example": "VDD1",
-          "type": "string"
-        },
-        "relativeValueModifier": {
-          "description": "if a unit quantity is based on another reference, the value that edits that reference",
-          "example": "1.2",
-          "type": "number"
-        },
-        "relativeValueOperator": {
-          "description": "if a unit quantity is based on another reference, the operation that is performed with the modifier",
-          "example": "multiply",
-          "type": "string",
-          "enum": [
-            "multiply",
-            "add",
-            "subtract"
-          ]
-        },
-        "valueDefined": {
-          "description": "a boolean representing whether a value has been defined",
-          "type": "boolean"
-        }
+    }
+  },
+  "unit": {
+    "type": "object",
+    "properties": {
+      "siUnit": {
+        "description": "name of SI unit of measure",
+        "enum": [
+          "volt",
+          "amp",
+          "ohm",
+          "coulomb",
+          "henry",
+          "farad",
+          "second",
+          "watt",
+          "joule",
+          "celsius",
+          "meter",
+          "gram",
+          "hertz",
+          "percentage"
+        ],
+        "type": "string"
+      },
+      "absoluteValue": {
+        "description": "unit quantity corresponding to unit text - example 40mV would have a value of 40",
+        "type": "number"
+      },
+      "unitText": {
+        "description": "human readable text describing value - example 40mV would have a value of mV",
+        "type": "string"
+      },
+      "unitFactor": {
+        "description": "multiplier on the value to achieve the SI unit - example for 40mV the unitFactor would be 0.001",
+        "type": "number"
+      },
+      "relativeValueReference": {
+        "description": "if unit quantity is based on another reference, value of the reference",
+        "example": "VDD1",
+        "type": "string"
+      },
+      "relativeValueModifier": {
+        "description": "if a unit quantity is based on another reference, the value that edits that reference",
+        "example": "1.2",
+        "type": "number"
+      },
+      "relativeValueOperator": {
+        "description": "if a unit quantity is based on another reference, the operation that is performed with the modifier",
+        "example": "multiply",
+        "type": "string",
+        "enum": [
+          "multiply",
+          "add",
+          "subtract"
+        ]
+      },
+      "valueDefined": {
+        "description": "a boolean representing whether a value has been defined",
+        "type": "boolean"
       }
     }
   }

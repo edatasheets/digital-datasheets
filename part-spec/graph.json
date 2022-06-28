@@ -1,0 +1,55 @@
+{
+    "graphDefiniton": {
+        "type": "object",
+        "properties": {
+            "title": {
+                "description": "title of a graph",
+                "type": "string"
+            },
+            "xUnits": {
+                "description": "x-axis units",
+                "type": "string"
+            },
+            "xLabel": {
+                "description": "x-axis title",
+                "type": "string"
+            },
+            "yUnits": {
+                "description": "y-axis units",
+                "type": "string"
+            },
+            "yLabel": {
+                "description": "y-axis title",
+                "type": "string"
+            },
+            "numberOfCurves": {
+                "description": "total number of curves in graph",
+                "type": "number"
+            },
+            "data": {
+                "description": "array of curve objects representing actual data being plotted",
+                "type": "array",
+                "items": "#/graph/curve"
+            }
+        }
+    },
+    "curve": {
+        "type": "object",
+        "properties": {
+            "label": {
+                "description": "description of the data in a curve",
+                "type": "string"
+            },
+            "xData": {
+                "description": "x value of data being plotted",
+                "type": "array",
+                "items": "number"
+            },
+            "yData": {
+                "description": "y value of data being plotted",
+                "type": "array",
+                "items": "number"
+            }
+        }
+    }
+}
