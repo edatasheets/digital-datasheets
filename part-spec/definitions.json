@@ -412,7 +412,9 @@
           "meter",
           "gram",
           "hertz",
-          "percentage"
+          "percentage",
+          "bit",
+          "byte"
         ],
         "type": "string"
       },
