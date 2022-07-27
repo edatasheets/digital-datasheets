@@ -1,0 +1,106 @@
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/semiconductor.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "semiconductor",
+    "oneOf": [
+        {
+            "title": "mosfet",
+            "type": "object",
+            "required": [
+                "partType",
+                "manufacturer",
+                "mpn",
+                "datasheetVersion",
+                "type",
+                "channel"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "mosfetType": {
+                    "description": "type of mosfet",
+                    "examples": [
+                        "smallSignal",
+                        "power"
+                    ],
+                    "type": "string"
+                },
+                "channel": {
+                    "description": "doping of a transistor's channel - describes whether a transistor is n-type or p-type",
+                    "enum": [
+                        "nType",
+                        "pType"
+                    ],
+                    "type": "string"
+                },
+                "transistorCount": {
+                    "description": "number of transistors in the package",
+                    "type": "number"
+                },
+                "vgsMax": {
+                    "description": "maximum gate to source voltage difference that can be continously applied to a mosfet",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "vdsMax": {
+                    "description": "maximum drain to source voltage difference that can be continously applied to a mosfet",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "vgsThMax": {
+                    "description": "maximum gate to source voltage difference required to produce a conducting path between drain and source",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "iDrain": {
+                    "description": "maximum continous DC current that can flow through a mosfet channel",
+                    "comment": "units of current",
+                    "$ref": "definitions.json#/unit"
+                },
+                "idPulsed": {
+                    "description": "maximum pulsed DC current that can flow through a mosfet channel",
+                    "comment": "units of current",
+                    "$ref": "definitions.json#/unit"
+                },
+                "rdson": {
+                    "description": "drain source on resistance of a mosfet",
+                    "$comment": "conditions include vds, vgs, temperature",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "qg": {
+                    "description": "total gate charge of a mosfet",
+                    "$comment": "conditions include drain-source voltage and drain current",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "qgd": {
+                    "description": "gate to drain charge of a mosfet",
+                    "comment": "units of nC",
+                    "$ref": "definitions.json#/unit"
+                },
+                "qgs": {
+                    "description": "gate to source charge of a mosfet",
+                    "comment": "units of nC",
+                    "$ref": "definitions.json#/unit"
+                },
+                "idVsVds": {
+                    "description": "graph of drain current (Id) vs drain source voltage (Vds)",
+                    "$ref": "graph.json#/graphDefiniton"
+                },
+                "idVsVgs": {
+                    "description": "graph of drain current (Id) vs gate source voltage (Vgs)",
+                    "$ref": "graph.json#/graphDefiniton"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        }
+    ]
+}

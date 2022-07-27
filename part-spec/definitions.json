@@ -496,5 +496,27 @@
         ]
       }
     }
+  },
+  "conditionalProperty": {
+    "type": "object",
+    "properties": {
+      "min": {
+        "description": "minimum value of property",
+        "$ref": "#/$definitions/unit"
+      },
+      "max": {
+        "description": "maximum value of property",
+        "$ref": "#/$definitions/unit"
+      },
+      "typical": {
+        "description": "typical value of property",
+        "$ref": "#/$definitions/unit"
+      },
+      "conditions": {
+        "description": "conditions under which the property is measured",
+        "type": "array",
+        "items": "string"
+      }
+    }
   }
 }
