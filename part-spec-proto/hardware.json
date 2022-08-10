@@ -8,35 +8,12 @@
             "title": "switch",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "switch"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "type": {
                     "description": "property describing the way in which the switch is activated",
@@ -74,30 +51,22 @@
                 "voltageRating": {
                     "description": "maximum DC voltage potential that can be applied across an open switch",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "currentRating": {
                     "description": "maximum DC current that can flow through a closed switch without causing excessive heating",
                     "comment": "units of amps",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "onResistance": {
                     "description": "nominal resistance of a closed switch",
                     "comment": "units of ohms",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "dielectricRating": {
                     "description": "maximum AC voltage potential that can be applied across an open switch for one minute",
                     "comment": "units of volts",
-                    "type": "number"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                    "$ref": "definitions.json#/unit"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -112,35 +81,12 @@
             "title": "connector",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "connector"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "function": {
                     "description": "intended function of a connector",
@@ -174,23 +120,15 @@
                 "zHeight": {
                     "description": "maximum height of a mounted connector from the PCB surface",
                     "comment": "units of mm",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "pitch": {
                     "description": "distance from the center of one contact on the connector to the center of the next contact",
                     "comment": "units of mm",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "keying": {
                     "description": "property describing whether a connector has an asymmetry to prevent it from being plugged in the wrong direction",
-                    "type": "boolean"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
                     "type": "boolean"
                 },
                 "pins": {

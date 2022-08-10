@@ -8,37 +8,12 @@
             "title": "ssd",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion",
-                "type",
-                "capacity"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "ssd"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "type": {
                     "description": "type of ssd storage as defined by interface and technology",
@@ -51,13 +26,13 @@
                 },
                 "capacity": {
                     "description": "capacity of SSD",
-                    "comment": "units of GB",
-                    "type": "number"
+                    "comment": "units of Gigabytes (GB)",
+                    "$ref": "definitions.json#/unit"
                 },
                 "dataRate": {
                     "description": "maximum data rate",
-                    "comment": "units of GB/sec",
-                    "type": "number"
+                    "comment": "units of Gigabytes per second (GBps)",
+                    "$ref": "definitions.json#/unit"
                 },
                 "interface": {
                     "description": "interface of ssd to host",
@@ -67,22 +42,6 @@
                         "etc."
                     ],
                     "type": "string"
-                },
-                "firmwareVersion": {
-                    "description": "firmware version of the part",
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -94,39 +53,15 @@
             }
         },
         {
-            "title": "sd card reader",
+            "title": "sdCardReader",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion",
-                "type"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "sdCardReader"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "type": {
                     "description": "type of sd card reader",
@@ -136,22 +71,6 @@
                         "full size"
                     ],
                     "type": "string"
-                },
-                "firmwareVersion": {
-                    "description": "firmware version of the part",
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -166,37 +85,12 @@
             "title": "dram",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion",
-                "type",
-                "capacity"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "dram"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "type": {
                     "description": "type of dram",
@@ -213,29 +107,13 @@
                 },
                 "capacity": {
                     "description": "capacity of dram chip",
-                    "comment": "units of Gb",
-                    "type": "number"
+                    "comment": "units of Gigabits (Gb)",
+                    "$ref": "definitions.json#/unit"
                 },
                 "speed": {
                     "description": "dram maximum speed",
-                    "comment": "units of Mbps",
-                    "type": "number"
-                },
-                "firmwareVersion": {
-                    "description": "firmware version of the part",
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                    "comment": "units of Megabits per second (Mbps)",
+                    "$ref": "definitions.json#/unit"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -250,42 +128,17 @@
             "title": "rom",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion",
-                "capacity",
-                "interface"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "rom"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "capacity": {
                     "description": "capacity of rom",
-                    "comment": "units of Mb",
-                    "type": "number"
+                    "comment": "units of Megabits (Mb)",
+                    "$ref": "definitions.json#/unit"
                 },
                 "interface": {
                     "description": "interface of rom to host",
@@ -297,22 +150,6 @@
                 },
                 "qeStatus": {
                     "description": "indicates whether the QE bit is set",
-                    "type": "boolean"
-                },
-                "firmwareVersion": {
-                    "description": "firmware version of the part",
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
                     "type": "boolean"
                 },
                 "pins": {
