@@ -32,6 +32,10 @@
                     "comment": "units of watts",
                     "$ref": "definitions.json#/unit"
                 },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
@@ -59,6 +63,10 @@
                 "deviceMode": {
                     "description": "whether device mode is supported by bc12 chip",
                     "type": "boolean"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -105,6 +113,10 @@
                     "description": "over voltage protection limit provided on vbus power path",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -164,6 +176,10 @@
                         "gen3"
                     ],
                     "type": "string"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -236,6 +252,10 @@
                         "gen3"
                     ],
                     "type": "string"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -317,6 +337,10 @@
                     ],
                     "type": "string"
                 },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
@@ -363,6 +387,10 @@
                     "description": "software version of the part",
                     "type": "string"
                 },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
@@ -407,6 +435,10 @@
                     ],
                     "type": "string"
                 },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
@@ -449,6 +481,10 @@
                     "description": "output voltage level of level shifter",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",

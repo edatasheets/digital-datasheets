@@ -55,6 +55,10 @@
                     "comment": "units of Hz",
                     "$ref": "definitions.json#/unit"
                 },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
@@ -130,6 +134,10 @@
                     ],
                     "type": "string"
                 },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
@@ -167,6 +175,10 @@
                     "description": "magnetic threshold causing the sensor to output low",
                     "comment": "units of mT",
                     "type": "number"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -210,6 +222,10 @@
                     "description": "maximum resolution of temperature sensor",
                     "comment": "units of degreesC/LSD",
                     "type": "number"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",

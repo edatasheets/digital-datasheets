@@ -48,6 +48,10 @@
                     "comment": "units of seconds",
                     "$ref": "definitions.json#/unit"
                 },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
@@ -106,6 +110,10 @@
                     "description": "nominal DC resistance of load switch when enabled",
                     "comment": "units of ohms",
                     "$ref": "definitions.json#/unit"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -201,6 +209,10 @@
                     "description": "whether the charger contains integrated switching mosfets",
                     "type": "boolean"
                 },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
@@ -264,9 +276,9 @@
                     "description": "maximum number of LED strings supported by display driver",
                     "type": "number"
                 },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -327,6 +339,10 @@
                         "etc."
                     ],
                     "type": "string"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",

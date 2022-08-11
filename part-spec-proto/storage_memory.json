@@ -43,6 +43,10 @@
                     ],
                     "type": "string"
                 },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
@@ -71,6 +75,10 @@
                         "full size"
                     ],
                     "type": "string"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -115,6 +123,10 @@
                     "comment": "units of Megabits per second (Mbps)",
                     "$ref": "definitions.json#/unit"
                 },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
@@ -151,6 +163,10 @@
                 "qeStatus": {
                     "description": "indicates whether the QE bit is set",
                     "type": "boolean"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",

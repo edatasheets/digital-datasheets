@@ -73,6 +73,10 @@
                     "description": "whether a diode has built in esd protection",
                     "type": "boolean"
                 },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",

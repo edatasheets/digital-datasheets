@@ -68,6 +68,10 @@
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
@@ -117,11 +121,6 @@
                     "description": "number of plug/unplug cycles a connector is rated to support",
                     "type": "number"
                 },
-                "zHeight": {
-                    "description": "maximum height of a mounted connector from the PCB surface",
-                    "comment": "units of mm",
-                    "$ref": "definitions.json#/unit"
-                },
                 "pitch": {
                     "description": "distance from the center of one contact on the connector to the center of the next contact",
                     "comment": "units of mm",
@@ -130,6 +129,10 @@
                 "keying": {
                     "description": "property describing whether a connector has an asymmetry to prevent it from being plugged in the wrong direction",
                     "type": "boolean"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
