@@ -1,0 +1,49 @@
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/usbc.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "usbc",
+    "oneOf": [
+        {
+            "title": "usb-c port controller",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "pdVersion": {
+                    "description": "version of power delivery spec implemented by controller",
+                    "examples": [
+                        "pd2",
+                        "pd3"
+                    ],
+                    "type": "string"
+                },
+                "vconnPowerSupport": {
+                    "description": "whether controller has support for vconn power",
+                    "type": "boolean"
+                },
+                "vconnPowerLimit": {
+                    "description": "power limit supported by internal vconn switch (if supported)",
+                    "comment": "units of watts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "package": {
+                    "description": "component's package size and description",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        }
+    ]
+}
