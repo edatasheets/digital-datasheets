@@ -40,7 +40,7 @@
                 "type": "string"
             },
             "registerAccessType": {
-                "description": " Access type of a Register",
+                "description": "Access type of a Register",
                 "enum":[
                     "RO",
                     "RW"
