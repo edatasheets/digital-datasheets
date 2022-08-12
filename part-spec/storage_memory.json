@@ -1,0 +1,181 @@
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/storage/memory.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "storage/memory",
+    "oneOf": [
+        {
+            "title": "ssd",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "type": {
+                    "description": "type of ssd storage as defined by interface and technology",
+                    "examples": [
+                        "emmc",
+                        "sata",
+                        "nvme"
+                    ],
+                    "type": "string"
+                },
+                "capacity": {
+                    "description": "capacity of SSD",
+                    "comment": "units of Gigabytes (GB)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "dataRate": {
+                    "description": "maximum data rate",
+                    "comment": "units of Gigabytes per second (GBps)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "interface": {
+                    "description": "interface of ssd to host",
+                    "examples": [
+                        "emmc 5.1",
+                        "pcie gen3",
+                        "etc."
+                    ],
+                    "type": "string"
+                },
+                "package": {
+                    "description": "component's package size and description",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "sdCardReader",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "type": {
+                    "description": "type of sd card reader",
+                    "examples": [
+                        "micro",
+                        "mini",
+                        "full size"
+                    ],
+                    "type": "string"
+                },
+                "package": {
+                    "description": "component's package size and description",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "dram",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "type": {
+                    "description": "type of dram",
+                    "examples": [
+                        "lpddr3",
+                        "ddr3",
+                        "lpddr4",
+                        "lpddr4x",
+                        "ddr4",
+                        "lpddr5",
+                        "ddr5"
+                    ],
+                    "type": "string"
+                },
+                "capacity": {
+                    "description": "capacity of dram chip",
+                    "comment": "units of Gigabits (Gb)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "speed": {
+                    "description": "dram maximum speed",
+                    "comment": "units of Megabits per second (Mbps)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "package": {
+                    "description": "component's package size and description",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "rom",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "capacity": {
+                    "description": "capacity of rom",
+                    "comment": "units of Megabits (Mb)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "interface": {
+                    "description": "interface of rom to host",
+                    "type": "string",
+                    "examples": [
+                        "spi",
+                        "i2c"
+                    ]
+                },
+                "qeStatus": {
+                    "description": "indicates whether the QE bit is set",
+                    "type": "boolean"
+                },
+                "package": {
+                    "description": "component's package size and description",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        }
+    ]
+}
