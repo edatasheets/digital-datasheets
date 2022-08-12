@@ -101,6 +101,88 @@
                     }
                 }
             }
+        },
+        {
+            "title": "diode",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "type": {
+                    "description": "type of diode",
+                    "examples": [
+                        "zener",
+                        "schottky",
+                        "esd"
+                    ],
+                    "type": "string"
+                },
+                "vf": {
+                    "description": "forward voltage of a diode",
+                    "comment": "conditions include: forward current of diode under which a given forward voltage was measured",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "ifm": {
+                    "description": "maximum continuous forward current a diode can support",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "ifrm": {
+                    "description": "maximum repetitive peak forward current a diode can support",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "ifsm": {
+                    "description": "maximum non-repetitive surge forward current a diode can support",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "vbr": {
+                    "description": "breakdown voltage of a diode",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "ir": {
+                    "description": "reverse leakage current",
+                    "comment": "conditions include: reverse bias voltage under which reverse leakage current occurs",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "vz": {
+                    "description": "breakdown voltage of a zener diode",
+                    "comment": "conditions include: minimum reverse current condition under which breakdown voltage of a zener diode is achieved",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "vrm": {
+                    "description": "reverse standoff voltage of a tvs diode",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "vcl": {
+                    "description": "clamping voltage of a tvs diode",
+                    "comment": "conditions include: surge current condition under which a tvs clamping voltage occurs",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "esdProtection": {
+                    "description": "whether a diode has built in esd protection",
+                    "type": "boolean"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
         }
     ]
 }
