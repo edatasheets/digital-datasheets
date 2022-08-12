@@ -8,36 +8,12 @@
             "title": "logic gate",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion",
-                "type"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "logicGate"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "type": {
                     "description": "logical operation performed by logic gate",
@@ -46,6 +22,8 @@
                         "or",
                         "nor",
                         "nand",
+                        "xor",
+                        "xnor",
                         "inverter",
                         "buffer",
                         "configurable"
@@ -63,15 +41,16 @@
                 "propagationDelay": {
                     "description": "time between input changing to output changing",
                     "comment": "units of seconds",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
+                "rampTime": {
+                    "description": "time for output to go from 10% nominal output voltage to 90% nominal output voltage",
+                    "comment": "units of seconds",
+                    "$ref": "definitions.json#/unit"
                 },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -86,50 +65,27 @@
             "title": "clock",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "clock"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "fixedFrequency": {
                     "description": "clock frequency value if the clock has a fixed frequency",
                     "comment": "units of Hz",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "minFrequency": {
                     "description": "minimum clock frequency value if the clock has a configurable frequency",
                     "comment": "units of Hz",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "maxFrequency": {
                     "description": "maximum clock frequency value if the clock has a configurable frequency",
                     "comment": "units of Hz",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "numberClockOutputs": {
                     "description": "number of clock outputs in a clock IC",
@@ -146,17 +102,17 @@
                 "jitter": {
                     "description": "cycle to cycle clock jitter",
                     "comment": "units of seconds",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "frequencyTolerance": {
                     "description": "amount of frequency variation specced from nominal frequency",
                     "comment": "units of percentage",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "psrr": {
                     "description": "power supply rejection ratio or ratio between power supply variation and output variation",
                     "comment": "units of dB",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "outputFormat": {
                     "description": "signal format of clock output",
@@ -168,13 +124,9 @@
                     ],
                     "type": "string"
                 },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -189,35 +141,12 @@
             "title": "power sequencing",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "powerSequencing"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "targetApplication": {
                     "description": "description of intended power sequencing chip application (example: KBL SOC, LPDDR4 memory, etc.)",
@@ -231,21 +160,9 @@
                     ],
                     "type": "string"
                 },
-                "firmwareVersion": {
-                    "description": "firmware version of the part",
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",

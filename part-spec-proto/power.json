@@ -8,36 +8,12 @@
             "title": "ldo",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion",
-                "type"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "ldo"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "type": {
                     "description": "ldo type",
@@ -50,136 +26,31 @@
                 "vinMin": {
                     "description": "minimum input voltage under which the part can be expected to operate properly",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "vinMax": {
                     "description": "maximum input voltage under which the part can be expected to operate properly",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "dropoutVoltage": {
                     "description": "nominal dropout voltage for ldo",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "ilim": {
                     "description": "maximum sustained current output current under which the part will operate properly",
                     "comment": "units of amps",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "turnOnTime": {
                     "description": "time for output voltage to go from 10% vout nominal to 90% vout nominal",
                     "comment": "units of seconds",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "definitions.json#/pinSpec"
-                    }
-                }
-            }
-        },
-        {
-            "title": "voltage regulator",
-            "type": "object",
-            "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion",
-                "type"
-            ],
-            "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "voltageRegulator"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
-                },
-                "type": {
-                    "description": "switching voltage regulator type",
-                    "examples": [
-                        "buck",
-                        "boost",
-                        "buck-boost",
-                        "other"
-                    ],
-                    "type": "string"
-                },
-                "vinMin": {
-                    "description": "minimum input voltage under which the part can be expected to operate properly",
-                    "comment": "units of volts",
-                    "type": "number"
-                },
-                "vinMax": {
-                    "description": "maximum input voltage under which the part can be expected to operate properly",
-                    "comment": "units of volts",
-                    "type": "number"
-                },
-                "voutMin": {
-                    "description": "minimum output voltage part can regulate",
-                    "comment": "units of volts",
-                    "type": "number"
-                },
-                "voutMax": {
-                    "description": "maximum output voltage part can regulate",
-                    "comment": "units of volts",
-                    "type": "number"
-                },
-                "fsw": {
-                    "description": "swtiching frequency of voltage regulator",
-                    "comment": "units of hertz",
-                    "type": "number"
-                },
-                "ilim": {
-                    "description": "maximum sustained current output current under which the part will operate properly",
-                    "comment": "units of amps",
-                    "type": "number"
-                },
-                "turnOnTime": {
-                    "description": "time for output voltage to go from 10% vout nominal to 90% vout nominal",
-                    "comment": "units of seconds",
-                    "type": "number"
-                },
-                "integratedFets": {
-                    "description": "whether the regulator contains integrated switching mosfets",
-                    "type": "boolean"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -194,65 +65,42 @@
             "title": "load switch",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "loadSwitch"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "vinMin": {
                     "description": "minimum input voltage under which the part can be expected to operate properly",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "vinMax": {
                     "description": "maximum input voltage under which the part can be expected to operate properly",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "ilim": {
                     "description": "maximum sustained current output current under which the part will operate properly",
                     "comment": "units of amps",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "turnOnTimeNominal": {
                     "description": "nominal time for output voltage to go from 10% vout nominal to 90% vout nominal for fixed turn-on time part",
                     "comment": "units of seconds",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "turnOnTimeMin": {
                     "description": "minimum time for output voltage to go from 10% vout nominal to 90% vout nominal for variable turn-on time part",
                     "comment": "units of seconds",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "turnOnTimeMax": {
                     "description": "minimum time for output voltage to go from 10% vout nominal to 90% vout nominal for variable turn-on time part",
                     "comment": "units of seconds",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "reverseCurrentBlocking": {
                     "description": "whether load switch has capability to block current flow from vout to vin",
@@ -261,15 +109,11 @@
                 "onResistance": {
                     "description": "nominal DC resistance of load switch when enabled",
                     "comment": "units of ohms",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -284,37 +128,12 @@
             "title": "battery charger",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion",
-                "converterType",
-                "batteryConfig"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "batteryCharger"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "converterType": {
                     "description": "switching voltage regulator type",
@@ -347,32 +166,32 @@
                 "vinMin": {
                     "description": "minimum input voltage under which the part can be expected to operate properly",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "vinMax": {
                     "description": "maximum input voltage under which the part can be expected to operate properly",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "voutMin": {
                     "description": "minimum output voltage part can regulate",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "voutMax": {
                     "description": "maximum output voltage part can regulate",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "fsw": {
                     "description": "swtiching frequency of voltage regulator",
                     "comment": "units of hertz",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "ilim": {
                     "description": "maximum sustained current output current under which the part will operate properly",
                     "comment": "units of amps",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "TCPCSupport": {
                     "description": "whether type-C port controller support is built in",
@@ -390,21 +209,9 @@
                     "description": "whether the charger contains integrated switching mosfets",
                     "type": "boolean"
                 },
-                "firmwareVersion": {
-                    "description": "firmware version of the part",
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -419,65 +226,42 @@
             "title": "display backlight driver",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "displayBacklightDriver"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "vinMin": {
                     "description": "minimum input voltage under which the part can be expected to operate properly",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "vinMax": {
                     "description": "maximum input voltage under which the part can be expected to operate properly",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "voutMin": {
                     "description": "minimum output voltage part can regulate",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "voutMax": {
                     "description": "maximum output voltage part can regulate",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "fsw": {
                     "description": "swtiching frequency of voltage regulator",
                     "comment": "units of hertz",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "ilim": {
                     "description": "maximum sustained current output current under which the part will operate properly",
                     "comment": "units of amps",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "integratedFets": {
                     "description": "whether the charger contains integrated switching mosfets",
@@ -486,23 +270,15 @@
                 "currentMatchingAccuracy": {
                     "description": "current matching between LED strings",
                     "comment": "units of percentage",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "numberLEDStrings": {
                     "description": "maximum number of LED strings supported by display driver",
                     "type": "number"
                 },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -517,35 +293,12 @@
             "title": "PMIC",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "pmic"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "targetApplication": {
                     "description": "description of intended PMIC application (example: KBL SOC, LPDDR4 memory, etc.)",
@@ -570,12 +323,12 @@
                 "vinMin": {
                     "description": "minimum input voltage under which the part can be expected to operate properly",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "vinMax": {
                     "description": "maximum input voltage under which the part can be expected to operate properly",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "interface": {
                     "description": "communication interface to host device",
@@ -585,23 +338,11 @@
                         "enables",
                         "etc."
                     ],
-                    "type": "number"
-                },
-                "firmwareVersion": {
-                    "description": "firmware version of the part",
                     "type": "string"
                 },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
