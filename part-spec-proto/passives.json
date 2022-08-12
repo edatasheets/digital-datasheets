@@ -5,326 +5,49 @@
     "title": "passives",
     "oneOf": [
         {
-            "title": "resistor",
-            "type": "object",
-            "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion",
-                "tolerance",
-                "value"
-            ],
-            "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "resistor"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
-                },
-                "tolerance": {
-                    "description": "nominal tolerance of a resistor",
-                    "comment": "units of %",
-                    "type": "number"
-                },
-                "powerRating": {
-                    "description": "measure of power a resistor can dissipate indefinitely without degrading performance",
-                    "comment": "units of watts",
-                    "type": "number"
-                },
-                "package": {
-                    "description": "package size of resistor",
-                    "examples": [
-                        "0201",
-                        "2.0x1.0x0.5"
-                    ],
-                    "type": "string"
-                },
-                "packageFormat": {
-                    "description": "format used for expressing package code",
-                    "examples": [
-                        "metric",
-                        "imperial",
-                        "length(mm)xwidth(mm)xheight(mm)"
-                    ],
-                    "type": "string"
-                },
-                "value": {
-                    "description": "resistance value expressed as a float",
-                    "comment": "units of ohms",
-                    "type": "number"
-                },
-                "humanValue": {
-                    "description": "resistance value expressed with metric prefix",
-                    "comment": "units of ohms",
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "definitions.json#/pinSpec"
-                    }
-                }
-            },
-            "dependencies": {
-                "packageFormat": [
-                    "package"
-                ]
-            }
-        },
-        {
-            "title": "capacitor",
-            "type": "object",
-            "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion",
-                "value",
-                "ratedVoltage"
-            ],
-            "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "capacitor"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
-                },
-                "package": {
-                    "description": "package size of capacitor",
-                    "examples": [
-                        "0201",
-                        "2.0x1.0x0.5"
-                    ],
-                    "type": "string"
-                },
-                "packageFormat": {
-                    "description": "format used for expressing package code",
-                    "examples": [
-                        "metric",
-                        "imperial",
-                        "length(mm)xwidth(mm)xheight(mm)"
-                    ],
-                    "type": "string"
-                },
-                "value": {
-                    "description": "capacitance value",
-                    "comment": "units of farads",
-                    "type": "number"
-                },
-                "humanValue": {
-                    "description": "capacitance value expressed with metric prefix",
-                    "comment": "units of farads",
-                    "type": "string"
-                },
-                "tolerance": {
-                    "description": "nominal tolerance of a capacitor",
-                    "comment": "units of %",
-                    "type": "number"
-                },
-                "ratedVoltage": {
-                    "description": "maximum voltage which may be applied continuously to a capacitor",
-                    "comment": "units of volts",
-                    "type": "number"
-                },
-                "dielectric": {
-                    "description": "dielectric material in a fixed capacitor",
-                    "examples": [
-                        "ceramic",
-                        "C0G",
-                        "NP0",
-                        "X7R",
-                        "Y5V",
-                        "Z5U",
-                        "electrolytic",
-                        "tantalum",
-                        "plasticFilm"
-                    ],
-                    "type": "string"
-                },
-                "polarized": {
-                    "description": "whether a capacitor is polarized",
-                    "type": "boolean"
-                },
-                "esr": {
-                    "description": "equivalent series resistance of a capacitor",
-                    "comment": "units of ohms",
-                    "type": "number"
-                },
-                "maxTemp": {
-                    "description": "maximum temperature under which a capacitor can be expected to reliably operate",
-                    "comment": "units of degrees C",
-                    "type": "number"
-                },
-                "minTemp": {
-                    "description": "minimum temperature under which a capacitor can be expected to reliably operate",
-                    "comment": "units of degrees C",
-                    "type": "number"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "definitions.json#/pinSpec"
-                    }
-                }
-            },
-            "dependencies": {
-                "packageFormat": [
-                    "package"
-                ]
-            }
-        },
-        {
             "title": "inductor",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion",
+                "componentID",
                 "value"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "inductor"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
-                },
-                "package": {
-                    "description": "package size of inductor",
-                    "examples": [
-                        "0201",
-                        "2.0x1.0x0.5"
-                    ],
-                    "type": "string"
-                },
-                "packageFormat": {
-                    "description": "format used for expressing package code",
-                    "examples": [
-                        "metric",
-                        "imperial",
-                        "length(mm)xwidth(mm)xheight(mm)"
-                    ],
-                    "type": "string"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "value": {
                     "description": "inductance value",
                     "comment": "units of henries",
-                    "type": "number"
-                },
-                "humanValue": {
-                    "description": "inductance value expressed with metric prefix",
-                    "comment": "units of henries",
-                    "type": "string"
+                    "$ref": "definitions.json#/unit"
                 },
                 "tolerance": {
                     "description": "nominal tolerance of inductor",
                     "comment": "units of %",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "isat": {
                     "description": "saturation current or the applied DC current at which inductance drops below a specified level, typically 30% of the specced inductance",
                     "comment": "units of amps",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "irms": {
                     "description": "applied DC current that produces an inductor temperature rise of 40 deg C",
                     "comment": "units of amps",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "dcr": {
                     "description": "dc resistance of an inductor",
                     "comment": "units of ohms",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "acr": {
-                    "description": "ac resistance of an inductor at various frequency points",
-                    "type": "number",
-                    "examples": [
-                        "dictionary<frequency><AC resistance>"
-                    ],
-                    "comment": "units of dictionary<Hz><ohms>"
+                    "description": "graph object to capture ac resistance of an inductor at various frequency points",
+                    "$ref": "definitions.json#/graphDefiniton"
                 },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -333,103 +56,50 @@
                         "$ref": "definitions.json#/pinSpec"
                     }
                 }
-            },
-            "dependencies": {
-                "packageFormat": [
-                    "package"
-                ]
             }
         },
         {
             "title": "common mode choke",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "commonModeChoke"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
-                },
-                "package": {
-                    "description": "package size of common mode choke",
-                    "examples": [
-                        "0201",
-                        "2.0x1.0x0.5"
-                    ],
-                    "type": "string"
-                },
-                "packageFormat": {
-                    "description": "format used for expressing package code",
-                    "examples": [
-                        "metric",
-                        "imperial",
-                        "length(mm)xwidth(mm)xheight(mm)"
-                    ],
-                    "type": "string"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "diffModeCutoff": {
                     "description": "frequency at which the differential mode attenuation equals -3dB",
                     "comment": "units of Hz",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "commonModeAttenuation": {
-                    "description": "common mode attenuation of a common mode choke at various frequencies",
-                    "examples": [
-                        "dictionary<frequency><attenuation>"
-                    ],
-                    "comment": "units of dictionary<Hz><dB>",
-                    "type": "number"
+                    "description": "graph object to capture common mode attenuation of a common mode choke at various frequencies",
+                    "$ref": "definitions.json#/graphDefiniton"
                 },
                 "dcr": {
                     "description": "dc resistance of a common mode choke",
                     "comment": "units of ohms",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "irms": {
                     "description": "applied DC current that produces a common mode choke temperature rise of 40 deg C",
                     "comment": "units of amps",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "intendedApplication": {
                     "description": "intended application of a particular common mode choke",
                     "examples": [
-                        "[USB2.0",
+                        "USB2.0",
                         "USB3.0",
-                        "LVDS]"
+                        "LVDS"
                     ],
                     "type": "string"
                 },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -438,91 +108,42 @@
                         "$ref": "definitions.json#/pinSpec"
                     }
                 }
-            },
-            "dependencies": {
-                "packageFormat": [
-                    "package"
-                ]
             }
         },
         {
             "title": "ferrite bead",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "ferriteBead"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
-                },
-                "package": {
-                    "description": "package size of ferrite bead",
-                    "examples": [
-                        "0201",
-                        "2.0x1.0x0.5"
-                    ],
-                    "type": "string"
-                },
-                "packageFormat": {
-                    "description": "format used for expressing package code",
-                    "examples": [
-                        "metric",
-                        "imperial",
-                        "length(mm)xwidth(mm)xheight(mm)"
-                    ],
-                    "type": "string"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "dcr": {
                     "description": "dc resistance of ferrite bead",
                     "comment": "units of ohms",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "irms": {
                     "description": "applied DC current that produces a ferrite bead temperature rise of 40 deg C",
                     "comment": "units of amps",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "impedance100MHz": {
                     "description": "impedance of ferrite bead under standard testing conditions at 100MHz",
                     "comment": "units of ohms",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "impedanceTolerance": {
                     "description": "variation of ferrite bead impedance expressed as +/- percentage",
                     "comment": "units of percentage",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -531,11 +152,6 @@
                         "$ref": "definitions.json#/pinSpec"
                     }
                 }
-            },
-            "dependencies": {
-                "packageFormat": [
-                    "package"
-                ]
             }
         }
     ]

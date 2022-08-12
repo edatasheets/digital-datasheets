@@ -8,35 +8,12 @@
             "title": "accelerometer",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "accelerometer"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "accelerationRanges": {
                     "description": "range of force that accelerometer can measure",
@@ -76,23 +53,11 @@
                 "bandwidth": {
                     "description": "bandwidth of acceleration measurement",
                     "comment": "units of Hz",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
-                "firmwareVersion": {
-                    "description": "firmware version of the part",
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -107,35 +72,12 @@
             "title": "accelerometer/gyro",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "accelerometerGyro"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "accelerationRanges": {
                     "description": "range of force that accelerometer can measure",
@@ -192,21 +134,9 @@
                     ],
                     "type": "string"
                 },
-                "firmwareVersion": {
-                    "description": "firmware version of the part",
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -221,36 +151,12 @@
             "title": "magnetic sensor",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion",
-                "type"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "magneticSensor"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "type": {
                     "description": "method by which magnetism is detected",
@@ -270,21 +176,9 @@
                     "comment": "units of mT",
                     "type": "number"
                 },
-                "firmwareVersion": {
-                    "description": "firmware version of the part",
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -299,36 +193,12 @@
             "title": "thermal",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion",
-                "type"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "thermal"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "type": {
                     "description": "method by which temperature is detected",
@@ -353,13 +223,9 @@
                     "comment": "units of degreesC/LSD",
                     "type": "number"
                 },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",

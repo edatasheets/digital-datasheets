@@ -8,35 +8,12 @@
             "title": "usb-c port controller",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "usbCPortController"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "pdVersion": {
                     "description": "version of power delivery spec implemented by controller",
@@ -53,23 +30,11 @@
                 "vconnPowerLimit": {
                     "description": "power limit supported by internal vconn switch (if supported)",
                     "comment": "units of watts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
-                "firmwareVersion": {
-                    "description": "firmware version of the part",
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -84,35 +49,12 @@
             "title": "bc12",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "bc12"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "hostMode": {
                     "description": "whether host mode is supported by bc12 chip",
@@ -122,13 +64,9 @@
                     "description": "whether device mode is supported by bc12 chip",
                     "type": "boolean"
                 },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -143,35 +81,12 @@
             "title": "pd power mux",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "pdPowerMux"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "fastRoleSwap": {
                     "description": "whether fast role swap is supported",
@@ -192,20 +107,16 @@
                 "ocp": {
                     "description": "over current protection limit provided on vbus power path",
                     "comment": "units of amps",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "ovp": {
                     "description": "over voltage protection limit provided on vbus power path",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -220,35 +131,12 @@
             "title": "usb-c redriver/retimer",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "usbCRedriverRetimer"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "auxMux": {
                     "description": "whether chip supports internal muxing of aux pins",
@@ -289,21 +177,9 @@
                     ],
                     "type": "string"
                 },
-                "firmwareVersion": {
-                    "description": "firmware version of the part",
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -318,35 +194,12 @@
             "title": "usb-c mux",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "usbCMux"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "vconnPowerSupport": {
                     "description": "whether controller has support for vconn power",
@@ -355,7 +208,7 @@
                 "vconnPowerLimit": {
                     "description": "power limit supported by internal vconn switch (if supported)",
                     "comment": "units of watts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "redriving": {
                     "description": "whether a mux includes redriving support",
@@ -400,21 +253,9 @@
                     ],
                     "type": "string"
                 },
-                "firmwareVersion": {
-                    "description": "firmware version of the part",
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -423,44 +264,18 @@
                         "$ref": "definitions.json#/pinSpec"
                     }
                 }
-            },
-            "dependencies": {
-                "vconnPowerLimit": ["vconnPowerSupport"]
             }
         },
         {
             "title": "usb-c mux/port controller",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "usbCMuxPortController"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "pdVersion": {
                     "description": "version of power delivery spec implemented by controller",
@@ -477,7 +292,7 @@
                 "vconnPowerLimit": {
                     "description": "power limit supported by internal vconn switch (if supported)",
                     "comment": "units of watts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "redriving": {
                     "description": "whether a mux includes redriving support",
@@ -522,21 +337,9 @@
                     ],
                     "type": "string"
                 },
-                "firmwareVersion": {
-                    "description": "firmware version of the part",
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -545,44 +348,18 @@
                         "$ref": "definitions.json#/pinSpec"
                     }
                 }
-            },
-            "dependencies": {
-                "vconnPowerLimit": ["vconnPowerSupport"]
             }
         },
         {
             "title": "redriver",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "redriver"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "numberChannels": {
                     "description": "number of lanes (single ended or differential) supported by redriver",
@@ -600,7 +377,7 @@
                 "maxDataRate": {
                     "description": "maximum data rate supported by redriver",
                     "comment": "units of Hz",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
@@ -610,13 +387,9 @@
                     "description": "software version of the part",
                     "type": "string"
                 },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -631,35 +404,12 @@
             "title": "bridge chip",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "bridgeChip"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "muxRatio": {
                     "description": "ratio of inputs to outputs",
@@ -685,21 +435,9 @@
                     ],
                     "type": "string"
                 },
-                "firmwareVersion": {
-                    "description": "firmware version of the part",
-                    "type": "string"
-                },
-                "softwareVersion": {
-                    "description": "software version of the part",
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -714,35 +452,12 @@
             "title": "level shifter",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "levelShifter"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "numberChannels": {
                     "description": "number of lanes (single ended or differential) supported by redriver",
@@ -760,20 +475,16 @@
                 "inputVoltage": {
                     "description": "input voltage level of level shifter",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "outputVoltage": {
                     "description": "output voltage level of level shifter",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",

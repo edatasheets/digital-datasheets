@@ -5,174 +5,15 @@
     "title": "semiconductor",
     "oneOf": [
         {
-            "title": "transistor",
-            "type": "object",
-            "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion",
-                "type",
-                "channel"
-            ],
-            "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "transistor"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
-                },
-                "type": {
-                    "description": "type of transistor",
-                    "examples": [
-                        "mosfet",
-                        "bjt",
-                        "jfet",
-                        "etc."
-                    ],
-                    "type": "string"
-                },
-                "channel": {
-                    "description": "doping of a transistor's channel - describes whether a transistor is n-type or p-type",
-                    "enum": [
-                        "nType",
-                        "pType"
-                    ],
-                    "comment": "units of string"
-                },
-                "vgsMax": {
-                    "description": "maximum gate to source voltage difference that can be continously applied to a mosfet",
-                    "comment": "units of volts",
-                    "type": "number"
-                },
-                "vdsMax": {
-                    "description": "maximum drain to source voltage difference that can be continously applied to a mosfet",
-                    "comment": "units of volts",
-                    "type": "number"
-                },
-                "vgsThMax": {
-                    "description": "maximum gate to source voltage difference required to produce a conducting path between drain and source",
-                    "comment": "units of volts",
-                    "type": "number"
-                },
-                "iDrain": {
-                    "description": "maximum continous DC current that can flow through a mosfet channel",
-                    "comment": "units of amps",
-                    "type": "number"
-                },
-                "idPulsed": {
-                    "description": "maximum pulsed DC current that can flow through a mosfet channel",
-                    "comment": "units of amps",
-                    "type": "number"
-                },
-                "rdson": {
-                    "description": "drain source on resistance of a mosfet",
-                    "comment": "units of ohms",
-                    "type": "number"
-                },
-                "rdsonCondition": {
-                    "description": "description of the gate-source voltage and drain current under which rdson is measured",
-                    "examples": [
-                        "vgs = 2.5V",
-                        "id = 1A"
-                    ],
-                    "type": "string"
-                },
-                "qg": {
-                    "description": "total gate charge of a mosfet",
-                    "comment": "units of nC",
-                    "type": "number"
-                },
-                "qgd": {
-                    "description": "gate to drain charge of a mosfet",
-                    "comment": "units of nC",
-                    "type": "number"
-                },
-                "qgs": {
-                    "description": "gate to source charge of a mosfet",
-                    "comment": "units of nC",
-                    "type": "number"
-                },
-                "chargeCondition": {
-                    "description": "description of the drain-source voltage and drain current under which gate charge is measured",
-                    "examples": [
-                        "vds = 6V",
-                        "id = 1A"
-                    ],
-                    "type": "string"
-                },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "definitions.json#/pinSpec"
-                    }
-                }
-            },
-            "dependencies": {
-                "rdsCondition": ["rdson"]
-            }
-        },
-        {
             "title": "diode",
             "type": "object",
             "required": [
-                "partType",
-                "manufacturer",
-                "mpn",
-                "datasheetVersion",
-                "type"
+                "componentID"
             ],
             "properties": {
-                "partType": {
-                    "description": "part type",
-                    "type": "string",
-                    "enum": [
-                        "diode"
-                    ]
-                },
-                "manufacturer": {
-                    "description": "company that manufacturers the part",
-                    "type": "string"
-                },
-                "mpn": {
-                    "description": "manufacturer part number",
-                    "type": "string"
-                },
-                "datasheetVersion": {
-                    "description": "datasheet version encoded in this document",
-                    "type": "string"
-                },
-                "eolDate": {
-                    "description": "date this part will no longer be supported by manufacturer",
-                    "type": "string",
-                    "format": "date"
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
                 },
                 "type": {
                     "description": "type of diode",
@@ -185,80 +26,56 @@
                 },
                 "vf": {
                     "description": "forward voltage of a diode",
-                    "comment": "units of volts",
-                    "type": "number"
-                },
-                "vfCondition": {
-                    "description": "forward current of diode under which a given forward voltage was measured",
-                    "comment": "units of amps",
-                    "type": "number"
+                    "comment": "conditions include: forward current of diode under which a given forward voltage was measured",
+                    "$ref": "definitions.json#/conditionalProperty"
                 },
                 "ifm": {
                     "description": "maximum continuous forward current a diode can support",
                     "comment": "units of amps",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "ifrm": {
                     "description": "maximum repetitive peak forward current a diode can support",
                     "comment": "units of amps",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "ifsm": {
                     "description": "maximum non-repetitive surge forward current a diode can support",
                     "comment": "units of amps",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "vbr": {
                     "description": "breakdown voltage of a diode",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "ir": {
                     "description": "reverse leakage current",
-                    "comment": "units of amps",
-                    "type": "number"
-                },
-                "irCondition": {
-                    "description": "reverse bias voltage under which reverse leakage current occurs",
-                    "comment": "units of volts",
-                    "type": "number"
+                    "comment": "conditions include: reverse bias voltage under which reverse leakage current occurs",
+                    "$ref": "definitions.json#/conditionalProperty"
                 },
                 "vz": {
                     "description": "breakdown voltage of a zener diode",
-                    "comment": "units of volts",
-                    "type": "number"
-                },
-                "vzCondition": {
-                    "description": "minimum reverse current condition under which breakdown voltage of a zener diode is achieved",
-                    "comment": "units of amps",
-                    "type": "number"
+                    "comment": "conditions include: minimum reverse current condition under which breakdown voltage of a zener diode is achieved",
+                    "$ref": "definitions.json#/conditionalProperty"
                 },
                 "vrm": {
                     "description": "reverse standoff voltage of a tvs diode",
                     "comment": "units of volts",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "vcl": {
                     "description": "clamping voltage of a tvs diode",
-                    "comment": "units of volts",
-                    "type": "number"
-                },
-                "vclCondition": {
-                    "description": "surge current condition under which a tvs clamping voltage occurs",
-                    "comment": "units of amps",
-                    "type": "number"
+                    "comment": "conditions include: surge current condition under which a tvs clamping voltage occurs",
+                    "$ref": "definitions.json#/conditionalProperty"
                 },
                 "esdProtection": {
                     "description": "whether a diode has built in esd protection",
                     "type": "boolean"
                 },
-                "rohs": {
-                    "description": "whether a part is rohs compliant",
-                    "type": "boolean"
-                },
-                "automotive": {
-                    "description": "whether a part is automotive qualified",
-                    "type": "boolean"
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -267,12 +84,6 @@
                         "$ref": "definitions.json#/pinSpec"
                     }
                 }
-            },
-            "dependencies": {
-                "vfCondition": ["vf"],
-                "irCondition": ["ir"],
-                "vzCondition": ["vz"],
-                "vclCondition": ["vcl"]
             }
         }
     ]
