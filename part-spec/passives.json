@@ -232,6 +232,156 @@
                     "$ref": "definitions.json#/package"
                 }
             }
+        },
+        {
+            "title": "inductor",
+            "type": "object",
+            "required": [
+                "componentID",
+                "value"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "value": {
+                    "description": "inductance value",
+                    "comment": "units of henries",
+                    "$ref": "definitions.json#/unit"
+                },
+                "tolerance": {
+                    "description": "nominal tolerance of inductor",
+                    "comment": "units of %",
+                    "$ref": "definitions.json#/unit"
+                },
+                "saturationCurrent": {
+                    "description": "saturation current (ISAT) or the applied DC current at which inductance drops below a specified level, typically 30% of the specced inductance",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "irms": {
+                    "description": "applied DC current (IRMS) that produces an inductor temperature rise of 40 deg C",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "dcResistance": {
+                    "description": "dc resistance (DCR) of an inductor",
+                    "comment": "units of ohms",
+                    "$ref": "definitions.json#/unit"
+                },
+                "acResistance": {
+                    "description": "graph object to capture ac resistance (ACR) of an inductor at various frequency points",
+                    "$ref": "definitions.json#/graphDefiniton"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "common mode choke",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "diffModeCutoff": {
+                    "description": "frequency at which the differential mode attenuation equals -3dB",
+                    "comment": "units of Hz",
+                    "$ref": "definitions.json#/unit"
+                },
+                "commonModeAttenuation": {
+                    "description": "graph object to capture common mode attenuation of a common mode choke at various frequencies",
+                    "$ref": "definitions.json#/graphDefiniton"
+                },
+                "dcResistance": {
+                    "description": "dc resistance (DCR) of a common mode choke",
+                    "comment": "units of ohms",
+                    "$ref": "definitions.json#/unit"
+                },
+                "irms": {
+                    "description": "applied DC current (IRMS) that produces a common mode choke temperature rise of 40 deg C",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "intendedApplication": {
+                    "description": "intended application of a particular common mode choke",
+                    "examples": [
+                        "USB2.0",
+                        "USB3.0",
+                        "LVDS"
+                    ],
+                    "type": "string"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "ferrite bead",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "dcResistance": {
+                    "description": "dc resistance (DCR) of ferrite bead",
+                    "comment": "units of ohms",
+                    "$ref": "definitions.json#/unit"
+                },
+                "irms": {
+                    "description": "applied DC current (IRMS) that produces a ferrite bead temperature rise of 40 deg C",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "impedance100MHz": {
+                    "description": "impedance of ferrite bead under standard testing conditions at 100MHz",
+                    "comment": "units of ohms",
+                    "$ref": "definitions.json#/unit"
+                },
+                "impedanceTolerance": {
+                    "description": "variation of ferrite bead impedance expressed as +/- percentage",
+                    "comment": "units of percentage",
+                    "$ref": "definitions.json#/unit"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
         }
     ]
 }
