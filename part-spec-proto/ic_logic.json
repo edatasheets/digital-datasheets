@@ -22,6 +22,8 @@
                         "or",
                         "nor",
                         "nand",
+                        "xor",
+                        "xnor",
                         "inverter",
                         "buffer",
                         "configurable"
@@ -38,6 +40,11 @@
                 },
                 "propagationDelay": {
                     "description": "time between input changing to output changing",
+                    "comment": "units of seconds",
+                    "$ref": "definitions.json#/unit"
+                },
+                "rampTime": {
+                    "description": "time for output to go from 10% nominal output voltage to 90% nominal output voltage",
                     "comment": "units of seconds",
                     "$ref": "definitions.json#/unit"
                 },

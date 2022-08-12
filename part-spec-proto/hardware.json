@@ -8,7 +8,8 @@
             "title": "switch",
             "type": "object",
             "required": [
-                "componentID"
+                "componentID",
+                "onResistance"
             ],
             "properties": {
                 "componentID": {
@@ -85,7 +86,8 @@
             "title": "connector",
             "type": "object",
             "required": [
-                "componentID"
+                "componentID",
+                "numberPins"
             ],
             "properties": {
                 "componentID": {
@@ -129,6 +131,10 @@
                 "keying": {
                     "description": "property describing whether a connector has an asymmetry to prevent it from being plugged in the wrong direction",
                     "type": "boolean"
+                },
+                "numberPins": {
+                    "description": "number of pins on the connector",
+                    "type": "number"
                 },
                 "package": {
                     "description": "package size of resistor",
