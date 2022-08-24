@@ -30,7 +30,7 @@
                          "1.2",
                          "1.3"
                     ],
-                    "type": "number"
+                    "type": "string"
                 },
                 "roleSupported": {
                     "description": "roles supported by pd controller",
@@ -42,7 +42,7 @@
                      "type": "string"
                 },
                 "fastRoleSwapSupport": {
-                    "description": "whether the pd controller supports fast rope swap (FRS)",
+                    "description": "whether the pd controller supports fast role swap (FRS)",
                     "type": "boolean"
                 },
                 "vconnPowerSupport": {
@@ -61,10 +61,10 @@
                 },
                 "vconnOverCurrentLimit": {
                     "description": "over current limit supported by internal vconn switch (if supported)",
-                    "comment": "units of ampss",
+                    "comment": "units of amps",
                     "$ref": "definitions.json#/unit"
                 },
-                "vbusDischargeSwitch": {
+                "integratedVbusDischargeSwitch": {
                     "description": "whether the pd controller has one or more integrated vbus discharge switches ",
                     "type": "boolean"
                 },
