@@ -8,7 +8,8 @@
             "title": "ssd",
             "type": "object",
             "required": [
-                "componentID"
+                "componentID",
+                "capacity"
             ],
             "properties": {
                 "componentID": {
@@ -18,7 +19,6 @@
                 "type": {
                     "description": "type of ssd storage as defined by interface and technology",
                     "examples": [
-                        "emmc",
                         "sata",
                         "nvme"
                     ],
@@ -37,8 +37,8 @@
                 "interface": {
                     "description": "interface of ssd to host",
                     "examples": [
-                        "emmc 5.1",
                         "pcie gen3",
+                        "sata",
                         "etc."
                     ],
                     "type": "string"
@@ -57,10 +57,11 @@
             }
         },
         {
-            "title": "sdCardReader",
+            "title": "sd card",
             "type": "object",
             "required": [
-                "componentID"
+                "componentID",
+                "capacity"
             ],
             "properties": {
                 "componentID": {
@@ -68,13 +69,23 @@
                     "$ref": "definitions.json#/componentID"
                 },
                 "type": {
-                    "description": "type of sd card reader",
+                    "description": "type of sd card",
                     "examples": [
                         "micro",
                         "mini",
                         "full size"
                     ],
                     "type": "string"
+                },
+                "capacity": {
+                    "description": "capacity of SD card",
+                    "comment": "units of Gigabytes (GB)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "dataRate": {
+                    "description": "maximum data rate",
+                    "comment": "units of Megagabytes per second (MBps)",
+                    "$ref": "definitions.json#/unit"
                 },
                 "package": {
                     "description": "component's package size and description",
@@ -93,7 +104,8 @@
             "title": "dram",
             "type": "object",
             "required": [
-                "componentID"
+                "componentID",
+                "capacity"
             ],
             "properties": {
                 "componentID": {
@@ -115,7 +127,7 @@
                 },
                 "capacity": {
                     "description": "capacity of dram chip",
-                    "comment": "units of Gigabits (Gb)",
+                    "comment": "units of Gigabytes (GB)",
                     "$ref": "definitions.json#/unit"
                 },
                 "speed": {
@@ -149,7 +161,7 @@
                 },
                 "capacity": {
                     "description": "capacity of rom",
-                    "comment": "units of Megabits (Mb)",
+                    "comment": "units of Megabytes (MB)",
                     "$ref": "definitions.json#/unit"
                 },
                 "interface": {
