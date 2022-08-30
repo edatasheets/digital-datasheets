@@ -8,7 +8,8 @@
             "title": "logic gate",
             "type": "object",
             "required": [
-                "componentID"
+                "componentID",
+                "type"
             ],
             "properties": {
                 "componentID": {
