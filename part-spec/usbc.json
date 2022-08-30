@@ -19,8 +19,8 @@
                 "pdVersion": {
                     "description": "version of power delivery spec implemented by controller",
                     "examples": [
-                        "pd2",
-                        "pd3"
+                        "pd2.0",
+                        "pd3.1"
                     ],
                     "type": "string"
                 },
@@ -32,7 +32,7 @@
                     ],
                     "type": "string"
                 },
-                "roleSupported": {
+                "powerRoleSupported": {
                     "description": "roles supported by pd controller",
                     "examples": [
                         "Source",
