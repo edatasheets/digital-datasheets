@@ -47,7 +47,7 @@
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
-                "vdsBreakdownVoltage": {
+                "vdsVbr": {
                     "description": "drain to source breakdown voltage of a mosfet",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
@@ -62,7 +62,7 @@
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
-                "vsdDiodeForwardVoltage": {
+                "vsdDiodeVf": {
                     "description": "reverse diode forward voltage when a mosfet is in off-state",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
@@ -180,6 +180,15 @@
                     "$comment": "conditions include body diode forward current value and ramp rate",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
+                "powerDissipation": {
+                    "description": "maximum power dissipation a mosfet can handle",
+                    "$comment": "conditions include temeprature",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "pdVsTemp": {
+                    "description": "graph of power dissipation vs temperature (Vgs)",
+                    "$ref": "graph.json#/graphDefiniton"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
@@ -258,6 +267,35 @@
                     "description": "clamping voltage of a tvs diode",
                     "comment": "conditions include: surge current condition under which a tvs clamping voltage occurs",
                     "$ref": "definitions.json#/conditionalProperty"
+                },
+                "vr": {
+                    "description": "maximum continuous reverse biased voltage a diode can support",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "vrrm": {
+                    "description": "maximum repetitive reverse voltage pulses a diode can support",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "cd": {
+                    "description": "diode junction capacitance - between the anode and cathode- in reverse bias condition",
+                    "comment": "units of farads",
+                    "$ref": "definitions.json#/unit"
+                },
+                "trr": {
+                    "description": "reverse recovery time it takes the diode to stop conducting when its voltage changes from forward-bias to reverse-bias",
+                    "comment": "units of seconds",
+                    "$ref": "definitions.json#/unit"
+                },
+                "powerDissipation": {
+                    "description": "maximum power dissipation of a forward biased diode",
+                    "$comment": "conditions include temeprature",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "ifVsVf": {
+                    "description": "graph of forward current (If) vs forward voltage (Vf)",
+                    "$ref": "graph.json#/graphDefiniton"
                 },
                 "esdProtection": {
                     "description": "whether a diode has built in esd protection",
