@@ -1,0 +1,101 @@
+{
+    "registerDefiniton": {
+        "type": "object",
+        "required": [
+            "registerName",
+            "registerAddressOffset",
+            "registerSize"
+        ],
+        "properties": {
+            "registerName": {
+                "description": "Name of a register",
+                "type": "string"
+            },
+            "registerLongName": {
+                "description": "Full Name of a register",
+                "type": "string"
+            },
+            "registerAddressOffset": {
+                "description": "Address of a register",
+                "type": "string"
+            },
+            "registerSize": {
+                "description": "Size of a register",
+                "$ref": "definitions.json#/unit"
+            },
+            "registerType": {
+                "description": "Type of a register",
+                "examples": [
+                    "data registers", 
+                    "address registers"
+                ],
+                "type": "string"
+            },
+            "registerResetValue": {
+                "description": "Reset value of a register",
+                "type": "string"
+            },
+            "registerValue": {
+                "description": "Value of a register",
+                "type": "string"
+            },
+            "registerAccessType": {
+                "description": "Access type of a Register",
+                "enum":[
+                    "RO",
+                    "RW"
+                ],
+                "type": "string"
+            },
+            "registerBitField": {
+                "description": "Describes the bit fields in the register",
+                "$ref": "#/defs/registerBitField"
+            }
+        }
+    },
+    "$defs": {
+        "registerBitField": {
+            "type": "object",
+            "properties": {
+                "bitFieldName": {
+                    "description": "Name of the bit field",
+                    "type": "string"
+                },
+                "bitFieldLongName": {
+                    "description": "Long Name of the bit field",
+                    "type": "string"
+                },
+                "bitFieldDescription": {
+                    "description": "Describes the bit field",
+                    "type": "string"
+                },
+                "bitFieldNumber": {
+                    "description": "Number of a bitfield",
+                    "type": "number",
+                    "comment": "LSB is number 0"
+                },
+                "bitFieldRange": {
+                    "description": "Range of the bit field",
+                    "type": "string",
+                    "examples": [
+                        "4:2",
+                        "7:0"
+                    ]
+                },
+                "bitFieldResetValue": {
+                    "description": "Reset value of a bit field",
+                    "type": "string"
+                },
+                "bitFieldAccessType": {
+                    "description": "Access type of a bit field",
+                    "enum":[
+                        "RO",
+                        "RW"
+                    ],
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
+   
