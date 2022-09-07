@@ -1,0 +1,82 @@
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/ic micro.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "ic micro",
+    "oneOf": [
+        {
+            "title": "microcontroller/ec",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "onChipFlash": {
+                    "description": "quantity of built-in flash in a microprocessor",
+                    "comment": "units of kilobytes",
+                    "$ref": "definitions.json#/unit"
+                },
+                "onChipRAM": {
+                    "description": "quantity of built-in RAM in a microprocessor",
+                    "comment": "units of kilobytes",
+                    "$ref": "definitions.json#/unit"
+                },
+                "onChipROM": {
+                    "description": "quantity of built-in ROM in a microprocessor",
+                    "comment": "units of kilobytes",
+                    "$ref": "definitions.json#/unit"
+                },
+                "coreProcessorCortex": {
+                    "description": "description of core processor cortex",
+                    "examples": [
+                        "Cortex-M4"
+                    ],
+                    "type": "string"
+                },
+                "coreArchitectureBits": {
+                    "description": "number of bits of data a CPU can transfer per clock cycle",
+                    "examples": [
+                        "32-bit"
+                    ],
+                    "type": "string"
+                },
+                "clockSpeed": {
+                    "description": "speed of main CPU clock",
+                    "comment": "units of hertz",
+                    "$ref": "definitions.json#/unit"
+                },
+                "firmwareVersion": {
+                    "description": "firmware version of the part",
+                    "type": "string"
+                },
+                "activePower": {
+                    "description": "average power of device in active state",
+                    "comment": "units of mW",
+                    "$ref": "definitions.json#/unit"
+                },
+                "standbyPower": {
+                    "description": "average power of device in standby state",
+                    "comment": "units of uW",
+                    "$ref": "definitions.json#/unit"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                },
+                "package": {
+                    "description": "component's package size and description",
+                     "items": {
+                        "$ref": "definitions.json#/package"
+                        }
+                    }
+            }
+        }
+    ]
+}
