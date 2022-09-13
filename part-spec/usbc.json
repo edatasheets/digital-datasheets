@@ -1,0 +1,184 @@
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/usbc.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "usbc",
+    "oneOf": [
+        {
+            "title": "usb-c pd controller",
+            "type": "object",
+            "required": [
+                "componentID",
+                "pdVersion"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "pdVersion": {
+                    "description": "version of power delivery spec implemented by controller",
+                    "examples": [
+                        "pd2.0",
+                        "pd3.1"
+                    ],
+                    "type": "string"
+                },
+                "usbTypecRevision": {
+                    "description": "usb type-c spec revision implemented by controller",
+                    "examples": [
+                         "1.2",
+                         "1.3"
+                    ],
+                    "type": "string"
+                },
+                "powerRoleSupported": {
+                    "description": "roles supported by pd controller",
+                    "examples": [
+                        "Source",
+                        "Sink",
+                        "DRP"
+                     ],
+                     "type": "string"
+                },
+                "fastRoleSwapSupport": {
+                    "description": "whether the pd controller supports fast role swap (FRS)",
+                    "type": "boolean"
+                },
+                "vconnPowerSupport": {
+                    "description": "whether the pd controller has support for vconn power",
+                    "type": "boolean"
+                },
+                "vconnPowerLimit": {
+                    "description": "power limit supported by internal vconn switch (if supported)",
+                    "comment": "units of watts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "vconnMaxCurrent": {
+                    "description": "maximum continuous current supported by internal vconn switch (if supported)", 
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "vconnOverCurrentLimit": {
+                    "description": "over current limit supported by internal vconn switch (if supported)",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "integratedVbusDischargeSwitch": {
+                    "description": "whether the pd controller has one or more integrated vbus discharge switches ",
+                    "type": "boolean"
+                },
+                "integratedLoadSwitch": {
+                    "description": "whether the pd controller has one or more integrated load switches ",
+                    "type": "boolean"
+                }, 
+                "maxSinkCurrent": {
+                    "description": "maximum continuous current supported by pd controller integrated sink load switch",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "maxSourceCurrent": {
+                    "description": "maximum continuous current supported by pd controller integrated source load switch",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "sinkfetOverCurrentLimit": {
+                    "description": "over current limit supported by pd controller integrated sink load switch",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "sourcefetOverCurrentLimit": {
+                    "description": "over current limit supported by pd controller integrated source load switch",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "onResistanceSinkFet": {
+                    "description": "on-resistance of the integrated sink load switch",
+                    "comment": "units of ohms",
+                    "$ref": "definitions.json#/unit"
+                },
+                "onResistanceSourceFet": {
+                    "description": "on-resistance of the integrated source load switch",
+                    "comment": "units of ohms",
+                    "$ref": "definitions.json#/unit"
+                },
+                "activeCurrent": {
+                    "description": "active current of pd controller (during PD communication)",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "shutDownCurrent": {
+                    "description": "shutdown current of pd controller",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "idleCurrent": {
+                    "description": "idle current of pd controller (cable connected but no PD communiation)",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "thermalShudownThresholdRising": {
+                    "description": "Thermal Shudown (tsd) Threshold with temperature rising",
+                    "comment": "units of celsius",
+                     "$ref": "definitions.json#/unit"
+                },
+                "thermalShudownThresholdFalling": {
+                    "description": "Thermal Shudown (tsd) Threshold with temperature falling",
+                    "comment": "units of celsius",
+                     "$ref": "definitions.json#/unit"
+                },
+                "vbusOvervoltageProtectionThresholdRising": {
+                    "description": "Overvoltage Protection (OVP) Threshold with vbus voltage rising",
+                    "comment": "units of volts",
+                     "$ref": "definitions.json#/unit"
+                },
+                "vbusOvervoltageProtectionThresholdFalling": {
+                    "description": "Overvoltage Protection (OVP) Threshold with vbus voltage falling",
+                    "comment": "units of volts",
+                     "$ref": "definitions.json#/unit"
+                },
+                "vbusUndervoltageLockoutThresholdRising": {
+                    "description": "Undervoltage Lockout Out (UVLO) Threshold with vbus voltage rising",
+                    "comment": "units of volts",
+                     "$ref": "definitions.json#/unit"
+                },
+                "vbusUndervoltageLockoutThresholdFalling": {
+                    "description": "Undervoltage Lockout Out (UVLO) Threshold with vbus voltage rising",
+                    "comment": "units of volts",
+                     "$ref": "definitions.json#/unit"
+                },
+                "vconnOvervoltageProtectionThresholdRising": {
+                    "description": "Overvoltage Protection (OVP) Threshold with vconn voltage rising",
+                    "comment": "units of volts",
+                     "$ref": "definitions.json#/unit"
+                },
+                "vconnOvervoltageProtectionThresholdFalling": {
+                    "description": "Overvoltage Protection (OVP) Threshold with vconn voltage falling",
+                    "comment": "units of volts",
+                     "$ref": "definitions.json#/unit"
+                },
+                "vconnUndervoltageLockoutThresholdRising": {
+                    "description": "Undervoltage Lockout Out (UVLO) Threshold with vconn voltage rising",
+                    "comment": "units of volts",
+                     "$ref": "definitions.json#/unit"
+                },
+                "vconnUndervoltageLockoutThresholdFalling": {
+                    "description": "Undervoltage Lockout Out (UVLO) Threshold with vconn voltage rising",
+                    "comment": "units of volts",
+                     "$ref": "definitions.json#/unit"
+                },   
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                },
+                "package": {
+                    "description": "component's package size and description",
+                    "$ref": "definitions.json#/package"
+                }
+            }
+        }
+    ]
+}
