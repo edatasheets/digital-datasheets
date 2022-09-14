@@ -1,0 +1,191 @@
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/ic io.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "ic io",
+    "oneOf": [
+        {
+            "title": "redriver",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "numberChannels": {
+                    "description": "number of lanes (single ended or differential) supported by redriver",
+                    "type": "number"
+                },
+                "interface": {
+                    "description": "list of interface(s) supported by redriver",
+                    "examples": [
+                        "hdmi2",
+                        "dp hbr3",
+                        "usb3.1 gen2"
+                    ],
+                    "type": "string"
+                },
+                "maxDataRate": {
+                    "description": "maximum data rate supported by redriver",
+                    "comment": "units of Hz",
+                    "$ref": "definitions.json#/unit"
+                },
+                "package": {
+                    "description": "component's package size and description",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "bridge chip",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "muxRatio": {
+                    "description": "ratio of inputs to outputs",
+                    "examples": [
+                        "2:1",
+                        "1:1",
+                        "etc."
+                    ],
+                    "type": "string"
+                },
+                "inputInterfaces": {
+                    "description": "list of interfaces at the input of the bridge",
+                    "examples": [
+                        "hdmi2.0",
+                        "dp hbr2"
+                    ],
+                    "type": "string"
+                },
+                "outputInterfaces": {
+                    "description": "list of interfaces at the output of the bridge",
+                    "examples": [
+                        "dp hbr2"
+                    ],
+                    "type": "string"
+                },
+                "package": {
+                    "description": "component's package size and description",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "mux",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "muxRatio": {
+                    "description": "ratio of inputs to outputs",
+                    "examples": [
+                        "2:1",
+                        "1:1",
+                        "etc."
+                    ],
+                    "type": "string"
+                },
+                "inputInterfaces": {
+                    "description": "list of interfaces mux is designed for",
+                    "examples": [
+                        "hdmi2.0",
+                        "dp hbr2"
+                    ],
+                    "type": "string"
+                },
+                "insertionLoss": {
+                    "description": "insertion loss through mux",
+                    "comment": "units of dB",
+                    "type": "number"
+                },
+                "package": {
+                    "description": "component's package size and description",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "level shifter",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "numberChannels": {
+                    "description": "number of lanes (single ended or differential) supported by redriver",
+                    "type": "number"
+                },
+                "interface": {
+                    "description": "interface supported by redriver",
+                    "examples": [
+                        "hdmi1.4",
+                        "hdmi2.0",
+                        "etc."
+                    ],
+                    "type": "string"
+                },
+                "inputVoltage": {
+                    "description": "input voltage level of level shifter",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "outputVoltage": {
+                    "description": "output voltage level of level shifter",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "package": {
+                    "description": "component's package size and description",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        }
+    ]
+}
