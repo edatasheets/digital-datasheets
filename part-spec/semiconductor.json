@@ -18,18 +18,19 @@
                     "$ref": "definitions.json#/componentID"
                 },
                 "mosfetType": {
-                    "description": "type of mosfet",
+                    "description": "type of MOSFET",
                     "examples": [
                         "smallSignal",
                         "power"
                     ],
                     "type": "string"
                 },
-                "channel": {
+                "mosfetChannelType": {
                     "description": "doping of a transistor's channel - describes whether a transistor is n-type or p-type",
                     "enum": [
                         "nType",
-                        "pType"
+                        "pType",
+                        "nAndpType"
                     ],
                     "type": "string"
                 },
@@ -38,150 +39,160 @@
                     "type": "number"
                 },
                 "vgsMax": {
-                    "description": "maximum gate to source voltage difference that can be continously applied to a mosfet",
+                    "description": "maximum gate to source voltage difference that can be continously applied to a MOSFET",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
                 "vdsMax": {
-                    "description": "maximum drain to source voltage difference that can be continously applied to a mosfet",
+                    "description": "maximum drain to source voltage difference that can be continously applied to a MOSFET",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
                 "vdsVbr": {
-                    "description": "drain to source breakdown voltage of a mosfet",
+                    "description": "drain to source breakdown voltage of a MOSFET",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
-                "vgsThresholdMax": {
+                "vgsThMax": {
                     "description": "maximum gate to source voltage difference required to produce a conducting path between drain and source",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
-                "vgsThreshold": {
+                "vgsThTyp": {
                     "description": "gate to source voltage difference (VGS) required to produce a conducting path between drain and source",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
+                 "vgsThMin": {
+                    "description": "minimum gate to source voltage difference required to produce a conducting path between drain and source",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
                 "vsdDiodeVf": {
-                    "description": "reverse diode forward voltage when a mosfet is in off-state",
+                    "description": "reverse diode forward voltage when a MOSFET is in off-state",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                 "vsdDiodeVfMax": {
+                    "description": "maximum reverse diode forward voltage when a MOSFET is in off-state",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
                 "iDrain": {
-                    "description": "maximum continous DC current that can flow through a mosfet channel",
+                    "description": "maximum continous DC current that can flow through a MOSFET channel",
                     "comment": "units of amps",
                     "$ref": "definitions.json#/unit"
                 },
                 "idPulsed": {
-                    "description": "maximum pulsed DC current that can flow through a mosfet channel",
+                    "description": "maximum pulsed DC current that can flow through a MOSFET channel",
                     "comment": "units of amps",
                     "$ref": "definitions.json#/unit"
                 },
                 "iDss": {
-                    "description": "drain-source leakage current of a mosfet when the gate to source voltage difference is zero",
+                    "description": "drain-source leakage current of a MOSFET when the gate to source voltage difference is zero",
                     "$comment": "condition includes gate-source voltage",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "iGss": {
-                    "description": "gate-source leakage current of a mosfet when the drain to source voltage difference is zero",
+                    "description": "gate-source leakage current of a MOSFET when the drain to source voltage difference is zero",
                     "$comment": "conditions include drain-source voltage",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "diodeContinuousCurrent": {
-                    "description": "maximum continuous forward current of the body diode of a mosfet (Is)",
+                    "description": "maximum continuous forward current of the body diode of a MOSFET (Is)",
                     "comment": "units of amps",
                     "$ref": "definitions.json#/unit"
                 },
                 "diodePulsedCurrent": {
-                    "description": "maximum pulsed forward current of the body diode of a mosfet",
+                    "description": "maximum pulsed forward current of the body diode of a MOSFET",
                     "comment": "units of amps",
                     "$ref": "definitions.json#/unit"
                 },
                 "forwardTransconductance": {
-                    "description": "signal gain, change in drain current with variation of gate-source voltage of a mosfet (Gfs)",
+                    "description": "signal gain, change in drain current with variation of gate-source voltage of a MOSFET (gFS)",
                     "$comment": "conditions include vds, iDrain",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "rdson": {
-                    "description": "drain source on resistance of a mosfet",
+                    "description": "on-state resistance of a MOSFET",
                     "$comment": "conditions include vds, vgs, temperature",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                  "rg": {
-                    "description": "gate resistance of a mosfet",
+                    "description": "internal gate resistance of a MOSFET",
                     "$comment": "conditions include vds, vgs, temperature",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                  "ciss": {
-                    "description": "input capacitance of a mosfet",
+                    "description": "input capacitance of a MOSFET",
                     "$comment": "conditions include vds, vgs",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "coss": {
-                    "description": "output capacitance of a mosfet",
+                    "description": "output capacitance of a MOSFET",
                     "$comment": "conditions include vds, vgs",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "crss": {
-                    "description": "reverse transfer capacitance of a mosfet",
+                    "description": "reverse transfer capacitance of a MOSFET",
                     "$comment": "conditions include vds, vgs",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "qg": {
-                    "description": "total gate charge of a mosfet",
+                    "description": "total gate charge of a MOSFET",
                     "$comment": "conditions include drain-source voltage and drain current",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "qgd": {
-                    "description": "gate to drain charge of a mosfet",
+                    "description": "gate to drain charge of a MOSFET",
                     "comment": "units of nC",
                     "$ref": "definitions.json#/unit"
                 },
                 "qgs": {
-                    "description": "gate to source charge of a mosfet",
+                    "description": "gate to source charge of a MOSFET",
                     "comment": "units of nC",
                     "$ref": "definitions.json#/unit"
                 },
                 "qrr": {
-                    "description": "reverse recovery charge of the body diode of a mosfet",
+                    "description": "reverse recovery charge of the body diode of a MOSFET",
                     "comment": "units of nC",
                     "$ref": "definitions.json#/unit"
                 },
                 "idVsVds": {
-                    "description": "graph of drain current (Id) vs drain source voltage (Vds)",
+                    "description": "graph of drain current (ID) vs drain source voltage (VDS)",
                     "$ref": "graph.json#/graphDefiniton"
                 },
                 "idVsVgs": {
-                    "description": "graph of drain current (Id) vs gate source voltage (Vgs)",
+                    "description": "graph of drain current (ID) vs gate source voltage (VGS)",
                     "$ref": "graph.json#/graphDefiniton"
                 },
                 "tdON": {
-                    "description": "turn on delay time of a mosfet",
+                    "description": "turn-on delay time of a MOSFET",
                     "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "tdOFF": {
-                    "description": "turn off delay time of a mosfet",
+                    "description": "turn-off delay time of a MOSFET",
                     "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "riseTime": {
-                    "description": "turn on rise time of a mosfet",
+                    "description": "rise time of a MOSFET",
                     "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "fallTime": {
-                    "description": "turn off fall time of a mosfet",
+                    "description": "fall time of a MOSFET",
                     "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "trr": {
-                    "description": "reverse recovery time of the body diode of a mosfet",
+                    "description": "reverse recovery time of the body diode of a MOSFET",
                     "$comment": "conditions include body diode forward current value and ramp rate",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "powerDissipation": {
-                    "description": "maximum power dissipation a mosfet can handle",
+                "pTot": {
+                    "description": "maximum power dissipation of a MOSFET",
                     "$comment": "conditions include temeprature",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
@@ -219,9 +230,28 @@
                     "examples": [
                         "zener",
                         "schottky",
-                        "esd"
+                        "esd",
+                        "switching",
+                        "rectifier",
+                        "tvs"
                     ],
                     "type": "string"
+                },
+                "diodeCount": {
+                    "description": "number of diodes in the package",
+                    "type": "number"
+                },
+                "diodeConfiguration": {
+                    "description": "configuration of diode",
+                    "examples": [
+                        "unidirectional",
+                        "bidirectional"
+                    ],
+                    "type": "string"
+                },
+                 "numberOfProtectedLines": {
+                    "description": "number of lines a diode can protect",
+                    "type": "number"
                 },
                 "vf": {
                     "description": "forward voltage of a diode",
@@ -249,7 +279,7 @@
                     "$ref": "definitions.json#/unit"
                 },
                 "ir": {
-                    "description": "reverse leakage current",
+                    "description": "reverse current",
                     "comment": "conditions include: reverse bias voltage under which reverse leakage current occurs",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
@@ -259,7 +289,7 @@
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "vrm": {
-                    "description": "reverse standoff voltage of a tvs diode",
+                    "description": "maximum reverse standoff voltage a tvs diode can withstand",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
@@ -288,7 +318,7 @@
                     "comment": "units of seconds",
                     "$ref": "definitions.json#/unit"
                 },
-                "powerDissipation": {
+                "pTot": {
                     "description": "maximum power dissipation of a forward biased diode",
                     "$comment": "conditions include temeprature",
                     "$ref": "definitions.json#/conditionalProperty"
@@ -296,10 +326,6 @@
                 "ifVsVf": {
                     "description": "graph of forward current (If) vs forward voltage (Vf)",
                     "$ref": "graph.json#/graphDefiniton"
-                },
-                "esdProtection": {
-                    "description": "whether a diode has built in esd protection",
-                    "type": "boolean"
                 },
                 "package": {
                     "description": "package size of resistor",
