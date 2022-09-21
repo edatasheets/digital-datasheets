@@ -17,14 +17,14 @@ Part manufacturers create datasheets to document component information including
 This document is intended for digital datasheet producers such as components vendors as well as people who will consume these digital datasheets to automate designs such as tool creators.The specification will include common classes of components used in designs. Some examples are included in the appendices to provide context for future additions to this specification.
 
 #### 1.3 Keywords
-Required: The field is required in the component digital datasheet.
-Optional: The field may or may not be included in the component digital datasheet.
-Shall: Indicates a mandatory requirement.
-May: Indicates an optional requirement.
+- Required: The field is required in the component digital datasheet.
+- Optional: The field may or may not be included in the component digital datasheet.
+- Shall: Indicates a mandatory requirement.
+- May: Indicates an optional requirement.
 
 #### 1.4 References
-- The JSON data interchange syntax, ECMA-404, 2nd edition, December 2017 
-- JSON Schema: A media Type for Describing JSON Documents, draft-bhutton-json-schema-00, December 2020.
+- The JSON data interchange syntax, [ECMA-404, 2nd edition, December 2017](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)
+- JSON Schema: A media Type for Describing JSON Documents, [draft-bhutton-json-schema-00, December 2020](https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-00).
 - Terms, Definitions, and Letter Symbols for Microelectronic Devices, JESD99C – December 2012
 
 ### 2. Use Cases 
