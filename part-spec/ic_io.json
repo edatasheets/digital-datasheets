@@ -22,11 +22,11 @@
                 "interface": {
                     "description": "list of interface(s) supported by redriver",
                     "examples": [
-                        "hdmi2",
-                        "dp hbr3",
-                        "usb3.1 gen2"
+                        "HDMI",
+                        "DP HBR3",
+                        "USB3.1 Gen2"
                     ],
-                    "type": "string"
+                    "type": "array"
                 },
                 "maxDataRate": {
                     "description": "maximum data rate supported by redriver",
@@ -64,23 +64,23 @@
                 "interface": {
                     "description": "list of interface(s) supported by a device",
                     "examples": [
-                        "hdmi2",
-                        "dp1.4",
-                        "usb3.2 gen2x1",
+                        "HDMI",
+                        "DP1.4",
+                        "USB3.2 Gen2x1",
                         "PCIe3.0",
                         "TBT3.0",
                         "USB4"
                     ],
-                    "type": "string"
+                    "type": "array"
                 },
                 "dpMaxLinkRate": {
                     "description": "Max link rate supported by DP interface of a device",
                     "examples": [
-                        "hbr",
-                        "hbr2",
-                        "hbr3",
-                        "uhbr10",
-                        "uhbr13.5"
+                        "HBR",
+                        "HBR2",
+                        "HBR33",
+                        "UHBR10",
+                        "UHBR13.5"
                     ],
                     "type": "string"
                 },
@@ -114,9 +114,9 @@
                     "type": "array",
                     "items": {
                     "$ref": "definitions.json#/pinSpec"
+                    }
                 }
             }
-        }
         },        
         {
             "title": "bridge chip",
@@ -141,17 +141,17 @@
                 "inputInterfaces": {
                     "description": "list of interfaces at the input of the bridge",
                     "examples": [
-                        "hdmi2.0",
-                        "dp hbr2"
+                        "HDMI2.0",
+                        "DP HBR2"
                     ],
                     "type": "string"
                 },
                 "outputInterfaces": {
                     "description": "list of interfaces at the output of the bridge",
                     "examples": [
-                        "dp hbr2"
+                        "DP HBR2"
                     ],
-                    "type": "string"
+                    "type": "array"
                 },
                 "package": {
                     "description": "component's package size and description",
@@ -189,8 +189,8 @@
                 "inputInterfaces": {
                     "description": "list of interfaces mux is designed for",
                     "examples": [
-                        "hdmi2.0",
-                        "dp hbr2"
+                        "HDMI2.0",
+                        "DP HBR2"
                     ],
                     "type": "string"
                 },
@@ -222,19 +222,6 @@
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
                     "$ref": "definitions.json#/componentID"
-                },
-                "numberChannels": {
-                    "description": "number of lanes (single ended or differential) supported by redriver",
-                    "type": "number"
-                },
-                "interface": {
-                    "description": "interface supported by redriver",
-                    "examples": [
-                        "hdmi1.4",
-                        "hdmi2.0",
-                        "etc."
-                    ],
-                    "type": "string"
                 },
                 "inputVoltage": {
                     "description": "input voltage level of level shifter",
