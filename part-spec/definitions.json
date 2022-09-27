@@ -342,7 +342,7 @@
             "sdio",
             "memory",
             "emmc",
-            "annode",
+            "anode",
             "cathode"
           ],
           "type": "string"
@@ -500,16 +500,8 @@
   "conditionalProperty": {
     "type": "object",
     "properties": {
-      "min": {
-        "description": "minimum value of property",
-        "$ref": "#/$definitions/unit"
-      },
-      "max": {
-        "description": "maximum value of property",
-        "$ref": "#/$definitions/unit"
-      },
-      "typical": {
-        "description": "typical value of property",
+      "value": {
+        "description": "value of property",
         "$ref": "#/$definitions/unit"
       },
       "conditions": {
