@@ -820,7 +820,7 @@ Retimer Example
         "orderableMPN": "abc1234,68",
         "sourceDatasheetID": {
             "publishedDate": "2021-05-30",
-            "datasheetURI": "www.acmecomponents.com/abc123datasheet"
+            "datasheetURI": "www.acmecomponents.com/abc1234datasheet"
         },
         "digitalDatasheetID": {
             "publishedDate": "2022-09-26",
@@ -893,10 +893,170 @@ Retimer Example
             "name": "perstn"
         },
         {
-            "terminalIdentifier": "11",
+            "terminalIdentifier": "12",
             "name": "gnd"
         }
 
     ]
 }
+```
 
+USB-C PD Controller Example 
+
+```json
+{
+    "componentID": {
+        "partType": "usb-c pd controller",
+        "manufacturer": "ACME Components",
+        "componentName": "abc12345",
+        "orderableMPN": "abc12345,68",
+        "sourceDatasheetID": {
+            "publishedDate": "2021-12-30",
+            "datasheetURI": "www.acmecomponents.com/abc12345datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2022-09-26",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "pdVersion": "pd3.1",
+    "usbTypecRevision": "1.2",
+    "powerRoleSupported": "source",
+    "fastRoleSwapSupport": false,
+    "vconnPowerSupport": true,
+    "vconnPowerLimit": {
+        "siUnit": "watt",
+        "absoluteValue": 2.5,
+        "unitText": "w",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "vconnMaxCurrent": {
+        "siUnit": "amp",
+        "absoluteValue": 500,
+        "unitText": "mA",
+        "unitFactor": 1e-3,
+        "valueDefined": true
+    },
+    "vconnOverCurrentLimit": {
+        "siUnit": "amp",
+        "absoluteValue": 600,
+        "unitText": "mA",
+        "unitFactor": 1e-3,
+        "valueDefined": true
+    },
+    "integratedLoadSwitch": true,
+    "maxSourceCurrent": {
+        "siUnit": "amp",
+        "absoluteValue": 3,
+        "unitText": "A",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "sourcefetOverCurrentLimit": {
+        "siUnit": "amp",
+        "absoluteValue": 4,
+        "unitText": "A",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "onResistanceSourceFet": {
+        "siUnit": "ohm",
+        "absoluteValue": 5,
+        "unitText": "mohm",
+        "unitFactor": 1e-3,
+        "valueDefined": true
+    },
+    "activeCurrent": {
+        "siUnit": "amp",
+        "absoluteValue": 10,
+        "unitText": "mA",
+        "unitFactor": 1e-3,
+        "valueDefined": true
+    },
+    "shutDownCurrent": {
+        "siUnit": "amp",
+        "absoluteValue": 10,
+        "unitText": "uA",
+        "unitFactor": 1e-6,
+        "valueDefined": true
+    },
+    "idleCurrent": {
+        "siUnit": "amp",
+        "absoluteValue": 5,
+        "unitText": "mA",
+        "unitFactor": 1e-3,
+        "valueDefined": true
+    },
+    "vbusOvervoltageProtectionThresholdRising": {
+        "siUnit": "volt",
+        "absoluteValue": 6.3,
+        "unitText": "v",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "vbusOvervoltageProtectionThresholdFalling": {
+        "siUnit": "volt",
+        "absoluteValue": 6.1,
+        "unitText": "v",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "package": {
+        "length": 100,
+        "width": 100,
+        "height": 30,
+        "dimensionUnit": "millimeter"
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "pwr1"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "pwr2"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "enable"
+        },
+        {
+            "terminalIdentifier": "4",
+            "name": "scl"
+        },
+        {
+            "terminalIdentifier": "5",
+            "name": "sda"
+        },
+        {
+            "terminalIdentifier": "6",
+            "name": "gnd"
+        },
+        {
+            "terminalIdentifier": "7",
+            "name": "vbus"
+        },
+        {
+            "terminalIdentifier": "8",
+            "name": "vbus"
+        },
+        {
+            "terminalIdentifier": "9",
+            "name": "cc1"
+        },
+        {
+            "terminalIdentifier": "10",
+            "name": "cc2"
+        },
+        {
+            "terminalIdentifier": "11",
+            "name": "irq"
+        },
+        {
+            "terminalIdentifier": "12",
+            "name": "gnd"
+        }
+    ]
+}
