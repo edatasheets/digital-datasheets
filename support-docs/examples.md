@@ -814,7 +814,7 @@ Retimer Example
 ```json
 {
     "componentID": {
-        "partType": "mosfet",
+        "partType": "retimer",
         "manufacturer": "ACME Components",
         "componentName": "abc1234",
         "orderableMPN": "abc1234,68",
