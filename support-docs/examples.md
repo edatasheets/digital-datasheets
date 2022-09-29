@@ -431,3 +431,472 @@ Buck Example
 }
 ```
 
+Diode Example 
+
+```json
+{
+    "componentID": {
+        "partType": "diode",
+        "manufacturer": "ACME Components",
+        "componentName": "abc1234",
+        "orderableMPN": "abc1234,56",
+        "sourceDatasheetID": {
+            "publishedDate": "2021-05-30",
+            "datasheetURI": "www.acmecomponents.com/abc1234datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2022-09-26",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active",
+    },
+    "type": "schottky",
+    "diodeCount": 1,
+    "diodeConfiguration": "unidirectional",
+    "numberOfProtectedLines": 0,
+    "vfTyp": {
+        "value": {
+            "siUnit": "volt",
+            "absoluteValue": 600,
+            "unitText": "mV",
+            "unitFactor": 1e-3,
+            "valueDefined": true
+        },
+        "conditions": ["forward current (If)=800mA"]     
+    },
+    "vfMax": {
+        "value": {
+            "siUnit": "volt",
+            "absoluteValue": 650,
+            "unitText": "mV",
+            "unitFactor": 1e-3,
+            "valueDefined": true
+        },
+        "conditions": ["forward current (If)=800mA"]     
+    },
+    "ifm": {
+        "siUnit": "amp",
+        "absoluteValue": 1,
+        "unitText": "A",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "ifrm": {
+        "siUnit": "amp",
+        "absoluteValue": 3,
+        "unitText": "A",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "ifsm": {
+        "siUnit": "amp",
+        "absoluteValue": 8,
+        "unitText": "A",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "vr": {
+        "siUnit": "volt",
+        "absoluteValue": 25,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "irTyp": {
+        "value": {
+            "siUnit": "amp",
+            "absoluteValue": 10,
+            "unitText": "uA",
+            "unitFactor": 1e-6,
+            "valueDefined": true
+        },
+        "conditions": ["vr=10V"]
+    },
+    "irMax": {
+        "value":{
+            "siUnit": "amp",
+            "absoluteValue": 20,
+            "unitText": "uA",
+            "unitFactor": 1e-6,
+            "valueDefined": true
+        },
+        "conditions": ["vr=25V"]
+    },
+    "ifVsVf":{
+        "title": "If vs Vf",
+        "xUnits": "mA",
+        "xLabel": "forward Current",
+        "yUnits": "mV",
+        "yLabel": "forward voltage",
+        "numberOfCurves": 1,
+        "data": {
+            "label": "25 degrees C",
+            "xData": [1, 10, 50, 100, 150, 200, 250, 500, 800],
+            "yData": [200, 250, 350, 380, 400, 450, 500, 575, 600]
+        }
+    },
+    "package": {
+        "length": 5,
+        "width": 5,
+        "height": 1, 
+        "dimensionUnit": "millimeter" 
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "cathode"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "anode"
+        }
+    ]
+}
+```
+
+FET Example 
+
+```json
+{
+    "componentID": {
+        "partType": "mosfet",
+        "manufacturer": "ACME Components",
+        "componentName": "abc123",
+        "orderableMPN": "abc123,56",
+        "sourceDatasheetID": {
+            "publishedDate": "2021-05-30",
+            "datasheetURI": "www.acmecomponents.com/abc123datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2022-09-26",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "mosfetType": "power",
+    "mosfetChannelType": "nType",
+    "transistorCount": 1,
+    "vgsMax": {
+        "siUnit": "volt",
+        "absoluteValue": 5,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "vdsMax": {
+        "siUnit": "volt",
+        "absoluteValue": 5,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "vdsMax": {
+        "siUnit": "volt",
+        "absoluteValue": 8,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "vgsThMax": {
+        "siUnit": "volt",
+        "absoluteValue": 2,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "vgsThTyp": {
+        "siUnit": "volt",
+        "absoluteValue": 1.2,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "vgsThMin": {
+        "siUnit": "volt",
+        "absoluteValue": 1,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "vsdDiodeVfTyp": {
+        "siUnit": "volt",
+        "absoluteValue": 0.6,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "vsdDiodeVfMax": {
+        "siUnit": "volt",
+        "absoluteValue": 0.9,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "iDrain": {
+        "siUnit": "amp",
+        "absoluteValue": 5,
+        "unitText": "A",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "idPulsed": {
+        "siUnit": "amp",
+        "absoluteValue": 10,
+        "unitText": "A",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "iDss": {
+        "value": {
+            "siUnit": "amp",
+            "absoluteValue": 1,
+            "unitText": "uA",
+            "unitFactor": 1e-6,
+            "valueDefined": true
+        },
+        "conditions": [
+            "VDS=10V"
+        ]
+    },
+    "iGss": {
+        "value": {
+            "siUnit": "amp",
+            "absoluteValue": 5,
+            "unitText": "nA",
+            "unitFactor": 1e-9,
+            "valueDefined": true
+        },
+        "conditions": [
+            "VGS=5V"
+        ]
+    },
+    "diodeContinuousCurrent": {
+        "siUnit": "amp",
+        "absoluteValue": 2,
+        "unitText": "A",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "diodePulsedCurrent": {
+        "siUnit": "amp",
+        "absoluteValue": 4,
+        "unitText": "A",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "rdsonTyp": {
+        "value": {
+            "siUnit": "ohm",
+            "absoluteValue": 20,
+            "unitText": "mohm",
+            "unitFactor": 1e-3,
+            "valueDefined": true
+        },
+        "conditions": [
+            "ID=0.5A",
+            "VGS=5V"
+        ]
+    },
+    "rgMax": {
+        "value": {
+            "siUnit": "ohm",
+            "absoluteValue": 5,
+            "unitText": "ohm",
+            "unitFactor": 1,
+            "valueDefined": true
+        },
+        "conditions": [
+            "VDS=0V",
+            "VGS=0V"
+        ]
+    },
+    "CissMax": {
+        "value": {
+            "siUnit": "farad",
+            "absoluteValue": 500,
+            "unitText": "pF",
+            "unitFactor": 1e-12,
+            "valueDefined": true
+        },
+        "conditions": [
+            "VDS=5V",
+            "VGS=0V"
+        ]
+    },
+    "CossMax": {
+        "value": {
+            "siUnit": "farad",
+            "absoluteValue": 100,
+            "unitText": "pF",
+            "unitFactor": 1e-12,
+            "valueDefined": true
+        },
+        "conditions": [
+            "VDS=5V",
+            "VGS=0V"
+        ]
+    },
+    "qgMax": {
+        "value": {
+            "siUnit": "coulomb",
+            "absoluteValue": 20,
+            "unitText": "nC",
+            "unitFactor": 1e-9,
+            "valueDefined": true
+        },
+        "conditions": [
+            "VDS=5V",
+            "VGS=5V"
+        ]
+    },
+    "tdONTyp": {
+        "value": {
+            "siUnit": "second",
+            "absoluteValue": 20,
+            "unitText": "ns",
+            "unitFactor": 1e-9,
+            "valueDefined": true
+        },
+        "conditions": [
+            "VDS=5V",
+            "VGS=5V"
+        ]
+    },
+    "pTot": {
+        "value": {
+            "siUnit": "watt",
+            "absoluteValue": 2,
+            "unitText": "w",
+            "unitFactor": 1,
+            "valueDefined": true
+        },
+        "conditions": [
+            "temperature=25C"
+        ]
+    },
+    "package": {
+        "length": 5,
+        "width": 5,
+        "height": 1,
+        "dimensionUnit": "millimeter"
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "source"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "source"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "gate"
+        },
+        {
+            "terminalIdentifier": "4",
+            "name": "drain"
+        },
+        {
+            "terminalIdentifier": "5",
+            "name": "drain"
+        },
+        {
+            "terminalIdentifier": "6",
+            "name": "drain"
+        }
+    ]
+}
+```
+
+Retimer Example 
+
+```json
+{
+    "componentID": {
+        "partType": "mosfet",
+        "manufacturer": "ACME Components",
+        "componentName": "abc1234",
+        "orderableMPN": "abc1234,68",
+        "sourceDatasheetID": {
+            "publishedDate": "2021-05-30",
+            "datasheetURI": "www.acmecomponents.com/abc123datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2022-09-26",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "numberOfLanes": 2,
+    "interface":"PCIe4.0",
+    "maxDataRate":{
+        "siUnit": "hertz",
+        "absoluteValue": 16,
+        "unitText": "Ghz",
+        "unitFactor": 1e9,
+        "valueDefined": true
+
+    },
+    "commonClock": true,
+    "sris": false,
+    "srns": false,
+    "package": {
+        "length": 100,
+        "width": 100,
+        "height": 50,
+        "dimensionUnit": "millimeter"
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "data1p"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "data1n"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "data2p"
+        },
+        {
+            "terminalIdentifier": "4",
+            "name": "data2n"
+        },
+        {
+            "terminalIdentifier": "5",
+            "name": "refclkp"
+        },
+        {
+            "terminalIdentifier": "6",
+            "name": "refclkn"
+        },
+        {
+            "terminalIdentifier": "7",
+            "name": "pwr1"
+        },
+        {
+            "terminalIdentifier": "8",
+            "name": "pwr2"
+        },
+        {
+            "terminalIdentifier": "9",
+            "name": "clkreq"
+        },
+        {
+            "terminalIdentifier": "10",
+            "name": "clkreqn"
+        },
+        {
+            "terminalIdentifier": "11",
+            "name": "perstn"
+        },
+        {
+            "terminalIdentifier": "11",
+            "name": "gnd"
+        }
+
+    ]
+}
+
