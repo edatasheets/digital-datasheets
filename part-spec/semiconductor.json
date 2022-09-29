@@ -68,8 +68,8 @@
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
-                "vsdDiodeVf": {
-                    "description": "reverse diode forward voltage when a MOSFET is in off-state.",
+                "vsdDiodeVfTyp": {
+                    "description": "ztypical reverse diode forward voltage when a MOSFET is in off-state.",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
@@ -90,12 +90,12 @@
                 },
                 "iDss": {
                     "description": "drain-source leakage current of a MOSFET when the gate to source voltage difference is zero",
-                    "$comment": "condition includes gate-source voltage",
+                    "$comment": "condition includes drain-source voltage",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "iGss": {
                     "description": "gate-source leakage current of a MOSFET when the drain to source voltage difference is zero",
-                    "$comment": "conditions include drain-source voltage",
+                    "$comment": "conditions include gate-source voltage",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "diodeContinuousCurrent": {
@@ -113,50 +113,95 @@
                     "$comment": "conditions include vds, iDrain",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "rdson": {
-                    "description": "on-state resistance of a MOSFET.",
+                "rdsonTyp": {
+                    "description": "typical on-state resistance of a MOSFET.",
                     "$comment": "conditions include vds, vgs, temperature",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                 "rg": {
-                    "description": "internal gate resistance of a MOSFET.",
+                "rdsonMax": {
+                    "description": "maximum on-state resistance of a MOSFET.",
                     "$comment": "conditions include vds, vgs, temperature",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                 "ciss": {
-                    "description": "input capacitance of a MOSFET.",
+                 "rgTyp": {
+                    "description": "typical internal gate resistance of a MOSFET.",
+                    "$comment": "conditions include vds, vgs, temperature",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "rgMax": {
+                    "description": "maximum internal gate resistance of a MOSFET.",
+                    "$comment": "conditions include vds, vgs, temperature",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                 "cissTyp": {
+                    "description": "typical input capacitance of a MOSFET.",
                     "$comment": "conditions include vds, vgs",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "coss": {
-                    "description": "output capacitance of a MOSFET.",
+                "cissMax": {
+                    "description": "maximum input capacitance of a MOSFET.",
                     "$comment": "conditions include vds, vgs",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "crss": {
-                    "description": "reverse transfer capacitance of a MOSFET.",
+                "cossTyp": {
+                    "description": "typical output capacitance of a MOSFET.",
                     "$comment": "conditions include vds, vgs",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "qg": {
-                    "description": "total gate charge of a MOSFET.",
+                "cossMax": {
+                    "description": "maximum output capacitance of a MOSFET.",
+                    "$comment": "conditions include vds, vgs",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "crssTyp": {
+                    "description": "typical reverse transfer capacitance of a MOSFET.",
+                    "$comment": "conditions include vds, vgs",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "crssMax": {
+                    "description": "maximum reverse transfer capacitance of a MOSFET.",
+                    "$comment": "conditions include vds, vgs",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "qgTyp": {
+                    "description": "typical total gate charge of a MOSFET.",
                     "$comment": "conditions include drain-source voltage and drain current",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "qgd": {
-                    "description": "gate to drain charge of a MOSFET.",
-                    "comment": "units of nC",
-                    "$ref": "definitions.json#/unit"
+                "qgMax": {
+                    "description": "maximum total gate charge of a MOSFET.",
+                    "$comment": "conditions include drain-source voltage and drain current",
+                    "$ref": "definitions.json#/conditionalProperty"
+                }, 
+                "qgdTyp": {
+                    "description": "typical gate to drain charge of a MOSFET.",
+                    "$comment": "conditions include drain-source voltage and drain current",
+                    "$ref": "definitions.json#/conditionalProperty"  
                 },
-                "qgs": {
-                    "description": "gate to source charge of a MOSFET.",
-                    "comment": "units of nC",
-                    "$ref": "definitions.json#/unit"
+                "qgdMax": {
+                    "description": "maximum gate to drain charge of a MOSFET.",
+                    "$comment": "conditions include drain-source voltage and drain current",
+                    "$ref": "definitions.json#/conditionalProperty"  
                 },
-                "qrr": {
-                    "description": "reverse recovery charge of the body diode of a MOSFET.",
-                    "comment": "units of nC",
-                    "$ref": "definitions.json#/unit"
+                "qgsTyp": {
+                    "description": "typical gate to source charge of a MOSFET.",
+                    "$comment": "conditions include drain-source voltage and drain current",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "qgsMax": {
+                    "description": "maximum gate to source charge of a MOSFET.",
+                    "$comment": "conditions include drain-source voltage and drain current",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "qrrTyp": {
+                    "description": "typical reverse recovery charge of the body diode of a MOSFET.",
+                    "$comment": "conditions include diode forward current",
+                    "$ref": "definitions.json#/conditionalProperty" 
+                },
+                "qrrMax": {
+                    "description": "maximum reverse recovery charge of the body diode of a MOSFET.",
+                    "$comment": "conditions include diode forward current",
+                    "$ref": "definitions.json#/conditionalProperty" 
                 },
                 "idVsVds": {
                     "description": "graph of drain current (ID) vs drain source voltage (VDS).",
@@ -166,28 +211,53 @@
                     "description": "graph of drain current (ID) vs gate source voltage (VGS).",
                     "$ref": "graph.json#/graphDefiniton"
                 },
-                "tdON": {
-                    "description": "turn-on delay time of a MOSFET",
+                "tdONTyp": {
+                    "description": "typical turn-on delay time of a MOSFET",
                     "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "tdOFF": {
-                    "description": "turn-off delay time of a MOSFET",
+                "tdONMax": {
+                    "description": "maximum turn-on delay time of a MOSFET",
                     "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "riseTime": {
-                    "description": "rise time of a MOSFET",
+                "tdOFFTyp": {
+                    "description": "typical turn-off delay time of a MOSFET",
                     "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "fallTime": {
-                    "description": "fall time of a MOSFET",
+                "tdOFFMax": {
+                    "description": "maximum turn-off delay time of a MOSFET",
                     "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "trr": {
-                    "description": "reverse recovery time of the body diode of a MOSFET.",
+                "riseTimeTyp": {
+                    "description": "typical rise time of a MOSFET",
+                    "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "riseTimeMax": {
+                    "description": "maximum rise time of a MOSFET",
+                    "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "fallTimeTyp": {
+                    "description": "typical fall time of a MOSFET",
+                    "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "fallTimeMax": {
+                    "description": "maximum fall time of a MOSFET",
+                    "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "trrTyp": {
+                    "description": "typical reverse recovery time of the body diode of a MOSFET.",
+                    "$comment": "conditions include body diode forward current value and ramp rate.",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "trrMax": {
+                    "description": "maximum reverse recovery time of the body diode of a MOSFET.",
                     "$comment": "conditions include body diode forward current value and ramp rate.",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
