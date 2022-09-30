@@ -218,7 +218,7 @@ Single Complex Pin Example
         "unitFactor": 1,
         "relativeValueReference": "VDD1",
         "relativeValueModifier": 0.7,
-        "relativeValueOperator": "multiply"
+        "relativeValueOperator": "multiply",
         "valueDefined": true
     },
     "vihMin": {
@@ -227,25 +227,25 @@ Single Complex Pin Example
         "unitFactor": 1,
         "relativeValueReference": "VDD1",
         "relativeValueModifier": 0.2,
-        "relativeValueOperator": "multiply"
+        "relativeValueOperator": "multiply",
         "valueDefined": true
     },
-    "vol": "vihMin": {
+    "vol": {
         "siUnit": "volts",
         "unitText": "V",
         "unitFactor": 1,
         "relativeValueReference": "GND",
         "relativeValueModifier": 0.1,
-        "relativeValueOperator": "add"
+        "relativeValueOperator": "add",
         "valueDefined": true
     },
-    "voh": "vihMin": {
+    "voh": {
         "siUnit": "volts",
         "unitText": "V",
         "unitFactor": 1,
         "relativeValueReference": "VDD1",
         "relativeValueModifier": 0.1,
-        "relativeValueOperator": "subtract"
+        "relativeValueOperator": "subtract",
         "valueDefined": true
     },
     "externalComponents": {
@@ -257,7 +257,7 @@ Single Complex Pin Example
             "unitText": "Kohms",
             "unitFactor": 1E3,
             "valueDefined": true
-        },
+        }
     }
 }
 
@@ -1056,6 +1056,183 @@ USB-C PD Controller Example
         },
         {
             "terminalIdentifier": "12",
+            "name": "gnd"
+        }
+    ]
+}
+```
+
+Microcontroller/EC Example - Limited pins 
+
+```json
+{
+    "componentID": {
+        "partType": "microcontroller/ec",
+        "manufacturer": "ACME Components",
+        "componentName": "abc12",
+        "orderableMPN": "abc12,34",
+        "sourceDatasheetID": {
+            "publishedDate": "2021-12-30",
+            "datasheetURI": "www.acmecomponents.com/abc12datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2022-09-26",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "onChipFlash": {
+        "siUnit": "byte",
+        "absoluteValue": 1,
+        "unitText": "MB",
+        "unitFactor": 1e6,
+        "valueDefined": true
+    },
+    "onChipRAM": {
+        "siUnit": "byte",
+        "absoluteValue": 128,
+        "unitText": "KB",
+        "unitFactor": 1e3,
+        "valueDefined": true
+    },
+    "onChipROM": {
+        "siUnit": "byte",
+        "absoluteValue": 1,
+        "unitText": "KB",
+        "unitFactor": 1e3,
+        "valueDefined": true
+    },
+    "coreProcessor": "xyz",
+    "coreArchitectureBits": "32-bit",
+    "clockSpeed": {
+        "siUnit": "hertz",
+        "absoluteValue": 120,
+        "unitText": "MHz",
+        "unitFactor": 1e6,
+        "valueDefined": true
+    },
+    "activePower": {
+        "siUnit": "watt",
+        "absoluteValue": 500,
+        "unitText": "mW",
+        "unitFactor": 1e-3,
+        "valueDefined": true
+    },
+    "standbyPower": {
+        "siUnit": "watt",
+        "absoluteValue": 10,
+        "unitText": "mW",
+        "unitFactor": 1e-3,
+        "valueDefined": true
+    },
+    "package": {
+        "length": 20,
+        "width": 20,
+        "height": 2,
+        "dimensionUnit": "millimeter"
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "vdd1"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "vdd2"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "ALERT#/KSI1/I2C1_SCL/GPIO6",
+            "numberOfSupportedFunctions": 4,
+            "functionProperties": [
+                {
+                    "perFunctionName": "ALERT#",
+                    "interfaceType": "interrupt",
+                    "direction": "out",
+                    "electricalConfiguration": "open-drain",
+                    "polarity": "low"
+                },
+                {
+                    "perFunctionName": "KSI1",
+                    "interfaceType": "keyboard",
+                    "pinUsage": "KSI1",
+                    "direction": "in",
+                    "electricalConfiguration": "high-impedance",
+                    "polarity": "low"
+                },
+                {
+                    "perFunctionName": "I2C1_SCL",
+                    "interfaceType": "i2c",
+                    "pinUsage": "I2C_SCL",
+                    "direction": "out",
+                    "electricalConfiguration": "open-drain",
+                    "polarity": "low"
+                },
+                {
+                    "perFunctionName": "GPIO6",
+                    "interfaceType": "gpio",
+                    "direction": "bidir",
+                    "electricalConfiguration": "push-pull"
+                }
+            ],
+            "vihMin": {
+                "siUnit": "volts",
+                "unitText": "V",
+                "unitFactor": 1,
+                "relativeValueReference": "VDD1",
+                "relativeValueModifier": 0.7,
+                "relativeValueOperator": "multiply",
+                "valueDefined": true
+            },
+            "vihMin": {
+                "siUnit": "volts",
+                "unitText": "V",
+                "unitFactor": 1,
+                "relativeValueReference": "VDD1",
+                "relativeValueModifier": 0.2,
+                "relativeValueOperator": "multiply",
+                "valueDefined": true
+            },
+            "vol": {
+                "siUnit": "volts",
+                "unitText": "V",
+                "unitFactor": 1,
+                "relativeValueReference": "GND",
+                "relativeValueModifier": 0.1,
+                "relativeValueOperator": "add",
+                "valueDefined": true
+            },
+            "voh": {
+                "siUnit": "volts",
+                "unitText": "V",
+                "unitFactor": 1,
+                "relativeValueReference": "VDD1",
+                "relativeValueModifier": 0.1,
+                "relativeValueOperator": "subtract",
+                "valueDefined": true
+            },
+            "externalComponents": {
+                "componentType": "resistor",
+                "configuration": "pu",
+                "minValue": {
+                    "siUnit": "ohm",
+                    "absoluteValue": 20,
+                    "unitText": "Kohms",
+                    "unitFactor": 1E3,
+                    "valueDefined": true
+                }
+            },
+        },
+        {
+            "terminalIdentifier": "4",
+            "name": "vrefp"
+        },
+        {
+            "terminalIdentifier": "5",
+            "name": "vrefn"
+        },
+        {
+            "terminalIdentifier": "6",
             "name": "gnd"
         }
     ]
