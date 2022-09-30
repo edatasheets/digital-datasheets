@@ -30,8 +30,8 @@
                     "comment": "units of kilobytes",
                     "$ref": "definitions.json#/unit"
                 },
-                "coreProcessorCortex": {
-                    "description": "description of core processor cortex",
+                "coreProcessor": {
+                    "description": "description of core processor",
                     "examples": [
                         "Cortex-M4"
                     ],
