@@ -72,10 +72,8 @@
                 },
                 "package": {
                     "description": "component's package size and description",
-                     "items": {
-                        "$ref": "definitions.json#/package"
-                        }
-                    }
+                    "$ref": "definitions.json#/package"
+                }
             }
         }
     ]
