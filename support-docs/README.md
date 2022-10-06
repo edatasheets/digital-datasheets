@@ -246,25 +246,23 @@ The table below gives a description of the properties used to specify a switchin
 
 ### 3.10	 Hardware
 
-TODO: not sure what separates this category from others? "hardware" is a bit generic sounding.
-
 ####  3.10.1	 Switch
 
 The table below gives a description of the properties used to specify a switch in a digital datasheet.
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|componentID|common component identifying information, such as mpn|Object|Yes|
 |type|property describing the way in which the switch is activated|String| |
 |contactType|property describing the order in which switch contact is made and broken|String| |
 |circuitConfig|property describing the number of poles and throws in a switch|String| |
 |cycleRating|number of on/off cycles a mechanical switch can reliably sustain|Number| |
-|voltageRating|maximum DC voltage potential that can be applied across an open switch|definitions.json#/unit| |
-|currentRating|maximum DC current that can flow through a closed switch without causing excessive heating|definitions.json#/unit| |
-|onResistance|nominal resistance of a closed switch|definitions.json#/unit|Yes|
-|dielectricRating|maximum AC voltage potential that can be applied across an open switch for one minute|definitions.json#/unit| |
-|package|component's package size and description|definitions.json#/package| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|voltageRating|maximum DC voltage potential that can be applied across an open switch|Object| |
+|currentRating|maximum DC current that can flow through a closed switch without causing excessive heating|Object| |
+|onResistance|nominal resistance of a closed switch|Object|Yes|
+|dielectricRating|maximum AC voltage potential that can be applied across an open switch for one minute|Object| |
+|package|component's package size and description|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 
 ####  3.10.2	 Connector
 
@@ -272,16 +270,16 @@ The table below gives a description of the properties used to specify a connecto
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|componentID|common component identifying information, such as mpn|Object|Yes|
 |function|intended function of a connector|String| |
 |contactCount|number of contacts in a connector|Number| |
 |type|property describing the method of mating to the connector|String| |
 |cycleRating|number of plug/unplug cycles a connector is rated to support|Number| |
-|pitch|distance from the center of one contact on the connector to the center of the next contact|definitions.json#/unit| |
+|pitch|distance from the center of one contact on the connector to the center of the next contact|Object| |
 |keying|property describing whether a connector has an asymmetry to prevent it from being plugged in the wrong direction|Boolean| |
 |numberPins|number of pins on the connector|Number|Yes|
-|package|component's package size and description|definitions.json#/package| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 
 ### 3.11	 IC IO (Integrated Circuit Input/Output)
 
@@ -294,12 +292,12 @@ The table below gives a description of the properties used to specify a redriver
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|componentID|common component identifying information, such as mpn|Object|Yes|
 |numberChannels|number of lanes (single ended or differential) supported by redriver|Number| |
 |interface|list of interface(s) supported by redriver|String| |
-|maxDataRate|maximum data rate supported by redriver|definitions.json#/unit| |
-|package|component's package size and description|definitions.json#/package| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|maxDataRate|maximum data rate supported by redriver|Object| |
+|package|component's package size and description|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 
 ####  3.11.2	 Bridge Chip
 
@@ -307,12 +305,12 @@ The table below gives a description of the properties used to specify a bridge c
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|componentID|common component identifying information, such as mpn|Object|Yes|
 |muxRatio|ratio of inputs to outputs|String| |
 |inputInterfaces|list of interfaces at the input of the bridge|String| |
 |outputInterfaces|list of interfaces at the output of the bridge|String| |
-|package|component's package size and description|definitions.json#/package| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 
 ####  3.11.3	 Mux
 
@@ -320,12 +318,12 @@ The table below gives a description of the properties used to specify a mux in a
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|componentID|common component identifying information, such as mpn|Object|Yes|
 |muxRatio|ratio of inputs to outputs|String| |
 |inputInterfaces|list of interfaces mux is designed for|String| |
 |insertionLoss|insertion loss through mux|Number| |
-|package|component's package size and description|definitions.json#/package| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 
 ####  3.11.4	 Level Shifter
 
@@ -333,13 +331,13 @@ The table below gives a description of the properties used to specify level shif
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|componentID|common component identifying information, such as mpn|Object|Yes|
 |numberChannels|number of lanes (single ended or differential) supported by redriver|Number| |
 |interface|interface supported by redriver|String| |
-|inputVoltage|input voltage level of level shifter|definitions.json#/unit| |
-|outputVoltage|output voltage level of level shifter|definitions.json#/unit| |
-|package|component's package size and description|definitions.json#/package| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|inputVoltage|input voltage level of level shifter|Object| |
+|outputVoltage|output voltage level of level shifter|Object| |
+|package|component's package size and description|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 
 ### 3.12	 Logic Integrated Circuits
 
@@ -351,14 +349,14 @@ The table below gives a description of the properties used to specify logic gate
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|componentID|common component identifying information, such as mpn|Object|Yes|
 |type|logical operation performed by logic gate|String|Yes|
 |numberGates|number of logical gates encapsulated in logic IC|Number| |
 |schmittTrigger|property describing whether logic gate has schmitt trigger inputs|Boolean| |
-|propagationDelay|time between input changing to output changing|definitions.json#/unit| |
-|rampTime|time for output to go from 10% nominal output voltage to 90% nominal output voltage|definitions.json#/unit| |
-|package|component's package size and description|definitions.json#/package| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|propagationDelay|time between input changing to output changing|Object| |
+|rampTime|time for output to go from 10% nominal output voltage to 90% nominal output voltage|Object| |
+|package|component's package size and description|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 
 ####  3.12.2	 Clock
 
@@ -366,18 +364,18 @@ The table below gives a description of the properties used to specify a clock in
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
-|fixedFrequency|clock frequency value if the clock has a fixed frequency|definitions.json#/unit| |
-|minFrequency|minimum clock frequency value if the clock has a configurable frequency|definitions.json#/unit| |
-|maxFrequency|maximum clock frequency value if the clock has a configurable frequency|definitions.json#/unit| |
+|componentID|common component identifying information, such as mpn|Object|Yes|
+|fixedFrequency|clock frequency value if the clock has a fixed frequency|Object| |
+|minFrequency|minimum clock frequency value if the clock has a configurable frequency|Object| |
+|maxFrequency|maximum clock frequency value if the clock has a configurable frequency|Object| |
 |numberClockOutputs|number of clock outputs in a clock IC|Number| |
 |diffSingleEnded|property describing whether a clock output is single ended or differential|String| |
-|jitter|cycle to cycle clock jitter|definitions.json#/unit| |
-|frequencyTolerance|amount of frequency variation specced from nominal frequency|definitions.json#/unit| |
-|powerSupplyRejectionRatio|power supply rejection ratio (PSRR)or ratio between power supply variation and output variation|definitions.json#/unit| |
+|jitter|cycle to cycle clock jitter|Object| |
+|frequencyTolerance|amount of frequency variation specced from nominal frequency|Object| |
+|powerSupplyRejectionRatio|power supply rejection ratio (PSRR)or ratio between power supply variation and output variation|Object| |
 |outputFormat|signal format of clock output|String| |
-|package|component's package size and description|definitions.json#/package| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 
 ### 3.13	 Microcontrollers
 
@@ -385,21 +383,21 @@ This section contains non-trivial microcontroller components.
 
 ####  3.13.1	 Microcontroller/EC (Electronic Controller)
 
-The table below gives a description of the properties used to specify an electronic controller ("EC") in a digital datasheet.
+The table below gives a description of the properties used to specify an embedded controller ("EC") in a digital datasheet.
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
-|onChipFlash|quantity of built-in flash in a microprocessor|definitions.json#/unit| |
-|onChipRAM|quantity of built-in RAM in a microprocessor|definitions.json#/unit| |
-|onChipROM|quantity of built-in ROM in a microprocessor|definitions.json#/unit| |
+|componentID|common component identifying information, such as mpn|Object|Yes|
+|onChipFlash|quantity of built-in flash in a microprocessor|Object| |
+|onChipRAM|quantity of built-in RAM in a microprocessor|Object| |
+|onChipROM|quantity of built-in ROM in a microprocessor|Object| |
 |coreProcessor|description of core processor|String| |
 |coreArchitectureBits|number of bits of data a CPU can transfer per clock cycle|String| |
-|clockSpeed|speed of main CPU clock|definitions.json#/unit| |
+|clockSpeed|speed of main CPU clock|Object| |
 |firmwareVersion|firmware version of the part|String| |
-|activePower|average power of device in active state|definitions.json#/unit| |
-|standbyPower|average power of device in standby state|definitions.json#/unit| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|activePower|average power of device in active state|Object| |
+|standbyPower|average power of device in standby state|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 |package|component's package size and description|Must set either Ref and Type| |
 
 ### 3.14	 IC Misc
@@ -412,15 +410,15 @@ The table below gives a description of the properties used to specify a speacker
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|componentID|common component identifying information, such as mpn|Object|Yes|
 |dataLength|number of bits in a data word|Number| |
-|outputPower|typical output power from speaker amplifier|definitions.json#/conditionalProperty| |
-|efficiency|typical speaker amplifier efficiency|definitions.json#/conditionalProperty| |
-|thd+n|typical total harmonic distortion plus noise of amplifier|definitions.json#/conditionalProperty| |
-|sampleRate|sample rate of data out of amplifier|definitions.json#/unit| |
+|outputPower|typical output power from speaker amplifier|Object| |
+|efficiency|typical speaker amplifier efficiency|Object| |
+|thd+n|typical total harmonic distortion plus noise of amplifier|Object| |
+|sampleRate|sample rate of data out of amplifier|Object| |
 |interface|describes the communication interface from the chip to the host|String| |
-|package|component's package size and description|definitions.json#/package| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 
 ####  3.14.2	 Audio Codec
 
@@ -428,16 +426,16 @@ The table below gives a description of the properties used to specify an audio c
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|componentID|common component identifying information, such as mpn|Object|Yes|
 |dataLength|number of bits in a data word|Number| |
 |hpOutputSNR|headphone amplifier output SNR|Number| |
-|hpOutputTHD+N|headphone output total harmonic distortion plus noise|definitions.json#/unit| |
-|micInputSNR|microphone input SNR|definitions.json#/unit| |
-|micInputTHD+N|microphone input total harmonic distortion plus noise|definitions.json#/unit| |
+|hpOutputTHD+N|headphone output total harmonic distortion plus noise|Object| |
+|micInputSNR|microphone input SNR|Object| |
+|micInputTHD+N|microphone input total harmonic distortion plus noise|Object| |
 |jackDetect|describes whether headphone jack detection is supported|Boolean| |
 |interface|describes the communication interface from the chip to the host|String| |
-|package|component's package size and description|definitions.json#/package| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 
 ####  3.14.3	 WLAN Module
 
@@ -445,7 +443,7 @@ The table below gives a description of the properties used to specify a WLAN mod
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|componentID|common component identifying information, such as mpn|Object|Yes|
 |wlanSpec|version of wlan specification supported by module|String| |
 |bluetoothVersion|version of bluetooth supported by module|String| |
 |txrxChains|number of tx and rx chains in a wifi module|String| |
@@ -453,8 +451,8 @@ The table below gives a description of the properties used to specify a WLAN mod
 |keying|pcie card key|String| |
 |lteCoexFilter|describes whether module supports lte coexistance filtering|Boolean| |
 |interface|describes the communication interface from the chip to the host|String| |
-|package|component's package size and description|definitions.json#/package| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 
 ####  3.14.4	 WWAN Module
 
@@ -462,14 +460,14 @@ The table below gives a description of the properties used to specify WWAN modul
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|componentID|common component identifying information, such as mpn|Object|Yes|
 |networkSupport|networks supported by wwan module|String| |
 |gpsSupport|whether wwan module has gps support|Boolean| |
 |m2FormFactor|wlan module form factor described by jedec standard m.2 form factors|String| |
 |keying|pcie card key|String| |
 |interface|describes the communication interface from the chip to the host|String| |
-|package|component's package size and description|definitions.json#/package| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 
 ####  3.14.5	 TPM (Trusted Platform Module)
 
@@ -477,10 +475,10 @@ The table below gives a description of the properties used to specify a TPM in a
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|componentID|common component identifying information, such as mpn|Object|Yes|
 |interface|describes the communication interface from the chip to the host|String| |
-|package|component's package size and description|definitions.json#/package| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 
 ### 3.15	 Storage/memory
 
@@ -493,13 +491,13 @@ The table below gives a description of the properties used to specify an SSD in 
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|componentID|common component identifying information, such as mpn|Object|Yes|
 |type|type of ssd storage as defined by interface and technology|String| |
-|capacity|capacity of SSD|definitions.json#/unit|Yes|
-|dataRate|maximum data rate|definitions.json#/unit| |
+|capacity|capacity of SSD|Object|Yes|
+|dataRate|maximum data rate|Object| |
 |interface|interface of ssd to host|String| |
-|package|component's package size and description|definitions.json#/package| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 
 ####  3.15.2	 SD Card
 
@@ -507,12 +505,12 @@ The table below gives a description of the properties used to specify an SD card
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|componentID|common component identifying information, such as mpn|Object|Yes|
 |type|type of sd card|String| |
-|capacity|capacity of SD card|definitions.json#/unit|Yes|
-|dataRate|maximum data rate|definitions.json#/unit| |
-|package|component's package size and description|definitions.json#/package| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|capacity|capacity of SD card|Object|Yes|
+|dataRate|maximum data rate|Object| |
+|package|component's package size and description|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 
 ####  3.15.3	 DRAM
 
@@ -520,12 +518,12 @@ The table below gives a description of the properties used to specify DRAM in a 
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|componentID|common component identifying information, such as mpn|Object|Yes|
 |type|type of dram|String| |
-|capacity|capacity of dram chip|definitions.json#/unit|Yes|
-|speed|dram maximum speed|definitions.json#/unit| |
-|package|component's package size and description|definitions.json#/package| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|capacity|capacity of dram chip|Object|Yes|
+|speed|dram maximum speed|Object| |
+|package|component's package size and description|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 
 ####  3.15.4	 ROM
 
@@ -533,12 +531,12 @@ The table below gives a description of the properties used to specify ROM in a d
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
-|capacity|capacity of rom|definitions.json#/unit| |
+|componentID|common component identifying information, such as mpn|Object|Yes|
+|capacity|capacity of rom|Object| |
 |interface|interface of rom to host|String| |
 |qeStatus|indicates whether the QE bit is set|Boolean| |
-|package|component's package size and description|definitions.json#/package| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
 
 ### 3.16	 USB-C
 
@@ -550,36 +548,36 @@ The table below gives a description of the properties used to specify a USB-C PD
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|componentID|common component identifying information, such as mpn|Object|Yes|
 |pdVersion|version of power delivery spec implemented by controller|String|Yes|
 |usbTypecRevision|usb type-c spec revision implemented by controller|String| |
 |powerRoleSupported|roles supported by pd controller|String| |
 |fastRoleSwapSupport|whether the pd controller supports fast role swap (FRS)|Boolean| |
 |vconnPowerSupport|whether the pd controller has support for vconn power|Boolean| |
-|vconnPowerLimit|power limit supported by internal vconn switch (if supported)|definitions.json#/unit| |
-|vconnMaxCurrent|maximum continuous current supported by internal vconn switch (if supported)|definitions.json#/unit| |
-|vconnOverCurrentLimit|over current limit supported by internal vconn switch (if supported)|definitions.json#/unit| |
+|vconnPowerLimit|power limit supported by internal vconn switch (if supported)|Object| |
+|vconnMaxCurrent|maximum continuous current supported by internal vconn switch (if supported)|Object| |
+|vconnOverCurrentLimit|over current limit supported by internal vconn switch (if supported)|Object| |
 |integratedVbusDischargeSwitch|whether the pd controller has one or more integrated vbus discharge switches |Boolean| |
 |integratedLoadSwitch|whether the pd controller has one or more integrated load switches |Boolean| |
-|maxSinkCurrent|maximum continuous current supported by pd controller integrated sink load switch|definitions.json#/unit| |
-|maxSourceCurrent|maximum continuous current supported by pd controller integrated source load switch|definitions.json#/unit| |
-|sinkfetOverCurrentLimit|over current limit supported by pd controller integrated sink load switch|definitions.json#/unit| |
-|sourcefetOverCurrentLimit|over current limit supported by pd controller integrated source load switch|definitions.json#/unit| |
-|onResistanceSinkFet|on-resistance of the integrated sink load switch|definitions.json#/unit| |
-|onResistanceSourceFet|on-resistance of the integrated source load switch|definitions.json#/unit| |
-|activeCurrent|active current of pd controller (during PD communication)|definitions.json#/unit| |
-|shutDownCurrent|shutdown current of pd controller|definitions.json#/unit| |
-|idleCurrent|idle current of pd controller (cable connected but no PD communiation)|definitions.json#/unit| |
-|thermalShudownThresholdRising|Thermal Shudown (tsd) Threshold with temperature rising|definitions.json#/unit| |
-|thermalShudownThresholdFalling|Thermal Shudown (tsd) Threshold with temperature falling|definitions.json#/unit| |
-|vbusOvervoltageProtectionThresholdRising|Overvoltage Protection (OVP) Threshold with vbus voltage rising|definitions.json#/unit| |
-|vbusOvervoltageProtectionThresholdFalling|Overvoltage Protection (OVP) Threshold with vbus voltage falling|definitions.json#/unit| |
-|vbusUndervoltageLockoutThresholdRising|Undervoltage Lockout Out (UVLO) Threshold with vbus voltage rising|definitions.json#/unit| |
-|vbusUndervoltageLockoutThresholdFalling|Undervoltage Lockout Out (UVLO) Threshold with vbus voltage rising|definitions.json#/unit| |
-|vconnOvervoltageProtectionThresholdRising|Overvoltage Protection (OVP) Threshold with vconn voltage rising|definitions.json#/unit| |
-|vconnOvervoltageProtectionThresholdFalling|Overvoltage Protection (OVP) Threshold with vconn voltage falling|definitions.json#/unit| |
-|vconnUndervoltageLockoutThresholdRising|Undervoltage Lockout Out (UVLO) Threshold with vconn voltage rising|definitions.json#/unit| |
-|vconnUndervoltageLockoutThresholdFalling|Undervoltage Lockout Out (UVLO) Threshold with vconn voltage rising|definitions.json#/unit| |
-|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
-|package|component's package size and description|definitions.json#/package| |
+|maxSinkCurrent|maximum continuous current supported by pd controller integrated sink load switch|Object| |
+|maxSourceCurrent|maximum continuous current supported by pd controller integrated source load switch|Object| |
+|sinkfetOverCurrentLimit|over current limit supported by pd controller integrated sink load switch|Object| |
+|sourcefetOverCurrentLimit|over current limit supported by pd controller integrated source load switch|Object| |
+|onResistanceSinkFet|on-resistance of the integrated sink load switch|Object| |
+|onResistanceSourceFet|on-resistance of the integrated source load switch|Object| |
+|activeCurrent|active current of pd controller (during PD communication)|Object| |
+|shutDownCurrent|shutdown current of pd controller|Object| |
+|idleCurrent|idle current of pd controller (cable connected but no PD communiation)|Object| |
+|thermalShudownThresholdRising|Thermal Shudown (tsd) Threshold with temperature rising|Object| |
+|thermalShudownThresholdFalling|Thermal Shudown (tsd) Threshold with temperature falling|Object| |
+|vbusOvervoltageProtectionThresholdRising|Overvoltage Protection (OVP) Threshold with vbus voltage rising|Object| |
+|vbusOvervoltageProtectionThresholdFalling|Overvoltage Protection (OVP) Threshold with vbus voltage falling|Object| |
+|vbusUndervoltageLockoutThresholdRising|Undervoltage Lockout Out (UVLO) Threshold with vbus voltage rising|Object| |
+|vbusUndervoltageLockoutThresholdFalling|Undervoltage Lockout Out (UVLO) Threshold with vbus voltage rising|Object| |
+|vconnOvervoltageProtectionThresholdRising|Overvoltage Protection (OVP) Threshold with vconn voltage rising|Object| |
+|vconnOvervoltageProtectionThresholdFalling|Overvoltage Protection (OVP) Threshold with vconn voltage falling|Object| |
+|vconnUndervoltageLockoutThresholdRising|Undervoltage Lockout Out (UVLO) Threshold with vconn voltage rising|Object| |
+|vconnUndervoltageLockoutThresholdFalling|Undervoltage Lockout Out (UVLO) Threshold with vconn voltage rising|Object| |
+|pins|array of pin objects with associated properties|array of Object| |
+|package|component's package size and description|Object| |
 
