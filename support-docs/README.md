@@ -398,7 +398,7 @@ The table below gives a description of the properties used to specify an embedde
 |activePower|average power of device in active state|Object| |
 |standbyPower|average power of device in standby state|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
-|package|component's package size and description|Must set either Ref and Type| |
+|package|component's package size and description|Object| |
 
 ### 3.14	 IC Misc
 
