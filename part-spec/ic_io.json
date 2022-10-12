@@ -22,11 +22,11 @@
                 "interface": {
                     "description": "list of interface(s) supported by redriver",
                     "examples": [
-                        "hdmi2",
-                        "dp hbr3",
-                        "usb3.1 gen2"
+                        "HDMI",
+                        "DP HBR3",
+                        "USB3.1 Gen2"
                     ],
-                    "type": "string"
+                    "type": "array"
                 },
                 "maxDataRate": {
                     "description": "maximum data rate supported by redriver",
@@ -46,6 +46,78 @@
                 }
             }
         },
+        {
+            "title": "retimer",
+            "type": "object",
+            "required": [
+             "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "numberOfLanes": {
+                    "description": "number of lanes supported by a device",
+                    "type": "number"
+                },
+                "interface": {
+                    "description": "list of interface(s) supported by a device",
+                    "examples": [
+                        "HDMI",
+                        "DP1.4",
+                        "USB3.2 Gen2x1",
+                        "PCIe3.0",
+                        "TBT3.0",
+                        "USB4"
+                    ],
+                    "type": "array"
+                },
+                "dpMaxLinkRate": {
+                    "description": "Max link rate supported by DP interface of a device",
+                    "examples": [
+                        "HBR",
+                        "HBR2",
+                        "HBR33",
+                        "UHBR10",
+                        "UHBR13.5"
+                    ],
+                    "type": "string"
+                },
+                "maxDataRate": {
+                    "description": "maximum data rate supported by a device",
+                    "comment": "units of Hz",
+                    "$ref": "definitions.json#/unit"
+                },
+                "integratedAuxLsSwitch": {
+                    "description": "whether the AUX/LSx switch for SBU is integrated",
+                    "type": "boolean"
+                },
+                "commonClock": {
+                    "description": "whether a device supports common reference clock",
+                    "type": "boolean"
+                },
+                "sris": {
+                    "description": "whether a device supports Seperate Reference clock with Independent Spread spectrum clocking(SRIS)",
+                    "type": "boolean"
+                },
+                "srns": {
+                    "description": "whether a device supports Seperate Reference clock with No Spread spectrum clocking (SRNS)",
+                    "type": "boolean"
+                },
+                "package": {
+                    "description": "component's package size and description",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                    "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },        
         {
             "title": "bridge chip",
             "type": "object",
@@ -69,17 +141,17 @@
                 "inputInterfaces": {
                     "description": "list of interfaces at the input of the bridge",
                     "examples": [
-                        "hdmi2.0",
-                        "dp hbr2"
+                        "HDMI2.0",
+                        "DP HBR2"
                     ],
                     "type": "string"
                 },
                 "outputInterfaces": {
                     "description": "list of interfaces at the output of the bridge",
                     "examples": [
-                        "dp hbr2"
+                        "DP HBR2"
                     ],
-                    "type": "string"
+                    "type": "array"
                 },
                 "package": {
                     "description": "component's package size and description",
@@ -117,8 +189,8 @@
                 "inputInterfaces": {
                     "description": "list of interfaces mux is designed for",
                     "examples": [
-                        "hdmi2.0",
-                        "dp hbr2"
+                        "HDMI2.0",
+                        "DP HBR2"
                     ],
                     "type": "string"
                 },
@@ -150,19 +222,6 @@
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
                     "$ref": "definitions.json#/componentID"
-                },
-                "numberChannels": {
-                    "description": "number of lanes (single ended or differential) supported by redriver",
-                    "type": "number"
-                },
-                "interface": {
-                    "description": "interface supported by redriver",
-                    "examples": [
-                        "hdmi1.4",
-                        "hdmi2.0",
-                        "etc."
-                    ],
-                    "type": "string"
                 },
                 "inputVoltage": {
                     "description": "input voltage level of level shifter",
