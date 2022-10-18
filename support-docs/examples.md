@@ -448,7 +448,7 @@ Diode Example
             "publishedDate": "2022-09-26",
             "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
         },
-        "status": "active",
+        "status": "active"
     },
     "type": "schottky",
     "diodeCount": 1,
@@ -462,7 +462,15 @@ Diode Example
             "unitFactor": 1e-3,
             "valueDefined": true
         },
-        "conditions": ["forward current (If)=800mA"]     
+        "conditions": {
+            "if":{
+                "siUnit": "amp",
+                "absoluteValue": 800,
+                "unitText": "mA",
+                "unitFactor": 1e-3,
+                "valueDefined": true 
+            }
+        }            
     },
     "vfMax": {
         "value": {
@@ -472,7 +480,15 @@ Diode Example
             "unitFactor": 1e-3,
             "valueDefined": true
         },
-        "conditions": ["forward current (If)=800mA"]     
+        "conditions": {
+            "if":{
+                "siUnit": "amp",
+                "absoluteValue": 800,
+                "unitText": "mA",
+                "unitFactor": 1e-3,
+                "valueDefined": true 
+            }
+        }       
     },
     "ifm": {
         "siUnit": "amp",
@@ -510,7 +526,15 @@ Diode Example
             "unitFactor": 1e-6,
             "valueDefined": true
         },
-        "conditions": ["vr=10V"]
+        "conditions": {
+            "vr":{
+                "siUnit": "volt",
+                "absoluteValue": 10,
+                "unitText": "V",
+                "unitFactor": 1,
+                "valueDefined": true 
+            }
+        }      
     },
     "irMax": {
         "value":{
@@ -520,7 +544,15 @@ Diode Example
             "unitFactor": 1e-6,
             "valueDefined": true
         },
-        "conditions": ["vr=25V"]
+        "conditions": {
+            "vr":{
+                "siUnit": "volt",
+                "absoluteValue": 25,
+                "unitText": "V",
+                "unitFactor": 1,
+                "valueDefined": true 
+            }
+        }    
     },
     "ifVsVf":{
         "title": "If vs Vf",
@@ -654,9 +686,15 @@ FET Example
             "unitFactor": 1e-6,
             "valueDefined": true
         },
-        "conditions": [
-            "VDS=10V"
-        ]
+        "conditions": {
+            "vgs":{
+                "siUnit": "volt",
+                "absoluteValue": 10,
+                "unitText": "V",
+                "unitFactor": 1,
+                "valueDefined": true 
+            }
+        }    
     },
     "iGss": {
         "value": {
@@ -666,9 +704,15 @@ FET Example
             "unitFactor": 1e-9,
             "valueDefined": true
         },
-        "conditions": [
-            "VGS=5V"
-        ]
+        "conditions": {
+            "vgs":{
+                "siUnit": "volt",
+                "absoluteValue": 5,
+                "unitText": "V",
+                "unitFactor": 1,
+                "valueDefined": true 
+            }
+        }    
     },
     "diodeContinuousCurrent": {
         "siUnit": "amp",
@@ -692,10 +736,22 @@ FET Example
             "unitFactor": 1e-3,
             "valueDefined": true
         },
-        "conditions": [
-            "ID=0.5A",
-            "VGS=5V"
-        ]
+        "conditions": {
+            "id":{
+                "siUnit": "amp",
+                "absoluteValue": 500,
+                "unitText": "mA",
+                "unitFactor": 1e-3,
+                "valueDefined": true 
+            },
+            "vgs":{
+                "siUnit": "volt",
+                "absoluteValue": 1,
+                "unitText": "V",
+                "unitFactor": 1,
+                "valueDefined": true 
+            }
+        }
     },
     "rgMax": {
         "value": {
@@ -705,10 +761,22 @@ FET Example
             "unitFactor": 1,
             "valueDefined": true
         },
-        "conditions": [
-            "VDS=0V",
-            "VGS=0V"
-        ]
+        "conditions": {
+            "vds":{
+                "siUnit": "volt",
+                "absoluteValue": 0,
+                "unitText": "V",
+                "unitFactor": 1,
+                "valueDefined": true 
+            },
+            "vgs":{
+                "siUnit": "volt",
+                "absoluteValue": 0,
+                "unitText": "V",
+                "unitFactor": 1,
+                "valueDefined": true 
+            }
+        }
     },
     "CissMax": {
         "value": {
@@ -718,10 +786,22 @@ FET Example
             "unitFactor": 1e-12,
             "valueDefined": true
         },
-        "conditions": [
-            "VDS=5V",
-            "VGS=0V"
-        ]
+        "conditions": {
+            "vds":{
+                "siUnit": "volt",
+                "absoluteValue": 0,
+                "unitText": "V",
+                "unitFactor": 1,
+                "valueDefined": true 
+            },
+            "vgs":{
+                "siUnit": "volt",
+                "absoluteValue": 0,
+                "unitText": "V",
+                "unitFactor": 1,
+                "valueDefined": true 
+            }
+        }
     },
     "CossMax": {
         "value": {
@@ -731,10 +811,22 @@ FET Example
             "unitFactor": 1e-12,
             "valueDefined": true
         },
-        "conditions": [
-            "VDS=5V",
-            "VGS=0V"
-        ]
+        "conditions": {
+            "vds":{
+                "siUnit": "volt",
+                "absoluteValue": 0,
+                "unitText": "V",
+                "unitFactor": 5,
+                "valueDefined": true 
+            },
+            "vgs":{
+                "siUnit": "volt",
+                "absoluteValue": 0,
+                "unitText": "V",
+                "unitFactor": 1,
+                "valueDefined": true 
+            }
+        }
     },
     "qgMax": {
         "value": {
@@ -744,10 +836,22 @@ FET Example
             "unitFactor": 1e-9,
             "valueDefined": true
         },
-        "conditions": [
-            "VDS=5V",
-            "VGS=5V"
-        ]
+                "conditions": {
+            "vds":{
+                "siUnit": "volt",
+                "absoluteValue": 5,
+                "unitText": "V",
+                "unitFactor": 1,
+                "valueDefined": true 
+            },
+            "vgs":{
+                "siUnit": "volt",
+                "absoluteValue": 5,
+                "unitText": "V",
+                "unitFactor": 1,
+                "valueDefined": true 
+            }
+        }
     },
     "tdONTyp": {
         "value": {
@@ -757,10 +861,22 @@ FET Example
             "unitFactor": 1e-9,
             "valueDefined": true
         },
-        "conditions": [
-            "VDS=5V",
-            "VGS=5V"
-        ]
+        "conditions": {
+            "vds":{
+                "siUnit": "volt",
+                "absoluteValue": 5,
+                "unitText": "V",
+                "unitFactor": 1,
+                "valueDefined": true 
+            },
+            "vgs":{
+                "siUnit": "volt",
+                "absoluteValue": 5,
+                "unitText": "V",
+                "unitFactor": 1,
+                "valueDefined": true 
+            }
+        }
     },
     "pTot": {
         "value": {
@@ -770,9 +886,15 @@ FET Example
             "unitFactor": 1,
             "valueDefined": true
         },
-        "conditions": [
-            "temperature=25C"
-        ]
+        "conditions": {
+            "temperature":{
+                "siUnit": "celsius",
+                "absoluteValue": 25,
+                "unitText": "C",
+                "unitFactor": 1,
+                "valueDefined": true 
+            }
+        }
     },
     "package": {
         "length": 5,
@@ -1175,7 +1297,7 @@ Microcontroller/EC Example - Limited pins
                     "electricalConfiguration": "push-pull"
                 }
             ],
-            "vihMin": {
+            "vihMax": {
                 "siUnit": "volts",
                 "unitText": "V",
                 "unitFactor": 1,
