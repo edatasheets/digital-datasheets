@@ -38,8 +38,18 @@
                     "description": "number of transistors in the package.",
                     "type": "number"
                 },
+                "vgs": {
+                    "description": "gate to source voltage difference of a MOSFET.",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
                 "vgsMax": {
                     "description": "maximum gate to source voltage difference that can be continously applied to a MOSFET. This is a limiting value.",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "vds": {
+                    "description": "drain to source voltage difference of a MOSFET.",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
@@ -59,7 +69,7 @@
                     "$ref": "definitions.json#/unit"
                 },
                 "vgsThTyp": {
-                    "description": "gate to source voltage difference (VGS) required to produce a conducting path between drain and source.",
+                    "description": "gate to source voltage difference (vgs) required to produce a conducting path between drain and source.",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
@@ -69,13 +79,18 @@
                     "$ref": "definitions.json#/unit"
                 },
                 "vsdDiodeVfTyp": {
-                    "description": "ztypical reverse diode forward voltage when a MOSFET is in off-state.",
+                    "description": "typical reverse diode forward voltage when a MOSFET is in off-state.",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
                  "vsdDiodeVfMax": {
                     "description": "maximum reverse diode forward voltage when a MOSFET is in off-state.",
                     "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "iD": {
+                    "description": "Drain Current of a MOSFET.",
+                    "comment": "units of amps",
                     "$ref": "definitions.json#/unit"
                 },
                 "iDrain": {
@@ -204,11 +219,11 @@
                     "$ref": "definitions.json#/conditionalProperty" 
                 },
                 "idVsVds": {
-                    "description": "graph of drain current (ID) vs drain source voltage (VDS).",
+                    "description": "graph of drain current (iD) vs drain source voltage (vds).",
                     "$ref": "graph.json#/graphDefiniton"
                 },
                 "idVsVgs": {
-                    "description": "graph of drain current (ID) vs gate source voltage (VGS).",
+                    "description": "graph of drain current (iD) vs gate source voltage (vgs).",
                     "$ref": "graph.json#/graphDefiniton"
                 },
                 "tdONTyp": {
@@ -267,7 +282,7 @@
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "pdVsTemp": {
-                    "description": "graph of power dissipation vs temperature (Vgs).",
+                    "description": "graph of power dissipation vs temperature.",
                     "$ref": "graph.json#/graphDefiniton"
                 },
                 "pins": {
@@ -337,6 +352,11 @@
                     "description": "minimum forward voltage of a diode",
                     "comment": "conditions include: forward current of diode under which a given forward voltage was measured",
                     "$ref": "definitions.json#/conditionalProperty"
+                },
+                "if": {
+                    "description": "continuous forward current of a diode",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
                 },
                 "ifm": {
                     "description": "maximum continuous forward current a diode can support",
@@ -429,7 +449,7 @@
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "ifVsVf": {
-                    "description": "graph of forward current (If) vs forward voltage (Vf)",
+                    "description": "graph of forward current (If) vs forward voltage (VfTyp)",
                     "$ref": "graph.json#/graphDefiniton"
                 },
                 "package": {
