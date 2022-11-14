@@ -512,5 +512,144 @@
         "items": "string"
       }
     }
-  }
+  },
+  "currentConsumption": {
+    "type": "object",
+    "properties": {
+      "SupplyName": {
+        "description": "Name of the power supply ",
+        "type": "string"
+      },
+      "quiescentCurrentTyp": {
+        "description": "typical quiescent current (Iq) of a device",
+        "comment": "units of amps",
+        "$ref": "definitions.json#/unit"
+      },
+      "quiescentCurrentMax": {
+        "description": "maximum quiescent current (Iq) of a device",
+        "comment": "units of amps",
+        "$ref": "definitions.json#/unit"
+      },
+      "quiescentCurrentMin": {
+        "description": "minimum quiescent current (Iq) of a device",
+        "comment": "units of amps",
+        "$ref": "definitions.json#/unit"
+      },
+      "shutdownCurrentTyp": {
+        "description": "typical shutdown current (Isd) of a device",
+        "comment": "units of amps",
+        "$ref": "definitions.json#/unit"
+      },
+      "shutdownCurrentMax": {
+        "description": "maximum shutdown current (Isd) of a device",
+        "comment": "units of amps",
+        "$ref": "definitions.json#/unit"
+      },
+      "shutdownCurrentMin": {
+        "description": "minimum shutdown current (Isd) of a device",
+        "comment": "units of amps",
+        "$ref": "definitions.json#/unit"
+      },
+      "activeCurrentTyp": {
+        "description": "typical current consumption when a device is in active mode",
+        "comment": "units of amps",
+        "$ref": "definitions.json#/unit"
+      },
+      "activeCurrentMax": {
+        "description": "maximum current consumption when a device is in active mode",
+        "comment": "units of amps",
+        "$ref": "definitions.json#/unit"
+      },
+      "activeCurrentMin": {
+        "description": "minimum current consumption when a device is in active mode",
+        "comment": "units of amps",
+        "$ref": "definitions.json#/unit"
+      },
+      "sleepCurrentTyp": {
+        "description": "typical current consumption when a device is in sleep mode",
+        "comment": "units of amps",
+        "$ref": "definitions.json#/unit"
+      },
+      "sleepCurrentMax": {
+        "description": "maximum current consumption when a device is in sleep mode",
+        "comment": "units of amps",
+        "$ref": "definitions.json#/unit"
+      },
+      "sleepCurrentMin": {
+        "description": "minimum current consumption when a device is in sleep mode",
+        "comment": "units of amps",
+        "$ref": "definitions.json#/unit"
+      },
+      "idleCurrentTyp": {
+        "description": "typical current consumption when a device is in idle mode",
+        "comment": "units of amps",
+        "$ref": "definitions.json#/unit"
+      },
+      "idleCurrentMax": {
+        "description": "maximum current consumption when a device is in idle mode",
+        "comment": "units of amps",
+        "$ref": "definitions.json#/unit"
+      },
+      "idleCurrentMin": {
+        "description": "minimum current consumption when a device is in idle mode",
+        "comment": "units of amps",
+        "$ref": "definitions.json#/unit"
+      }
+    }
+  },
+"componentProtectionThresholds": {
+    "type": "object",
+    "properties": {
+      "thermalShutdownThresholdRising": {
+        "description": "Thermal Shutdown (tsd) Threshold with temperature rising",
+        "comment": "units of celsius",
+        "$ref": "definitions.json#/unit"
+      },
+      "thermalShutdownThresholdFalling": {
+        "description": "Thermal Shutdown (tsd) Threshold with temperature falling",
+        "comment": "units of celsius",
+        "$ref": "definitions.json#/unit"
+      },
+      "thermalShutdownHysteresis": {
+        "description": "Thermal Shutdown (tsd) Hysteresis",
+        "comment": "units of celsius",
+        "$ref": "definitions.json#/unit"
+      },
+      "powerSupplyProtection": {
+        "description": "undervoltage lockout, overvoltage protection thresholds of a supply",
+        "$ref": "#/defs/powerSupplyProtection"
+      }
+    }
+  },
+  "$defs": {
+    "powerSupplyProtection": {
+      "type": "object",
+      "properties": {
+        "SupplyName": {
+          "description": "Name of the supply monitored",
+          "type": "string"
+        },
+        "OvervoltageProtectionThresholdRising": {
+          "description": "Overvoltage Protection (OVP) Threshold with monitored supply rising",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "OvervoltageProtectionThresholdFalling": {
+          "description": "Overvoltage Protection (OVP) Threshold with monitored supply falling",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "UndervoltageLockoutThresholdRising": {
+          "description": "Undervoltage Lockout Out (UVLO) Threshold with monitored supply rising",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "UndervoltageLockoutThresholdFalling": {
+          "description": "Undervoltage Lockout Out (UVLO) Threshold with monitored supply Falling",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        }
+      }
+    }
+  } 
 }
