@@ -31,75 +31,141 @@
                     ],
                     "type": "string"
                 },
+                "vinTyp": {
+                    "description": "typical input voltage under which a device can be expected to operate without output dropping",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
                 "vinMin": {
-                    "description": "minimum input voltage under which the part can be expected to operate without output dropping",
+                    "description": "minimum input voltage under which a device can be expected to operate without output dropping",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
                 "vinMax": {
-                    "description": "maximum input voltage under which the part can be expected to operate without output dropping",
+                    "description": "maximum input voltage under which a device can be expected to operate without output dropping",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "voutTyp": {
+                    "description": "typical output voltage a device can regulate",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
                 "voutMin": {
-                    "description": "minimum output voltage the part can regulate",
+                    "description": "minimum output voltage a device can regulate",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
                 "voutMax": {
-                    "description": "maximum output voltage the part can regulate",
+                    "description": "maximum output voltage a device can regulate",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
-                "feedbackVoltage": {
-                    "description": "voltage comparison point at the feedback node",
+                "feedbackVoltageTyp": {
+                    "description": "typical voltage comparison point at the feedback node",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
-                "maxLoadCurrent": {
-                    "description": "maximum load current supported by regulator",
+                 "feedbackVoltageMax": {
+                    "description": "max voltage comparison point at the feedback node",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                 "feedbackVoltageMin": {
+                    "description": "minimum voltage comparison point at the feedback node",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "LoadCurrentTyp": {
+                    "description": "typical load current supported by a device",
                     "comment": "units of amps",
                     "$ref": "definitions.json#/unit"
                 },
-                "minLoadCurrent": {
-                    "description": "minimum load current supported by regulator",
+                "LoadCurrentMax": {
+                    "description": "maximum load current supported by a device",
                     "comment": "units of amps",
                     "$ref": "definitions.json#/unit"
                 },
-                "voutAccuracy": {
-                    "description": "output voltage variation at no load",
-                    "$ref": "definitions.json#/unit"
-                },
-                "loadRegulation": {
-                    "description": "output voltage variation from no load to full load ",
-                    "$ref": "definitions.json#/unit"
-                },
-                "lineRegulation": {
-                    "description": "output voltage variation from minimum input voltage to maximum input voltage ",
-                    "$ref": "definitions.json#/unit"
-                },
-                "quiescentCurrent": {
-                    "description": "quiescent current (Iq) of voltage regulator at no load",
+                "LoadCurrentMin": {
+                    "description": "minimum load current supported by a device",
                     "comment": "units of amps",
                     "$ref": "definitions.json#/unit"
                 },
-                "shutdownCurrent": {
-                    "description": "shutdown current (Isd) of voltage regulator",
-                    "comment": "units of amps",
+                "voutAccuracyTyp": {
+                    "description": "typical output voltage variation at no load",
                     "$ref": "definitions.json#/unit"
+                },
+                "voutAccuracyMax": {
+                    "description": "maximum output voltage variation at no load",
+                    "$ref": "definitions.json#/unit"
+                },
+                "voutAccuracyMin": {
+                    "description": "minimum output voltage variation at no load",
+                    "$ref": "definitions.json#/unit"
+                },
+                "loadRegulationTyp": {
+                    "description": "typical output voltage variation from no load to full load ",
+                    "$ref": "definitions.json#/unit"
+                },
+                 "loadRegulationMax": {
+                    "description": "maximum output voltage variation from no load to full load ",
+                    "$ref": "definitions.json#/unit"
+                },
+                 "loadRegulationMin": {
+                    "description": "minimum output voltage variation from no load to full load ",
+                    "$ref": "definitions.json#/unit"
+                },
+                "lineRegulationTyp": {
+                    "description": "typical output voltage variation from minimum input voltage to maximum input voltage ",
+                    "$ref": "definitions.json#/unit"
+                },
+                "lineRegulationMax": {
+                    "description": "maximum output voltage variation from minimum input voltage to maximum input voltage ",
+                    "$ref": "definitions.json#/unit"
+                },
+                "lineRegulationMin": {
+                    "description": "minimum output voltage variation from minimum input voltage to maximum input voltage ",
+                    "$ref": "definitions.json#/unit"
+                },
+                "currentConsumption": {
+                    "description": "current consumption of a device",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/currentConsumption"
+                    }
                 },
                 "switchingFrequency": {
                     "description": "swtiching frequency (fsw) of voltage regulator",
                     "comment": "units of hertz",
                     "$ref": "definitions.json#/unit"
                 },
-                "enableTime": {
-                    "description": "time between enable asserted and output voltage rising to 10% nominal",
+                "enableTimeTyp": {
+                    "description": "typical time between enable asserted and output voltage rising to 10% nominal",
                     "comment": "units of seconds",
                     "$ref": "definitions.json#/unit"
                 },
-                "rampTime": {
-                    "description": "time for output voltage to go from 10% vout nominal to 90% vout nominal",
+                 "enableTimeMax": {
+                    "description": "max time between enable asserted and output voltage rising to 10% nominal",
+                    "comment": "units of seconds",
+                    "$ref": "definitions.json#/unit"
+                },
+                 "enableTimeMin": {
+                    "description": "minimum time between enable asserted and output voltage rising to 10% nominal",
+                    "comment": "units of seconds",
+                    "$ref": "definitions.json#/unit"
+                },
+                "rampTimeTyp": {
+                    "description": "typical time for output voltage to go from 10% vout nominal to 90% vout nominal",
+                    "comment": "units of seconds",
+                    "$ref": "definitions.json#/unit"
+                },
+                "rampTimeMax": {
+                    "description": "maximum time for output voltage to go from 10% vout nominal to 90% vout nominal",
+                    "comment": "units of seconds",
+                    "$ref": "definitions.json#/unit"
+                },
+                "rampTimeMin": {
+                    "description": "minimum time for output voltage to go from 10% vout nominal to 90% vout nominal",
                     "comment": "units of seconds",
                     "$ref": "definitions.json#/unit"
                 },
@@ -111,40 +177,12 @@
                     "description": "describes integrated fet current limits and rdson properties",
                     "$ref": "#/$defs/powerFetProperities"
                 },
-                "undervoltageLockoutThresholdRising": {
-                    "description": "Undervoltage Lockout Out (UVLO) Threshold with input voltage rising",
-                    "comment": "units of Volts",
-                    "$ref": "definitions.json#/unit"
-                },
-                "undervoltageLockoutThresholdFalling": {
-                    "description": "Undervoltage Lockout Out (UVLO) Threshold with input voltage falling",
-                    "comment": "units of Volts",
-                    "$ref": "definitions.json#/unit"
-                },
-                "overvoltageProtectionThresholdRising": {
-                    "description": "Overvoltage Protection (OVP) Threshold with input voltage rising",
-                    "comment": "units of Volts",
-                    "$ref": "definitions.json#/unit"
-                },
-                "overvoltageProtectionThresholdFalling": {
-                    "description": "Overvoltage Protection (OVP) Threshold with input voltage falling",
-                    "comment": "units of Volts",
-                    "$ref": "definitions.json#/unit"
-                },
-                "thermalShudownThresholdRising": {
-                    "description": "Thermal Shudown (tsd) Threshold with temperature rising",
-                    "comment": "units of celsius",
-                    "$ref": "definitions.json#/unit"
-                },
-                "thermalShudownThresholdFalling": {
-                    "description": "Thermal Shudown (tsd) Threshold with temperature falling",
-                    "comment": "units of celsius",
-                    "$ref": "definitions.json#/unit"
-                },
-                "thermalShudownHysteresis": {
-                    "description": "Thermal Shutdown (tsd) Hysteresis",
-                    "comment": "units of celsius",
-                    "$ref": "definitions.json#/unit"
+                "componentProtectionThresholds": {
+                    "description": "Thermal and power supply protection thresholds of a device",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/componentProtectionThresholds"
+                    }
                 },
                 "efficiency": {
                     "description": "power efficiency of regulator",
@@ -164,7 +202,210 @@
                     }
                 }
             }
-        }
+        },
+        {
+             "title": "ldo",
+              "type": "object",
+              "required": [
+                "componentID",
+                "vinMin",
+                "vinMax",
+                "voutMin",
+                "voutMax",
+                "maxLoadCurrent"
+              ],
+          "properties": {
+            "componentID": {
+              "description": "common component identifying information, such as mpn",
+              "$ref": "definitions.json#/componentID"
+            },
+            "vinMin": {
+              "description": "minimum input voltage under which the part can be expected to operate without the output dropping",
+              "comment": "units of volts",
+              "$ref": "definitions.json#/unit"
+            },
+            "vinMax": {
+              "description": "maximum input voltage under which the part can be expected to operate without the output dropping",
+              "comment": "units of volts",
+              "$ref": "definitions.json#/unit"
+            },
+            "voutMin": {
+              "description": "minimum output voltage the part can regulate",
+              "comment": "units of volts",
+              "$ref": "definitions.json#/unit"
+            },
+            "voutMax": {
+              "description": "maximum output voltage the part can regulate",
+              "comment": "units of volts",
+              "$ref": "definitions.json#/unit"
+            },
+            "voutTyp": {
+              "description": "typical output voltage the part can regulate",
+              "comment": "units of volts",
+              "$ref": "definitions.json#/unit"
+            },
+            "feedbackVoltageTyp": {
+              "description": "typical voltage comparison point at the feedback node (vref)",
+              "comment": "units of volts",
+              "$ref": "definitions.json#/unit"
+            },
+            "feedbackVoltageMin": {
+              "description": "minimum voltage comparison point at the feedback node (vref)",
+              "comment": "units of volts",
+              "$ref": "definitions.json#/unit"
+            },
+            "feedbackVoltageMax": {
+              "description": "max voltage comparison point at the feedback node (vref)",
+              "comment": "units of volts",
+              "$ref": "definitions.json#/unit"
+            },
+            "dropoutVoltageTyp": {
+              "description": "typical dropout voltage of a device",
+              "comment": "units of volts",
+              "type": "number"
+            },
+            "dropoutVoltageMin": {
+              "description": "minimum dropout voltage of a device",
+              "comment": "units of volts",
+              "type": "number"
+            },
+            "dropoutVoltageMax": {
+              "description": "maximum dropout voltage of a device",
+              "comment": "units of volts",
+              "type": "number"
+            },
+            "LoadCurrentMax": {
+              "description": "maximum load current supported by a device",
+              "comment": "units of amps",
+              "$ref": "definitions.json#/unit"
+            },
+            "LoadCurrentMin": {
+              "description": "minimum load current supported by a device",
+              "comment": "units of amps",
+              "$ref": "definitions.json#/unit"
+            },
+            "currentLimitTyp": {
+              "description": "typical high sustained output current threshold beyond which the output of a device starts drooping",
+              "comment": "units of amps",
+              "$ref": "definitions.json#/unit"
+            },
+            "currentLimitMin": {
+              "description": "minimum high sustained output current threshold beyond which the output of a device starts drooping",
+              "comment": "units of amps",
+              "$ref": "definitions.json#/unit"
+            },
+            "currentLimitMax": {
+              "description": "maximum high sustained output current threshold beyond which the output of a device starts drooping",
+              "comment": "units of amps",
+              "$ref": "definitions.json#/unit"
+            },
+            "voutAccuracyTyp": {
+              "description": "typical output voltage variation at no load of a device",
+              "$ref": "definitions.json#/unit"
+            },
+            "voutAccuracyMin": {
+              "description": "minimum output voltage variation at no load of a device",
+              "$ref": "definitions.json#/unit"
+            },
+            "voutAccuracyMax": {
+              "description": "maximum output voltage variation at no load of a device",
+              "$ref": "definitions.json#/unit"
+            },
+            "loadRegulationTyp": {
+              "description": "typical output voltage variation,from no load to full load, of a device ",
+              "$ref": "definitions.json#/unit"
+            },
+            "loadRegulationMin": {
+              "description": "minimum output voltage variation,from no load to full load, of a device ",
+              "$ref": "definitions.json#/unit"
+            },
+            "loadRegulationMax": {
+              "description": "maximum output voltage variation,from no load to full load, of a device ",
+              "$ref": "definitions.json#/unit"
+            },
+            "lineRegulationTyp": {
+              "description": "typical output voltage variation,from minimum input voltage to maximum input voltage, of a device ",
+              "$ref": "definitions.json#/unit"
+            },
+            "lineRegulationMin": {
+              "description": "minimum output voltage variation,from minimum input voltage to maximum input voltage, of a device ",
+              "$ref": "definitions.json#/unit"
+            },
+            "lineRegulationMax": {
+              "description": "maximum output voltage variation,from minimum input voltage to maximum input voltage, of a device ",
+              "$ref": "definitions.json#/unit"
+            },
+            "enableTimeTyp": {
+              "description": "typical time between enable asserted and output voltage rising to 10% nominal",
+              "comment": "units of seconds",
+              "$ref": "definitions.json#/unit"
+            },
+            "enableTimeMin": {
+              "description": "minimum time between enable asserted and output voltage rising to 10% nominal",
+              "comment": "units of seconds",
+              "$ref": "definitions.json#/unit"
+            },
+            "enableTimeMax": {
+              "description": "maximum time between enable asserted and output voltage rising to 10% nominal",
+              "comment": "units of seconds",
+              "$ref": "definitions.json#/unit"
+            },
+            "rampTimeTyp": {
+              "description": "typical time for output voltage to go from 10% vout nominal to 90% vout nominal",
+              "comment": "units of seconds",
+              "$ref": "definitions.json#/unit"
+            },
+            "rampTimeMin": {
+              "description": "minimum time for output voltage to go from 10% vout nominal to 90% vout nominal",
+              "comment": "units of seconds",
+              "$ref": "definitions.json#/unit"
+            },
+            "rampTimeMax": {
+              "description": "maximum time for output voltage to go from 10% vout nominal to 90% vout nominal",
+              "comment": "units of seconds",
+              "$ref": "definitions.json#/unit"
+            },
+            "powerSupplyRejectionRatio": {
+              "description": "graph object to capture Power Supply Rejection Ratio (PSRR) of device over various frequencies",
+              "$ref": "definitions.json#/graphDefiniton"
+            },
+            "rmsOutputNoise": {
+              "description": "graph object to capture RMS output noise of device over various frequencies",
+              "$ref": "definitions.json#/graphDefiniton"
+            },
+            "totalOutputNoise": {
+              "description": "total output noise of a device",
+              "$ref": "definitions.json#/unit"
+            },
+            "currentConsumption": {
+              "description": "current consumption of a device",
+              "type": "array",
+              "items": {
+                "$ref": "definitions.json#/currentConsumption"
+              }
+            },
+            "componentProtectionThresholds": {
+              "description": "Thermal and power supply protection thresholds of a device",
+              "type": "array",
+              "items": {
+                "$ref": "definitions.json#/componentProtectionThresholds"
+              }
+            },
+            "pins": {
+              "description": "array of pin objects with associated properties",
+              "type": "array",
+              "items": {
+                "$ref": "definitions.json#/pinSpec"
+              }
+            },
+            "package": {
+              "description": "component's package size and description",
+              "items": {
+                "$ref": "definitions.json#/package"
+              }
+            }
+          }
+        }   
     ],
     "$defs": {
         "powerFetProperties": {
