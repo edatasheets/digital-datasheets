@@ -219,11 +219,16 @@
               "description": "common component identifying information, such as mpn",
               "$ref": "definitions.json#/componentID"
             },
-            "vinMin": {
-              "description": "minimum input voltage under which the part can be expected to operate without the output dropping",
+            "vinTyp": {
+              "description": "typical input voltage under which the part can be expected to operate without the output dropping",
               "comment": "units of volts",
               "$ref": "definitions.json#/unit"
             },
+              "vinMin": {
+                "description": "minimum input voltage under which the part can be expected to operate without the output dropping",
+                "comment": "units of volts",
+                "$ref": "definitions.json#/unit"
+            }, 
             "vinMax": {
               "description": "maximum input voltage under which the part can be expected to operate without the output dropping",
               "comment": "units of volts",
@@ -405,7 +410,193 @@
               }
             }
           }
-        }   
+        },
+        {
+            "title": "load switch",
+            "type": "object",
+            "required": [
+                "componentID",
+                "vinMin",
+                "vinMax",
+                "OutputCurrentMax",
+                "onResistanceTyp"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "fetType": {
+                    "description": "type of pass FET in a device",
+                    "enum": [
+                        "NFET",
+                        "PFET"
+                    ],
+                    "type": "string"
+                },
+                "loadSwitchCount": {
+                    "description": "number of load switched in the package.",
+                    "type": "number"
+                },
+                "vinTyp": {
+                    "description": "typical input voltage under which a device can be expected to reliabily operate",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "vinMin": {
+                    "description": "minimum input voltage under which a device can be expected to reliabily operate",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "vinMax": {
+                    "description": "maximum input voltage under which the part can be expected to reliabily operate ",
+                    "comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "OutputCurrentMax": {
+                    "description": "maximum continuous DC cuurent supported by a device",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "oneResistanceTyp": {
+                    "description": "typical FET on state resistance",
+                    "comment": "conditions includes vin and output current",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "onResistanceMax": {
+                    "description": "maximum FET on state resistance",
+                    "comment": "conditions include vin voltage and output current",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "onResistanceMin": {
+                    "description": "mimimum FET on state resistance",
+                    "comment": "conditions include vin and output current",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "pdResistanceTyp": {
+                    "description": "typical pull-down resistance of a device from the output to the ground",
+                    "comment": "units of ohms",
+                    "$ref": "definitions.json#/unit"
+                },
+                "pdResistanceMax": {
+                    "description": "maximum pull-down resistance of a device from the output to the ground",
+                    "comment": "units of ohms",
+                    "$ref": "definitions.json#/unit"
+                },
+                "pdResistanceMin": {
+                    "description": "minimum pull-down resistance of a device from the output to the ground",
+                    "comment": "units of ohms",
+                    "$ref": "definitions.json#/unit"
+                },
+                "currentLimitSupport": {
+                    "description": "whether a device supports current limiting",
+                    "type": "boolean"
+                },
+                "adjustableRiseTimeSupport": {
+                    "description": "whether a device supports adjustable rise time",
+                    "type": "boolean"
+                },
+                "quickOutputDischargeSupport": {
+                    "description": "whether a device supports quick output discharge",
+                    "type": "boolean"
+                },
+                "reverseCurrentBlockingSupport": {
+                    "description": "whether a device supports reverse current blocking",
+                    "type": "boolean"
+                },
+                "powerGoodSupport": {
+                    "description": "whether a device supports power good",
+                    "type": "boolean"
+                },
+                "enableTimeTyp": {
+                    "description": "typical time between enable asserted and output voltage rising to 10% nominal",
+                    "comment": "conditions include output capacitor value, vin",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "enableTimeMin": {
+                    "description": "minimum time between enable asserted and output voltage rising to 10% nominal",
+                    "comment": "conditions include output capacitor value, vin",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "enableTimeMax": {
+                    "description": "maximum time between enable asserted and output voltage rising to 10% nominal",
+                    "comment": "conditions include output capacitor value, vin",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "offTimeTyp": {
+                    "description": "typical time between enable deasserted and output voltage falling to 90% nominal",
+                    "comment": "conditions include output capacitor value, vin",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "offTimeMax": {
+                    "description": "maximum time between enable deasserted and output voltage falling to 90% nominal",
+                    "comment": "conditions include output capacitor value, vin",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "offTimeMin": {
+                    "description": "minimum time between enable deasserted and output voltage falling to 90% nominal",
+                    "comment": "conditions include output capacitor value, vin",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "rampTimeTyp": {
+                    "description": "typical time for output voltage to go from 10% vout nominal to 90% vout nominal",
+                    "comment": "conditions include output capacitor value, vin",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "rampTimeMin": {
+                    "description": "minimum time for output voltage to go from 10% vout nominal to 90% vout nominal",
+                    "comment": "conditions include output capacitor value, vin",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "rampTimeMax": {
+                    "description": "maximum time for output voltage to go from 10% vout nominal to 90% vout nominal",
+                    "comment": "conditions include output capacitor value, vin",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "fallTimeTyp": {
+                    "description": "typical time for output voltage to go from 90% vout nominal to 10% vout nominal",
+                    "comment": "conditions include output capacitor value and current output, vin",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "fallTimeMax": {
+                    "description": "maximum time for output voltage to go from 90% vout nominal to 10% vout nominal",
+                    "comment": "conditions include output capacitor value and current output, vin",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "fallTimeMin": {
+                    "description": "minimum time for output voltage to go from 90% vout nominal to 10% vout nominal",
+                    "comment": "conditions include output capacitor value and current output, vin",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "currentConsumption": {
+                    "description": "current consumption of a device",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/currentConsumption"
+                    }
+                },
+                "componentProtectionThresholds": {
+                    "description": "Thermal and power supply protection thresholds of a device",
+                    "type": "array",
+                    "items": {
+                        "$ref": "icProtection.json#/componentProtectionThresholds"
+                    }
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                },
+                "package": {
+                    "description": "component's package size and description",
+                    "items": {
+                        "$ref": "definitions.json#/package"
+                    }
+                }
+            }
+        }
     ],
     "$defs": {
         "powerFetProperties": {
