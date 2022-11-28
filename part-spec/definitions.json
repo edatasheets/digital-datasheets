@@ -516,7 +516,7 @@
   "currentConsumption": {
     "type": "object",
     "properties": {
-      "SupplyName": {
+      "supplyName": {
         "description": "Name of the power supply ",
         "type": "string"
       },
