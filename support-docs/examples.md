@@ -1359,3 +1359,271 @@ Microcontroller/EC Example - Limited pins
         }
     ]
 }
+```
+
+PMIC Example - Limited pins 
+
+```json
+{
+    "componentID": {
+        "partType": "pmic",
+        "manufacturer": "ACME Components",
+        "componentName": "abc10",
+        "orderableMPN": "abc10,45",
+        "sourceDatasheetID": {
+            "publishedDate": "2021-11-23",
+            "datasheetURI": "www.acmecomponents.com/abc10datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2022-03-21",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "ldoRegulatorCount": 2,
+    "buckRegulatorCount": 2,
+    "componentList": [
+        "ldo",
+        "switching regulator"
+    ],
+    "instances": [
+        {
+            "componentTitle": "ldo",
+            "instanceName": "ldo1",
+            "instanceProperties": {
+                "vinMin": {
+                    "siUnit": "volt",
+                    "absoluteValue": 3,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "vinMax": {
+                    "siUnit": "volt",
+                    "absoluteValue": 5,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "voutMin": {
+                    "siUnit": "volt",
+                    "absoluteValue": 1.62,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "voutMax": {
+                    "siUnit": "volt",
+                    "absoluteValue": 1.98,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "maxLoadCurrent": {
+                    "siUnit": "amp",
+                    "absoluteValue": 1,
+                    "unitText": "A",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                }
+            }
+        },
+        {
+            "componentTitle": "ldo",
+            "instanceName": "ldo2",
+            "instanceProperties": {
+                "vinMin": {
+                    "siUnit": "volt",
+                    "absoluteValue": 2.8,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "vinMax": {
+                    "siUnit": "volt",
+                    "absoluteValue": 3.3,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "voutMin": {
+                    "siUnit": "volt",
+                    "absoluteValue": 1.35,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "voutMax": {
+                    "siUnit": "volt",
+                    "absoluteValue": 1.65,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "maxLoadCurrent": {
+                    "siUnit": "amp",
+                    "absoluteValue": 1,
+                    "unitText": "A",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                }
+            }
+        },
+        {
+            "componentTitle": "switching regulator",
+            "instanceName": "buck1",
+            "instanceProperty": {
+                "regulatorTopology": "buck",
+                "vinMin": {
+                    "siUnit": "volt",
+                    "absoluteValue": 10,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "vinMax": {
+                    "siUnit": "volt",
+                    "absoluteValue": 15,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "voutMax": {
+                    "siUnit": "volt",
+                    "absoluteValue": 3.3,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "voutMin": {
+                    "siUnit": "volt",
+                    "absoluteValue": 2.7,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "maxLoadCurrent": {
+                    "siUnit": "amp",
+                    "absoluteValue": 10,
+                    "unitText": "A",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                }
+            }
+        },
+        {
+            "componentTitle": "switching regulator",
+            "instanceName": "buck2",
+            "instanceProperty": {
+                "regulatorTopology": "buck",
+                "vinMin": {
+                    "siUnit": "volt",
+                    "absoluteValue": 10,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "vinMax": {
+                    "siUnit": "volt",
+                    "absoluteValue": 15,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "voutMax": {
+                    "siUnit": "volt",
+                    "absoluteValue": 5.5,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "voutMin": {
+                    "siUnit": "volt",
+                    "absoluteValue": 4.5,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "maxLoadCurrent": {
+                    "siUnit": "amp",
+                    "absoluteValue": 5,
+                    "unitText": "A",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                }
+            }
+        }
+    ],
+    "package": {
+        "length": 10,
+        "width": 10,
+        "height": 1,
+        "dimensionUnit": "millimeter"
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "Vin_ldo1"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "Vout_ldo1"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "GND"
+        },
+        {
+            "terminalIdentifier": "4",
+            "name": "VFB_ldo1"
+        },
+        {
+            "terminalIdentifier": "5",
+            "name": "Vin_ldo2"
+        },
+        {
+            "terminalIdentifier": "6",
+            "name": "Vout_ldo2"
+        },
+        {
+            "terminalIdentifier": "7",
+            "name": "VFB_ldo2"
+        },
+        {
+            "terminalIdentifier": "8",
+            "name": "Vsw_buck1"
+        },
+        {
+            "terminalIdentifier": "9",
+            "name": "Vsw_buck2"
+        },
+        {
+            "terminalIdentifier": "10",
+            "name": "Vin_buck"
+        },
+        {
+            "terminalIdentifier": "11",
+            "name": "GND"
+        },
+        {
+            "terminalIdentifier": "12",
+            "name": "sda"
+        },
+        {
+            "terminalIdentifier": "13",
+            "name": "scl"
+        },
+        {
+            "terminalIdentifier": "14",
+            "name": "gpio1"
+        },
+        {
+            "terminalIdentifier": "15",
+            "name": "gpio2"
+        },
+        {
+            "terminalIdentifier": "16",
+            "name": "GND"
+        }
+    ]
+}
