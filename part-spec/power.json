@@ -596,6 +596,107 @@
           }
         }
       }
+    },
+    {
+      "title": "pmic",
+      "type": "object",
+      "required": [
+        "componentID"
+      ],
+      "properties": {
+        "componentID": {
+          "description": "common component identifying information, such as mpn",
+          "$ref": "definitions.json#/componentID"
+        },
+        "ldoRegulatorCount": {
+          "description": "number of ldos in the device",
+          "type": "number"
+        },
+        "buckRegulatorCount": {
+          "description": "number of buck regulators in the device",
+          "type": "number"
+        },
+        "boostRegulatorCount": {
+          "description": "number of boost regulators in the device",
+          "type": "number"
+        },
+        "buckBoostRegulatorCount": {
+          "description": "number of buck-boost regulators in the device",
+          "type": "number"
+        },
+        "adcCount": {
+          "description": "number of analog to digital converters in the device",
+          "type": "number"
+        },
+        "externalClockCount": {
+          "description": "number of external clocks the device requires",
+          "type": "number"
+        },
+        "internalClockCount": {
+          "description": "number of clocks/oscillators in the device",
+          "type": "number"
+        },
+        "loadSwitchCount": {
+          "description": "number of load switches in the device",
+          "type": "number"
+        },
+        "usbSwitchCount": {
+          "description": "number of USB switches in the device",
+          "type": "number"
+        },
+        "componentList": {
+          "description": "List, by title, of components in the device",
+          "comment": "list should only include components with an existing digital datasheet specification",
+          "$ref": "definitions.json#/component"
+        },
+        "instances": {
+          "description": "definition of each instance of a component in the device",
+          "type": "array",
+          "$ref": "definitions.json#/instance"
+        },
+        "vinTyp": {
+          "description": "typical input voltage under which a device can be expected to reliabily operate",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "vinMin": {
+          "description": "minimum input voltage under which a device can be expected to reliabily operate",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "vinMax": {
+          "description": "maximum input voltage under which the part can be expected to reliabily operate ",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "currentConsumption": {
+          "description": "current consumption of a device",
+          "type": "array",
+          "items": {
+            "$ref": "definitions.json#/currentConsumption"
+          }
+        },
+        "componentProtectionThresholds": {
+          "description": "Thermal and power supply protection thresholds of a device",
+          "type": "array",
+          "items": {
+            "$ref": "icProtection.json#/componentProtectionThresholds"
+          }
+        },
+        "pins": {
+          "description": "array of pin objects with associated properties",
+          "type": "array",
+          "items": {
+            "$ref": "definitions.json#/pinSpec"
+          }
+        },
+        "package": {
+          "description": "component's package size and description",
+          "items": {
+            "$ref": "definitions.json#/package"
+          }
+        }
+      }
     }
   ],
   "$defs": {
@@ -626,3 +727,4 @@
     }
   }
 }
+

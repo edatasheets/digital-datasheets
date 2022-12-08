@@ -597,7 +597,24 @@
       }
     }
   },
-"componentProtectionThresholds": {
+  "instances": {
+    "type": "object",
+    "properties": {
+      "componentTitle": {
+        "description": "title used for the component in the digital datasheets specifications",
+        "type": "string"
+      },
+      "instanceName": {
+        "description": "name of component instances",
+        "type": "string"
+      },
+      "instanceProperties": {
+        "description": "definition of the component instance as defined in the speci2fications",
+        "type": "array"
+      }
+    }
+  },
+  "componentProtectionThresholds": {
     "type": "object",
     "properties": {
       "thermalShutdownThresholdRising": {
@@ -651,5 +668,5 @@
         }
       }
     }
-  } 
+  }
 }
