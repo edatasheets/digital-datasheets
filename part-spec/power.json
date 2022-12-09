@@ -697,6 +697,507 @@
           }
         }
       }
+    },
+    {
+      "title": "display backlight driver",
+      "type": "object",
+      "required": [
+        "componentID",
+        "ioutMax",
+        "vinMin",
+        "vinMax"
+      ],
+      "properties": {
+        "componentID": {
+          "description": "common component identifying information, such as mpn",
+          "$ref": "definitions.json#/componentID"
+        },
+        "vinTyp": {
+          "description": "typical input voltage under which a device can be expected to operate properly",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "vinMin": {
+          "description": "minimum input voltage under which a device can be expected to operate properly",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "vinMax": {
+          "description": "maximum input voltage under which a device can be expected to operate properly",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "voutTyp": {
+          "description": "typical output voltage a device can regulate",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "voutMin": {
+          "description": "minimum output voltage a device can regulate",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "voutMax": {
+          "description": "maximum output voltage a device can regulate",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "ioutTyp": {
+          "description": "typical output current a device can regulate",
+          "comment": "units of amps",
+          "$ref": "definitions.json#/unit"
+        },
+        "ioutMin": {
+          "description": "minimum output current a device can regulate",
+          "comment": "units of amps",
+          "$ref": "definitions.json#/unit"
+        },
+        "ioutMax": {
+          "description": "maximum output current a device can regulate",
+          "comment": "units of amps",
+          "$ref": "definitions.json#/unit"
+        },
+        "ioutAccuracyTyp": {
+          "description": "typical accuracy of output current regulated by a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "ioutAccuracyMin": {
+          "description": "minimum accuracy of output current regulated by a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "ioutAccuracyMax": {
+          "description": "maximum accuracy of output current regulated by a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "fswTyp": {
+          "description": "typical switching frequency of a device",
+          "comment": "units of hertz",
+          "$ref": "definitions.json#/unit"
+        },
+        "fswMin": {
+          "description": "minimum switching frequency of a device",
+          "comment": "units of hertz",
+          "$ref": "definitions.json#/unit"
+        },
+        "fswMax": {
+          "description": "maximum switching frequency of a device",
+          "comment": "units of hertz",
+          "$ref": "definitions.json#/unit"
+        },
+        "currentConsumption": {
+          "description": "current consumption of a device",
+          "type": "array",
+          "items": {
+            "$ref": "definitions.json#/currentConsumption"
+          }
+        },
+        "integratedFets": {
+          "description": "whether a device contains integrated switching mosfets",
+          "type": "boolean"
+        },
+        "integratedFetProperties": {
+          "description": "describes integrated fet current limits and rdson properties",
+          "$ref": "#/$defs/powerFetProperities"
+        },
+        "currentMatchingAccuracyTyp": {
+          "description": "typical current matching between LED strings",
+          "comment": "units of percentage",
+          "$ref": "definitions.json#/unit"
+        },
+        "currentMatchingAccuracyMin": {
+          "description": "minimum current matching between LED strings",
+          "comment": "units of percentage",
+          "$ref": "definitions.json#/unit"
+        },
+        "currentMatchingAccuracyMax": {
+          "description": "maximum current matching between LED strings",
+          "comment": "units of percentage",
+          "$ref": "definitions.json#/unit"
+        },
+        "integratedBoost": {
+          "description": "whether a boost switching converter is integrated in the device",
+          "type": "boolean"
+        },
+        "numberLEDStrings": {
+          "description": "maximum number of LED strings a device can support",
+          "type": "number"
+        },
+        "numberLEDPerString": {
+          "description": "maximum number of LEDs per string a device can support",
+          "type": "number"
+        },
+        "dimmingSupport": {
+          "description": "whether a device supports output current dimming",
+          "type": "boolean"
+        },
+        "dimmingFrequencyTyp": {
+          "description": "typical dimming frequency of a device",
+          "comment": "units of hertz",
+          "$ref": "definitions.json#/unit"
+        },
+        "dimmingFrequencyMin": {
+          "description": "minimum dimming frequency of a device",
+          "comment": "units of hertz",
+          "$ref": "definitions.json#/unit"
+        },
+        "dimmingFrequencyMax": {
+          "description": "maximum dimming frequency of a device",
+          "comment": "units of hertz",
+          "$ref": "definitions.json#/unit"
+        },
+        "dimmingRatioTyp": {
+          "description": "typical dimming ratio of a device",
+          "type": "string",
+          "example": "20:1"
+        },
+        "dimmingRatioMin": {
+          "description": "minimum dimming ratio of a device",
+          "type": "string",
+          "example": "10:1"
+        },
+        "dimmingRatioMax": {
+          "description": "maximum dimming ratio of a device",
+          "type": "string",
+          "example": "40:1"
+        },
+        "componentProtectionThresholds": {
+          "description": "Thermal and power supply protection thresholds of a device",
+          "type": "array",
+          "items": {
+            "$ref": "icProtection.json#/componentProtectionThresholds"
+          }
+        },
+        "package": {
+          "description": "package size of resistor",
+          "$ref": "definitions.json#/package"
+        },
+        "pins": {
+          "description": "array of pin objects with associated properties",
+          "type": "array",
+          "items": {
+            "$ref": "definitions.json#/pinSpec"
+          }
+        }
+      }
+    },
+    {
+      "title": "battery charger",
+      "type": "object",
+      "required": [
+        "componentID",
+        "batteryChargeCurrentMax"
+      ],
+      "properties": {
+        "componentID": {
+          "description": "common component identifying information, such as mpn",
+          "$ref": "definitions.json#/componentID"
+        },
+        "chargerType": {
+          "description": "battery charger type",
+          "examples": [
+            "linear",
+            "switching",
+            "direct"
+          ],
+          "type": "string"
+        },
+        "converterType": {
+          "description": "switching charger type",
+          "examples": [
+            "buck",
+            "boost",
+            "buck-boost",
+            "other"
+          ],
+          "type": "string"
+        },
+        "chargerTopology": {
+          "description": "type of battery charger topology (Narrow VDC vs Hybrid Power Boost)",
+          "enum": [
+            "nvdc",
+            "hpb"
+          ],
+          "type": "string"
+        },
+        "batteryConfig": {
+          "description": "battery configuration supported by the device",
+          "examples": [
+            "1S",
+            "2S2P",
+            "3S",
+            "4S",
+            "4S2P"
+          ],
+          "type": "string"
+        },
+        "batteryCellChemistry": {
+          "description": "battery cell chemistry supported by the device",
+          "examples": [
+            "Li-Ion",
+            "LiPo"
+          ],
+          "type": "string"
+        },
+        "inputPowerSource": {
+          "description": "input power source supported by the device",
+          "examples": [
+            "adapter",
+            "usb pd",
+            "usb 5V"
+          ],
+          "type": "string"
+        },
+        "batteryChargeCurrentTyp": {
+          "description": "typical charging current of a device",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryChargeCurrentMin": {
+          "description": "minimum charging current of a device",
+          "comment": "units of amps",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryChargeCurrentMax": {
+          "description": "maximum charging current of a device",
+          "comment": "units of amps",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryChargeCurrentAccuracyTyp": {
+          "description": "typical charging current regulation accuracy of a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryChargeCurrentAccuracyMin": {
+          "description": "minimum charging current regulation accuracy of a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryChargeCurrentAccuracyMax": {
+          "description": "maximum charging current regulation accuracy of a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryPreChargeCurrentTyp": {
+          "description": "typical charging current of a device in pre-charge phase",
+          "comment": "units of amps",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryPreChargeCurrentMin": {
+          "description": "minimum charging current of a device in pre-charge phase",
+          "comment": "units of amps",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryPreChargeCurrentMax": {
+          "description": "maximum charging current of a device in pre-charge phase",
+          "comment": "units of amps",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryPreChargeCurrentAccuracyTyp": {
+          "description": "typical pre-charging current regulation accuracy of a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryPreChargeCurrentAccuracyMin": {
+          "description": "minimum pre-charging current regulation accuracy of a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryPreChargeCurrentAccuracyMax": {
+          "description": "maximum pre-charging current regulation accuracy of a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryTrickleChargeCurrentTyp": {
+          "description": "typical charging current of a device in trickle charge phase",
+          "comment": "units of amps",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryTrickleChargeCurrentMin": {
+          "description": "minimum charging current of a device in trickle charge phase",
+          "comment": "units of amps",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryTrickleChargeCurrentMax": {
+          "description": "maximum charging current of a device in trickle charge phase",
+          "comment": "units of amps",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryTrickleChargeCurrentAccuracyTyp": {
+          "description": "typical Trickle charging current regulation accuracy of a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryTrickleChargeCurrentAccuracyMin": {
+          "description": "minimum Trickle charging current regulation accuracy of a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryTrickleChargeCurrentAccuracyMax": {
+          "description": "maximum Trickle charging current regulation accuracy of a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryTerminationChargeCurrentTyp": {
+          "description": "typical charging current of a device in charge termination phase",
+          "comment": "units of amps",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryTerminationChargeCurrentMin": {
+          "description": "minimum charging current of a device in charge termination phase",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryTerminationChargeCurrentMax": {
+          "description": "maximum charging current of a device in charge termination phase",
+          "comment": "units of amps",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryTerminationChargeCurrentAccuracyTyp": {
+          "description": "typical termination charging current regulation accuracy of a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryTerminationChargeCurrentAccuracyMin": {
+          "description": "minimum termination charging current regulation accuracy of a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryTerminationChargeCurrentAccuracyMax": {
+          "description": "maximum termination charging current regulation accuracy of a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryChargeVoltageTyp": {
+          "description": "typical battery charge voltage regulated by a device",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryChargeVoltageMin": {
+          "description": "minimum battery charge voltage regulated by a device",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryChargeVoltageMax": {
+          "description": "maximum battery charge voltage regulated by a device",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryChargeVoltageAccuracyTyp": {
+          "description": "typical accuracy of battery charge voltage regulated by a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryChargeVoltageAccuracyMin": {
+          "description": "minimum accuracy of battery charge voltage regulated by a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "batteryChargeVoltageAccuracyMax": {
+          "description": "maximum accuracy of battery charge voltage regulated by a device",
+          "comment": "units of %",
+          "$ref": "definitions.json#/unit"
+        },
+        "efficiency": {
+          "description": "charge efficiency vs charge current of a device",
+          "$ref": "graph.json#/graphDefiniton"
+        },
+        "vinTyp": {
+          "description": "typical input voltage under which a device can be expected to reliabily operate",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "vinMin": {
+          "description": "minimum input voltage under which a device can be expected to reliabily operate",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "vinMax": {
+          "description": "maximum input voltage under which the part can be expected to reliabily operate ",
+          "comment": "units of volts",
+          "$ref": "definitions.json#/unit"
+        },
+        "fswTyp": {
+          "description": "typical switching frequency of a device",
+          "comment": "units of hertz",
+          "$ref": "definitions.json#/unit"
+        },
+        "fswMin": {
+          "description": "minimum switching frequency of a device",
+          "comment": "units of hertz",
+          "$ref": "definitions.json#/unit"
+        },
+        "fswMax": {
+          "description": "maximum switching frequency of a device",
+          "comment": "units of hertz",
+          "$ref": "definitions.json#/unit"
+        },
+        "currentConsumption": {
+          "description": "current consumption of a device",
+          "type": "array",
+          "items": {
+            "$ref": "definitions.json#/currentConsumption"
+          }
+        },
+        "componentProtectionThresholds": {
+          "description": "Thermal and power supply protection thresholds of a device",
+          "type": "array",
+          "items": {
+            "$ref": "icProtection.json#/componentProtectionThresholds"
+          }
+        },
+        "integratedLoadSwitch": {
+          "description": "whether the device contains integrated power path load switch(es)",
+          "type": "boolean"
+        },
+        "integratedFets": {
+          "description": "whether the device contains integrated switching mosfets",
+          "type": "boolean"
+        },
+        "integratedFetProperties": {
+          "description": "describes integrated fet current limits and rdson properties",
+          "$ref": "#/$defs/powerFetProperities"
+        },
+        "BC12Support": {
+          "description": "whether bc 1.2 detection is built in",
+          "type": "boolean"
+        },
+        "TCPCSupport": {
+          "description": "whether type-C port controller support is built in",
+          "type": "boolean"
+        },
+        "usbTypecRevision": {
+          "description": "usb type-c spec revision supported by a device",
+          "examples": [
+            "1.2",
+            "1.3"
+          ],
+          "type": "string"
+        },
+        "pdVersion": {
+          "description": "version of power delivery spec supported by a device",
+          "examples": [
+            "pd2.0",
+            "pd3.1"
+          ],
+          "type": "string"
+        },
+        "pins": {
+          "description": "array of pin objects with associated properties",
+          "type": "array",
+          "items": {
+            "$ref": "definitions.json#/pinSpec"
+          }
+        },
+        "package": {
+          "description": "component's package size and description",
+          "items": {
+            "$ref": "definitions.json#/package"
+          }
+        }
+      }
     }
   ],
   "$defs": {
