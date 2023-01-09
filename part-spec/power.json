@@ -850,18 +850,27 @@
         },
         "dimmingRatioTyp": {
           "description": "typical dimming ratio of a device",
-          "type": "string",
-          "example": "20:1"
+          "type": "object",
+          "example": [
+          {"numerator": 20},
+          {"denominator": 1}
+          ]
         },
         "dimmingRatioMin": {
           "description": "minimum dimming ratio of a device",
-          "type": "string",
-          "example": "10:1"
+          "type": "object",
+          "example": [
+          {"numerator": 10},
+          {"denominator": 1}
+          ]
         },
         "dimmingRatioMax": {
           "description": "maximum dimming ratio of a device",
-          "type": "string",
-          "example": "40:1"
+          "type": "object",
+          "example": [
+          {"numerator": 40},
+          {"denominator": 1}
+          ]
         },
         "componentProtectionThresholds": {
           "description": "Thermal and power supply protection thresholds of a device",
@@ -1160,11 +1169,11 @@
           "description": "describes integrated fet current limits and rdson properties",
           "$ref": "#/$defs/powerFetProperities"
         },
-        "BC12Support": {
+        "bc12Support": {
           "description": "whether bc 1.2 detection is built in",
           "type": "boolean"
         },
-        "TCPCSupport": {
+        "tcpcSupport": {
           "description": "whether type-C port controller support is built in",
           "type": "boolean"
         },
