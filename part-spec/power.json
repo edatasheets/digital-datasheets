@@ -880,7 +880,7 @@
           }
         },
         "package": {
-          "description": "package size of resistor",
+          "description": "package size",
           "$ref": "definitions.json#/package"
         },
         "pins": {
@@ -918,8 +918,7 @@
           "examples": [
             "buck",
             "boost",
-            "buck-boost",
-            "other"
+            "buck-boost"
           ],
           "type": "string"
         },
@@ -929,7 +928,7 @@
             "nvdc",
             "hpb"
           ],
-          "type": "string"
+          "type": "array"
         },
         "batteryConfig": {
           "description": "battery configuration supported by the device",
@@ -940,7 +939,7 @@
             "4S",
             "4S2P"
           ],
-          "type": "string"
+          "type": "array"
         },
         "batteryCellChemistry": {
           "description": "battery cell chemistry supported by the device",
@@ -948,7 +947,7 @@
             "Li-Ion",
             "LiPo"
           ],
-          "type": "string"
+          "type": "array"
         },
         "inputPowerSource": {
           "description": "input power source supported by the device",
