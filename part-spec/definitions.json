@@ -499,6 +499,19 @@
       }
     }
   },
+  "ratio":{
+    "type": "object",
+    "properties": {
+      "numerator":{
+        "description": "numerator of ratio",
+        "type": "number"
+      },
+      "denominator":{ 
+        "description": "denominator of ratio",
+        "type": "number"
+      }
+    }
+  },
   "conditionalProperty": {
     "type": "object",
     "properties": {
@@ -609,7 +622,7 @@
         "type": "string"
       },
       "instanceProperties": {
-        "description": "definition of the component instance as defined in the speci2fications",
+        "description": "definition of the component instance as defined in the specifications",
         "type": "array"
       }
     }
