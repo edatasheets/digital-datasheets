@@ -197,9 +197,7 @@
         },
         "package": {
           "description": "component's package size and description",
-          "items": {
-            "$ref": "definitions.json#/package"
-          }
+          "$ref": "definitions.json#/package"
         }
       }
     },
@@ -405,9 +403,7 @@
         },
         "package": {
           "description": "component's package size and description",
-          "items": {
-            "$ref": "definitions.json#/package"
-          }
+          "$ref": "definitions.json#/package"
         }
       }
     },
@@ -591,9 +587,7 @@
         },
         "package": {
           "description": "component's package size and description",
-          "items": {
-            "$ref": "definitions.json#/package"
-          }
+          "$ref": "definitions.json#/package"
         }
       }
     },
@@ -692,9 +686,7 @@
         },
         "package": {
           "description": "component's package size and description",
-          "items": {
-            "$ref": "definitions.json#/package"
-          }
+          "$ref": "definitions.json#/package"
         }
       }
     },
@@ -850,27 +842,15 @@
         },
         "dimmingRatioTyp": {
           "description": "typical dimming ratio of a device",
-          "type": "object",
-          "example": [
-          {"numerator": 20},
-          {"denominator": 1}
-          ]
+          "$ref": "definitions.json#/ratio"
         },
         "dimmingRatioMin": {
           "description": "minimum dimming ratio of a device",
-          "type": "object",
-          "example": [
-          {"numerator": 10},
-          {"denominator": 1}
-          ]
+          "$ref": "definitions.json#/ratio"
         },
         "dimmingRatioMax": {
           "description": "maximum dimming ratio of a device",
-          "type": "object",
-          "example": [
-          {"numerator": 40},
-          {"denominator": 1}
-          ]
+           "$ref": "definitions.json#/ratio"
         },
         "componentProtectionThresholds": {
           "description": "Thermal and power supply protection thresholds of a device",
@@ -928,7 +908,7 @@
             "nvdc",
             "hpb"
           ],
-          "type": "array"
+          "type": "string"
         },
         "batteryConfig": {
           "description": "battery configuration supported by the device",
@@ -939,7 +919,10 @@
             "4S",
             "4S2P"
           ],
-          "type": "array"
+          "type": "array",
+          "items:{
+            "type":"string"
+            }
         },
         "batteryCellChemistry": {
           "description": "battery cell chemistry supported by the device",
@@ -947,7 +930,10 @@
             "Li-Ion",
             "LiPo"
           ],
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string"
+            }  
         },
         "inputPowerSource": {
           "description": "input power source supported by the device",
@@ -956,7 +942,10 @@
             "usb pd",
             "usb 5V"
           ],
-          "type": "string"
+          "type": "array",
+          "items":{
+            "type": "string"
+            }
         },
         "batteryChargeCurrentTyp": {
           "description": "typical charging current of a device",
@@ -1201,9 +1190,7 @@
         },
         "package": {
           "description": "component's package size and description",
-          "items": {
-            "$ref": "definitions.json#/package"
-          }
+          "$ref": "definitions.json#/package"
         }
       }
     }
