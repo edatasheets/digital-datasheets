@@ -652,7 +652,9 @@
         "instances": {
           "description": "definition of each instance of a component in the device",
           "type": "array",
-          "$ref": "definitions.json#/instance"
+          "items": {
+            "$ref": "definitions.json#/instance"
+          }
         },
         "vinTyp": {
           "description": "typical input voltage under which a device can be expected to reliabily operate",
