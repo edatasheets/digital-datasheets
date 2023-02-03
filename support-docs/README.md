@@ -581,3 +581,107 @@ The table below gives a description of the properties used to specify a USB-C PD
 |pins|array of pin objects with associated properties|array of Object| |
 |package|component's package size and description|Object| |
 
+### 3.17	 Semiconductor
+
+Source: [semiconductor.json](https://github.com/chromeos/digital-datasheets/blob/main/part-spec/semiconductor.json)
+
+####  3.17.1	 Mosfet
+
+The table below gives a description of the properties used to specify a MOSFET.
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn.|definitions.json#/componentID|Yes|
+|mosfetType|type of MOSFET.|String|Yes|
+|mosfetChannelType|doping of a transistor's channel - describes whether a transistor is n-type or p-type.|String| |
+|transistorCount|number of transistors in the package.|Number| |
+|vgs|gate to source voltage difference of a MOSFET.|definitions.json#/unit| |
+|vgsMax|maximum gate to source voltage difference that can be continously applied to a MOSFET. This is a limiting value.|definitions.json#/unit| |
+|vds|drain to source voltage difference of a MOSFET.|definitions.json#/unit| |
+|vdsMax|maximum drain to source voltage difference that can be continously applied to a MOSFET. This is a limiting value.|definitions.json#/unit| |
+|vdsVbr|drain to source breakdown voltage of a MOSFET.|definitions.json#/unit| |
+|vgsThMax|maximum gate to source voltage difference required to produce a conducting path between drain and source.|definitions.json#/unit| |
+|vgsThTyp|gate to source voltage difference (vgs) required to produce a conducting path between drain and source.|definitions.json#/unit| |
+|vgsThMin|minimum gate to source voltage difference required to produce a conducting path between drain and source.|definitions.json#/unit| |
+|vsdDiodeVfTyp|typical reverse diode forward voltage when a MOSFET is in off-state.|definitions.json#/unit| |
+|vsdDiodeVfMax|maximum reverse diode forward voltage when a MOSFET is in off-state.|definitions.json#/unit| |
+|iD|Drain Current of a MOSFET.|definitions.json#/unit| |
+|iDrain|maximum continous DC current that can flow through a MOSFET channel.This is a limiting value.|definitions.json#/unit| |
+|idPulsed|maximum pulsed DC current that can flow through a MOSFET channel.This is a limiting value.|definitions.json#/unit| |
+|iDss|drain-source leakage current of a MOSFET when the gate to source voltage difference is zero|definitions.json#/conditionalProperty| |
+|iGss|gate-source leakage current of a MOSFET when the drain to source voltage difference is zero|definitions.json#/conditionalProperty| |
+|diodeContinuousCurrent|maximum continuous forward current of the body diode of a MOSFET (IS).This is a limiting value.|definitions.json#/unit| |
+|diodePulsedCurrent|maximum pulsed forward current of the body diode of a MOSFET. This is a limiting value.|definitions.json#/unit| |
+|forwardTransconductance|signal gain, change in drain current with variation of gate-source voltage of a MOSFET (gFS).|definitions.json#/conditionalProperty| |
+|rdsonTyp|typical on-state resistance of a MOSFET.|definitions.json#/conditionalProperty| |
+|rdsonMax|maximum on-state resistance of a MOSFET.|definitions.json#/conditionalProperty| |
+|rgTyp|typical internal gate resistance of a MOSFET.|definitions.json#/conditionalProperty| |
+|rgMax|maximum internal gate resistance of a MOSFET.|definitions.json#/conditionalProperty| |
+|cissTyp|typical input capacitance of a MOSFET.|definitions.json#/conditionalProperty| |
+|cissMax|maximum input capacitance of a MOSFET.|definitions.json#/conditionalProperty| |
+|cossTyp|typical output capacitance of a MOSFET.|definitions.json#/conditionalProperty| |
+|cossMax|maximum output capacitance of a MOSFET.|definitions.json#/conditionalProperty| |
+|crssTyp|typical reverse transfer capacitance of a MOSFET.|definitions.json#/conditionalProperty| |
+|crssMax|maximum reverse transfer capacitance of a MOSFET.|definitions.json#/conditionalProperty| |
+|qgTyp|typical total gate charge of a MOSFET.|definitions.json#/conditionalProperty| |
+|qgMax|maximum total gate charge of a MOSFET.|definitions.json#/conditionalProperty| |
+|qgdTyp|typical gate to drain charge of a MOSFET.|definitions.json#/conditionalProperty| |
+|qgdMax|maximum gate to drain charge of a MOSFET.|definitions.json#/conditionalProperty| |
+|qgsTyp|typical gate to source charge of a MOSFET.|definitions.json#/conditionalProperty| |
+|qgsMax|maximum gate to source charge of a MOSFET.|definitions.json#/conditionalProperty| |
+|qrrTyp|typical reverse recovery charge of the body diode of a MOSFET.|definitions.json#/conditionalProperty| |
+|qrrMax|maximum reverse recovery charge of the body diode of a MOSFET.|definitions.json#/conditionalProperty| |
+|idVsVds|graph of drain current (iD) vs drain source voltage (vds).|graph.json#/graphDefiniton| |
+|idVsVgs|graph of drain current (iD) vs gate source voltage (vgs).|graph.json#/graphDefiniton| |
+|tdONTyp|typical turn-on delay time of a MOSFET|definitions.json#/conditionalProperty| |
+|tdONMax|maximum turn-on delay time of a MOSFET|definitions.json#/conditionalProperty| |
+|tdOFFTyp|typical turn-off delay time of a MOSFET|definitions.json#/conditionalProperty| |
+|tdOFFMax|maximum turn-off delay time of a MOSFET|definitions.json#/conditionalProperty| |
+|riseTimeTyp|typical rise time of a MOSFET|definitions.json#/conditionalProperty| |
+|riseTimeMax|maximum rise time of a MOSFET|definitions.json#/conditionalProperty| |
+|fallTimeTyp|typical fall time of a MOSFET|definitions.json#/conditionalProperty| |
+|fallTimeMax|maximum fall time of a MOSFET|definitions.json#/conditionalProperty| |
+|trrTyp|typical reverse recovery time of the body diode of a MOSFET.|definitions.json#/conditionalProperty| |
+|trrMax|maximum reverse recovery time of the body diode of a MOSFET.|definitions.json#/conditionalProperty| |
+|pTot|maximum power dissipation of a MOSFET.|definitions.json#/conditionalProperty| |
+|pdVsTemp|graph of power dissipation vs temperature.|graph.json#/graphDefiniton| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|definitions.json#/package| |
+
+####  3.17.2	 Diode
+
+The table below gives a description of the properties used to specify a diode.
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|type|type of diode|String| |
+|diodeCount|number of diodes in the package|Number| |
+|diodeConfiguration|configuration of diode|String| |
+|numberOfProtectedLines|number of lines a diode can protect|Number| |
+|vfTyp|typical forward voltage of a diode|definitions.json#/conditionalProperty| |
+|vfMax|maximum forward voltage of a diode|definitions.json#/conditionalProperty| |
+|vfMin|minimum forward voltage of a diode|definitions.json#/conditionalProperty| |
+|if|continuous forward current of a diode|definitions.json#/unit| |
+|ifm|maximum continuous forward current a diode can support|definitions.json#/unit| |
+|ifrm|maximum repetitive peak forward current a diode can support|definitions.json#/unit| |
+|ifsm|maximum non-repetitive surge forward current a diode can support|definitions.json#/unit| |
+|vbr|breakdown voltage of a diode|definitions.json#/unit| |
+|irTyp|typical reverse current|definitions.json#/conditionalProperty| |
+|irMax|maximum reverse current|definitions.json#/conditionalProperty| |
+|vzTyp|typical breakdown voltage of a zener diode|definitions.json#/conditionalProperty| |
+|vzMax|maximum breakdown voltage of a zener diode|definitions.json#/conditionalProperty| |
+|vzMin|minimum breakdown voltage of a zener diode|definitions.json#/conditionalProperty| |
+|vrm|maximum reverse standoff voltage a tvs diode can withstand|definitions.json#/unit| |
+|vclTyp|typical clamping voltage of a tvs diode|definitions.json#/conditionalProperty| |
+|vclMax|maximum clamping voltage of a tvs diode|definitions.json#/conditionalProperty| |
+|vclMin|minimum clamping voltage of a tvs diode|definitions.json#/conditionalProperty| |
+|vr|maximum continuous reverse biased voltage a diode can support|definitions.json#/unit| |
+|vrrm|maximum repetitive reverse voltage pulses a diode can support|definitions.json#/unit| |
+|cd|diode junction capacitance - between the anode and cathode- in reverse bias condition|definitions.json#/unit| |
+|trr|reverse recovery time it takes the diode to stop conducting when its voltage changes from forward-bias to reverse-bias|definitions.json#/unit| |
+|pTot|maximum power dissipation of a forward biased diode|definitions.json#/conditionalProperty| |
+|ifVsVf|graph of forward current (If) vs forward voltage (VfTyp)|graph.json#/graphDefiniton| |
+|package|package size of resistor|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+
