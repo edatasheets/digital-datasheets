@@ -244,6 +244,220 @@ The table below gives a description of the properties used to specify a switchin
 |package|Package definition of the switching regulator|Object| |
 |complianceList|List of compliances met by the switching regulator component|Array| |
 
+####  3.10.2	 Ldo
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|componentID|Yes|
+|vinTyp|typical input voltage under which the part can be expected to operate without the output dropping|unit| |
+|vinMin|minimum input voltage under which the part can be expected to operate without the output dropping|unit|Yes|
+|vinMax|maximum input voltage under which the part can be expected to operate without the output dropping|unit|Yes|
+|voutMin|minimum output voltage the part can regulate|unit|Yes|
+|voutMax|maximum output voltage the part can regulate|unit|Yes|
+|voutTyp|typical output voltage the part can regulate|unit| |
+|feedbackVoltageTyp|typical voltage comparison point at the feedback node (vref)|unit| |
+|feedbackVoltageMin|minimum voltage comparison point at the feedback node (vref)|unit| |
+|feedbackVoltageMax|max voltage comparison point at the feedback node (vref)|unit| |
+|dropoutVoltageTyp|typical dropout voltage of a device|Number| |
+|dropoutVoltageMin|minimum dropout voltage of a device|Number| |
+|dropoutVoltageMax|maximum dropout voltage of a device|Number| |
+|LoadCurrentMax|maximum load current supported by a device|unit| |
+|LoadCurrentMin|minimum load current supported by a device|unit| |
+|currentLimitTyp|typical high sustained output current threshold beyond which the output of a device starts drooping|unit| |
+|currentLimitMin|minimum high sustained output current threshold beyond which the output of a device starts drooping|unit| |
+|currentLimitMax|maximum high sustained output current threshold beyond which the output of a device starts drooping|unit| |
+|voutAccuracyTyp|typical output voltage variation at no load of a device|unit| |
+|voutAccuracyMin|minimum output voltage variation at no load of a device|unit| |
+|voutAccuracyMax|maximum output voltage variation at no load of a device|unit| |
+|loadRegulationTyp|typical output voltage variation,from no load to full load, of a device |unit| |
+|loadRegulationMin|minimum output voltage variation,from no load to full load, of a device |unit| |
+|loadRegulationMax|maximum output voltage variation,from no load to full load, of a device |unit| |
+|lineRegulationTyp|typical output voltage variation,from minimum input voltage to maximum input voltage, of a device |unit| |
+|lineRegulationMin|minimum output voltage variation,from minimum input voltage to maximum input voltage, of a device |unit| |
+|lineRegulationMax|maximum output voltage variation,from minimum input voltage to maximum input voltage, of a device |unit| |
+|enableTimeTyp|typical time between enable asserted and output voltage rising to 10% nominal|unit| |
+|enableTimeMin|minimum time between enable asserted and output voltage rising to 10% nominal|unit| |
+|enableTimeMax|maximum time between enable asserted and output voltage rising to 10% nominal|unit| |
+|rampTimeTyp|typical time for output voltage to go from 10% vout nominal to 90% vout nominal|unit| |
+|rampTimeMin|minimum time for output voltage to go from 10% vout nominal to 90% vout nominal|unit| |
+|rampTimeMax|maximum time for output voltage to go from 10% vout nominal to 90% vout nominal|unit| |
+|powerSupplyRejectionRatio|graph object to capture Power Supply Rejection Ratio (PSRR) of device over various frequencies|graphDefiniton| |
+|rmsOutputNoise|graph object to capture RMS output noise of device over various frequencies|graphDefiniton| |
+|totalOutputNoise|total output noise of a device|unit| |
+|currentConsumption|current consumption of a device|array of currentConsumption| |
+|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|array of componentProtectionThresholds| |
+|pins|array of pin objects with associated properties|array of pinSpec| |
+|package|component's package size and description|package| |
+
+####  3.10.3	 Load Switch
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|componentID|Yes|
+|fetType|type of pass FET in a device|String| |
+|loadSwitchCount|number of load switched in the package.|Number| |
+|vinTyp|typical input voltage under which a device can be expected to reliabily operate|unit| |
+|vinMin|minimum input voltage under which a device can be expected to reliabily operate|unit|Yes|
+|vinMax|maximum input voltage under which the part can be expected to reliabily operate |unit|Yes|
+|OutputCurrentMax|maximum continuous DC cuurent supported by a device|unit|Yes|
+|oneResistanceTyp|typical FET on state resistance|conditionalProperty| |
+|onResistanceMax|maximum FET on state resistance|conditionalProperty| |
+|onResistanceMin|mimimum FET on state resistance|conditionalProperty| |
+|pdResistanceTyp|typical pull-down resistance of a device from the output to the ground|unit| |
+|pdResistanceMax|maximum pull-down resistance of a device from the output to the ground|unit| |
+|pdResistanceMin|minimum pull-down resistance of a device from the output to the ground|unit| |
+|currentLimitSupport|whether a device supports current limiting|Boolean| |
+|adjustableRiseTimeSupport|whether a device supports adjustable rise time|Boolean| |
+|quickOutputDischargeSupport|whether a device supports quick output discharge|Boolean| |
+|reverseCurrentBlockingSupport|whether a device supports reverse current blocking|Boolean| |
+|powerGoodSupport|whether a device supports power good|Boolean| |
+|enableTimeTyp|typical time between enable asserted and output voltage rising to 10% nominal|conditionalProperty| |
+|enableTimeMin|minimum time between enable asserted and output voltage rising to 10% nominal|conditionalProperty| |
+|enableTimeMax|maximum time between enable asserted and output voltage rising to 10% nominal|conditionalProperty| |
+|offTimeTyp|typical time between enable deasserted and output voltage falling to 90% nominal|conditionalProperty| |
+|offTimeMax|maximum time between enable deasserted and output voltage falling to 90% nominal|conditionalProperty| |
+|offTimeMin|minimum time between enable deasserted and output voltage falling to 90% nominal|conditionalProperty| |
+|rampTimeTyp|typical time for output voltage to go from 10% vout nominal to 90% vout nominal|conditionalProperty| |
+|rampTimeMin|minimum time for output voltage to go from 10% vout nominal to 90% vout nominal|conditionalProperty| |
+|rampTimeMax|maximum time for output voltage to go from 10% vout nominal to 90% vout nominal|conditionalProperty| |
+|fallTimeTyp|typical time for output voltage to go from 90% vout nominal to 10% vout nominal|conditionalProperty| |
+|fallTimeMax|maximum time for output voltage to go from 90% vout nominal to 10% vout nominal|conditionalProperty| |
+|fallTimeMin|minimum time for output voltage to go from 90% vout nominal to 10% vout nominal|conditionalProperty| |
+|currentConsumption|current consumption of a device|array of currentConsumption| |
+|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|array of componentProtectionThresholds| |
+|pins|array of pin objects with associated properties|array of pinSpec| |
+|package|component's package size and description|package| |
+
+####  3.10.4	 Pmic
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|componentID|Yes|
+|ldoRegulatorCount|number of ldos in the device|Number| |
+|buckRegulatorCount|number of buck regulators in the device|Number| |
+|boostRegulatorCount|number of boost regulators in the device|Number| |
+|buckBoostRegulatorCount|number of buck-boost regulators in the device|Number| |
+|adcCount|number of analog to digital converters in the device|Number| |
+|externalClockCount|number of external clocks the device requires|Number| |
+|internalClockCount|number of clocks/oscillators in the device|Number| |
+|loadSwitchCount|number of load switches in the device|Number| |
+|usbSwitchCount|number of USB switches in the device|Number| |
+|componentList|List, by title, of components in the device|component| |
+|instances|definition of each instance of a component in the device|array of instance| |
+|vinTyp|typical input voltage under which a device can be expected to reliabily operate|unit| |
+|vinMin|minimum input voltage under which a device can be expected to reliabily operate|unit| |
+|vinMax|maximum input voltage under which the part can be expected to reliabily operate |unit| |
+|currentConsumption|current consumption of a device|array of currentConsumption| |
+|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|array of componentProtectionThresholds| |
+|pins|array of pin objects with associated properties|array of pinSpec| |
+|package|component's package size and description|package| |
+
+####  3.10.5	 Display Backlight Driver
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|componentID|Yes|
+|vinTyp|typical input voltage under which a device can be expected to operate properly|unit| |
+|vinMin|minimum input voltage under which a device can be expected to operate properly|unit|Yes|
+|vinMax|maximum input voltage under which a device can be expected to operate properly|unit|Yes|
+|voutTyp|typical output voltage a device can regulate|unit| |
+|voutMin|minimum output voltage a device can regulate|unit| |
+|voutMax|maximum output voltage a device can regulate|unit| |
+|ioutTypPerString|typical output current per string a device can regulate|unit| |
+|ioutMinPerString|minimum output current per string a device can regulate|unit| |
+|ioutMaxPerString|maximum output current per string a device can regulate|unit| |
+|ioutAccuracyTyp|typical accuracy of per string current regulated by a device|unit| |
+|ioutAccuracyMin|minimum accuracy of per string current regulated by a device|unit| |
+|ioutAccuracyMax|maximum accuracy of per string current regulated by a device|unit| |
+|fswTyp|typical switching frequency of a device|unit| |
+|fswMin|minimum switching frequency of a device|unit| |
+|fswMax|maximum switching frequency of a device|unit| |
+|currentConsumption|current consumption of a device|array of currentConsumption| |
+|integratedFets|whether a device contains integrated switching mosfets|Boolean| |
+|integratedFetProperties|describes integrated fet current limits and rdson properties|powerFetProperities| |
+|currentMatchingAccuracyTyp|typical current matching between LED strings|unit| |
+|currentMatchingAccuracyMin|minimum current matching between LED strings|unit| |
+|currentMatchingAccuracyMax|maximum current matching between LED strings|unit| |
+|dimmingSupport|whether a device supports output current dimming|Boolean| |
+|dimmingControl|whether a device is dimmed by PWM or I2C|String| |
+|dimmingFrequencyTyp|typical dimming frequency of a device|unit| |
+|dimmingFrequencyMin|minimum dimming frequency of a device|unit| |
+|dimmingFrequencyMax|maximum dimming frequency of a device|unit| |
+|dimmingRatioTyp|typical dimming ratio of a device|ratio| |
+|dimmingRatioMin|minimum dimming ratio of a device|ratio| |
+|dimmingRatioMax|maximum dimming ratio of a device|ratio| |
+|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|array of componentProtectionThresholds| |
+|efficiency|efficiency vs forward current|graphDefiniton| |
+|package|package size|package| |
+|pins|array of pin objects with associated properties|array of pinSpec| |
+
+####  3.10.6	 Battery Charger
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|componentID|Yes|
+|chargerType|battery charger type|String| |
+|converterType|switching charger type|String| |
+|chargerTopology|type of battery charger topology (Narrow VDC vs Hybrid Power Boost)|String| |
+|batteryConfig|battery configuration supported by the device|array of String| |
+|batteryCellChemistry|battery cell chemistry supported by the device|array of String| |
+|inputPowerSource|input power source supported by the device|array of String| |
+|inputCurrentAccuracy|accuracy of input current when set|unit| |
+|batteryChargeCurrentTyp|typical charging current of a device|unit| |
+|batteryChargeCurrentMin|minimum charging current of a device|unit| |
+|batteryChargeCurrentMax|maximum charging current of a device|unit|Yes|
+|batteryChargeCurrentAccuracyTyp|typical charging current regulation accuracy of a device|unit| |
+|batteryChargeCurrentAccuracyMin|minimum charging current regulation accuracy of a device|unit| |
+|batteryChargeCurrentAccuracyMax|maximum charging current regulation accuracy of a device|unit| |
+|batteryPreChargeCurrentTyp|typical charging current of a device in pre-charge phase|unit| |
+|batteryPreChargeCurrentMin|minimum charging current of a device in pre-charge phase|unit| |
+|batteryPreChargeCurrentMax|maximum charging current of a device in pre-charge phase|unit| |
+|batteryPreChargeCurrentAccuracyTyp|typical pre-charging current regulation accuracy of a device|unit| |
+|batteryPreChargeCurrentAccuracyMin|minimum pre-charging current regulation accuracy of a device|unit| |
+|batteryPreChargeCurrentAccuracyMax|maximum pre-charging current regulation accuracy of a device|unit| |
+|batteryTrickleChargeCurrentTyp|typical charging current of a device in trickle charge phase|unit| |
+|batteryTrickleChargeCurrentMin|minimum charging current of a device in trickle charge phase|unit| |
+|batteryTrickleChargeCurrentMax|maximum charging current of a device in trickle charge phase|unit| |
+|batteryTrickleChargeCurrentAccuracyTyp|typical Trickle charging current regulation accuracy of a device|unit| |
+|batteryTrickleChargeCurrentAccuracyMin|minimum Trickle charging current regulation accuracy of a device|unit| |
+|batteryTrickleChargeCurrentAccuracyMax|maximum Trickle charging current regulation accuracy of a device|unit| |
+|batteryTerminationChargeCurrentTyp|typical charging current of a device in charge termination phase|unit| |
+|batteryTerminationChargeCurrentMin|minimum charging current of a device in charge termination phase|unit| |
+|batteryTerminationChargeCurrentMax|maximum charging current of a device in charge termination phase|unit| |
+|batteryTerminationChargeCurrentAccuracyTyp|typical termination charging current regulation accuracy of a device|unit| |
+|batteryTerminationChargeCurrentAccuracyMin|minimum termination charging current regulation accuracy of a device|unit| |
+|batteryTerminationChargeCurrentAccuracyMax|maximum termination charging current regulation accuracy of a device|unit| |
+|batteryChargeVoltageTyp|typical battery charge voltage regulated by a device|unit| |
+|batteryChargeVoltageMin|minimum battery charge voltage regulated by a device|unit| |
+|batteryChargeVoltageMax|maximum battery charge voltage regulated by a device|unit| |
+|batteryChargeVoltageAccuracyTyp|typical accuracy of battery charge voltage regulated by a device|unit| |
+|batteryChargeVoltageAccuracyMin|minimum accuracy of battery charge voltage regulated by a device|unit| |
+|batteryChargeVoltageAccuracyMax|maximum accuracy of battery charge voltage regulated by a device|unit| |
+|efficiency|charge efficiency vs charge current of a device|graphDefiniton| |
+|vinTyp|typical input voltage under which a device can be expected to reliabily operate|unit| |
+|vinMin|minimum input voltage under which a device can be expected to reliabily operate|unit| |
+|vinMax|maximum input voltage under which the part can be expected to reliabily operate |unit| |
+|fswTyp|typical switching frequency of a device|unit| |
+|fswMin|minimum switching frequency of a device|unit| |
+|fswMax|maximum switching frequency of a device|unit| |
+|currentConsumption|current consumption of a device|array of currentConsumption| |
+|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|array of componentProtectionThresholds| |
+|batteryChargerProtections|battery charger specific protections supported by device|array of String| |
+|integratedLoadSwitch|whether the device contains integrated power path load switch(es)|Boolean| |
+|integratedFets|whether the device contains integrated switching mosfets|Boolean| |
+|integratedFetProperties|describes integrated fet current limits and rdson properties|powerFetProperities| |
+|maxGateCapacitance|describes maximum gate capacitance supported on external fets|unit| |
+|typInputSenseResistor|describes typical intput sense resistor value|unit| |
+|typBatterySenseResistor|describes typical battery sense resistor value|unit| |
+|passThroughMode|whether pass through mode is supported|Boolean| |
+|bc12Support|whether bc 1.2 detection is built in|Boolean| |
+|tcpcSupport|whether type-C port controller support is built in|Boolean| |
+|usbTypecRevision|usb type-c spec revision supported by a device|String| |
+|pdVersion|version of power delivery spec supported by a device|String| |
+|pins|array of pin objects with associated properties|array of pinSpec| |
+|package|component's package size and description|package| |
+
+
 ### 3.10	 Hardware
 
 ####  3.10.1	 Switch
