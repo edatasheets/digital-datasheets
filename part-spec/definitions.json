@@ -498,6 +498,19 @@
         }
       }
     },
+    "ratio":{
+    "type": "object",
+    "properties": {
+      "numerator":{
+        "description": "numerator of ratio",
+        "type": "number"
+      },
+      "denominator":{ 
+        "description": "denominator of ratio",
+        "type": "number"
+      }
+    }
+  },
     "conditionalProperty": {
       "type": "object",
       "properties": {
