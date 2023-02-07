@@ -201,16 +201,7 @@ The table below gives a description of the properties used to specify an inducto
 #### 3.10	Power Components Specifications
 The power component specification is included in Github at: https://github.com/edatasheets/edatasheets.github.io/tree/main/part-spec
 
-#### 3.10.1	 Power FET Specifications
-Power FETs are important components of swithing regulators. They can be integrated in the regulator or external to the regulator. The table below gives a description of the properties used to specify FETs in a digital datasheet. 
-|Property|Description|JSON Data Type|Required?|
-|:----|:----|:----|:----|
-|ilimHSFET|High Side FET maximum current above which the output voltage starts dropping |Number| |
-|ilimLSFET|Low Side FET maximum current above which the output voltage starts dropping|Number| |
-|rdsonHSFET|High side FET on-resistance|Number| |
-|rdsonLSFET|Low side FET on-resistance|Number| |
-
-#### 3.10.2	 Switching Regulator Specifications
+#### 3.10.1	 Switching Regulator Specifications
 The table below gives a description of the properties used to specify a switching regulator in a digital datasheet.
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -458,7 +449,7 @@ The table below gives a description of the properties used to specify a switchin
 |package|component's package size and description|definitions.json#/package| |
 
 ####  3.10.7	 PowerFetProperties
-
+Power FETs are important components of swithing regulators. They can be integrated in the regulator or external to the regulator. The table below gives a description of the properties used to specify FETs in a digital datasheet. 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
 |ilimHSFET|maximum sustained current output current under which the high side FET will operate properly|definitions.json#/unit| |
