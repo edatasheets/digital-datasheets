@@ -356,111 +356,120 @@ The table below gives a description of the properties used to specify a switchin
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|componentID|Yes|
-|vinTyp|typical input voltage under which a device can be expected to operate properly|unit| |
-|vinMin|minimum input voltage under which a device can be expected to operate properly|unit|Yes|
-|vinMax|maximum input voltage under which a device can be expected to operate properly|unit|Yes|
-|voutTyp|typical output voltage a device can regulate|unit| |
-|voutMin|minimum output voltage a device can regulate|unit| |
-|voutMax|maximum output voltage a device can regulate|unit| |
-|ioutTypPerString|typical output current per string a device can regulate|unit| |
-|ioutMinPerString|minimum output current per string a device can regulate|unit| |
-|ioutMaxPerString|maximum output current per string a device can regulate|unit| |
-|ioutAccuracyTyp|typical accuracy of per string current regulated by a device|unit| |
-|ioutAccuracyMin|minimum accuracy of per string current regulated by a device|unit| |
-|ioutAccuracyMax|maximum accuracy of per string current regulated by a device|unit| |
-|fswTyp|typical switching frequency of a device|unit| |
-|fswMin|minimum switching frequency of a device|unit| |
-|fswMax|maximum switching frequency of a device|unit| |
-|currentConsumption|current consumption of a device|array of currentConsumption| |
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|vinTyp|typical input voltage under which a device can be expected to operate properly|definitions.json#/unit| |
+|vinMin|minimum input voltage under which a device can be expected to operate properly|definitions.json#/unit|Yes|
+|vinMax|maximum input voltage under which a device can be expected to operate properly|definitions.json#/unit|Yes|
+|voutTyp|typical output voltage a device can regulate|definitions.json#/unit| |
+|voutMin|minimum output voltage a device can regulate|definitions.json#/unit| |
+|voutMax|maximum output voltage a device can regulate|definitions.json#/unit| |
+|ioutTypPerString|typical output current per string a device can regulate|definitions.json#/unit| |
+|ioutMinPerString|minimum output current per string a device can regulate|definitions.json#/unit| |
+|ioutMaxPerString|maximum output current per string a device can regulate|definitions.json#/unit| |
+|ioutAccuracyTyp|typical accuracy of per string current regulated by a device|definitions.json#/unit| |
+|ioutAccuracyMin|minimum accuracy of per string current regulated by a device|definitions.json#/unit| |
+|ioutAccuracyMax|maximum accuracy of per string current regulated by a device|definitions.json#/unit| |
+|fswTyp|typical switching frequency of a device|definitions.json#/unit| |
+|fswMin|minimum switching frequency of a device|definitions.json#/unit| |
+|fswMax|maximum switching frequency of a device|definitions.json#/unit| |
+|currentConsumption|current consumption of a device|array of definitions.json#/currentConsumption| |
 |integratedFets|whether a device contains integrated switching mosfets|Boolean| |
-|integratedFetProperties|describes integrated fet current limits and rdson properties|powerFetProperities| |
-|currentMatchingAccuracyTyp|typical current matching between LED strings|unit| |
-|currentMatchingAccuracyMin|minimum current matching between LED strings|unit| |
-|currentMatchingAccuracyMax|maximum current matching between LED strings|unit| |
+|integratedFetProperties|describes integrated fet current limits and rdson properties|#/$defs/powerFetProperities| |
+|currentMatchingAccuracyTyp|typical current matching between LED strings|definitions.json#/unit| |
+|currentMatchingAccuracyMin|minimum current matching between LED strings|definitions.json#/unit| |
+|currentMatchingAccuracyMax|maximum current matching between LED strings|definitions.json#/unit| |
 |dimmingSupport|whether a device supports output current dimming|Boolean| |
 |dimmingControl|whether a device is dimmed by PWM or I2C|String| |
-|dimmingFrequencyTyp|typical dimming frequency of a device|unit| |
-|dimmingFrequencyMin|minimum dimming frequency of a device|unit| |
-|dimmingFrequencyMax|maximum dimming frequency of a device|unit| |
-|dimmingRatioTyp|typical dimming ratio of a device|ratio| |
-|dimmingRatioMin|minimum dimming ratio of a device|ratio| |
-|dimmingRatioMax|maximum dimming ratio of a device|ratio| |
-|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|array of componentProtectionThresholds| |
-|efficiency|efficiency vs forward current|graphDefiniton| |
-|package|package size|package| |
-|pins|array of pin objects with associated properties|array of pinSpec| |
+|dimmingFrequencyTyp|typical dimming frequency of a device|definitions.json#/unit| |
+|dimmingFrequencyMin|minimum dimming frequency of a device|definitions.json#/unit| |
+|dimmingFrequencyMax|maximum dimming frequency of a device|definitions.json#/unit| |
+|dimmingRatioTyp|typical dimming ratio of a device|definitions.json#/ratio| |
+|dimmingRatioMin|minimum dimming ratio of a device|definitions.json#/ratio| |
+|dimmingRatioMax|maximum dimming ratio of a device|definitions.json#/ratio| |
+|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|array of icProtection.json#/componentProtectionThresholds| |
+|efficiency|efficiency vs forward current|graph.json#/graphDefiniton| |
+|package|package size|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
 ####  3.10.6	 Battery Charger
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|componentID|Yes|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
 |chargerType|battery charger type|String| |
 |converterType|switching charger type|String| |
 |chargerTopology|type of battery charger topology (Narrow VDC vs Hybrid Power Boost)|String| |
 |batteryConfig|battery configuration supported by the device|array of String| |
 |batteryCellChemistry|battery cell chemistry supported by the device|array of String| |
 |inputPowerSource|input power source supported by the device|array of String| |
-|inputCurrentAccuracy|accuracy of input current when set|unit| |
-|batteryChargeCurrentTyp|typical charging current of a device|unit| |
-|batteryChargeCurrentMin|minimum charging current of a device|unit| |
-|batteryChargeCurrentMax|maximum charging current of a device|unit|Yes|
-|batteryChargeCurrentAccuracyTyp|typical charging current regulation accuracy of a device|unit| |
-|batteryChargeCurrentAccuracyMin|minimum charging current regulation accuracy of a device|unit| |
-|batteryChargeCurrentAccuracyMax|maximum charging current regulation accuracy of a device|unit| |
-|batteryPreChargeCurrentTyp|typical charging current of a device in pre-charge phase|unit| |
-|batteryPreChargeCurrentMin|minimum charging current of a device in pre-charge phase|unit| |
-|batteryPreChargeCurrentMax|maximum charging current of a device in pre-charge phase|unit| |
-|batteryPreChargeCurrentAccuracyTyp|typical pre-charging current regulation accuracy of a device|unit| |
-|batteryPreChargeCurrentAccuracyMin|minimum pre-charging current regulation accuracy of a device|unit| |
-|batteryPreChargeCurrentAccuracyMax|maximum pre-charging current regulation accuracy of a device|unit| |
-|batteryTrickleChargeCurrentTyp|typical charging current of a device in trickle charge phase|unit| |
-|batteryTrickleChargeCurrentMin|minimum charging current of a device in trickle charge phase|unit| |
-|batteryTrickleChargeCurrentMax|maximum charging current of a device in trickle charge phase|unit| |
-|batteryTrickleChargeCurrentAccuracyTyp|typical Trickle charging current regulation accuracy of a device|unit| |
-|batteryTrickleChargeCurrentAccuracyMin|minimum Trickle charging current regulation accuracy of a device|unit| |
-|batteryTrickleChargeCurrentAccuracyMax|maximum Trickle charging current regulation accuracy of a device|unit| |
-|batteryTerminationChargeCurrentTyp|typical charging current of a device in charge termination phase|unit| |
-|batteryTerminationChargeCurrentMin|minimum charging current of a device in charge termination phase|unit| |
-|batteryTerminationChargeCurrentMax|maximum charging current of a device in charge termination phase|unit| |
-|batteryTerminationChargeCurrentAccuracyTyp|typical termination charging current regulation accuracy of a device|unit| |
-|batteryTerminationChargeCurrentAccuracyMin|minimum termination charging current regulation accuracy of a device|unit| |
-|batteryTerminationChargeCurrentAccuracyMax|maximum termination charging current regulation accuracy of a device|unit| |
-|batteryChargeVoltageTyp|typical battery charge voltage regulated by a device|unit| |
-|batteryChargeVoltageMin|minimum battery charge voltage regulated by a device|unit| |
-|batteryChargeVoltageMax|maximum battery charge voltage regulated by a device|unit| |
-|batteryChargeVoltageAccuracyTyp|typical accuracy of battery charge voltage regulated by a device|unit| |
-|batteryChargeVoltageAccuracyMin|minimum accuracy of battery charge voltage regulated by a device|unit| |
-|batteryChargeVoltageAccuracyMax|maximum accuracy of battery charge voltage regulated by a device|unit| |
-|efficiency|charge efficiency vs charge current of a device|graphDefiniton| |
-|vinTyp|typical input voltage under which a device can be expected to reliabily operate|unit| |
-|vinMin|minimum input voltage under which a device can be expected to reliabily operate|unit| |
-|vinMax|maximum input voltage under which the part can be expected to reliabily operate |unit| |
-|fswTyp|typical switching frequency of a device|unit| |
-|fswMin|minimum switching frequency of a device|unit| |
-|fswMax|maximum switching frequency of a device|unit| |
-|currentConsumption|current consumption of a device|array of currentConsumption| |
-|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|array of componentProtectionThresholds| |
+|inputCurrentAccuracy|accuracy of input current when set|definitions.json#/unit| |
+|batteryChargeCurrentTyp|typical charging current of a device|definitions.json#/unit| |
+|batteryChargeCurrentMin|minimum charging current of a device|definitions.json#/unit| |
+|batteryChargeCurrentMax|maximum charging current of a device|definitions.json#/unit|Yes|
+|batteryChargeCurrentAccuracyTyp|typical charging current regulation accuracy of a device|definitions.json#/unit| |
+|batteryChargeCurrentAccuracyMin|minimum charging current regulation accuracy of a device|definitions.json#/unit| |
+|batteryChargeCurrentAccuracyMax|maximum charging current regulation accuracy of a device|definitions.json#/unit| |
+|batteryPreChargeCurrentTyp|typical charging current of a device in pre-charge phase|definitions.json#/unit| |
+|batteryPreChargeCurrentMin|minimum charging current of a device in pre-charge phase|definitions.json#/unit| |
+|batteryPreChargeCurrentMax|maximum charging current of a device in pre-charge phase|definitions.json#/unit| |
+|batteryPreChargeCurrentAccuracyTyp|typical pre-charging current regulation accuracy of a device|definitions.json#/unit| |
+|batteryPreChargeCurrentAccuracyMin|minimum pre-charging current regulation accuracy of a device|definitions.json#/unit| |
+|batteryPreChargeCurrentAccuracyMax|maximum pre-charging current regulation accuracy of a device|definitions.json#/unit| |
+|batteryTrickleChargeCurrentTyp|typical charging current of a device in trickle charge phase|definitions.json#/unit| |
+|batteryTrickleChargeCurrentMin|minimum charging current of a device in trickle charge phase|definitions.json#/unit| |
+|batteryTrickleChargeCurrentMax|maximum charging current of a device in trickle charge phase|definitions.json#/unit| |
+|batteryTrickleChargeCurrentAccuracyTyp|typical Trickle charging current regulation accuracy of a device|definitions.json#/unit| |
+|batteryTrickleChargeCurrentAccuracyMin|minimum Trickle charging current regulation accuracy of a device|definitions.json#/unit| |
+|batteryTrickleChargeCurrentAccuracyMax|maximum Trickle charging current regulation accuracy of a device|definitions.json#/unit| |
+|batteryTerminationChargeCurrentTyp|typical charging current of a device in charge termination phase|definitions.json#/unit| |
+|batteryTerminationChargeCurrentMin|minimum charging current of a device in charge termination phase|definitions.json#/unit| |
+|batteryTerminationChargeCurrentMax|maximum charging current of a device in charge termination phase|definitions.json#/unit| |
+|batteryTerminationChargeCurrentAccuracyTyp|typical termination charging current regulation accuracy of a device|definitions.json#/unit| |
+|batteryTerminationChargeCurrentAccuracyMin|minimum termination charging current regulation accuracy of a device|definitions.json#/unit| |
+|batteryTerminationChargeCurrentAccuracyMax|maximum termination charging current regulation accuracy of a device|definitions.json#/unit| |
+|batteryChargeVoltageTyp|typical battery charge voltage regulated by a device|definitions.json#/unit| |
+|batteryChargeVoltageMin|minimum battery charge voltage regulated by a device|definitions.json#/unit| |
+|batteryChargeVoltageMax|maximum battery charge voltage regulated by a device|definitions.json#/unit| |
+|batteryChargeVoltageAccuracyTyp|typical accuracy of battery charge voltage regulated by a device|definitions.json#/unit| |
+|batteryChargeVoltageAccuracyMin|minimum accuracy of battery charge voltage regulated by a device|definitions.json#/unit| |
+|batteryChargeVoltageAccuracyMax|maximum accuracy of battery charge voltage regulated by a device|definitions.json#/unit| |
+|efficiency|charge efficiency vs charge current of a device|graph.json#/graphDefiniton| |
+|vinTyp|typical input voltage under which a device can be expected to reliabily operate|definitions.json#/unit| |
+|vinMin|minimum input voltage under which a device can be expected to reliabily operate|definitions.json#/unit| |
+|vinMax|maximum input voltage under which the part can be expected to reliabily operate |definitions.json#/unit| |
+|fswTyp|typical switching frequency of a device|definitions.json#/unit| |
+|fswMin|minimum switching frequency of a device|definitions.json#/unit| |
+|fswMax|maximum switching frequency of a device|definitions.json#/unit| |
+|currentConsumption|current consumption of a device|array of definitions.json#/currentConsumption| |
+|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|array of icProtection.json#/componentProtectionThresholds| |
 |batteryChargerProtections|battery charger specific protections supported by device|array of String| |
 |integratedLoadSwitch|whether the device contains integrated power path load switch(es)|Boolean| |
 |integratedFets|whether the device contains integrated switching mosfets|Boolean| |
-|integratedFetProperties|describes integrated fet current limits and rdson properties|powerFetProperities| |
-|maxGateCapacitance|describes maximum gate capacitance supported on external fets|unit| |
-|typInputSenseResistor|describes typical intput sense resistor value|unit| |
-|typBatterySenseResistor|describes typical battery sense resistor value|unit| |
+|integratedFetProperties|describes integrated fet current limits and rdson properties|#/$defs/powerFetProperities| |
+|maxGateCapacitance|describes maximum gate capacitance supported on external fets|definitions.json#/unit| |
+|typInputSenseResistor|describes typical intput sense resistor value|definitions.json#/unit| |
+|typBatterySenseResistor|describes typical battery sense resistor value|definitions.json#/unit| |
 |passThroughMode|whether pass through mode is supported|Boolean| |
 |bc12Support|whether bc 1.2 detection is built in|Boolean| |
 |tcpcSupport|whether type-C port controller support is built in|Boolean| |
 |usbTypecRevision|usb type-c spec revision supported by a device|String| |
 |pdVersion|version of power delivery spec supported by a device|String| |
-|pins|array of pin objects with associated properties|array of pinSpec| |
-|package|component's package size and description|package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|definitions.json#/package| |
+
+####  3.10.7	 PowerFetProperties
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|ilimHSFET|maximum sustained current output current under which the high side FET will operate properly|definitions.json#/unit| |
+|ilimLSFET|maximum sustained current output current under which the low side FET will operate properly|definitions.json#/unit| |
+|rdsonHSFET|high side FET on-resistance|definitions.json#/unit| |
+|rdsonLSFET|low side FET on-resistance|definitions.json#/unit| |
 
 
-### 3.10	 Hardware
+### 3.11	 Hardware
 
-####  3.10.1	 Switch
+####  3.11.1	 Switch
 
 The table below gives a description of the properties used to specify a switch in a digital datasheet.
 
@@ -478,7 +487,7 @@ The table below gives a description of the properties used to specify a switch i
 |package|component's package size and description|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
 
-####  3.10.2	 Connector
+####  3.11.2	 Connector
 
 The table below gives a description of the properties used to specify a connector in a digital datasheet.
 
@@ -495,12 +504,12 @@ The table below gives a description of the properties used to specify a connecto
 |package|component's package size and description|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
 
-### 3.11	 IC IO (Integrated Circuit Input/Output)
+### 3.12	 IC IO (Integrated Circuit Input/Output)
 
 ICs often require various external components to correctly use them in a design.
 This section contains components commonly used to fit that need.
 
-####  3.11.1	 Redriver
+####  3.12.1	 Redriver
 
 The table below gives a description of the properties used to specify a redriver in a digital datasheet.
 
@@ -513,7 +522,7 @@ The table below gives a description of the properties used to specify a redriver
 |package|component's package size and description|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
 
-####  3.11.2	 Bridge Chip
+####  3.12.2	 Bridge Chip
 
 The table below gives a description of the properties used to specify a bridge chip in a digital datasheet.
 
@@ -526,7 +535,7 @@ The table below gives a description of the properties used to specify a bridge c
 |package|component's package size and description|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
 
-####  3.11.3	 Mux
+####  3.12.3	 Mux
 
 The table below gives a description of the properties used to specify a mux in a digital datasheet.
 
@@ -539,7 +548,7 @@ The table below gives a description of the properties used to specify a mux in a
 |package|component's package size and description|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
 
-####  3.11.4	 Level Shifter
+####  3.12.4	 Level Shifter
 
 The table below gives a description of the properties used to specify level shifters in a digital datasheet.
 
@@ -553,11 +562,11 @@ The table below gives a description of the properties used to specify level shif
 |package|component's package size and description|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
 
-### 3.12	 Logic Integrated Circuits
+### 3.13	 Logic Integrated Circuits
 
 This section contains ICs which can be used to implement digital logic in a design.
 
-####  3.12.1	 Logic Gate
+####  3.13.1	 Logic Gate
 
 The table below gives a description of the properties used to specify logic gates in a digital datasheet.
 
@@ -572,7 +581,7 @@ The table below gives a description of the properties used to specify logic gate
 |package|component's package size and description|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
 
-####  3.12.2	 Clock
+####  3.13.2	 Clock
 
 The table below gives a description of the properties used to specify a clock in a digital datasheet.
 
@@ -591,11 +600,11 @@ The table below gives a description of the properties used to specify a clock in
 |package|component's package size and description|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
 
-### 3.13	 Microcontrollers
+### 3.14	 Microcontrollers
 
 This section contains non-trivial microcontroller components.
 
-####  3.13.1	 Microcontroller/EC (Electronic Controller)
+####  3.14.1	 Microcontroller/EC (Electronic Controller)
 
 The table below gives a description of the properties used to specify an embedded controller ("EC") in a digital datasheet.
 
@@ -614,11 +623,11 @@ The table below gives a description of the properties used to specify an embedde
 |pins|array of pin objects with associated properties|array of Object| |
 |package|component's package size and description|Object| |
 
-### 3.14	 IC Misc
+### 3.15	 IC Misc
 
 This section contains miscellaneous integrated circuits.
 
-####  3.14.1	 Speaker Amplifier
+####  3.15.1	 Speaker Amplifier
 
 The table below gives a description of the properties used to specify a speacker amplifier in a digital datasheet.
 
@@ -634,7 +643,7 @@ The table below gives a description of the properties used to specify a speacker
 |package|component's package size and description|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
 
-####  3.14.2	 Audio Codec
+####  3.15.2	 Audio Codec
 
 The table below gives a description of the properties used to specify an audio codec in a digital datasheet.
 
@@ -651,7 +660,7 @@ The table below gives a description of the properties used to specify an audio c
 |package|component's package size and description|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
 
-####  3.14.3	 WLAN Module
+####  3.15.3	 WLAN Module
 
 The table below gives a description of the properties used to specify a WLAN module in a digital datasheet.
 
@@ -668,7 +677,7 @@ The table below gives a description of the properties used to specify a WLAN mod
 |package|component's package size and description|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
 
-####  3.14.4	 WWAN Module
+####  3.15.4	 WWAN Module
 
 The table below gives a description of the properties used to specify WWAN module in a digital datasheet.
 
@@ -683,7 +692,7 @@ The table below gives a description of the properties used to specify WWAN modul
 |package|component's package size and description|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
 
-####  3.14.5	 TPM (Trusted Platform Module)
+####  3.15.5	 TPM (Trusted Platform Module)
 
 The table below gives a description of the properties used to specify a TPM in a digital datasheet.
 
@@ -694,12 +703,12 @@ The table below gives a description of the properties used to specify a TPM in a
 |package|component's package size and description|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
 
-### 3.15	 Storage/memory
+### 3.16	 Storage/memory
 
 This section contains data storage components, for both volatile and
 non-volatile memory, as well as read-only and read-write memory.
 
-####  3.15.1	 SSD
+####  3.16.1	 SSD
 
 The table below gives a description of the properties used to specify an SSD in a digital datasheet.
 
@@ -713,7 +722,7 @@ The table below gives a description of the properties used to specify an SSD in 
 |package|component's package size and description|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
 
-####  3.15.2	 SD Card
+####  3.16.2	 SD Card
 
 The table below gives a description of the properties used to specify an SD card in a digital datasheet.
 
@@ -726,7 +735,7 @@ The table below gives a description of the properties used to specify an SD card
 |package|component's package size and description|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
 
-####  3.15.3	 DRAM
+####  3.16.3	 DRAM
 
 The table below gives a description of the properties used to specify DRAM in a digital datasheet.
 
@@ -739,7 +748,7 @@ The table below gives a description of the properties used to specify DRAM in a 
 |package|component's package size and description|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
 
-####  3.15.4	 ROM
+####  3.16.4	 ROM
 
 The table below gives a description of the properties used to specify ROM in a digital datasheet.
 
@@ -752,11 +761,11 @@ The table below gives a description of the properties used to specify ROM in a d
 |package|component's package size and description|Object| |
 |pins|array of pin objects with associated properties|array of Object| |
 
-### 3.16	 USB-C
+### 3.17	 USB-C
 
 This section contains components related to implementing USB-C.
 
-####  3.16.1	 USB-C Power Delivery Controller
+####  3.17.1	 USB-C Power Delivery Controller
 
 The table below gives a description of the properties used to specify a USB-C PD controller in a digital datasheet.
 
@@ -795,11 +804,11 @@ The table below gives a description of the properties used to specify a USB-C PD
 |pins|array of pin objects with associated properties|array of Object| |
 |package|component's package size and description|Object| |
 
-### 3.17	 Semiconductor
+### 3.18	 Semiconductor
 
 Source: [semiconductor.json](https://github.com/chromeos/digital-datasheets/blob/main/part-spec/semiconductor.json)
 
-####  3.17.1	 Mosfet
+####  3.18.1	 Mosfet
 
 The table below gives a description of the properties used to specify a MOSFET.
 
@@ -862,7 +871,7 @@ The table below gives a description of the properties used to specify a MOSFET.
 |pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 |package|component's package size and description|definitions.json#/package| |
 
-####  3.17.2	 Diode
+####  3.18.2	 Diode
 
 The table below gives a description of the properties used to specify a diode.
 
