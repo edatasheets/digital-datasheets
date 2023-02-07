@@ -736,33 +736,33 @@
           "comment": "units of volts",
           "$ref": "definitions.json#/unit"
         },
-        "ioutTyp": {
-          "description": "typical output current a device can regulate",
+        "ioutTypPerString": {
+          "description": "typical output current per string a device can regulate",
           "comment": "units of amps",
           "$ref": "definitions.json#/unit"
         },
-        "ioutMin": {
-          "description": "minimum output current a device can regulate",
+        "ioutMinPerString": {
+          "description": "minimum output current per string a device can regulate",
           "comment": "units of amps",
           "$ref": "definitions.json#/unit"
         },
-        "ioutMax": {
-          "description": "maximum output current a device can regulate",
+        "ioutMaxPerString": {
+          "description": "maximum output current per string a device can regulate",
           "comment": "units of amps",
           "$ref": "definitions.json#/unit"
         },
         "ioutAccuracyTyp": {
-          "description": "typical accuracy of output current regulated by a device",
+          "description": "typical accuracy of per string current regulated by a device",
           "comment": "units of %",
           "$ref": "definitions.json#/unit"
         },
         "ioutAccuracyMin": {
-          "description": "minimum accuracy of output current regulated by a device",
+          "description": "minimum accuracy of per string current regulated by a device",
           "comment": "units of %",
           "$ref": "definitions.json#/unit"
         },
         "ioutAccuracyMax": {
-          "description": "maximum accuracy of output current regulated by a device",
+          "description": "maximum accuracy of per string current regulated by a device",
           "comment": "units of %",
           "$ref": "definitions.json#/unit"
         },
@@ -811,21 +811,17 @@
           "comment": "units of percentage",
           "$ref": "definitions.json#/unit"
         },
-        "integratedBoost": {
-          "description": "whether a boost switching converter is integrated in the device",
-          "type": "boolean"
-        },
-        "numberLEDStrings": {
-          "description": "maximum number of LED strings a device can support",
-          "type": "number"
-        },
-        "numberLEDPerString": {
-          "description": "maximum number of LEDs per string a device can support",
-          "type": "number"
-        },
         "dimmingSupport": {
           "description": "whether a device supports output current dimming",
           "type": "boolean"
+        },
+        "dimmingControl": {
+          "description": "whether a device is dimmed by PWM or I2C",
+          "type": "string",
+          "enum": [
+            "i2c",
+            "pwm"
+          ]
         },
         "dimmingFrequencyTyp": {
           "description": "typical dimming frequency of a device",
@@ -852,7 +848,7 @@
         },
         "dimmingRatioMax": {
           "description": "maximum dimming ratio of a device",
-           "$ref": "definitions.json#/ratio"
+          "$ref": "definitions.json#/ratio"
         },
         "componentProtectionThresholds": {
           "description": "Thermal and power supply protection thresholds of a device",
@@ -860,6 +856,10 @@
           "items": {
             "$ref": "icProtection.json#/componentProtectionThresholds"
           }
+        },
+        "efficiency": {
+          "description": "efficiency vs forward current",
+          "$ref": "graph.json#/graphDefiniton"
         },
         "package": {
           "description": "package size",
@@ -922,9 +922,9 @@
             "4S2P"
           ],
           "type": "array",
-          "items:{
-            "type":"string"
-            }
+          "items": {
+            "type": "string"
+          }
         },
         "batteryCellChemistry": {
           "description": "battery cell chemistry supported by the device",
@@ -935,7 +935,7 @@
           "type": "array",
           "items": {
             "type": "string"
-            }  
+          }
         },
         "inputPowerSource": {
           "description": "input power source supported by the device",
@@ -945,9 +945,14 @@
             "usb 5V"
           ],
           "type": "array",
-          "items":{
+          "items": {
             "type": "string"
-            }
+          }
+        },
+        "inputCurrentAccuracy": {
+          "description": "accuracy of input current when set",
+          "comment": "units of percentage",
+          "$ref": "definitions.json#/unit"
         },
         "batteryChargeCurrentTyp": {
           "description": "typical charging current of a device",
@@ -1147,6 +1152,18 @@
             "$ref": "icProtection.json#/componentProtectionThresholds"
           }
         },
+        "batteryChargerProtections": {
+          "description": "battery charger specific protections supported by device",
+          "examples": [
+            "adapterOvervoltageProtection",
+            "batteryProtection",
+            "systemVoltageRailShortProtection"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "integratedLoadSwitch": {
           "description": "whether the device contains integrated power path load switch(es)",
           "type": "boolean"
@@ -1158,6 +1175,25 @@
         "integratedFetProperties": {
           "description": "describes integrated fet current limits and rdson properties",
           "$ref": "#/$defs/powerFetProperities"
+        },
+        "maxGateCapacitance": {
+          "description": "describes maximum gate capacitance supported on external fets",
+          "comment": "units of farads",
+          "$ref": "definitions.json#/unit"
+        },
+        "typInputSenseResistor": {
+          "description": "describes typical intput sense resistor value",
+          "comment": "units of ohms",
+          "$ref": "definitions.json#/unit"
+        },
+        "typBatterySenseResistor": {
+          "description": "describes typical battery sense resistor value",
+          "comment": "units of ohms",
+          "$ref": "definitions.json#/unit"
+        },
+        "passThroughMode": {
+          "description": "whether pass through mode is supported",
+          "type": "boolean"
         },
         "bc12Support": {
           "description": "whether bc 1.2 detection is built in",
@@ -1225,4 +1261,3 @@
     }
   }
 }
-
