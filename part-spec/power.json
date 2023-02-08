@@ -1238,7 +1238,7 @@
           "description": "definition of the component instance as defined in the specifications",
           "type": "array",
           "items": {
-            "type": "TODO"
+            "type": "object"
           }
         }
       }
