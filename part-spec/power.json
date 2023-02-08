@@ -647,7 +647,7 @@
           "description": "definition of each instance of a component in the device",
           "type": "array",
           "items": {
-            "$ref": "definitions.json#/instance"
+            "$ref": "#/powerComponentDefinitions"
           }
         },
         "vinTyp": {
@@ -1256,6 +1256,26 @@
           "description": "low side FET on-resistance",
           "comment": "units of ohms",
           "$ref": "definitions.json#/unit"
+        }
+      }
+    },
+    "powerComponentDefinitions": {
+      "type": "object",
+      "properties": {
+        "componentTitle": {
+          "description": "title used for the component in the digital datasheets specifications",
+          "type": "string"
+        },
+        "instanceName": {
+          "description": "name of component instances",
+          "type": "string"
+        },
+        "instanceProperties": {
+          "description": "definition of the component instance as defined in the specifications",
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
         }
       }
     }
