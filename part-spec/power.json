@@ -647,7 +647,7 @@
           "description": "definition of each instance of a component in the device",
           "type": "array",
           "items": {
-            "$ref": "#/instance"
+            "$ref": "#/powerComponentDefinitions"
           }
         },
         "vinTyp": {
@@ -1223,7 +1223,7 @@
         }
       }
     },
-    "instance": {
+    "powerComponentDefinitions": {
       "type": "object",
       "properties": {
         "componentTitle": {
