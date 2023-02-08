@@ -1,4 +1,7 @@
 {
+  "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/Registers.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
     "registerDefiniton": {
         "type": "object",
         "required": [
@@ -49,11 +52,9 @@
             },
             "registerBitField": {
                 "description": "Describes the bit fields in the register",
-                "$ref": "#/defs/registerBitField"
+                "$ref": "#/registerBitField"
             }
-        }
-    },
-    "$defs": {
+        },
         "registerBitField": {
             "type": "object",
             "properties": {
@@ -97,5 +98,5 @@
             }
         }
     }
+  }
 }
-   
