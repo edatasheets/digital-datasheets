@@ -455,6 +455,26 @@
         }
       }
     },
+    "value": {
+      "type": "object",
+      "properties": {
+        "minValue":{
+          "description": "minimum value of a component",
+          "type": "number",
+          "$ref": "#/definitions/unit"
+        },
+        "typValue":{
+          "description": "typical value of a component",
+          "type": "number",
+          "$ref": "#/definitions/unit"
+        },
+        "maxValue":{
+          "description": "maximum value of a component",
+          "type": "number",
+          "$ref": "#/definitions/unit"
+        }
+      }
+    },
     "package": {
       "type": "object",
       "properties": {
