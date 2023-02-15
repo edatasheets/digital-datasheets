@@ -1,0 +1,240 @@
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/sensor.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "sensor",
+    "oneOf": [
+        {
+            "title": "accelerometer",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "accelerationRanges": {
+                    "description": "range of force that accelerometer can measure",
+                    "examples": [
+                        "2",
+                        "4",
+                        "8",
+                        "16"
+                    ],
+                    "comment": "units of g",
+                    "type": "number"
+                },
+                "sensitivity": {
+                    "description": "smallest change in force accelerometer is able to capture (typical). Corresponds to levels in acceleration ranges",
+                    "examples": [
+                        "16000",
+                        "8000",
+                        "4000",
+                        "2000"
+                    ],
+                    "comment": "units of LSB/g",
+                    "type": "number"
+                },
+                "axis": {
+                    "description": "number of axes of acceleration measurement",
+                    "type": "number"
+                },
+                "interface": {
+                    "description": "interface(s) for communication to host",
+                    "examples": [
+                        "i2c",
+                        "spi",
+                        "analog"
+                    ],
+                    "type": "string"
+                },
+                "bandwidth": {
+                    "description": "bandwidth of acceleration measurement",
+                    "comment": "units of Hz",
+                    "$ref": "definitions.json#/unit"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "accelerometer/gyro",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "accelerationRanges": {
+                    "description": "range of force that accelerometer can measure",
+                    "examples": [
+                        "2",
+                        "4",
+                        "8",
+                        "16"
+                    ],
+                    "comment": "units of g",
+                    "type": "number"
+                },
+                "accelerationSensitivity": {
+                    "description": "smallest change in force accelerometer is able to capture (typical). Corresponds to levels in acceleration ranges",
+                    "examples": [
+                        "16000",
+                        "8000",
+                        "4000",
+                        "2000"
+                    ],
+                    "comment": "units of LSB/g",
+                    "type": "number"
+                },
+                "gyroRanges": {
+                    "description": "range of angular speed that gyro can measure",
+                    "examples": [
+                        "125",
+                        "250",
+                        "500"
+                    ],
+                    "comment": "units of degrees-per-second (dps)",
+                    "type": "number"
+                },
+                "gyroSensitivity": {
+                    "description": "smallest change in angular speed gyro is able to capture (typical). Corresponds to levels in gyro ranges",
+                    "examples": [
+                        "16",
+                        "32",
+                        "65"
+                    ],
+                    "comment": "units of LSB/dps",
+                    "type": "number"
+                },
+                "axis": {
+                    "description": "number of axes of measurement",
+                    "type": "number"
+                },
+                "interface": {
+                    "description": "interface(s) for communication to host",
+                    "examples": [
+                        "i2c",
+                        "spi",
+                        "analog"
+                    ],
+                    "type": "string"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "magnetic sensor",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "type": {
+                    "description": "method by which magnetism is detected",
+                    "enum": [
+                        "gmr",
+                        "hall effect"
+                    ],
+                    "type": "string"
+                },
+                "trip": {
+                    "description": "magnetic threshold causing the sensor to output high",
+                    "comment": "units of mT",
+                    "type": "number"
+                },
+                "release": {
+                    "description": "magnetic threshold causing the sensor to output low",
+                    "comment": "units of mT",
+                    "type": "number"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "thermal",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "type": {
+                    "description": "method by which temperature is detected",
+                    "examples": [
+                        "rtd",
+                        "thermistor",
+                        "silicon bandgap"
+                    ],
+                    "type": "string"
+                },
+                "interface": {
+                    "description": "interface(s) for communication to host",
+                    "enum": [
+                        "i2c",
+                        "spi",
+                        "analog"
+                    ],
+                    "type": "string"
+                },
+                "resolution": {
+                    "description": "maximum resolution of temperature sensor",
+                    "comment": "units of degreesC/LSD",
+                    "type": "number"
+                },
+                "package": {
+                    "description": "package size of resistor",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        }
+    ]
+}
