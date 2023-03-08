@@ -16,7 +16,7 @@
                     "$ref": "definitions.json#/componentID"
                 },
                 "accelerometerType": {
-                    "description": "Type of accelerometer",
+                    "description": "type of accelerometer",
                     "examples": [
                         "capacitive MEMS",
                         "piezoresistive",
@@ -36,21 +36,20 @@
                     "type": "number"
                 },
                 "accelerationSensitivity": {
-                    "description": "smallest change in force the accelerometer is able to capture (typical). Corresponds to levels in acceleration ranges",
+                    "description": "smallest change in force the accelerometer is able to capture (typical) at a given acceleration range",
                     "examples": [
                         "16000",
                         "8000",
                         "4000",
                         "2000"
                     ],
-                    "comment": "units of LSB/g; conditions can include acceleration ranges and output resolution",
-                    "type": "number",
+                    "comment": "units of LSB/g (least significant bits per g); conditions can include acceleration ranges and output resolution",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "accelerationSensitivityOverTemperature": {
                     "description": "accelerometer sensitivity change over temperature",
-                    "comment": "units of percentage per degree celsius (%/Celcius)",
-                    "$ref": "definitions.json#/value"
+                    "comment": "units of percentage per degree celsius (%/Celsius)",
+                    "type": "number"
                 },
                 "axis": {
                     "description": "number of axes of acceleration measurement",
@@ -59,12 +58,12 @@
                 "zerogOffset": {
                     "description": "output of the accelerometer when no acceleration is applied",
                     "comment": "units of g-force (g)",
-                    "$ref": "definitions.json#/value"
+                    "type": "number"
                 },
                 "zerogOffsetOverTemperature": {
                     "description": "accelerometer zero-g offset change over temperature",
                     "comment": "units of milli g-force per degree celsius (mg/Celcius)",
-                    "$ref": "definitions.json#/value"
+                    "type": "number"
                 },
                 "outputType": {
                     "description": "measurement output type",
@@ -86,7 +85,7 @@
                         "spi",
                         "analog"
                     ],
-                    "type": "string"
+                    "type": "array"
                 },
                 "bandwidth": {
                     "description": "bandwidth of acceleration measurement",
@@ -94,19 +93,19 @@
                     "$ref": "definitions.json#/value"
                 },
                 "outputDataRate": {
-                    "description": "Output Data rate (ODR) of a device",
+                    "description": "output Data rate (ODR) of a device",
                     "comment": "units of Hz",
                     "$ref": "definitions.json#/value"
                 },
                 "rmsNoise": {
-                    "description": "Broadband rms noise of a device",
+                    "description": "broadband rms noise of a device",
                     "comment": "units of milli g-force",
-                    "$ref": "definitions.json#/value"
+                    "type": "number"
                 },
                 "spectralNoiseDensity": {
-                    "description": "Spectral noise density of a device",
+                    "description": "spectral noise density of a device",
                     "comment": "units of milli g-force per square root of Hz (milli-g/rt-Hz)",
-                    "$ref": "definitions.json#/value"
+                    "type": "number"
                 },
                 "currentConsumption": {
                     "description": "current consumption of a device",
@@ -129,7 +128,7 @@
             }
         },
         {
-            "title": "gyro",
+            "title": "gyroscope",
             "type": "object",
             "required": [
                 "componentID"
@@ -141,29 +140,18 @@
                 },
                 "gyroRanges": {
                     "description": "range of angular speed that gyro can measure",
-                    "examples": [
-                        "125",
-                        "250",
-                        "500"
-                    ],
                     "comment": "units of degrees-per-second (dps)",
                     "type": "number"
                 },
                 "gyroSensitivity": {
-                    "description": "smallest change in angular speed gyro is able to capture (typical). Corresponds to levels in gyro ranges",
-                    "examples": [
-                        "16",
-                        "32",
-                        "65"
-                    ],
-                    "comment": "units of LSB/dps",
-                    "type": "number",
+                    "description": "smallest change in angular speed gyro is able to capture (typical) at a given gyro ranges",
+                    "comment": "units of LSB/dps"
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "gyroSensitivityOverTemperature": {
                     "description": "gyroscope sensitivity change over temperature",
                     "comment": "units of percentage per degree celsius",
-                    "$ref": "definitions.json#/value"
+                    "type": "number"
                 },
                 "axis": {
                     "description": "number of axes of measurement",
@@ -172,12 +160,12 @@
                 "zeroRateOffset": {
                     "description": "output of the gyroscope when no angular velocity is applied",
                     "comment": "units of degrees-per-second",
-                    "$ref": "definitions.json#/value"
+                    "type": "number"
                 },
                 "zeroRateOffsetOverTemperature": {
                     "description": "gyro zero rate offset change over temperature",
-                    "comment": "units of degrees-per-second per degree celsius (dps/Celcius)",
-                    "$ref": "definitions.json#/value"
+                    "comment": "units of degrees-per-second per degree celsius (dps/Celsius)",
+                    "type": "number"
                 },
                 "interface": {
                     "description": "interface(s) for communication to host",
@@ -194,7 +182,7 @@
                     "$ref": "definitions.json#/value"
                 },
                 "outputDataRate": {
-                    "description": "Output Data rate (ODR) of a device",
+                    "description": "output Data rate (ODR) of a device",
                     "comment": "units of Hz",
                     "$ref": "definitions.json#/value"
                 },
@@ -204,17 +192,17 @@
                         "analog",
                         "digital"
                     ],
-                    "type": "string"
+                    "type": "array"
                 },
                 "rmsNoise": {
-                    "description": "Broadband rms noise of a device",
+                    "description": "broadband rms noise of a device",
                     "comment": "units of degrees-per-second rms",
-                    "$ref": "definitions.json#/value"
+                    "type": "number"
                 },
                 "spectralNoiseDensity": {
-                    "description": "Spectral noise density of a device",
+                    "description": "spectral noise density of a device",
                     "comment": "units of degrees-per-second per square root Hertz (dps/rt-Hz)",
-                    "$ref": "definitions.json#/value"
+                    "type": "number"
                 },
                 "currentConsumption": {
                     "description": "current consumption of a device",
