@@ -109,10 +109,7 @@
                 },
                 "currentConsumption": {
                     "description": "current consumption of a device",
-                    "type": "array",
-                    "items": {
-                      "$ref": "definitions.json#/currentConsumption"
-                    }
+                     "$ref": "definitions.json#/currentConsumption"
                 },
                 "package": {
                     "description": "package size of a device",
