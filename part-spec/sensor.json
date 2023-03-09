@@ -43,7 +43,7 @@
                         "4000",
                         "2000"
                     ],
-                    "comment": "units of LSB/g (least significant bits per g); conditions can include acceleration ranges and output resolution",
+                    "comment": "units of LSB/g (least significant bits per g) at a given acceleration range and output resolution",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "accelerationSensitivityOverTemperature": {
@@ -76,7 +76,7 @@
                 "outputResolution": {
                     "description": "output resolution of acceleration measurement",
                     "comment": "units of bits",
-                    "type": "number"
+                    "$ref": "definitions.json#/unit"
                 },
                 "interface": {
                     "description": "interface(s) for communication to host",
@@ -90,12 +90,12 @@
                 "bandwidth": {
                     "description": "bandwidth of acceleration measurement",
                     "comment": "units of Hz",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "definitions.json#/unit"
                 },
                 "outputDataRate": {
                     "description": "output Data rate (ODR) of a device",
                     "comment": "units of Hz",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "definitions.json#/unit"
                 },
                 "rmsNoise": {
                     "description": "broadband rms noise of a device",
@@ -141,7 +141,7 @@
                     "type": "number"
                 },
                 "gyroSensitivity": {
-                    "description": "smallest change in angular speed gyro is able to capture (typical) at a given gyro ranges",
+                    "description": "smallest change in angular speed gyro is able to capture (typical) at a given gyro range",
                     "comment": "units of LSB/dps"
                     "$ref": "definitions.json#/conditionalProperty"
                 },
@@ -171,17 +171,17 @@
                         "spi",
                         "analog"
                     ],
-                    "type": "string"
+                    "type": "array"
                 },
                 "bandwidth": {
                     "description": "bandwidth of gyroscope",
                     "comment": "units of Hz",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "definitions.json#/unit"
                 },
                 "outputDataRate": {
                     "description": "output Data rate (ODR) of a device",
                     "comment": "units of Hz",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "definitions.json#/unit"
                 },
                 "outputType": {
                     "description": "measurement output type",
@@ -189,7 +189,7 @@
                         "analog",
                         "digital"
                     ],
-                    "type": "array"
+                    "type": "string"
                 },
                 "rmsNoise": {
                     "description": "broadband rms noise of a device",
@@ -203,10 +203,7 @@
                 },
                 "currentConsumption": {
                     "description": "current consumption of a device",
-                    "type": "array",
-                    "items": {
-                      "$ref": "definitions.json#/currentConsumption"
-                    }
+                    "$ref": "definitions.json#/currentConsumption"
                 },
                 "package": {
                     "description": "package size of a device",
