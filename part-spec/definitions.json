@@ -417,8 +417,16 @@
           ],
           "type": "string"
         },
-        "absoluteValue": {
-          "description": "unit quantity corresponding to unit text - example 40mV would have a value of 40",
+        "typValue": {
+          "description": "typical unit quantity corresponding to unit text - example 40mV would have a value of 40",
+          "type": "number"
+        },
+         "minValue": {
+          "description": "minimum unit quantity corresponding to unit text - example 40mV would have a value of 40",
+          "type": "number"
+        },
+        "maxValue": {
+          "description": "maximum unit quantity corresponding to unit text - example 40mV would have a value of 40",
           "type": "number"
         },
         "unitText": {
@@ -452,23 +460,6 @@
         "valueDefined": {
           "description": "a boolean representing whether a value has been defined",
           "type": "boolean"
-        }
-      }
-    },
-    "value": {
-      "type": "object",
-      "properties": {
-        "minValue":{
-          "description": "minimum value of a component",
-          "$ref": "#/definitions/unit"
-        },
-        "typValue":{
-          "description": "typical value of a component",
-          "$ref": "#/definitions/unit"
-        },
-        "maxValue":{
-          "description": "maximum value of a component",
-          "$ref": "#/definitions/unit"
         }
       }
     },
