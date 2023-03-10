@@ -463,6 +463,23 @@
         }
       }
     },
+    "value": {
+      "type": "object",
+      "properties": {
+        "typValue": {
+          "description": "typical value",
+          "type": "number"
+        },
+        "minValue": {
+          "description": "minimum value",
+          "type": "number"
+        },
+        "maxValue": {
+          "description": "maximum value",
+          "type": "number"
+        }
+      }
+    },    
     "package": {
       "type": "object",
       "properties": {
