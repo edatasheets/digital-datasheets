@@ -49,7 +49,7 @@
                 "accelerationSensitivityOverTemperature": {
                     "description": "accelerometer sensitivity change over temperature",
                     "comment": "units of percentage per degree celsius (%/Celsius)",
-                    "type": "number"
+                    "$ref": "definitions.json#/value"
                 },
                 "axis": {
                     "description": "number of axes of acceleration measurement",
@@ -58,12 +58,12 @@
                 "zerogOffset": {
                     "description": "output of the accelerometer when no acceleration is applied",
                     "comment": "units of g-force (g)",
-                    "type": "number"
+                    "$ref": "definitions.json#/value"
                 },
                 "zerogOffsetOverTemperature": {
                     "description": "accelerometer zero-g offset change over temperature",
                     "comment": "units of milli g-force per degree celsius (mg/Celcius)",
-                    "type": "number"
+                    "$ref": "definitions.json#/value"
                 },
                 "outputType": {
                     "description": "measurement output type",
@@ -100,12 +100,12 @@
                 "rmsNoise": {
                     "description": "broadband rms noise of a device",
                     "comment": "units of milli g-force",
-                    "type": "number"
+                    "$ref": "definitions.json#/value"
                 },
                 "spectralNoiseDensity": {
                     "description": "spectral noise density of a device",
                     "comment": "units of milli g-force per square root of Hz (milli-g/rt-Hz)",
-                    "type": "number"
+                    "$ref": "definitions.json#/value"
                 },
                 "currentConsumption": {
                     "description": "current consumption of a device",
@@ -148,7 +148,7 @@
                 "gyroSensitivityOverTemperature": {
                     "description": "gyroscope sensitivity change over temperature",
                     "comment": "units of percentage per degree celsius",
-                    "type": "number"
+                    "$ref": "definitions.json#/value"
                 },
                 "axis": {
                     "description": "number of axes of measurement",
@@ -157,12 +157,12 @@
                 "zeroRateOffset": {
                     "description": "output of the gyroscope when no angular velocity is applied",
                     "comment": "units of degrees-per-second",
-                    "type": "number"
+                    "$ref": "definitions.json#/value"
                 },
                 "zeroRateOffsetOverTemperature": {
                     "description": "gyro zero rate offset change over temperature",
                     "comment": "units of degrees-per-second per degree celsius (dps/Celsius)",
-                    "type": "number"
+                    "$ref": "definitions.json#/value"
                 },
                 "interface": {
                     "description": "interface(s) for communication to host",
@@ -194,12 +194,12 @@
                 "rmsNoise": {
                     "description": "broadband rms noise of a device",
                     "comment": "units of degrees-per-second rms",
-                    "type": "number"
+                    "$ref": "definitions.json#/value"
                 },
                 "spectralNoiseDensity": {
                     "description": "spectral noise density of a device",
                     "comment": "units of degrees-per-second per square root Hertz (dps/rt-Hz)",
-                    "type": "number"
+                    "$ref": "definitions.json#/value"
                 },
                 "currentConsumption": {
                     "description": "current consumption of a device",
