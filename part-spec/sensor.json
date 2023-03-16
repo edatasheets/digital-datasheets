@@ -85,7 +85,10 @@
                         "spi",
                         "analog"
                     ],
-                    "type": "array"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                        }
                 },
                 "bandwidth": {
                     "description": "bandwidth of acceleration measurement",
@@ -171,7 +174,10 @@
                         "spi",
                         "analog"
                     ],
-                    "type": "array"
+                    "type": "array",
+                    "items: {
+                        "type": "string
+                        }
                 },
                 "bandwidth": {
                     "description": "bandwidth of gyroscope",
