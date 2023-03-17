@@ -175,8 +175,8 @@
                         "analog"
                     ],
                     "type": "array",
-                    "items: {
-                        "type": "string
+                    "items": {
+                        "type": "string"
                         }
                 },
                 "bandwidth": {
