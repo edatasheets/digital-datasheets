@@ -1,0 +1,228 @@
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/sensor.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "sensor",
+    "oneOf": [
+        {
+            "title": "accelerometer",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "accelerometerType": {
+                    "description": "type of accelerometer",
+                    "examples": [
+                        "capacitive MEMS",
+                        "piezoresistive",
+                        "piezoelectric"
+                    ],
+                    "type": "string"
+                },
+                "accelerationRanges": {
+                    "description": "range of force that accelerometer can measure",
+                    "examples": [
+                        "2",
+                        "4",
+                        "8",
+                        "16"
+                    ],
+                    "comment": "units of g",
+                    "type": "number"
+                },
+                "accelerationSensitivity": {
+                    "description": "smallest change in force the accelerometer is able to capture (typical) at a given acceleration range",
+                    "examples": [
+                        "16000",
+                        "8000",
+                        "4000",
+                        "2000"
+                    ],
+                    "comment": "units of LSB/g (least significant bits per g) at a given acceleration range and output resolution",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "accelerationSensitivityOverTemperature": {
+                    "description": "accelerometer sensitivity change over temperature",
+                    "comment": "units of percentage per degree celsius (%/Celsius)",
+                    "$ref": "definitions.json#/value"
+                },
+                "axis": {
+                    "description": "number of axes of acceleration measurement",
+                    "type": "number"
+                },
+                "zerogOffset": {
+                    "description": "output of the accelerometer when no acceleration is applied",
+                    "comment": "units of g-force (g)",
+                    "$ref": "definitions.json#/value"
+                },
+                "zerogOffsetOverTemperature": {
+                    "description": "accelerometer zero-g offset change over temperature",
+                    "comment": "units of milli g-force per degree celsius (mg/Celcius)",
+                    "$ref": "definitions.json#/value"
+                },
+                "outputType": {
+                    "description": "measurement output type",
+                    "enum": [
+                        "analog",
+                        "digital"
+                    ],
+                    "type": "string"
+                },
+                "outputResolution": {
+                    "description": "output resolution of acceleration measurement",
+                    "comment": "units of bits",
+                    "$ref": "definitions.json#/unit"
+                },
+                "interface": {
+                    "description": "interface(s) for communication to host",
+                    "examples": [
+                        "i2c",
+                        "spi",
+                        "analog"
+                    ],
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                        }
+                },
+                "bandwidth": {
+                    "description": "bandwidth of acceleration measurement",
+                    "comment": "units of Hz",
+                    "$ref": "definitions.json#/unit"
+                },
+                "outputDataRate": {
+                    "description": "output Data rate (ODR) of a device",
+                    "comment": "units of Hz",
+                    "$ref": "definitions.json#/unit"
+                },
+                "rmsNoise": {
+                    "description": "broadband rms noise of a device",
+                    "comment": "units of milli g-force",
+                    "$ref": "definitions.json#/value"
+                },
+                "spectralNoiseDensity": {
+                    "description": "spectral noise density of a device",
+                    "comment": "units of milli g-force per square root of Hz (milli-g/rt-Hz)",
+                    "$ref": "definitions.json#/value"
+                },
+                "currentConsumption": {
+                    "description": "current consumption of a device",
+                     "$ref": "definitions.json#/currentConsumption"
+                },
+                "package": {
+                    "description": "package size of a device",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "gyroscope",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "gyroRanges": {
+                    "description": "range of angular speed that gyro can measure",
+                    "comment": "units of degrees-per-second (dps)",
+                    "type": "number"
+                },
+                "gyroSensitivity": {
+                    "description": "smallest change in angular speed gyro is able to capture (typical) at a given gyro range",
+                    "comment": "units of LSB/dps"
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "gyroSensitivityOverTemperature": {
+                    "description": "gyroscope sensitivity change over temperature",
+                    "comment": "units of percentage per degree celsius",
+                    "$ref": "definitions.json#/value"
+                },
+                "axis": {
+                    "description": "number of axes of measurement",
+                    "type": "number"
+                },
+                "zeroRateOffset": {
+                    "description": "output of the gyroscope when no angular velocity is applied",
+                    "comment": "units of degrees-per-second",
+                    "$ref": "definitions.json#/value"
+                },
+                "zeroRateOffsetOverTemperature": {
+                    "description": "gyro zero rate offset change over temperature",
+                    "comment": "units of degrees-per-second per degree celsius (dps/Celsius)",
+                    "$ref": "definitions.json#/value"
+                },
+                "interface": {
+                    "description": "interface(s) for communication to host",
+                    "examples": [
+                        "i2c",
+                        "spi",
+                        "analog"
+                    ],
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                        }
+                },
+                "bandwidth": {
+                    "description": "bandwidth of gyroscope",
+                    "comment": "units of Hz",
+                    "$ref": "definitions.json#/unit"
+                },
+                "outputDataRate": {
+                    "description": "output Data rate (ODR) of a device",
+                    "comment": "units of Hz",
+                    "$ref": "definitions.json#/unit"
+                },
+                "outputType": {
+                    "description": "measurement output type",
+                    "enum": [
+                        "analog",
+                        "digital"
+                    ],
+                    "type": "string"
+                },
+                "rmsNoise": {
+                    "description": "broadband rms noise of a device",
+                    "comment": "units of degrees-per-second rms",
+                    "$ref": "definitions.json#/value"
+                },
+                "spectralNoiseDensity": {
+                    "description": "spectral noise density of a device",
+                    "comment": "units of degrees-per-second per square root Hertz (dps/rt-Hz)",
+                    "$ref": "definitions.json#/value"
+                },
+                "currentConsumption": {
+                    "description": "current consumption of a device",
+                    "$ref": "definitions.json#/currentConsumption"
+                },
+                "package": {
+                    "description": "package size of a device",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        }
+    ]
+}
