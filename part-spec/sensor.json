@@ -223,6 +223,98 @@
                     }
                 }
             }
+        },
+        {
+            "title": "magnetic sensor",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "type": {
+                    "description": "method by which magnetism is detected",
+                    "enum": [
+                        "gmr",
+                        "hall effect"
+                    ],
+                    "type": "string"
+                },
+                "outputType": {
+                    "description": "measurement output type",
+                    "enum": [
+                        "analog",
+                        "pwm"
+                    ],
+                    "type": "string"
+                },
+                "quiescentOutput": {
+                    "description": "output of the magnetic sensor when no magnet is present",
+                    "comment": "units of volts(v)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "outputVoltageLinearRange": {
+                    "description": "output voltage range over which the magnetic flux density response is linear",
+                    "comment": "lower value of the range captured by min value and top value of the range captured by max value (V) ",
+                    "$ref": "definitions.json#/unit"
+                },
+                "linearMagneticSensingRange": {
+                    "description": "magnetic flux density range over which the output voltage is linear ",
+                    "comment": "units of mT",
+                    "$ref": "definitions.json#/value"
+                },
+                "sensitivity": {
+                    "description": "this is the gain - amount of change in the output voltage for a change in the magnetic flux density",
+                    "comment": "units of mV/mT",
+                    "$ref": "definitions.json#/value"
+                },
+                "operatePoint": {
+                    "description": "magnetic flux density threshold which causes the sensor output to turn on",
+                    "comment": "units of mT. Depending on the sensor's design, the operation point can cause the output to trip High or Low.",
+                    "$ref": "definitions.json#/value"
+                },
+                "releasePoint": {
+                    "description": "magnetic flux density threshold which causes the sensor output to turn off",
+                    "comment": "units of mT. Depending on the sensor's design, the release point can cause the output to trip High or Low.",
+                    "$ref": "definitions.json#/value"
+                },
+                "operatePointPolarity":{
+                    "description": "indicates how the sensor output trips at the operate point",
+                    "enum": [
+                        "high",
+                        "low"
+                    ],
+                    "type": "string"
+                },
+                "hysteresis": {
+                    "description": "delta between the operate point and the release point threshold",
+                    "comment": "units of mT",
+                    "$ref": "definitions.json#/value"
+                },
+                "bandwidth": {
+                    "description": "sensing bandwidth",
+                    "comment": "units of Hz",
+                    "$ref": "definitions.json#/unit"
+                },
+                "currentConsumption": {
+                    "description": "current consumption of a device",
+                    "$ref": "definitions.json#/currentConsumption"
+                },
+                "package": {
+                    "description": "package size of a device",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
         }
     ]
 }
