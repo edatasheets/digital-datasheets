@@ -561,6 +561,7 @@
           "description": "quiescent current (Iq) of a device",
           "comment": "units of amps",
           "$ref": "definitions.json#/unit"
+        },
         "shutdownCurrent": {
           "description": "shutdown current (Isd) of a device",
           "comment": "units of amps",
