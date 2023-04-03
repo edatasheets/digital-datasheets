@@ -315,6 +315,83 @@
                     }
                 }
             }
+        },
+        {
+            "title": "thermal",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "type": {
+                    "description": "method by which temperature is detected",
+                    "examples": [
+                        "rtd",
+                        "thermistor",
+                        "silicon bandgap"
+                    ],
+                    "type": "string"
+                },
+                "outputType": {
+                    "description": "measurement output type",
+                    "enum": [
+                        "analog",
+                        "digital"
+                    ],
+                    "type": "string"
+                },
+                "interface": {
+                    "description": "interface(s) for communication to host",
+                    "enum": [
+                        "i2c",
+                        "spi",
+                        "analog"
+                    ],
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "accuracy": {
+                    "description": "accuracy of temperature sensor",
+                    "comment": "units of degreesC",
+                    "$ref": "definitions.json#/unit"
+                },
+                "temperatureRange": {
+                    "description": "range of temperature sensor",
+                    "comment": "units of degreesC",
+                    "$ref": "definitions.json#/unit"
+                },
+                "resolution": {
+                    "description": "maximum resolution of temperature sensor",
+                    "comment": "units of degreesC/LSD",
+                    "type": "number"
+                },
+                "gain": {
+                    "description": "amount of change in the output voltage for a change in temperature",
+                    "comment": "units of mV/degreesC",
+                    "$ref": "definitions.json#/value"
+                },
+                "currentConsumption": {
+                    "description": "current consumption of a device",
+                    "$ref": "definitions.json#/currentConsumption"
+                },
+                "package": {
+                    "description": "package size of a device",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
         }
     ]
 }
