@@ -515,18 +515,41 @@
         "partModelInformation": {
           "description": "reference to an external XML file that contains a part model in IPC/DAC2552 format",
           "$ref": "#/$definitions/externalFile"
+        },
+        "standardPackageSize": {
+          "description": "name of standard package size (imperial)",
+          "example": [
+            "0201",
+            "0402",
+            "0603",
+            "0805",
+            "1206"
+          ]
+        },
+        "standardPackageType": {
+          "description": "name of standard package types",
+          "example": [
+            "bga",
+            "wcsp",
+            "qfn",
+            "tssop"
+          ]
         }
       }
     },
     "externalFile": {
       "type": "object",
       "properties": {
-        "cadSoftware": {
-          "description": "name of CAD software file is written in, if applicable",
+        "fileDescription": {
+          "description": "text description of the contents of an external file (or files)",
+          "type": "string"
+        },
+        "companionSoftware": {
+          "description": "optional, name of software program used to access file",
           "type": "string"
         },
         "standardReferenced": {
-          "description": "name of the standard the file is written in, if applicable",
+          "description": "optional, name of the standard the file is written in",
           "type": "string"
         },
         "fileExtension": {
@@ -535,15 +558,24 @@
             "brd",
             "mod"
           ],
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
-        "filePath": {
-          "description": "path to cad file within the zipped datasheet package",
-          "type": "string"
+        "fileName": {
+          "description": "name of external file within the zipped datasheet package",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "fileURI": {
           "description": "URI linking to the CAD file",
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
