@@ -56,7 +56,8 @@
                 },
                 "SNR": {
                     "description": "signal to noise (SNR) ratio of the converter",
-                    "$ref": "definitions.json#/ratio"
+                    "comment": "units of dB",
+                    "type": "number"
                 },
                 "interface": {
                     "description": "digital communication interfaces supported",
