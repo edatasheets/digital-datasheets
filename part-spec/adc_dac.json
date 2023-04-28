@@ -24,6 +24,11 @@
                     "comment": "units of seconds",
                     "$ref": "definitions.json#/unit"
                 },
+                "sampleRate": {
+                    "description": "maximum rate at which the ADC can convert samples",
+                    "$comment": "unit of hertz",
+                    "$ref": "definitions.json#/unit"
+                },
                 "offsetError": {
                     "description": "difference (in LSB) of the output at the zero point between an actual and ideal ADC",
                     "comment": "units of LSB",
@@ -49,13 +54,20 @@
                     "comment": "units of LSB",
                     "type": "number"
                 },
+                "SNR": {
+                    "description": "signal to noise (SNR) ratio of the converter",
+                    "$ref": "definitions.json#/ratio"
+                },
                 "interface": {
-                    "description": "digital communication interface",
+                    "description": "digital communication interfaces supported",
                     "examples": [
                         "spi",
                         "i2c"
                     ],
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "inputType": {
                     "description": "whether the ADC has a single ended or differential input",
@@ -102,7 +114,7 @@
                     "type": "number"
                 },
                 "offsetError": {
-                    "description": "analog resonse to an input code of all zeros",
+                    "description": "analog response to an input code of all zeros",
                     "comment": "units of percentage of full scale range",
                     "$ref": "definitions.json#/unit"
                 },
@@ -126,13 +138,21 @@
                     "comment": "units of seconds",
                     "$ref": "definitions.json#/unit"
                 },
+                "sampleRate": {
+                    "description": "maximum rate at which the DAC can convert samples",
+                    "$comment": "unit of hertz",
+                    "$ref": "definitions.json#/unit"
+                },
                 "interface": {
-                    "description": "digital communication interface",
+                    "description": "digital communication interfaces supported",
                     "examples": [
                         "spi",
                         "i2c"
                     ],
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "otuputType": {
                     "description": "whether the DAC has a single ended or differential output",
