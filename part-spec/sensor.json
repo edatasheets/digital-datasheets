@@ -235,9 +235,9 @@
                     "description": "common component identifying information, such as mpn",
                     "$ref": "definitions.json#/componentID"
                 },
-                "type": {
+                "magneticSensingTechnology": {
                     "description": "method by which magnetism is detected",
-                    "enum": [
+                    "examples": [
                         "gmr",
                         "hall effect"
                     ],
@@ -281,8 +281,8 @@
                     "comment": "units of mT. Depending on the sensor's design, the release point can cause the output to trip High or Low.",
                     "$ref": "definitions.json#/value"
                 },
-                "operatePointPolarity":{
-                    "description": "indicates how the sensor output trips at the operate point",
+                "outputPolarity":{
+                    "description": "indicates whether the sensor output is active high or active low",
                     "enum": [
                         "high",
                         "low"
@@ -327,7 +327,7 @@
                     "description": "common component identifying information, such as mpn",
                     "$ref": "definitions.json#/componentID"
                 },
-                "type": {
+                "sensingTechnology": {
                     "description": "method by which temperature is detected",
                     "examples": [
                         "rtd",
@@ -346,7 +346,7 @@
                 },
                 "interface": {
                     "description": "interface(s) for communication to host",
-                    "enum": [
+                    "examples": [
                         "i2c",
                         "spi",
                         "analog"
@@ -358,7 +358,7 @@
                 },
                 "accuracy": {
                     "description": "accuracy of temperature sensor",
-                    "comment": "units of degreesC",
+                    "comment": "units of degrees C",
                     "$ref": "definitions.json#/unit"
                 },
                 "temperatureRange": {
