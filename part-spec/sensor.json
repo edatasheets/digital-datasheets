@@ -145,7 +145,7 @@
                 },
                 "gyroSensitivity": {
                     "description": "smallest change in angular speed gyro is able to capture (typical) at a given gyro range",
-                    "comment": "units of LSB/dps"
+                    "comment": "units of LSB/dps",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "gyroSensitivityOverTemperature": {
@@ -205,6 +205,175 @@
                 "spectralNoiseDensity": {
                     "description": "spectral noise density of a device",
                     "comment": "units of degrees-per-second per square root Hertz (dps/rt-Hz)",
+                    "$ref": "definitions.json#/value"
+                },
+                "currentConsumption": {
+                    "description": "current consumption of a device",
+                    "$ref": "definitions.json#/currentConsumption"
+                },
+                "package": {
+                    "description": "package size of a device",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "magnetic sensor",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "magneticSensingTechnology": {
+                    "description": "method by which magnetism is detected",
+                    "examples": [
+                        "gmr",
+                        "hall effect"
+                    ],
+                    "type": "string"
+                },
+                "outputType": {
+                    "description": "measurement output type",
+                    "enum": [
+                        "analog",
+                        "pwm"
+                    ],
+                    "type": "string"
+                },
+                "quiescentOutput": {
+                    "description": "output of the magnetic sensor when no magnet is present",
+                    "comment": "units of volts(v)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "outputVoltageLinearRange": {
+                    "description": "output voltage range over which the magnetic flux density response is linear",
+                    "comment": "lower value of the range captured by min value and top value of the range captured by max value (V) ",
+                    "$ref": "definitions.json#/unit"
+                },
+                "linearMagneticSensingRange": {
+                    "description": "magnetic flux density range over which the output voltage is linear ",
+                    "comment": "units of mT",
+                    "$ref": "definitions.json#/value"
+                },
+                "sensitivity": {
+                    "description": "this is the gain - amount of change in the output voltage for a change in the magnetic flux density",
+                    "comment": "units of mV/mT",
+                    "$ref": "definitions.json#/value"
+                },
+                "operatePoint": {
+                    "description": "magnetic flux density threshold which causes the sensor output to turn on",
+                    "comment": "units of mT. Depending on the sensor's design, the operation point can cause the output to trip High or Low.",
+                    "$ref": "definitions.json#/value"
+                },
+                "releasePoint": {
+                    "description": "magnetic flux density threshold which causes the sensor output to turn off",
+                    "comment": "units of mT. Depending on the sensor's design, the release point can cause the output to trip High or Low.",
+                    "$ref": "definitions.json#/value"
+                },
+                "outputPolarity":{
+                    "description": "indicates whether the sensor output is active high or active low",
+                    "enum": [
+                        "high",
+                        "low"
+                    ],
+                    "type": "string"
+                },
+                "hysteresis": {
+                    "description": "delta between the operate point and the release point threshold",
+                    "comment": "units of mT",
+                    "$ref": "definitions.json#/value"
+                },
+                "bandwidth": {
+                    "description": "sensing bandwidth",
+                    "comment": "units of Hz",
+                    "$ref": "definitions.json#/unit"
+                },
+                "currentConsumption": {
+                    "description": "current consumption of a device",
+                    "$ref": "definitions.json#/currentConsumption"
+                },
+                "package": {
+                    "description": "package size of a device",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "thermal",
+            "type": "object",
+            "required": [
+                "componentID"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "sensingTechnology": {
+                    "description": "method by which temperature is detected",
+                    "examples": [
+                        "rtd",
+                        "thermistor",
+                        "silicon bandgap"
+                    ],
+                    "type": "string"
+                },
+                "outputType": {
+                    "description": "measurement output type",
+                    "enum": [
+                        "analog",
+                        "digital"
+                    ],
+                    "type": "string"
+                },
+                "interface": {
+                    "description": "interface(s) for communication to host",
+                    "examples": [
+                        "i2c",
+                        "spi",
+                        "analog"
+                    ],
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "accuracy": {
+                    "description": "accuracy of temperature sensor",
+                    "comment": "units of degrees C",
+                    "$ref": "definitions.json#/unit"
+                },
+                "temperatureRange": {
+                    "description": "range of temperature sensor",
+                    "comment": "units of degrees C",
+                    "$ref": "definitions.json#/unit"
+                },
+                "resolution": {
+                    "description": "maximum resolution of temperature sensor",
+                    "comment": "units of degreesC/LSD",
+                    "type": "number"
+                },
+                "gain": {
+                    "description": "amount of change in the output voltage for a change in temperature",
+                    "comment": "units of mV/degrees C",
                     "$ref": "definitions.json#/value"
                 },
                 "currentConsumption": {
