@@ -421,7 +421,7 @@
           "description": "typical unit quantity corresponding to unit text - example 40mV would have a value of 40",
           "type": "number"
         },
-         "minValue": {
+        "minValue": {
           "description": "minimum unit quantity corresponding to unit text - example 40mV would have a value of 40",
           "type": "number"
         },
@@ -479,32 +479,46 @@
           "type": "number"
         }
       }
-    },    
+    },
     "package": {
       "type": "object",
       "properties": {
         "length": {
           "description": "length of a side of a package",
-          "type": "number"
+          "$comment": "units of millimeter",
+          "$ref": "#/$definitions/unit"
         },
         "width": {
           "description": "width of a side of a package",
-          "type": "number"
+          "$comment": "units of millimeter",
+          "$ref": "#/$definitions/unit"
         },
         "height": {
           "description": "height of a package",
-          "type": "number"
+          "$comment": "units of millimeter",
+          "$ref": "#/$definitions/unit"
         },
-        "dimensionUnit": {
-          "description": "unit used to describe package dimensions",
-          "enum": [
-            "mils",
-            "millimeter"
-          ]
+        "nominalFootprints": {
+          "description": "references to external footprints in standard CAD formats",
+          "type": "array",
+          "items": {
+            "$ref": "#/$definitions/externalFile"
+          }
+        },
+        "breakoutExamples": {
+          "description": "references to external board file that contains layout breakout example",
+          "type": "array",
+          "items": {
+            "$ref": "#/$definitions/externalFile"
+          }
+        },
+        "partModelInformation": {
+          "description": "reference to an external XML file that contains a part model in IPC/DAC2552 format",
+          "$ref": "#/$definitions/externalFile"
         },
         "standardPackageSize": {
           "description": "name of standard package size (imperial)",
-          "enum": [
+          "example": [
             "0201",
             "0402",
             "0603",
@@ -523,19 +537,61 @@
         }
       }
     },
-    "ratio":{
-    "type": "object",
-    "properties": {
-      "numerator":{
-        "description": "numerator of ratio",
-        "type": "number"
-      },
-      "denominator":{ 
-        "description": "denominator of ratio",
-        "type": "number"
+    "externalFile": {
+      "type": "object",
+      "properties": {
+        "fileDescription": {
+          "description": "text description of the contents of an external file (or files)",
+          "type": "string"
+        },
+        "companionSoftware": {
+          "description": "optional, name of software program used to access file",
+          "type": "string"
+        },
+        "standardReferenced": {
+          "description": "optional, name of the standard the file is written in",
+          "type": "string"
+        },
+        "fileExtension": {
+          "description": "type of file referenced by link",
+          "examples": [
+            "brd",
+            "mod"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fileName": {
+          "description": "name of external file within the zipped datasheet package",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fileURI": {
+          "description": "URI linking to the CAD file",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    }
-  },
+    },
+    "ratio": {
+      "type": "object",
+      "properties": {
+        "numerator": {
+          "description": "numerator of ratio",
+          "type": "number"
+        },
+        "denominator": {
+          "description": "denominator of ratio",
+          "type": "number"
+        }
+      }
+    },
     "conditionalProperty": {
       "type": "object",
       "properties": {
