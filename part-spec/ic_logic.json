@@ -53,6 +53,10 @@
                     "description": "component's package size and description",
                     "$ref": "definitions.json#/package"
                 },
+                "currentConsumption": {
+                    "description": "current used by device in various power modes",
+                    "$ref": "definitions.json#/currentConsumption"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
@@ -75,16 +79,6 @@
                 },
                 "fixedFrequency": {
                     "description": "clock frequency value if the clock has a fixed frequency",
-                    "comment": "units of Hz",
-                    "$ref": "definitions.json#/unit"
-                },
-                "minFrequency": {
-                    "description": "minimum clock frequency value if the clock has a configurable frequency",
-                    "comment": "units of Hz",
-                    "$ref": "definitions.json#/unit"
-                },
-                "maxFrequency": {
-                    "description": "maximum clock frequency value if the clock has a configurable frequency",
                     "comment": "units of Hz",
                     "$ref": "definitions.json#/unit"
                 },
@@ -128,6 +122,10 @@
                 "package": {
                     "description": "component's package size and description",
                     "$ref": "definitions.json#/package"
+                },
+                "currentConsumption": {
+                    "description": "current used by device in various power modes",
+                    "$ref": "definitions.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
