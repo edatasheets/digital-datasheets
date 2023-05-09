@@ -1935,3 +1935,111 @@ PMIC Example - Limited pins
         }
     ]
 }
+```
+
+Sensor Example - Limited pins 
+
+```json     
+{
+    "componentID": {
+        "partType": "accelerometer",
+        "manufacturer": "ACME Components",
+        "componentName": "abc100",
+        "orderableMPN": "abc100,456",
+        "sourceDatasheetID": {
+            "publishedDate": "2022-03-23",
+            "datasheetURI": "www.acmecomponents.com/abc100datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2023-03-23",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "accelerationRanges": 8,
+    "accelerationSensitivity": {
+        "value": {
+            "typValue": 256,
+            "maxvalue": 257
+        },
+        "conditions": "max acceleration range is 8g"
+    },
+    "accelerationSensitivityOverTemperature": {
+        "typValue": 0.02,
+        "minValue": 0.01,
+        "maxValue": 0.03
+    },
+    "axis": 3,
+    "zerogOffset": {
+        "minValue": -50,
+        "maxValue": 50
+    },
+    "outputType": "digital",
+    "interface": [
+        "i2c",
+        "spi"
+    ],
+    "bandwidth": {
+        "typValue": 20,
+        "minValue": 10,
+        "maxValue": 30,
+        "siUnit": "hertz",
+        "unitText": "MHz",
+        "unitFactor": 1000000,
+        "valueDefined": true
+    },
+    "currentConsumption": {
+        "supplyName": "vdd",
+        "quiescentCurrent": {
+            "typValue": 100,
+            "minValue": 50,
+            "maxValue": 150,
+            "siUnit": "amp",
+            "unitText": "uA",
+            "unitFactor": 0.000001,
+            "valueDefined": true
+        },
+        "shutdownCurrent": {
+            "typValue": 250,
+            "minValue": 100,
+            "maxValue": 300,
+            "siUnit": "amp",
+            "unitText": "nA",
+            "unitFactor": 1e-9,
+            "valueDefined": true
+        }
+    },
+    "package": {
+        "length": 5,
+        "width": 5,
+        "height": 1,
+        "dimensionUnit": "millimeter"
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "vdd"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "dout"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "GND"
+        }
+    ]
+}
+
+```
+
+Converter Example - Limited pins 
+
+```json        
+    
+     
+    
+        
+        
+    
+    
