@@ -360,7 +360,7 @@ Buck Example
         "unitFactor": 1,
         "valueDefined": true
     },
-    "voutMax": {
+    "vout": {
         "minValue": 4,
         "maxValue": 8,
         "siUnit": "volt",
@@ -655,7 +655,7 @@ Diode Example
         "unitFactor": 1,
         "valueDefined": true
     },
-    "irTyp": {
+    "ir": {
         "value": {
             "typValue": 10,
             "maxValue": 20,
@@ -763,7 +763,7 @@ FET Example
         "unitFactor": 1,
         "valueDefined": true
     },
-    "vsdDiodeVfTyp": {
+    "vsdDiodeVf": {
         "typValue": 0.6,
         "maxValue": 0.9,
         "siUnit": "volt",
@@ -1060,9 +1060,9 @@ Retimer Example
     "numberOfLanes": 2,
     "interface":"PCIe4.0",
     "maxDataRate":{
+        "maxValue": 16,
         "siUnit": "hertz",
-        "absoluteValue": 16,
-        "unitText": "Ghz",
+        "unitText": "GHz",
         "unitFactor": 1e9,
         "valueDefined": true
 
@@ -1155,44 +1155,44 @@ USB-C PD Controller Example
     "fastRoleSwapSupport": false,
     "vconnPowerSupport": true,
     "vconnPowerLimit": {
+        "maxValue": 2.5,
         "siUnit": "watt",
-        "absoluteValue": 2.5,
         "unitText": "w",
         "unitFactor": 1,
         "valueDefined": true
     },
     "vconnMaxCurrent": {
+        "maxValue": 500,
         "siUnit": "amp",
-        "absoluteValue": 500,
         "unitText": "mA",
         "unitFactor": 1e-3,
         "valueDefined": true
     },
     "vconnOverCurrentLimit": {
+        "typValue": 600,
         "siUnit": "amp",
-        "absoluteValue": 600,
         "unitText": "mA",
         "unitFactor": 1e-3,
         "valueDefined": true
     },
     "integratedLoadSwitch": true,
     "maxSourceCurrent": {
+        "typValue": 3,
         "siUnit": "amp",
-        "absoluteValue": 3,
         "unitText": "A",
         "unitFactor": 1,
         "valueDefined": true
     },
     "sourcefetOverCurrentLimit": {
+        "typValue": 4,
         "siUnit": "amp",
-        "absoluteValue": 4,
         "unitText": "A",
         "unitFactor": 1,
         "valueDefined": true
     },
     "onResistanceSourceFet": {
+        "typValue": 5,
         "siUnit": "ohm",
-        "absoluteValue": 5,
         "unitText": "mohm",
         "unitFactor": 1e-3,
         "valueDefined": true
@@ -1204,33 +1204,41 @@ USB-C PD Controller Example
         "unitFactor": 1e-3,
         "valueDefined": true
     },
-    "shutDownCurrent": {
-        "siUnit": "amp",
-        "absoluteValue": 10,
-        "unitText": "uA",
-        "unitFactor": 1e-6,
-        "valueDefined": true
+    "currentConsumption": {
+        "supplyName": "pwr1",
+        "shutDownCurrent": {
+            "typValue": 10,
+            "siUnit": "amp",
+            "unitText": "uA",
+            "unitFactor": 1e-6,
+            "valueDefined": true
+        },
+        "idleCurrent": {
+            "typValue": 5,
+            "siUnit": "amp",
+            "unitText": "mA",
+            "unitFactor": 1e-3,
+            "valueDefined": true
+         }
     },
-    "idleCurrent": {
-        "siUnit": "amp",
-        "absoluteValue": 5,
-        "unitText": "mA",
-        "unitFactor": 1e-3,
-        "valueDefined": true
-    },
-    "vbusOvervoltageProtectionThresholdRising": {
-        "siUnit": "volt",
-        "absoluteValue": 6.3,
-        "unitText": "v",
-        "unitFactor": 1,
-        "valueDefined": true
-    },
-    "vbusOvervoltageProtectionThresholdFalling": {
-        "siUnit": "volt",
-        "absoluteValue": 6.1,
-        "unitText": "v",
-        "unitFactor": 1,
-        "valueDefined": true
+    "componentProtectionThresholds": {
+        "powerSupplyProtection":{
+            "supplyName": "vbus",
+            "OvervoltageProtectionThresholdRising": {
+                "typValue": 6.3,
+                "siUnit": "volt",
+                "unitText": "v",
+                "unitFactor": 1,
+                "valueDefined": true
+            },
+            "OvervoltageProtectionThresholdFalling": {
+                "typValue": 6.1,
+                "siUnit": "volt",
+                "unitText": "v",
+                "unitFactor": 1,
+                "valueDefined": true
+            }
+        }
     },
     "package": {
         "length": 100,
@@ -1450,7 +1458,7 @@ Microcontroller/EC Example - Limited pins
                     "unitFactor": 1E3,
                     "valueDefined": true
                 }
-            },
+            }
         },
         {
             "terminalIdentifier": "4",
