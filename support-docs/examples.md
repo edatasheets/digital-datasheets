@@ -514,8 +514,8 @@ Load Switch Example
     "loadSwitchCount": 1,
      "vin":{
         "typValue": 1.8,
-        "minValue": 1.65.
-        "maxValue": 3,3,
+        "minValue": 1.65,
+        "maxValue": 3.3,
         "siUnit": "volt",
         "unitText": "V",
         "unitFactor": 1,
@@ -528,7 +528,7 @@ Load Switch Example
         "unitFactor": 1,
         "valueDefined": true
     },
-    "oneResistance":{
+    "onResistance":{
         "typValue": 10,
         "siUnit": "ohm",
         "unitText": "mA",
@@ -1221,25 +1221,46 @@ USB-C PD Controller Example
             "valueDefined": true
          }
     },
-    "componentProtectionThresholds": {
-        "powerSupplyProtection":{
-            "supplyName": "vbus",
-            "OvervoltageProtectionThresholdRising": {
-                "typValue": 6.3,
-                "siUnit": "volt",
-                "unitText": "v",
-                "unitFactor": 1,
-                "valueDefined": true
-            },
-            "OvervoltageProtectionThresholdFalling": {
-                "typValue": 6.1,
-                "siUnit": "volt",
-                "unitText": "v",
-                "unitFactor": 1,
-                "valueDefined": true
+    "componentProtectionThresholds": [
+        {
+            "powerSupplyProtection":{
+                "supplyName": "vbus",
+                "OvervoltageProtectionThresholdRising": {
+                    "typValue": 6.3,
+                    "siUnit": "volt",
+                    "unitText": "v",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "OvervoltageProtectionThresholdFalling": {
+                    "typValue": 6.1,
+                    "siUnit": "volt",
+                    "unitText": "v",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                }
+            }
+        },
+        {
+            "powerSupplyProtection":{
+                "supplyName": "vconn",
+                "OvervoltageProtectionThresholdRising": {
+                    "typValue": 5.5,
+                    "siUnit": "volt",
+                    "unitText": "v",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "OvervoltageProtectionThresholdFalling": {
+                    "typValue": 5.3,
+                    "siUnit": "volt",
+                    "unitText": "v",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                }
             }
         }
-    },
+    ],
     "package": {
         "length": 100,
         "width": 100,
@@ -1518,10 +1539,10 @@ Display Backlight Driver Example - Limited pins
         "unitFactor": 1,
         "valueDefined": true
     },
-     "dimmingRatio":[
+     "dimmingRatio":{
         {"numerator": 1000},
         {"denominator": 1}
-     ],
+     },
     "fsw":{
         "minValue": 500,
         "maxValue": 2000
