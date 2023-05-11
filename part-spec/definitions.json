@@ -660,7 +660,12 @@
         },
         "powerSupplyProtection": {
           "description": "undervoltage lockout, overvoltage protection thresholds of a supply",
-          "$ref": "#/defs/powerSupplyProtection"
+          "type": "array",
+          "items": {
+            "type": {
+              "$ref": "#/defs/powerSupplyProtection"
+            }
+          }
         }
       }
     },
