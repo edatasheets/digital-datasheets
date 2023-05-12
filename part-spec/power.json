@@ -241,11 +241,6 @@
           "description": "number of load switched in the package.",
           "type": "number"
         },
-        "vinTyp": {
-          "description": "typical input voltage under which a device can be expected to reliabily operate",
-          "comment": "units of volts",
-          "$ref": "definitions.json#/unit"
-        },
         "vin": {
           "description": "input voltage under which a device can be expected to reliabily operate",
           "comment": "units of volts",

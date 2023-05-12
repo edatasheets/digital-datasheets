@@ -26,7 +26,10 @@
                         "DP HBR3",
                         "USB3.1 Gen2"
                     ],
-                    "type": "array"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "maxDataRate": {
                     "description": "maximum data rate supported by redriver",
@@ -36,6 +39,10 @@
                 "package": {
                     "description": "component's package size and description",
                     "$ref": "definitions.json#/package"
+                },
+                "currentConsumption": {
+                    "description": "current used by device in various power modes",
+                    "$ref": "definitions.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -71,7 +78,10 @@
                         "TBT3.0",
                         "USB4"
                     ],
-                    "type": "array"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "dpMaxLinkRate": {
                     "description": "Max link rate supported by DP interface of a device",
@@ -108,6 +118,10 @@
                 "package": {
                     "description": "component's package size and description",
                     "$ref": "definitions.json#/package"
+                },
+                "currentConsumption": {
+                    "description": "current used by device in various power modes",
+                    "$ref": "definitions.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -151,7 +165,14 @@
                     "examples": [
                         "DP HBR2"
                     ],
-                    "type": "array"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "currentConsumption": {
+                    "description": "current used by device in various power modes",
+                    "$ref": "definitions.json#/currentConsumption"
                 },
                 "package": {
                     "description": "component's package size and description",
@@ -179,12 +200,7 @@
                 },
                 "muxRatio": {
                     "description": "ratio of inputs to outputs",
-                    "examples": [
-                        "2:1",
-                        "1:1",
-                        "etc."
-                    ],
-                    "type": "string"
+                    "$ref": "definitions.json#/ratio"
                 },
                 "inputInterfaces": {
                     "description": "list of interfaces mux is designed for",
@@ -192,7 +208,11 @@
                         "HDMI2.0",
                         "DP HBR2"
                     ],
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                    
                 },
                 "insertionLoss": {
                     "description": "insertion loss through mux",
@@ -202,6 +222,10 @@
                 "package": {
                     "description": "component's package size and description",
                     "$ref": "definitions.json#/package"
+                },
+                "currentConsumption": {
+                    "description": "current used by device in various power modes",
+                    "$ref": "definitions.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -236,6 +260,10 @@
                 "package": {
                     "description": "component's package size and description",
                     "$ref": "definitions.json#/package"
+                },
+                "currentConsumption": {
+                    "description": "current used by device in various power modes",
+                    "$ref": "definitions.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",

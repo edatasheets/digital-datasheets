@@ -29,7 +29,9 @@
             "data": {
                 "description": "array of curve objects representing actual data being plotted",
                 "type": "array",
-                "items": "#/graph/curve"
+                "items": {
+                    "$ref": "#/graph/curve"
+                }
             }
         }
     },
@@ -43,12 +45,16 @@
             "xData": {
                 "description": "x value of data being plotted",
                 "type": "array",
-                "items": "number"
+                "items": {
+                    "type": "number"
+                }
             },
             "yData": {
                 "description": "y value of data being plotted",
                 "type": "array",
-                "items": "number"
+                "items": {
+                    "type": "number"
+                }
             }
         }
     }

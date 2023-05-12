@@ -102,71 +102,14 @@
                     "comment": "units of ohms",
                     "$ref": "definitions.json#/unit"
                 },
-                "activeCurrent": {
-                    "description": "active current of pd controller (during PD communication)",
-                    "comment": "units of amps",
-                    "$ref": "definitions.json#/unit"
+                "currentConsumption": {
+                    "description": "current used by device in various power modes",
+                    "$ref": "definitions.json#/currentConsumption"
                 },
-                "shutDownCurrent": {
-                    "description": "shutdown current of pd controller",
-                    "comment": "units of amps",
-                    "$ref": "definitions.json#/unit"
+                "componentProtectionThresholds": {
+                    "description": "Thermal and power supply protection thresholds of a device",
+                    "$ref": "definitions.json#/componentProtectionThresholds"
                 },
-                "idleCurrent": {
-                    "description": "idle current of pd controller (cable connected but no PD communiation)",
-                    "comment": "units of amps",
-                    "$ref": "definitions.json#/unit"
-                },
-                "thermalShudownThresholdRising": {
-                    "description": "Thermal Shudown (tsd) Threshold with temperature rising",
-                    "comment": "units of celsius",
-                     "$ref": "definitions.json#/unit"
-                },
-                "thermalShudownThresholdFalling": {
-                    "description": "Thermal Shudown (tsd) Threshold with temperature falling",
-                    "comment": "units of celsius",
-                     "$ref": "definitions.json#/unit"
-                },
-                "vbusOvervoltageProtectionThresholdRising": {
-                    "description": "Overvoltage Protection (OVP) Threshold with vbus voltage rising",
-                    "comment": "units of volts",
-                     "$ref": "definitions.json#/unit"
-                },
-                "vbusOvervoltageProtectionThresholdFalling": {
-                    "description": "Overvoltage Protection (OVP) Threshold with vbus voltage falling",
-                    "comment": "units of volts",
-                     "$ref": "definitions.json#/unit"
-                },
-                "vbusUndervoltageLockoutThresholdRising": {
-                    "description": "Undervoltage Lockout Out (UVLO) Threshold with vbus voltage rising",
-                    "comment": "units of volts",
-                     "$ref": "definitions.json#/unit"
-                },
-                "vbusUndervoltageLockoutThresholdFalling": {
-                    "description": "Undervoltage Lockout Out (UVLO) Threshold with vbus voltage rising",
-                    "comment": "units of volts",
-                     "$ref": "definitions.json#/unit"
-                },
-                "vconnOvervoltageProtectionThresholdRising": {
-                    "description": "Overvoltage Protection (OVP) Threshold with vconn voltage rising",
-                    "comment": "units of volts",
-                     "$ref": "definitions.json#/unit"
-                },
-                "vconnOvervoltageProtectionThresholdFalling": {
-                    "description": "Overvoltage Protection (OVP) Threshold with vconn voltage falling",
-                    "comment": "units of volts",
-                     "$ref": "definitions.json#/unit"
-                },
-                "vconnUndervoltageLockoutThresholdRising": {
-                    "description": "Undervoltage Lockout Out (UVLO) Threshold with vconn voltage rising",
-                    "comment": "units of volts",
-                     "$ref": "definitions.json#/unit"
-                },
-                "vconnUndervoltageLockoutThresholdFalling": {
-                    "description": "Undervoltage Lockout Out (UVLO) Threshold with vconn voltage rising",
-                    "comment": "units of volts",
-                     "$ref": "definitions.json#/unit"
-                },   
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",

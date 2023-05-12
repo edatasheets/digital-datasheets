@@ -52,6 +52,10 @@
                     "description": "component's package size and description",
                     "$ref": "definitions.json#/package"
                 },
+                "currentConsumption": {
+                    "description": "current used by device in various power modes",
+                    "$ref": "definitions.json#/currentConsumption"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
@@ -112,6 +116,10 @@
                 "package": {
                     "description": "component's package size and description",
                     "$ref": "definitions.json#/package"
+                },
+                "currentConsumption": {
+                    "description": "current used by device in various power modes",
+                    "$ref": "definitions.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
@@ -196,6 +204,10 @@
                     "description": "component's package size and description",
                     "$ref": "definitions.json#/package"
                 },
+                "currentConsumption": {
+                    "description": "current used by device in various power modes",
+                    "$ref": "definitions.json#/currentConsumption"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
@@ -257,6 +269,10 @@
                     "description": "component's package size and description",
                     "$ref": "definitions.json#/package"
                 },
+                "currentConsumption": {
+                    "description": "current used by device in various power modes",
+                    "$ref": "definitions.json#/currentConsumption"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
@@ -284,11 +300,18 @@
                         "i2c",
                         "lpc"
                     ],
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "package": {
                     "description": "component's package size and description",
                     "$ref": "definitions.json#/package"
+                },
+                "currentConsumption": {
+                    "description": "current used by device in various power modes",
+                    "$ref": "definitions.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",

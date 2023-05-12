@@ -352,37 +352,25 @@ Buck Example
         "status": "active",
     },
     "regulatorTopology": "buck",
-    "vinMin": {
+    "vin": {
+        "minValue": 12,
+        "maxValue": 18,
         "siUnit": "volt",
-        "absoluteValue": 12,
         "unitText": "V",
         "unitFactor": 1,
         "valueDefined": true
     },
-    "vinMax": {
+    "vout": {
+        "minValue": 4,
+        "maxValue": 8,
         "siUnit": "volt",
-        "absoluteValue": 18,
         "unitText": "V",
         "unitFactor": 1,
         "valueDefined": true
     },
-    "voutMax": {
-        "siUnit": "volt",
-        "absoluteValue": 8,
-        "unitText": "V",
-        "unitFactor": 1,
-        "valueDefined": true
-    },
-    "voutMin": {
-        "siUnit": "volt",
-        "absoluteValue": 4,
-        "unitText": "V",
-        "unitFactor": 1,
-        "valueDefined": true
-    },
-    "maxLoadCurrent": {
+    "loadCurrent": {
+        "maxValue": 5,
         "siUnit": "amp",
-        "absoluteValue": 5,
         "unitText": "A",
         "unitFactor": 1,
         "valueDefined": true
@@ -390,15 +378,15 @@ Buck Example
     "integratedFets": true,
     "integratedFetProperties": {
         "rdsonHSFET": {
+            "typValue": 5,
             "siUnit": "ohm",
-            "absoluteValue": 5,
             "unitText": "mOhm",
             "unitFactor": 1E-3,
             "valueDefined": true
         },
         "rdsonLSFET": {
+            "typValue": 3.5,
             "siUnit": "ohm",
-            "absoluteValue": 3.5,
             "unitText": "mOhm",
             "unitFactor": 1E-3,
             "valueDefined": true
@@ -450,30 +438,24 @@ LDO Example
         },
         "status": "active",
     },
-    "vinMax": {
+    "vin": {
+        "maxValue": 3.3,
         "siUnit": "volt",
-        "absoluteValue": 3.3,
         "unitText": "V",
         "unitFactor": 1,
         "valueDefined": true
     },
-    "voutMin": {
+    "vout": {
+        "minValue": 1.35,
+        "maxValue": 1.65,
         "siUnit": "volt",
-        "absoluteValue": 1.35,
         "unitText": "V",
         "unitFactor": 1,
         "valueDefined": true
     },
-    "voutMax": {
-        "siUnit": "volt",
-        "absoluteValue": 1.65,
-        "unitText": "V",
-        "unitFactor": 1,
-        "valueDefined": true
-    },
-    "maxLoadCurrent": {
+    "loadCurrent": {
+        "maxValue": 1,
         "siUnit": "amp",
-        "absoluteValue": 1,
         "unitText": "A",
         "unitFactor": 1,
         "valueDefined": true
@@ -530,37 +512,25 @@ Load Switch Example
     },
     "fetType": "PFET",
     "loadSwitchCount": 1,
-     "vinTyp":{
+     "vin":{
+        "typValue": 1.8,
+        "minValue": 1.65,
+        "maxValue": 3.3,
         "siUnit": "volt",
-        "absoluteValue": 1.8,
         "unitText": "V",
         "unitFactor": 1,
         "valueDefined": true
     },
-    "vinMin":{
-        "siUnit": "volt",
-        "absoluteValue": 1.65,
-        "unitText": "V",
-        "unitFactor": 1,
-        "valueDefined": true
-    },
-    "vinMax":{
-        "siUnit": "volt",
-        "absoluteValue": 3.3,
-        "unitText": "V",
-        "unitFactor": 1,
-        "valueDefined": true
-    },
-     "OutputCurrentMax":{
+     "outputCurrent":{
+        "maxValue": 2,
         "siUnit": "amp",
-        "absoluteValue": 2,
         "unitText": "A",
         "unitFactor": 1,
         "valueDefined": true
     },
-    "oneResistanceTyp":{
+    "onResistance":{
+        "typValue": 10,
         "siUnit": "ohm",
-        "absoluteValue": 10,
         "unitText": "mA",
         "unitFactor": 1e-3,
         "valueDefined": true
@@ -569,16 +539,16 @@ Load Switch Example
     "powerGoodSupport": true,
     "quickOutputDischargeSupport": true,
     "reverseCurrentBlockingSupport": false,
-    "enableTimeTyp": {
+    "enableTime": {
+        "typValue": 1,
         "siUnit": "second",
-        "absoluteValue": 1,
         "unitText": "s",
         "unitFactor": 1,
         "valueDefined": true
     },
-     "offTimeTyp": {
+     "offTime": {
+        "typValue": 1,
         "siUnit": "second",
-        "absoluteValue": 1,
         "unitText": "ms",
         "unitFactor": 1e-3,
         "valueDefined": true
@@ -638,105 +608,71 @@ Diode Example
     "diodeCount": 1,
     "diodeConfiguration": "unidirectional",
     "numberOfProtectedLines": 0,
-    "vfTyp": {
+    "vf": {
         "value": {
+            "typValue": 600,
+            "maxValue": 650,
             "siUnit": "volt",
-            "absoluteValue": 600,
             "unitText": "mV",
             "unitFactor": 1e-3,
             "valueDefined": true
         },
         "conditions": {
             "if":{
+                "typValue": 800,
                 "siUnit": "amp",
-                "absoluteValue": 800,
                 "unitText": "mA",
                 "unitFactor": 1e-3,
                 "valueDefined": true 
             }
         }            
     },
-    "vfMax": {
-        "value": {
-            "siUnit": "volt",
-            "absoluteValue": 650,
-            "unitText": "mV",
-            "unitFactor": 1e-3,
-            "valueDefined": true
-        },
-        "conditions": {
-            "if":{
-                "siUnit": "amp",
-                "absoluteValue": 800,
-                "unitText": "mA",
-                "unitFactor": 1e-3,
-                "valueDefined": true 
-            }
-        }       
-    },
     "ifm": {
+        "maxValue": 1,
         "siUnit": "amp",
-        "absoluteValue": 1,
         "unitText": "A",
         "unitFactor": 1,
         "valueDefined": true
     },
     "ifrm": {
-        "siUnit": "amp",
-        "absoluteValue": 3,
+       "maxValue": 3,
+       "siUnit": "amp",
         "unitText": "A",
         "unitFactor": 1,
         "valueDefined": true
     },
     "ifsm": {
+        "maxValue": 8,
         "siUnit": "amp",
-        "absoluteValue": 8,
         "unitText": "A",
         "unitFactor": 1,
         "valueDefined": true
     },
     "vr": {
+        "maxValue": 25,
         "siUnit": "volt",
-        "absoluteValue": 25,
         "unitText": "V",
         "unitFactor": 1,
         "valueDefined": true
     },
-    "irTyp": {
+    "ir": {
         "value": {
+            "typValue": 10,
+            "maxValue": 20,
             "siUnit": "amp",
-            "absoluteValue": 10,
             "unitText": "uA",
             "unitFactor": 1e-6,
             "valueDefined": true
         },
         "conditions": {
             "vr":{
+                "maxValue": 10,
                 "siUnit": "volt",
-                "absoluteValue": 10,
                 "unitText": "V",
                 "unitFactor": 1,
                 "valueDefined": true 
             }
         }      
-    },
-    "irMax": {
-        "value":{
-            "siUnit": "amp",
-            "absoluteValue": 20,
-            "unitText": "uA",
-            "unitFactor": 1e-6,
-            "valueDefined": true
-        },
-        "conditions": {
-            "vr":{
-                "siUnit": "volt",
-                "absoluteValue": 25,
-                "unitText": "V",
-                "unitFactor": 1,
-                "valueDefined": true 
-            }
-        }    
     },
     "ifVsVf":{
         "title": "If vs Vf",
@@ -793,87 +729,74 @@ FET Example
     "mosfetChannelType": "nType",
     "transistorCount": 1,
     "vgsMax": {
+        "maxValue": 5,
         "siUnit": "volt",
-        "absoluteValue": 5,
         "unitText": "V",
         "unitFactor": 1,
         "valueDefined": true
     },
     "vdsMax": {
+        "maxValue": 5,
         "siUnit": "volt",
-        "absoluteValue": 5,
-        "unitText": "V",
-        "unitFactor": 1,
-        "valueDefined": true
-    },
-    "vdsMax": {
-        "siUnit": "volt",
-        "absoluteValue": 8,
         "unitText": "V",
         "unitFactor": 1,
         "valueDefined": true
     },
     "vgsThMax": {
+        "maxValue": 2,
         "siUnit": "volt",
-        "absoluteValue": 2,
         "unitText": "V",
         "unitFactor": 1,
         "valueDefined": true
     },
     "vgsThTyp": {
+        "typValue": 1.2,
         "siUnit": "volt",
-        "absoluteValue": 1.2,
         "unitText": "V",
         "unitFactor": 1,
         "valueDefined": true
     },
     "vgsThMin": {
+        "minValue": 1,
         "siUnit": "volt",
-        "absoluteValue": 1,
         "unitText": "V",
         "unitFactor": 1,
         "valueDefined": true
     },
-    "vsdDiodeVfTyp": {
+    "vsdDiodeVf": {
+        "typValue": 0.6,
+        "maxValue": 0.9,
         "siUnit": "volt",
-        "absoluteValue": 0.6,
-        "unitText": "V",
-        "unitFactor": 1,
-        "valueDefined": true
-    },
-    "vsdDiodeVfMax": {
-        "siUnit": "volt",
-        "absoluteValue": 0.9,
         "unitText": "V",
         "unitFactor": 1,
         "valueDefined": true
     },
     "iDrain": {
+        "maxValue": 5,
         "siUnit": "amp",
-        "absoluteValue": 5,
         "unitText": "A",
         "unitFactor": 1,
         "valueDefined": true
     },
     "idPulsed": {
-        "siUnit": "amp",
-        "absoluteValue": 10,
+       "maxValue": 10,
+       "siUnit": "amp",
         "unitText": "A",
         "unitFactor": 1,
         "valueDefined": true
     },
     "iDss": {
         "value": {
+            "typValue": 1
             "siUnit": "amp",
-            "absoluteValue": 1,
             "unitText": "uA",
             "unitFactor": 1e-6,
             "valueDefined": true
         },
         "conditions": {
             "vgs":{
+                "typValue": 10,
                 "siUnit": "volt",
-                "absoluteValue": 10,
                 "unitText": "V",
                 "unitFactor": 1,
                 "valueDefined": true 
@@ -882,16 +805,16 @@ FET Example
     },
     "iGss": {
         "value": {
+            "typValue": 5,
             "siUnit": "amp",
-            "absoluteValue": 5,
             "unitText": "nA",
             "unitFactor": 1e-9,
             "valueDefined": true
         },
         "conditions": {
             "vgs":{
+                "typValue": 5,
                 "siUnit": "volt",
-                "absoluteValue": 5,
                 "unitText": "V",
                 "unitFactor": 1,
                 "valueDefined": true 
@@ -899,163 +822,163 @@ FET Example
         }    
     },
     "diodeContinuousCurrent": {
+        "maxValue": 2,
         "siUnit": "amp",
-        "absoluteValue": 2,
         "unitText": "A",
         "unitFactor": 1,
         "valueDefined": true
     },
     "diodePulsedCurrent": {
+        "maxValue": 4,
         "siUnit": "amp",
-        "absoluteValue": 4,
         "unitText": "A",
         "unitFactor": 1,
         "valueDefined": true
     },
-    "rdsonTyp": {
+    "rdson": {
         "value": {
+            "typValue": 20,
             "siUnit": "ohm",
-            "absoluteValue": 20,
             "unitText": "mohm",
             "unitFactor": 1e-3,
             "valueDefined": true
         },
         "conditions": {
             "id":{
+                "typValue": 500,
                 "siUnit": "amp",
-                "absoluteValue": 500,
                 "unitText": "mA",
                 "unitFactor": 1e-3,
                 "valueDefined": true 
             },
             "vgs":{
+                "typValue": 1,
                 "siUnit": "volt",
-                "absoluteValue": 1,
                 "unitText": "V",
                 "unitFactor": 1,
                 "valueDefined": true 
             }
         }
     },
-    "rgMax": {
+    "rg": {
         "value": {
+            "maxValue": 5,
             "siUnit": "ohm",
-            "absoluteValue": 5,
             "unitText": "ohm",
             "unitFactor": 1,
             "valueDefined": true
         },
         "conditions": {
             "vds":{
+                "typValue": 0,
                 "siUnit": "volt",
-                "absoluteValue": 0,
                 "unitText": "V",
                 "unitFactor": 1,
                 "valueDefined": true 
             },
             "vgs":{
+                "typValue": 0,
                 "siUnit": "volt",
-                "absoluteValue": 0,
                 "unitText": "V",
                 "unitFactor": 1,
                 "valueDefined": true 
             }
         }
     },
-    "CissMax": {
+    "Ciss": {
         "value": {
+            "maxValue": 500,
             "siUnit": "farad",
-            "absoluteValue": 500,
             "unitText": "pF",
             "unitFactor": 1e-12,
             "valueDefined": true
         },
         "conditions": {
             "vds":{
+                "typValue": 0,
                 "siUnit": "volt",
-                "absoluteValue": 0,
                 "unitText": "V",
                 "unitFactor": 1,
                 "valueDefined": true 
             },
             "vgs":{
+                "typValue": 0,
                 "siUnit": "volt",
-                "absoluteValue": 0,
                 "unitText": "V",
                 "unitFactor": 1,
                 "valueDefined": true 
             }
         }
     },
-    "CossMax": {
+    "Coss": {
         "value": {
+            "maxValue": 100,
             "siUnit": "farad",
-            "absoluteValue": 100,
             "unitText": "pF",
             "unitFactor": 1e-12,
             "valueDefined": true
         },
         "conditions": {
             "vds":{
+                "typValue": 0.
                 "siUnit": "volt",
-                "absoluteValue": 0,
                 "unitText": "V",
                 "unitFactor": 5,
                 "valueDefined": true 
             },
             "vgs":{
+                "typValue": 0,
                 "siUnit": "volt",
-                "absoluteValue": 0,
                 "unitText": "V",
                 "unitFactor": 1,
                 "valueDefined": true 
             }
         }
     },
-    "qgMax": {
+    "qg": {
         "value": {
+            "maxValue": 20,
             "siUnit": "coulomb",
-            "absoluteValue": 20,
             "unitText": "nC",
             "unitFactor": 1e-9,
             "valueDefined": true
         },
                 "conditions": {
             "vds":{
+                "typValue": 5,
                 "siUnit": "volt",
-                "absoluteValue": 5,
                 "unitText": "V",
                 "unitFactor": 1,
                 "valueDefined": true 
             },
             "vgs":{
+                "typValue": 5,
                 "siUnit": "volt",
-                "absoluteValue": 5,
                 "unitText": "V",
                 "unitFactor": 1,
                 "valueDefined": true 
             }
         }
     },
-    "tdONTyp": {
+    "tdON": {
         "value": {
+            "typValue": 20,
             "siUnit": "second",
-            "absoluteValue": 20,
             "unitText": "ns",
             "unitFactor": 1e-9,
             "valueDefined": true
         },
         "conditions": {
             "vds":{
+                "typValue": 5,
                 "siUnit": "volt",
-                "absoluteValue": 5,
                 "unitText": "V",
                 "unitFactor": 1,
                 "valueDefined": true 
             },
             "vgs":{
+                "typValue": 5,
                 "siUnit": "volt",
-                "absoluteValue": 5,
                 "unitText": "V",
                 "unitFactor": 1,
                 "valueDefined": true 
@@ -1064,16 +987,16 @@ FET Example
     },
     "pTot": {
         "value": {
+            "typValue": 2,
             "siUnit": "watt",
-            "absoluteValue": 2,
             "unitText": "w",
             "unitFactor": 1,
             "valueDefined": true
         },
         "conditions": {
             "temperature":{
+                "typValue": 25,
                 "siUnit": "celsius",
-                "absoluteValue": 25,
                 "unitText": "C",
                 "unitFactor": 1,
                 "valueDefined": true 
@@ -1137,9 +1060,9 @@ Retimer Example
     "numberOfLanes": 2,
     "interface":"PCIe4.0",
     "maxDataRate":{
+        "maxValue": 16,
         "siUnit": "hertz",
-        "absoluteValue": 16,
-        "unitText": "Ghz",
+        "unitText": "GHz",
         "unitFactor": 1e9,
         "valueDefined": true
 
@@ -1232,44 +1155,44 @@ USB-C PD Controller Example
     "fastRoleSwapSupport": false,
     "vconnPowerSupport": true,
     "vconnPowerLimit": {
+        "maxValue": 2.5,
         "siUnit": "watt",
-        "absoluteValue": 2.5,
         "unitText": "w",
         "unitFactor": 1,
         "valueDefined": true
     },
     "vconnMaxCurrent": {
+        "maxValue": 500,
         "siUnit": "amp",
-        "absoluteValue": 500,
         "unitText": "mA",
         "unitFactor": 1e-3,
         "valueDefined": true
     },
     "vconnOverCurrentLimit": {
+        "typValue": 600,
         "siUnit": "amp",
-        "absoluteValue": 600,
         "unitText": "mA",
         "unitFactor": 1e-3,
         "valueDefined": true
     },
     "integratedLoadSwitch": true,
     "maxSourceCurrent": {
+        "typValue": 3,
         "siUnit": "amp",
-        "absoluteValue": 3,
         "unitText": "A",
         "unitFactor": 1,
         "valueDefined": true
     },
     "sourcefetOverCurrentLimit": {
+        "typValue": 4,
         "siUnit": "amp",
-        "absoluteValue": 4,
         "unitText": "A",
         "unitFactor": 1,
         "valueDefined": true
     },
     "onResistanceSourceFet": {
+        "typValue": 5,
         "siUnit": "ohm",
-        "absoluteValue": 5,
         "unitText": "mohm",
         "unitFactor": 1e-3,
         "valueDefined": true
@@ -1281,34 +1204,63 @@ USB-C PD Controller Example
         "unitFactor": 1e-3,
         "valueDefined": true
     },
-    "shutDownCurrent": {
-        "siUnit": "amp",
-        "absoluteValue": 10,
-        "unitText": "uA",
-        "unitFactor": 1e-6,
-        "valueDefined": true
+    "currentConsumption": {
+        "supplyName": "pwr1",
+        "shutDownCurrent": {
+            "typValue": 10,
+            "siUnit": "amp",
+            "unitText": "uA",
+            "unitFactor": 1e-6,
+            "valueDefined": true
+        },
+        "idleCurrent": {
+            "typValue": 5,
+            "siUnit": "amp",
+            "unitText": "mA",
+            "unitFactor": 1e-3,
+            "valueDefined": true
+         }
     },
-    "idleCurrent": {
-        "siUnit": "amp",
-        "absoluteValue": 5,
-        "unitText": "mA",
-        "unitFactor": 1e-3,
-        "valueDefined": true
-    },
-    "vbusOvervoltageProtectionThresholdRising": {
-        "siUnit": "volt",
-        "absoluteValue": 6.3,
-        "unitText": "v",
-        "unitFactor": 1,
-        "valueDefined": true
-    },
-    "vbusOvervoltageProtectionThresholdFalling": {
-        "siUnit": "volt",
-        "absoluteValue": 6.1,
-        "unitText": "v",
-        "unitFactor": 1,
-        "valueDefined": true
-    },
+    "componentProtectionThresholds": [
+        {
+            "powerSupplyProtection":{
+                "supplyName": "vbus",
+                "OvervoltageProtectionThresholdRising": {
+                    "typValue": 6.3,
+                    "siUnit": "volt",
+                    "unitText": "v",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "OvervoltageProtectionThresholdFalling": {
+                    "typValue": 6.1,
+                    "siUnit": "volt",
+                    "unitText": "v",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                }
+            }
+        },
+        {
+            "powerSupplyProtection":{
+                "supplyName": "vconn",
+                "OvervoltageProtectionThresholdRising": {
+                    "typValue": 5.5,
+                    "siUnit": "volt",
+                    "unitText": "v",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "OvervoltageProtectionThresholdFalling": {
+                    "typValue": 5.3,
+                    "siUnit": "volt",
+                    "unitText": "v",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                }
+            }
+        }
+    ],
     "package": {
         "length": 100,
         "width": 100,
@@ -1527,7 +1479,7 @@ Microcontroller/EC Example - Limited pins
                     "unitFactor": 1E3,
                     "valueDefined": true
                 }
-            },
+            }
         },
         {
             "terminalIdentifier": "4",
@@ -1564,60 +1516,39 @@ Display Backlight Driver Example - Limited pins
         },
         "status": "active"
     },
-    "vinTyp":{
+    "vin":{
+        "typValue": 10,
+        "minValue": 5,
+        "maxValue": 24,
         "siUnit": "volt",
-        "absoluteValue": 10,
         "unitText": "V",
         "unitFactor": 1,
         "valueDefined": true
     },
-    "vinMin":{
-        "siUnit": "volt",
-        "absoluteValue": 5,
-        "unitText": "V",
-        "unitFactor": 1,
-        "valueDefined": true
-    },
-    "vinMax":{
-        "siUnit": "volt",
-        "absoluteValue": 24,
-        "unitText": "V",
-        "unitFactor": 1,
-        "valueDefined": true
-    },
-     "ioutMax":{
+     "ioutPerString":{
+        "typValue": 100,
         "siUnit": "amp",
-        "absoluteValue": 100,
         "unitText": "mA",
         "unitFactor": 1e-3,
         "valueDefined": true
     },
-    "currentMatchingAccuracyTyp":{
+    "currentMatchingAccuracy":{
+        "typValue": 1,
         "siUnit": "percentage",
-        "absoluteValue": 1,
          "unitText": "%",
         "unitFactor": 1,
         "valueDefined": true
     },
-     "dimmingRatioTyp":[
+     "dimmingRatio":{
         {"numerator": 1000},
         {"denominator": 1}
-     ],
-    "numberLEDStrings": 4,
-    "numberLEDPerString": 6,
-    "integratedBoost": true,
-    "fswMin":{
+     },
+    "fsw":{
+        "minValue": 500,
+        "maxValue": 2000
         "siUnit": "hertz",
-        "absoluteValue": 500,
         "unitText": "KHz",
         "unitFactor": 1e3,
-        "valueDefined": true
-    },
-     "fswMax":{
-        "siUnit": "hertz",
-        "absoluteValue": 2,
-        "unitText": "MHz",
-        "unitFactor": 1e6,
         "valueDefined": true
     },
       "package": {
@@ -1699,37 +1630,25 @@ PMIC Example - Limited pins
             "componentTitle": "ldo",
             "instanceName": "ldo1",
             "instanceProperties": {
-                "vinMin": {
+                "vin": {
+                    "minValue": 3,
+                    "maxvalue": 5,
                     "siUnit": "volt",
-                    "absoluteValue": 3,
                     "unitText": "V",
                     "unitFactor": 1,
                     "valueDefined": true
                 },
-                "vinMax": {
+                "vout": {
+                    "minValue": 1.62,
+                    "maxValue": 1.98
                     "siUnit": "volt",
-                    "absoluteValue": 5,
                     "unitText": "V",
                     "unitFactor": 1,
                     "valueDefined": true
                 },
-                "voutMin": {
-                    "siUnit": "volt",
-                    "absoluteValue": 1.62,
-                    "unitText": "V",
-                    "unitFactor": 1,
-                    "valueDefined": true
-                },
-                "voutMax": {
-                    "siUnit": "volt",
-                    "absoluteValue": 1.98,
-                    "unitText": "V",
-                    "unitFactor": 1,
-                    "valueDefined": true
-                },
-                "maxLoadCurrent": {
-                    "siUnit": "amp",
-                    "absoluteValue": 1,
+                "loadCurrent": {
+                   "maxValue": 1,
+                   "siUnit": "amp",
                     "unitText": "A",
                     "unitFactor": 1,
                     "valueDefined": true
@@ -1740,37 +1659,25 @@ PMIC Example - Limited pins
             "componentTitle": "ldo",
             "instanceName": "ldo2",
             "instanceProperties": {
-                "vinMin": {
+                "vin": {
+                    "minValue": 2.8,
+                    "maxValue": 3.3,
                     "siUnit": "volt",
-                    "absoluteValue": 2.8,
                     "unitText": "V",
                     "unitFactor": 1,
                     "valueDefined": true
                 },
-                "vinMax": {
+                "vout": {
+                    "minValue": 1.35,
+                    "maxValue": 1.65,
                     "siUnit": "volt",
-                    "absoluteValue": 3.3,
                     "unitText": "V",
                     "unitFactor": 1,
                     "valueDefined": true
                 },
-                "voutMin": {
-                    "siUnit": "volt",
-                    "absoluteValue": 1.35,
-                    "unitText": "V",
-                    "unitFactor": 1,
-                    "valueDefined": true
-                },
-                "voutMax": {
-                    "siUnit": "volt",
-                    "absoluteValue": 1.65,
-                    "unitText": "V",
-                    "unitFactor": 1,
-                    "valueDefined": true
-                },
-                "maxLoadCurrent": {
+                "loadCurrent": {
+                    "maxValue": 1,
                     "siUnit": "amp",
-                    "absoluteValue": 1,
                     "unitText": "A",
                     "unitFactor": 1,
                     "valueDefined": true
@@ -1782,37 +1689,25 @@ PMIC Example - Limited pins
             "instanceName": "buck1",
             "instanceProperty": {
                 "regulatorTopology": "buck",
-                "vinMin": {
+                "vin": {
+                    "minValue": 10,
+                    "maxValue": 15,
                     "siUnit": "volt",
-                    "absoluteValue": 10,
                     "unitText": "V",
                     "unitFactor": 1,
                     "valueDefined": true
                 },
-                "vinMax": {
+                "vout": {
+                    "minValue": 2.7,
+                    "maxValue": 3.3,
                     "siUnit": "volt",
-                    "absoluteValue": 15,
                     "unitText": "V",
                     "unitFactor": 1,
                     "valueDefined": true
                 },
-                "voutMax": {
-                    "siUnit": "volt",
-                    "absoluteValue": 3.3,
-                    "unitText": "V",
-                    "unitFactor": 1,
-                    "valueDefined": true
-                },
-                "voutMin": {
-                    "siUnit": "volt",
-                    "absoluteValue": 2.7,
-                    "unitText": "V",
-                    "unitFactor": 1,
-                    "valueDefined": true
-                },
-                "maxLoadCurrent": {
+                "loadCurrent": {
+                    "maxValue": 10,
                     "siUnit": "amp",
-                    "absoluteValue": 10,
                     "unitText": "A",
                     "unitFactor": 1,
                     "valueDefined": true
@@ -1824,37 +1719,25 @@ PMIC Example - Limited pins
             "instanceName": "buck2",
             "instanceProperty": {
                 "regulatorTopology": "buck",
-                "vinMin": {
+                "vin": {
+                    "minValue": 10,
+                    "maxvalue": 15,
                     "siUnit": "volt",
-                    "absoluteValue": 10,
-                    "unitText": "V",
-                    "unitFactor": 1,
-                    "valueDefined": true
-                },
-                "vinMax": {
-                    "siUnit": "volt",
-                    "absoluteValue": 15,
                     "unitText": "V",
                     "unitFactor": 1,
                     "valueDefined": true
                 },
                 "voutMax": {
+                    "minValue": 4.5,
+                    "maxValue": 5.5,
                     "siUnit": "volt",
-                    "absoluteValue": 5.5,
                     "unitText": "V",
                     "unitFactor": 1,
                     "valueDefined": true
                 },
-                "voutMin": {
-                    "siUnit": "volt",
-                    "absoluteValue": 4.5,
-                    "unitText": "V",
-                    "unitFactor": 1,
-                    "valueDefined": true
-                },
-                "maxLoadCurrent": {
+                "loadCurrent": {
+                    "maxValue": 5,
                     "siUnit": "amp",
-                    "absoluteValue": 5,
                     "unitText": "A",
                     "unitFactor": 1,
                     "valueDefined": true
@@ -1935,3 +1818,223 @@ PMIC Example - Limited pins
         }
     ]
 }
+```
+
+Sensor Example - Limited pins 
+
+```json     
+{
+    "componentID": {
+        "partType": "accelerometer",
+        "manufacturer": "ACME Components",
+        "componentName": "abc100",
+        "orderableMPN": "abc100,456",
+        "sourceDatasheetID": {
+            "publishedDate": "2022-03-23",
+            "datasheetURI": "www.acmecomponents.com/abc100datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2023-03-23",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "accelerationRanges": 8,
+    "accelerationSensitivity": {
+        "value": {
+            "typValue": 256,
+            "maxvalue": 257
+        },
+        "conditions": "max acceleration range is 8g"
+    },
+    "accelerationSensitivityOverTemperature": {
+        "typValue": 0.02,
+        "minValue": 0.01,
+        "maxValue": 0.03
+    },
+    "axis": 3,
+    "zerogOffset": {
+        "minValue": -50,
+        "maxValue": 50
+    },
+    "outputType": "digital",
+    "interface": [
+        "i2c",
+        "spi"
+    ],
+    "bandwidth": {
+        "typValue": 20,
+        "minValue": 10,
+        "maxValue": 30,
+        "siUnit": "hertz",
+        "unitText": "MHz",
+        "unitFactor": 1000000,
+        "valueDefined": true
+    },
+    "currentConsumption": {
+        "supplyName": "vdd",
+        "quiescentCurrent": {
+            "typValue": 100,
+            "minValue": 50,
+            "maxValue": 150,
+            "siUnit": "amp",
+            "unitText": "uA",
+            "unitFactor": 1e-6,
+            "valueDefined": true
+        },
+        "shutdownCurrent": {
+            "typValue": 250,
+            "minValue": 100,
+            "maxValue": 300,
+            "siUnit": "amp",
+            "unitText": "nA",
+            "unitFactor": 1e-9,
+            "valueDefined": true
+        }
+    },
+    "package": {
+        "length": 5,
+        "width": 5,
+        "height": 1,
+        "dimensionUnit": "millimeter"
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "vdd"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "dout"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "GND"
+        },
+        {
+            "terminalIdentifier": "4",
+            "name": "scl"
+        },
+        {
+            "terminalIdentifier": "5",
+            "name": "sda"
+        }
+    ]
+}
+
+```
+
+Converter Example - Limited pins 
+
+```json
+{
+  "componentID": {
+    "partType": "adc",
+    "manufacturer": "ACME Components",
+    "componentName": "abc1000",
+    "orderableMPN": "abc1000,456",
+    "sourceDatasheetID": {
+      "publishedDate": "2022-03-23",
+      "datasheetURI": "www.acmecomponents.com/abc1000datasheet"
+    },
+    "digitalDatasheetID": {
+      "publishedDate": "2023-03-23",
+      "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+    },
+    "status": "active"
+  },
+  "digitalResolution": 8,
+  "conversionTime": {
+    "typValue": 8,
+    "siUnit": "second",
+    "unitText": "uS",
+    "unitFactor": 0.000001,
+    "valueDefined": true
+  },
+  "sampleRate": {
+    "typValue": 10,
+    "minValue": 1,
+    "maxValue": 20,
+    "siUnit": "hertz",
+    "unitText": "MHz",
+    "unitFactor": 1000000,
+    "valueDefined": true
+  },
+  "offsetError": 0.5,
+  "gainError": 0.1,
+  "integralNonlinearity": 0.1,
+  "differentialNonlinearity": 0.1,
+  "SNR": 60,
+  "inputType": "singleEnded",
+  "inputChannels": 8,
+  "currentConsumption": {
+    "supplyName": "vdd",
+    "quiescentCurrent": {
+      "typValue": 200,
+      "minValue": 50,
+      "maxValue": 500,
+      "siUnit": "amp",
+      "unitText": "uA",
+      "unitFactor": 0.000001,
+      "valueDefined": true
+    },
+    "shutdownCurrent": {
+      "typValue": 50,
+      "minValue": 10,
+      "maxValue": 80,
+      "siUnit": "amp",
+      "unitText": "nA",
+      "unitFactor": 1e-9,
+      "valueDefined": true
+    }
+  },
+  "package": {
+    "length": 10,
+    "width": 5,
+    "height": 1,
+    "dimensionUnit": "millimeter"
+  },
+  "pins": [
+    {
+      "terminalIdentifier": "1",
+      "name": "vdd"
+    },
+    {
+      "terminalIdentifier": "2",
+      "name": "scl"
+    },
+    {
+      "terminalIdentifier": "3",
+      "name": "sda"
+    },
+    {
+      "terminalIdentifier": "4",
+      "name": "GND"
+    },
+    {
+      "terminalIdentifier": "5",
+      "name": "channel1"
+    },
+    {
+      "terminalIdentifier": "6",
+      "name": "channel2"
+    },
+    {
+      "terminalIdentifier": "7",
+      "name": "vref"
+    }
+  ]
+}
+
+    
+    
+    
+    
+    
+    
+     
+    
+        
+        
+    
+    

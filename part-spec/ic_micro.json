@@ -63,6 +63,10 @@
                     "comment": "units of uW",
                     "$ref": "definitions.json#/unit"
                 },
+                "currentConsumption": {
+                    "description": "current used by device in various power modes",
+                    "$ref": "definitions.json#/currentConsumption"
+                },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",

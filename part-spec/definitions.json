@@ -660,33 +660,38 @@
         },
         "powerSupplyProtection": {
           "description": "undervoltage lockout, overvoltage protection thresholds of a supply",
-          "$ref": "#/defs/powerSupplyProtection"
+          "type": "array",
+          "items": {
+            "type": {
+              "$ref": "#/defs/powerSupplyProtection"
+            }
+          }
         }
       }
     },
     "powerSupplyProtection": {
       "type": "object",
       "properties": {
-        "SupplyName": {
+        "supplyName": {
           "description": "Name of the supply monitored",
           "type": "string"
         },
-        "OvervoltageProtectionThresholdRising": {
+        "overvoltageProtectionThresholdRising": {
           "description": "Overvoltage Protection (OVP) Threshold with monitored supply rising",
           "comment": "units of volts",
           "$ref": "definitions.json#/unit"
         },
-        "OvervoltageProtectionThresholdFalling": {
+        "overvoltageProtectionThresholdFalling": {
           "description": "Overvoltage Protection (OVP) Threshold with monitored supply falling",
           "comment": "units of volts",
           "$ref": "definitions.json#/unit"
         },
-        "UndervoltageLockoutThresholdRising": {
+        "undervoltageLockoutThresholdRising": {
           "description": "Undervoltage Lockout Out (UVLO) Threshold with monitored supply rising",
           "comment": "units of volts",
           "$ref": "definitions.json#/unit"
         },
-        "UndervoltageLockoutThresholdFalling": {
+        "undervoltageLockoutThresholdFalling": {
           "description": "Undervoltage Lockout Out (UVLO) Threshold with monitored supply Falling",
           "comment": "units of volts",
           "$ref": "definitions.json#/unit"
