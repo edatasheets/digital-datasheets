@@ -68,7 +68,7 @@
                 "phaseJitter": {
                     "description": "variation of waveform period",
                     "comment": "units of seconds",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "definitions.json#/conditionalProperty"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
