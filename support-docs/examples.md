@@ -2025,10 +2025,184 @@ Converter Example - Limited pins
     }
   ]
 }
+```
 
+BJT Example - 
+
+```json
+{
+  "componentID": {
+    "partType": "bjt",
+    "manufacturer": "ACME Components",
+    "componentName": "abc123456",
+    "orderableMPN": "abc123456,56",
+    "sourceDatasheetID": {
+      "publishedDate": "2022-05-30",
+      "datasheetURI": "www.acmecomponents.com/abc123456datasheet"
+    },
+    "digitalDatasheetID": {
+      "publishedDate": "2023-05-26",
+      "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+    },
+    "status": "active"
+  },
+  "bjtChannelType": "nType",
+  "transistorCount": 1,
+  "collectorCurrent": {
+    "maxValue": 150,
+    "siUnit": "amp",
+    "unitText": "mA",
+    "unitFactor": 0.001,
+    "valueDefined": true
+  },
+  "peakCollectorCurrent": {
+    "maxValue": 300,
+    "siUnit": "amp",
+    "unitText": "mA",
+    "unitFactor": 0.001,
+    "valueDefined": true
+  },
+  "collectorBaseVoltage": {
+    "maxValue": 30,
+    "siUnit": "volt",
+    "unitText": "V",
+    "unitFactor": 1,
+    "valueDefined": true
+  },
+  "emitterBaseVoltage": {
+    "maxValue": 5,
+    "siUnit": "volt",
+    "unitText": "V",
+    "unitFactor": 1,
+    "valueDefined": true
+  },
+  "emitterBaseCutOffCurrent": {
+    "value": {
+      "typValue": 40,
+      "siUnit": "amp",
+      "unitText": "nA",
+      "unitFactor": 1e-9,
+      "valueDefined": true
+    },
+    "conditions": {
+      "collectorEmitterVoltage": {
+        "typValue": 10,
+        "siUnit": "volt",
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+      },
+      "emitterBaseVoltage": {
+        "typValue": 2,
+        "siUnit": "volt",
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+      }
+    }
+  },
+  "dcGain": {
+    "value": {
+      "typValue": 10
+    },
+    "conditions": {
+      "collectorEmitterVoltage": {
+        "typValue": 5,
+        "siUnit": "volt",
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+      },
+      "collectorCurrent": {
+        "typValue": 5,
+        "siUnit": "amps",
+        "unitText": "mA",
+        "unitFactor": 0.001,
+        "valueDefined": true
+      }
+    }
+  },
+  "collectorEmitterBreakdownVoltage": {
+    "value": {
+      "typValue": 40,
+      "siUnit": "volt",
+      "unitText": "V",
+      "unitFactor": 1,
+      "valueDefined": true
+    },
+    "conditions": {
+      "collectorCurrent": {
+        "typValue": 5,
+        "siUnit": "amps",
+        "unitText": "mA",
+        "unitFactor": 0.001,
+        "valueDefined": true
+      },
+      "baseCurrent": {
+        "typValue": 0,
+        "siUnit": "amp",
+        "unitText": "A",
+        "unitFactor": 1,
+        "valueDefined": true
+      }
+    }
+  },
+  "delayTime": {
+    "value": {
+      "typValue": 40,
+      "siUnit": "second",
+      "unitText": "nS",
+      "unitFactor": 1e-9,
+      "valueDefined": true
+    },
+    "conditions": {
+      "baseEmitterVoltage": {
+        "typValue": 0.7,
+        "siUnit": "volt",
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+      },
+      "baseCurrent": {
+        "typValue": 2,
+        "siUnit": "amp",
+        "unitText": "mA",
+        "unitFactor": 0.001,
+        "valueDefined": true
+      },
+      "collectorCurrent": {
+        "typValue": 20,
+        "siUnit": "amp",
+        "unitText": "mA",
+        "unitFactor": 0.001,
+        "valueDefined": true
+      }
+    }
+  },
+  "package": {
+    "length": 1,
+    "width": 1,
+    "height": 0.5,
+    "dimensionUnit": "millimeter"
+  },
+  "pins": [
+    {
+      "terminalIdentifier": "1",
+      "name": "emitter"
+    },
+    {
+      "terminalIdentifier": "2",
+      "name": "base"
+    },
+    {
+      "terminalIdentifier": "3",
+      "name": "collector"
+    }
+  ]
+}
     
     
-    
+             
     
     
     
