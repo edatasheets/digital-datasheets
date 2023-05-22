@@ -2200,6 +2200,168 @@ BJT Example -
     }
   ]
 }
+```
+
+EEPROM Example - Limited pins 
+
+```json
+{
+    "componentID": {
+        "partType": "eeprom",
+        "manufacturer": "ACME Components",
+        "componentName": "abc3456",
+        "orderableMPN": "abc3456,56",
+        "sourceDatasheetID": {
+            "publishedDate": "2022-05-30",
+            "datasheetURI": "www.acmecomponents.com/abc3456datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2023-05-26",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "capacity": {
+        "typValue": 16,
+        "siUnit": "bits",
+        "unitText": "Kb",
+        "unitFactor": 1000,
+        "valueDefined": true
+    },
+    "numberOfWords": 2048,
+    "bitsPerWords": 8,
+    "interface": "i2c",
+    "clockFrequency": {
+        "typValue": 100,
+        "siUnit": "hertz",
+        "unitText": "KHz",
+        "unitFactor": 1000,
+        "valueDefined": true
+    },
+    "endurance": 10,
+    "package": {
+        "length": 1.5,
+        "width": 2,
+        "height": 0.5,
+        "dimensionUnit": "millimeter"
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "SDA"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "GND"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "SCL"
+        },
+        {
+            "terminalIdentifier": "4",
+            "name": "WP"
+        },
+        {
+            "terminalIdentifier": "5",
+            "name": "VDD"
+        }
+    ]
+}
+```
+
+Flash Memory Example - Limited pins 
+
+```json
+{
+    "componentID": {
+        "partType": "flash memory",
+        "manufacturer": "ACME Components",
+        "componentName": "abc345",
+        "orderableMPN": "abc345,67",
+        "sourceDatasheetID": {
+            "publishedDate": "2022-05-30",
+            "datasheetURI": "www.acmecomponents.com/abc345datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2023-05-26",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "capacity": {
+        "typValue": 2,
+        "siUnit": "bytes",
+        "unitText": "GB",
+        "unitFactor": 1000000000,
+        "valueDefined": true
+    },
+    "pageSize": {
+        "typValue": 2,
+        "siUnit": "bytes",
+        "unitText": "MB",
+        "unitFactor": 1000000,
+        "valueDefined": true
+    },
+    "blockSize": {
+        "typValue": 128,
+        "siUnit": "bytes",
+        "unitText": "KB",
+        "unitFactor": 1000,
+        "valueDefined": true
+    },
+    "clockFrequency": {
+        "typValue": 1,
+        "siUnit": "hertz",
+        "unitText": "MHz",
+        "unitFactor": 1000000,
+        "valueDefined": true
+    },
+    "blockEraseTime": {
+        "typValue": 1,
+        "siUnit": "second",
+        "unitText": "ms",
+        "unitFactor": 0.001,
+        "valueDefined": true
+    },
+    "pageProgramTime": {
+        "typValue": 100,
+        "siUnit": "second",
+        "unitText": "us",
+        "unitFactor": 0.000001,
+        "valueDefined": true
+    },
+    "writeProtect": true,
+    "package": {
+        "length": 20,
+        "width": 15,
+        "height": 1,
+        "dimensionUnit": "millimeter"
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "VDD"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "VSS"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "IO0"
+        },
+        {
+            "terminalIdentifier": "4",
+            "name": "IO7"
+        },
+        {
+            "terminalIdentifier": "5",
+            "name": "WP#"
+        }
+    ]
+}
+      
     
     
              
