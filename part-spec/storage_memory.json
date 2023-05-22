@@ -255,14 +255,6 @@
                     "description": "common component identifying information, such as mpn",
                     "$ref": "definitions.json#/componentID"
                 },
-                "technology": {
-                    "description": "eeprom technology",
-                    "type": "string",
-                    "examples": [
-                        "NOR",
-                        "NAND"
-                    ]
-                },
                 "capacity": {
                     "description": "capacity/density of eeprom",
                     "comment": "units of Megabytes (MB)",
@@ -337,14 +329,6 @@
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
                     "$ref": "definitions.json#/componentID"
-                },
-                "technology": {
-                    "description": "flash memory technology",
-                    "type": "string",
-                    "examples": [
-                        "NOR",
-                        "NAND"
-                    ]
                 },
                 "capacity": {
                     "description": "capacity/density of flash memory",
