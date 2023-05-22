@@ -266,8 +266,7 @@
                 },
                 "bitsPerWords": {
                     "description": "number of columns in the eeprom",
-                    "comment": "units of bits",
-                    "$ref": "definitions.json#/unit"
+                    "type": "number"
                 },
                 "bootBlockSize": {
                     "description": "size of the eeprom boot block",
