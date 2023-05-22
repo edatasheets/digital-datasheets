@@ -26,7 +26,7 @@
                 },
                 "capacity": {
                     "description": "capacity of SSD",
-                    "comment": "units of bits (bit)",
+                    "comment": "units of Megabytes (MB)",
                     "$ref": "definitions.json#/unit"
                 },
                 "dataRate": {
@@ -257,7 +257,7 @@
                 },
                 "capacity": {
                     "description": "capacity/density of eeprom",
-                    "comment": "units of Megabytes (MB)",
+                    "comment": "units of bits",
                     "$ref": "definitions.json#/unit"
                 },
                 "numberOfWords": {
