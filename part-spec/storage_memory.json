@@ -26,7 +26,7 @@
                 },
                 "capacity": {
                     "description": "capacity of SSD",
-                    "comment": "units of Gigabytes (GB)",
+                    "comment": "units of bits (bit)",
                     "$ref": "definitions.json#/unit"
                 },
                 "dataRate": {
