@@ -26,12 +26,12 @@
                 },
                 "capacity": {
                     "description": "capacity of SSD",
-                    "comment": "units of Megabytes (MB)",
+                    "comment": "units of bytes (B)",
                     "$ref": "definitions.json#/unit"
                 },
                 "dataRate": {
                     "description": "maximum data rate",
-                    "comment": "units of Gigabytes per second (GBps)",
+                    "comment": "units of bytes per second (Bps)",
                     "$ref": "definitions.json#/unit"
                 },
                 "interface": {
@@ -84,12 +84,12 @@
                 },
                 "capacity": {
                     "description": "capacity of SD card",
-                    "comment": "units of Gigabytes (GB)",
+                    "comment": "units of bytes (B)",
                     "$ref": "definitions.json#/unit"
                 },
                 "dataRate": {
                     "description": "maximum data rate",
-                    "comment": "units of Megagabytes per second (MBps)",
+                    "comment": "units of bytes per second (Bps)",
                     "$ref": "definitions.json#/unit"
                 },
                 "currentConsumption": {
@@ -137,7 +137,7 @@
                 },
                 "capacity": {
                     "description": "capacity of dram chip",
-                    "comment": "units of Gigabytes (GB)",
+                    "comment": "units of bytes (B)",
                     "$ref": "definitions.json#/unit"
                 },
                 "diesPerChip": {
@@ -154,17 +154,17 @@
                 },
                 "bitsPerChannel": {
                     "description": "channel density of dram",
-                    "comment": "units of Gigabits (Gb)",
+                    "comment": "units of bits (b)",
                     "$ref": "definitions.json#/unit"
                 },
                 "bitsPerDie": {
                     "description": "total die density of dram",
-                    "comment": "units of Gigabits (Gb)",
+                    "comment": "units of bits (b)",
                     "$ref": "definitions.json#/unit"
                 },
                 "pageSize": {
                     "description": "page size of dram",
-                    "comment": "units of Megabytes (MB)",
+                    "comment": "units of bytes (B)",
                     "$ref": "definitions.json#/unit"
                 },
                 "rows": {
@@ -177,7 +177,7 @@
                 },
                 "speed": {
                     "description": "dram maximum speed",
-                    "comment": "units of Megabits per second (Mbps)",
+                    "comment": "units of bits per second (bps)",
                     "$ref": "definitions.json#/unit"
                 },
                 "currentConsumption": {
@@ -211,7 +211,7 @@
                 },
                 "capacity": {
                     "description": "capacity of rom",
-                    "comment": "units of Megabytes (MB)",
+                    "comment": "units of bytes (B)",
                     "$ref": "definitions.json#/unit"
                 },
                 "interface": {
@@ -248,7 +248,8 @@
             "title": "eeprom",
             "type": "object",
             "required": [
-                "componentID"
+                "componentID",
+                "capacity"
             ],
             "properties": {
                 "componentID": {
@@ -270,7 +271,7 @@
                 },
                 "bootBlockSize": {
                     "description": "size of the eeprom boot block",
-                    "comment": "units of Kilobytes (KB)",
+                    "comment": "units of bytes (B)",
                     "$ref": "definitions.json#/unit"
                 },
                 "interface": {
@@ -284,12 +285,12 @@
                 },
                 "clockFrequency": {
                     "description": "eeprom clock frequency",
-                    "comment": "units of MegaHertz (MHz)",
+                    "comment": "units of Hertz (Hz)",
                     "$ref": "definitions.json#/unit"
                 },
                 "accessTime": {
                     "description": "time to access the eeprom",
-                    "comment": "units of nanoseconds (ns)",
+                    "comment": "units of seconds (s)",
                     "$ref": "definitions.json#/unit"
                 },
                 "endurance": {
@@ -322,7 +323,8 @@
             "title": "flash memory",
             "type": "object",
             "required": [
-                "componentID"
+                "componentID",
+                "capacity"
             ],
             "properties": {
                 "componentID": {
@@ -360,27 +362,27 @@
                 },
                 "clockFrequency": {
                     "description": "flash memory clock frequency",
-                    "comment": "units of MegaHertz (MHz)",
+                    "comment": "units of Hertz (Hz)",
                     "$ref": "definitions.json#/unit"
                 },
                 "blockEraseTime": {
                     "description": "time it takes to erase a block (largest erasable unit) of the flash memory",
-                    "comment": "units of milliseconds (ms)",
+                    "comment": "units of seconds (s)",
                     "$ref": "definitions.json#/unit"
                 },
                 "sectorEraseTime": {
                     "description": "time it takes to erase a sector (smallest erasable unit) of the flash memory",
-                    "comment": "units of milliseconds (ms)",
+                    "comment": "units of seconds (s)",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
                 "chipEraseTime": {
                     "description": "time it takes to erase the flash memory",
-                    "comment": "units of milliseconds (ms)",
+                    "comment": "units of seconds (s)",
                     "$ref": "definitions.json#/unit"
                 },
                 "pageProgramTime": {
                     "description": "time it takes to program a page of the flash memory",
-                    "comment": "units of milliseconds (ms)",
+                    "comment": "units of seconds (s)",
                     "$ref": "definitions.json#/unit"
                 },
                 "endurance": {
