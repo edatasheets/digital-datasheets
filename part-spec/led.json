@@ -8,9 +8,7 @@
             "title": "LED",
             "type": "object",
             "required": [
-                "componentID",
-                "mosfetType",
-                "channel"
+                "componentID"
             ],
             "properties": {
                 "componentID": {
