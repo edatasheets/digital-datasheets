@@ -331,22 +331,22 @@
                 },
                 "capacity": {
                     "description": "capacity/density of flash memory",
-                    "comment": "units of bytes",
+                    "comment": "units of bits",
                     "$ref": "definitions.json#/unit"
                 },
                 "pageSize": {
                     "description": "page size of flash memory",
-                    "comment": "units of Megabytes (MB)",
+                    "comment": "units of bytes (B)",
                     "$ref": "definitions.json#/unit"
                 },
                 "blockSize": {
                     "description": "block size of flash memory",
-                    "comment": "units of Kilobytes (KB)",
+                    "comment": "units of bytes (B)",
                     "$ref": "definitions.json#/unit"
                 },
                 "bootBlockSize": {
                     "description": "size of the fash memory boot block",
-                    "comment": "units of Kilobytes (KB)",
+                    "comment": "units of bytes (B)",
                     "$ref": "definitions.json#/unit"
                 },
                 "interface": {
