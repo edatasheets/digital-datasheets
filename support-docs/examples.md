@@ -2277,11 +2277,11 @@ Flash Memory Example - Limited pins
     "componentID": {
         "partType": "flash memory",
         "manufacturer": "ACME Components",
-        "componentName": "abc345",
-        "orderableMPN": "abc345,67",
+        "componentName": "abc456",
+        "orderableMPN": "abc456,56",
         "sourceDatasheetID": {
             "publishedDate": "2022-05-30",
-            "datasheetURI": "www.acmecomponents.com/abc345datasheet"
+            "datasheetURI": "www.acmecomponents.com/abc456datasheet"
         },
         "digitalDatasheetID": {
             "publishedDate": "2023-05-26",
@@ -2290,26 +2290,27 @@ Flash Memory Example - Limited pins
         "status": "active"
     },
     "capacity": {
-        "typValue": 2,
-        "siUnit": "bytes",
-        "unitText": "GB",
-        "unitFactor": 1000000000,
-        "valueDefined": true
-    },
-    "pageSize": {
-        "typValue": 2,
-        "siUnit": "bytes",
-        "unitText": "MB",
+        "typValue": 64,
+        "siUnit": "bit",
+        "unitText": "Mb",
         "unitFactor": 1000000,
         "valueDefined": true
     },
+    "pageSize": {
+        "typValue": 256,
+        "siUnit": "bytes",
+        "unitText": "B",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
     "blockSize": {
-        "typValue": 128,
+        "typValue": 64,
         "siUnit": "bytes",
         "unitText": "KB",
         "unitFactor": 1000,
         "valueDefined": true
     },
+    "interface": "spi",
     "clockFrequency": {
         "typValue": 1,
         "siUnit": "hertz",
@@ -2318,14 +2319,14 @@ Flash Memory Example - Limited pins
         "valueDefined": true
     },
     "blockEraseTime": {
-        "typValue": 1,
+        "typValue": 100,
         "siUnit": "second",
         "unitText": "ms",
         "unitFactor": 0.001,
         "valueDefined": true
     },
     "pageProgramTime": {
-        "typValue": 100,
+        "typValue": 250,
         "siUnit": "second",
         "unitText": "us",
         "unitFactor": 0.000001,
@@ -2333,8 +2334,8 @@ Flash Memory Example - Limited pins
     },
     "writeProtect": true,
     "package": {
-        "length": 20,
-        "width": 15,
+        "length": 5,
+        "width": 55,
         "height": 1,
         "dimensionUnit": "millimeter"
     },
@@ -2349,19 +2350,30 @@ Flash Memory Example - Limited pins
         },
         {
             "terminalIdentifier": "3",
-            "name": "IO0"
+            "name": "SDI"
         },
         {
             "terminalIdentifier": "4",
-            "name": "IO7"
+            "name": "SDO"
         },
         {
             "terminalIdentifier": "5",
+            "name": "CS"
+        },
+        {
+            "terminalIdentifier": "6",
+            "name": "SCLK"
+        },
+        {
+            "terminalIdentifier": "7",
+            "name": "RST"
+        },
+        {
+            "terminalIdentifier": "8",
             "name": "WP#"
         }
     ]
 }
-      
     
     
              
