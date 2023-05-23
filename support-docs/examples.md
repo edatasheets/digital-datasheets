@@ -2115,7 +2115,7 @@ BJT Example -
       },
       "collectorCurrent": {
         "typValue": 5,
-        "siUnit": "amps",
+        "siUnit": "amp",
         "unitText": "mA",
         "unitFactor": 0.001,
         "valueDefined": true
@@ -2335,7 +2335,7 @@ Flash Memory Example - Limited pins
     "writeProtect": true,
     "package": {
         "length": 5,
-        "width": 55,
+        "width": 5,
         "height": 1,
         "dimensionUnit": "millimeter"
     },
@@ -2374,6 +2374,107 @@ Flash Memory Example - Limited pins
         }
     ]
 }
+```
+
+LED Example - Limited pins 
+
+```json
+{
+    "componentID": {
+        "partType": "LED",
+        "manufacturer": "ACME Components",
+        "componentName": "abc4567",
+        "orderableMPN": "abc4567,567",
+        "sourceDatasheetID": {
+            "publishedDate": "2022-05-30",
+            "datasheetURI": "www.acmecomponents.com/abc4567datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2023-05-26",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "ledColor": "red",
+    "vf": {
+        "value": {
+            "typValue": 2,
+            "maxValue": 3,
+            "siUnit": "volt",
+            "unitText": "V",
+            "unitFactor": 1,
+            "valueDefined": true
+        },
+        "conditions": {
+            "if": {
+                "typValue": 15,
+                "siUnit": "amp",
+                "unitText": "mA",
+                "unitFactor": 0.001,
+                "valueDefined": true
+            }
+        }
+    },
+    "ifp": {
+        "maxValue": 200,
+        "siUnit": "amp",
+        "unitText": "mA",
+        "unitFactor": 0.001,
+        "valueDefined": true
+    },
+    "vr": {
+        "maxValue": 5,
+        "siUnit": "volt",
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "peakWavelength": {
+        "value": {
+            "typValue": 620,
+            "siUnit": "m",
+            "unitText": "nm",
+            "unitFactor": 1e-9,
+            "valueDefined": true
+        },
+        "conditions": {
+            "if": {
+                "typValue": 15,
+                "siUnit": "amp",
+                "unitText": "mA",
+                "unitFactor": 0.001,
+                "valueDefined": true
+            }
+        }
+    },
+    "angleHalfIntensity": {
+        "typValue": 25,
+        "siUnit": "celsius",
+        "unitText": "degrees celsius",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "package": {
+        "length": 2,
+        "width": 2,
+        "height": 1,
+        "dimensionUnit": "millimeter"
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "anode"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "cathode"
+        }
+    ]
+}
+    
+        
+    
+        
     
     
              
