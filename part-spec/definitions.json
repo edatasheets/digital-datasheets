@@ -396,25 +396,52 @@
       "type": "object",
       "properties": {
         "siUnit": {
-          "description": "name of SI unit of measure",
+          "description": "name of unit",
           "enum": [
+            "microvolt",
+            "milivolt",
             "volt",
+            "kilovolt",
+            "microamp",
+            "miliamp",
             "amp",
+            "miliohm",
             "ohm",
+            "kilohm",
+            "megaohm",
             "coulomb",
+            "milihenry",
             "henry",
+            "picofarad",
+            "nanofarad",
+            "microfarad",
+            "milifarad",
             "farad",
+            "nanosecond",
+            "milisecond",
             "second",
+            "miliwatt",
             "watt",
+            "kilowatt",
             "joule",
             "celsius",
+            "micrometer",
+            "milimeter",
             "meter",
+            "miligram",
             "gram",
+            "kilogram",
             "hertz",
+            "kilohertz",
+            "megahertz",
             "percentage",
             "bit",
             "byte"
           ],
+          "type": "string"
+        },
+        "unitName": {
+          "description": "name of unit if not defined in the siUnit list",
           "type": "string"
         },
         "typValue": {
@@ -429,13 +456,10 @@
           "description": "maximum unit quantity corresponding to unit text - example 40mV would have a value of 40",
           "type": "number"
         },
-        "unitText": {
-          "description": "human readable text describing value - example 40mV would have a value of mV",
-          "type": "string"
-        },
         "unitFactor": {
-          "description": "multiplier on the value to achieve the SI unit - example for 40mV the unitFactor would be 0.001",
-          "type": "number"
+          "description": "multiplier on the value to achieve the SI unit selected - example for 40mV the unitFactor would be 0.001",
+          "type": "number",
+          "$comment": "by default this is one"
         },
         "relativeValueReference": {
           "description": "if unit quantity is based on another reference, value of the reference",
@@ -460,23 +484,6 @@
         "valueDefined": {
           "description": "a boolean representing whether a value has been defined",
           "type": "boolean"
-        }
-      }
-    },
-    "value": {
-      "type": "object",
-      "properties": {
-        "typValue": {
-          "description": "typical value",
-          "type": "number"
-        },
-        "minValue": {
-          "description": "minimum value",
-          "type": "number"
-        },
-        "maxValue": {
-          "description": "maximum value",
-          "type": "number"
         }
       }
     },
