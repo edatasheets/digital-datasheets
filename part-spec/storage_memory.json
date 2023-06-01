@@ -26,12 +26,12 @@
                 },
                 "capacity": {
                     "description": "capacity of SSD",
-                    "comment": "units of Gigabytes (GB)",
+                    "comment": "units of bytes (B)",
                     "$ref": "definitions.json#/unit"
                 },
                 "dataRate": {
                     "description": "maximum data rate",
-                    "comment": "units of Gigabytes per second (GBps)",
+                    "comment": "units of bytes per second (Bps)",
                     "$ref": "definitions.json#/unit"
                 },
                 "interface": {
@@ -42,6 +42,11 @@
                         "etc."
                     ],
                     "type": "string"
+                },
+                "currentConsumption": {
+                    "description": "current consumption of a device",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/currentConsumption"
                 },
                 "package": {
                     "description": "component's package size and description",
@@ -79,13 +84,18 @@
                 },
                 "capacity": {
                     "description": "capacity of SD card",
-                    "comment": "units of Gigabytes (GB)",
+                    "comment": "units of bytes (B)",
                     "$ref": "definitions.json#/unit"
                 },
                 "dataRate": {
                     "description": "maximum data rate",
-                    "comment": "units of Megagabytes per second (MBps)",
+                    "comment": "units of bytes per second (Bps)",
                     "$ref": "definitions.json#/unit"
+                },
+                "currentConsumption": {
+                    "description": "current consumption of a device",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/currentConsumption"
                 },
                 "package": {
                     "description": "component's package size and description",
@@ -127,13 +137,53 @@
                 },
                 "capacity": {
                     "description": "capacity of dram chip",
-                    "comment": "units of Gigabytes (GB)",
+                    "comment": "units of bytes (B)",
                     "$ref": "definitions.json#/unit"
+                },
+                "diesPerChip": {
+                    "description": "number of dies of dram chip",
+                    "type": "number"
+                },
+                "channelsPerDie": {
+                    "description": "number of channels per die of dram chip",
+                    "type": "number"
+                },
+                "banksPerChannel": {
+                    "description": "number of banks per channel of dram",
+                    "type": "number"
+                },
+                "bitsPerChannel": {
+                    "description": "channel density of dram",
+                    "comment": "units of bits (b)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "bitsPerDie": {
+                    "description": "total die density of dram",
+                    "comment": "units of bits (b)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "pageSize": {
+                    "description": "page size of dram",
+                    "comment": "units of bytes (B)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "rows": {
+                    "description": "number of rows per channel of dram",
+                    "type": "number"
+                },
+                "colunms": {
+                    "description": "number of columns per row of dram",
+                    "type": "number"
                 },
                 "speed": {
                     "description": "dram maximum speed",
-                    "comment": "units of Megabits per second (Mbps)",
+                    "comment": "units of bits per second (bps)",
                     "$ref": "definitions.json#/unit"
+                },
+                "currentConsumption": {
+                    "description": "current consumption of a device",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/currentConsumption"
                 },
                 "package": {
                     "description": "component's package size and description",
@@ -161,7 +211,7 @@
                 },
                 "capacity": {
                     "description": "capacity of rom",
-                    "comment": "units of Megabytes (MB)",
+                    "comment": "units of bytes (B)",
                     "$ref": "definitions.json#/unit"
                 },
                 "interface": {
@@ -176,6 +226,11 @@
                     "description": "indicates whether the QE bit is set",
                     "type": "boolean"
                 },
+                "currentConsumption": {
+                    "description": "current consumption of a device",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/currentConsumption"
+                },
                 "package": {
                     "description": "component's package size and description",
                     "$ref": "definitions.json#/package"
@@ -188,6 +243,185 @@
                     }
                 }
             }
+        },
+        {
+            "title": "eeprom",
+            "type": "object",
+            "required": [
+                "componentID",
+                "capacity"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "capacity": {
+                    "description": "capacity/density of eeprom",
+                    "comment": "units of bits",
+                    "$ref": "definitions.json#/unit"
+                },
+                "numberOfWords": {
+                    "description": "number of rows in the eeprom",
+                    "type": "number"
+                },
+                "bitsPerWords": {
+                    "description": "number of columns in the eeprom",
+                    "type": "number"
+                },
+                "bootBlockSize": {
+                    "description": "size of the eeprom boot block",
+                    "comment": "units of bits",
+                    "$ref": "definitions.json#/unit"
+                },
+                "interface": {
+                    "description": "interface of eeprom to host",
+                    "type": "string",
+                    "examples": [
+                        "spi",
+                        "i2c",
+                        "serial 1-wire"
+                    ]
+                },
+                "clockFrequency": {
+                    "description": "eeprom clock frequency",
+                    "comment": "units of Hertz (Hz)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "accessTime": {
+                    "description": "time to access the eeprom",
+                    "comment": "units of seconds (s)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "endurance": {
+                    "description": "time in years a bit in the eeprom can retain its data state ",
+                    "type": "number"
+                },
+                "dataRetention": {
+                    "description": "maximum number of read and write cycle the part can support",
+                    "type": "number"
+                },
+                "currentConsumption": {
+                    "description": "current consumption of a device",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/currentConsumption"
+                },
+                "package": {
+                    "description": "component's package size and description",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+            }
+        },
+        {
+            "title": "flash memory",
+            "type": "object",
+            "required": [
+                "componentID",
+                "capacity"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "capacity": {
+                    "description": "capacity/density of flash memory",
+                    "comment": "units of bits",
+                    "$ref": "definitions.json#/unit"
+                },
+                "pageSize": {
+                    "description": "page size of flash memory",
+                    "comment": "units of bits",
+                    "$ref": "definitions.json#/unit"
+                },
+                "blockSize": {
+                    "description": "block size of flash memory",
+                    "comment": "units of bits",
+                    "$ref": "definitions.json#/unit"
+                },
+                "bootBlockSize": {
+                    "description": "size of the flash memory boot block",
+                    "comment": "units of bits",
+                    "$ref": "definitions.json#/unit"
+                },
+                "interface": {
+                    "description": "interface of flash memory to host",
+                    "type": "string",
+                    "examples": [
+                        "spi",
+                        "quad-spi",
+                        "i2c"
+                    ]
+                },
+                "clockFrequency": {
+                    "description": "flash memory clock frequency",
+                    "comment": "units of Hertz (Hz)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "blockEraseTime": {
+                    "description": "time it takes to erase a block (largest erasable unit) of the flash memory",
+                    "comment": "units of seconds (s)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "sectorEraseTime": {
+                    "description": "time it takes to erase a sector (smallest erasable unit) of the flash memory",
+                    "comment": "units of seconds (s)",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "chipEraseTime": {
+                    "description": "time it takes to erase the flash memory",
+                    "comment": "units of seconds (s)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "pageProgramTime": {
+                    "description": "time it takes to program a page of the flash memory",
+                    "comment": "units of seconds (s)",
+                    "$ref": "definitions.json#/unit"
+                },
+                "endurance": {
+                    "description": "time in years a bit in the eeprom can retain its data state ",
+                    "type": "number"
+                },
+                "dataRetention": {
+                    "description": "maximum number of read and write cycle the part can support",
+                    "type": "number"
+                },
+                "hwReset": {
+                    "description": "whether the part supports a hardware reset pin",
+                    "type": "boolean"
+                },
+                "writeProtect": {
+                    "description": "whether the part has a write protect pin",
+                    "type": "boolean"
+                },
+                "currentConsumption": {
+                    "description": "current consumption of a device",
+                    "comment": "units of amps",
+                    "$ref": "definitions.json#/currentConsumption"
+                },
+                "package": {
+                    "description": "component's package size and description",
+                    "$ref": "definitions.json#/package"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                }
+
+                
+            }
         }
+
+
     ]
 }

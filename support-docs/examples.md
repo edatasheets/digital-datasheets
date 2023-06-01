@@ -2025,10 +2025,459 @@ Converter Example - Limited pins
     }
   ]
 }
+```
 
+BJT Example - 
+
+```json
+{
+  "componentID": {
+    "partType": "bjt",
+    "manufacturer": "ACME Components",
+    "componentName": "abc123456",
+    "orderableMPN": "abc123456,56",
+    "sourceDatasheetID": {
+      "publishedDate": "2022-05-30",
+      "datasheetURI": "www.acmecomponents.com/abc123456datasheet"
+    },
+    "digitalDatasheetID": {
+      "publishedDate": "2023-05-26",
+      "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+    },
+    "status": "active"
+  },
+  "bjtChannelType": "nType",
+  "transistorCount": 1,
+  "collectorCurrent": {
+    "maxValue": 150,
+    "siUnit": "amp",
+    "unitText": "mA",
+    "unitFactor": 0.001,
+    "valueDefined": true
+  },
+  "peakCollectorCurrent": {
+    "maxValue": 300,
+    "siUnit": "amp",
+    "unitText": "mA",
+    "unitFactor": 0.001,
+    "valueDefined": true
+  },
+  "collectorBaseVoltage": {
+    "maxValue": 30,
+    "siUnit": "volt",
+    "unitText": "V",
+    "unitFactor": 1,
+    "valueDefined": true
+  },
+  "emitterBaseVoltage": {
+    "maxValue": 5,
+    "siUnit": "volt",
+    "unitText": "V",
+    "unitFactor": 1,
+    "valueDefined": true
+  },
+  "emitterBaseCutOffCurrent": {
+    "value": {
+      "typValue": 40,
+      "siUnit": "amp",
+      "unitText": "nA",
+      "unitFactor": 1e-9,
+      "valueDefined": true
+    },
+    "conditions": {
+      "collectorEmitterVoltage": {
+        "typValue": 10,
+        "siUnit": "volt",
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+      },
+      "emitterBaseVoltage": {
+        "typValue": 2,
+        "siUnit": "volt",
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+      }
+    }
+  },
+  "dcGain": {
+    "value": {
+      "typValue": 10
+    },
+    "conditions": {
+      "collectorEmitterVoltage": {
+        "typValue": 5,
+        "siUnit": "volt",
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+      },
+      "collectorCurrent": {
+        "typValue": 5,
+        "siUnit": "amp",
+        "unitText": "mA",
+        "unitFactor": 0.001,
+        "valueDefined": true
+      }
+    }
+  },
+  "collectorEmitterBreakdownVoltage": {
+    "value": {
+      "typValue": 40,
+      "siUnit": "volt",
+      "unitText": "V",
+      "unitFactor": 1,
+      "valueDefined": true
+    },
+    "conditions": {
+      "collectorCurrent": {
+        "typValue": 5,
+        "siUnit": "amps",
+        "unitText": "mA",
+        "unitFactor": 0.001,
+        "valueDefined": true
+      },
+      "baseCurrent": {
+        "typValue": 0,
+        "siUnit": "amp",
+        "unitText": "A",
+        "unitFactor": 1,
+        "valueDefined": true
+      }
+    }
+  },
+  "delayTime": {
+    "value": {
+      "typValue": 40,
+      "siUnit": "second",
+      "unitText": "nS",
+      "unitFactor": 1e-9,
+      "valueDefined": true
+    },
+    "conditions": {
+      "baseEmitterVoltage": {
+        "typValue": 0.7,
+        "siUnit": "volt",
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+      },
+      "baseCurrent": {
+        "typValue": 2,
+        "siUnit": "amp",
+        "unitText": "mA",
+        "unitFactor": 0.001,
+        "valueDefined": true
+      },
+      "collectorCurrent": {
+        "typValue": 20,
+        "siUnit": "amp",
+        "unitText": "mA",
+        "unitFactor": 0.001,
+        "valueDefined": true
+      }
+    }
+  },
+  "package": {
+    "length": 1,
+    "width": 1,
+    "height": 0.5,
+    "dimensionUnit": "millimeter"
+  },
+  "pins": [
+    {
+      "terminalIdentifier": "1",
+      "name": "emitter"
+    },
+    {
+      "terminalIdentifier": "2",
+      "name": "base"
+    },
+    {
+      "terminalIdentifier": "3",
+      "name": "collector"
+    }
+  ]
+}
+```
+
+EEPROM Example - Limited pins 
+
+```json
+{
+    "componentID": {
+        "partType": "eeprom",
+        "manufacturer": "ACME Components",
+        "componentName": "abc3456",
+        "orderableMPN": "abc3456,56",
+        "sourceDatasheetID": {
+            "publishedDate": "2022-05-30",
+            "datasheetURI": "www.acmecomponents.com/abc3456datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2023-05-26",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "capacity": {
+        "typValue": 16,
+        "siUnit": "bits",
+        "unitText": "Kb",
+        "unitFactor": 1000,
+        "valueDefined": true
+    },
+    "numberOfWords": 2048,
+    "bitsPerWords": 8,
+    "interface": "i2c",
+    "clockFrequency": {
+        "typValue": 100,
+        "siUnit": "hertz",
+        "unitText": "KHz",
+        "unitFactor": 1000,
+        "valueDefined": true
+    },
+    "endurance": 10,
+    "package": {
+        "length": 1.5,
+        "width": 2,
+        "height": 0.5,
+        "dimensionUnit": "millimeter"
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "SDA"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "GND"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "SCL"
+        },
+        {
+            "terminalIdentifier": "4",
+            "name": "WP"
+        },
+        {
+            "terminalIdentifier": "5",
+            "name": "VDD"
+        }
+    ]
+}
+```
+
+Flash Memory Example - Limited pins 
+
+```json
+{
+    "componentID": {
+        "partType": "flash memory",
+        "manufacturer": "ACME Components",
+        "componentName": "abc456",
+        "orderableMPN": "abc456,56",
+        "sourceDatasheetID": {
+            "publishedDate": "2022-05-30",
+            "datasheetURI": "www.acmecomponents.com/abc456datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2023-05-26",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "capacity": {
+        "typValue": 64,
+        "siUnit": "bit",
+        "unitText": "Mb",
+        "unitFactor": 1000000,
+        "valueDefined": true
+    },
+    "pageSize": {
+        "typValue": 256,
+        "siUnit": "bytes",
+        "unitText": "B",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "blockSize": {
+        "typValue": 64,
+        "siUnit": "bytes",
+        "unitText": "KB",
+        "unitFactor": 1000,
+        "valueDefined": true
+    },
+    "interface": "spi",
+    "clockFrequency": {
+        "typValue": 1,
+        "siUnit": "hertz",
+        "unitText": "MHz",
+        "unitFactor": 1000000,
+        "valueDefined": true
+    },
+    "blockEraseTime": {
+        "typValue": 100,
+        "siUnit": "second",
+        "unitText": "ms",
+        "unitFactor": 0.001,
+        "valueDefined": true
+    },
+    "pageProgramTime": {
+        "typValue": 250,
+        "siUnit": "second",
+        "unitText": "us",
+        "unitFactor": 0.000001,
+        "valueDefined": true
+    },
+    "writeProtect": true,
+    "package": {
+        "length": 5,
+        "width": 5,
+        "height": 1,
+        "dimensionUnit": "millimeter"
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "VDD"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "VSS"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "SDI"
+        },
+        {
+            "terminalIdentifier": "4",
+            "name": "SDO"
+        },
+        {
+            "terminalIdentifier": "5",
+            "name": "CS"
+        },
+        {
+            "terminalIdentifier": "6",
+            "name": "SCLK"
+        },
+        {
+            "terminalIdentifier": "7",
+            "name": "RST"
+        },
+        {
+            "terminalIdentifier": "8",
+            "name": "WP#"
+        }
+    ]
+}
+```
+
+LED Example - Limited pins 
+
+```json
+{
+    "componentID": {
+        "partType": "LED",
+        "manufacturer": "ACME Components",
+        "componentName": "abc4567",
+        "orderableMPN": "abc4567,567",
+        "sourceDatasheetID": {
+            "publishedDate": "2022-05-30",
+            "datasheetURI": "www.acmecomponents.com/abc4567datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2023-05-26",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "ledColor": "red",
+    "vf": {
+        "value": {
+            "typValue": 2,
+            "maxValue": 3,
+            "siUnit": "volt",
+            "unitText": "V",
+            "unitFactor": 1,
+            "valueDefined": true
+        },
+        "conditions": {
+            "if": {
+                "typValue": 15,
+                "siUnit": "amp",
+                "unitText": "mA",
+                "unitFactor": 0.001,
+                "valueDefined": true
+            }
+        }
+    },
+    "ifp": {
+        "maxValue": 200,
+        "siUnit": "amp",
+        "unitText": "mA",
+        "unitFactor": 0.001,
+        "valueDefined": true
+    },
+    "vr": {
+        "maxValue": 5,
+        "siUnit": "volt",
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "peakWavelength": {
+        "value": {
+            "typValue": 620,
+            "siUnit": "m",
+            "unitText": "nm",
+            "unitFactor": 1e-9,
+            "valueDefined": true
+        },
+        "conditions": {
+            "if": {
+                "typValue": 15,
+                "siUnit": "amp",
+                "unitText": "mA",
+                "unitFactor": 0.001,
+                "valueDefined": true
+            }
+        }
+    },
+    "angleHalfIntensity": {
+        "typValue": 25,
+        "siUnit": "degrees",
+        "unitText": "degrees",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "package": {
+        "length": 2,
+        "width": 2,
+        "height": 1,
+        "dimensionUnit": "millimeter"
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "anode"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "cathode"
+        }
+    ]
+}
+    
+        
+    
+        
     
     
-    
+             
     
     
     
