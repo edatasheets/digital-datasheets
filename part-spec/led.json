@@ -1,5 +1,5 @@
 {
-    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/semiconductor.json",
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/led.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "title": "LED",
@@ -62,7 +62,7 @@
                 "peakWavelength": {
                     "description": "light spectrum output value emitted by an LED at highest wavelength",
                     "$comment": "units of nanometer(nm). Measurement conditions include LED forward current, if",
-                    "$ref": "definitions.json#/conditionaProperty"
+                    "$ref": "definitions.json#/conditionalProperty"
                 },
                 "dominantWavelength": {
                     "description": " dominant wavelength an LED emits the majority of the time",
@@ -71,7 +71,7 @@
                 },
                 "angleHalfIntensity": {
                     "description": " angle at which LED intensity falls to 50% of its maximum value",
-                    "$comment": "units of degrees (celsius)",
+                    "$comment": "units of degrees",
                     "$ref": "definitions.json#/unit"
                 },          
                 "pd": {
