@@ -271,7 +271,7 @@
                 },
                 "bootBlockSize": {
                     "description": "size of the eeprom boot block",
-                    "comment": "units of bytes (B)",
+                    "comment": "units of bits",
                     "$ref": "definitions.json#/unit"
                 },
                 "interface": {
@@ -338,21 +338,21 @@
                 },
                 "pageSize": {
                     "description": "page size of flash memory",
-                    "comment": "units of bytes (B)",
+                    "comment": "units of bits",
                     "$ref": "definitions.json#/unit"
                 },
                 "blockSize": {
                     "description": "block size of flash memory",
-                    "comment": "units of bytes (B)",
+                    "comment": "units of bits",
                     "$ref": "definitions.json#/unit"
                 },
                 "bootBlockSize": {
-                    "description": "size of the fash memory boot block",
-                    "comment": "units of bytes (B)",
+                    "description": "size of the flash memory boot block",
+                    "comment": "units of bits",
                     "$ref": "definitions.json#/unit"
                 },
                 "interface": {
-                    "description": "interface of eeprom to host",
+                    "description": "interface of flash memory to host",
                     "type": "string",
                     "examples": [
                         "spi",
