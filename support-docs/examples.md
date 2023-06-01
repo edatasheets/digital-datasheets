@@ -2449,8 +2449,8 @@ LED Example - Limited pins
     },
     "angleHalfIntensity": {
         "typValue": 25,
-        "siUnit": "celsius",
-        "unitText": "degrees celsius",
+        "siUnit": "degrees",
+        "unitText": "degrees",
         "unitFactor": 1,
         "valueDefined": true
     },
