@@ -398,7 +398,7 @@
                     "type": "boolean"
                 },
                 "writeProtect": {
-                    "description": "whether the part has awrite protect pin",
+                    "description": "whether the part has a write protect pin",
                     "type": "boolean"
                 },
                 "currentConsumption": {
