@@ -47,283 +47,374 @@ A digital datasheet shall include the following information:
 #### 3.3 Date Format
 A digital datasheet shall follow the international standard notation, YYYY-MM-DD.
 
-#### 3.4 Units
-The digital datasheet shall follow the International System of Units, SI except for specific cases, like package dimensions, where the imperial system of units may be used. These specific cases will be addressed in the specifications.
-Properties used the represent units in the datasheets are listed in Github: 
-They include:
-|Unit Property|Description|JSON Data Type|Required?|
+####  3.4.1	 ComponentID
+
+|Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|siUnit|Name of the SI unit of measure|String|Yes|
-|absoluteValue|Unit quantity corresponding to unit text|Number|Yes|
-|unitText|Human readable text describing value|String|Yes|
-|unitFactor|Multiplier on the value to achieve the SI unit|Number|Yes|
+|partType|part type|String|Yes|
+|manufacturer|company that manufactures the part|String|Yes|
+|componentName|base part name that describes the form and fit of a component|String| |
+|orderableMPN|orderable manufacturer part number|String|Yes|
+|sourceDatasheetID|methods for identifying the human-readable source information for a digital datasheet|#/definitions/sourceDatasheetID|Yes|
+|digitalDatasheetID|methods for identifying the version of the digital datasheet|#/definitions/digitalDatasheetID|Yes|
+|status|production status of a component|String| |
+|complianceList|list of standards the part complies with|array of String| |
+
+####  3.4.2	 ComponentProtectionThresholds
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|thermalShutdownThresholdRising|Thermal Shutdown (tsd) Threshold with temperature rising|definitions.json#/unit| |
+|thermalShutdownThresholdFalling|Thermal Shutdown (tsd) Threshold with temperature falling|definitions.json#/unit| |
+|thermalShutdownHysteresis|Thermal Shutdown (tsd) Hysteresis|definitions.json#/unit| |
+|powerSupplyProtection|undervoltage lockout, overvoltage protection thresholds of a supply|array of #/defs/powerSupplyProtection| |
+
+####  3.4.3	 ConditionalProperty
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|value|value of property|#/$definitions/unit| |
+|conditions|conditions under which the property is measured|array of String| |
+
+####  3.4.4	 CurrentConsumption
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|supplyName|Name of the power supply |String| |
+|quiescentCurrent|quiescent current (Iq) of a device|definitions.json#/unit| |
+|shutdownCurrent|shutdown current (Isd) of a device|definitions.json#/unit| |
+|activeCurrent|current consumption when a device is in active mode|definitions.json#/unit| |
+|sleepCurrent|current consumption when a device is in sleep mode|definitions.json#/unit| |
+|idleCurrent|current consumption when a device is in idle mode|definitions.json#/unit| |
+
+####  3.4.5	 DigitalDatasheetID
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|publishedDate|date the digital datasheet was published|String| |
+|guid|vendor defined guid (see https://www.guidgenerator.com/) to uniquely identify digital datasheet version|String| |
+
+####  3.4.6	 ExternalComponents
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentType|type of external component required to be connected to a pin|String|Yes|
+|configuration|electrical configuration of component connected to pin with respect to the pin|String|Yes|
+|minValue|minimum value of component if a range is specified|#/definitions/unit| |
+|maxValue|maximum value of component if a range is specified|#/definitions/unit| |
+|value|value of component if a range is not specified|#/definitions/unit| |
+
+####  3.4.7	 ExternalFile
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|fileDescription|text description of the contents of an external file (or files)|String| |
+|companionSoftware|optional, name of software program used to access file|String| |
+|standardReferenced|optional, name of the standard the file is written in|String| |
+|fileExtension|type of file referenced by link|array of String| |
+|fileName|name of external file within the zipped datasheet package|array of String| |
+|fileURI|URI linking to the CAD file|array of String| |
+
+####  3.4.8	 Package
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|length|length of a side of a package|#/$definitions/unit| |
+|width|width of a side of a package|#/$definitions/unit| |
+|height|height of a package|#/$definitions/unit| |
+|nominalFootprints|references to external footprints in standard CAD formats|array of #/$definitions/externalFile| |
+|breakoutExamples|references to external board file that contains layout breakout example|array of #/$definitions/externalFile| |
+|partModelInformation|reference to an external XML file that contains a part model in IPC/DAC2552 format|#/$definitions/externalFile| |
+|standardPackageSize|name of standard package size (imperial)|Must set either Ref or Type| |
+|standardPackageType|name of standard package types|Must set either Ref or Type| |
+
+####  3.4.9	 PinFunction
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|perFunctionName|name of the function of a pin|String| |
+|interfaceType|type of interface enabled by pin|String| |
+|pinUsage|standardized usage of pin|String| |
+|direction|direction of a pin's function|String| |
+|electricalConfiguration|electrical configuration of a pin|String| |
+|polarity|whether the active state of a pin is high or low|String| |
+
+####  3.4.10	 PinSpec
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|terminalIdentifier|pin or ball number as defined by datasheet|String|Yes|
+|name|name given to the signal appearing at the terminal of a component|String|Yes|
+|standardizedName|standard name of pin|String| |
+|description|description of the signal appearing at the terminal of an electric/electronic component|String| |
+|numberOfSupportedFunctions|the total number of functions supported by this pin|Number| |
+|functionProperties|list of function objects that can apply to an individual pin|array of #/definitions/pinFunction| |
+|vihMin|the least positive (most negative) value of high-level input voltage for which operation of the logic element within specification limits is to be expected|#/definitions/unit| |
+|vihMax|the most positive (least negative) value of high-level input voltage for which operation of the logic element within specification limits is to be expected|#/definitions/unit| |
+|vilMax|the most positive (least negative) value of low-level input voltage for which operation of the logic element within specification limits is to be expected|#/definitions/unit| |
+|vilMin|the least positive (most negative) value of low-level input voltage for which operation of the logic element within specification limits is to be expected|#/definitions/unit| |
+|vol|the voltage level at an output terminal with input conditions applied that, according to the product specification, will establish a low level at the output|#/definitions/unit| |
+|voh|the voltage level at an output terminal with input conditions applied that, according to the product specification, will establish a high level at the output|#/definitions/unit| |
+|absVmax|maximum voltage rating beyond which damage to the device may occur|#/definitions/unit| |
+|absVmin|absolute minimum voltage that can be applied to a pin|#/definitions/unit| |
+|vmax|maximum continuous voltage that can safely be applied to a pin|#/definitions/unit| |
+|imax|maximum continuous current that can safely be drawn from a pin|#/definitions/unit| |
+|inputLeakage|maximum current draw into a high impedance input pin|#/definitions/unit| |
+|outputLeakage|maximum current flow from a pin during the off state|#/definitions/unit| |
+|dcResistance|resistance of a pin of a connector|#/definitions/unit| |
+|voltageOptions|list of voltage levels supported by a pin|array of #/definitions/unit| |
+|floatUnused|description of whether pin can safely be floated if it is not used|Boolean| |
+|internalPullUp|indicates the value of an internal pull-up on a pin|#/definitions/unit| |
+|internalPullDown|indicates the value of an internal pull-down on a pin|#/definitions/unit| |
+|esd|indicates whether ESD protection exists on a pin|Boolean| |
+|externalComponents|list of external component structures recommended to be attached to a pin|array of #/definitions/externalComponents| |
+
+####  3.4.11	 Ratio
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|numerator|numerator of ratio|Number| |
+|denominator|denominator of ratio|Number| |
+
+####  3.4.12	 SourceDatasheetID
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|publishedDate|date the source datasheet was published|String| |
+|version|version of the source datasheet|String| |
+|datasheetURI|uri to the source datasheet pdf or html view|String| |
+|productURI|uri to the source datasheet's product page'|String| |
+
+####  3.4.13	 Unit
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|siUnit|name of SI unit of measure|String| |
+|typValue|typical unit quantity corresponding to unit text - example 40mV would have a value of 40|Number| |
+|minValue|minimum unit quantity corresponding to unit text - example 40mV would have a value of 40|Number| |
+|maxValue|maximum unit quantity corresponding to unit text - example 40mV would have a value of 40|Number| |
+|unitText|human readable text describing value - example 40mV would have a value of mV|String| |
+|unitFactor|multiplier on the value to achieve the SI unit - example for 40mV the unitFactor would be 0.001|Number| |
 |relativeValueReference|if unit quantity is based on another reference, value of the reference|String| |
 |relativeValueModifier|if a unit quantity is based on another reference, the value that edits that reference|Number| |
 |relativeValueOperator|if a unit quantity is based on another reference, the operation that is performed with the modifier|String| |
 |valueDefined|a boolean representing whether a value has been defined|Boolean| |
 
-#### 3.5	Missing Values
-Missing fields shall be left blank.
-
-#### 3.6	Pins Specifications
-
-The pins specification is included in Github at:https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/definitions.json
-
-Table below shows the list of properties used to describe pins
-
-|Pin Property|Description|JSON Data Type|Required?|
-|:----|:----|:----|:----|
-|terminalIdentifier|Pin or ball number as defined by datasheet|String|Yes|
-|name|Name given to the signal appearing at the terminal of a component"|String|Yes|
-|standardizedName  |Standard Name of pin|String| |
-|numberOfSupportedFunctions|The total number of functions supported by this pin|Number | |
-|functionProperties|List of function objects that can apply to an individual pin|Array| |
-|vihMin|The least positive (most negative) value of high-level input voltage for which operation of the logic element within specification limits is to be expected.|Number| |
-|vihMax|The most positive (least negative) value of high-level input voltage for which operation of the logic element within specification limits is to be expected. |Number| |
-|vilMin|The least positive (most negative) value of low-level input voltage for which operation of the logic element within specification limits is to be expected.|Number| |
-|vilMax|The most positive (least negative) value of low-level input voltage for which operation of the logic element within specification limits is to be expected|Number| |
-|vol|The voltage level at an output terminal with input conditions applied that,according to the product specification, will establish a low level at the output|Number| |
-|voh|The voltage level at an output terminal with input conditions applied that, according to the product specification, will establish a high level at the output.|Number| |
-|absVmax |Maximum voltage rating beyond which damage to the device may occur.|Number| |
-|absVmin |Absolute minimum voltage that can be applied to a pin|Number| |
-|imax|Maximum continuous current that can safely be drawn from a pin|Number| |
-|inputLeakage|Maximum current draw into a high impedance input pin|Number| |
-|outputLeakage|Maximum current flow from a pin during the off state|Number| |
-|dcResistance|Resistance of a pin of a connector|Number| |
-|voltageOptions|List of voltage levels supported by a pin|Array| |
-|floatUnused|Describes  whether pin can safely be floated if it is not used|Boolean| |
-|internalPullUp|Indicates the value of an internal pull-up on a pin|Number| |
-|internalPullDown|Indicates the value of an internal pull-down on a pin|Number| |
-|esd|Indicates whether ESD protection exists on a pin|Boolean| |
-|externalComponents|List of external component structures recommended to be attached to a pin|Object| |
-|configuration|electrical configuration of component connected to pin with respect to the pin.|String| |
-|minValue|Minimum value of component if a range is specified|Number| |
-|maxValue|Maximum value of component if a range is specified|Number| |
-|value|Value of component if a range is not specified|Number| |
-|componentUnit|Unit of min/max value|String| |
-|connectionPin|Name of pin to which an external component should be pulled up|String| |
-|perFunctionName|Name of the function of a pin|String| |
-|interfaceType|Type of interface enabled by pin|String| |
-|pinUsage|Standardized usage of pin|String| |
-|direction|Direction of a pin's function|String| |
-|electricalConfiguration|Electrical configuration of a pin|String| |
-|polarity|Whether the active state of a pin is high or low|String| |
-
-
-#### 3.7	Graph Specifications
-Datasheets include additional information through figures and graphs. Examples include but are not limited to efficiency vs load curves and power derating curves. A graph object and a curve object are specified to capture that information in the digital datasheet. The graph object focuses on defining the type of data captured, including title and axis information. The curve object focuses on capturing the data. Multiple curve objects may be included in a graph object to capture relationships between variables under different conditions. Examples include load current vs efficiency curves for different input voltages.Properties used to specify a curve object are included in the table below:
-|Property|Description|JSON Data Type|Required?|
-|:----|:----|:----|:----|
-|label|Description of the data in a curve|string| |
-|xData|x value of data being plotted|array of numbers|Yes|
-|yData|y value of data being plotted|array of numbers|Yes|
-
-Properties used to specify a graph object are included below:
-|Property|Description|JSON Data Type|Required?|
-|:----|:----|:----|:----|
-|title|Title of a graph|string|Yes|
-|xUnits|x-axis units|string|Yes|
-|xLabel|x-axis title|String|Yes|
-|yUnits|y-axis units|string|Yes|
-|yLabel|y-axis title|String|Yes|
-|numberOfCurves|total number of curves in graph|Number|Yes|
-
-#### 3.8	Physical Package Specifications
-The digital datasheet has specifications to capture the first level physical package specifications. Properties used to specify a package are included below:
-|Property|Description|JSON Data Type|Required?|
-|:----|:----|:----|:----|
-|length|Length of the package|Number|Yes|
-|width|Width of the package|Number|Yes|
-|height|Height of the package|Number|Yes|
-|dimensionUnit|Unit (mm or mil) used to describe the package dimensions|String|Yes|
-|standardPackageSize|Standard name used to designate the package size|String| |
-|standardPackageType|Standard name used to designate the package type|String| |
-
-#### 3.9	Passive Components Specifications
-The passive components digital datasheet specifications are included in GitHub: https://github.com/edatasheets/edatasheets.github.io/tree/main/part-spec
-
-#### 3.9.1	Resistor Specifications
-The table below give a description of the properties used to specify a resistor in a digital datasheet.
-|Property|Description|JSON Data Type|Required?|
-|:----|:----|:----|:----|
-|value|Resistance value|Number|Yes|
-|tolerance|Nominal tolerance of a resistor|Number| |
-|powerRating|Maximum power a resistor can dissipate without degrading performance|Number| |
-|temperatureCoefficient|Change in resistance when the temperature is changed|Number| |
-|maxOverloadVoltage|Maximum voltage that can be applied to the resistor for a short period of time|Number| |
-|maxLimitingElementVoltage|Maximum voltage value that can be applied continuously to the resistor|Number| |
-|pinSpec|Pins definition of the resistor|object| |
-|package|Package definition of the resistor|Object| |
-|minTemperature|Minimum temperature under which a resistor can be expected to reliably operate|Number| |
-|maxTemperature|Maximum temperature under which a resistor can be expected to reliably operate|Number| |
-|complianceList|List of compliances met by the resistor|Array| |
-|resistorDerating|Graph to capture resistor derating with temperature|Object| |
-
-
-#### 3.9.2	Capacitor Specifications
-The table below gives a description of the properties used to specify a capacitor in a digital datasheet.
-|Property|Description|JSON Data Type|Required?|
-|:----|:----|:----|:----|
-|value|Capacitance value|Number|Yes|
-|tolerance|Nominal tolerance of a capacitor|Number| |
-|ratedVoltage|Maximum voltage which may be applied continuously to a capacitance |Number| |
-|dielectric|Dielectric material used in the capacitor|String| |
-|polarized|Describes whether the capacitor is polarized|Boolean| |
-|esr|Equivalent Series resistance of the capacitor|Number| |
-|minTemperature|Minimum temperature under which a capacitor can be expected to reliably operate|Number| |
-|maxTemperature|Maximum temperature under which a capacitor can be expected to reliably operate|Number| |
-|temperatureCoefficient|Change in capacitance when the temperature is changed|Number| |
-|pinSpec|Pins definition of the capacitor|object| |
-|package|Package definition of the capacitor|Object| |
-|complianceList|List of compliances met by the capacitor component|Array| |
-|capacitorDerating|Graph to capture capacitor derating with voltage|Object| |
-
-#### 3.9.3	Inductor Specifications
-The table below gives a description of the properties used to specify an inductor in a digital datasheet.
-|Property|Description|JSON Data Type|Required?|
-|:----|:----|:----|:----|
-|value|Inductance value|Number|Yes|
-|tolerance|Nominal tolerance of an Inductor|Number| |
-|ratedCurrent|Maximum continuous current the inductor can handle|Number| |
-|saturationCurrent|Current where the inductor enters the magnetic state, and the inductance drops a specified amount |Number| |
-|rmsCurrent|DC current that produces an inductor temperature rise of 40 degrees Celsius|Number| |
-|selfResonantFrequency|Frequency at which the inductor becomes a capacitor|Number| |
-|dcResistance|DC resistance of the inductor|Number| |
-|minTemperature|Minimum temperature under which an inductor can be expected to reliably operate|Number| |
-|maxTemperature|Maximum temperature under which an inductor can be expected to reliably operate|Number| |
-|temperatureCoefficient|Change in inductance when the temperature is changed|Number| |
-|pinSpec|Pins definition of the inductor|object| |
-|package|Package definition of the inductor|Object| |
-|complianceList|List of compliances met by the inductor component|Array| |
-|saturationCurve|Graph to capture current saturation curve|Object| |
-|resonantFrequencyCurve|Graph to capture resonant frequency curve|Object| |
-
-#### 3.10	Power Components Specifications
-The power component specification is included in Github at: https://github.com/edatasheets/edatasheets.github.io/tree/main/part-spec
-
-#### 3.10.1	 Switching Regulator Specifications
-The table below gives a description of the properties used to specify a switching regulator in a digital datasheet.
-|Property|Description|JSON Data Type|Required?|
-|:----|:----|:----|:----|
-|regulatorTopology|Switching regulator topology|String|Yes|
-|vinMin|Minimum input voltage under which the part can be expected to operate properly |Number|Yes|
-|vinMax|Maximum input voltage under which the part can be expected to operate properly|Number|Yes|
-|voutMin|Minimum output voltage the part can regulate|Number|Yes|
-|voutmax|Maximum output voltage the part can regulate|Number|Yes|
-|feedbackVoltage|Voltage at the feedback node|Number| |
-|voutAccuracy|Output voltage variation|Number| |
-|minLoadCurrent|Minimum output current the part can support without going out of regulation|Number| |
-|maxLoadCurrent|Maximum output current the part can support without going out of regulation|Number|Yes|
-|loadRegulation|Output voltage variation from no load to full load|Number| |
-|lineRegulation|Output voltage variation from minimum input voltage to maximum input voltage|Number| |
-|quiescentCurrent|Quiescent current of voltage regulator at no load|Number| |
-|shutdownCurrent |Shutdown current of voltage regulator|Number| |
-|switchingFrequency|Switching frequency of voltage regulator|Number| |
-|integratedFets|Describes whether the FETs are integrated in the regulator package|Boolean| |
-|powerFetProperties| Current limits and rdson values for the integrated FETs|Object| |
-|enableTime|Time between enable asserted and output voltage rising to 10% nominal|Number| |
-|rampTime|Time for output to go from 10% nominal output voltage to 90%nominal output voltage|Number| |
-|underVoltageLockoutThresholdRising|Undervoltage Lockout threshold with input voltage rising|Number| |
-|underVoltageLockoutThresholdFalling|Undervoltage Lockout threshold with input voltage falling|Number| |
-|overVoltageProtectionThresholdRising|Overvoltage Protection threshold with input voltage rising|Number| |
-|overVoltageProtectionThresholdFalling|Overvoltage Protection threshold with input voltage Falling|Number| |
-|thermalShutdownThresholdRising|Thermal Shutdown Threshold with temperature rising|Number| |
-|thermalShutdownThresholdFalling|Thermal Shutdown Threshold with temperature Falling|Number| |
-|thermalShutdownHysteresis|Thermal Shutdown Hysteresis|Number| |
-|efficiency|Power efficiency Graph of the switching regulator|object| |
-|pinSpec|Pins definition of the switching regulator|object| |
-|package|Package definition of the switching regulator|Object| |
-|complianceList|List of compliances met by the switching regulator component|Array| |
-
-####  3.10.2	 Ldo
+####  3.4.14	 Value
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|componentID|Yes|
-|vinTyp|typical input voltage under which the part can be expected to operate without the output dropping|unit| |
-|vinMin|minimum input voltage under which the part can be expected to operate without the output dropping|unit|Yes|
-|vinMax|maximum input voltage under which the part can be expected to operate without the output dropping|unit|Yes|
-|voutMin|minimum output voltage the part can regulate|unit|Yes|
-|voutMax|maximum output voltage the part can regulate|unit|Yes|
-|voutTyp|typical output voltage the part can regulate|unit| |
-|feedbackVoltageTyp|typical voltage comparison point at the feedback node (vref)|unit| |
-|feedbackVoltageMin|minimum voltage comparison point at the feedback node (vref)|unit| |
-|feedbackVoltageMax|max voltage comparison point at the feedback node (vref)|unit| |
-|dropoutVoltageTyp|typical dropout voltage of a device|Number| |
-|dropoutVoltageMin|minimum dropout voltage of a device|Number| |
-|dropoutVoltageMax|maximum dropout voltage of a device|Number| |
-|LoadCurrentMax|maximum load current supported by a device|unit| |
-|LoadCurrentMin|minimum load current supported by a device|unit| |
-|currentLimitTyp|typical high sustained output current threshold beyond which the output of a device starts drooping|unit| |
-|currentLimitMin|minimum high sustained output current threshold beyond which the output of a device starts drooping|unit| |
-|currentLimitMax|maximum high sustained output current threshold beyond which the output of a device starts drooping|unit| |
-|voutAccuracyTyp|typical output voltage variation at no load of a device|unit| |
-|voutAccuracyMin|minimum output voltage variation at no load of a device|unit| |
-|voutAccuracyMax|maximum output voltage variation at no load of a device|unit| |
-|loadRegulationTyp|typical output voltage variation,from no load to full load, of a device |unit| |
-|loadRegulationMin|minimum output voltage variation,from no load to full load, of a device |unit| |
-|loadRegulationMax|maximum output voltage variation,from no load to full load, of a device |unit| |
-|lineRegulationTyp|typical output voltage variation,from minimum input voltage to maximum input voltage, of a device |unit| |
-|lineRegulationMin|minimum output voltage variation,from minimum input voltage to maximum input voltage, of a device |unit| |
-|lineRegulationMax|maximum output voltage variation,from minimum input voltage to maximum input voltage, of a device |unit| |
-|enableTimeTyp|typical time between enable asserted and output voltage rising to 10% nominal|unit| |
-|enableTimeMin|minimum time between enable asserted and output voltage rising to 10% nominal|unit| |
-|enableTimeMax|maximum time between enable asserted and output voltage rising to 10% nominal|unit| |
-|rampTimeTyp|typical time for output voltage to go from 10% vout nominal to 90% vout nominal|unit| |
-|rampTimeMin|minimum time for output voltage to go from 10% vout nominal to 90% vout nominal|unit| |
-|rampTimeMax|maximum time for output voltage to go from 10% vout nominal to 90% vout nominal|unit| |
-|powerSupplyRejectionRatio|graph object to capture Power Supply Rejection Ratio (PSRR) of device over various frequencies|graphDefiniton| |
-|rmsOutputNoise|graph object to capture RMS output noise of device over various frequencies|graphDefiniton| |
-|totalOutputNoise|total output noise of a device|unit| |
-|currentConsumption|current consumption of a device|array of currentConsumption| |
-|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|array of componentProtectionThresholds| |
-|pins|array of pin objects with associated properties|array of pinSpec| |
-|package|component's package size and description|package| |
+|typValue|typical value|Number| |
+|minValue|minimum value|Number| |
+|maxValue|maximum value|Number| |
 
-####  3.10.3	 Load Switch
+#### 3.5	 Component
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|componentID|Yes|
+|componentID|methods for identifying the version of the digital datasheet|definitions.json#/componentID|Yes|
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+
+####  3.6.1	 Curve
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|label|description of the data in a curve|String| |
+|xData|x value of data being plotted|array of Number| |
+|yData|y value of data being plotted|array of Number| |
+
+####  3.6.2	 GraphDefiniton
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|title|title of a graph|String| |
+|xUnits|x-axis units|String| |
+|xLabel|x-axis title|String| |
+|yUnits|y-axis units|String| |
+|yLabel|y-axis title|String| |
+|numberOfCurves|total number of curves in graph|Number| |
+|data|array of curve objects representing actual data being plotted|array of #/graph/curve| |
+
+####  3.7.1	 RegisterDefiniton
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|registerName|Name of a register|String|Yes|
+|registerLongName|Full Name of a register|String| |
+|registerAddressOffset|Address of a register|String|Yes|
+|registerSize|Size of a register|definitions.json#/unit|Yes|
+|registerType|Type of a register|String| |
+|registerResetValue|Reset value of a register|String| |
+|registerValue|Value of a register|String| |
+|registerAccessType|Access type of a Register|String| |
+|registerBitField|Describes the bit fields in the register|#/registerBitField| |
+
+### 3.8	 Passives
+
+Source: [passives.json](https://github.com/chromeos/digital-datasheets/blob/main/part-spec/passives.json)
+
+####  3.8.1	 Resistor
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|value|resistor value|definitions.json#/unit|Yes|
+|tolerance|nominal tolerance of a resistor|definitions.json#/unit| |
+|powerRating|measure of power a resistor can dissipate indefinitely without degrading performance|definitions.json#/unit| |
+|temperatureCoefficient|change in resistance when the temperature is changed|Number| |
+|maxOverloadVoltage|maximum voltage that can be applied to the resistor for a short period of time|definitions.json#/unit| |
+|maxLimitingElementVoltage|maximum voltage value that can be applied continuously to the resistor|definitions.json#/unit| |
+|minTemperature|minimum temperature under which a resistor can be expected to reliably operate|definitions.json#/unit| |
+|maxTemperature|maximum temperature under which a resistor can be expected to reliably operate|definitions.json#/unit| |
+|resistorDerating|graph object to capture resistance changes with temperature|definitions.json#/graphDefiniton| |
+|package|package size of resistor|graph.json#/package| |
+
+####  3.8.2	 Capacitor
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|value|capacitor value|definitions.json#/unit|Yes|
+|tolerance|nominal tolerance of a capacitor|definitions.json#/unit| |
+|ratedVoltage|maximum voltage which may be applied continuously to a capacitance|definitions.json#/unit| |
+|dielectric|dielectric material used in the capacitor|String| |
+|polarized|describes whether the capacitor is polarized|Boolean| |
+|equivalentSerieResistance|equivalent series resistance (ESR) of the capacitor|definitions.json#/unit| |
+|temperatureCoefficient|change in capacitance when the temperature is changed|Number| |
+|minTemperature|minimum temperature under which a capacitor can be expected to reliably operate|definitions.json#/unit| |
+|maxTemperature|maximum temperature under which a capacitor can be expected to reliably operate|definitions.json#/unit| |
+|capacitorDerating|graph object to capture capacitance changes with voltage|definitions.json#/graphDefiniton| |
+|package|package size of capacitor|definitions.json#/package| |
+
+####  3.8.3	 Inductor
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|value|inductor value|definitions.json#/unit|Yes|
+|tolerance|nominal tolerance of an inductor|definitions.json#/unit| |
+|ratedCurrent|maximum continuous current the inductor can handle|definitions.json#/unit| |
+|saturationCurrent|current where the inductor enters the magnetic state, and the inductance drops a specified amount|definitions.json#/unit| |
+|rmsCurrent|DC current that produces an inductor temperature rise of 40 degrees Celsius|definitions.json#/unit| |
+|selfResonantFrequency|frequency at which the inductor becomes a capacitor|definitions.json#/unit| |
+|dcResistance|DC resistance of the inductor|definitions.json#/unit| |
+|temperatureCoefficient|change in inductance when the temperature is changed|Number| |
+|minTemperature|minimum temperature under which a inductor can be expected to reliably operate|definitions.json#/unit| |
+|maxTemperature|maximum temperature under which a inductor can be expected to reliably operate|definitions.json#/unit| |
+|saturationCurve|graph object to capture inductor saturation with current|definitions.json#/graphDefiniton| |
+|resonantFrequencyCurve|graph object to capture inductor resonant frequency|definitions.json#/graphDefiniton| |
+|package|package size of inductor|definitions.json#/package| |
+
+####  3.8.4	 Common Mode Choke
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|diffModeCutoff|frequency at which the differential mode attenuation equals -3dB|definitions.json#/unit| |
+|commonModeAttenuation|graph object to capture common mode attenuation of a common mode choke at various frequencies|definitions.json#/graphDefiniton| |
+|dcResistance|dc resistance (DCR) of a common mode choke|definitions.json#/unit| |
+|rmsCurrent|applied DC current (IRMS) that produces a common mode choke temperature rise of 40 deg C|definitions.json#/unit| |
+|intendedApplication|intended application of a particular common mode choke|String| |
+|package|package size of device|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+
+####  3.8.5	 Ferrite Bead
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|dcResistance|dc resistance (DCR) of ferrite bead|definitions.json#/unit| |
+|rmsCurrent|applied DC current (IRMS) that produces a ferrite bead temperature rise of 40 deg C|definitions.json#/unit| |
+|impedance100MHz|impedance of ferrite bead under standard testing conditions at 100MHz|definitions.json#/unit| |
+|impedanceTolerance|variation of ferrite bead impedance expressed as +/- percentage|definitions.json#/unit| |
+|package|package size of device|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+
+### 3.9	 Power
+
+Source: [power.json](https://github.com/chromeos/digital-datasheets/blob/main/part-spec/power.json)
+
+####  3.9.1	 Switching Regulator
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|regulatorTopology|switching voltage regulator topology|String|Yes|
+|vin|input voltage under which a device can be expected to operate without output dropping|definitions.json#/unit|Yes|
+|vout|output voltage a device can regulate|definitions.json#/unit|Yes|
+|feedbackVoltage|voltage comparison point at the feedback node|definitions.json#/unit| |
+|loadCurrent|load current supported by a device|definitions.json#/unit|Yes|
+|voutAccuracy|output voltage variation at no load|definitions.json#/unit| |
+|loadRegulation|output voltage variation from no load to full load |definitions.json#/unit| |
+|lineRegulation|output voltage variation from minimum input voltage to maximum input voltage |definitions.json#/unit| |
+|currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
+|switchingFrequency|switching frequency (fsw) of voltage regulator|definitions.json#/unit| |
+|enableTime|time between enable asserted and output voltage rising to 10% nominal|definitions.json#/unit| |
+|rampTime|time for output voltage to go from 10% vout nominal to 90% vout nominal|definitions.json#/unit| |
+|integratedFets|whether the regulator contains integrated switching mosfets|Boolean| |
+|integratedFetProperties|describes integrated fet current limits and rdson properties|#/$defs/powerFetProperities| |
+|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|definitions.json#/componentProtectionThresholds| |
+|efficiency|power efficiency of regulator|graph.json#/graphDefiniton| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|definitions.json#/package| |
+
+####  3.9.2	 Ldo
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|vin|input voltage under which the part can be expected to operate without the output dropping|definitions.json#/unit|Yes|
+|vout|output voltage the part can regulate|definitions.json#/unit|Yes|
+|feedbackVoltage|voltage comparison point at the feedback node (vref)|definitions.json#/unit| |
+|dropoutVoltage|dropout voltage of a device|Number| |
+|loadCurrent|load current supported by a device|definitions.json#/unit|Yes|
+|currentLimit|sustained output current threshold beyond which the output of a device starts drooping|definitions.json#/unit| |
+|voutAccuracy|output voltage variation at no load of a device|definitions.json#/unit| |
+|loadRegulation|output voltage variation,from no load to full load, of a device |definitions.json#/unit| |
+|lineRegulation|output voltage variation,from minimum input voltage to maximum input voltage, of a device |definitions.json#/unit| |
+|enableTime|time between enable asserted and output voltage rising to 10% nominal|definitions.json#/unit| |
+|rampTime|time for output voltage to go from 10% vout nominal to 90% vout nominal|definitions.json#/unit| |
+|powerSupplyRejectionRatio|graph object to capture Power Supply Rejection Ratio (PSRR) of device over various frequencies|definitions.json#/graphDefiniton| |
+|rmsOutputNoise|graph object to capture RMS output noise of device over various frequencies|definitions.json#/graphDefiniton| |
+|totalOutputNoise|total output noise of a device|definitions.json#/unit| |
+|currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
+|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|definitions.json#/componentProtectionThresholds| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|definitions.json#/package| |
+
+####  3.9.3	 Load Switch
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
 |fetType|type of pass FET in a device|String| |
 |loadSwitchCount|number of load switched in the package.|Number| |
-|vinTyp|typical input voltage under which a device can be expected to reliabily operate|unit| |
-|vinMin|minimum input voltage under which a device can be expected to reliabily operate|unit|Yes|
-|vinMax|maximum input voltage under which the part can be expected to reliabily operate |unit|Yes|
-|OutputCurrentMax|maximum continuous DC cuurent supported by a device|unit|Yes|
-|oneResistanceTyp|typical FET on state resistance|conditionalProperty| |
-|onResistanceMax|maximum FET on state resistance|conditionalProperty| |
-|onResistanceMin|mimimum FET on state resistance|conditionalProperty| |
-|pdResistanceTyp|typical pull-down resistance of a device from the output to the ground|unit| |
-|pdResistanceMax|maximum pull-down resistance of a device from the output to the ground|unit| |
-|pdResistanceMin|minimum pull-down resistance of a device from the output to the ground|unit| |
+|vin|input voltage under which a device can be expected to reliabily operate|definitions.json#/unit|Yes|
+|outputCurrent|continuous DC cuurent supported by a device|definitions.json#/unit|Yes|
+|onResistance|FET on state resistance|definitions.json#/conditionalProperty|Yes|
+|pdResistance|pull-down resistance of a device from the output to the ground|definitions.json#/unit| |
 |currentLimitSupport|whether a device supports current limiting|Boolean| |
 |adjustableRiseTimeSupport|whether a device supports adjustable rise time|Boolean| |
 |quickOutputDischargeSupport|whether a device supports quick output discharge|Boolean| |
 |reverseCurrentBlockingSupport|whether a device supports reverse current blocking|Boolean| |
 |powerGoodSupport|whether a device supports power good|Boolean| |
-|enableTimeTyp|typical time between enable asserted and output voltage rising to 10% nominal|conditionalProperty| |
-|enableTimeMin|minimum time between enable asserted and output voltage rising to 10% nominal|conditionalProperty| |
-|enableTimeMax|maximum time between enable asserted and output voltage rising to 10% nominal|conditionalProperty| |
-|offTimeTyp|typical time between enable deasserted and output voltage falling to 90% nominal|conditionalProperty| |
-|offTimeMax|maximum time between enable deasserted and output voltage falling to 90% nominal|conditionalProperty| |
-|offTimeMin|minimum time between enable deasserted and output voltage falling to 90% nominal|conditionalProperty| |
-|rampTimeTyp|typical time for output voltage to go from 10% vout nominal to 90% vout nominal|conditionalProperty| |
-|rampTimeMin|minimum time for output voltage to go from 10% vout nominal to 90% vout nominal|conditionalProperty| |
-|rampTimeMax|maximum time for output voltage to go from 10% vout nominal to 90% vout nominal|conditionalProperty| |
-|fallTimeTyp|typical time for output voltage to go from 90% vout nominal to 10% vout nominal|conditionalProperty| |
-|fallTimeMax|maximum time for output voltage to go from 90% vout nominal to 10% vout nominal|conditionalProperty| |
-|fallTimeMin|minimum time for output voltage to go from 90% vout nominal to 10% vout nominal|conditionalProperty| |
-|currentConsumption|current consumption of a device|array of currentConsumption| |
-|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|array of componentProtectionThresholds| |
-|pins|array of pin objects with associated properties|array of pinSpec| |
-|package|component's package size and description|package| |
+|enableTime|time between enable asserted and output voltage rising to 10% nominal|definitions.json#/conditionalProperty| |
+|offTime|time between enable deasserted and output voltage falling to 90% nominal|definitions.json#/conditionalProperty| |
+|rampTime|time for output voltage to go from 10% vout nominal to 90% vout nominal|definitions.json#/conditionalProperty| |
+|fallTime|time for output voltage to go from 90% vout nominal to 10% vout nominal|definitions.json#/conditionalProperty| |
+|currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
+|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|definitions.json#/componentProtectionThresholds| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|definitions.json#/package| |
 
-####  3.10.4	 Pmic
+####  3.9.4	 Pmic
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|componentID|Yes|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
 |ldoRegulatorCount|number of ldos in the device|Number| |
 |buckRegulatorCount|number of buck regulators in the device|Number| |
 |boostRegulatorCount|number of boost regulators in the device|Number| |
@@ -333,56 +424,38 @@ The table below gives a description of the properties used to specify a switchin
 |internalClockCount|number of clocks/oscillators in the device|Number| |
 |loadSwitchCount|number of load switches in the device|Number| |
 |usbSwitchCount|number of USB switches in the device|Number| |
-|componentList|List, by title, of components in the device|component| |
-|instances|definition of each instance of a component in the device|array of instance| |
-|vinTyp|typical input voltage under which a device can be expected to reliabily operate|unit| |
-|vinMin|minimum input voltage under which a device can be expected to reliabily operate|unit| |
-|vinMax|maximum input voltage under which the part can be expected to reliabily operate |unit| |
-|currentConsumption|current consumption of a device|array of currentConsumption| |
-|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|array of componentProtectionThresholds| |
-|pins|array of pin objects with associated properties|array of pinSpec| |
-|package|component's package size and description|package| |
+|componentList|List, by title, of components in the device|definitions.json#/component| |
+|instances|definition of each instance of a component in the device|array of #/powerComponentDefinitions| |
+|vin|input voltage under which a device can be expected to reliabily operate|definitions.json#/unit| |
+|currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
+|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|definitions.json#/componentProtectionThresholds| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|definitions.json#/package| |
 
-####  3.10.5	 Display Backlight Driver
+####  3.9.5	 Display Backlight Driver
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
 |componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
-|vinTyp|typical input voltage under which a device can be expected to operate properly|definitions.json#/unit| |
-|vinMin|minimum input voltage under which a device can be expected to operate properly|definitions.json#/unit|Yes|
-|vinMax|maximum input voltage under which a device can be expected to operate properly|definitions.json#/unit|Yes|
-|voutTyp|typical output voltage a device can regulate|definitions.json#/unit| |
-|voutMin|minimum output voltage a device can regulate|definitions.json#/unit| |
-|voutMax|maximum output voltage a device can regulate|definitions.json#/unit| |
-|ioutTypPerString|typical output current per string a device can regulate|definitions.json#/unit| |
-|ioutMinPerString|minimum output current per string a device can regulate|definitions.json#/unit| |
-|ioutMaxPerString|maximum output current per string a device can regulate|definitions.json#/unit| |
-|ioutAccuracyTyp|typical accuracy of per string current regulated by a device|definitions.json#/unit| |
-|ioutAccuracyMin|minimum accuracy of per string current regulated by a device|definitions.json#/unit| |
-|ioutAccuracyMax|maximum accuracy of per string current regulated by a device|definitions.json#/unit| |
-|fswTyp|typical switching frequency of a device|definitions.json#/unit| |
-|fswMin|minimum switching frequency of a device|definitions.json#/unit| |
-|fswMax|maximum switching frequency of a device|definitions.json#/unit| |
-|currentConsumption|current consumption of a device|array of definitions.json#/currentConsumption| |
+|vin|input voltage under which a device can be expected to operate properly|definitions.json#/unit|Yes|
+|vout|output voltage a device can regulate|definitions.json#/unit| |
+|ioutPerString|output current per string a device can regulate|definitions.json#/unit| |
+|ioutAccuracy|accuracy of per string current regulated by a device|definitions.json#/unit| |
+|fsw|switching frequency of a device|definitions.json#/unit| |
+|currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
 |integratedFets|whether a device contains integrated switching mosfets|Boolean| |
 |integratedFetProperties|describes integrated fet current limits and rdson properties|#/$defs/powerFetProperities| |
-|currentMatchingAccuracyTyp|typical current matching between LED strings|definitions.json#/unit| |
-|currentMatchingAccuracyMin|minimum current matching between LED strings|definitions.json#/unit| |
-|currentMatchingAccuracyMax|maximum current matching between LED strings|definitions.json#/unit| |
+|currentMatchingAccuracy|current matching between LED strings|definitions.json#/unit| |
 |dimmingSupport|whether a device supports output current dimming|Boolean| |
 |dimmingControl|whether a device is dimmed by PWM or I2C|String| |
-|dimmingFrequencyTyp|typical dimming frequency of a device|definitions.json#/unit| |
-|dimmingFrequencyMin|minimum dimming frequency of a device|definitions.json#/unit| |
-|dimmingFrequencyMax|maximum dimming frequency of a device|definitions.json#/unit| |
-|dimmingRatioTyp|typical dimming ratio of a device|definitions.json#/ratio| |
-|dimmingRatioMin|minimum dimming ratio of a device|definitions.json#/ratio| |
-|dimmingRatioMax|maximum dimming ratio of a device|definitions.json#/ratio| |
-|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|array of icProtection.json#/componentProtectionThresholds| |
+|dimmingFrequency|dimming frequency of a device|definitions.json#/unit| |
+|dimmingRatio|dimming ratio of a device|definitions.json#/ratio| |
+|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|icProtection.json#/componentProtectionThresholds| |
 |efficiency|efficiency vs forward current|graph.json#/graphDefiniton| |
 |package|package size|definitions.json#/package| |
 |pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
-####  3.10.6	 Battery Charger
+####  3.9.6	 Battery Charger
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -394,52 +467,28 @@ The table below gives a description of the properties used to specify a switchin
 |batteryCellChemistry|battery cell chemistry supported by the device|array of String| |
 |inputPowerSource|input power source supported by the device|array of String| |
 |inputCurrentAccuracy|accuracy of input current when set|definitions.json#/unit| |
-|batteryChargeCurrentTyp|typical charging current of a device|definitions.json#/unit| |
-|batteryChargeCurrentMin|minimum charging current of a device|definitions.json#/unit| |
-|batteryChargeCurrentMax|maximum charging current of a device|definitions.json#/unit|Yes|
-|batteryChargeCurrentAccuracyTyp|typical charging current regulation accuracy of a device|definitions.json#/unit| |
-|batteryChargeCurrentAccuracyMin|minimum charging current regulation accuracy of a device|definitions.json#/unit| |
-|batteryChargeCurrentAccuracyMax|maximum charging current regulation accuracy of a device|definitions.json#/unit| |
-|batteryPreChargeCurrentTyp|typical charging current of a device in pre-charge phase|definitions.json#/unit| |
-|batteryPreChargeCurrentMin|minimum charging current of a device in pre-charge phase|definitions.json#/unit| |
-|batteryPreChargeCurrentMax|maximum charging current of a device in pre-charge phase|definitions.json#/unit| |
-|batteryPreChargeCurrentAccuracyTyp|typical pre-charging current regulation accuracy of a device|definitions.json#/unit| |
-|batteryPreChargeCurrentAccuracyMin|minimum pre-charging current regulation accuracy of a device|definitions.json#/unit| |
-|batteryPreChargeCurrentAccuracyMax|maximum pre-charging current regulation accuracy of a device|definitions.json#/unit| |
-|batteryTrickleChargeCurrentTyp|typical charging current of a device in trickle charge phase|definitions.json#/unit| |
-|batteryTrickleChargeCurrentMin|minimum charging current of a device in trickle charge phase|definitions.json#/unit| |
-|batteryTrickleChargeCurrentMax|maximum charging current of a device in trickle charge phase|definitions.json#/unit| |
-|batteryTrickleChargeCurrentAccuracyTyp|typical Trickle charging current regulation accuracy of a device|definitions.json#/unit| |
-|batteryTrickleChargeCurrentAccuracyMin|minimum Trickle charging current regulation accuracy of a device|definitions.json#/unit| |
-|batteryTrickleChargeCurrentAccuracyMax|maximum Trickle charging current regulation accuracy of a device|definitions.json#/unit| |
-|batteryTerminationChargeCurrentTyp|typical charging current of a device in charge termination phase|definitions.json#/unit| |
-|batteryTerminationChargeCurrentMin|minimum charging current of a device in charge termination phase|definitions.json#/unit| |
-|batteryTerminationChargeCurrentMax|maximum charging current of a device in charge termination phase|definitions.json#/unit| |
-|batteryTerminationChargeCurrentAccuracyTyp|typical termination charging current regulation accuracy of a device|definitions.json#/unit| |
-|batteryTerminationChargeCurrentAccuracyMin|minimum termination charging current regulation accuracy of a device|definitions.json#/unit| |
-|batteryTerminationChargeCurrentAccuracyMax|maximum termination charging current regulation accuracy of a device|definitions.json#/unit| |
-|batteryChargeVoltageTyp|typical battery charge voltage regulated by a device|definitions.json#/unit| |
-|batteryChargeVoltageMin|minimum battery charge voltage regulated by a device|definitions.json#/unit| |
-|batteryChargeVoltageMax|maximum battery charge voltage regulated by a device|definitions.json#/unit| |
-|batteryChargeVoltageAccuracyTyp|typical accuracy of battery charge voltage regulated by a device|definitions.json#/unit| |
-|batteryChargeVoltageAccuracyMin|minimum accuracy of battery charge voltage regulated by a device|definitions.json#/unit| |
-|batteryChargeVoltageAccuracyMax|maximum accuracy of battery charge voltage regulated by a device|definitions.json#/unit| |
+|batteryChargeCurrent|charging current of a device|definitions.json#/unit|Yes|
+|batteryChargeCurrentAccuracy|charging current regulation accuracy of a device|definitions.json#/unit| |
+|batteryPreChargeCurrent|charging current of a device in pre-charge phase|definitions.json#/unit| |
+|batteryPreChargeCurrentAccuracy|pre-charging current regulation accuracy of a device|definitions.json#/unit| |
+|batteryTrickleChargeCurrent|charging current of a device in trickle charge phase|definitions.json#/unit| |
+|batteryTrickleChargeCurrentAccuracy|Trickle charging current regulation accuracy of a device|definitions.json#/unit| |
+|batteryTerminationChargeCurrent|charging current of a device in charge termination phase|definitions.json#/unit| |
+|batteryTerminationChargeCurrentAccuracy|termination charging current regulation accuracy of a device|definitions.json#/unit| |
+|batteryChargeVoltage|battery charge voltage regulated by a device|definitions.json#/unit| |
+|batteryChargeVoltageAccuracy|accuracy of battery charge voltage regulated by a device|definitions.json#/unit| |
 |efficiency|charge efficiency vs charge current of a device|graph.json#/graphDefiniton| |
-|vinTyp|typical input voltage under which a device can be expected to reliabily operate|definitions.json#/unit| |
-|vinMin|minimum input voltage under which a device can be expected to reliabily operate|definitions.json#/unit| |
-|vinMax|maximum input voltage under which the part can be expected to reliabily operate |definitions.json#/unit| |
-|fswTyp|typical switching frequency of a device|definitions.json#/unit| |
-|fswMin|minimum switching frequency of a device|definitions.json#/unit| |
-|fswMax|maximum switching frequency of a device|definitions.json#/unit| |
-|currentConsumption|current consumption of a device|array of definitions.json#/currentConsumption| |
-|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|array of icProtection.json#/componentProtectionThresholds| |
+|vin|input voltage under which a device can be expected to reliabily operate|definitions.json#/unit| |
+|fsw|switching frequency of a device|definitions.json#/unit| |
+|currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
+|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|definitions.json#/componentProtectionThresholds| |
 |batteryChargerProtections|battery charger specific protections supported by device|array of String| |
 |integratedLoadSwitch|whether the device contains integrated power path load switch(es)|Boolean| |
 |integratedFets|whether the device contains integrated switching mosfets|Boolean| |
 |integratedFetProperties|describes integrated fet current limits and rdson properties|#/$defs/powerFetProperities| |
-|maxGateCapacitance|describes maximum gate capacitance supported on external fets|definitions.json#/unit| |
-|typInputSenseResistor|describes typical intput sense resistor value|definitions.json#/unit| |
-|typBatterySenseResistor|describes typical battery sense resistor value|definitions.json#/unit| |
+|gateCapacitance|describes gate capacitance supported on external fets|definitions.json#/unit| |
+|inputSenseResistor|describes intput sense resistor value|definitions.json#/unit| |
+|batterySenseResistor|describes battery sense resistor value|definitions.json#/unit| |
 |passThroughMode|whether pass through mode is supported|Boolean| |
 |bc12Support|whether bc 1.2 detection is built in|Boolean| |
 |tcpcSupport|whether type-C port controller support is built in|Boolean| |
@@ -448,216 +497,211 @@ The table below gives a description of the properties used to specify a switchin
 |pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 |package|component's package size and description|definitions.json#/package| |
 
-####  3.10.7	 PowerFetProperties
-Power FETs are important components of swithing regulators. They can be integrated in the regulator or external to the regulator. The table below gives a description of the properties used to specify FETs in a digital datasheet. 
-|Property|Description|JSON Data Type|Required?|
-|:----|:----|:----|:----|
-|ilimHSFET|maximum sustained current output current under which the high side FET will operate properly|definitions.json#/unit| |
-|ilimLSFET|maximum sustained current output current under which the low side FET will operate properly|definitions.json#/unit| |
-|rdsonHSFET|high side FET on-resistance|definitions.json#/unit| |
-|rdsonLSFET|low side FET on-resistance|definitions.json#/unit| |
-
-
-### 3.11	 Hardware
-
-####  3.11.1	 Switch
-
-The table below gives a description of the properties used to specify a switch in a digital datasheet.
+####  3.9.7	 PowerComponentDefinitions
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
+|componentTitle|title used for the component in the digital datasheets specifications|String| |
+|instanceName|name of component instances|String| |
+### 3.10	 Hardware
+
+Source: [hardware.json](https://github.com/chromeos/digital-datasheets/blob/main/part-spec/hardware.json)
+
+####  3.10.1	 Switch
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
 |type|property describing the way in which the switch is activated|String| |
 |contactType|property describing the order in which switch contact is made and broken|String| |
 |circuitConfig|property describing the number of poles and throws in a switch|String| |
 |cycleRating|number of on/off cycles a mechanical switch can reliably sustain|Number| |
-|voltageRating|maximum DC voltage potential that can be applied across an open switch|Object| |
-|currentRating|maximum DC current that can flow through a closed switch without causing excessive heating|Object| |
-|onResistance|nominal resistance of a closed switch|Object|Yes|
-|dielectricRating|maximum AC voltage potential that can be applied across an open switch for one minute|Object| |
-|package|component's package size and description|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
+|voltageRating|maximum DC voltage potential that can be applied across an open switch|definitions.json#/unit| |
+|currentRating|maximum DC current that can flow through a closed switch without causing excessive heating|definitions.json#/unit| |
+|onResistance|nominal resistance of a closed switch|definitions.json#/unit|Yes|
+|dielectricRating|maximum AC voltage potential that can be applied across an open switch for one minute|definitions.json#/unit| |
+|package|component's package size and description|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
-####  3.11.2	 Connector
-
-The table below gives a description of the properties used to specify a connector in a digital datasheet.
+####  3.10.2	 Connector
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
 |function|intended function of a connector|String| |
 |contactCount|number of contacts in a connector|Number| |
 |type|property describing the method of mating to the connector|String| |
 |cycleRating|number of plug/unplug cycles a connector is rated to support|Number| |
-|pitch|distance from the center of one contact on the connector to the center of the next contact|Object| |
+|pitch|distance from the center of one contact on the connector to the center of the next contact|definitions.json#/unit| |
 |keying|property describing whether a connector has an asymmetry to prevent it from being plugged in the wrong direction|Boolean| |
 |numberPins|number of pins on the connector|Number|Yes|
-|package|component's package size and description|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
+|package|component's package size and description|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
-### 3.12	 IC IO (Integrated Circuit Input/Output)
+### 3.11	 IC IO
 
-ICs often require various external components to correctly use them in a design.
-This section contains components commonly used to fit that need.
+Source: [ic io.json](https://github.com/chromeos/digital-datasheets/blob/main/part-spec/ic io.json)
 
-####  3.12.1	 Redriver
-
-The table below gives a description of the properties used to specify a redriver in a digital datasheet.
+####  3.11.1	 Redriver
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
 |numberChannels|number of lanes (single ended or differential) supported by redriver|Number| |
-|interface|list of interface(s) supported by redriver|String| |
-|maxDataRate|maximum data rate supported by redriver|Object| |
-|package|component's package size and description|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
+|interface|list of interface(s) supported by redriver|array of String| |
+|maxDataRate|maximum data rate supported by redriver|definitions.json#/unit| |
+|package|component's package size and description|definitions.json#/package| |
+|currentConsumption|current used by device in various power modes|definitions.json#/currentConsumption| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
-####  3.12.2	 Bridge Chip
-
-The table below gives a description of the properties used to specify a bridge chip in a digital datasheet.
+####  3.11.2	 Retimer
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|numberOfLanes|number of lanes supported by a device|Number| |
+|interface|list of interface(s) supported by a device|array of String| |
+|dpMaxLinkRate|Max link rate supported by DP interface of a device|String| |
+|maxDataRate|maximum data rate supported by a device|definitions.json#/unit| |
+|integratedAuxLsSwitch|whether the AUX/LSx switch for SBU is integrated|Boolean| |
+|commonClock|whether a device supports common reference clock|Boolean| |
+|sris|whether a device supports Seperate Reference clock with Independent Spread spectrum clocking(SRIS)|Boolean| |
+|srns|whether a device supports Seperate Reference clock with No Spread spectrum clocking (SRNS)|Boolean| |
+|package|component's package size and description|definitions.json#/package| |
+|currentConsumption|current used by device in various power modes|definitions.json#/currentConsumption| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+
+####  3.11.3	 Bridge Chip
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
 |muxRatio|ratio of inputs to outputs|String| |
 |inputInterfaces|list of interfaces at the input of the bridge|String| |
-|outputInterfaces|list of interfaces at the output of the bridge|String| |
-|package|component's package size and description|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
+|outputInterfaces|list of interfaces at the output of the bridge|array of String| |
+|currentConsumption|current used by device in various power modes|definitions.json#/currentConsumption| |
+|package|component's package size and description|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
-####  3.12.3	 Mux
-
-The table below gives a description of the properties used to specify a mux in a digital datasheet.
+####  3.11.4	 Mux
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
-|muxRatio|ratio of inputs to outputs|String| |
-|inputInterfaces|list of interfaces mux is designed for|String| |
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|muxRatio|ratio of inputs to outputs|definitions.json#/ratio| |
+|inputInterfaces|list of interfaces mux is designed for|array of String| |
 |insertionLoss|insertion loss through mux|Number| |
-|package|component's package size and description|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
+|package|component's package size and description|definitions.json#/package| |
+|currentConsumption|current used by device in various power modes|definitions.json#/currentConsumption| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
-####  3.12.4	 Level Shifter
-
-The table below gives a description of the properties used to specify level shifters in a digital datasheet.
-
-|Property|Description|JSON Data Type|Required?|
-|:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
-|numberChannels|number of lanes (single ended or differential) supported by redriver|Number| |
-|interface|interface supported by redriver|String| |
-|inputVoltage|input voltage level of level shifter|Object| |
-|outputVoltage|output voltage level of level shifter|Object| |
-|package|component's package size and description|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
-
-### 3.13	 Logic Integrated Circuits
-
-This section contains ICs which can be used to implement digital logic in a design.
-
-####  3.13.1	 Logic Gate
-
-The table below gives a description of the properties used to specify logic gates in a digital datasheet.
+####  3.11.5	 Level Shifter
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|inputVoltage|input voltage level of level shifter|definitions.json#/unit| |
+|outputVoltage|output voltage level of level shifter|definitions.json#/unit| |
+|package|component's package size and description|definitions.json#/package| |
+|currentConsumption|current used by device in various power modes|definitions.json#/currentConsumption| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+
+### 3.12	 IC Logic
+
+Source: [ic logic.json](https://github.com/chromeos/digital-datasheets/blob/main/part-spec/ic logic.json)
+
+####  3.12.1	 Logic Gate
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
 |type|logical operation performed by logic gate|String|Yes|
 |numberGates|number of logical gates encapsulated in logic IC|Number| |
 |schmittTrigger|property describing whether logic gate has schmitt trigger inputs|Boolean| |
-|propagationDelay|time between input changing to output changing|Object| |
-|rampTime|time for output to go from 10% nominal output voltage to 90% nominal output voltage|Object| |
-|package|component's package size and description|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
+|propagationDelay|time between input changing to output changing|definitions.json#/unit| |
+|rampTime|time for output to go from 10% nominal output voltage to 90% nominal output voltage|definitions.json#/unit| |
+|package|component's package size and description|definitions.json#/package| |
+|currentConsumption|current used by device in various power modes|definitions.json#/currentConsumption| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
-####  3.13.2	 Clock
-
-The table below gives a description of the properties used to specify a clock in a digital datasheet.
+####  3.12.2	 Clock
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
-|fixedFrequency|clock frequency value if the clock has a fixed frequency|Object| |
-|minFrequency|minimum clock frequency value if the clock has a configurable frequency|Object| |
-|maxFrequency|maximum clock frequency value if the clock has a configurable frequency|Object| |
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|fixedFrequency|clock frequency value if the clock has a fixed frequency|definitions.json#/unit| |
 |numberClockOutputs|number of clock outputs in a clock IC|Number| |
 |diffSingleEnded|property describing whether a clock output is single ended or differential|String| |
-|jitter|cycle to cycle clock jitter|Object| |
-|frequencyTolerance|amount of frequency variation specced from nominal frequency|Object| |
-|powerSupplyRejectionRatio|power supply rejection ratio (PSRR)or ratio between power supply variation and output variation|Object| |
+|jitter|cycle to cycle clock jitter|definitions.json#/unit| |
+|frequencyTolerance|amount of frequency variation specced from nominal frequency|definitions.json#/unit| |
+|powerSupplyRejectionRatio|power supply rejection ratio (PSRR)or ratio between power supply variation and output variation|definitions.json#/unit| |
 |outputFormat|signal format of clock output|String| |
-|package|component's package size and description|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
+|package|component's package size and description|definitions.json#/package| |
+|currentConsumption|current used by device in various power modes|definitions.json#/currentConsumption| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
-### 3.14	 Microcontrollers
+### 3.13	 IC Micro
 
-This section contains non-trivial microcontroller components.
+Source: [ic micro.json](https://github.com/chromeos/digital-datasheets/blob/main/part-spec/ic micro.json)
 
-####  3.14.1	 Microcontroller/EC (Electronic Controller)
-
-The table below gives a description of the properties used to specify an embedded controller ("EC") in a digital datasheet.
+####  3.13.1	 Microcontroller/ec
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
-|onChipFlash|quantity of built-in flash in a microprocessor|Object| |
-|onChipRAM|quantity of built-in RAM in a microprocessor|Object| |
-|onChipROM|quantity of built-in ROM in a microprocessor|Object| |
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|onChipFlash|quantity of built-in flash in a microprocessor|definitions.json#/unit| |
+|onChipRAM|quantity of built-in RAM in a microprocessor|definitions.json#/unit| |
+|onChipROM|quantity of built-in ROM in a microprocessor|definitions.json#/unit| |
 |coreProcessor|description of core processor|String| |
 |coreArchitectureBits|number of bits of data a CPU can transfer per clock cycle|String| |
-|clockSpeed|speed of main CPU clock|Object| |
+|clockSpeed|speed of main CPU clock|definitions.json#/unit| |
 |firmwareVersion|firmware version of the part|String| |
-|activePower|average power of device in active state|Object| |
-|standbyPower|average power of device in standby state|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
-|package|component's package size and description|Object| |
+|activePower|average power of device in active state|definitions.json#/unit| |
+|standbyPower|average power of device in standby state|definitions.json#/unit| |
+|currentConsumption|current used by device in various power modes|definitions.json#/currentConsumption| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|definitions.json#/package| |
 
-### 3.15	 IC Misc
+### 3.14	 IC Misc
 
-This section contains miscellaneous integrated circuits.
+Source: [ic misc.json](https://github.com/chromeos/digital-datasheets/blob/main/part-spec/ic misc.json)
 
-####  3.15.1	 Speaker Amplifier
-
-The table below gives a description of the properties used to specify a speacker amplifier in a digital datasheet.
+####  3.14.1	 Speaker Amplifier
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
 |dataLength|number of bits in a data word|Number| |
-|outputPower|typical output power from speaker amplifier|Object| |
-|efficiency|typical speaker amplifier efficiency|Object| |
-|thd+n|typical total harmonic distortion plus noise of amplifier|Object| |
-|sampleRate|sample rate of data out of amplifier|Object| |
+|outputPower|typical output power from speaker amplifier|definitions.json#/conditionalProperty| |
+|efficiency|typical speaker amplifier efficiency|definitions.json#/conditionalProperty| |
+|thd+n|typical total harmonic distortion plus noise of amplifier|definitions.json#/conditionalProperty| |
+|sampleRate|sample rate of data out of amplifier|definitions.json#/unit| |
 |interface|describes the communication interface from the chip to the host|String| |
-|package|component's package size and description|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
+|package|component's package size and description|definitions.json#/package| |
+|currentConsumption|current used by device in various power modes|definitions.json#/currentConsumption| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
-####  3.15.2	 Audio Codec
-
-The table below gives a description of the properties used to specify an audio codec in a digital datasheet.
+####  3.14.2	 Audio Codec
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
 |dataLength|number of bits in a data word|Number| |
 |hpOutputSNR|headphone amplifier output SNR|Number| |
-|hpOutputTHD+N|headphone output total harmonic distortion plus noise|Object| |
-|micInputSNR|microphone input SNR|Object| |
-|micInputTHD+N|microphone input total harmonic distortion plus noise|Object| |
+|hpOutputTHD+N|headphone output total harmonic distortion plus noise|definitions.json#/unit| |
+|micInputSNR|microphone input SNR|definitions.json#/unit| |
+|micInputTHD+N|microphone input total harmonic distortion plus noise|definitions.json#/unit| |
 |jackDetect|describes whether headphone jack detection is supported|Boolean| |
 |interface|describes the communication interface from the chip to the host|String| |
-|package|component's package size and description|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
+|package|component's package size and description|definitions.json#/package| |
+|currentConsumption|current used by device in various power modes|definitions.json#/currentConsumption| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
-####  3.15.3	 WLAN Module
-
-The table below gives a description of the properties used to specify a WLAN module in a digital datasheet.
+####  3.14.3	 WLAN Module
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
 |wlanSpec|version of wlan specification supported by module|String| |
 |bluetoothVersion|version of bluetooth supported by module|String| |
 |txrxChains|number of tx and rx chains in a wifi module|String| |
@@ -665,143 +709,171 @@ The table below gives a description of the properties used to specify a WLAN mod
 |keying|pcie card key|String| |
 |lteCoexFilter|describes whether module supports lte coexistance filtering|Boolean| |
 |interface|describes the communication interface from the chip to the host|String| |
-|package|component's package size and description|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
+|package|component's package size and description|definitions.json#/package| |
+|currentConsumption|current used by device in various power modes|definitions.json#/currentConsumption| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
-####  3.15.4	 WWAN Module
-
-The table below gives a description of the properties used to specify WWAN module in a digital datasheet.
+####  3.14.4	 WWAN Module
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
 |networkSupport|networks supported by wwan module|String| |
 |gpsSupport|whether wwan module has gps support|Boolean| |
 |m2FormFactor|wlan module form factor described by jedec standard m.2 form factors|String| |
 |keying|pcie card key|String| |
 |interface|describes the communication interface from the chip to the host|String| |
-|package|component's package size and description|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
+|package|component's package size and description|definitions.json#/package| |
+|currentConsumption|current used by device in various power modes|definitions.json#/currentConsumption| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
-####  3.15.5	 TPM (Trusted Platform Module)
-
-The table below gives a description of the properties used to specify a TPM in a digital datasheet.
-
-|Property|Description|JSON Data Type|Required?|
-|:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
-|interface|describes the communication interface from the chip to the host|String| |
-|package|component's package size and description|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
-
-### 3.16	 Storage/memory
-
-This section contains data storage components, for both volatile and
-non-volatile memory, as well as read-only and read-write memory.
-
-####  3.16.1	 SSD
-
-The table below gives a description of the properties used to specify an SSD in a digital datasheet.
+####  3.14.5	 Tpm
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|interface|describes the communication interface from the chip to the host|array of String| |
+|package|component's package size and description|definitions.json#/package| |
+|currentConsumption|current used by device in various power modes|definitions.json#/currentConsumption| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+
+### 3.15	 Storage/memory
+
+Source: [memory.json](https://github.com/chromeos/digital-datasheets/blob/main/part-spec/storage/memory.json)
+
+####  3.15.1	 SSD
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
 |type|type of ssd storage as defined by interface and technology|String| |
-|capacity|capacity of SSD|Object|Yes|
-|dataRate|maximum data rate|Object| |
+|capacity|capacity of SSD|definitions.json#/unit|Yes|
+|dataRate|maximum data rate|definitions.json#/unit| |
 |interface|interface of ssd to host|String| |
-|package|component's package size and description|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
+|currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
+|package|component's package size and description|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
-####  3.16.2	 SD Card
-
-The table below gives a description of the properties used to specify an SD card in a digital datasheet.
+####  3.15.2	 SD Card
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
 |type|type of sd card|String| |
-|capacity|capacity of SD card|Object|Yes|
-|dataRate|maximum data rate|Object| |
-|package|component's package size and description|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
+|capacity|capacity of SD card|definitions.json#/unit|Yes|
+|dataRate|maximum data rate|definitions.json#/unit| |
+|currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
+|package|component's package size and description|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
-####  3.16.3	 DRAM
-
-The table below gives a description of the properties used to specify DRAM in a digital datasheet.
+####  3.15.3	 Dram
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
 |type|type of dram|String| |
-|capacity|capacity of dram chip|Object|Yes|
-|speed|dram maximum speed|Object| |
-|package|component's package size and description|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
+|capacity|capacity of dram chip|definitions.json#/unit|Yes|
+|diesPerChip|number of dies of dram chip|Number| |
+|channelsPerDie|number of channels per die of dram chip|Number| |
+|banksPerChannel|number of banks per channel of dram|Number| |
+|bitsPerChannel|channel density of dram|definitions.json#/unit| |
+|bitsPerDie|total die density of dram|definitions.json#/unit| |
+|pageSize|page size of dram|definitions.json#/unit| |
+|rows|number of rows per channel of dram|Number| |
+|colunms|number of columns per row of dram|Number| |
+|speed|dram maximum speed|definitions.json#/unit| |
+|currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
+|package|component's package size and description|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
-####  3.16.4	 ROM
-
-The table below gives a description of the properties used to specify ROM in a digital datasheet.
+####  3.15.4	 Rom
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
-|capacity|capacity of rom|Object| |
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|capacity|capacity of rom|definitions.json#/unit| |
 |interface|interface of rom to host|String| |
 |qeStatus|indicates whether the QE bit is set|Boolean| |
-|package|component's package size and description|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
+|currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
+|package|component's package size and description|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
-### 3.17	 USB-C
-
-This section contains components related to implementing USB-C.
-
-####  3.17.1	 USB-C Power Delivery Controller
-
-The table below gives a description of the properties used to specify a USB-C PD controller in a digital datasheet.
+####  3.15.5	 Eeprom
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|common component identifying information, such as mpn|Object|Yes|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|capacity|capacity/density of eeprom|definitions.json#/unit|Yes|
+|numberOfWords|number of rows in the eeprom|Number| |
+|bitsPerWords|number of columns in the eeprom|Number| |
+|bootBlockSize|size of the eeprom boot block|definitions.json#/unit| |
+|interface|interface of eeprom to host|String| |
+|clockFrequency|eeprom clock frequency|definitions.json#/unit| |
+|accessTime|time to access the eeprom|definitions.json#/unit| |
+|endurance|time in years a bit in the eeprom can retain its data state |Number| |
+|dataRetention|maximum number of read and write cycle the part can support|Number| |
+|currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
+|package|component's package size and description|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+
+####  3.15.6	 Flash Memory
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|capacity|capacity/density of flash memory|definitions.json#/unit|Yes|
+|pageSize|page size of flash memory|definitions.json#/unit| |
+|blockSize|block size of flash memory|definitions.json#/unit| |
+|bootBlockSize|size of the flash memory boot block|definitions.json#/unit| |
+|interface|interface of flash memory to host|String| |
+|clockFrequency|flash memory clock frequency|definitions.json#/unit| |
+|blockEraseTime|time it takes to erase a block (largest erasable unit) of the flash memory|definitions.json#/unit| |
+|sectorEraseTime|time it takes to erase a sector (smallest erasable unit) of the flash memory|definitions.json#/conditionalProperty| |
+|chipEraseTime|time it takes to erase the flash memory|definitions.json#/unit| |
+|pageProgramTime|time it takes to program a page of the flash memory|definitions.json#/unit| |
+|endurance|time in years a bit in the eeprom can retain its data state |Number| |
+|dataRetention|maximum number of read and write cycle the part can support|Number| |
+|hwReset|whether the part supports a hardware reset pin|Boolean| |
+|writeProtect|whether the part has a write protect pin|Boolean| |
+|currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
+|package|component's package size and description|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+
+### 3.16	 Usbc
+
+Source: [usbc.json](https://github.com/chromeos/digital-datasheets/blob/main/part-spec/usbc.json)
+
+####  3.16.1	 Usb-c Pd Controller
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
 |pdVersion|version of power delivery spec implemented by controller|String|Yes|
 |usbTypecRevision|usb type-c spec revision implemented by controller|String| |
 |powerRoleSupported|roles supported by pd controller|String| |
 |fastRoleSwapSupport|whether the pd controller supports fast role swap (FRS)|Boolean| |
 |vconnPowerSupport|whether the pd controller has support for vconn power|Boolean| |
-|vconnPowerLimit|power limit supported by internal vconn switch (if supported)|Object| |
-|vconnMaxCurrent|maximum continuous current supported by internal vconn switch (if supported)|Object| |
-|vconnOverCurrentLimit|over current limit supported by internal vconn switch (if supported)|Object| |
+|vconnPowerLimit|power limit supported by internal vconn switch (if supported)|definitions.json#/unit| |
+|vconnMaxCurrent|maximum continuous current supported by internal vconn switch (if supported)|definitions.json#/unit| |
+|vconnOverCurrentLimit|over current limit supported by internal vconn switch (if supported)|definitions.json#/unit| |
 |integratedVbusDischargeSwitch|whether the pd controller has one or more integrated vbus discharge switches |Boolean| |
 |integratedLoadSwitch|whether the pd controller has one or more integrated load switches |Boolean| |
-|maxSinkCurrent|maximum continuous current supported by pd controller integrated sink load switch|Object| |
-|maxSourceCurrent|maximum continuous current supported by pd controller integrated source load switch|Object| |
-|sinkfetOverCurrentLimit|over current limit supported by pd controller integrated sink load switch|Object| |
-|sourcefetOverCurrentLimit|over current limit supported by pd controller integrated source load switch|Object| |
-|onResistanceSinkFet|on-resistance of the integrated sink load switch|Object| |
-|onResistanceSourceFet|on-resistance of the integrated source load switch|Object| |
-|activeCurrent|active current of pd controller (during PD communication)|Object| |
-|shutDownCurrent|shutdown current of pd controller|Object| |
-|idleCurrent|idle current of pd controller (cable connected but no PD communiation)|Object| |
-|thermalShudownThresholdRising|Thermal Shudown (tsd) Threshold with temperature rising|Object| |
-|thermalShudownThresholdFalling|Thermal Shudown (tsd) Threshold with temperature falling|Object| |
-|vbusOvervoltageProtectionThresholdRising|Overvoltage Protection (OVP) Threshold with vbus voltage rising|Object| |
-|vbusOvervoltageProtectionThresholdFalling|Overvoltage Protection (OVP) Threshold with vbus voltage falling|Object| |
-|vbusUndervoltageLockoutThresholdRising|Undervoltage Lockout Out (UVLO) Threshold with vbus voltage rising|Object| |
-|vbusUndervoltageLockoutThresholdFalling|Undervoltage Lockout Out (UVLO) Threshold with vbus voltage rising|Object| |
-|vconnOvervoltageProtectionThresholdRising|Overvoltage Protection (OVP) Threshold with vconn voltage rising|Object| |
-|vconnOvervoltageProtectionThresholdFalling|Overvoltage Protection (OVP) Threshold with vconn voltage falling|Object| |
-|vconnUndervoltageLockoutThresholdRising|Undervoltage Lockout Out (UVLO) Threshold with vconn voltage rising|Object| |
-|vconnUndervoltageLockoutThresholdFalling|Undervoltage Lockout Out (UVLO) Threshold with vconn voltage rising|Object| |
-|pins|array of pin objects with associated properties|array of Object| |
-|package|component's package size and description|Object| |
+|maxSinkCurrent|maximum continuous current supported by pd controller integrated sink load switch|definitions.json#/unit| |
+|maxSourceCurrent|maximum continuous current supported by pd controller integrated source load switch|definitions.json#/unit| |
+|sinkfetOverCurrentLimit|over current limit supported by pd controller integrated sink load switch|definitions.json#/unit| |
+|sourcefetOverCurrentLimit|over current limit supported by pd controller integrated source load switch|definitions.json#/unit| |
+|onResistanceSinkFet|on-resistance of the integrated sink load switch|definitions.json#/unit| |
+|onResistanceSourceFet|on-resistance of the integrated source load switch|definitions.json#/unit| |
+|currentConsumption|current used by device in various power modes|definitions.json#/currentConsumption| |
+|componentProtectionThresholds|Thermal and power supply protection thresholds of a device|definitions.json#/componentProtectionThresholds| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|definitions.json#/package| |
 
-### 3.18	 Semiconductor
+### 3.17	 Semiconductor
 
 Source: [semiconductor.json](https://github.com/chromeos/digital-datasheets/blob/main/part-spec/semiconductor.json)
 
-####  3.18.1	 Mosfet
-
-The table below gives a description of the properties used to specify a MOSFET.
+####  3.17.1	 Mosfet
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -817,8 +889,7 @@ The table below gives a description of the properties used to specify a MOSFET.
 |vgsThMax|maximum gate to source voltage difference required to produce a conducting path between drain and source.|definitions.json#/unit| |
 |vgsThTyp|gate to source voltage difference (vgs) required to produce a conducting path between drain and source.|definitions.json#/unit| |
 |vgsThMin|minimum gate to source voltage difference required to produce a conducting path between drain and source.|definitions.json#/unit| |
-|vsdDiodeVfTyp|typical reverse diode forward voltage when a MOSFET is in off-state.|definitions.json#/unit| |
-|vsdDiodeVfMax|maximum reverse diode forward voltage when a MOSFET is in off-state.|definitions.json#/unit| |
+|vsdDiodeVf|reverse diode forward voltage when a MOSFET is in off-state.|definitions.json#/unit| |
 |iD|Drain Current of a MOSFET.|definitions.json#/unit| |
 |iDrain|maximum continous DC current that can flow through a MOSFET channel.This is a limiting value.|definitions.json#/unit| |
 |idPulsed|maximum pulsed DC current that can flow through a MOSFET channel.This is a limiting value.|definitions.json#/unit| |
@@ -827,44 +898,28 @@ The table below gives a description of the properties used to specify a MOSFET.
 |diodeContinuousCurrent|maximum continuous forward current of the body diode of a MOSFET (IS).This is a limiting value.|definitions.json#/unit| |
 |diodePulsedCurrent|maximum pulsed forward current of the body diode of a MOSFET. This is a limiting value.|definitions.json#/unit| |
 |forwardTransconductance|signal gain, change in drain current with variation of gate-source voltage of a MOSFET (gFS).|definitions.json#/conditionalProperty| |
-|rdsonTyp|typical on-state resistance of a MOSFET.|definitions.json#/conditionalProperty| |
-|rdsonMax|maximum on-state resistance of a MOSFET.|definitions.json#/conditionalProperty| |
-|rgTyp|typical internal gate resistance of a MOSFET.|definitions.json#/conditionalProperty| |
-|rgMax|maximum internal gate resistance of a MOSFET.|definitions.json#/conditionalProperty| |
-|cissTyp|typical input capacitance of a MOSFET.|definitions.json#/conditionalProperty| |
-|cissMax|maximum input capacitance of a MOSFET.|definitions.json#/conditionalProperty| |
-|cossTyp|typical output capacitance of a MOSFET.|definitions.json#/conditionalProperty| |
-|cossMax|maximum output capacitance of a MOSFET.|definitions.json#/conditionalProperty| |
-|crssTyp|typical reverse transfer capacitance of a MOSFET.|definitions.json#/conditionalProperty| |
-|crssMax|maximum reverse transfer capacitance of a MOSFET.|definitions.json#/conditionalProperty| |
-|qgTyp|typical total gate charge of a MOSFET.|definitions.json#/conditionalProperty| |
-|qgMax|maximum total gate charge of a MOSFET.|definitions.json#/conditionalProperty| |
-|qgdTyp|typical gate to drain charge of a MOSFET.|definitions.json#/conditionalProperty| |
-|qgdMax|maximum gate to drain charge of a MOSFET.|definitions.json#/conditionalProperty| |
-|qgsTyp|typical gate to source charge of a MOSFET.|definitions.json#/conditionalProperty| |
-|qgsMax|maximum gate to source charge of a MOSFET.|definitions.json#/conditionalProperty| |
-|qrrTyp|typical reverse recovery charge of the body diode of a MOSFET.|definitions.json#/conditionalProperty| |
-|qrrMax|maximum reverse recovery charge of the body diode of a MOSFET.|definitions.json#/conditionalProperty| |
+|rdson|on-state resistance of a MOSFET.|definitions.json#/conditionalProperty| |
+|rg|internal gate resistance of a MOSFET.|definitions.json#/conditionalProperty| |
+|ciss|input capacitance of a MOSFET.|definitions.json#/conditionalProperty| |
+|coss|output capacitance of a MOSFET.|definitions.json#/conditionalProperty| |
+|crss|reverse transfer capacitance of a MOSFET.|definitions.json#/conditionalProperty| |
+|qg|total gate charge of a MOSFET.|definitions.json#/conditionalProperty| |
+|qgd|gate to drain charge of a MOSFET.|definitions.json#/conditionalProperty| |
+|qgs|gate to source charge of a MOSFET.|definitions.json#/conditionalProperty| |
+|qrr|reverse recovery charge of the body diode of a MOSFET.|definitions.json#/conditionalProperty| |
 |idVsVds|graph of drain current (iD) vs drain source voltage (vds).|graph.json#/graphDefiniton| |
 |idVsVgs|graph of drain current (iD) vs gate source voltage (vgs).|graph.json#/graphDefiniton| |
-|tdONTyp|typical turn-on delay time of a MOSFET|definitions.json#/conditionalProperty| |
-|tdONMax|maximum turn-on delay time of a MOSFET|definitions.json#/conditionalProperty| |
-|tdOFFTyp|typical turn-off delay time of a MOSFET|definitions.json#/conditionalProperty| |
-|tdOFFMax|maximum turn-off delay time of a MOSFET|definitions.json#/conditionalProperty| |
-|riseTimeTyp|typical rise time of a MOSFET|definitions.json#/conditionalProperty| |
-|riseTimeMax|maximum rise time of a MOSFET|definitions.json#/conditionalProperty| |
-|fallTimeTyp|typical fall time of a MOSFET|definitions.json#/conditionalProperty| |
-|fallTimeMax|maximum fall time of a MOSFET|definitions.json#/conditionalProperty| |
-|trrTyp|typical reverse recovery time of the body diode of a MOSFET.|definitions.json#/conditionalProperty| |
-|trrMax|maximum reverse recovery time of the body diode of a MOSFET.|definitions.json#/conditionalProperty| |
+|tdON|turn-on delay time of a MOSFET|definitions.json#/conditionalProperty| |
+|tdOFF|turn-off delay time of a MOSFET|definitions.json#/conditionalProperty| |
+|riseTime|rise time of a MOSFET|definitions.json#/conditionalProperty| |
+|fallTime|fall time of a MOSFET|definitions.json#/conditionalProperty| |
+|trr|reverse recovery time of the body diode of a MOSFET.|definitions.json#/conditionalProperty| |
 |pTot|maximum power dissipation of a MOSFET.|definitions.json#/conditionalProperty| |
 |pdVsTemp|graph of power dissipation vs temperature.|graph.json#/graphDefiniton| |
 |pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 |package|component's package size and description|definitions.json#/package| |
 
-####  3.18.2	 Diode
-
-The table below gives a description of the properties used to specify a diode.
+####  3.17.2	 Diode
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -873,23 +928,16 @@ The table below gives a description of the properties used to specify a diode.
 |diodeCount|number of diodes in the package|Number| |
 |diodeConfiguration|configuration of diode|String| |
 |numberOfProtectedLines|number of lines a diode can protect|Number| |
-|vfTyp|typical forward voltage of a diode|definitions.json#/conditionalProperty| |
-|vfMax|maximum forward voltage of a diode|definitions.json#/conditionalProperty| |
-|vfMin|minimum forward voltage of a diode|definitions.json#/conditionalProperty| |
+|vf|forward voltage of a diode|definitions.json#/conditionalProperty| |
 |if|continuous forward current of a diode|definitions.json#/unit| |
 |ifm|maximum continuous forward current a diode can support|definitions.json#/unit| |
 |ifrm|maximum repetitive peak forward current a diode can support|definitions.json#/unit| |
 |ifsm|maximum non-repetitive surge forward current a diode can support|definitions.json#/unit| |
 |vbr|breakdown voltage of a diode|definitions.json#/unit| |
-|irTyp|typical reverse current|definitions.json#/conditionalProperty| |
-|irMax|maximum reverse current|definitions.json#/conditionalProperty| |
-|vzTyp|typical breakdown voltage of a zener diode|definitions.json#/conditionalProperty| |
-|vzMax|maximum breakdown voltage of a zener diode|definitions.json#/conditionalProperty| |
-|vzMin|minimum breakdown voltage of a zener diode|definitions.json#/conditionalProperty| |
+|ir|reverse current|definitions.json#/conditionalProperty| |
+|vz|breakdown voltage of a zener diode|definitions.json#/conditionalProperty| |
 |vrm|maximum reverse standoff voltage a tvs diode can withstand|definitions.json#/unit| |
-|vclTyp|typical clamping voltage of a tvs diode|definitions.json#/conditionalProperty| |
-|vclMax|maximum clamping voltage of a tvs diode|definitions.json#/conditionalProperty| |
-|vclMin|minimum clamping voltage of a tvs diode|definitions.json#/conditionalProperty| |
+|vcl|clamping voltage of a tvs diode|definitions.json#/conditionalProperty| |
 |vr|maximum continuous reverse biased voltage a diode can support|definitions.json#/unit| |
 |vrrm|maximum repetitive reverse voltage pulses a diode can support|definitions.json#/unit| |
 |cd|diode junction capacitance - between the anode and cathode- in reverse bias condition|definitions.json#/unit| |
@@ -897,5 +945,211 @@ The table below gives a description of the properties used to specify a diode.
 |pTot|maximum power dissipation of a forward biased diode|definitions.json#/conditionalProperty| |
 |ifVsVf|graph of forward current (If) vs forward voltage (VfTyp)|graph.json#/graphDefiniton| |
 |package|package size of resistor|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+
+####  3.17.3	 Bjt
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn.|definitions.json#/componentID|Yes|
+|bjtChannelType|doping of a transistor's channel - describes whether a transistor is n-type or p-type.|String| |
+|transistorCount|number of transistors in the package.|Number| |
+|collectorCurrent|maximum current flow of BJT as measured at the collector (Icc)|definitions.json#/unit| |
+|peakCollectorCurrent|maximum pulsed current flow of BJT as measured at the collector (Icm)|definitions.json#/conditionalProperty| |
+|baseCurrent|maximum current flow of BJT as measured at the base (Ib)|definitions.json#/unit| |
+|peakBaseCurrent|maximum pulsed current flow of BJT as measured at the base (Ibm)|definitions.json#/conditionalProperty| |
+|collectorBaseVoltage|maximum voltage between collector and base terminals of BJT with an open emitter terminal (V_CBO)|definitions.json#/unit| |
+|collectorEmitterVoltage|maximum voltage between collector and emitter terminals of BJT with an open base terminal (V_CEO)|definitions.json#/unit| |
+|emitterBaseVoltage|maximum voltage between emitter and base terminals of BJT with an open collector terminal (V_EBO)|definitions.json#/unit| |
+|totalPowerDissipation|maximum power that can be continously dissipated under temperature conditions|definitions.json#/conditionalProperty| |
+|collectorBaseCutOffCurrent|current into the collector terminal when the BJT's base and collector are reverse biased and the emitter is open (I_CBO)|definitions.json#/conditionalProperty| |
+|emitterBaseCutOffCurrent|current into the base terminal when the BJT's base and emitter are reverse biased and the collector is open (I_EBO)|definitions.json#/conditionalProperty| |
+|dcGain|ratio of collector current to base current (hfe)|definitions.json#/conditionalProperty| |
+|collectorEmitterSaturationVoltage|collector-emitter voltage below which a change in base current does not impact collector current (VCE_SAT)|definitions.json#/conditionalProperty| |
+|baseEmitterSaturationVoltage|base-emitter voltage required to ensure the collector is forward biased for certain current conditions (VBE_SAT)|definitions.json#/conditionalProperty| |
+|collectorEmitterBreakdownVoltage|collector-emitter voltage at which a specified current flows with the base open|definitions.json#/conditionalProperty| |
+|baseEmitterBreakdownVoltage|base-emitter voltage at which a specified current flows with the collector open|definitions.json#/conditionalProperty| |
+|delayTime|time delay between input signal rising and when collector current rises to 10% of Isat (td)|definitions.json#/conditionalProperty| |
+|riseTime|time for collector current to rise through active region from 10% to 90% of Isat (tr)|definitions.json#/conditionalProperty| |
+|storageTime|time delay between input signal falling and when collector current falls to 90% of Isat (ts)|definitions.json#/conditionalProperty| |
+|fallTime|time for collector current to fall from 90% to 10% of Isat (tf)|definitions.json#/conditionalProperty| |
+|collectorCapacitance|parasitic capacitance of collector terminal under certain conditions (Cc)|definitions.json#/conditionalProperty| |
+|emitterCapacitance|parasitic capacitance of emitter terminal under certain conditions (Ce)|definitions.json#/conditionalProperty| |
+|transitionFrequency|frequency of unity current gain with a short circuit output (ft)|definitions.json#/conditionalProperty| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|definitions.json#/package| |
+
+### 3.18	 LED
+
+Source: [led.json](https://github.com/chromeos/digital-datasheets/blob/main/part-spec/led.json)
+
+####  3.18.1	 LED
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn.|definitions.json#/componentID|Yes|
+|ledColor|LED color|String| |
+|vf|forward voltage of an LED |definitions.json#/conditionalProperty| |
+|if|continuous forward current of an LED|definitions.json#/unit| |
+|ifp|peak forward current of an LED|definitions.json#/unit| |
+|vr|maximum continuous reverse biased voltage an LED can support|definitions.json#/unit| |
+|ir|reverse current (leakage) of an LED|definitions.json#/conditionalProperty| |
+|ledCapacitance|capacitance of an LED|definitions.json#/unit| |
+|iv|LED luminous intensity|definitions.json#/conditionalProperty| |
+|peakWavelength|light spectrum output value emitted by an LED at highest wavelength|definitions.json#/conditionalProperty| |
+|dominantWavelength| dominant wavelength an LED emits the majority of the time|definitions.json#/conditionalProperty| |
+|angleHalfIntensity| angle at which LED intensity falls to 50% of its maximum value|definitions.json#/unit| |
+|pd|power dissipation of an LED|definitions.json#/unit| |
+|package|package size of LED|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+
+### 3.19	 Adc_dac
+
+Source: [adc_dac.json](https://github.com/chromeos/digital-datasheets/blob/main/part-spec/adc_dac.json)
+
+####  3.19.1	 Adc
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|digitalResolution|number of bits of resolution in the digital output|Number| |
+|conversionTime|time required to convert from an analog signal to digital output|definitions.json#/unit| |
+|sampleRate|maximum rate at which the ADC can convert samples|definitions.json#/unit| |
+|offsetError|difference (in LSB) of the output at the zero point between an actual and ideal ADC|Number| |
+|gainError|difference (in LSB) of how the actual transfer function matches the ideal transfer function, also called full scale error|Number| |
+|integralNonlinearity|deviation of an actual transfer function from an ideal transfer function, in LSB|Number| |
+|differentialNonlinearity|difference (in LSB) in step width between the actual and ideal transfer functions|Number| |
+|rmsNoise|root mean square (RMS) noise of ADC|Number| |
+|SNR|signal to noise (SNR) ratio of the converter|Number| |
+|interface|digital communication interfaces supported|array of String| |
+|inputType|whether the ADC has a single ended or differential input|String| |
+|inputChannels|number of input channels|Number| |
+|currentConsumption|current used by device in various power modes|definitions.json#/currentConsumption| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|definitions.json#/package| |
+
+####  3.19.2	 Dac
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|digitalResolution|number of bits of resolution|Number| |
+|offsetError|analog response to an input code of all zeros|definitions.json#/unit| |
+|gainError|difference (in percentage of FSR) of how well the slope of the actual transfer function matches the ideal transfer function|definitions.json#/unit| |
+|integralNonlinearity|deviation of an actual transfer function from an ideal transfer function, in LSB|Number| |
+|differentialNonlinearity|difference between the ideal and the actual output responses for successive DAC codes, in LSB|Number| |
+|settlingTime|time from application of input code to valid output response|definitions.json#/unit| |
+|sampleRate|maximum rate at which the DAC can convert samples|definitions.json#/unit| |
+|interface|digital communication interfaces supported|array of String| |
+|otuputType|whether the DAC has a single ended or differential output|String| |
+|outputChannels|number of output channels|Number| |
+|currentConsumption|current used by device in various power modes|definitions.json#/currentConsumption| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|definitions.json#/package| |
+
+### 3.20	 Clock_oscillators
+
+Source: [hardware.json](https://github.com/chromeos/digital-datasheets/blob/main/part-spec/hardware.json)
+
+####  3.20.1	 Oscillator
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn.|definitions.json#/componentID|Yes|
+|baseResonator|technology producing resonance|String| |
+|frequency|output frequency of oscillator|definitions.json#/unit|Yes|
+|frequencyStability|Frequency change over temperature, load, supply voltage change and aging|Must set either Ref or Type| |
+|currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
+|outputLoad|maxium capacitive load that can be supported by oscillator|definitions.json#/unit| |
+|riseTime|time for output to go from 10% to 90% of output max|definitions.json#/unit| |
+|fallTime|time for output to go from 90% to 10% of output max|definitions.json#/unit| |
+|startUpTime|time between enable and output reaching 10% of output max|definitions.json#/unit| |
+|dutyCycle|time above 50% of output max over entire period|definitions.json#/unit| |
+|phaseJitter|variation of waveform period|definitions.json#/conditionalProperty| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+|package|component's package size and description|definitions.json#/package| |
+
+### 3.21	 Sensor
+
+Source: [sensor.json](https://github.com/chromeos/digital-datasheets/blob/main/part-spec/sensor.json)
+
+####  3.21.1	 Accelerometer
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|accelerometerType|type of accelerometer|String| |
+|accelerationRanges|range of force that accelerometer can measure|Number| |
+|accelerationSensitivity|smallest change in force the accelerometer is able to capture (typical) at a given acceleration range|definitions.json#/conditionalProperty| |
+|accelerationSensitivityOverTemperature|accelerometer sensitivity change over temperature|definitions.json#/value| |
+|axis|number of axes of acceleration measurement|Number| |
+|zerogOffset|output of the accelerometer when no acceleration is applied|definitions.json#/value| |
+|zerogOffsetOverTemperature|accelerometer zero-g offset change over temperature|definitions.json#/value| |
+|outputType|measurement output type|String| |
+|outputResolution|output resolution of acceleration measurement|definitions.json#/unit| |
+|interface|interface(s) for communication to host|array of String| |
+|bandwidth|bandwidth of acceleration measurement|definitions.json#/unit| |
+|outputDataRate|output Data rate (ODR) of a device|definitions.json#/unit| |
+|rmsNoise|broadband rms noise of a device|definitions.json#/value| |
+|spectralNoiseDensity|spectral noise density of a device|definitions.json#/value| |
+|currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
+|package|package size of a device|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+
+####  3.21.2	 Gyroscope
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|gyroRanges|range of angular speed that gyro can measure|Number| |
+|gyroSensitivity|smallest change in angular speed gyro is able to capture (typical) at a given gyro range|definitions.json#/conditionalProperty| |
+|gyroSensitivityOverTemperature|gyroscope sensitivity change over temperature|definitions.json#/value| |
+|axis|number of axes of measurement|Number| |
+|zeroRateOffset|output of the gyroscope when no angular velocity is applied|definitions.json#/value| |
+|zeroRateOffsetOverTemperature|gyro zero rate offset change over temperature|definitions.json#/value| |
+|interface|interface(s) for communication to host|array of String| |
+|bandwidth|bandwidth of gyroscope|definitions.json#/unit| |
+|outputDataRate|output Data rate (ODR) of a device|definitions.json#/unit| |
+|outputType|measurement output type|String| |
+|rmsNoise|broadband rms noise of a device|definitions.json#/value| |
+|spectralNoiseDensity|spectral noise density of a device|definitions.json#/value| |
+|currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
+|package|package size of a device|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+
+####  3.21.3	 Magnetic Sensor
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|outputPolarity|indicates whether the sensor output is active high or active low|String| |
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|magneticSensingTechnology|method by which magnetism is detected|String| |
+|outputType|measurement output type|String| |
+|quiescentOutput|output of the magnetic sensor when no magnet is present|definitions.json#/unit| |
+|outputVoltageLinearRange|output voltage range over which the magnetic flux density response is linear|definitions.json#/unit| |
+|linearMagneticSensingRange|magnetic flux density range over which the output voltage is linear |definitions.json#/value| |
+|sensitivity|this is the gain - amount of change in the output voltage for a change in the magnetic flux density|definitions.json#/value| |
+|operatePoint|magnetic flux density threshold which causes the sensor output to turn on|definitions.json#/value| |
+|releasePoint|magnetic flux density threshold which causes the sensor output to turn off|definitions.json#/value| |
+|hysteresis|delta between the operate point and the release point threshold|definitions.json#/value| |
+|bandwidth|sensing bandwidth|definitions.json#/unit| |
+|currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
+|package|package size of a device|definitions.json#/package| |
+|pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+
+####  3.21.4	 Thermal
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
+|sensingTechnology|method by which temperature is detected|String| |
+|outputType|measurement output type|String| |
+|interface|interface(s) for communication to host|array of String| |
+|accuracy|accuracy of temperature sensor|definitions.json#/unit| |
+|temperatureRange|range of temperature sensor|definitions.json#/unit| |
+|resolution|maximum resolution of temperature sensor|Number| |
+|gain|amount of change in the output voltage for a change in temperature|definitions.json#/value| |
+|currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
+|package|package size of a device|definitions.json#/package| |
 |pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
 
