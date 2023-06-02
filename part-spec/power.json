@@ -184,11 +184,11 @@
         },
         "powerSupplyRejectionRatio": {
           "description": "graph object to capture Power Supply Rejection Ratio (PSRR) of device over various frequencies",
-          "$ref": "definitions.json#/graphDefiniton"
+          "$ref": "graph.json#/graphDefiniton"
         },
         "rmsOutputNoise": {
           "description": "graph object to capture RMS output noise of device over various frequencies",
-          "$ref": "definitions.json#/graphDefiniton"
+          "$ref": "graph.json#/graphDefiniton"
         },
         "totalOutputNoise": {
           "description": "total output noise of a device",
