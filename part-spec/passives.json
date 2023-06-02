@@ -65,11 +65,11 @@
                 },
                 "resistorDerating": {
                     "description": "graph object to capture resistance changes with temperature",
-                    "$ref": "definitions.json#/graphDefiniton"
+                    "$ref": "graph.json#/graphDefiniton"
                 },
                 "package": {
                     "description": "package size of resistor",
-                    "$ref": "graph.json#/package"
+                    "$ref": "definitions.json#/package"
                 }
             }
         },
@@ -142,7 +142,7 @@
                 },
                 "capacitorDerating": {
                     "description": "graph object to capture capacitance changes with voltage",
-                    "$ref": "definitions.json#/graphDefiniton"
+                    "$ref": "graph.json#/graphDefiniton"
                 },
                 "package": {
                     "description": "package size of capacitor",
@@ -221,11 +221,11 @@
                 },
                 "saturationCurve": {
                     "description": "graph object to capture inductor saturation with current",
-                    "$ref": "definitions.json#/graphDefiniton"
+                    "$ref": "graph.json#/graphDefiniton"
                 },
                 "resonantFrequencyCurve": {
                     "description": "graph object to capture inductor resonant frequency",
-                    "$ref": "definitions.json#/graphDefiniton"
+                    "$ref": "graph.json#/graphDefiniton"
                 },
                 "package": {
                     "description": "package size of inductor",
@@ -251,7 +251,7 @@
                 },
                 "commonModeAttenuation": {
                     "description": "graph object to capture common mode attenuation of a common mode choke at various frequencies",
-                    "$ref": "definitions.json#/graphDefiniton"
+                    "$ref": "graph.json#/graphDefiniton"
                 },
                 "dcResistance": {
                     "description": "dc resistance (DCR) of a common mode choke",
