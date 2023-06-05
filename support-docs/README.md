@@ -125,8 +125,8 @@ A digital datasheet shall follow the international standard notation, YYYY-MM-DD
 |nominalFootprints|references to external footprints in standard CAD formats|array of #/$definitions/externalFile| |
 |breakoutExamples|references to external board file that contains layout breakout example|array of #/$definitions/externalFile| |
 |partModelInformation|reference to an external XML file that contains a part model in IPC/DAC2552 format|#/$definitions/externalFile| |
-|standardPackageSize|name of standard package size (imperial)|Must set either Ref or Type| |
-|standardPackageType|name of standard package types|Must set either Ref or Type| |
+|standardPackageSize|name of standard package size (imperial)|String| |
+|standardPackageType|name of standard package types|String| |
 
 ####  3.4.9	 PinFunction
 
@@ -267,8 +267,8 @@ Source: [passives.json](https://github.com/chromeos/digital-datasheets/blob/main
 |maxLimitingElementVoltage|maximum voltage value that can be applied continuously to the resistor|definitions.json#/unit| |
 |minTemperature|minimum temperature under which a resistor can be expected to reliably operate|definitions.json#/unit| |
 |maxTemperature|maximum temperature under which a resistor can be expected to reliably operate|definitions.json#/unit| |
-|resistorDerating|graph object to capture resistance changes with temperature|definitions.json#/graphDefiniton| |
-|package|package size of resistor|graph.json#/package| |
+|resistorDerating|graph object to capture resistance changes with temperature|graph.json#/graphDefiniton| |
+|package|package size of resistor|definitions.json#/package| |
 
 ####  3.8.2	 Capacitor
 
@@ -285,7 +285,7 @@ Source: [passives.json](https://github.com/chromeos/digital-datasheets/blob/main
 |temperatureCoefficient|change in capacitance when the temperature is changed|Number| |
 |minTemperature|minimum temperature under which a capacitor can be expected to reliably operate|definitions.json#/unit| |
 |maxTemperature|maximum temperature under which a capacitor can be expected to reliably operate|definitions.json#/unit| |
-|capacitorDerating|graph object to capture capacitance changes with voltage|definitions.json#/graphDefiniton| |
+|capacitorDerating|graph object to capture capacitance changes with voltage|graph.json#/graphDefiniton| |
 |package|package size of capacitor|definitions.json#/package| |
 
 ####  3.8.3	 Inductor
@@ -304,8 +304,8 @@ Source: [passives.json](https://github.com/chromeos/digital-datasheets/blob/main
 |temperatureCoefficient|change in inductance when the temperature is changed|Number| |
 |minTemperature|minimum temperature under which a inductor can be expected to reliably operate|definitions.json#/unit| |
 |maxTemperature|maximum temperature under which a inductor can be expected to reliably operate|definitions.json#/unit| |
-|saturationCurve|graph object to capture inductor saturation with current|definitions.json#/graphDefiniton| |
-|resonantFrequencyCurve|graph object to capture inductor resonant frequency|definitions.json#/graphDefiniton| |
+|saturationCurve|graph object to capture inductor saturation with current|graph.json#/graphDefiniton| |
+|resonantFrequencyCurve|graph object to capture inductor resonant frequency|graph.json#/graphDefiniton| |
 |package|package size of inductor|definitions.json#/package| |
 
 ####  3.8.4	 Common Mode Choke
@@ -314,7 +314,7 @@ Source: [passives.json](https://github.com/chromeos/digital-datasheets/blob/main
 |:----|:----|:----|:----|
 |componentID|common component identifying information, such as mpn|definitions.json#/componentID|Yes|
 |diffModeCutoff|frequency at which the differential mode attenuation equals -3dB|definitions.json#/unit| |
-|commonModeAttenuation|graph object to capture common mode attenuation of a common mode choke at various frequencies|definitions.json#/graphDefiniton| |
+|commonModeAttenuation|graph object to capture common mode attenuation of a common mode choke at various frequencies|graph.json#/graphDefiniton| |
 |dcResistance|dc resistance (DCR) of a common mode choke|definitions.json#/unit| |
 |rmsCurrent|applied DC current (IRMS) that produces a common mode choke temperature rise of 40 deg C|definitions.json#/unit| |
 |intendedApplication|intended application of a particular common mode choke|String| |
@@ -377,8 +377,8 @@ Source: [power.json](https://github.com/chromeos/digital-datasheets/blob/main/pa
 |lineRegulation|output voltage variation,from minimum input voltage to maximum input voltage, of a device |definitions.json#/unit| |
 |enableTime|time between enable asserted and output voltage rising to 10% nominal|definitions.json#/unit| |
 |rampTime|time for output voltage to go from 10% vout nominal to 90% vout nominal|definitions.json#/unit| |
-|powerSupplyRejectionRatio|graph object to capture Power Supply Rejection Ratio (PSRR) of device over various frequencies|definitions.json#/graphDefiniton| |
-|rmsOutputNoise|graph object to capture RMS output noise of device over various frequencies|definitions.json#/graphDefiniton| |
+|powerSupplyRejectionRatio|graph object to capture Power Supply Rejection Ratio (PSRR) of device over various frequencies|graph.json#/graphDefiniton| |
+|rmsOutputNoise|graph object to capture RMS output noise of device over various frequencies|graph.json#/graphDefiniton| |
 |totalOutputNoise|total output noise of a device|definitions.json#/unit| |
 |currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
 |componentProtectionThresholds|Thermal and power supply protection thresholds of a device|definitions.json#/componentProtectionThresholds| |
@@ -1058,7 +1058,7 @@ Source: [hardware.json](https://github.com/chromeos/digital-datasheets/blob/main
 |componentID|common component identifying information, such as mpn.|definitions.json#/componentID|Yes|
 |baseResonator|technology producing resonance|String| |
 |frequency|output frequency of oscillator|definitions.json#/unit|Yes|
-|frequencyStability|Frequency change over temperature, load, supply voltage change and aging|Must set either Ref or Type| |
+|frequencyStability|Frequency change over temperature, load, supply voltage change and aging|Number| |
 |currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
 |outputLoad|maxium capacitive load that can be supported by oscillator|definitions.json#/unit| |
 |riseTime|time for output to go from 10% to 90% of output max|definitions.json#/unit| |
@@ -1152,4 +1152,6 @@ Source: [sensor.json](https://github.com/chromeos/digital-datasheets/blob/main/p
 |currentConsumption|current consumption of a device|definitions.json#/currentConsumption| |
 |package|package size of a device|definitions.json#/package| |
 |pins|array of pin objects with associated properties|array of definitions.json#/pinSpec| |
+
+
 

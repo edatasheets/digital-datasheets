@@ -518,6 +518,7 @@
         },
         "standardPackageSize": {
           "description": "name of standard package size (imperial)",
+          "type": "string",
           "example": [
             "0201",
             "0402",
@@ -528,6 +529,7 @@
         },
         "standardPackageType": {
           "description": "name of standard package types",
+          "type": "string",
           "example": [
             "bga",
             "wcsp",

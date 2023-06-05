@@ -33,7 +33,7 @@
                 "frequencyStability": {
                     "description": "Frequency change over temperature, load, supply voltage change and aging",
                     "$comment": "units of ppm",
-                    "$type": "number"
+                    "type": "number"
                 },
                 "currentConsumption": {
                     "description": "current consumption of a device",
