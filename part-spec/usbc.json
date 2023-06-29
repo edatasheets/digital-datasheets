@@ -14,7 +14,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "pdVersion": {
                     "description": "version of power delivery spec implemented by controller",
@@ -52,17 +52,17 @@
                 "vconnPowerLimit": {
                     "description": "power limit supported by internal vconn switch (if supported)",
                     "comment": "units of watts",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "vconnMaxCurrent": {
                     "description": "maximum continuous current supported by internal vconn switch (if supported)", 
                     "comment": "units of amps",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "vconnOverCurrentLimit": {
                     "description": "over current limit supported by internal vconn switch (if supported)",
                     "comment": "units of amps",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "integratedVbusDischargeSwitch": {
                     "description": "whether the pd controller has one or more integrated vbus discharge switches ",
@@ -75,51 +75,51 @@
                 "maxSinkCurrent": {
                     "description": "maximum continuous current supported by pd controller integrated sink load switch",
                     "comment": "units of amps",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "maxSourceCurrent": {
                     "description": "maximum continuous current supported by pd controller integrated source load switch",
                     "comment": "units of amps",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "sinkfetOverCurrentLimit": {
                     "description": "over current limit supported by pd controller integrated sink load switch",
                     "comment": "units of amps",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "sourcefetOverCurrentLimit": {
                     "description": "over current limit supported by pd controller integrated source load switch",
                     "comment": "units of amps",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "onResistanceSinkFet": {
                     "description": "on-resistance of the integrated sink load switch",
                     "comment": "units of ohms",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "onResistanceSourceFet": {
                     "description": "on-resistance of the integrated source load switch",
                     "comment": "units of ohms",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
-                    "$ref": "definitions.json#/currentConsumption"
+                    "$ref": "currentConsumption.json#/currentConsumption"
                 },
                 "componentProtectionThresholds": {
                     "description": "Thermal and power supply protection thresholds of a device",
-                    "$ref": "definitions.json#/componentProtectionThresholds"
+                    "$ref": "componentProtectionThresholds.json#/componentProtectionThresholds"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 }
             }
         }
