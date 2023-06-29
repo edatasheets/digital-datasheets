@@ -13,7 +13,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn.",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "ledColor": {
                     "description": "LED color",
@@ -27,67 +27,67 @@
                 "vf": {
                     "description": "forward voltage of an LED ",
                     "comment": "conditions include: forward current of LED under which a given forward voltage was measured",
-                    "$ref": "definitions.json#/conditionalProperty"
+                    "$ref": "conditionalProperty.json#/conditionalProperty"
                 },
                 "if": {
                     "description": "continuous forward current of an LED",
                     "comment": "units of amps",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "ifp": {
                     "description": "peak forward current of an LED",
                     "comment": "units of amps",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "vr": {
                     "description": "maximum continuous reverse biased voltage an LED can support",
                     "comment": "units of volts",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "ir": {
                     "description": "reverse current (leakage) of an LED",
                     "comment": "conditions include: reverse biased voltage under which LED ir was measured", 
-                    "$ref": "definitions.json#/conditionalProperty"
+                    "$ref": "conditionalProperty.json#/conditionalProperty"
                 },
                 "ledCapacitance": {
                     "description": "capacitance of an LED",
                     "$comment": "units of pico Farads (pF)",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "iv": {
                     "description": "LED luminous intensity",
                     "$comment": "units of candela (cd). Measurement conditions include LED forward current, if",
-                    "$ref": "definitions.json#/conditionalProperty"
+                    "$ref": "conditionalProperty.json#/conditionalProperty"
                 },
                 "peakWavelength": {
                     "description": "light spectrum output value emitted by an LED at highest wavelength",
                     "$comment": "units of nanometer(nm). Measurement conditions include LED forward current, if",
-                    "$ref": "definitions.json#/conditionalProperty"
+                    "$ref": "conditionalProperty.json#/conditionalProperty"
                 },
                 "dominantWavelength": {
                     "description": " dominant wavelength an LED emits the majority of the time",
                     "$comment": "units of nanometer(nm). Measurement conditions include LED forward current, if",
-                    "$ref": "definitions.json#/conditionalProperty"
+                    "$ref": "conditionalProperty.json#/conditionalProperty"
                 },
                 "angleHalfIntensity": {
                     "description": " angle at which LED intensity falls to 50% of its maximum value",
                     "$comment": "units of degrees",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },          
                 "pd": {
                     "description": "power dissipation of an LED",
                     "$comment": "units of milliwatts (mW)",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "package": {
                     "description": "package size of LED",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 }
             }
