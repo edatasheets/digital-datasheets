@@ -1,5 +1,5 @@
 {
-    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/ic micro.json",
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/ic_micro.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "title": "ic micro",
@@ -13,22 +13,22 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "onChipFlash": {
                     "description": "quantity of built-in flash in a microprocessor",
                     "comment": "units of kilobytes",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "onChipRAM": {
                     "description": "quantity of built-in RAM in a microprocessor",
                     "comment": "units of kilobytes",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "onChipROM": {
                     "description": "quantity of built-in ROM in a microprocessor",
                     "comment": "units of kilobytes",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "coreProcessor": {
                     "description": "description of core processor",
@@ -47,7 +47,7 @@
                 "clockSpeed": {
                     "description": "speed of main CPU clock",
                     "comment": "units of hertz",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "firmwareVersion": {
                     "description": "firmware version of the part",
@@ -56,27 +56,27 @@
                 "activePower": {
                     "description": "average power of device in active state",
                     "comment": "units of mW",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "standbyPower": {
                     "description": "average power of device in standby state",
                     "comment": "units of uW",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
-                    "$ref": "definitions.json#/currentConsumption"
+                    "$ref": "currentConsumption.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 }
             }
         }
