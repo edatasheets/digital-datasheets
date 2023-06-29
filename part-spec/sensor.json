@@ -13,7 +13,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "accelerometerType": {
                     "description": "type of accelerometer",
@@ -44,12 +44,12 @@
                         "2000"
                     ],
                     "comment": "units of LSB/g (least significant bits per g) at a given acceleration range and output resolution",
-                    "$ref": "definitions.json#/conditionalProperty"
+                    "$ref": "conditionalProperty.json#/conditionalProperty"
                 },
                 "accelerationSensitivityOverTemperature": {
                     "description": "accelerometer sensitivity change over temperature",
                     "comment": "units of percentage per degree celsius (%/Celsius)",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "unit.json#/unit"
                 },
                 "axis": {
                     "description": "number of axes of acceleration measurement",
@@ -58,12 +58,12 @@
                 "zerogOffset": {
                     "description": "output of the accelerometer when no acceleration is applied",
                     "comment": "units of g-force (g)",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "unit.json#/unit"
                 },
                 "zerogOffsetOverTemperature": {
                     "description": "accelerometer zero-g offset change over temperature",
                     "comment": "units of milli g-force per degree celsius (mg/Celcius)",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "unit.json#/unit"
                 },
                 "outputType": {
                     "description": "measurement output type",
@@ -76,7 +76,7 @@
                 "outputResolution": {
                     "description": "output resolution of acceleration measurement",
                     "comment": "units of bits",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "interface": {
                     "description": "interface(s) for communication to host",
@@ -88,41 +88,41 @@
                     "type": "array",
                     "items": {
                         "type": "string"
-                        }
+                    }
                 },
                 "bandwidth": {
                     "description": "bandwidth of acceleration measurement",
                     "comment": "units of Hz",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "outputDataRate": {
                     "description": "output Data rate (ODR) of a device",
                     "comment": "units of Hz",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "rmsNoise": {
                     "description": "broadband rms noise of a device",
                     "comment": "units of milli g-force",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "unit.json#/unit"
                 },
                 "spectralNoiseDensity": {
                     "description": "spectral noise density of a device",
                     "comment": "units of milli g-force per square root of Hz (milli-g/rt-Hz)",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "unit.json#/unit"
                 },
                 "currentConsumption": {
                     "description": "current consumption of a device",
-                     "$ref": "definitions.json#/currentConsumption"
+                    "$ref": "currentConsumption.json#/currentConsumption"
                 },
                 "package": {
                     "description": "package size of a device",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -136,7 +136,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "gyroRanges": {
                     "description": "range of angular speed that gyro can measure",
@@ -146,12 +146,12 @@
                 "gyroSensitivity": {
                     "description": "smallest change in angular speed gyro is able to capture (typical) at a given gyro range",
                     "comment": "units of LSB/dps",
-                    "$ref": "definitions.json#/conditionalProperty"
+                    "$ref": "conditionalProperty.json#/conditionalProperty"
                 },
                 "gyroSensitivityOverTemperature": {
                     "description": "gyroscope sensitivity change over temperature",
                     "comment": "units of percentage per degree celsius",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "unit.json#/unit"
                 },
                 "axis": {
                     "description": "number of axes of measurement",
@@ -160,12 +160,12 @@
                 "zeroRateOffset": {
                     "description": "output of the gyroscope when no angular velocity is applied",
                     "comment": "units of degrees-per-second",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "unit.json#/unit"
                 },
                 "zeroRateOffsetOverTemperature": {
                     "description": "gyro zero rate offset change over temperature",
                     "comment": "units of degrees-per-second per degree celsius (dps/Celsius)",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "unit.json#/unit"
                 },
                 "interface": {
                     "description": "interface(s) for communication to host",
@@ -177,17 +177,17 @@
                     "type": "array",
                     "items": {
                         "type": "string"
-                        }
+                    }
                 },
                 "bandwidth": {
                     "description": "bandwidth of gyroscope",
                     "comment": "units of Hz",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "outputDataRate": {
                     "description": "output Data rate (ODR) of a device",
                     "comment": "units of Hz",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "outputType": {
                     "description": "measurement output type",
@@ -200,26 +200,26 @@
                 "rmsNoise": {
                     "description": "broadband rms noise of a device",
                     "comment": "units of degrees-per-second rms",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "unit.json#/unit"
                 },
                 "spectralNoiseDensity": {
                     "description": "spectral noise density of a device",
                     "comment": "units of degrees-per-second per square root Hertz (dps/rt-Hz)",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "unit.json#/unit"
                 },
                 "currentConsumption": {
                     "description": "current consumption of a device",
-                    "$ref": "definitions.json#/currentConsumption"
+                    "$ref": "currentConsumption.json#/currentConsumption"
                 },
                 "package": {
                     "description": "package size of a device",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -233,7 +233,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "magneticSensingTechnology": {
                     "description": "method by which magnetism is detected",
@@ -254,34 +254,34 @@
                 "quiescentOutput": {
                     "description": "output of the magnetic sensor when no magnet is present",
                     "comment": "units of volts(v)",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "outputVoltageLinearRange": {
                     "description": "output voltage range over which the magnetic flux density response is linear",
                     "comment": "lower value of the range captured by min value and top value of the range captured by max value (V) ",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "linearMagneticSensingRange": {
                     "description": "magnetic flux density range over which the output voltage is linear ",
                     "comment": "units of mT",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "unit.json#/unit"
                 },
                 "sensitivity": {
                     "description": "this is the gain - amount of change in the output voltage for a change in the magnetic flux density",
                     "comment": "units of mV/mT",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "unit.json#/unit"
                 },
                 "operatePoint": {
                     "description": "magnetic flux density threshold which causes the sensor output to turn on",
                     "comment": "units of mT. Depending on the sensor's design, the operation point can cause the output to trip High or Low.",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "unit.json#/unit"
                 },
                 "releasePoint": {
                     "description": "magnetic flux density threshold which causes the sensor output to turn off",
                     "comment": "units of mT. Depending on the sensor's design, the release point can cause the output to trip High or Low.",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "unit.json#/unit"
                 },
-                "outputPolarity":{
+                "outputPolarity": {
                     "description": "indicates whether the sensor output is active high or active low",
                     "enum": [
                         "high",
@@ -292,26 +292,26 @@
                 "hysteresis": {
                     "description": "delta between the operate point and the release point threshold",
                     "comment": "units of mT",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "unit.json#/unit"
                 },
                 "bandwidth": {
                     "description": "sensing bandwidth",
                     "comment": "units of Hz",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "currentConsumption": {
                     "description": "current consumption of a device",
-                    "$ref": "definitions.json#/currentConsumption"
+                    "$ref": "currentConsumption.json#/currentConsumption"
                 },
                 "package": {
                     "description": "package size of a device",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -325,7 +325,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "sensingTechnology": {
                     "description": "method by which temperature is detected",
@@ -359,12 +359,12 @@
                 "accuracy": {
                     "description": "accuracy of temperature sensor",
                     "comment": "units of degrees C",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "temperatureRange": {
                     "description": "range of temperature sensor",
                     "comment": "units of degrees C",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "resolution": {
                     "description": "maximum resolution of temperature sensor",
@@ -374,21 +374,21 @@
                 "gain": {
                     "description": "amount of change in the output voltage for a change in temperature",
                     "comment": "units of mV/degrees C",
-                    "$ref": "definitions.json#/value"
+                    "$ref": "unit.json#/unit"
                 },
                 "currentConsumption": {
                     "description": "current consumption of a device",
-                    "$ref": "definitions.json#/currentConsumption"
+                    "$ref": "currentConsumption.json#/currentConsumption"
                 },
                 "package": {
                     "description": "package size of a device",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 }
             }
