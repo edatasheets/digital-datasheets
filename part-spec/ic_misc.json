@@ -1,5 +1,5 @@
 {
-    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/ic misc.json",
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/ic_misc.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "title": "ic misc",
@@ -13,7 +13,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "dataLength": {
                     "description": "number of bits in a data word",
@@ -37,7 +37,7 @@
                 "sampleRate": {
                     "description": "sample rate of data out of amplifier",
                     "comment": "units of Hz",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "interface": {
                     "description": "describes the communication interface from the chip to the host",
@@ -50,17 +50,17 @@
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
-                    "$ref": "definitions.json#/currentConsumption"
+                    "$ref": "currentConsumption.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -74,7 +74,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "dataLength": {
                     "description": "number of bits in a data word",
@@ -88,17 +88,17 @@
                 "hpOutputTHD+N": {
                     "description": "headphone output total harmonic distortion plus noise",
                     "comment": "units of percentage",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "micInputSNR": {
                     "description": "microphone input SNR",
                     "comment": "units of dB",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "micInputTHD+N": {
                     "description": "microphone input total harmonic distortion plus noise",
                     "comment": "units of percentage",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "jackDetect": {
                     "description": "describes whether headphone jack detection is supported",
@@ -115,17 +115,17 @@
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
-                    "$ref": "definitions.json#/currentConsumption"
+                    "$ref": "currentConsumption.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -139,7 +139,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "wlanSpec": {
                     "description": "version of wlan specification supported by module",
@@ -202,17 +202,17 @@
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
-                    "$ref": "definitions.json#/currentConsumption"
+                    "$ref": "currentConsumption.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -226,7 +226,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "networkSupport": {
                     "description": "networks supported by wwan module",
@@ -267,17 +267,17 @@
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
-                    "$ref": "definitions.json#/currentConsumption"
+                    "$ref": "currentConsumption.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -291,7 +291,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "interface": {
                     "description": "describes the communication interface from the chip to the host",
@@ -307,17 +307,17 @@
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
-                    "$ref": "definitions.json#/currentConsumption"
+                    "$ref": "currentConsumption.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 }
             }
