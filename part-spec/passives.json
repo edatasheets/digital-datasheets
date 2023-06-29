@@ -14,29 +14,29 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 },
                 "value": {
                     "description": "resistor value",
                     "comment": "units of ohms",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "tolerance": {
                     "description": "nominal tolerance of a resistor",
                     "comment": "units of %",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "powerRating": {
                     "description": "measure of power a resistor can dissipate indefinitely without degrading performance",
                     "comment": "units of watts",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "temperatureCoefficient": {
                     "description": "change in resistance when the temperature is changed",
@@ -46,22 +46,22 @@
                 "maxOverloadVoltage": {
                     "description": "maximum voltage that can be applied to the resistor for a short period of time",
                     "comment": "units of volts",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "maxLimitingElementVoltage": {
                     "description": "maximum voltage value that can be applied continuously to the resistor",
                     "comment": "units of volts",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "minTemperature": {
                     "description": "minimum temperature under which a resistor can be expected to reliably operate",
                     "comment": "units of degrees (Celsius or Kelvin)",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "maxTemperature": {
                     "description": "maximum temperature under which a resistor can be expected to reliably operate",
                     "comment": "units of degrees (Celsius or Kelvin)",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "resistorDerating": {
                     "description": "graph object to capture resistance changes with temperature",
@@ -69,7 +69,7 @@
                 },
                 "package": {
                     "description": "package size of resistor",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 }
             }
         },
@@ -83,29 +83,29 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 },
                 "value": {
                     "description": "capacitor value",
                     "comment": "units of farads",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "tolerance": {
                     "description": "nominal tolerance of a capacitor",
                     "comment": "units of %",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "ratedVoltage": {
                     "description": "maximum voltage which may be applied continuously to a capacitance",
                     "comment": "units of volts",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "dielectric": {
                     "description": "dielectric material used in the capacitor",
@@ -123,7 +123,7 @@
                 "equivalentSerieResistance": {
                     "description": "equivalent series resistance (ESR) of the capacitor",
                     "comment": "units of ohms",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "temperatureCoefficient": {
                     "description": "change in capacitance when the temperature is changed",
@@ -133,12 +133,12 @@
                 "minTemperature": {
                     "description": "minimum temperature under which a capacitor can be expected to reliably operate",
                     "comment": "units of degrees (Celsius or Kelvin)",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "maxTemperature": {
                     "description": "maximum temperature under which a capacitor can be expected to reliably operate",
                     "comment": "units of degrees (Celsius or Kelvin)",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "capacitorDerating": {
                     "description": "graph object to capture capacitance changes with voltage",
@@ -146,7 +146,7 @@
                 },
                 "package": {
                     "description": "package size of capacitor",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 }
             }
         },
@@ -160,49 +160,49 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 },
                 "value": {
                     "description": "inductor value",
                     "comment": "units of henry",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "tolerance": {
                     "description": "nominal tolerance of an inductor",
                     "comment": "units of %",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "ratedCurrent": {
                     "description": "maximum continuous current the inductor can handle",
                     "comment": "units of amps",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "saturationCurrent": {
                     "description": "current where the inductor enters the magnetic state, and the inductance drops a specified amount",
                     "comment": "units of amps",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "rmsCurrent": {
                     "description": "DC current that produces an inductor temperature rise of 40 degrees Celsius",
                     "comment": "units of amps",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "selfResonantFrequency": {
                     "description": "frequency at which the inductor becomes a capacitor",
                     "comment": "units of hertz",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "dcResistance": {
                     "description": "DC resistance of the inductor",
                     "comment": "units of ohms",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "temperatureCoefficient": {
                     "description": "change in inductance when the temperature is changed",
@@ -212,12 +212,12 @@
                 "minTemperature": {
                     "description": "minimum temperature under which a inductor can be expected to reliably operate",
                     "comment": "units of degrees (Celsius or Kelvin)",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "maxTemperature": {
                     "description": "maximum temperature under which a inductor can be expected to reliably operate",
                     "comment": "units of degrees (Celsius or Kelvin)",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "saturationCurve": {
                     "description": "graph object to capture inductor saturation with current",
@@ -229,7 +229,7 @@
                 },
                 "package": {
                     "description": "package size of inductor",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 }
             }
         },
@@ -242,12 +242,12 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "diffModeCutoff": {
                     "description": "frequency at which the differential mode attenuation equals -3dB",
                     "comment": "units of Hz",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "commonModeAttenuation": {
                     "description": "graph object to capture common mode attenuation of a common mode choke at various frequencies",
@@ -256,12 +256,12 @@
                 "dcResistance": {
                     "description": "dc resistance (DCR) of a common mode choke",
                     "comment": "units of ohms",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "rmsCurrent": {
                     "description": "applied DC current (IRMS) that produces a common mode choke temperature rise of 40 deg C",
                     "comment": "units of amps",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "intendedApplication": {
                     "description": "intended application of a particular common mode choke",
@@ -274,13 +274,13 @@
                 },
                 "package": {
                     "description": "package size of device",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -294,40 +294,42 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "dcResistance": {
                     "description": "dc resistance (DCR) of ferrite bead",
                     "comment": "units of ohms",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "rmsCurrent": {
                     "description": "applied DC current (IRMS) that produces a ferrite bead temperature rise of 40 deg C",
                     "comment": "units of amps",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "impedance100MHz": {
                     "description": "impedance of ferrite bead under standard testing conditions at 100MHz",
                     "comment": "units of ohms",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "impedanceTolerance": {
                     "description": "variation of ferrite bead impedance expressed as +/- percentage",
                     "comment": "units of percentage",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "package": {
                     "description": "package size of device",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 }
             }
         }
     ]
 }
+        
+    
