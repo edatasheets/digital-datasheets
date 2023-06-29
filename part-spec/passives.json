@@ -65,7 +65,7 @@
                 },
                 "resistorDerating": {
                     "description": "graph object to capture resistance changes with temperature",
-                    "$ref": "graph.json#/graphDefiniton"
+                    "$ref": "graph.json#/graph"
                 },
                 "package": {
                     "description": "package size of resistor",
@@ -142,7 +142,7 @@
                 },
                 "capacitorDerating": {
                     "description": "graph object to capture capacitance changes with voltage",
-                    "$ref": "graph.json#/graphDefiniton"
+                    "$ref": "graph.json#/graph"
                 },
                 "package": {
                     "description": "package size of capacitor",
@@ -221,11 +221,11 @@
                 },
                 "saturationCurve": {
                     "description": "graph object to capture inductor saturation with current",
-                    "$ref": "graph.json#/graphDefiniton"
+                    "$ref": "graph.json#/graph"
                 },
                 "resonantFrequencyCurve": {
                     "description": "graph object to capture inductor resonant frequency",
-                    "$ref": "graph.json#/graphDefiniton"
+                    "$ref": "graph.json#/graph"
                 },
                 "package": {
                     "description": "package size of inductor",
@@ -251,7 +251,7 @@
                 },
                 "commonModeAttenuation": {
                     "description": "graph object to capture common mode attenuation of a common mode choke at various frequencies",
-                    "$ref": "graph.json#/graphDefiniton"
+                    "$ref": "graph.json#/graph"
                 },
                 "dcResistance": {
                     "description": "dc resistance (DCR) of a common mode choke",
