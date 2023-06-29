@@ -1,5 +1,5 @@
 {
-    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/ic logic.json",
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/ic_logic.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "title": "ic logic",
@@ -14,7 +14,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "type": {
                     "description": "logical operation performed by logic gate",
@@ -42,26 +42,26 @@
                 "propagationDelay": {
                     "description": "time between input changing to output changing",
                     "comment": "units of seconds",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "rampTime": {
                     "description": "time for output to go from 10% nominal output voltage to 90% nominal output voltage",
                     "comment": "units of seconds",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "units.json#/unit"
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
-                    "$ref": "definitions.json#/currentConsumption"
+                    "$ref": "currentConsumption.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -75,12 +75,12 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "definitions.json#/componentID"
+                    "$ref": "componentID.json#/componentID"
                 },
                 "fixedFrequency": {
                     "description": "clock frequency value if the clock has a fixed frequency",
                     "comment": "units of Hz",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "numberClockOutputs": {
                     "description": "number of clock outputs in a clock IC",
@@ -97,17 +97,17 @@
                 "jitter": {
                     "description": "cycle to cycle clock jitter",
                     "comment": "units of seconds",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "frequencyTolerance": {
                     "description": "amount of frequency variation specced from nominal frequency",
                     "comment": "units of percentage",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "powerSupplyRejectionRatio": {
                     "description": "power supply rejection ratio (PSRR)or ratio between power supply variation and output variation",
                     "comment": "units of dB",
-                    "$ref": "definitions.json#/unit"
+                    "$ref": "unit.json#/unit"
                 },
                 "outputFormat": {
                     "description": "signal format of clock output",
@@ -121,17 +121,17 @@
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "definitions.json#/package"
+                    "$ref": "package.json#/package"
                 },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
-                    "$ref": "definitions.json#/currentConsumption"
+                    "$ref": "currentConsumption.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "definitions.json#/pinSpec"
+                        "$ref": "pinSpec.json#/pinSpec"
                     }
                 }
             }
