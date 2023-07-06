@@ -1,7 +1,7 @@
 {
-  "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/Registers.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "definitions": {
+    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/registers.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "specification of registers",
     "registerDefiniton": {
         "type": "object",
         "required": [
@@ -24,12 +24,12 @@
             },
             "registerSize": {
                 "description": "Size of a register",
-                "$ref": "definitions.json#/unit"
+                "$ref": "unit.json#/unit"
             },
             "registerType": {
                 "description": "Type of a register",
                 "examples": [
-                    "data registers", 
+                    "data registers",
                     "address registers"
                 ],
                 "type": "string"
@@ -44,7 +44,7 @@
             },
             "registerAccessType": {
                 "description": "Access type of a Register",
-                "enum":[
+                "enum": [
                     "RO",
                     "RW"
                 ],
@@ -52,9 +52,11 @@
             },
             "registerBitField": {
                 "description": "Describes the bit fields in the register",
-                "$ref": "#/registerBitField"
+                "$ref": "#/$defs/registerBitField"
             }
-        },
+        }
+    },
+    "$defs": {
         "registerBitField": {
             "type": "object",
             "properties": {
@@ -89,7 +91,7 @@
                 },
                 "bitFieldAccessType": {
                     "description": "Access type of a bit field",
-                    "enum":[
+                    "enum": [
                         "RO",
                         "RW"
                     ],
@@ -98,5 +100,5 @@
             }
         }
     }
-  }
 }
+

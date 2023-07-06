@@ -9,13 +9,13 @@
 	"properties": {
 		"componentID": {
 			"description": "methods for identifying the version of the digital datasheet",
-			"$ref": "definitions.json#/componentID"
+			"$ref": "componentID.json#/componentID"
 		},
 		"pins": {
 			"description": "array of pin objects with associated properties",
 			"type": "array",
 			"items": {
-				"$ref": "definitions.json#/pinSpec"
+				"$ref": "pinSpec.json#/pinSpec"
 			}
 		}
 	}
