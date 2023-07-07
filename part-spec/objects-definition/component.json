@@ -1,5 +1,5 @@
 {
-	"$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/component.json",
+	"$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/objects-definition/component.json",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"type": "object",
 	"title": "component",

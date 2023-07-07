@@ -1,5 +1,5 @@
 {
-  "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/pinSpec.json",
+  "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/objects-definition/pinSpec.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "pinSpec": {
       "type": "object",

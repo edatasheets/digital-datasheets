@@ -17,7 +17,7 @@
       "properties": {
         "componentID": {
           "description": "common component identifying information, such as mpn",
-          "$ref": "componentID.json#/componentID"
+          "$ref": "./objects-definition/componentID.json#/componentID"
         },
         "regulatorTopology": {
           "description": "switching voltage regulator topology",
@@ -32,57 +32,57 @@
         "vin": {
           "description": "input voltage under which a device can be expected to operate without output dropping",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "vout": {
           "description": "output voltage a device can regulate",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "feedbackVoltage": {
           "description": "voltage comparison point at the feedback node",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "loadCurrent": {
           "description": "load current supported by a device",
           "comment": "units of amps",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "voutAccuracy": {
           "description": "output voltage variation at no load",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "loadRegulation": {
           "description": "output voltage variation from no load to full load ",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "lineRegulation": {
           "description": "output voltage variation from minimum input voltage to maximum input voltage ",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "currentConsumption": {
           "description": "current consumption of a device",
           "comment": "units of amps",
-          "$ref": "currentConsumption.json#/currentConsumption"
+          "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
         },
         "switchingFrequency": {
           "description": "switching frequency (fsw) of voltage regulator",
           "comment": "units of hertz",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "enableTime": {
           "description": "time between enable asserted and output voltage rising to 10% nominal",
           "comment": "units of seconds",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "rampTime": {
           "description": "time for output voltage to go from 10% vout nominal to 90% vout nominal",
           "comment": "units of seconds",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "integratedFets": {
           "description": "whether the regulator contains integrated switching mosfets",
@@ -90,26 +90,26 @@
         },
         "integratedFetProperties": {
           "description": "describes integrated fet current limits and rdson properties",
-          "$ref": "#/$defs/powerFetProperties"
+          "$ref": "./objects-definition/#/$defs/powerFetProperties"
         },
         "componentProtectionThresholds": {
           "description": "Thermal and power supply protection thresholds of a device",
-          "$ref": "componentProtectionThresholds.json#/componentProtectionThresholds"
+          "$ref": "./objects-definition/componentProtectionThresholds.json#/componentProtectionThresholds"
         },
         "efficiency": {
           "description": "power efficiency of regulator",
-          "$ref": "graph.json#/graph"
+          "$ref": "./objects-definition/graph.json#/graph"
         },
         "pins": {
           "description": "array of pin objects with associated properties",
           "type": "array",
           "items": {
-            "$ref": "pinSpec.json#/pinSpec"
+            "$ref": "./objects-definition/pinSpec.json#/pinSpec"
           }
         },
         "package": {
           "description": "component's package size and description",
-          "$ref": "package.json#/package"
+          "$ref": "./objects-definition/package.json#/package"
         }
       }
     },
@@ -125,22 +125,22 @@
       "properties": {
         "componentID": {
           "description": "common component identifying information, such as mpn",
-          "$ref": "componentID.json#/componentID"
+          "$ref": "./objects-definition/componentID.json#/componentID"
         },
         "vin": {
           "description": "input voltage under which the part can be expected to operate without the output dropping",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "vout": {
           "description": "output voltage the part can regulate",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "feedbackVoltage": {
           "description": "voltage comparison point at the feedback node (vref)",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "dropoutVoltage": {
           "description": "dropout voltage of a device",
@@ -150,68 +150,68 @@
         "loadCurrent": {
           "description": "load current supported by a device",
           "comment": "units of amps",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "currentLimit": {
           "description": "sustained output current threshold beyond which the output of a device starts drooping",
           "comment": "units of amps",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "voutAccuracy": {
           "description": "output voltage variation at no load of a device",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "loadRegulation": {
           "description": "output voltage variation,from no load to full load, of a device ",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "lineRegulation": {
           "description": "output voltage variation,from minimum input voltage to maximum input voltage, of a device ",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "enableTime": {
           "description": "time between enable asserted and output voltage rising to 10% nominal",
           "comment": "units of seconds",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "rampTime": {
           "description": "time for output voltage to go from 10% vout nominal to 90% vout nominal",
           "comment": "units of seconds",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "powerSupplyRejectionRatio": {
           "description": "graph object to capture Power Supply Rejection Ratio (PSRR) of device over various frequencies",
-          "$ref": "graph.json#/graph"
+          "$ref": "./objects-definition/graph.json#/graph"
         },
         "rmsOutputNoise": {
           "description": "graph object to capture RMS output noise of device over various frequencies",
-          "$ref": "graph.json#/graph"
+          "$ref": "./objects-definition/graph.json#/graph"
         },
         "totalOutputNoise": {
           "description": "total output noise of a device",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "currentConsumption": {
           "description": "current consumption of a device",
-          "$ref": "currentConsumption.json#/currentConsumption"
+          "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
         },
         "componentProtectionThresholds": {
           "description": "Thermal and power supply protection thresholds of a device",
-          "$ref": "componentProtectionThresholds.json#/componentProtectionThresholds"
+          "$ref": "./objects-definition/componentProtectionThresholds.json#/componentProtectionThresholds"
         },
         "pins": {
           "description": "array of pin objects with associated properties",
           "type": "array",
           "items": {
-            "$ref": "pinSpec.json#/pinSpec"
+            "$ref": "./objects-definition/pinSpec.json#/pinSpec"
           }
         },
         "package": {
           "description": "component's package size and description",
-          "$ref": "package.json#/package"
+          "$ref": "./objects-definition/package.json#/package"
         }
       }
     },
@@ -227,7 +227,7 @@
       "properties": {
         "componentID": {
           "description": "common component identifying information, such as mpn",
-          "$ref": "componentID.json#/componentID"
+          "$ref": "./objects-definition/componentID.json#/componentID"
         },
         "fetType": {
           "description": "type of pass FET in a device",
@@ -244,22 +244,22 @@
         "vin": {
           "description": "input voltage under which a device can be expected to reliabily operate",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "outputCurrent": {
           "description": "continuous DC cuurent supported by a device",
           "comment": "units of amps",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "onResistance": {
           "description": "FET on state resistance",
           "comment": "conditions includes vin and output current",
-          "$ref": "conditionalProperty.json#/conditionalProperty"
+          "$ref": "./objects-definition/conditionalProperty.json#/conditionalProperty"
         },
         "pdResistance": {
           "description": "pull-down resistance of a device from the output to the ground",
           "comment": "units of ohms",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "currentLimitSupport": {
           "description": "whether a device supports current limiting",
@@ -284,41 +284,41 @@
         "enableTime": {
           "description": "time between enable asserted and output voltage rising to 10% nominal",
           "comment": "conditions include output capacitor value, vin",
-          "$ref": "conditionalProperty.json#/conditionalProperty"
+          "$ref": "./objects-definition/conditionalProperty.json#/conditionalProperty"
         },
         "offTime": {
           "description": "time between enable deasserted and output voltage falling to 90% nominal",
           "comment": "conditions include output capacitor value, vin",
-          "$ref": "conditionalProperty.json#/conditionalProperty"
+          "$ref": "./objects-definition/conditionalProperty.json#/conditionalProperty"
         },
         "rampTime": {
           "description": "time for output voltage to go from 10% vout nominal to 90% vout nominal",
           "comment": "conditions include output capacitor value, vin",
-          "$ref": "conditionalProperty.json#/conditionalProperty"
+          "$ref": "./objects-definition/conditionalProperty.json#/conditionalProperty"
         },
         "fallTime": {
           "description": "time for output voltage to go from 90% vout nominal to 10% vout nominal",
           "comment": "conditions include output capacitor value and current output, vin",
-          "$ref": "conditionalProperty.json#/conditionalProperty"
+          "$ref": "./objects-definition/conditionalProperty.json#/conditionalProperty"
         },
         "currentConsumption": {
           "description": "current consumption of a device",
-          "$ref": "currentConsumption.json#/currentConsumption"
+          "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
         },
         "componentProtectionThresholds": {
           "description": "Thermal and power supply protection thresholds of a device",
-          "$ref": "componentProtectionThresholds.json#/componentProtectionThresholds"
+          "$ref": "./objects-definition/componentProtectionThresholds.json#/componentProtectionThresholds"
         },
         "pins": {
           "description": "array of pin objects with associated properties",
           "type": "array",
           "items": {
-            "$ref": "pinSpec.json#/pinSpec"
+            "$ref": "./objects-definition/pinSpec.json#/pinSpec"
           }
         },
         "package": {
           "description": "component's package size and description",
-          "$ref": "package.json#/package"
+          "$ref": "./objects-definition/package.json#/package"
         }
       }
     },
@@ -331,7 +331,7 @@
       "properties": {
         "componentID": {
           "description": "common component identifying information, such as mpn",
-          "$ref": "componentID.json#/componentID"
+          "$ref": "./objects-definition/componentID.json#/componentID"
         },
         "ldoRegulatorCount": {
           "description": "number of ldos in the device",
@@ -378,32 +378,32 @@
           "description": "definition of each instance of a component in the device",
           "type": "array",
           "items": {
-            "$ref": "#/$defs/powerComponentDefinitions"
+            "$ref": "./objects-definition/#/$defs/powerComponentDefinitions"
           }
         },
         "vin": {
           "description": "input voltage under which a device can be expected to reliabily operate",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "currentConsumption": {
           "description": "current consumption of a device",
-          "$ref": "currentConsumption.json#/currentConsumption"
+          "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
         },
         "componentProtectionThresholds": {
           "description": "Thermal and power supply protection thresholds of a device",
-          "$ref": "componentProtectionThresholds.json#/componentProtectionThresholds"
+          "$ref": "./objects-definition/componentProtectionThresholds.json#/componentProtectionThresholds"
         },
         "pins": {
           "description": "array of pin objects with associated properties",
           "type": "array",
           "items": {
-            "$ref": "pinSpec.json#/pinSpec"
+            "$ref": "./objects-definition/pinSpec.json#/pinSpec"
           }
         },
         "package": {
           "description": "component's package size and description",
-          "$ref": "package.json#/package"
+          "$ref": "./objects-definition/package.json#/package"
         }
       }
     },
@@ -418,36 +418,36 @@
       "properties": {
         "componentID": {
           "description": "common component identifying information, such as mpn",
-          "$ref": "componentID.json#/componentID"
+          "$ref": "./objects-definition/componentID.json#/componentID"
         },
         "vin": {
           "description": "input voltage under which a device can be expected to operate properly",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "vout": {
           "description": "output voltage a device can regulate",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "ioutPerString": {
           "description": "output current per string a device can regulate",
           "comment": "units of amps",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "ioutAccuracy": {
           "description": "accuracy of per string current regulated by a device",
           "comment": "units of %",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "fsw": {
           "description": "switching frequency of a device",
           "comment": "units of hertz",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "currentConsumption": {
           "description": "current consumption of a device",
-          "$ref": "currentConsumption.json#/currentConsumption"
+          "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
         },
         "integratedFets": {
           "description": "whether a device contains integrated switching mosfets",
@@ -455,12 +455,12 @@
         },
         "integratedFetProperties": {
           "description": "describes integrated fet current limits and rdson properties",
-          "$ref": "#/$defs/powerFetProperties"
+          "$ref": "./objects-definition/#/$defs/powerFetProperties"
         },
         "currentMatchingAccuracy": {
           "description": "current matching between LED strings",
           "comment": "units of percentage",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "dimmingSupport": {
           "description": "whether a device supports output current dimming",
@@ -477,29 +477,29 @@
         "dimmingFrequency": {
           "description": "dimming frequency of a device",
           "comment": "units of hertz",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "dimmingRatio": {
           "description": "dimming ratio of a device",
-          "$ref": "ratio.json#/ratio"
+          "$ref": "./objects-definition/ratio.json#/ratio"
         },
         "componentProtectionThresholds": {
           "description": "Thermal and power supply protection thresholds of a device",
-          "$ref": "icProtection.json#/componentProtectionThresholds"
+          "$ref": "./objects-definition/icProtection.json#/componentProtectionThresholds"
         },
         "efficiency": {
           "description": "efficiency vs forward current",
-          "$ref": "graph.json#/graph"
+          "$ref": "./objects-definition/graph.json#/graph"
         },
         "package": {
           "description": "package size",
-          "$ref": "package.json#/package"
+          "$ref": "./objects-definition/package.json#/package"
         },
         "pins": {
           "description": "array of pin objects with associated properties",
           "type": "array",
           "items": {
-            "$ref": "pinSpec.json#/pinSpec"
+            "$ref": "./objects-definition/pinSpec.json#/pinSpec"
           }
         }
       }
@@ -514,7 +514,7 @@
       "properties": {
         "componentID": {
           "description": "common component identifying information, such as mpn",
-          "$ref": "componentID.json#/componentID"
+          "$ref": "./objects-definition/componentID.json#/componentID"
         },
         "chargerType": {
           "description": "battery charger type",
@@ -582,79 +582,79 @@
         "inputCurrentAccuracy": {
           "description": "accuracy of input current when set",
           "comment": "units of %",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "batteryChargeCurrent": {
           "description": "charging current of a device",
           "comment": "units of amps",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "batteryChargeCurrentAccuracy": {
           "description": "charging current regulation accuracy of a device",
           "comment": "units of %",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "batteryPreChargeCurrent": {
           "description": "charging current of a device in pre-charge phase",
           "comment": "units of amps",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "batteryPreChargeCurrentAccuracy": {
           "description": "pre-charging current regulation accuracy of a device",
           "comment": "units of %",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "batteryTrickleChargeCurrent": {
           "description": "charging current of a device in trickle charge phase",
           "comment": "units of amps",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "batteryTrickleChargeCurrentAccuracy": {
           "description": "Trickle charging current regulation accuracy of a device",
           "comment": "units of %",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "batteryTerminationChargeCurrent": {
           "description": "charging current of a device in charge termination phase",
           "comment": "units of amps",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "batteryTerminationChargeCurrentAccuracy": {
           "description": "termination charging current regulation accuracy of a device",
           "comment": "units of %",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "batteryChargeVoltage": {
           "description": "battery charge voltage regulated by a device",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "batteryChargeVoltageAccuracy": {
           "description": "accuracy of battery charge voltage regulated by a device",
           "comment": "units of %",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "efficiency": {
           "description": "charge efficiency vs charge current of a device",
-          "$ref": "graph.json#/graph"
+          "$ref": "./objects-definition/graph.json#/graph"
         },
         "vin": {
           "description": "input voltage under which a device can be expected to reliabily operate",
           "comment": "units of volts",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "fsw": {
           "description": "switching frequency of a device",
           "comment": "units of hertz",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "currentConsumption": {
           "description": "current consumption of a device",
-          "$ref": "currentConsumption.json#/currentConsumption"
+          "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
         },
         "componentProtectionThresholds": {
           "description": "Thermal and power supply protection thresholds of a device",
-          "$ref": "componentProtectionThresholds.json#/componentProtectionThresholds"
+          "$ref": "./objects-definition/componentProtectionThresholds.json#/componentProtectionThresholds"
         },
         "batteryChargerProtections": {
           "description": "battery charger specific protections supported by device",
@@ -678,22 +678,22 @@
         },
         "integratedFetProperties": {
           "description": "describes integrated fet current limits and rdson properties",
-          "$ref": "#/$defs/powerFetProperties"
+          "$ref": "./objects-definition/#/$defs/powerFetProperties"
         },
         "gateCapacitance": {
           "description": "describes gate capacitance supported on external fets",
           "comment": "units of farads",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "inputSenseResistor": {
           "description": "describes intput sense resistor value",
           "comment": "units of ohms",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "batterySenseResistor": {
           "description": "describes battery sense resistor value",
           "comment": "units of ohms",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "passThroughMode": {
           "description": "whether pass through mode is supported",
@@ -727,12 +727,12 @@
           "description": "array of pin objects with associated properties",
           "type": "array",
           "items": {
-            "$ref": "pinSpec.json#/pinSpec"
+            "$ref": "./objects-definition/pinSpec.json#/pinSpec"
           }
         },
         "package": {
           "description": "component's package size and description",
-          "$ref": "package.json#/package"
+          "$ref": "./objects-definition/package.json#/package"
         }
       }
     }
@@ -744,22 +744,22 @@
         "ilimHSFET": {
           "description": "maximum sustained current output current under which the high side FET will operate properly",
           "comment": "units of amps",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "ilimLSFET": {
           "description": "maximum sustained current output current under which the low side FET will operate properly",
           "comment": "units of amps",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "rdsonHSFET": {
           "description": "high side FET on-resistance",
           "comment": "units of ohms",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         },
         "rdsonLSFET": {
           "description": "low side FET on-resistance",
           "comment": "units of ohms",
-          "$ref": "unit.json#/unit"
+          "$ref": "./objects-definition/unit.json#/unit"
         }
       }
     },

@@ -24,7 +24,7 @@
             },
             "registerSize": {
                 "description": "Size of a register",
-                "$ref": "unit.json#/unit"
+                "$ref": "./objects-definition/unit.json#/unit"
             },
             "registerType": {
                 "description": "Type of a register",

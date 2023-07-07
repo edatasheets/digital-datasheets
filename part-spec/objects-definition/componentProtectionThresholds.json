@@ -1,5 +1,5 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/componentProtectionThresholds.json",
+    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/objects-definition/componentProtectionThresholds.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Specifications to capture protection thresholds data of a component",
     "componentProtectionThresholds": {

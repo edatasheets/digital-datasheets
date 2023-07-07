@@ -14,7 +14,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
+                    "$ref": "./objects-definition/componentID.json#/componentID"
                 },
                 "type": {
                     "description": "property describing the way in which the switch is activated",
@@ -52,32 +52,32 @@
                 "voltageRating": {
                     "description": "maximum DC voltage potential that can be applied across an open switch",
                     "comment": "units of volts",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "currentRating": {
                     "description": "maximum DC current that can flow through a closed switch without causing excessive heating",
                     "comment": "units of amps",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "onResistance": {
                     "description": "nominal resistance of a closed switch",
                     "comment": "units of ohms",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "dielectricRating": {
                     "description": "maximum AC voltage potential that can be applied across an open switch for one minute",
                     "comment": "units of volts",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "package.json#/package"
+                    "$ref": "./objects-definition/package.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
+                        "$ref": "./objects-definition/pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -92,7 +92,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
+                    "$ref": "./objects-definition/componentID.json#/componentID"
                 },
                 "function": {
                     "description": "intended function of a connector",
@@ -126,7 +126,7 @@
                 "pitch": {
                     "description": "distance from the center of one contact on the connector to the center of the next contact",
                     "comment": "units of mm",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "keying": {
                     "description": "property describing whether a connector has an asymmetry to prevent it from being plugged in the wrong direction",
@@ -138,13 +138,13 @@
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "package.json#/package"
+                    "$ref": "./objects-definition/package.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
+                        "$ref": "./objects-definition/pinSpec.json#/pinSpec"
                     }
                 }
             }

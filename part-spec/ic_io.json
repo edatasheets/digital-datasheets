@@ -13,7 +13,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
+                    "$ref": "./objects-definition/componentID.json#/componentID"
                 },
                 "numberChannels": {
                     "description": "number of lanes (single ended or differential) supported by redriver",
@@ -34,21 +34,21 @@
                 "maxDataRate": {
                     "description": "maximum data rate supported by redriver",
                     "comment": "units of Hz",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "package.json#/package"
+                    "$ref": "./objects-definition/package.json#/package"
                 },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
-                    "$ref": "currentConsumption.json#/currentConsumption"
+                    "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
+                        "$ref": "./objects-definition/pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -62,7 +62,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
+                    "$ref": "./objects-definition/componentID.json#/componentID"
                 },
                 "numberOfLanes": {
                     "description": "number of lanes supported by a device",
@@ -97,7 +97,7 @@
                 "maxDataRate": {
                     "description": "maximum data rate supported by a device",
                     "comment": "units of Hz",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "integratedAuxLsSwitch": {
                     "description": "whether the AUX/LSx switch for SBU is integrated",
@@ -117,17 +117,17 @@
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "package.json#/package"
+                    "$ref": "./objects-definition/package.json#/package"
                 },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
-                    "$ref": "currentConsumption.json#/currentConsumption"
+                    "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                    "$ref": "pinSpec.json#/pinSpec"
+                    "$ref": "./objects-definition/pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -141,7 +141,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
+                    "$ref": "./objects-definition/componentID.json#/componentID"
                 },
                 "muxRatio": {
                     "description": "ratio of inputs to outputs",
@@ -172,17 +172,17 @@
                 },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
-                    "$ref": "currentConsumption.json#/currentConsumption"
+                    "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "package.json#/package"
+                    "$ref": "./objects-definition/package.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
+                        "$ref": "./objects-definition/pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -196,11 +196,11 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
+                    "$ref": "./objects-definition/componentID.json#/componentID"
                 },
                 "muxRatio": {
                     "description": "ratio of inputs to outputs",
-                    "$ref": "ratio.json#/ratio"
+                    "$ref": "./objects-definition/ratio.json#/ratio"
                 },
                 "inputInterfaces": {
                     "description": "list of interfaces mux is designed for",
@@ -221,17 +221,17 @@
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "package.json#/package"
+                    "$ref": "./objects-definition/package.json#/package"
                 },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
-                    "$ref": "currentConsumption.json#/currentConsumption"
+                    "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
+                        "$ref": "./objects-definition/pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -245,31 +245,31 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
+                    "$ref": "./objects-definition/componentID.json#/componentID"
                 },
                 "inputVoltage": {
                     "description": "input voltage level of level shifter",
                     "comment": "units of volts",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "outputVoltage": {
                     "description": "output voltage level of level shifter",
                     "comment": "units of volts",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "package.json#/package"
+                    "$ref": "./objects-definition/package.json#/package"
                 },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
-                    "$ref": "currentConsumption.json#/currentConsumption"
+                    "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
+                        "$ref": "./objects-definition/pinSpec.json#/pinSpec"
                     }
                 }
             }

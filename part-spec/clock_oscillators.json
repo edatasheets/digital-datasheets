@@ -14,7 +14,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn.",
-                    "$ref": "componentID.json#/componentID"
+                    "$ref": "./objects-definition/componentID.json#/componentID"
                 },
                 "baseResonator": {
                     "description": "technology producing resonance",
@@ -28,7 +28,7 @@
                 "frequency": {
                     "description": "output frequency of oscillator",
                     "$comment": "units of hertz",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "frequencyStability": {
                     "description": "Frequency change over temperature, load, supply voltage change and aging",
@@ -38,48 +38,48 @@
                 "currentConsumption": {
                     "description": "current consumption of a device",
                     "comment": "units of amps",
-                    "$ref": "currentConsumption.json#/currentConsumption"
+                    "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
                 },
                 "outputLoad": {
                     "description": "maxium capacitive load that can be supported by oscillator",
                     "comment": "units of farads",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "riseTime": {
                     "description": "time for output to go from 10% to 90% of output max",
                     "comment": "units of seconds",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "fallTime": {
                     "description": "time for output to go from 90% to 10% of output max",
                     "comment": "units of seconds",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "startUpTime": {
                     "description": "time between enable and output reaching 10% of output max",
                     "comment": "units of seconds",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "dutyCycle": {
                     "description": "time above 50% of output max over entire period",
                     "comment": "units of percent",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "phaseJitter": {
                     "description": "variation of waveform period",
                     "comment": "units of seconds",
-                    "$ref": "conditionalProperty.json#/conditionalProperty"
+                    "$ref": "./objects-definition/conditionalProperty.json#/conditionalProperty"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
+                        "$ref": "./objects-definition/pinSpec.json#/pinSpec"
                     }
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "package.json#/package"
+                    "$ref": "./objects-definition/package.json#/package"
                 }
             }
         }

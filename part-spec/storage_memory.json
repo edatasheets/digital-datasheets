@@ -14,7 +14,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
+                    "$ref": "./objects-definition/componentID.json#/componentID"
                 },
                 "type": {
                     "description": "type of ssd storage as defined by interface and technology",
@@ -27,12 +27,12 @@
                 "capacity": {
                     "description": "capacity of SSD",
                     "comment": "units of bytes (B)",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "dataRate": {
                     "description": "maximum data rate",
                     "comment": "units of bytes per second (Bps)",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "interface": {
                     "description": "interface of ssd to host",
@@ -46,17 +46,17 @@
                 "currentConsumption": {
                     "description": "current consumption of a device",
                     "comment": "units of amps",
-                    "$ref": "currentConsumption.json#/currentConsumption"
+                    "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "package.json#/package"
+                    "$ref": "./objects-definition/package.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
+                        "$ref": "./objects-definition/pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -71,7 +71,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
+                    "$ref": "./objects-definition/componentID.json#/componentID"
                 },
                 "type": {
                     "description": "type of sd card",
@@ -85,27 +85,27 @@
                 "capacity": {
                     "description": "capacity of SD card",
                     "comment": "units of bytes (B)",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "dataRate": {
                     "description": "maximum data rate",
                     "comment": "units of bytes per second (Bps)",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "currentConsumption": {
                     "description": "current consumption of a device",
                     "comment": "units of amps",
-                    "$ref": "currentConsumption.json#/currentConsumption"
+                    "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "package.json#/package"
+                    "$ref": "./objects-definition/package.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
+                        "$ref": "./objects-definition/pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -120,7 +120,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
+                    "$ref": "./objects-definition/componentID.json#/componentID"
                 },
                 "type": {
                     "description": "type of dram",
@@ -138,7 +138,7 @@
                 "capacity": {
                     "description": "capacity of dram chip",
                     "comment": "units of bytes (B)",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "diesPerChip": {
                     "description": "number of dies of dram chip",
@@ -155,17 +155,17 @@
                 "bitsPerChannel": {
                     "description": "channel density of dram",
                     "comment": "units of bits (b)",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "bitsPerDie": {
                     "description": "total die density of dram",
                     "comment": "units of bits (b)",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "pageSize": {
                     "description": "page size of dram",
                     "comment": "units of bytes (B)",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "rows": {
                     "description": "number of rows per channel of dram",
@@ -178,22 +178,22 @@
                 "speed": {
                     "description": "dram maximum speed",
                     "comment": "units of bits per second (bps)",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "currentConsumption": {
                     "description": "current consumption of a device",
                     "comment": "units of amps",
-                    "$ref": "currentConsumption.json#/currentConsumption"
+                    "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "package.json#/package"
+                    "$ref": "./objects-definition/package.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
+                        "$ref": "./objects-definition/pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -207,12 +207,12 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
+                    "$ref": "./objects-definition/componentID.json#/componentID"
                 },
                 "capacity": {
                     "description": "capacity of rom",
                     "comment": "units of bytes (B)",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "interface": {
                     "description": "interface of rom to host",
@@ -229,17 +229,17 @@
                 "currentConsumption": {
                     "description": "current consumption of a device",
                     "comment": "units of amps",
-                    "$ref": "currentConsumption.json#/currentConsumption"
+                    "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "package.json#/package"
+                    "$ref": "./objects-definition/package.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
+                        "$ref": "./objects-definition/pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -254,12 +254,12 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
+                    "$ref": "./objects-definition/componentID.json#/componentID"
                 },
                 "capacity": {
                     "description": "capacity/density of eeprom",
                     "comment": "units of bits",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "numberOfWords": {
                     "description": "number of rows in the eeprom",
@@ -272,7 +272,7 @@
                 "bootBlockSize": {
                     "description": "size of the eeprom boot block",
                     "comment": "units of bits",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "interface": {
                     "description": "interface of eeprom to host",
@@ -286,12 +286,12 @@
                 "clockFrequency": {
                     "description": "eeprom clock frequency",
                     "comment": "units of Hertz (Hz)",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "accessTime": {
                     "description": "time to access the eeprom",
                     "comment": "units of seconds (s)",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "endurance": {
                     "description": "time in years a bit in the eeprom can retain its data state ",
@@ -304,17 +304,17 @@
                 "currentConsumption": {
                     "description": "current consumption of a device",
                     "comment": "units of amps",
-                    "$ref": "currentConsumption.json#/currentConsumption"
+                    "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "package.json#/package"
+                    "$ref": "./objects-definition/package.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
+                        "$ref": "./objects-definition/pinSpec.json#/pinSpec"
                     }
                 }
             }
@@ -329,27 +329,27 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
+                    "$ref": "./objects-definition/componentID.json#/componentID"
                 },
                 "capacity": {
                     "description": "capacity/density of flash memory",
                     "comment": "units of bits",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "pageSize": {
                     "description": "page size of flash memory",
                     "comment": "units of bits",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "blockSize": {
                     "description": "block size of flash memory",
                     "comment": "units of bits",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "bootBlockSize": {
                     "description": "size of the flash memory boot block",
                     "comment": "units of bits",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "interface": {
                     "description": "interface of flash memory to host",
@@ -363,27 +363,27 @@
                 "clockFrequency": {
                     "description": "flash memory clock frequency",
                     "comment": "units of Hertz (Hz)",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "blockEraseTime": {
                     "description": "time it takes to erase a block (largest erasable unit) of the flash memory",
                     "comment": "units of seconds (s)",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "sectorEraseTime": {
                     "description": "time it takes to erase a sector (smallest erasable unit) of the flash memory",
                     "comment": "units of seconds (s)",
-                    "$ref": "conditionalProperty.json#/conditionalProperty"
+                    "$ref": "./objects-definition/conditionalProperty.json#/conditionalProperty"
                 },
                 "chipEraseTime": {
                     "description": "time it takes to erase the flash memory",
                     "comment": "units of seconds (s)",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "pageProgramTime": {
                     "description": "time it takes to program a page of the flash memory",
                     "comment": "units of seconds (s)",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "endurance": {
                     "description": "time in years a bit in the eeprom can retain its data state ",
@@ -404,17 +404,17 @@
                 "currentConsumption": {
                     "description": "current consumption of a device",
                     "comment": "units of amps",
-                    "$ref": "currentConsumption.json#/currentConsumption"
+                    "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "package.json#/package"
+                    "$ref": "./objects-definition/package.json#/package"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
+                        "$ref": "./objects-definition/pinSpec.json#/pinSpec"
                     }
                 }
             }

@@ -13,7 +13,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
+                    "$ref": "./objects-definition/componentID.json#/componentID"
                 },
                 "digitalResolution": {
                     "description": "number of bits of resolution in the digital output",
@@ -22,12 +22,12 @@
                 "conversionTime": {
                     "description": "time required to convert from an analog signal to digital output",
                     "comment": "units of seconds",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "sampleRate": {
                     "description": "maximum rate at which the ADC can convert samples",
                     "$comment": "unit of hertz",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "offsetError": {
                     "description": "difference (in LSB) of the output at the zero point between an actual and ideal ADC",
@@ -84,18 +84,18 @@
                 },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
-                    "$ref": "currentConsumption.json#/currentConsumption"
+                    "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
+                        "$ref": "./objects-definition/pinSpec.json#/pinSpec"
                     }
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "package.json#/package"
+                    "$ref": "./objects-definition/package.json#/package"
                 }
             }
         },
@@ -108,7 +108,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
+                    "$ref": "./objects-definition/componentID.json#/componentID"
                 },
                 "digitalResolution": {
                     "description": "number of bits of resolution",
@@ -117,12 +117,12 @@
                 "offsetError": {
                     "description": "analog response to an input code of all zeros",
                     "comment": "units of percentage of full scale range",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "gainError": {
                     "description": "difference (in percentage of FSR) of how well the slope of the actual transfer function matches the ideal transfer function",
                     "comment": "units of percentage of full scale range",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "integralNonlinearity": {
                     "description": "deviation of an actual transfer function from an ideal transfer function, in LSB",
@@ -137,12 +137,12 @@
                 "settlingTime": {
                     "description": "time from application of input code to valid output response",
                     "comment": "units of seconds",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "sampleRate": {
                     "description": "maximum rate at which the DAC can convert samples",
                     "$comment": "unit of hertz",
-                    "$ref": "unit.json#/unit"
+                    "$ref": "./objects-definition/unit.json#/unit"
                 },
                 "interface": {
                     "description": "digital communication interfaces supported",
@@ -169,18 +169,18 @@
                 },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
-                    "$ref": "currentConsumption.json#/currentConsumption"
+                    "$ref": "./objects-definition/currentConsumption.json#/currentConsumption"
                 },
                 "pins": {
                     "description": "array of pin objects with associated properties",
                     "type": "array",
                     "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
+                        "$ref": "./objects-definition/pinSpec.json#/pinSpec"
                     }
                 },
                 "package": {
                     "description": "component's package size and description",
-                    "$ref": "package.json#/package"
+                    "$ref": "./objects-definition/package.json#/package"
                 }
             }
         }
