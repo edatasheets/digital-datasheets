@@ -12,7 +12,8 @@
             "description": "type of file being linked",
             "examples": [
                 "brd",
-                "ibis"
+                "ibis",
+                "json"
             ],
             "type": "string"
         },
