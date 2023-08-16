@@ -8,17 +8,12 @@
       "title": "switching regulator",
       "type": "object",
       "required": [
-        "componentID",
         "regulatorTopology",
         "vin",
         "vout",
         "loadCurrent"
       ],
       "properties": {
-        "componentID": {
-          "description": "common component identifying information, such as mpn",
-          "$ref": "componentID.json#/componentID"
-        },
         "regulatorTopology": {
           "description": "switching voltage regulator topology",
           "examples": [
@@ -99,17 +94,6 @@
         "efficiency": {
           "description": "power efficiency of regulator",
           "$ref": "graph.json#/graph"
-        },
-        "pins": {
-          "description": "array of pin objects with associated properties",
-          "type": "array",
-          "items": {
-            "$ref": "pinSpec.json#/pinSpec"
-          }
-        },
-        "package": {
-          "description": "component's package size and description",
-          "$ref": "package.json#/package"
         }
       }
     },
@@ -117,16 +101,11 @@
       "title": "ldo",
       "type": "object",
       "required": [
-        "componentID",
         "vin",
         "vout",
         "loadCurrent"
       ],
       "properties": {
-        "componentID": {
-          "description": "common component identifying information, such as mpn",
-          "$ref": "componentID.json#/componentID"
-        },
         "vin": {
           "description": "input voltage under which the part can be expected to operate without the output dropping",
           "comment": "units of volts",
@@ -201,17 +180,6 @@
         "componentProtectionThresholds": {
           "description": "Thermal and power supply protection thresholds of a device",
           "$ref": "componentProtectionThresholds.json#/componentProtectionThresholds"
-        },
-        "pins": {
-          "description": "array of pin objects with associated properties",
-          "type": "array",
-          "items": {
-            "$ref": "pinSpec.json#/pinSpec"
-          }
-        },
-        "package": {
-          "description": "component's package size and description",
-          "$ref": "package.json#/package"
         }
       }
     },
@@ -219,16 +187,11 @@
       "title": "load switch",
       "type": "object",
       "required": [
-        "componentID",
         "vin",
         "outputCurrent",
         "onResistance"
       ],
       "properties": {
-        "componentID": {
-          "description": "common component identifying information, such as mpn",
-          "$ref": "componentID.json#/componentID"
-        },
         "fetType": {
           "description": "type of pass FET in a device",
           "enum": [
@@ -308,31 +271,13 @@
         "componentProtectionThresholds": {
           "description": "Thermal and power supply protection thresholds of a device",
           "$ref": "componentProtectionThresholds.json#/componentProtectionThresholds"
-        },
-        "pins": {
-          "description": "array of pin objects with associated properties",
-          "type": "array",
-          "items": {
-            "$ref": "pinSpec.json#/pinSpec"
-          }
-        },
-        "package": {
-          "description": "component's package size and description",
-          "$ref": "package.json#/package"
         }
       }
     },
     {
       "title": "pmic",
       "type": "object",
-      "required": [
-        "componentID"
-      ],
       "properties": {
-        "componentID": {
-          "description": "common component identifying information, such as mpn",
-          "$ref": "componentID.json#/componentID"
-        },
         "ldoRegulatorCount": {
           "description": "number of ldos in the device",
           "type": "number"
@@ -372,7 +317,10 @@
         "componentList": {
           "description": "List, by title, of components in the device",
           "comment": "list should only include components with an existing digital datasheet specification",
-          "type": "array of strings"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "instances": {
           "description": "definition of each instance of a component in the device",
@@ -393,17 +341,6 @@
         "componentProtectionThresholds": {
           "description": "Thermal and power supply protection thresholds of a device",
           "$ref": "componentProtectionThresholds.json#/componentProtectionThresholds"
-        },
-        "pins": {
-          "description": "array of pin objects with associated properties",
-          "type": "array",
-          "items": {
-            "$ref": "pinSpec.json#/pinSpec"
-          }
-        },
-        "package": {
-          "description": "component's package size and description",
-          "$ref": "package.json#/package"
         }
       }
     },
@@ -411,15 +348,10 @@
       "title": "display backlight driver",
       "type": "object",
       "required": [
-        "componentID",
         "iout",
         "vin"
       ],
       "properties": {
-        "componentID": {
-          "description": "common component identifying information, such as mpn",
-          "$ref": "componentID.json#/componentID"
-        },
         "vin": {
           "description": "input voltage under which a device can be expected to operate properly",
           "comment": "units of volts",
@@ -490,17 +422,6 @@
         "efficiency": {
           "description": "efficiency vs forward current",
           "$ref": "graph.json#/graph"
-        },
-        "package": {
-          "description": "package size",
-          "$ref": "package.json#/package"
-        },
-        "pins": {
-          "description": "array of pin objects with associated properties",
-          "type": "array",
-          "items": {
-            "$ref": "pinSpec.json#/pinSpec"
-          }
         }
       }
     },
@@ -508,14 +429,9 @@
       "title": "battery charger",
       "type": "object",
       "required": [
-        "componentID",
         "batteryChargeCurrent"
       ],
       "properties": {
-        "componentID": {
-          "description": "common component identifying information, such as mpn",
-          "$ref": "componentID.json#/componentID"
-        },
         "chargerType": {
           "description": "battery charger type",
           "examples": [
@@ -722,17 +638,6 @@
             "pd3.1"
           ],
           "type": "string"
-        },
-        "pins": {
-          "description": "array of pin objects with associated properties",
-          "type": "array",
-          "items": {
-            "$ref": "pinSpec.json#/pinSpec"
-          }
-        },
-        "package": {
-          "description": "component's package size and description",
-          "$ref": "package.json#/package"
         }
       }
     }

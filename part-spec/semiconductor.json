@@ -8,15 +8,10 @@
             "title": "mosfet",
             "type": "object",
             "required": [
-                "componentID",
                 "mosfetType",
                 "channel"
             ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn.",
-                    "$ref": "componenentID.json#/componentID"
-                },
                 "mosfetType": {
                     "description": "type of MOSFET.",
                     "examples": [
@@ -209,31 +204,13 @@
                 "pdVsTemp": {
                     "description": "graph of power dissipation vs temperature.",
                     "$ref": "graph.json#/graph"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
-                },
-                "package": {
-                    "description": "component's package size and description",
-                    "$ref": "package.json#/package"
                 }
             }
         },
         {
             "title": "diode",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componenentID.json#/componentID"
-                },
                 "type": {
                     "description": "type of diode",
                     "examples": [
@@ -340,17 +317,6 @@
                 "ifVsVf": {
                     "description": "graph of forward current (If) vs forward voltage (VfTyp)",
                     "$ref": "graph.json#/graph"
-                },
-                "package": {
-                    "description": "package size of resistor",
-                    "$ref": "package.json#/package"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
         },
@@ -358,14 +324,9 @@
             "title": "bjt",
             "type": "object",
             "required": [
-                "componentID",
                 "channel"
             ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn.",
-                    "$ref": "componenentID.json#/componentID"
-                },
                 "bjtChannelType": {
                     "description": "doping of a transistor's channel - describes whether a transistor is n-type or p-type.",
                     "enum": [
@@ -488,17 +449,6 @@
                     "description": "frequency of unity current gain with a short circuit output (ft)",
                     "$comment": "units of hertz",
                     "$ref": "conditionalProperty.json#/conditionalProperty"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
-                },
-                "package": {
-                    "description": "component's package size and description",
-                    "$ref": "package.json#/package"
                 }
             }
         }

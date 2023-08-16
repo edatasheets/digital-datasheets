@@ -7,14 +7,7 @@
         {
             "title": "speaker amplifier",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "dataLength": {
                     "description": "number of bits in a data word",
                     "type": "number"
@@ -48,34 +41,16 @@
                     ],
                     "type": "string"
                 },
-                "package": {
-                    "description": "component's package size and description",
-                    "$ref": "package.json#/package"
-                },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
                     "$ref": "currentConsumption.json#/currentConsumption"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
         },
         {
             "title": "audio codec",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "dataLength": {
                     "description": "number of bits in a data word",
                     "type": "number"
@@ -113,34 +88,16 @@
                     ],
                     "type": "string"
                 },
-                "package": {
-                    "description": "component's package size and description",
-                    "$ref": "package.json#/package"
-                },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
                     "$ref": "currentConsumption.json#/currentConsumption"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
         },
         {
             "title": "wlan module",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "wlanSpec": {
                     "description": "version of wlan specification supported by module",
                     "examples": [
@@ -200,34 +157,16 @@
                     ],
                     "type": "string"
                 },
-                "package": {
-                    "description": "component's package size and description",
-                    "$ref": "package.json#/package"
-                },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
                     "$ref": "currentConsumption.json#/currentConsumption"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
         },
         {
             "title": "wwan module",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "networkSupport": {
                     "description": "networks supported by wwan module",
                     "enum": [
@@ -265,34 +204,16 @@
                     ],
                     "type": "string"
                 },
-                "package": {
-                    "description": "component's package size and description",
-                    "$ref": "package.json#/package"
-                },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
                     "$ref": "currentConsumption.json#/currentConsumption"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
         },
         {
             "title": "tpm",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "interface": {
                     "description": "describes the communication interface from the chip to the host",
                     "examples": [
@@ -305,20 +226,9 @@
                         "type": "string"
                     }
                 },
-                "package": {
-                    "description": "component's package size and description",
-                    "$ref": "package.json#/package"
-                },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
                     "$ref": "currentConsumption.json#/currentConsumption"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
         }

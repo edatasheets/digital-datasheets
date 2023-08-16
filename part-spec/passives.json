@@ -8,21 +8,9 @@
             "title": "resistor",
             "type": "object",
             "required": [
-                "componentID",
                 "value"
             ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
-                },
                 "value": {
                     "description": "resistor value",
                     "comment": "units of ohms",
@@ -66,10 +54,6 @@
                 "resistorDerating": {
                     "description": "graph object to capture resistance changes with temperature",
                     "$ref": "graph.json#/graph"
-                },
-                "package": {
-                    "description": "package size of resistor",
-                    "$ref": "package.json#/package"
                 }
             }
         },
@@ -77,21 +61,9 @@
             "title": "capacitor",
             "type": "object",
             "required": [
-                "componentID",
                 "value"
             ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
-                },
                 "value": {
                     "description": "capacitor value",
                     "comment": "units of farads",
@@ -143,10 +115,6 @@
                 "capacitorDerating": {
                     "description": "graph object to capture capacitance changes with voltage",
                     "$ref": "graph.json#/graph"
-                },
-                "package": {
-                    "description": "package size of capacitor",
-                    "$ref": "package.json#/package"
                 }
             }
         },
@@ -154,21 +122,9 @@
             "title": "inductor",
             "type": "object",
             "required": [
-                "componentID",
                 "value"
             ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
-                },
                 "value": {
                     "description": "inductor value",
                     "comment": "units of henry",
@@ -226,24 +182,13 @@
                 "resonantFrequencyCurve": {
                     "description": "graph object to capture inductor resonant frequency",
                     "$ref": "graph.json#/graph"
-                },
-                "package": {
-                    "description": "package size of inductor",
-                    "$ref": "package.json#/package"
                 }
             }
         },
         {
             "title": "common mode choke",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "diffModeCutoff": {
                     "description": "frequency at which the differential mode attenuation equals -3dB",
                     "comment": "units of Hz",
@@ -271,31 +216,13 @@
                         "LVDS"
                     ],
                     "type": "string"
-                },
-                "package": {
-                    "description": "package size of device",
-                    "$ref": "package.json#/package"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
         },
         {
             "title": "ferrite bead",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "dcResistance": {
                     "description": "dc resistance (DCR) of ferrite bead",
                     "comment": "units of ohms",
@@ -315,21 +242,8 @@
                     "description": "variation of ferrite bead impedance expressed as +/- percentage",
                     "comment": "units of percentage",
                     "$ref": "unit.json#/unit"
-                },
-                "package": {
-                    "description": "package size of device",
-                    "$ref": "package.json#/package"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
         }
     ]
 }
-        
-    

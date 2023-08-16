@@ -8,14 +8,9 @@
             "title": "oscillator",
             "type": "object",
             "required": [
-                "componentID",
                 "frequency"
             ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn.",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "baseResonator": {
                     "description": "technology producing resonance",
                     "type": "string",
@@ -69,17 +64,6 @@
                     "description": "variation of waveform period",
                     "comment": "units of seconds",
                     "$ref": "conditionalProperty.json#/conditionalProperty"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
-                },
-                "package": {
-                    "description": "component's package size and description",
-                    "$ref": "package.json#/package"
                 }
             }
         }

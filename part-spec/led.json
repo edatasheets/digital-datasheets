@@ -7,14 +7,7 @@
         {
             "title": "LED",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn.",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "ledColor": {
                     "description": "LED color",
                     "examples": [
@@ -46,7 +39,7 @@
                 },
                 "ir": {
                     "description": "reverse current (leakage) of an LED",
-                    "comment": "conditions include: reverse biased voltage under which LED ir was measured", 
+                    "comment": "conditions include: reverse biased voltage under which LED ir was measured",
                     "$ref": "conditionalProperty.json#/conditionalProperty"
                 },
                 "ledCapacitance": {
@@ -73,22 +66,11 @@
                     "description": " angle at which LED intensity falls to 50% of its maximum value",
                     "$comment": "units of degrees",
                     "$ref": "unit.json#/unit"
-                },          
+                },
                 "pd": {
                     "description": "power dissipation of an LED",
                     "$comment": "units of milliwatts (mW)",
                     "$ref": "unit.json#/unit"
-                },
-                "package": {
-                    "description": "package size of LED",
-                    "$ref": "package.json#/package"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
         }

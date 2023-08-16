@@ -8,14 +8,9 @@
             "title": "usb-c pd controller",
             "type": "object",
             "required": [
-                "componentID",
                 "pdVersion"
             ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "pdVersion": {
                     "description": "version of power delivery spec implemented by controller",
                     "examples": [
@@ -27,8 +22,8 @@
                 "usbTypecRevision": {
                     "description": "usb type-c spec revision implemented by controller",
                     "examples": [
-                         "1.2",
-                         "1.3"
+                        "1.2",
+                        "1.3"
                     ],
                     "type": "string"
                 },
@@ -38,8 +33,8 @@
                         "Source",
                         "Sink",
                         "DRP"
-                     ],
-                     "type": "string"
+                    ],
+                    "type": "string"
                 },
                 "fastRoleSwapSupport": {
                     "description": "whether the pd controller supports fast role swap (FRS)",
@@ -55,7 +50,7 @@
                     "$ref": "unit.json#/unit"
                 },
                 "vconnMaxCurrent": {
-                    "description": "maximum continuous current supported by internal vconn switch (if supported)", 
+                    "description": "maximum continuous current supported by internal vconn switch (if supported)",
                     "comment": "units of amps",
                     "$ref": "unit.json#/unit"
                 },
@@ -71,7 +66,7 @@
                 "integratedLoadSwitch": {
                     "description": "whether the pd controller has one or more integrated load switches ",
                     "type": "boolean"
-                }, 
+                },
                 "maxSinkCurrent": {
                     "description": "maximum continuous current supported by pd controller integrated sink load switch",
                     "comment": "units of amps",
@@ -109,17 +104,6 @@
                 "componentProtectionThresholds": {
                     "description": "Thermal and power supply protection thresholds of a device",
                     "$ref": "componentProtectionThresholds.json#/componentProtectionThresholds"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
-                },
-                "package": {
-                    "description": "component's package size and description",
-                    "$ref": "package.json#/package"
                 }
             }
         }
