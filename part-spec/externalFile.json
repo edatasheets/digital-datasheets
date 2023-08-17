@@ -36,6 +36,7 @@
             },
             "fileURI": {
                 "description": "URI linking to the CAD file",
+                "example": "could be a URL or file path with filename",
                 "type": "string"
             }
         }
