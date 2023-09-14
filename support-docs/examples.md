@@ -2471,6 +2471,200 @@ LED Example - Limited pins
         }
     ]
 }
+```
+
+MCU Example - Limited pins, multiple files
+
+stm32f205RBT6.json (main component file)
+```json
+{
+    "componentID": {
+        "partType": "ic micro",
+        "manufacturer": "ExampleManufacturer",
+        "componentName": "stm32f205RBT6",
+        "orderableMPN": [
+            "stm32f205RBT6xxxTR",
+            "stm32f205RBT6xxx"
+        ],
+        "sourceDatasheetID": {
+            "publishedDate": "2021-05-23",
+            "datasheetURI": "www.Examplemanufacturer.com/stm32datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2022-03-21",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "datasheetFiles": {
+        "coreProperties": {
+            "filedescription": "core specifications for stm32f205",
+            "fileType": "json",
+            "fileExtension": "json",
+            "fileURI": "stm32f205_core.json"
+        },
+        "additionalCoreProperties": {
+            "filedescription": "additional property list for parts following the part number: stm32f205xBx6",
+            "fileType": "json",
+            "fileExtension": "json",
+            "fileURI": "stm32f205xBx6.json"
+        },
+        "pins": {
+            "filedescription": "pin specifications for 64 pins",
+            "fileType": "json",
+            "fileExtension": "json",
+            "fileURI": "stm32f205R_pin.json"
+        },
+        "package": {
+            "filedescription": "package specifications for 64 pin LQFP",
+            "fileType": "json",
+            "fileExtension": "json",
+            "fileURI": "stm32f205xxT_package.json"
+        }
+    }
+}
+```
+stm32f205_core.json (core properties file)
+```json
+{
+    "onChipRAM": {
+        "siUnit": "byte",
+        "absoluteValue": 128,
+        "unitText": "KB",
+        "unitFactor": 1e3,
+        "valueDefined": true
+    },
+    "onChipROM": {
+        "siUnit": "byte",
+        "absoluteValue": 1,
+        "unitText": "KB",
+        "unitFactor": 1e3,
+        "valueDefined": true
+    },
+    "coreProcessor": "xyz",
+    "coreArchitectureBits": "32-bit",
+    "clockSpeed": {
+        "siUnit": "hertz",
+        "absoluteValue": 120,
+        "unitText": "MHz",
+        "unitFactor": 1e6,
+        "valueDefined": true
+    },
+    "activePower": {
+        "siUnit": "watt",
+        "absoluteValue": 500,
+        "unitText": "mW",
+        "unitFactor": 1e-3,
+        "valueDefined": true
+    }
+}
+
+```
+
+stm32f205xBx6.json (additional properties file)
+```json
+{
+    "onChipFlash": {
+        "siUnit": "byte",
+        "absoluteValue": 128,
+        "unitText": "KB",
+        "unitFactor": 1e6,
+        "valueDefined": true
+    }
+}
+
+```
+
+stm32f205R_pin.json (pin file)
+```json
+{
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "vdd1"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "vdd2"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "ALERT#/KSI1/I2C1_SCL/GPIO6",
+            "numberOfSupportedFunctions": 4,
+            "functionProperties": [
+                {
+                    "perFunctionName": "ALERT#",
+                    "interfaceType": "interrupt",
+                    "direction": "out",
+                    "electricalConfiguration": "open-drain",
+                    "polarity": "low"
+                },
+                {
+                    "perFunctionName": "KSI1",
+                    "interfaceType": "keyboard",
+                    "pinUsage": "KSI1",
+                    "direction": "in",
+                    "electricalConfiguration": "high-impedance",
+                    "polarity": "low"
+                },
+                {
+                    "perFunctionName": "I2C1_SCL",
+                    "interfaceType": "i2c",
+                    "pinUsage": "I2C_SCL",
+                    "direction": "out",
+                    "electricalConfiguration": "open-drain",
+                    "polarity": "low"
+                },
+                {
+                    "perFunctionName": "GPIO6",
+                    "interfaceType": "gpio",
+                    "direction": "bidir",
+                    "electricalConfiguration": "push-pull"
+                }
+            ],
+            "vihMax": {
+                "siUnit": "volts",
+                "unitText": "V",
+                "unitFactor": 1,
+                "relativeValueReference": "VDD1",
+                "relativeValueModifier": 0.7,
+                "relativeValueOperator": "multiply",
+                "valueDefined": true
+            }
+        }
+    ]
+}
+
+```
+
+stm32f205xxT_package (package file)
+```json
+{
+    "length": {
+        "siUnit": "millimeter",
+        "absoluteValue": 10,
+        "unitText": "mm",
+    },
+    "width": {
+        "siUnit": "millimeter",
+        "absoluteValue": 10,
+        "unitText": "mm",
+    },
+    "height": {
+        "siUnit": "millimeter",
+        "absoluteValue": 1.6,
+        "unitText": "mm",
+    },
+    "partModelInformation":  {
+        "filedescription": "package specifications for 64 pin LQFP",
+        "fileType": "xml",
+        "fileExtension": "xml",
+        "standardReferenced": "IPC2552",
+        "fileURI": "lqfp64.xml"
+    }
+}
+
+```
     
         
     

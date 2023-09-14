@@ -7,14 +7,7 @@
         {
             "title": "adc",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "digitalResolution": {
                     "description": "number of bits of resolution in the digital output",
                     "type": "number"
@@ -85,31 +78,13 @@
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
                     "$ref": "currentConsumption.json#/currentConsumption"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
-                },
-                "package": {
-                    "description": "component's package size and description",
-                    "$ref": "package.json#/package"
                 }
             }
         },
         {
             "title": "dac",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "digitalResolution": {
                     "description": "number of bits of resolution",
                     "type": "number"
@@ -170,17 +145,6 @@
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
                     "$ref": "currentConsumption.json#/currentConsumption"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
-                },
-                "package": {
-                    "description": "component's package size and description",
-                    "$ref": "package.json#/package"
                 }
             }
         }

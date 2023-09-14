@@ -37,8 +37,11 @@
                 "type": "string"
             },
             "orderableMPN": {
-                "description": "orderable manufacturer part number",
-                "type": "string"
+                "description": "orderable manufacturer part numbers, including packing and software information",
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
             },
             "sourceDatasheetID": {
                 "description": "methods for identifying the human-readable source information for a digital datasheet",

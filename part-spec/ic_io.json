@@ -7,14 +7,7 @@
         {
             "title": "redriver",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "numberChannels": {
                     "description": "number of lanes (single ended or differential) supported by redriver",
                     "type": "number"
@@ -36,34 +29,16 @@
                     "comment": "units of Hz",
                     "$ref": "unit.json#/unit"
                 },
-                "package": {
-                    "description": "component's package size and description",
-                    "$ref": "package.json#/package"
-                },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
                     "$ref": "currentConsumption.json#/currentConsumption"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
         },
         {
             "title": "retimer",
             "type": "object",
-            "required": [
-             "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "numberOfLanes": {
                     "description": "number of lanes supported by a device",
                     "type": "number"
@@ -115,34 +90,16 @@
                     "description": "whether a device supports Seperate Reference clock with No Spread spectrum clocking (SRNS)",
                     "type": "boolean"
                 },
-                "package": {
-                    "description": "component's package size and description",
-                    "$ref": "package.json#/package"
-                },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
                     "$ref": "currentConsumption.json#/currentConsumption"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                    "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
-        },        
+        },
         {
             "title": "bridge chip",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "muxRatio": {
                     "description": "ratio of inputs to outputs",
                     "examples": [
@@ -173,31 +130,13 @@
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
                     "$ref": "currentConsumption.json#/currentConsumption"
-                },
-                "package": {
-                    "description": "component's package size and description",
-                    "$ref": "package.json#/package"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
         },
         {
             "title": "mux",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "muxRatio": {
                     "description": "ratio of inputs to outputs",
                     "$ref": "ratio.json#/ratio"
@@ -212,41 +151,22 @@
                     "items": {
                         "type": "string"
                     }
-                    
                 },
                 "insertionLoss": {
                     "description": "insertion loss through mux",
                     "comment": "units of dB",
                     "type": "number"
                 },
-                "package": {
-                    "description": "component's package size and description",
-                    "$ref": "package.json#/package"
-                },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
                     "$ref": "currentConsumption.json#/currentConsumption"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
         },
         {
             "title": "level shifter",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "inputVoltage": {
                     "description": "input voltage level of level shifter",
                     "comment": "units of volts",
@@ -257,20 +177,9 @@
                     "comment": "units of volts",
                     "$ref": "unit.json#/unit"
                 },
-                "package": {
-                    "description": "component's package size and description",
-                    "$ref": "package.json#/package"
-                },
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
                     "$ref": "currentConsumption.json#/currentConsumption"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
         }

@@ -7,14 +7,7 @@
         {
             "title": "microcontroller/ec",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "onChipFlash": {
                     "description": "quantity of built-in flash in a microprocessor",
                     "comment": "units of kilobytes",
@@ -66,17 +59,6 @@
                 "currentConsumption": {
                     "description": "current used by device in various power modes",
                     "$ref": "currentConsumption.json#/currentConsumption"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
-                },
-                "package": {
-                    "description": "component's package size and description",
-                    "$ref": "package.json#/package"
                 }
             }
         }

@@ -7,14 +7,7 @@
         {
             "title": "accelerometer",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "accelerometerType": {
                     "description": "type of accelerometer",
                     "examples": [
@@ -113,31 +106,13 @@
                 "currentConsumption": {
                     "description": "current consumption of a device",
                     "$ref": "currentConsumption.json#/currentConsumption"
-                },
-                "package": {
-                    "description": "package size of a device",
-                    "$ref": "package.json#/package"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
         },
         {
             "title": "gyroscope",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "gyroRanges": {
                     "description": "range of angular speed that gyro can measure",
                     "comment": "units of degrees-per-second (dps)",
@@ -210,31 +185,13 @@
                 "currentConsumption": {
                     "description": "current consumption of a device",
                     "$ref": "currentConsumption.json#/currentConsumption"
-                },
-                "package": {
-                    "description": "package size of a device",
-                    "$ref": "package.json#/package"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
         },
         {
             "title": "magnetic sensor",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "magneticSensingTechnology": {
                     "description": "method by which magnetism is detected",
                     "examples": [
@@ -302,31 +259,13 @@
                 "currentConsumption": {
                     "description": "current consumption of a device",
                     "$ref": "currentConsumption.json#/currentConsumption"
-                },
-                "package": {
-                    "description": "package size of a device",
-                    "$ref": "package.json#/package"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
         },
         {
             "title": "thermal",
             "type": "object",
-            "required": [
-                "componentID"
-            ],
             "properties": {
-                "componentID": {
-                    "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
-                },
                 "sensingTechnology": {
                     "description": "method by which temperature is detected",
                     "examples": [
@@ -379,17 +318,6 @@
                 "currentConsumption": {
                     "description": "current consumption of a device",
                     "$ref": "currentConsumption.json#/currentConsumption"
-                },
-                "package": {
-                    "description": "package size of a device",
-                    "$ref": "package.json#/package"
-                },
-                "pins": {
-                    "description": "array of pin objects with associated properties",
-                    "type": "array",
-                    "items": {
-                        "$ref": "pinSpec.json#/pinSpec"
-                    }
                 }
             }
         }

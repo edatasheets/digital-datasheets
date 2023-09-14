@@ -11,11 +11,48 @@
 			"description": "methods for identifying the version of the digital datasheet",
 			"$ref": "componentID.json#/componentID"
 		},
+		"coreProperties": {
+			"description": "core component properties as definied by the specific component spec file",
+			"type": "object"
+		},
 		"pins": {
 			"description": "array of pin objects with associated properties",
 			"type": "array",
 			"items": {
 				"$ref": "pinSpec.json#/pinSpec"
+			}
+		},
+		"package": {
+			"description": "component package information",
+			"$ref": "package.json#/package"
+		},
+		"externalFileMap": {
+			"description": "external files that describe key component properties. External files can be used in lieu of defining core properties, pins, and package informatoin in the same file",
+			"$ref": "#/$defs/externalFileMap"
+		}
+	},
+	"$defs": {
+		"externalFileMap": {
+			"type": "object",
+			"properties": {
+				"coreProperties": {
+					"description": "core component properties as definied by the specific component spec file. These properties are described by the common part of the part number",
+					"example": "this might include everything about an MCU other than flash size",
+					"$ref": "externalFile.json#/externalFile"
+				},
+				"additionalCoreProperities": {
+					"description": "core component properties as definied by the specific component spec file. These properties are described by the changing part of the part number",
+					"example": "this might include the MCU flash size",
+					"$ref": "externalFile.json#/externalFile"
+				},
+				"pins": {
+					"description": "pin properties specified by the pin spec file",
+					"$ref": "externalFile.json#/externalFile"
+				},
+				"package": {
+					"description": "package information specified by the package spec file",
+					"$ref": "externalFile.json#/externalFile"
+				}
 			}
 		}
 	}
