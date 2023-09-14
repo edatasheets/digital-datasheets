@@ -60,7 +60,7 @@
         "type": "number"
       },
       "minValue": {
-        "description": "minimum unit quantity corresponding to unit text - example 40mV would have a value of 40",
+        "description": "minimum unit quantity corresponding to unit text - example if millivolt was selected 40mV would have a value of 1, if volt was selected 40mV would have a value of 0.001",
         "type": "number"
       },
       "maxValue": {
@@ -68,7 +68,7 @@
         "type": "number"
       },
       "unitFactor": {
-        "description": "multiplier on the value to achieve the SI unit - example for 40mV the unitFactor would be 0.001",
+        "description": "multiplier on the value to achieve the SI unit listed - example for 40mV the unitFactor would be 0.001",
         "type": "number",
         "$comment": "by default this is one"
       },
