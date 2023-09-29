@@ -332,6 +332,111 @@ Inductor Example
 }
 ```
 
+Dual Logic Example with Pins information about pins associated with each component
+
+```json
+{
+    "componentID": {
+        "partType": "logic gate",
+        "manufacturer": "ACME Componenents",
+        "componentName": "efgh123",
+        "orderableMPN": "efgh123mn",
+        "sourceDatasheetID": {
+            "publishedDate": "2013-09-01",
+            "datasheetURI": "www.ti.com/and-datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2023-09-29",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "type": "and",
+    "numberGates": 2,
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "1A",
+            "description": "input of AND1",
+            "functionProperties": {
+                "direction": "in"
+            }
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "1B",
+            "description": "input of AND1",
+            "functionProperties": {
+                "direction": "in"
+            }
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "2Y",
+            "description": "output of AND2",
+            "functionProperties": {
+                "direction": "out"
+            }
+        },
+        {
+            "terminalIdentifier": "4",
+            "name": "GND",
+            "description": "ground"
+        },
+        {
+            "terminalIdentifier": "5",
+            "name": "2A",
+            "description": "input of AND2",
+            "functionProperties": {
+                "direction": "in"
+            }
+        },
+        {
+            "terminalIdentifier": "6",
+            "name": "2B",
+            "description": "input of AND2",
+            "functionProperties": {
+                "direction": "in"
+            }
+        },
+        {
+            "terminalIdentifier": "7",
+            "name": "1Y",
+            "description": "output of AND1",
+            "functionProperties": {
+                "direction": "out"
+            }
+        },
+        {
+            "terminalIdentifier": "8",
+            "name": "VCC",
+            "description": "power"
+        }
+    ],
+    "pinPaths": {
+        "numberofpinPaths": 2,
+        "partPinPaths": [
+            {
+                "componentName": "AND1",
+                "componentPinNames": [
+                    "1A",
+                    "1B",
+                    "1Y"
+                ]
+            },
+            {
+                "componentName": "AND2",
+                "componentPinNames": [
+                    "2A",
+                    "2B",
+                    "2Y"
+                ]
+            }
+        ]
+    }
+}
+```
+
 Buck Example
 
 ```json
