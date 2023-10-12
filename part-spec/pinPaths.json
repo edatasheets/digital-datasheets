@@ -7,12 +7,12 @@
       "partPinPaths"
     ],
     "properties": {
-      "numberofpinPaths": {
+      "numberOfPinPaths": {
         "description": "number of pinPaths defined. This number should not be higher than the number of components included in the part",
         "type": "number"
       },
       "partPinPaths": {
-        "description": "list of pins associated with each component in a part. This is when a part includes multiple components",
+        "description": "list of pins associated with each component in a multi-component part",
         "example": " for a dual FET part with components FET1 and FET2: list of pins associated with FET1 and list of pins associated with FET2",
         "type": "array",
         "items": {
@@ -26,7 +26,12 @@
       "type": "object",
       "properties": {
         "componentName": {
-          "descriptions": "name of a component within a part ",
+          "description": "name of a component within a part ",
+          "examples": [
+            "LDO1",
+            "BUCK1",
+            "DIODEA"
+          ],
           "type": "string"
         },
         "componentPinNames": {
