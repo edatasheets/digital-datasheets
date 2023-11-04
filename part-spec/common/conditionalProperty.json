@@ -1,5 +1,5 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/conditionalProperty.json",
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/conditionalProperty.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Specifications of the conditional property object",
     "conditionalProperty": {
@@ -7,7 +7,7 @@
         "properties": {
             "value": {
                 "description": "value of property",
-                "$ref": "unit.json#/unit"
+                "$ref": "../common/unit.json#/unit"
             },
             "conditions": {
                 "description": "conditions under which the property is measured",
