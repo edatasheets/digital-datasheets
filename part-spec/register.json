@@ -1,8 +1,8 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/registers.json",
+    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/registers.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "specification of registers",
-    "registerDefiniton": {
+    "title": "specification of a register",
+    "register": {
         "type": "object",
         "required": [
             "registerName",
