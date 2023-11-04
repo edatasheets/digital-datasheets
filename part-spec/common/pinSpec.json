@@ -1,0 +1,296 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/pinSpec.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "specifications of pins",
+    "pinSpec": {
+        "type": "object",
+        "required": [
+            "terminalIdentifier",
+            "name"
+        ],
+        "properties": {
+            "terminalIdentifier": {
+                "description": "pin or ball number as defined by datasheet",
+                "type": "string"
+            },
+            "name": {
+                "description": "name given to the signal appearing at the terminal of a component",
+                "type": "string"
+            },
+            "standardizedName": {
+                "description": "standard name of pin",
+                "type": "string",
+                "enum": [
+                    "drain",
+                    "gate",
+                    "source",
+                    "anode",
+                    "cathode",
+                    "vdd",
+                    "vss"
+                ]
+            },
+            "description": {
+                "description": "description of the signal appearing at the terminal of an electric/electronic component",
+                "type": "string"
+            },
+            "numberOfSupportedFunctions": {
+                "description": "the total number of functions supported by this pin",
+                "type": "number"
+            },
+            "functionProperties": {
+                "description": "list of function objects that can apply to an individual pin",
+                "type": "array",
+                "items": {
+                    "$ref": "#/$defs/pinFunction"
+                }
+            },
+            "vihMin": {
+                "description": "the least positive (most negative) value of high-level input voltage for which operation of the logic element within specification limits is to be expected",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "vihMax": {
+                "description": "the most positive (least negative) value of high-level input voltage for which operation of the logic element within specification limits is to be expected",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "vilMax": {
+                "description": "the most positive (least negative) value of low-level input voltage for which operation of the logic element within specification limits is to be expected",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "vilMin": {
+                "description": "the least positive (most negative) value of low-level input voltage for which operation of the logic element within specification limits is to be expected",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "vol": {
+                "description": "the voltage level at an output terminal with input conditions applied that, according to the product specification, will establish a low level at the output",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "voh": {
+                "description": "the voltage level at an output terminal with input conditions applied that, according to the product specification, will establish a high level at the output",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "absVmax": {
+                "description": "maximum voltage rating beyond which damage to the device may occur",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "absVmin": {
+                "description": "absolute minimum voltage that can be applied to a pin",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "vmax": {
+                "description": "maximum continuous voltage that can safely be applied to a pin",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "imax": {
+                "description": "maximum continuous current that can safely be drawn from a pin",
+                "comment": "units of amps",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "inputLeakage": {
+                "description": "maximum current draw into a high impedance input pin",
+                "comment": "units of amps",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "outputLeakage": {
+                "description": "maximum current flow from a pin during the off state",
+                "comment": "units of amps",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "dcResistance": {
+                "description": "resistance of a pin of a connector",
+                "comment": "units of ohms",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "voltageOptions": {
+                "description": "list of voltage levels supported by a pin",
+                "comment": "units of volts",
+                "type": "array",
+                "items": {
+                    "$ref": "../common/unit.json#/unit"
+                }
+            },
+            "floatUnused": {
+                "description": "description of whether pin can safely be floated if it is not used",
+                "type": "boolean"
+            },
+            "internalPullUp": {
+                "description": "indicates the value of an internal pull-up on a pin",
+                "comment": "units of resistance",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "internalPullDown": {
+                "description": "indicates the value of an internal pull-down on a pin",
+                "comment": "units of resistance",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "esd": {
+                "description": "indicates whether ESD protection exists on a pin",
+                "type": "boolean"
+            },
+            "externalComponents": {
+                "description": "list of external component structures recommended to be attached to a pin",
+                "type": "array",
+                "items": {
+                    "$ref": "#/$defs/externalComponents"
+                }
+            }
+        },
+        "pinPaths": {
+            "description": "information on pin paths - pins associated with each component in a multi-component part",
+            "$ref": "../common/pinPaths.json#/pinPaths"
+        }
+    },
+    "$defs": {
+        "externalComponents": {
+            "type": "object",
+            "required": [
+                "componentType",
+                "configuration"
+            ],
+            "properties": {
+                "componentType": {
+                    "description": "type of external component required to be connected to a pin",
+                    "type": "string",
+                    "enum": [
+                        "resistor",
+                        "capacitor"
+                    ]
+                },
+                "configuration": {
+                    "description": "electrical configuration of component connected to pin with respect to the pin",
+                    "examples": [
+                        "pu (pull up to power)",
+                        "pd (pull down to ground)",
+                        "series (in series)"
+                    ],
+                    "enum": [
+                        "pu",
+                        "pd",
+                        "series"
+                    ],
+                    "type": "string"
+                },
+                "minValue": {
+                    "description": "minimum value of component if a range is specified",
+                    "$ref": "../common/unit.json#/unit"
+                },
+                "maxValue": {
+                    "description": "maximum value of component if a range is specified",
+                    "$ref": "../common/unit.json#/unit"
+                },
+                "value": {
+                    "description": "value of component if a range is not specified",
+                    "$ref": "../common/unit.json#/unit"
+                }
+            },
+            "componentUnit": {
+                "description": "unit of min/max value",
+                "type": "string",
+                "enum": [
+                    "ohms",
+                    "kilo ohms",
+                    "mega ohms",
+                    "micro farads",
+                    "pico farads",
+                    "micro henries"
+                ]
+            },
+            "connectionPin": {
+                "description": "name of pin to which an external component should be pulled up",
+                "comment": "mostly commonly power or ground pin",
+                "type": "string"
+            },
+            "dependencies": {
+                "componentUnit": [
+                    "minValue",
+                    "maxValue",
+                    "value"
+                ]
+            }
+        },
+        "pinFunction": {
+            "type": "object",
+            "properties": {
+                "perFunctionName": {
+                    "description": "name of the function of a pin",
+                    "examples": [
+                        "UART5_TX",
+                        "SPI3_COPI",
+                        "PC12"
+                    ],
+                    "type": "string"
+                },
+                "interfaceType": {
+                    "description": "type of interface enabled by pin",
+                    "examples": [
+                        "i2c",
+                        "spi",
+                        "uart",
+                        "usb2",
+                        "usb3",
+                        "usb4",
+                        "pcie",
+                        "sdio",
+                        "memory",
+                        "emmc",
+                        "anode",
+                        "cathode"
+                    ],
+                    "type": "string"
+                },
+                "pinUsage": {
+                    "description": "standardized usage of pin",
+                    "examples": [
+                        "UART_TX",
+                        "UART_RX",
+                        "SPI_COPI",
+                        "SPI_CLK",
+                        "SPI_CS",
+                        "SPI_CIPO",
+                        "I2C_SCL",
+                        "I2C_SDA"
+                    ],
+                    "type": "string"
+                },
+                "direction": {
+                    "description": "direction of a pin's function",
+                    "enum": [
+                        "in",
+                        "out",
+                        "bidir"
+                    ],
+                    "type": "string"
+                },
+                "electricalConfiguration": {
+                    "description": "electrical configuration of a pin",
+                    "examples": [
+                        "open-drain",
+                        "push-pull",
+                        "analog",
+                        "power",
+                        "ground",
+                        "high-impedance"
+                    ],
+                    "type": "string"
+                },
+                "polarity": {
+                    "description": "whether the active state of a pin is high or low",
+                    "type": "string",
+                    "enum": [
+                        "high",
+                        "low"
+                    ]
+                }
+            }
+        }
+    }
+}
