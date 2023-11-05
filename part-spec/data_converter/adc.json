@@ -1,0 +1,79 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/data_converter/adc.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "adc",
+    "type": "object",
+    "properties": {
+        "digitalResolution": {
+            "description": "number of bits of resolution in the digital output",
+            "type": "number"
+        },
+        "conversionTime": {
+            "description": "time required to convert from an analog signal to digital output",
+            "comment": "units of seconds",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "sampleRate": {
+            "description": "maximum rate at which the ADC can convert samples",
+            "$comment": "unit of hertz",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "offsetError": {
+            "description": "difference (in LSB) of the output at the zero point between an actual and ideal ADC",
+            "comment": "units of LSB",
+            "type": "number"
+        },
+        "gainError": {
+            "description": "difference (in LSB) of how the actual transfer function matches the ideal transfer function, also called full scale error",
+            "comment": "units of LSB",
+            "type": "number"
+        },
+        "integralNonlinearity": {
+            "description": "deviation of an actual transfer function from an ideal transfer function, in LSB",
+            "comment": "units of LSB",
+            "type": "number"
+        },
+        "differentialNonlinearity": {
+            "description": "difference (in LSB) in step width between the actual and ideal transfer functions",
+            "comment": "units of +/- LSB",
+            "type": "number"
+        },
+        "rmsNoise": {
+            "description": "root mean square (RMS) noise of ADC",
+            "comment": "units of LSB",
+            "type": "number"
+        },
+        "SNR": {
+            "description": "signal to noise (SNR) ratio of the converter",
+            "comment": "units of dB",
+            "type": "number"
+        },
+        "interface": {
+            "description": "digital communication interfaces supported",
+            "examples": [
+                "spi",
+                "i2c"
+            ],
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "inputType": {
+            "description": "whether the ADC has a single ended or differential input",
+            "enum": [
+                "singleEnded",
+                "differential"
+            ],
+            "type": "string"
+        },
+        "inputChannels": {
+            "description": "number of input channels",
+            "type": "number"
+        },
+        "currentConsumption": {
+            "description": "current used by device in various power modes",
+            "$ref": "../common/currentConsumption.json#/currentConsumption"
+        }
+    }
+}
