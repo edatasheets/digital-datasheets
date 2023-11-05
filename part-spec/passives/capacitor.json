@@ -1,0 +1,63 @@
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/passives/capacitor.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "capacitor",
+    "type": "object",
+    "required": [
+        "value"
+    ],
+    "properties": {
+        "value": {
+            "description": "capacitor value",
+            "comment": "units of farads",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "tolerance": {
+            "description": "nominal tolerance of a capacitor",
+            "comment": "units of %",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "ratedVoltage": {
+            "description": "maximum voltage which may be applied continuously to a capacitance",
+            "comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "dielectric": {
+            "description": "dielectric material used in the capacitor",
+            "examples": [
+                "ceramic",
+                "tantalum",
+                "electrolytic"
+            ],
+            "type": "string"
+        },
+        "polarized": {
+            "description": "describes whether the capacitor is polarized",
+            "type": "boolean"
+        },
+        "equivalentSerieResistance": {
+            "description": "equivalent series resistance (ESR) of the capacitor",
+            "comment": "units of ohms",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "temperatureCoefficient": {
+            "description": "change in capacitance when the temperature is changed",
+            "comment": "units of farads/degree (Celsius or Kelvin)",
+            "type": "number"
+        },
+        "minTemperature": {
+            "description": "minimum temperature under which a capacitor can be expected to reliably operate",
+            "comment": "units of degrees (Celsius or Kelvin)",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "maxTemperature": {
+            "description": "maximum temperature under which a capacitor can be expected to reliably operate",
+            "comment": "units of degrees (Celsius or Kelvin)",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "capacitorDerating": {
+            "description": "graph object to capture capacitance changes with voltage",
+            "$ref": "../common/graph.json#/graph"
+        }
+    }
+}
