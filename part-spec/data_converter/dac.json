@@ -1,0 +1,69 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/data_converter/dac.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "dac",
+    "type": "object",
+    "properties": {
+        "digitalResolution": {
+            "description": "number of bits of resolution",
+            "type": "number"
+        },
+        "offsetError": {
+            "description": "analog response to an input code of all zeros",
+            "comment": "units of percentage of full scale range",
+            "type": "number"
+        },
+        "gainError": {
+            "description": "difference (in percentage of FSR) of how well the slope of the actual transfer function matches the ideal transfer function",
+            "comment": "units of percentage of full scale range",
+            "type": "number"
+        },
+        "integralNonlinearity": {
+            "description": "deviation of an actual transfer function from an ideal transfer function, in LSB",
+            "comment": "units of LSB",
+            "type": "number"
+        },
+        "differentialNonlinearity": {
+            "description": "difference between the ideal and the actual output responses for successive DAC codes, in LSB",
+            "comment": "units of +/- LSB",
+            "type": "number"
+        },
+        "settlingTime": {
+            "description": "time from application of input code to valid output response",
+            "comment": "units of seconds",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "sampleRate": {
+            "description": "maximum rate at which the DAC can convert samples",
+            "$comment": "unit of hertz",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "interface": {
+            "description": "digital communication interfaces supported",
+            "examples": [
+                "spi",
+                "i2c"
+            ],
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "otuputType": {
+            "description": "whether the DAC has a single ended or differential output",
+            "enum": [
+                "singleEnded",
+                "differential"
+            ],
+            "type": "string"
+        },
+        "outputChannels": {
+            "description": "number of output channels",
+            "type": "number"
+        },
+        "currentConsumption": {
+            "description": "current used by device in various power modes",
+            "$ref": "../common/currentConsumption.json#/currentConsumption"
+        }
+    }
+}
