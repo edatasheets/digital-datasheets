@@ -1,0 +1,49 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/wwan_module.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "wwan module",
+    "type": "object",
+    "properties": {
+        "networkSupport": {
+            "description": "networks supported by wwan module",
+            "enum": [
+                "3G",
+                "4G",
+                "5G"
+            ],
+            "type": "string"
+        },
+        "gpsSupport": {
+            "description": "whether wwan module has gps support",
+            "type": "boolean"
+        },
+        "m2FormFactor": {
+            "description": "wlan module form factor described by jedec standard m.2 form factors",
+            "examples": [
+                "3042"
+            ],
+            "type": "string"
+        },
+        "keying": {
+            "description": "pcie card key",
+            "examples": [
+                "B",
+                "etc."
+            ],
+            "type": "string"
+        },
+        "interface": {
+            "description": "describes the communication interface from the chip to the host",
+            "examples": [
+                "pcie",
+                "usb3",
+                "etc."
+            ],
+            "type": "string"
+        },
+        "currentConsumption": {
+            "description": "current used by device in various power modes",
+            "$ref": "..common/currentConsumption.json#/currentConsumption"
+        }
+    }
+}
