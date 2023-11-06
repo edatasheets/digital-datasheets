@@ -1,0 +1,42 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/bridge_chip.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "bridge chip",
+    "type": "object",
+    "properties": {
+        "muxRatio": {
+            "description": "ratio of inputs to outputs",
+            "examples": [
+                "2:1",
+                "1:1",
+                "etc."
+            ],
+            "$ref": "../common/ratio.json#/ratio"
+        },
+        "inputInterfaces": {
+            "description": "list of interfaces at the input of the bridge",
+            "examples": [
+                "HDMI2.0",
+                "DP HBR2"
+            ],
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "outputInterfaces": {
+            "description": "list of interfaces at the output of the bridge",
+            "examples": [
+                "DP HBR2"
+            ],
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "currentConsumption": {
+            "description": "current used by device in various power modes",
+            "$ref": "../common/currentConsumption.json#/currentConsumption"
+        }
+    }
+}
