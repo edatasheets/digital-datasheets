@@ -1,0 +1,114 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/pd_controller.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "usb-c pd controller",
+    "type": "object",
+    "required": [
+        "pdVersion"
+    ],
+    "properties": {
+        "pdVersion": {
+            "description": "version of power delivery spec implemented by controller",
+            "examples": [
+                "pd2.0",
+                "pd3.1"
+            ],
+            "type": "string"
+        },
+        "usbTypecRevision": {
+            "description": "usb type-c spec revision implemented by controller",
+            "examples": [
+                "1.2",
+                "1.3"
+            ],
+            "type": "string"
+        },
+        "powerRoleSupported": {
+            "description": "roles supported by pd controller",
+            "examples": [
+                "Source",
+                "Sink",
+                "DRP"
+            ],
+            "type": "string"
+        },
+        "fastRoleSwapSupport": {
+            "description": "whether the pd controller supports fast role swap (FRS)",
+            "type": "boolean"
+        },
+        "vconnPowerSupport": {
+            "description": "whether the pd controller has support for vconn power",
+            "type": "boolean"
+        },
+        "vconnPowerLimit": {
+            "description": "power limit supported by internal vconn switch (if supported)",
+            "comment": "units of watts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "vconnMaxCurrent": {
+            "description": "maximum continuous current supported by internal vconn switch (if supported)",
+            "comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "vconnOverCurrentLimit": {
+            "description": "over current limit supported by internal vconn switch (if supported)",
+            "comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "integratedVbusDischargeSwitch": {
+            "description": "whether the pd controller has one or more integrated vbus discharge switches ",
+            "type": "boolean"
+        },
+        "integratedLoadSwitch": {
+            "description": "whether the pd controller has one or more integrated load switches ",
+            "type": "boolean"
+        },
+        "maxSinkCurrent": {
+            "description": "maximum continuous current supported by pd controller integrated sink load switch",
+            "comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "maxSourceCurrent": {
+            "description": "maximum continuous current supported by pd controller integrated source load switch",
+            "comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "sinkfetOverCurrentLimit": {
+            "description": "over current limit supported by pd controller integrated sink load switch",
+            "comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "sourcefetOverCurrentLimit": {
+            "description": "over current limit supported by pd controller integrated source load switch",
+            "comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "onResistanceSinkFet": {
+            "description": "on-resistance of the integrated sink load switch",
+            "comment": "units of ohms",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "onResistanceSourceFet": {
+            "description": "on-resistance of the integrated source load switch",
+            "comment": "units of ohms",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "interface": {
+            "description": "describes the communication interface from the chip to the host",
+            "examples": [
+                "i2c",
+                "smbus",
+                "etc."
+            ],
+            "type": "string"
+        },
+        "currentConsumption": {
+            "description": "current used by device in various power modes",
+            "$ref": "../common/currentConsumption.json#/currentConsumption"
+        },
+        "componentProtectionThresholds": {
+            "description": "Thermal and power supply protection thresholds of a device",
+            "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
+        }
+    }
+}
