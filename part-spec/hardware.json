@@ -1,5 +1,5 @@
 {
-    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/hardware.json",
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/hardware.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "title": "hardware",
@@ -14,7 +14,7 @@
             "properties": {
                 "componentID": {
                     "description": "common component identifying information, such as mpn",
-                    "$ref": "componentID.json#/componentID"
+                    "$ref": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/componentID.json"
                 },
                 "type": {
                     "description": "property describing the way in which the switch is activated",
