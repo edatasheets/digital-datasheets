@@ -1,0 +1,43 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/storage/ssd.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "ssd",
+    "type": "object",
+    "required": [
+        "capacity"
+    ],
+    "properties": {
+        "type": {
+            "description": "type of ssd storage as defined by interface and technology",
+            "examples": [
+                "sata",
+                "nvme"
+            ],
+            "type": "string"
+        },
+        "capacity": {
+            "description": "capacity of the ssd",
+            "comment": "units of bytes (B)",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "dataRate": {
+            "description": "maximum data rate of the ssd",
+            "comment": "units of bytes per second (Bps)",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "interface": {
+            "description": "interface of ssd to host",
+            "examples": [
+                "pcie gen3",
+                "sata",
+                "etc."
+            ],
+            "type": "string"
+        },
+        "currentConsumption": {
+            "description": "current consumption of a device",
+            "comment": "units of amps",
+            "$ref": "../common/currentConsumption.json#/currentConsumption"
+        }
+    }
+}
