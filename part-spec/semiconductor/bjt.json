@@ -1,0 +1,150 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/semiconductor/bjt.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "bjt",
+    "type": "object",
+    "required": [
+        "bjtChannelType"
+    ],
+    "properties": {
+        "bjtChannelType": {
+            "description": "doping of a transistor's channel - describes whether a transistor is n-type or p-type.",
+            "enum": [
+                "nType",
+                "pType",
+                "nAndpType"
+            ],
+            "type": "string"
+        },
+        "transistorCount": {
+            "description": "number of transistors in the package.",
+            "type": "number"
+        },
+        "collectorCurrent": {
+            "description": "maximum current flow of BJT as measured at the collector (Icc)",
+            "$comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "peakCollectorCurrent": {
+            "description": "maximum pulsed current flow of BJT as measured at the collector (Icm)",
+            "$comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "baseCurrent": {
+            "description": "maximum current flow of BJT as measured at the base (Ib)",
+            "$comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "peakBaseCurrent": {
+            "description": "maximum pulsed current flow of BJT as measured at the base (Ibm)",
+            "$comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "collectorBaseVoltage": {
+            "description": "maximum voltage between collector and base terminals of BJT with an open emitter terminal (V_CBO)",
+            "$comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "collectorEmitterVoltage": {
+            "description": "maximum voltage between collector and emitter terminals of BJT with an open base terminal (V_CEO)",
+            "$comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "emitterBaseVoltage": {
+            "description": "maximum voltage between emitter and base terminals of BJT with an open collector terminal (V_EBO)",
+            "$comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "pTot": {
+            "description": "maximum power that can be continously dissipated under temperature conditions",
+            "$comment": "conditions include temperature",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "collectorBaseCutOffCurrent": {
+            "description": "current into the collector terminal when the BJT's base and collector are reverse biased and the emitter is open (I_CBO)",
+            "$comment": "conditions include collector-base voltage",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "emitterBaseCutOffCurrent": {
+            "description": "current into the base terminal when the BJT's base and emitter are reverse biased and the collector is open (I_EBO)",
+            "$comment": "conditions include emitter-base Voltage",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "dcCurrentGain": {
+            "description": "ratio of collector current to base current (hfe)",
+            "$comment": "conditions include collector current and collector-emitter voltage",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "collectorEmitterSaturationVoltage": {
+            "description": "collector-emitter voltage below which a change in base current does not impact collector current (VCE_SAT)",
+            "$comment": "conditions include collector current and base current",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "baseEmitterSaturationVoltage": {
+            "description": "base-emitter voltage required to ensure the collector is forward biased for certain current conditions (VBE_SAT)",
+            "$comment": "conditions include collector current and base current",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "collectorEmitterBreakdownVoltage": {
+            "description": "collector-emitter voltage at which a specified current flows with the base open",
+            "$comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "baseEmitterBreakdownVoltage": {
+            "description": "base-emitter voltage at which a specified current flows with the collector open",
+            "$comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "delayTime": {
+            "description": "time delay between input signal rising and when collector current rises to 10% of Isat (td)",
+            "$comment": "conditions include collector current and base current",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "riseTime": {
+            "description": "time for collector current to rise through active region from 10% to 90% of Isat (tr)",
+            "$comment": "conditions include collector current and base current",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "storageTime": {
+            "description": "time delay between input signal falling and when collector current falls to 90% of Isat (ts)",
+            "$comment": "conditions include collector current and base current",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "fallTime": {
+            "description": "time for collector current to fall from 90% to 10% of Isat (tf)",
+            "$comment": "conditions include collector current and base current",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "collectorCapacitance": {
+            "description": "parasitic capacitance of collector terminal under certain conditions (Cc)",
+            "$comment": "conditions include collector-base voltage",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "emitterCapacitance": {
+            "description": "parasitic capacitance of emitter terminal under certain conditions (Ce)",
+            "$comment": "conditions include emitter-base voltage",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "transitionFrequency": {
+            "description": "frequency of unity current gain with a short circuit output (ft)",
+            "$comment": "conditions include collector current, collector-emitter voltage",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "icVsHfe": {
+            "description": "graph of collector current (Ic) vs dc current gain (Hfe).",
+            "$ref": "../common/graph.json#/graph"
+        },
+        "icVsVce": {
+            "description": "graph of collector current (Ic) vs collector-emitter saturation voltage (VCE_SAT).",
+            "$ref": "../common/graph.json#/graph"
+        },
+        "ibVsVce": {
+            "description": "graph of base current (Ib) vs collector-emitter voltage (VCE).",
+            "$ref": "../common/graph.json#/graph"
+        },
+        "pdVsTemp": {
+            "description": "graph of power dissipation vs temperature.",
+            "$ref": "../common/graph.json#/graph"
+        }
+    }
+}
