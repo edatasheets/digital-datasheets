@@ -1,0 +1,53 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/hardware/connector.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "connector",
+    "type": "object",
+    "required": [
+        "numberPins"
+    ],
+    "properties": {
+        "function": {
+            "description": "intended function of a connector",
+            "examples": [
+                "headphone jack",
+                "USB-C",
+                "HDMI",
+                "etc."
+            ],
+            "type": "string"
+        },
+        "contactCount": {
+            "description": "number of contacts in a connector",
+            "type": "number"
+        },
+        "type": {
+            "description": "property describing the method of mating to the connector",
+            "examples": [
+                "plug",
+                "receptacle",
+                "header",
+                "jumper",
+                "etc."
+            ],
+            "type": "string"
+        },
+        "cycleRating": {
+            "description": "number of plug/unplug cycles a connector is rated to support",
+            "type": "number"
+        },
+        "pitch": {
+            "description": "distance from the center of one contact on the connector to the center of the next contact",
+            "comment": "units of mm",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "keying": {
+            "description": "property describing whether a connector has an asymmetry to prevent it from being plugged in the wrong direction",
+            "type": "boolean"
+        },
+        "numberPins": {
+            "description": "number of pins on the connector",
+            "type": "number"
+        }
+    }
+}
