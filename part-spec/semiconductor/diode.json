@@ -1,0 +1,115 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/semiconductor/diode.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "diode",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "type of diode",
+            "examples": [
+                "zener",
+                "schottky",
+                "esd",
+                "switching",
+                "rectifier",
+                "tvs"
+            ],
+            "type": "string"
+        },
+        "diodeCount": {
+            "description": "number of diodes in the package",
+            "type": "number"
+        },
+        "diodeConfiguration": {
+            "description": "configuration of diode",
+            "examples": [
+                "unidirectional",
+                "bidirectional"
+            ],
+            "type": "string"
+        },
+        "numberOfProtectedLines": {
+            "description": "number of lines a diode can protect",
+            "type": "number"
+        },
+        "vf": {
+            "description": "forward voltage of a diode",
+            "comment": "conditions include: forward current of diode under which a given forward voltage was measured",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "if": {
+            "description": "continuous forward current of a diode",
+            "comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "ifm": {
+            "description": "maximum continuous forward current a diode can support",
+            "comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "ifrm": {
+            "description": "maximum repetitive peak forward current a diode can support",
+            "comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "ifsm": {
+            "description": "maximum non-repetitive surge forward current a diode can support",
+            "comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "vbr": {
+            "description": "breakdown voltage of a diode",
+            "comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "ir": {
+            "description": "reverse current",
+            "comment": "conditions include: reverse bias voltage under which reverse leakage current occurs",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "vz": {
+            "description": "breakdown voltage of a zener diode",
+            "comment": "conditions include: minimum reverse current condition under which breakdown voltage of a zener diode is achieved",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "vrm": {
+            "description": "maximum reverse standoff voltage a tvs diode can withstand",
+            "comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "vcl": {
+            "description": "clamping voltage of a tvs diode",
+            "comment": "conditions include: surge current condition under which a tvs clamping voltage occurs",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "vr": {
+            "description": "maximum continuous reverse biased voltage a diode can support",
+            "comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "vrrm": {
+            "description": "maximum repetitive reverse voltage pulses a diode can support",
+            "comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "cd": {
+            "description": "diode junction capacitance - between the anode and cathode- in reverse bias condition",
+            "comment": "units of farads",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "trr": {
+            "description": "reverse recovery time it takes the diode to stop conducting when its voltage changes from forward-bias to reverse-bias",
+            "comment": "units of seconds",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "pTot": {
+            "description": "maximum power dissipation of a forward biased diode",
+            "$comment": "conditions include temeprature",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "ifVsVf": {
+            "description": "graph of forward current (If) vs forward voltage (VfTyp)",
+            "$ref": "../common/graph.json#/graph"
+        }
+    }
+}
