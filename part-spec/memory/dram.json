@@ -1,0 +1,103 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/memory/dram.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "dram",
+    "type": "object",
+    "required": [
+        "capacity"
+    ],
+    "properties": {
+        "type": {
+            "description": "type of dram",
+            "examples": [
+                "lpddr3",
+                "ddr3",
+                "lpddr4",
+                "lpddr4x",
+                "ddr4",
+                "lpddr5",
+                "ddr5"
+            ],
+            "type": "string"
+        },
+        "capacity": {
+            "description": "capacity of dram chip",
+            "comment": "units of bytes (B)",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "ranksperModule": {
+            "description": "numbers of ranks on dram module",
+            "type": "number"
+        },
+        "diesPerChip": {
+            "description": "number of dies on dram chip",
+            "type": "number"
+        },
+        "channelsPerDie": {
+            "description": "number of channels per die on dram chip",
+            "type": "number"
+        },
+        "banksPerChannel": {
+            "description": "number of banks per channel of dram",
+            "type": "number"
+        },
+        "bitsPerChannel": {
+            "description": "channel density of dram",
+            "comment": "units of bits (b)",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "bitsPerDie": {
+            "description": "total die density of dram",
+            "comment": "units of bits (b)",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "pageSize": {
+            "description": "page size of dram",
+            "comment": "units of bytes (B)",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "rows": {
+            "description": "number of rows per channel of dram",
+            "type": "number"
+        },
+        "colunms": {
+            "description": "number of columns per row of dram",
+            "type": "number"
+        },
+        "dataRate": {
+            "description": "dram maximum data rate",
+            "comment": "units of mega transfers per second (MT/s)",
+            "type": "number"
+        },
+        "speed": {
+            "description": "dram maximum speed",
+            "comment": "units of hertz",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "latencyCas": {
+            "description": "cl/tCAS, delay between read command issued and first output data available for read",
+            "comment": "delay specified by number of clock cycles",
+            "type": "number"
+        },
+        "delayRasCas": {
+            "description": "tRCD,delay between activation of row and activation of column where data is stored in the dram",
+            "comment": "units of ns",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "delayRasPrecharge": {
+            "description": "tRP, delay between closing access to a row through the precharge command and activating a new row to access data ",
+            "comment": "units of ns",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "delayActivePrecharge": {
+            "description": "tRAS, delay between row active command issued and precharge command issued ",
+            "comment": "units of ns",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "currentConsumption": {
+            "description": "current consumption of a device",
+            "comment": "units of amps",
+            "$ref": "../common/currentConsumption.json#/currentConsumption"
+        }
+    }
+}
