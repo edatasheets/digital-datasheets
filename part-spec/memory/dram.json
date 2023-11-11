@@ -71,7 +71,7 @@
         },
         "speed": {
             "description": "dram maximum speed",
-            "comment": "units of hertz",
+            "comment": "units of Hertz(Hz)",
             "$ref": "../common/unit.json#/unit"
         },
         "latencyCas": {
