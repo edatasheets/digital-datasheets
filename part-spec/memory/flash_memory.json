@@ -1,0 +1,86 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/memory/flash_memory.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "flash memory",
+    "type": "object",
+    "required": [
+        "capacity"
+    ],
+    "properties": {
+        "capacity": {
+            "description": "capacity/density of flash memory",
+            "comment": "units of bits",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "pageSize": {
+            "description": "page size of flash memory",
+            "comment": "units of bits",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "blockSize": {
+            "description": "block size of flash memory",
+            "comment": "units of bits",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "bootBlockSize": {
+            "description": "size of the flash memory boot block",
+            "comment": "units of bits",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "interface": {
+            "description": "interface of flash memory to host",
+            "type": "string",
+            "examples": [
+                "spi",
+                "quad-spi",
+                "i2c"
+            ]
+        },
+        "clockFrequency": {
+            "description": "flash memory clock frequency",
+            "comment": "units of Hertz (Hz)",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "blockEraseTime": {
+            "description": "time it takes to erase a block (largest erasable unit) of the flash memory",
+            "comment": "units of seconds (s)",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "sectorEraseTime": {
+            "description": "time it takes to erase a sector (smallest erasable unit) of the flash memory",
+            "comment": "units of seconds (s)",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "chipEraseTime": {
+            "description": "time it takes to erase the flash memory",
+            "comment": "units of seconds (s)",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "pageProgramTime": {
+            "description": "time it takes to program a page of the flash memory",
+            "comment": "units of seconds (s)",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "endurance": {
+            "description": "time in years a bit in the eeprom can retain its data state ",
+            "type": "number"
+        },
+        "dataRetention": {
+            "description": "maximum number of read and write cycle the part can support",
+            "type": "number"
+        },
+        "hwReset": {
+            "description": "whether the part supports a hardware reset pin",
+            "type": "boolean"
+        },
+        "writeProtect": {
+            "description": "whether the part has a write protect pin",
+            "type": "boolean"
+        },
+        "currentConsumption": {
+            "description": "current consumption of a device",
+            "comment": "units of amps",
+            "$ref": "../common/currentConsumption.json#/currentConsumption"
+        }
+    }
+}
