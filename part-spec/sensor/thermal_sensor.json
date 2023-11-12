@@ -1,0 +1,61 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/sensor/thermal_sensor.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "thermal sensor",
+    "type": "object",
+    "properties": {
+        "sensingTechnology": {
+            "description": "method by which temperature is detected",
+            "examples": [
+                "rtd",
+                "thermistor",
+                "silicon bandgap"
+            ],
+            "type": "string"
+        },
+        "outputType": {
+            "description": "measurement output type",
+            "enum": [
+                "analog",
+                "digital"
+            ],
+            "type": "string"
+        },
+        "interface": {
+            "description": "interface(s) for communication to host",
+            "examples": [
+                "i2c",
+                "spi",
+                "analog"
+            ],
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "accuracy": {
+            "description": "accuracy of temperature sensor",
+            "comment": "units of degrees C",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "temperatureRange": {
+            "description": "range of temperature sensor",
+            "comment": "units of degrees C",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "resolution": {
+            "description": "maximum resolution of temperature sensor",
+            "comment": "units of degreesC/LSD",
+            "type": "number"
+        },
+        "gain": {
+            "description": "amount of change in the output voltage for a change in temperature",
+            "comment": "units of mV/degrees C",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "currentConsumption": {
+            "description": "current consumption of a device",
+            "$ref": "../common/currentConsumption.json#/currentConsumption"
+        }
+    }
+}
