@@ -1,0 +1,88 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/linear_regulator.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "linear regulator",
+    "type": "object",
+    "required": [
+        "vin",
+        "vout",
+        "loadCurrent"
+    ],
+    "properties": {
+        "vin": {
+            "description": "input voltage under which the part can be expected to operate without the output dropping",
+            "comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "vout": {
+            "description": "output voltage the part can regulate",
+            "comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "feedbackVoltage": {
+            "description": "voltage comparison point at the feedback node (vref)",
+            "comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "dropoutVoltage": {
+            "description": "dropout voltage of a device",
+            "comment": "units of volts",
+            "type": "number"
+        },
+        "loadCurrent": {
+            "description": "load current supported by a device",
+            "comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "currentLimit": {
+            "description": "sustained output current threshold beyond which the output of a device starts drooping",
+            "comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "voutAccuracy": {
+            "description": "output voltage variation at no load of a device",
+            "comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "loadRegulation": {
+            "description": "output voltage variation,from no load to full load, of a device ",
+            "comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "lineRegulation": {
+            "description": "output voltage variation,from minimum input voltage to maximum input voltage, of a device ",
+            "comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "enableTime": {
+            "description": "time between enable asserted and output voltage rising to 10% nominal",
+            "comment": "units of seconds",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "rampTime": {
+            "description": "time for output voltage to go from 10% vout nominal to 90% vout nominal",
+            "comment": "units of seconds",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "powerSupplyRejectionRatio": {
+            "description": "graph object to capture Power Supply Rejection Ratio (PSRR) of device over various frequencies",
+            "$ref": "../common/graph.json#/graph"
+        },
+        "rmsOutputNoise": {
+            "description": "graph object to capture RMS output noise of device over various frequencies",
+            "$ref": "../common/graph.json#/graph"
+        },
+        "totalOutputNoise": {
+            "description": "total output noise of a device",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "currentConsumption": {
+            "description": "current consumption of a device",
+            "$ref": "../common/currentConsumption.json#/currentConsumption"
+        },
+        "componentProtectionThresholds": {
+            "description": "Thermal and power supply protection thresholds of a device",
+            "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
+        }
+    }
+}
