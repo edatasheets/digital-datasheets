@@ -162,7 +162,8 @@
                     "type": "string",
                     "enum": [
                         "resistor",
-                        "capacitor"
+                        "capacitor",
+                        "inductor"
                     ]
                 },
                 "configuration": {
@@ -179,42 +180,15 @@
                     ],
                     "type": "string"
                 },
-                "minValue": {
-                    "description": "minimum value of component if a range is specified",
-                    "$ref": "../common/unit.json#/unit"
-                },
-                "maxValue": {
-                    "description": "maximum value of component if a range is specified",
-                    "$ref": "../common/unit.json#/unit"
-                },
                 "value": {
                     "description": "value of component if a range is not specified",
                     "$ref": "../common/unit.json#/unit"
+                },
+                "connectionPin": {
+                    "description": "name of pin to which an external component should be pulled up",
+                    "comment": "mostly commonly power or ground pin",
+                    "type": "string"
                 }
-            },
-            "componentUnit": {
-                "description": "unit of min/max value",
-                "type": "string",
-                "enum": [
-                    "ohms",
-                    "kilo ohms",
-                    "mega ohms",
-                    "micro farads",
-                    "pico farads",
-                    "micro henries"
-                ]
-            },
-            "connectionPin": {
-                "description": "name of pin to which an external component should be pulled up",
-                "comment": "mostly commonly power or ground pin",
-                "type": "string"
-            },
-            "dependencies": {
-                "componentUnit": [
-                    "minValue",
-                    "maxValue",
-                    "value"
-                ]
             }
         },
         "pinFunction": {
