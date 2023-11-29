@@ -13,10 +13,10 @@
             "description": "number of clock outputs in a clock IC",
             "type": "number"
         },
-        "diffSingleEnded": {
+        "differentialSingleEnded": {
             "description": "property describing whether a clock output is single ended or differential",
             "enum": [
-                "diff",
+                "differential",
                 "single"
             ],
             "type": "string"
@@ -27,14 +27,14 @@
             "$ref": "../common/unit.json#/unit"
         },
         "frequencyTolerance": {
-            "description": "amount of frequency variation specced from nominal frequency",
+            "description": "amount of frequency variation from nominal frequency",
             "comment": "units of percentage",
             "$ref": "../common/unit.json#/unit"
         },
         "powerSupplyRejectionRatio": {
-            "description": "power supply rejection ratio (PSRR)or ratio between power supply variation and output variation",
+            "description": "power supply rejection ratio (PSRR) or ratio between power supply variation and output variation",
             "comment": "units of dB",
-            "$ref": "../common/unit.json#/unit"
+            "type": "number"
         },
         "outputFormat": {
             "description": "signal format of clock output",
