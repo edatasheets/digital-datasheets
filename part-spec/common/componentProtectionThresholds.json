@@ -34,7 +34,7 @@
             "type": "object",
             "properties": {
                 "supplyName": {
-                    "description": "Name of the power supply",
+                    "description": "name of the power supply",
                     "type": "string"
                 },
                 "overVoltageProtectionThresholdRising": {
@@ -53,17 +53,17 @@
                     "$ref": "../common/unit.json#/unit"
                 },
                 "underVoltageLockoutThresholdRising": {
-                    "description": "Undervoltage Lockout Out (UVLO) Threshold with power supply rising",
+                    "description": "Undervoltage Lockout (UVLO) Threshold with power supply rising",
                     "comment": "units of volts",
                     "$ref": "../common/unit.json#/unit"
                 },
                 "underVoltageLockoutThresholdFalling": {
-                    "description": "Undervoltage Lockout Out (UVLO) Threshold with power supply Falling",
+                    "description": "Undervoltage Lockout (UVLO) Threshold with power supply falling",
                     "comment": "units of volts",
                     "$ref": "../common/unit.json#/unit"
                 },
                 "underVoltageLockoutHysteresis": {
-                    "description": "Undervoltage Lockout Out (UVLO) Hysteresis",
+                    "description": "Undervoltage Lockout (UVLO) Hysteresis",
                     "comment": "units of volts",
                     "$ref": "../common/unit.json#/unit"
                 }
