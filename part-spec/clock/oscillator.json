@@ -22,9 +22,9 @@
             "$ref": "../common/unit.json#/unit"
         },
         "frequencyStability": {
-            "description": "Frequency change over temperature, load, supply voltage change and aging",
+            "description": "frequency change over temperature, load, supply voltage change and aging",
             "$comment": "units of ppm",
-            "$ref": "../common/unit.json#/unit"
+            "type": "number"
         },
         "currentConsumption": {
             "description": "current consumption of a device",
