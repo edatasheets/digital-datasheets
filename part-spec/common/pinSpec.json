@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/pinSpec.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "specifications of pins",
+    "title": "Specification of pins",
     "pinSpec": {
         "type": "object",
         "required": [
@@ -42,7 +42,7 @@
                 "description": "list of function objects that can apply to an individual pin",
                 "type": "array",
                 "items": {
-                    "$ref": "#/$defs/pinFunction"
+                    "$ref": "#/$defs/functionProperties"
                 }
             },
             "vihMin": {
@@ -191,7 +191,7 @@
                 }
             }
         },
-        "pinFunction": {
+        "functionProperties": {
             "type": "object",
             "properties": {
                 "perFunctionName": {
