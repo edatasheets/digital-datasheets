@@ -29,13 +29,13 @@
             "type": "number"
         },
         "integralNonlinearity": {
-            "description": "deviation of an actual transfer function from an ideal transfer function, in LSB",
+            "description": "deviation (in LSB) of an actual transfer function from an ideal transfer function",
             "comment": "units of LSB",
             "type": "number"
         },
         "differentialNonlinearity": {
             "description": "difference (in LSB) in step width between the actual and ideal transfer functions",
-            "comment": "units of +/- LSB",
+            "comment": "units of LSB",
             "type": "number"
         },
         "rmsNoise": {
