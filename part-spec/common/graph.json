@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/graph.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Specifications of a graph",
+    "title": "Specification of a graph",
     "graph": {
         "type": "object",
         "properties": {
@@ -29,8 +29,8 @@
                 "description": "total number of curves in graph",
                 "type": "number"
             },
-            "data": {
-                "description": "array of curve objects representing actual data being plotted",
+            "curve": {
+                "description": "data represented by one or more curves in a graph",
                 "type": "array",
                 "items": {
                     "$ref": "#/$defs/curve"
@@ -43,18 +43,18 @@
             "type": "object",
             "properties": {
                 "label": {
-                    "description": "description of the data in a curve",
+                    "description": "description of the data captured by a curve",
                     "type": "string"
                 },
                 "xData": {
-                    "description": "x value of data being plotted",
+                    "description": "x-axis values of the curve",
                     "type": "array",
                     "items": {
                         "type": "number"
                     }
                 },
                 "yData": {
-                    "description": "y value of data being plotted",
+                    "description": "y-axis values of the curve",
                     "type": "array",
                     "items": {
                         "type": "number"
