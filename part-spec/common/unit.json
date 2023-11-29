@@ -60,11 +60,11 @@
                 "type": "number"
             },
             "minValue": {
-                "description": "minimum unit quantity corresponding to unit text - example if millivolt was selected 40mV would have a value of 1, if volt was selected 40mV would have a value of 0.001",
+                "description": "minimum unit quantity corresponding to unit text - example: 30mV would have a value of 30",
                 "type": "number"
             },
             "maxValue": {
-                "description": "maximum unit quantity corresponding to unit text - example 40mV would have a value of 40",
+                "description": "maximum unit quantity corresponding to unit text - example: 50mV would have a value of 50",
                 "type": "number"
             },
             "unitFactor": {
@@ -91,10 +91,6 @@
                     "add",
                     "subtract"
                 ]
-            },
-            "valueDefined": {
-                "description": "a boolean representing whether a value has been defined",
-                "type": "boolean"
             }
         }
     }
