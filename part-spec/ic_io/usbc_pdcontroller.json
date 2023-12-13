@@ -28,7 +28,7 @@
             "examples": [
                 "Source",
                 "Sink",
-                "DRP"
+                "Dual Role Port"
             ],
             "type": "string"
         },
@@ -60,7 +60,7 @@
             "type": "boolean"
         },
         "integratedLoadSwitch": {
-            "description": "whether the pd controller has one or more integrated load switches ",
+            "description": "whether the pd controller has an integrated load switch for vbus power ",
             "type": "boolean"
         },
         "maxSinkCurrent": {
@@ -107,7 +107,7 @@
             "$ref": "../common/currentConsumption.json#/currentConsumption"
         },
         "componentProtectionThresholds": {
-            "description": "Thermal and power supply protection thresholds of a device",
+            "description": "thermal and power supply protection thresholds of a device",
             "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
         }
     }
