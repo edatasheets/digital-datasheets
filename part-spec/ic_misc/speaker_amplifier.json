@@ -11,17 +11,17 @@
         "outputPower": {
             "description": "typical output power from speaker amplifier",
             "comment": "conditions include: voltage and load conditions under which output power is measured",
-            "$ref": "../common/definitions.json#/conditionalProperty"
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
         },
         "efficiency": {
             "description": "typical speaker amplifier efficiency",
             "comment": "conditions include: load and THD+N conditions under which efficiency is measured",
-            "$ref": "../common/definitions.json#/conditionalProperty"
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
         },
         "thd+n": {
             "description": "typical total harmonic distortion plus noise of amplifier",
             "comment": "conditions include: frequency, power, and load conditions under which thd+n is measured",
-            "$ref": "../common/definitions.json#/conditionalProperty"
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
         },
         "sampleRate": {
             "description": "sample rate of data out of amplifier",
