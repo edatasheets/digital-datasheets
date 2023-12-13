@@ -44,10 +44,6 @@
         "keying": {
             "description": "property describing whether a connector has an asymmetry to prevent it from being plugged in the wrong direction",
             "type": "boolean"
-        },
-        "numberPins": {
-            "description": "number of pins on the connector",
-            "type": "number"
         }
     }
 }
