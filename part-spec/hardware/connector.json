@@ -4,7 +4,7 @@
     "title": "connector",
     "type": "object",
     "required": [
-        "numberPins"
+        "contactCount"
     ],
     "properties": {
         "function": {
