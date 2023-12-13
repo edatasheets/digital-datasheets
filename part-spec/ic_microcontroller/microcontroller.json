@@ -42,16 +42,6 @@
             "description": "firmware version of the part",
             "type": "string"
         },
-        "activePower": {
-            "description": "average power of device in active state",
-            "comment": "units of mW",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "standbyPower": {
-            "description": "average power of device in standby state",
-            "comment": "units of uW",
-            "$ref": "../common/unit.json#/unit"
-        },
         "currentConsumption": {
             "description": "current used by device in various power modes",
             "$ref": "../common/currentConsumption.json#/currentConsumption"
