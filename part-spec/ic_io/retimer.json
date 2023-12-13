@@ -5,7 +5,7 @@
     "type": "object",
     "properties": {
         "numberOfLanes": {
-            "description": "number of lanes supported by a device",
+            "description": "number of lanes (single ended or differential) supported by a device",
             "type": "number"
         },
         "interface": {
@@ -24,7 +24,7 @@
             }
         },
         "dpMaxLinkRate": {
-            "description": "Max link rate supported by DP interface of a device",
+            "description": "maximum interface speed supported by DP interface of a device",
             "examples": [
                 "HBR",
                 "HBR2",
