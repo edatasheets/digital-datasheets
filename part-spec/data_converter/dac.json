@@ -11,12 +11,12 @@
         "offsetError": {
             "description": "analog response to an input code of all zeros",
             "comment": "units of percentage of full scale range",
-            "type": "number"
+            "$ref": "../common/unit.json#/unit"
         },
         "gainError": {
             "description": "difference (in percentage of FSR) of how well the slope of the actual transfer function matches the ideal transfer function",
             "comment": "units of percentage of full scale range",
-            "type": "number"
+            "$ref": "../common/unit.json#/unit"
         },
         "integralNonlinearity": {
             "description": "deviation of an actual transfer function from an ideal transfer function, in LSB",
@@ -57,7 +57,7 @@
             ],
             "type": "string"
         },
-        "outputChannels": {
+        "outputChannelCount": {
             "description": "number of output channels",
             "type": "number"
         },
