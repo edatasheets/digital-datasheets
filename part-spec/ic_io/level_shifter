@@ -5,12 +5,12 @@
     "type": "object",
     "properties": {
         "inputVoltage": {
-            "description": "input voltage level of level shifter",
+            "description": "nominal input voltage of level shifter",
             "comment": "units of volts",
             "$ref": "../common/unit.json#/unit"
         },
         "outputVoltage": {
-            "description": "output voltage level of level shifter",
+            "description": "nominal output voltage of level shifter",
             "comment": "units of volts",
             "$ref": "../common/unit.json#/unit"
         },
