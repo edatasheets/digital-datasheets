@@ -21,7 +21,7 @@
             "type": "string"
         },
         "vin": {
-            "description": "input voltage under which a device can be expected to operate without the output dropping",
+            "description": "input voltage range under which a device can be expected to reliabily operate",
             "comment": "units of volts",
             "$ref": "../common/unit.json#/unit"
         },
@@ -84,11 +84,11 @@
             "$ref": "../common/powerFetProperties.json#/powerFetProperties"
         },
         "componentProtectionThresholds": {
-            "description": "Thermal and power supply protection thresholds of a device",
+            "description": "thermal and power supply protection thresholds of a device",
             "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
         },
         "efficiency": {
-            "description": "power efficiency of regulator",
+            "description": "power efficiency of a regulator as a function of output current",
             "$ref": "../common/graph.json#/graph"
         }
     }
