@@ -72,7 +72,7 @@
         },
         "inputCurrentAccuracy": {
             "description": "accuracy of input current when set",
-            "comment": "units of %",
+            "comment": "units of percentage",
             "$ref": "../common/unit.json#/unit"
         },
         "batteryChargeCurrent": {
@@ -82,7 +82,7 @@
         },
         "batteryChargeCurrentAccuracy": {
             "description": "charging current regulation accuracy of a device",
-            "comment": "units of %",
+            "comment": "units of percentage",
             "$ref": "../common/unit.json#/unit"
         },
         "batteryPreChargeCurrent": {
@@ -92,7 +92,7 @@
         },
         "batteryPreChargeCurrentAccuracy": {
             "description": "pre-charging current regulation accuracy of a device",
-            "comment": "units of %",
+            "comment": "units of percentage",
             "$ref": "../common/unit.json#/unit"
         },
         "batteryTrickleChargeCurrent": {
@@ -101,8 +101,8 @@
             "$ref": "../common/unit.json#/unit"
         },
         "batteryTrickleChargeCurrentAccuracy": {
-            "description": "Trickle charging current regulation accuracy of a device",
-            "comment": "units of %",
+            "description": "trickle charging current regulation accuracy of a device",
+            "comment": "units of percentage",
             "$ref": "../common/unit.json#/unit"
         },
         "batteryTerminationChargeCurrent": {
@@ -112,7 +112,7 @@
         },
         "batteryTerminationChargeCurrentAccuracy": {
             "description": "termination charging current regulation accuracy of a device",
-            "comment": "units of %",
+            "comment": "units of percentage",
             "$ref": "../common/unit.json#/unit"
         },
         "batteryChargeVoltage": {
@@ -122,11 +122,11 @@
         },
         "batteryChargeVoltageAccuracy": {
             "description": "accuracy of battery charge voltage regulated by a device",
-            "comment": "units of %",
+            "comment": "units of percentage",
             "$ref": "../common/unit.json#/unit"
         },
         "efficiency": {
-            "description": "charge efficiency vs charge current of a device",
+            "description": "charger efficiency as a function of charge current of a device",
             "$ref": "../common/graph.json#/graph"
         },
         "vin": {
@@ -144,7 +144,7 @@
             "$ref": "../common/currentConsumption.json#/currentConsumption"
         },
         "componentProtectionThresholds": {
-            "description": "Thermal and power supply protection thresholds of a device",
+            "description": "thermal and power supply protection thresholds of a device",
             "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
         },
         "batteryChargerProtections": {
@@ -169,7 +169,7 @@
         },
         "integratedFetProperties": {
             "description": "describes integrated fet current limits and rdson properties",
-            "$ref": "#/$defs/powerFetProperties"
+            "$ref": "../common/powerFetProperties.json#/powerFetProperties"
         },
         "gateCapacitance": {
             "description": "describes gate capacitance supported on external fets",
