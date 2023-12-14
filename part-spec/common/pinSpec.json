@@ -46,22 +46,22 @@
                 }
             },
             "vihMin": {
-                "description": "the least positive (most negative) value of high-level input voltage for which operation of the logic element within specification limits is to be expected",
+                "description": "the lowest value of high-level input voltage for which operation of the logic element within specification limits is to be expected",
                 "comment": "units of volts",
                 "$ref": "../common/unit.json#/unit"
             },
             "vihMax": {
-                "description": "the most positive (least negative) value of high-level input voltage for which operation of the logic element within specification limits is to be expected",
+                "description": "the highest value of high-level input voltage for which operation of the logic element within specification limits is to be expected",
                 "comment": "units of volts",
                 "$ref": "../common/unit.json#/unit"
             },
             "vilMax": {
-                "description": "the most positive (least negative) value of low-level input voltage for which operation of the logic element within specification limits is to be expected",
+                "description": "the highest value of low-level input voltage for which operation of the logic element within specification limits is to be expected",
                 "comment": "units of volts",
                 "$ref": "../common/unit.json#/unit"
             },
             "vilMin": {
-                "description": "the least positive (most negative) value of low-level input voltage for which operation of the logic element within specification limits is to be expected",
+                "description": "the lowest value of low-level input voltage for which operation of the logic element within specification limits is to be expected",
                 "comment": "units of volts",
                 "$ref": "../common/unit.json#/unit"
             },
@@ -96,7 +96,7 @@
                 "$ref": "../common/unit.json#/unit"
             },
             "inputLeakage": {
-                "description": "maximum current draw into a high impedance input pin",
+                "description": "maximum current draw out of a high impedance input pin",
                 "comment": "units of amps",
                 "$ref": "../common/unit.json#/unit"
             },
@@ -145,7 +145,7 @@
             }
         },
         "pinPaths": {
-            "description": "information on pin paths - pins associated with each component in a multi-component part",
+            "description": "information on pin paths - pins associated with each component in a multi-component part (such as A1,Y1 and A2,Y2)",
             "$ref": "../common/pinPaths.json#/pinPaths"
         }
     },
@@ -181,7 +181,7 @@
                     "type": "string"
                 },
                 "value": {
-                    "description": "value of component if a range is not specified",
+                    "description": "value of component",
                     "$ref": "../common/unit.json#/unit"
                 },
                 "connectionPin": {
