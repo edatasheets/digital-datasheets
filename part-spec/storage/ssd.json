@@ -23,7 +23,7 @@
         "dataRate": {
             "description": "maximum data rate of the ssd",
             "comment": "units of bytes per second (Bps)",
-            "$ref": "../common/unit.json#/unit"
+            "type": "number"
         },
         "interface": {
             "description": "interface of ssd to host",
