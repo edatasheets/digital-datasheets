@@ -65,7 +65,7 @@
       "$ref": "../common/unit.json#/unit"
     },
     "iD": {
-      "description": "Drain Current of a MOSFET.",
+      "description": "drain Current of a MOSFET.",
       "comment": "units of amps",
       "$ref": "../common/unit.json#/unit"
     },
@@ -150,11 +150,11 @@
       "$ref": "../common/conditionalProperty.json#/conditionalProperty"
     },
     "idVsVds": {
-      "description": "graph of drain current (iD) vs drain source voltage (vds).",
+      "description": "graph of drain current (iD) as a function of drain source voltage (vds).",
       "$ref": "../common/graph.json#/graph"
     },
     "idVsVgs": {
-      "description": "graph of drain current (iD) vs gate source voltage (vgs).",
+      "description": "graph of drain current (iD) as a function of gate source voltage (vgs).",
       "$ref": "../common/graph.json#/graph"
     },
     "tdON": {
