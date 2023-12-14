@@ -22,9 +22,9 @@
             "$ref": "../common/unit.json#/unit"
         },
         "dataRate": {
-            "description": "maximum data rate of teh sd card",
+            "description": "maximum data rate of the sd card",
             "comment": "units of bytes per second (Bps)",
-            "$ref": "../common/unit.json#/unit"
+            "type": "number"
         },
         "currentConsumption": {
             "description": "current consumption of a device",
