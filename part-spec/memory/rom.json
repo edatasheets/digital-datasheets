@@ -18,7 +18,7 @@
             ]
         },
         "qeStatus": {
-            "description": "indicates whether the QE bit is set",
+            "description": "indicates whether the Quad Enable(QE) bit is set",
             "type": "boolean"
         },
         "currentConsumption": {
