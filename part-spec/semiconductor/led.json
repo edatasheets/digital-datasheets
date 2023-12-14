@@ -40,7 +40,7 @@
         },
         "ledCapacitance": {
             "description": "capacitance of an LED",
-            "$comment": "units of pico Farads (pF)",
+            "$comment": "units of farads (F)",
             "$ref": "../common/unit.json#/unit"
         },
         "iv": {
@@ -54,18 +54,18 @@
             "$ref": "../common/conditionalProperty.json#/conditionalProperty"
         },
         "dominantWavelength": {
-            "description": " dominant wavelength an LED emits the majority of the time",
+            "description": "dominant wavelength an LED emits the majority of the time",
             "$comment": "units of nanometer(nm). Measurement conditions include LED forward current, if",
             "$ref": "../common/conditionalProperty.json#/conditionalProperty"
         },
         "angleHalfIntensity": {
-            "description": " angle at which LED intensity falls to 50% of its maximum value",
+            "description": "angle at which LED intensity falls to 50% of its maximum value",
             "$comment": "units of degrees",
             "$ref": "../common/unit.json#/unit"
         },
         "pd": {
             "description": "power dissipation of an LED",
-            "$comment": "units of milliwatts (mW)",
+            "$comment": "units of watts (W)",
             "$ref": "../common/unit.json#/unit"
         }
     }
