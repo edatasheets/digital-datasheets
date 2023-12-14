@@ -14,7 +14,7 @@
     },
     "tolerance": {
       "description": "nominal tolerance of an inductor",
-      "comment": "units of %",
+      "comment": "units of percentage",
       "$ref": "../common/unit.json#/unit"
     },
     "ratedCurrent": {
@@ -33,7 +33,7 @@
       "$ref": "../common/unit.json#/unit"
     },
     "selfResonantFrequency": {
-      "description": "frequency at which the inductor becomes a capacitor",
+      "description": "frequency at which the inductor starts behaving like a capacitor",
       "comment": "units of hertz",
       "$ref": "../common/unit.json#/unit"
     },
@@ -58,11 +58,11 @@
       "$ref": "../common/unit.json#/unit"
     },
     "saturationCurve": {
-      "description": "graph object to capture inductor saturation with current",
+      "description": "graph object to capture inductance as a function of current",
       "$ref": "../common/graph.json#/graph"
     },
     "resonantFrequencyCurve": {
-      "description": "graph object to capture inductor resonant frequency",
+      "description": "graph object to capture inductance as a function of frequency",
       "$ref": "../common/graph.json#/graph"
     }
   }
