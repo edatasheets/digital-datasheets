@@ -10,7 +10,7 @@
     ],
     "properties": {
         "vin": {
-            "description": "input voltage under which the part can be expected to operate without the output dropping",
+            "description": "minimum input voltage under which the part can be expected to operate without the output dropping",
             "comment": "units of volts",
             "$ref": "../common/unit.json#/unit"
         },
@@ -27,7 +27,7 @@
         "dropoutVoltage": {
             "description": "dropout voltage of a device",
             "comment": "units of volts",
-            "type": "number"
+            "$ref": "../common/unit.json#/unit"
         },
         "loadCurrent": {
             "description": "load current supported by a device",
@@ -65,11 +65,11 @@
             "$ref": "../common/unit.json#/unit"
         },
         "powerSupplyRejectionRatio": {
-            "description": "graph object to capture Power Supply Rejection Ratio (PSRR) of device over various frequencies",
+            "description": "graph object to capture Power Supply Rejection Ratio (PSRR) of device as a function of frequency",
             "$ref": "../common/graph.json#/graph"
         },
         "rmsOutputNoise": {
-            "description": "graph object to capture RMS output noise of device over various frequencies",
+            "description": "graph object to capture RMS output noise of device as a function of frequency",
             "$ref": "../common/graph.json#/graph"
         },
         "totalOutputNoise": {
@@ -81,7 +81,7 @@
             "$ref": "../common/currentConsumption.json#/currentConsumption"
         },
         "componentProtectionThresholds": {
-            "description": "Thermal and power supply protection thresholds of a device",
+            "description": "thermal and power supply protection thresholds of a device",
             "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
         }
     }
