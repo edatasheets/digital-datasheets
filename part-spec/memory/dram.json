@@ -67,7 +67,7 @@
         "dataRate": {
             "description": "dram maximum data rate",
             "comment": "units of mega transfers per second (MT/s)",
-            "type": "number"
+            "$ref": "../common/unit.json#/unit"
         },
         "speed": {
             "description": "dram maximum speed",
