@@ -14,7 +14,7 @@
             "$ref": "../common/unit.json#/unit"
         },
         "vout": {
-            "description": "output voltage a device can regulate",
+            "description": "output voltage range a device can regulate",
             "comment": "units of volts",
             "$ref": "../common/unit.json#/unit"
         },
@@ -25,7 +25,7 @@
         },
         "ioutAccuracy": {
             "description": "accuracy of per string current regulated by a device",
-            "comment": "units of %",
+            "comment": "units of percentage",
             "$ref": "../common/unit.json#/unit"
         },
         "fsw": {
@@ -72,11 +72,11 @@
             "$ref": "../common/ratio.json#/ratio"
         },
         "componentProtectionThresholds": {
-            "description": "Thermal and power supply protection thresholds of a device",
+            "description": "thermal and power supply protection thresholds of a device",
             "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
         },
         "efficiency": {
-            "description": "efficiency vs forward current",
+            "description": "backlight driver efficiency as a function of forward current",
             "$ref": "../common/graph.json#/graph"
         }
     }
