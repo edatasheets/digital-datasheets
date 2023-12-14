@@ -35,7 +35,7 @@
             "description": "describes whether the capacitor is polarized",
             "type": "boolean"
         },
-        "equivalentSerieResistance": {
+        "equivalentSeriesResistance": {
             "description": "equivalent series resistance (ESR) of the capacitor",
             "comment": "units of ohms",
             "$ref": "../common/unit.json#/unit"
@@ -56,7 +56,7 @@
             "$ref": "../common/unit.json#/unit"
         },
         "capacitorDerating": {
-            "description": "graph object to capture capacitance changes with voltage",
+            "description": "graph object to capture capacitance changes with voltage changes",
             "$ref": "../common/graph.json#/graph"
         }
     }
