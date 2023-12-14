@@ -34,12 +34,12 @@
                 "2000"
             ],
             "comment": "units of LSB/g (least significant bits per g) at a given acceleration range and output resolution",
-            "$ref": "../common/unit.json#/unit"
+            "type": "number"
         },
         "accelerationSensitivityOverTemperature": {
             "description": "accelerometer sensitivity change over temperature",
             "comment": "units of percentage per degree celsius (%/Celsius)",
-            "$ref": "../common/unit.json#/unit"
+            "type": "number"
         },
         "axis": {
             "description": "number of axes of acceleration measurement",
@@ -48,12 +48,12 @@
         "zerogOffset": {
             "description": "output of the accelerometer when no acceleration is applied",
             "comment": "units of g-force (g)",
-            "$ref": "../common/unit.json#/unit"
+            "type": "number"
         },
         "zerogOffsetOverTemperature": {
             "description": "accelerometer zero-g offset change over temperature",
             "comment": "units of milli g-force per degree celsius (mg/Celcius)",
-            "$ref": "../common/unit.json#/unit"
+            "type": "number"
         },
         "outputType": {
             "description": "measurement output type",
@@ -93,12 +93,12 @@
         "rmsNoise": {
             "description": "broadband rms noise of a device",
             "comment": "units of milli g-force",
-            "$ref": "../common/unit.json#/unit"
+            "type": "number"
         },
         "spectralNoiseDensity": {
             "description": "spectral noise density of a device",
             "comment": "units of milli g-force per square root of Hz (milli-g/rt-Hz)",
-            "$ref": "../common/unit.json#/unit"
+            "type": "number"
         },
         "currentConsumption": {
             "description": "current consumption of a device",
