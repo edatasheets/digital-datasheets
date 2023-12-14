@@ -8,13 +8,13 @@
     ],
     "properties": {
         "value": {
-            "description": "resistor value",
+            "description": "resistance value",
             "comment": "units of ohms",
             "$ref": "../common/unit.json#/unit"
         },
         "tolerance": {
             "description": "nominal tolerance of a resistor",
-            "comment": "units of %",
+            "comment": "units of percentage",
             "$ref": "../common/unit.json#/unit"
         },
         "powerRating": {
