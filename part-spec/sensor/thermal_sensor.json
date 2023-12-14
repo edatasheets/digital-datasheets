@@ -51,7 +51,7 @@
         "gain": {
             "description": "amount of change in the output voltage for a change in temperature",
             "comment": "units of mV/degrees C",
-            "$ref": "../common/unit.json#/unit"
+            "type": "number"
         },
         "currentConsumption": {
             "description": "current consumption of a device",
