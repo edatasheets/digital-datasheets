@@ -36,7 +36,7 @@
             "comment": "conditions includes vin and output current",
             "$ref": "../common/conditionalProperty.json#/conditionalProperty"
         },
-        "pdResistance": {
+        "pullDownResistance": {
             "description": "pull-down resistance of a device from the output to the ground",
             "comment": "units of ohms",
             "$ref": "../common/unit.json#/unit"
@@ -78,7 +78,7 @@
         },
         "fallTime": {
             "description": "time for output voltage to go from 90% vout nominal to 10% vout nominal",
-            "comment": "conditions include output capacitor value and current output, vin",
+            "comment": "conditions include output capacitor value, current output, and vin",
             "$ref": "../common/conditionalProperty.json#/conditionalProperty"
         },
         "currentConsumption": {
@@ -86,7 +86,7 @@
             "$ref": "../common/currentConsumption.json#/currentConsumption"
         },
         "componentProtectionThresholds": {
-            "description": "Thermal and power supply protection thresholds of a device",
+            "description": "thermal and power supply protection thresholds of a device",
             "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
         }
     }
