@@ -41,15 +41,20 @@
             "type": "number"
         },
         "componentList": {
-            "description": "List of components integrated in the device",
+            "description": "list of components integrated in the device",
             "comment": "list should include components with an existing digital datasheet specification",
+            "examples": [
+                "load switch", 
+                "linear regulator",
+                "switching regulator"
+            ],
             "type": "array",
             "items": {
                 "type": "string"
             }
         },
         "instances": {
-            "description": "definition(specification) of each instance of a component in the device",
+            "description": "definition (specification) of each instance of a component in the device",
             "type": "array",
             "items": {
                 "$ref": "#/$defs/powerComponentDefinitions"
@@ -65,7 +70,7 @@
             "$ref": "../common/currentConsumption.json#/currentConsumption"
         },
         "componentProtectionThresholds": {
-            "description": "Thermal and power supply protection thresholds of a device",
+            "description": "thermal and power supply protection thresholds of a device",
             "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
         }
     },
@@ -76,10 +81,10 @@
                 "componentName": {
                     "description": "name of the component defined in the digital datasheets specifications",
                     "examples": [
-                        "linear_regulator",
-                        "switching_regulator",
-                        "load_switch",
-                        "displaybacklight_driver",
+                        "linear regulator",
+                        "switching regulator",
+                        "load switch",
+                        "displaybacklight driver",
                         "adc",
                         "clock"
                     ],
@@ -88,7 +93,7 @@
                 "instanceName": {
                     "description": "name of component instance",
                     "examples": [
-                        "LDO1",
+                        "LDOA",
                         "BUCK1",
                         "BUCK3",
                         "clock1"
