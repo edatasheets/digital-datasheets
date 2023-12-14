@@ -33,22 +33,22 @@
         "linearMagneticSensingRange": {
             "description": "magnetic flux density range over which the output voltage is linear ",
             "comment": "units of mT",
-            "$ref": "../common/unit.json#/unit"
+            "type": "number"
         },
         "sensitivity": {
             "description": "this is the gain - amount of change in the output voltage for a change in the magnetic flux density",
             "comment": "units of mV/mT",
-            "$ref": "../common/unit.json#/unit"
+            "type": "number"
         },
         "operatePoint": {
             "description": "magnetic flux density threshold which causes the sensor output to turn on",
             "comment": "units of mT. Depending on the sensor's design, the operation point can cause the output to trip High or Low.",
-            "$ref": "../common/unit.json#/unit"
+            "type": "number"
         },
         "releasePoint": {
             "description": "magnetic flux density threshold which causes the sensor output to turn off",
             "comment": "units of mT. Depending on the sensor's design, the release point can cause the output to trip High or Low.",
-            "$ref": "../common/unit.json#/unit"
+            "type": "number"
         },
         "outputPolarity": {
             "description": "indicates whether the sensor output is active high or active low",
@@ -61,7 +61,7 @@
         "hysteresis": {
             "description": "delta between the operate point and the release point threshold",
             "comment": "units of mT",
-            "$ref": "../common/unit.json#/unit"
+            "type": "number"
         },
         "bandwidth": {
             "description": "sensing bandwidth",
