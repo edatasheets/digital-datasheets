@@ -67,7 +67,7 @@
         },
         "emitterBaseCutOffCurrent": {
             "description": "current into the base terminal when the BJT's base and emitter are reverse biased and the collector is open (I_EBO)",
-            "$comment": "conditions include emitter-base Voltage",
+            "$comment": "conditions include emitter-base voltage",
             "$ref": "../common/conditionalProperty.json#/conditionalProperty"
         },
         "dcCurrentGain": {
@@ -131,19 +131,19 @@
             "$ref": "../common/conditionalProperty.json#/conditionalProperty"
         },
         "icVsHfe": {
-            "description": "graph of collector current (Ic) vs dc current gain (Hfe).",
+            "description": "graph of collector current (Ic) as a function of dc current gain (Hfe).",
             "$ref": "../common/graph.json#/graph"
         },
         "icVsVce": {
-            "description": "graph of collector current (Ic) vs collector-emitter saturation voltage (VCE_SAT).",
+            "description": "graph of collector current (Ic) as a function of collector-emitter saturation voltage (VCE_SAT).",
             "$ref": "../common/graph.json#/graph"
         },
         "ibVsVce": {
-            "description": "graph of base current (Ib) vs collector-emitter voltage (VCE).",
+            "description": "graph of base current (Ib) as a function of collector-emitter voltage (VCE).",
             "$ref": "../common/graph.json#/graph"
         },
         "pdVsTemp": {
-            "description": "graph of power dissipation vs temperature.",
+            "description": "graph of power dissipation as a function of temperature.",
             "$ref": "../common/graph.json#/graph"
         }
     }
