@@ -44,7 +44,7 @@
             "description": "list of components integrated in the device",
             "comment": "list should include components with an existing digital datasheet specification",
             "examples": [
-                "load switch", 
+                "load switch",
                 "linear regulator",
                 "switching regulator"
             ],
@@ -93,9 +93,9 @@
                 "instanceName": {
                     "description": "name of component instance",
                     "examples": [
-                        "LDOA",
-                        "BUCK1",
-                        "BUCK3",
+                        "ldoa",
+                        "buck1",
+                        "buck3",
                         "clock1"
                     ],
                     "type": "string"
