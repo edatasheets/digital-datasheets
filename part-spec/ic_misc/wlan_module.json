@@ -2,70 +2,72 @@
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/wlan_module.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "wlan module",
-    "type": "object",
-    "properties": {
-        "wlanSpec": {
-            "description": "version of wlan specification supported by module",
-            "examples": [
-                "802.11ac",
-                "802.11ax",
-                "etc."
-            ],
-            "type": "string"
-        },
-        "bluetoothVersion": {
-            "description": "version of bluetooth supported by module",
-            "examples": [
-                "4.0",
-                "4.1",
-                "5.0",
-                "etc."
-            ],
-            "type": "string"
-        },
-        "txrxChains": {
-            "description": "number of tx and rx chains in a wifi module",
-            "examples": [
-                "2x2",
-                "2x1",
-                "etc."
-            ],
-            "type": "string"
-        },
-        "m2FormFactor": {
-            "description": "wlan module form factor described by jedec standard m.2 form factors",
-            "examples": [
-                "1216",
-                "2230",
-                "etc."
-            ],
-            "type": "string"
-        },
-        "keying": {
-            "description": "pcie card key",
-            "examples": [
-                "E",
-                "hybrid-E",
-                "etc."
-            ],
-            "type": "string"
-        },
-        "lteCoexFilter": {
-            "description": "describes whether module supports lte coexistance filtering",
-            "type": "boolean"
-        },
-        "interface": {
-            "description": "describes the communication interface from the chip to the host",
-            "examples": [
-                "pcie",
-                "cnvi",
-                "etc."
-            ],
-            "type": "string"
-        },
-        "currentConsumption": {
-            "description": "current used by device in various power modes",
-            "$ref": "..common/currentConsumption.json#/currentConsumption"
+    "wlan_module": {
+        "type": "object",
+        "properties": {
+            "wlanSpec": {
+                "description": "version of wlan specification supported by module",
+                "examples": [
+                    "802.11ac",
+                    "802.11ax",
+                    "etc."
+                ],
+                "type": "string"
+            },
+            "bluetoothVersion": {
+                "description": "version of bluetooth supported by module",
+                "examples": [
+                    "4.0",
+                    "4.1",
+                    "5.0",
+                    "etc."
+                ],
+                "type": "string"
+            },
+            "txrxChains": {
+                "description": "number of tx and rx chains in a wifi module",
+                "examples": [
+                    "2x2",
+                    "2x1",
+                    "etc."
+                ],
+                "type": "string"
+            },
+            "m2FormFactor": {
+                "description": "wlan module form factor described by jedec standard m.2 form factors",
+                "examples": [
+                    "1216",
+                    "2230",
+                    "etc."
+                ],
+                "type": "string"
+            },
+            "keying": {
+                "description": "pcie card key",
+                "examples": [
+                    "E",
+                    "hybrid-E",
+                    "etc."
+                ],
+                "type": "string"
+            },
+            "lteCoexFilter": {
+                "description": "describes whether module supports lte coexistance filtering",
+                "type": "boolean"
+            },
+            "interface": {
+                "description": "describes the communication interface from the chip to the host",
+                "examples": [
+                    "pcie",
+                    "cnvi",
+                    "etc."
+                ],
+                "type": "string"
+            },
+            "currentConsumption": {
+                "description": "current used by device in various power modes",
+                "$ref": "..common/currentConsumption.json#/currentConsumption"
+            }
         }
     }
 }

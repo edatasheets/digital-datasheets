@@ -2,64 +2,66 @@
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/clocks/oscillator.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "oscillator",
-    "type": "object",
-    "required": [
-        "frequency"
-    ],
-    "properties": {
-        "baseResonator": {
-            "description": "technology producing resonance",
-            "type": "string",
-            "enum": [
-                "crystal",
-                "mems",
-                "silicon"
-            ]
-        },
-        "frequency": {
-            "description": "output frequency of oscillator",
-            "$comment": "units of hertz",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "frequencyStability": {
-            "description": "frequency change over temperature, load, supply voltage change and aging",
-            "$comment": "units of ppm",
-            "type": "number"
-        },
-        "currentConsumption": {
-            "description": "current consumption of a device",
-            "comment": "units of amps",
-            "$ref": "../common/currentConsumption.json#/currentConsumption"
-        },
-        "outputLoad": {
-            "description": "maxium capacitive load that can be supported by oscillator",
-            "comment": "units of farads",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "riseTime": {
-            "description": "time for output to go from 10% to 90% of output max",
-            "comment": "units of seconds",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "fallTime": {
-            "description": "time for output to go from 90% to 10% of output max",
-            "comment": "units of seconds",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "startUpTime": {
-            "description": "time between enable and output reaching 10% of output max",
-            "comment": "units of seconds",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "dutyCycle": {
-            "description": "time above 50% of output max over entire period",
-            "comment": "units of percent",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "phaseJitter": {
-            "description": "variation of waveform period",
-            "comment": "units of seconds",
-            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+    "oscillator": {
+        "type": "object",
+        "required": [
+            "frequency"
+        ],
+        "properties": {
+            "baseResonator": {
+                "description": "technology producing resonance",
+                "type": "string",
+                "enum": [
+                    "crystal",
+                    "mems",
+                    "silicon"
+                ]
+            },
+            "frequency": {
+                "description": "output frequency of oscillator",
+                "$comment": "units of hertz",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "frequencyStability": {
+                "description": "frequency change over temperature, load, supply voltage change and aging",
+                "$comment": "units of ppm",
+                "type": "number"
+            },
+            "currentConsumption": {
+                "description": "current consumption of a device",
+                "comment": "units of amps",
+                "$ref": "../common/currentConsumption.json#/currentConsumption"
+            },
+            "outputLoad": {
+                "description": "maxium capacitive load that can be supported by oscillator",
+                "comment": "units of farads",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "riseTime": {
+                "description": "time for output to go from 10% to 90% of output max",
+                "comment": "units of seconds",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "fallTime": {
+                "description": "time for output to go from 90% to 10% of output max",
+                "comment": "units of seconds",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "startUpTime": {
+                "description": "time between enable and output reaching 10% of output max",
+                "comment": "units of seconds",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "dutyCycle": {
+                "description": "time above 50% of output max over entire period",
+                "comment": "units of percent",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "phaseJitter": {
+                "description": "variation of waveform period",
+                "comment": "units of seconds",
+                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+            }
         }
     }
 }

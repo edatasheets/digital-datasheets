@@ -2,62 +2,64 @@
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/retimer.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "retimer",
-    "type": "object",
-    "properties": {
-        "numberOfLanes": {
-            "description": "number of lanes (single ended or differential) supported by a device",
-            "type": "number"
-        },
-        "interface": {
-            "description": "list of interface(s) supported by a device",
-            "examples": [
-                "HDMI",
-                "DP1.4",
-                "USB3.2 Gen2x1",
-                "PCIe3.0",
-                "TBT3.0",
-                "USB4"
-            ],
-            "type": "array",
-            "items": {
+    "retimer": {
+        "type": "object",
+        "properties": {
+            "numberOfLanes": {
+                "description": "number of lanes (single ended or differential) supported by a device",
+                "type": "number"
+            },
+            "interface": {
+                "description": "list of interface(s) supported by a device",
+                "examples": [
+                    "HDMI",
+                    "DP1.4",
+                    "USB3.2 Gen2x1",
+                    "PCIe3.0",
+                    "TBT3.0",
+                    "USB4"
+                ],
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "dpMaxLinkRate": {
+                "description": "maximum interface speed supported by DP interface of a device",
+                "examples": [
+                    "HBR",
+                    "HBR2",
+                    "HBR33",
+                    "UHBR10",
+                    "UHBR13.5"
+                ],
                 "type": "string"
+            },
+            "maxDataRate": {
+                "description": "maximum data rate supported by a device",
+                "comment": "units of Hz",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "integratedAuxLsSwitch": {
+                "description": "whether the AUX/LSx switch for SBU is integrated",
+                "type": "boolean"
+            },
+            "commonClock": {
+                "description": "whether a device supports common reference clock",
+                "type": "boolean"
+            },
+            "sris": {
+                "description": "whether a device supports Seperate Reference clock with Independent Spread spectrum clocking(SRIS)",
+                "type": "boolean"
+            },
+            "srns": {
+                "description": "whether a device supports Seperate Reference clock with No Spread spectrum clocking (SRNS)",
+                "type": "boolean"
+            },
+            "currentConsumption": {
+                "description": "current used by device in various power modes",
+                "$ref": "../common/currentConsumption.json#/currentConsumption"
             }
-        },
-        "dpMaxLinkRate": {
-            "description": "maximum interface speed supported by DP interface of a device",
-            "examples": [
-                "HBR",
-                "HBR2",
-                "HBR33",
-                "UHBR10",
-                "UHBR13.5"
-            ],
-            "type": "string"
-        },
-        "maxDataRate": {
-            "description": "maximum data rate supported by a device",
-            "comment": "units of Hz",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "integratedAuxLsSwitch": {
-            "description": "whether the AUX/LSx switch for SBU is integrated",
-            "type": "boolean"
-        },
-        "commonClock": {
-            "description": "whether a device supports common reference clock",
-            "type": "boolean"
-        },
-        "sris": {
-            "description": "whether a device supports Seperate Reference clock with Independent Spread spectrum clocking(SRIS)",
-            "type": "boolean"
-        },
-        "srns": {
-            "description": "whether a device supports Seperate Reference clock with No Spread spectrum clocking (SRNS)",
-            "type": "boolean"
-        },
-        "currentConsumption": {
-            "description": "current used by device in various power modes",
-            "$ref": "../common/currentConsumption.json#/currentConsumption"
         }
     }
 }

@@ -2,54 +2,56 @@
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/passives/resistor.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "resistor",
-    "type": "object",
-    "required": [
-        "value"
-    ],
-    "properties": {
-        "value": {
-            "description": "resistance value",
-            "comment": "units of ohms",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "tolerance": {
-            "description": "nominal tolerance of a resistor",
-            "comment": "units of percentage",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "powerRating": {
-            "description": "measure of power a resistor can dissipate indefinitely without degrading performance",
-            "comment": "units of watts",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "temperatureCoefficient": {
-            "description": "change in resistance when the temperature is changed",
-            "comment": "units of ohms/degree (Celsius or Kelvin)",
-            "type": "number"
-        },
-        "maxOverloadVoltage": {
-            "description": "maximum voltage that can be applied to the resistor for a short period of time",
-            "comment": "units of volts",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "maxLimitingElementVoltage": {
-            "description": "maximum voltage value that can be applied continuously to the resistor",
-            "comment": "units of volts",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "minTemperature": {
-            "description": "minimum temperature under which a resistor can be expected to reliably operate",
-            "comment": "units of degrees (Celsius or Kelvin)",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "maxTemperature": {
-            "description": "maximum temperature under which a resistor can be expected to reliably operate",
-            "comment": "units of degrees (Celsius or Kelvin)",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "resistorDerating": {
-            "description": "graph object to capture resistance changes with temperature",
-            "$ref": "../common/graph.json#/graph"
+    "resistor": {
+        "type": "object",
+        "required": [
+            "value"
+        ],
+        "properties": {
+            "value": {
+                "description": "resistance value",
+                "comment": "units of ohms",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "tolerance": {
+                "description": "nominal tolerance of a resistor",
+                "comment": "units of percentage",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "powerRating": {
+                "description": "measure of power a resistor can dissipate indefinitely without degrading performance",
+                "comment": "units of watts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "temperatureCoefficient": {
+                "description": "change in resistance when the temperature is changed",
+                "comment": "units of ohms/degree (Celsius or Kelvin)",
+                "type": "number"
+            },
+            "maxOverloadVoltage": {
+                "description": "maximum voltage that can be applied to the resistor for a short period of time",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "maxLimitingElementVoltage": {
+                "description": "maximum voltage value that can be applied continuously to the resistor",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "minTemperature": {
+                "description": "minimum temperature under which a resistor can be expected to reliably operate",
+                "comment": "units of degrees (Celsius or Kelvin)",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "maxTemperature": {
+                "description": "maximum temperature under which a resistor can be expected to reliably operate",
+                "comment": "units of degrees (Celsius or Kelvin)",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "resistorDerating": {
+                "description": "graph object to capture resistance changes with temperature",
+                "$ref": "../common/graph.json#/graph"
+            }
         }
     }
 }

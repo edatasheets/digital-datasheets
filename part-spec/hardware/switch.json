@@ -2,63 +2,65 @@
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/hardware/switch.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "switch",
-    "type": "object",
-    "required": [
-        "onResistance"
-    ],
-    "properties": {
-        "type": {
-            "description": "property describing the way in which the switch is activated",
-            "examples": [
-                "toggle",
-                "slide",
-                "rocker",
-                "push-button",
-                "etc."
-            ],
-            "type": "string"
-        },
-        "contactType": {
-            "description": "property describing the order in which switch contact is made and broken",
-            "enum": [
-                "break-before-make",
-                "make-before-break"
-            ],
-            "type": "string"
-        },
-        "circuitConfig": {
-            "description": "property describing the number of poles and throws in a switch",
-            "enum": [
-                "SPST",
-                "SPDT",
-                "DPDT",
-                "DPST"
-            ],
-            "type": "string"
-        },
-        "cycleRating": {
-            "description": "number of on/off cycles a mechanical switch can reliably sustain",
-            "type": "number"
-        },
-        "voltageRating": {
-            "description": "maximum DC voltage potential that can be applied across an open switch",
-            "comment": "units of volts",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "currentRating": {
-            "description": "maximum DC current that can flow through a closed switch without causing excessive heating",
-            "comment": "units of amps",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "onResistance": {
-            "description": "nominal resistance of a closed switch",
-            "comment": "units of ohms",
-            "$ref": "../comon/unit.json#/unit"
-        },
-        "dielectricRating": {
-            "description": "maximum AC voltage potential that can be applied across an open switch for one minute",
-            "comment": "units of volts",
-            "$ref": "../common/unit.json#/unit"
+    "switch": {
+        "type": "object",
+        "required": [
+            "onResistance"
+        ],
+        "properties": {
+            "type": {
+                "description": "property describing the way in which the switch is activated",
+                "examples": [
+                    "toggle",
+                    "slide",
+                    "rocker",
+                    "push-button",
+                    "etc."
+                ],
+                "type": "string"
+            },
+            "contactType": {
+                "description": "property describing the order in which switch contact is made and broken",
+                "enum": [
+                    "break-before-make",
+                    "make-before-break"
+                ],
+                "type": "string"
+            },
+            "circuitConfig": {
+                "description": "property describing the number of poles and throws in a switch",
+                "enum": [
+                    "SPST",
+                    "SPDT",
+                    "DPDT",
+                    "DPST"
+                ],
+                "type": "string"
+            },
+            "cycleRating": {
+                "description": "number of on/off cycles a mechanical switch can reliably sustain",
+                "type": "number"
+            },
+            "voltageRating": {
+                "description": "maximum DC voltage potential that can be applied across an open switch",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "currentRating": {
+                "description": "maximum DC current that can flow through a closed switch without causing excessive heating",
+                "comment": "units of amps",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "onResistance": {
+                "description": "nominal resistance of a closed switch",
+                "comment": "units of ohms",
+                "$ref": "../comon/unit.json#/unit"
+            },
+            "dielectricRating": {
+                "description": "maximum AC voltage potential that can be applied across an open switch for one minute",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            }
         }
     }
 }

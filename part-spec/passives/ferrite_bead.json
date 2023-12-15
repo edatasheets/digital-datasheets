@@ -2,27 +2,29 @@
     "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/passives/ferrite_bead.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "ferrite bead",
-    "type": "object",
-    "properties": {
-        "dcResistance": {
-            "description": "dc resistance (DCR) of ferrite bead",
-            "comment": "units of ohms",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "rmsCurrent": {
-            "description": "applied DC current (IRMS) that produces a ferrite bead temperature rise of 40 deg C",
-            "comment": "units of amps",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "impedance100MHz": {
-            "description": "impedance of ferrite bead under standard testing conditions at 100MHz",
-            "comment": "units of ohms",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "impedanceTolerance": {
-            "description": "variation of ferrite bead impedance expressed as +/- percentage",
-            "comment": "units of percentage",
-            "$ref": "../common/unit.json#/unit"
+    "ferrite_bead": {
+        "type": "object",
+        "properties": {
+            "dcResistance": {
+                "description": "dc resistance (DCR) of ferrite bead",
+                "comment": "units of ohms",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "rmsCurrent": {
+                "description": "applied DC current (IRMS) that produces a ferrite bead temperature rise of 40 deg C",
+                "comment": "units of amps",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "impedance100MHz": {
+                "description": "impedance of ferrite bead under standard testing conditions at 100MHz",
+                "comment": "units of ohms",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "impedanceTolerance": {
+                "description": "variation of ferrite bead impedance expressed as +/- percentage",
+                "comment": "units of percentage",
+                "$ref": "../common/unit.json#/unit"
+            }
         }
     }
 }

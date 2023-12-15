@@ -2,49 +2,51 @@
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_microcontroller/microcontroller.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "microcontroller/ec",
-    "type": "object",
-    "properties": {
-        "onChipFlash": {
-            "description": "capacity of built-in flash in a microprocessor",
-            "comment": "units of kilobytes",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "onChipRAM": {
-            "description": "capacity of built-in RAM in a microprocessor",
-            "comment": "units of kilobytes",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "onChipROM": {
-            "description": "capacity of built-in ROM in a microprocessor",
-            "comment": "units of kilobytes",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "coreProcessor": {
-            "description": "description of core processor",
-            "examples": [
-                "Cortex-M4"
-            ],
-            "type": "string"
-        },
-        "coreArchitectureBits": {
-            "description": "number of bits of data a CPU can transfer per clock cycle",
-            "examples": [
-                "32-bit"
-            ],
-            "type": "string"
-        },
-        "clockSpeed": {
-            "description": "speed of main CPU clock",
-            "comment": "units of hertz",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "firmwareVersion": {
-            "description": "firmware version of the part",
-            "type": "string"
-        },
-        "currentConsumption": {
-            "description": "current used by device in various power modes",
-            "$ref": "../common/currentConsumption.json#/currentConsumption"
+    "microcontroller": {
+        "type": "object",
+        "properties": {
+            "onChipFlash": {
+                "description": "capacity of built-in flash in a microprocessor",
+                "comment": "units of kilobytes",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "onChipRAM": {
+                "description": "capacity of built-in RAM in a microprocessor",
+                "comment": "units of kilobytes",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "onChipROM": {
+                "description": "capacity of built-in ROM in a microprocessor",
+                "comment": "units of kilobytes",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "coreProcessor": {
+                "description": "description of core processor",
+                "examples": [
+                    "Cortex-M4"
+                ],
+                "type": "string"
+            },
+            "coreArchitectureBits": {
+                "description": "number of bits of data a CPU can transfer per clock cycle",
+                "examples": [
+                    "32-bit"
+                ],
+                "type": "string"
+            },
+            "clockSpeed": {
+                "description": "speed of main CPU clock",
+                "comment": "units of hertz",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "firmwareVersion": {
+                "description": "firmware version of the part",
+                "type": "string"
+            },
+            "currentConsumption": {
+                "description": "current used by device in various power modes",
+                "$ref": "../common/currentConsumption.json#/currentConsumption"
+            }
         }
     }
 }

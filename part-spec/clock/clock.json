@@ -2,53 +2,55 @@
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/clock/clock.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "clock",
-    "type": "object",
-    "properties": {
-        "fixedFrequency": {
-            "description": "clock frequency value if the clock has a fixed frequency",
-            "comment": "units of Hz",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "numberClockOutputs": {
-            "description": "number of clock outputs in a clock IC",
-            "type": "number"
-        },
-        "differentialSingleEnded": {
-            "description": "property describing whether a clock output is single ended or differential",
-            "enum": [
-                "differential",
-                "single"
-            ],
-            "type": "string"
-        },
-        "jitter": {
-            "description": "cycle to cycle clock jitter",
-            "comment": "units of seconds",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "frequencyTolerance": {
-            "description": "amount of frequency variation from nominal frequency",
-            "comment": "units of percentage",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "powerSupplyRejectionRatio": {
-            "description": "power supply rejection ratio (PSRR) or ratio between power supply variation and output variation",
-            "comment": "units of dB",
-            "type": "number"
-        },
-        "outputFormat": {
-            "description": "signal format of clock output",
-            "examples": [
-                "lvpecl",
-                "lvds",
-                "hcsl",
-                "etc."
-            ],
-            "type": "string"
-        },
-        "currentConsumption": {
-            "description": "current used by device in various power modes",
-            "$ref": "../common/currentConsumption.json#/currentConsumption"
+    "clock": {
+        "type": "object",
+        "properties": {
+            "fixedFrequency": {
+                "description": "clock frequency value if the clock has a fixed frequency",
+                "comment": "units of Hz",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "numberClockOutputs": {
+                "description": "number of clock outputs in a clock IC",
+                "type": "number"
+            },
+            "differentialSingleEnded": {
+                "description": "property describing whether a clock output is single ended or differential",
+                "enum": [
+                    "differential",
+                    "single"
+                ],
+                "type": "string"
+            },
+            "jitter": {
+                "description": "cycle to cycle clock jitter",
+                "comment": "units of seconds",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "frequencyTolerance": {
+                "description": "amount of frequency variation from nominal frequency",
+                "comment": "units of percentage",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "powerSupplyRejectionRatio": {
+                "description": "power supply rejection ratio (PSRR) or ratio between power supply variation and output variation",
+                "comment": "units of dB",
+                "type": "number"
+            },
+            "outputFormat": {
+                "description": "signal format of clock output",
+                "examples": [
+                    "lvpecl",
+                    "lvds",
+                    "hcsl",
+                    "etc."
+                ],
+                "type": "string"
+            },
+            "currentConsumption": {
+                "description": "current used by device in various power modes",
+                "$ref": "../common/currentConsumption.json#/currentConsumption"
+            }
         }
     }
 }

@@ -2,48 +2,50 @@
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/audio_codec.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "audio codec",
-    "type": "object",
-    "properties": {
-        "dataLength": {
-            "description": "number of bits in a data word",
-            "type": "number"
-        },
-        "hpOutputSNR": {
-            "description": "headphone amplifier output SNR",
-            "comment": "units of dB",
-            "type": "number"
-        },
-        "hpOutputTHD+N": {
-            "description": "headphone output total harmonic distortion plus noise",
-            "comment": "units of percentage",
-            "$ref": "number"
-        },
-        "micInputSNR": {
-            "description": "microphone input SNR",
-            "comment": "units of dB",
-            "$ref": "number"
-        },
-        "micInputTHD+N": {
-            "description": "microphone input total harmonic distortion plus noise",
-            "comment": "units of percentage",
-            "$ref": "number"
-        },
-        "jackDetect": {
-            "description": "describes whether headphone jack detection is supported",
-            "type": "boolean"
-        },
-        "interface": {
-            "description": "describes the communication interface from the chip to the host",
-            "examples": [
-                "i2s",
-                "soundwire",
-                "etc."
-            ],
-            "type": "string"
-        },
-        "currentConsumption": {
-            "description": "current used by device in various power modes",
-            "$ref": "..common/currentConsumption.json#/currentConsumption"
+    "audio_codec": {
+        "type": "object",
+        "properties": {
+            "dataLength": {
+                "description": "number of bits in a data word",
+                "type": "number"
+            },
+            "hpOutputSNR": {
+                "description": "headphone amplifier output SNR",
+                "comment": "units of dB",
+                "type": "number"
+            },
+            "hpOutputTHD+N": {
+                "description": "headphone output total harmonic distortion plus noise",
+                "comment": "units of percentage",
+                "$ref": "number"
+            },
+            "micInputSNR": {
+                "description": "microphone input SNR",
+                "comment": "units of dB",
+                "$ref": "number"
+            },
+            "micInputTHD+N": {
+                "description": "microphone input total harmonic distortion plus noise",
+                "comment": "units of percentage",
+                "$ref": "number"
+            },
+            "jackDetect": {
+                "description": "describes whether headphone jack detection is supported",
+                "type": "boolean"
+            },
+            "interface": {
+                "description": "describes the communication interface from the chip to the host",
+                "examples": [
+                    "i2s",
+                    "soundwire",
+                    "etc."
+                ],
+                "type": "string"
+            },
+            "currentConsumption": {
+                "description": "current used by device in various power modes",
+                "$ref": "..common/currentConsumption.json#/currentConsumption"
+            }
         }
     }
 }
