@@ -1,0 +1,35 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/storage/sd_card.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "sd card",
+    "type": "object",
+    "required": [
+        "capacity"
+    ],
+    "properties": {
+        "type": {
+            "description": "type of sd card",
+            "examples": [
+                "micro",
+                "mini",
+                "full size"
+            ],
+            "type": "string"
+        },
+        "capacity": {
+            "description": "capacity of sd card",
+            "comment": "units of bytes (B)",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "dataRate": {
+            "description": "maximum data rate of the sd card",
+            "comment": "units of bytes per second (Bps)",
+            "type": "number"
+        },
+        "currentConsumption": {
+            "description": "current consumption of a device",
+            "comment": "units of amps",
+            "$ref": "../common/currentConsumption.json#/currentConsumption"
+        }
+    }
+}

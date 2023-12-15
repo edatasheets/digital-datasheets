@@ -1,0 +1,48 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/logic/logic_gate.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "logic gate",
+    "type": "object",
+    "required": [
+        "type"
+    ],
+    "properties": {
+        "type": {
+            "description": "logical operation performed by logic gate",
+            "enum": [
+                "and",
+                "or",
+                "nor",
+                "nand",
+                "xor",
+                "xnor",
+                "inverter",
+                "buffer",
+                "configurable"
+            ],
+            "type": "string"
+        },
+        "numberGates": {
+            "description": "number of logical gates encapsulated in logic IC",
+            "type": "number"
+        },
+        "schmittTrigger": {
+            "description": "property describing whether logic gate has schmitt trigger inputs",
+            "type": "boolean"
+        },
+        "propagationDelay": {
+            "description": "time between input changing to output changing",
+            "comment": "units of seconds",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "rampTime": {
+            "description": "time for output to go from 10% nominal output voltage to 90% nominal output voltage",
+            "comment": "units of seconds",
+            "$ref": "units.json#/unit"
+        },
+        "currentConsumption": {
+            "description": "current used by device in various power modes",
+            "$ref": "../common/currentConsumption.json#/currentConsumption"
+        }
+    }
+}

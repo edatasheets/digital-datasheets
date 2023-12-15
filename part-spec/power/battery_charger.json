@@ -1,0 +1,218 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/battery_charger.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "battery charger",
+    "type": "object",
+    "required": [
+        "batteryChargeCurrent"
+    ],
+    "properties": {
+        "chargerType": {
+            "description": "battery charger type",
+            "examples": [
+                "linear",
+                "switching",
+                "direct"
+            ],
+            "type": "string"
+        },
+        "converterType": {
+            "description": "switching charger type",
+            "examples": [
+                "buck",
+                "boost",
+                "buck-boost"
+            ],
+            "type": "string"
+        },
+        "chargerTopology": {
+            "description": "type of battery charger topology (Narrow VDC vs Hybrid Power Boost)",
+            "enum": [
+                "nvdc",
+                "hpb"
+            ],
+            "type": "string"
+        },
+        "batteryConfig": {
+            "description": "battery configuration supported by the device",
+            "examples": [
+                "1S",
+                "2S2P",
+                "3S",
+                "4S",
+                "4S2P"
+            ],
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "batteryCellChemistry": {
+            "description": "battery cell chemistry supported by the device",
+            "examples": [
+                "Li-Ion",
+                "LiPo"
+            ],
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "inputPowerSource": {
+            "description": "input power source supported by the device",
+            "examples": [
+                "adapter",
+                "usb pd",
+                "usb 5V"
+            ],
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "inputCurrentAccuracy": {
+            "description": "accuracy of input current when set",
+            "comment": "units of percentage",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "batteryChargeCurrent": {
+            "description": "charging current of a device",
+            "comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "batteryChargeCurrentAccuracy": {
+            "description": "charging current regulation accuracy of a device",
+            "comment": "units of percentage",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "batteryPreChargeCurrent": {
+            "description": "charging current of a device in pre-charge phase",
+            "comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "batteryPreChargeCurrentAccuracy": {
+            "description": "pre-charging current regulation accuracy of a device",
+            "comment": "units of percentage",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "batteryTrickleChargeCurrent": {
+            "description": "charging current of a device in trickle charge phase",
+            "comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "batteryTrickleChargeCurrentAccuracy": {
+            "description": "trickle charging current regulation accuracy of a device",
+            "comment": "units of percentage",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "batteryTerminationChargeCurrent": {
+            "description": "charging current of a device in charge termination phase",
+            "comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "batteryTerminationChargeCurrentAccuracy": {
+            "description": "termination charging current regulation accuracy of a device",
+            "comment": "units of percentage",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "batteryChargeVoltage": {
+            "description": "battery charge voltage regulated by a device",
+            "comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "batteryChargeVoltageAccuracy": {
+            "description": "accuracy of battery charge voltage regulated by a device",
+            "comment": "units of percentage",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "efficiency": {
+            "description": "charger efficiency as a function of charge current of a device",
+            "$ref": "../common/graph.json#/graph"
+        },
+        "vin": {
+            "description": "input voltage under which a device can be expected to reliabily operate",
+            "comment": "units of volts",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "fsw": {
+            "description": "switching frequency of a device",
+            "comment": "units of hertz",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "currentConsumption": {
+            "description": "current consumption of a device",
+            "$ref": "../common/currentConsumption.json#/currentConsumption"
+        },
+        "componentProtectionThresholds": {
+            "description": "thermal and power supply protection thresholds of a device",
+            "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
+        },
+        "batteryChargerProtections": {
+            "description": "battery charger specific protections supported by device",
+            "examples": [
+                "adapterOvervoltageProtection",
+                "batteryProtection",
+                "systemVoltageRailShortProtection"
+            ],
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "integratedLoadSwitch": {
+            "description": "whether the device contains integrated power path load switch(es)",
+            "type": "boolean"
+        },
+        "integratedFets": {
+            "description": "whether the device contains integrated switching mosfets",
+            "type": "boolean"
+        },
+        "integratedFetProperties": {
+            "description": "describes integrated fet current limits and rdson properties",
+            "$ref": "../common/powerFetProperties.json#/powerFetProperties"
+        },
+        "gateCapacitance": {
+            "description": "describes gate capacitance supported on external fets",
+            "comment": "units of farads",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "inputSenseResistor": {
+            "description": "describes intput sense resistor value",
+            "comment": "units of ohms",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "batterySenseResistor": {
+            "description": "describes battery sense resistor value",
+            "comment": "units of ohms",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "passThroughMode": {
+            "description": "whether pass through mode is supported",
+            "type": "boolean"
+        },
+        "bc12Support": {
+            "description": "whether bc 1.2 detection is built in",
+            "type": "boolean"
+        },
+        "tcpcSupport": {
+            "description": "whether type-C port controller support is built in",
+            "type": "boolean"
+        },
+        "usbTypecRevision": {
+            "description": "usb type-c spec revision supported by a device",
+            "examples": [
+                "1.2",
+                "1.3"
+            ],
+            "type": "string"
+        },
+        "pdVersion": {
+            "description": "version of power delivery spec supported by a device",
+            "examples": [
+                "pd2.0",
+                "pd3.1"
+            ],
+            "type": "string"
+        }
+    }
+}

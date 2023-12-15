@@ -1,0 +1,44 @@
+{
+    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/externalFile.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Specification for referencing an external file",
+    "externalFile": {
+        "type": "object",
+        "properties": {
+            "fileDescription": {
+                "description": "text description of the contents of an external file",
+                "type": "string"
+            },
+            "fileType": {
+                "description": "type of file being linked",
+                "examples": [
+                    "brd",
+                    "ibis",
+                    "json"
+                ],
+                "type": "string"
+            },
+            "fileExtension": {
+                "description": "extension of file linked",
+                "examples": [
+                    "brd",
+                    "mod"
+                ],
+                "type": "string"
+            },
+            "companionSoftware": {
+                "description": "optional, name of software program used to access file",
+                "type": "string"
+            },
+            "standardReferenced": {
+                "description": "optional, name of the standard the file is written in",
+                "type": "string"
+            },
+            "fileURI": {
+                "description": "URI linking to the CAD file",
+                "example": "could be a URL or file path with filename",
+                "type": "string"
+            }
+        }
+    }
+}

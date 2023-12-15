@@ -1,0 +1,36 @@
+{
+    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/passives/common_mode_choke.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "common mode choke",
+    "type": "object",
+    "properties": {
+        "diffModeCutoff": {
+            "description": "frequency at which the differential mode attenuation equals -3dB",
+            "comment": "units of Hz",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "commonModeAttenuation": {
+            "description": "graph object to capture common mode attenuation of a common mode choke at various frequencies",
+            "$ref": "../common/graph.json#/graph"
+        },
+        "dcResistance": {
+            "description": "dc resistance (DCR) of a common mode choke",
+            "comment": "units of ohms",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "rmsCurrent": {
+            "description": "applied DC current (IRMS) that produces a common mode choke temperature rise of 40 deg C",
+            "comment": "units of amps",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "intendedApplication": {
+            "description": "intended application of a particular common mode choke",
+            "examples": [
+                "USB2.0",
+                "USB3.0",
+                "LVDS"
+            ],
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,97 @@
+{
+    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/unit.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Specification of unit",
+    "unit": {
+        "type": "object",
+        "properties": {
+            "siUnit": {
+                "description": "name of SI unit of measure",
+                "enum": [
+                    "microvolt",
+                    "millivolt",
+                    "volt",
+                    "kilovolt",
+                    "microamp",
+                    "milliamp",
+                    "amp",
+                    "milliohm",
+                    "ohm",
+                    "kilohm",
+                    "megaohm",
+                    "coulomb",
+                    "millihenry",
+                    "henry",
+                    "picofarad",
+                    "nanofarad",
+                    "microfarad",
+                    "millifarad",
+                    "farad",
+                    "nanosecond",
+                    "microsecond",
+                    "millisecond",
+                    "second",
+                    "milliwatt",
+                    "watt",
+                    "kilowatt",
+                    "joule",
+                    "celsius",
+                    "micrometer",
+                    "millimeter",
+                    "meter",
+                    "milligram",
+                    "gram",
+                    "kilogram",
+                    "hertz",
+                    "kilohertz",
+                    "megahertz",
+                    "percentage",
+                    "bit",
+                    "byte"
+                ],
+                "type": "string"
+            },
+            "unitName": {
+                "description": "name of unit if not defined in the siUnit list",
+                "type": "string"
+            },
+            "typValue": {
+                "description": "typical unit quantity corresponding to unit text - example 40mV would have a value of 40",
+                "type": "number"
+            },
+            "minValue": {
+                "description": "minimum unit quantity corresponding to unit text - example: 30mV would have a value of 30",
+                "type": "number"
+            },
+            "maxValue": {
+                "description": "maximum unit quantity corresponding to unit text - example: 50mV would have a value of 50",
+                "type": "number"
+            },
+            "unitFactor": {
+                "description": "multiplier on the value to achieve the SI unit listed - for example if millivolt was selected, 40mV would have a unitFactor value of 1; if volt was selected, the unitFatctor value would be 0.001",
+                "type": "number",
+                "$comment": "by default this is one"
+            },
+            "relativeValueReference": {
+                "description": "if unit quantity is based on another reference, value of the reference",
+                "example": "VDD1",
+                "type": "string"
+            },
+            "relativeValueModifier": {
+                "description": "if a unit quantity is based on another reference, the value that edits that reference",
+                "example": "1.2",
+                "type": "number"
+            },
+            "relativeValueOperator": {
+                "description": "if a unit quantity is based on another reference, the operation that is performed with the modifier",
+                "example": "multiply",
+                "type": "string",
+                "enum": [
+                    "multiply",
+                    "add",
+                    "subtract"
+                ]
+            }
+        }
+    }
+}

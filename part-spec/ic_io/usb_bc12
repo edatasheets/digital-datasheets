@@ -1,0 +1,20 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/usb_bc12.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "USB battery charging 1.2 (bc12) detector",
+    "type": "object",
+    "required": [
+        "hostMode",
+        "deviceMode"
+    ],
+    "properties": {
+        "hostMode": {
+            "description": "whether host mode is supported by bc12 chip",
+            "type": "boolean"
+        },
+        "deviceMode": {
+            "description": "whether device mode is supported by bc12 chip",
+            "type": "boolean"
+        }
+    }
+}

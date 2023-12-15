@@ -1,0 +1,81 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/sensor/gyroscope.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "gyroscope",
+    "type": "object",
+    "properties": {
+        "gyroRanges": {
+            "description": "range of angular speed that gyro can measure",
+            "comment": "units of degrees-per-second (dps)",
+            "type": "number"
+        },
+        "gyroSensitivity": {
+            "description": "smallest change in angular speed gyro is able to capture (typical) at a given gyro range",
+            "comment": "units of LSB/dps",
+            "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+        },
+        "gyroSensitivityOverTemperature": {
+            "description": "gyroscope sensitivity change over temperature",
+            "comment": "units of percentage per degree celsius",
+            "type": "number"
+        },
+        "axis": {
+            "description": "number of axes of measurement",
+            "type": "number"
+        },
+        "zeroRateOffset": {
+            "description": "output of the gyroscope when no angular velocity is applied",
+            "comment": "units of degrees-per-second",
+            "type": "number"
+        },
+        "zeroRateOffsetOverTemperature": {
+            "description": "gyro zero rate offset change over temperature",
+            "comment": "units of degrees-per-second per degree celsius (dps/Celsius)",
+            "type": "number"
+        },
+        "interface": {
+            "description": "interface(s) for communication to host",
+            "examples": [
+                "i2c",
+                "spi",
+                "analog"
+            ],
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "bandwidth": {
+            "description": "bandwidth of gyroscope",
+            "comment": "units of Hertz (Hz)",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "outputDataRate": {
+            "description": "output Data rate (ODR) of a device",
+            "comment": "units of Hertz (Hz)",
+            "$ref": "../common/unit.json#/unit"
+        },
+        "outputType": {
+            "description": "measurement output type",
+            "enum": [
+                "analog",
+                "digital"
+            ],
+            "type": "string"
+        },
+        "rmsNoise": {
+            "description": "broadband rms noise of a device",
+            "comment": "units of degrees-per-second rms",
+            "type": "number"
+        },
+        "spectralNoiseDensity": {
+            "description": "spectral noise density of a device",
+            "comment": "units of degrees-per-second per square root Hertz (dps/rt-Hz)",
+            "type": "number"
+        },
+        "currentConsumption": {
+            "description": "current consumption of a device",
+            "$ref": "../common/currentConsumption.json#/currentConsumption"
+        }
+    }
+}
