@@ -2,76 +2,78 @@
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/pmic.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "pmic",
-    "type": "object",
-    "properties": {
-        "linearRegulatorCount": {
-            "description": "number of linear regulators in the device",
-            "type": "number"
-        },
-        "buckRegulatorCount": {
-            "description": "number of buck regulators in the device",
-            "type": "number"
-        },
-        "boostRegulatorCount": {
-            "description": "number of boost regulators in the device",
-            "type": "number"
-        },
-        "buckBoostRegulatorCount": {
-            "description": "number of buck-boost regulators in the device",
-            "type": "number"
-        },
-        "adcCount": {
-            "description": "number of analog to digital converters in the device",
-            "type": "number"
-        },
-        "externalClockCount": {
-            "description": "number of external clocks the device requires",
-            "type": "number"
-        },
-        "internalClockCount": {
-            "description": "number of clocks/oscillators in the device",
-            "type": "number"
-        },
-        "loadSwitchCount": {
-            "description": "number of load switches in the device",
-            "type": "number"
-        },
-        "usbSwitchCount": {
-            "description": "number of USB switches in the device",
-            "type": "number"
-        },
-        "componentList": {
-            "description": "list of components integrated in the device",
-            "comment": "list should include components with an existing digital datasheet specification",
-            "examples": [
-                "load switch",
-                "linear regulator",
-                "switching regulator"
-            ],
-            "type": "array",
-            "items": {
-                "type": "string"
+    "pmic": {
+        "type": "object",
+        "properties": {
+            "linearRegulatorCount": {
+                "description": "number of linear regulators in the device",
+                "type": "number"
+            },
+            "buckRegulatorCount": {
+                "description": "number of buck regulators in the device",
+                "type": "number"
+            },
+            "boostRegulatorCount": {
+                "description": "number of boost regulators in the device",
+                "type": "number"
+            },
+            "buckBoostRegulatorCount": {
+                "description": "number of buck-boost regulators in the device",
+                "type": "number"
+            },
+            "adcCount": {
+                "description": "number of analog to digital converters in the device",
+                "type": "number"
+            },
+            "externalClockCount": {
+                "description": "number of external clocks the device requires",
+                "type": "number"
+            },
+            "internalClockCount": {
+                "description": "number of clocks/oscillators in the device",
+                "type": "number"
+            },
+            "loadSwitchCount": {
+                "description": "number of load switches in the device",
+                "type": "number"
+            },
+            "usbSwitchCount": {
+                "description": "number of USB switches in the device",
+                "type": "number"
+            },
+            "componentList": {
+                "description": "list of components integrated in the device",
+                "comment": "list should include components with an existing digital datasheet specification",
+                "examples": [
+                    "load switch",
+                    "linear regulator",
+                    "switching regulator"
+                ],
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "instances": {
+                "description": "definition (specification) of each instance of a component in the device",
+                "type": "array",
+                "items": {
+                    "$ref": "#/$defs/powerComponentDefinitions"
+                }
+            },
+            "vin": {
+                "description": "input voltage under which a device can be expected to reliabily operate",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "currentConsumption": {
+                "description": "current consumption of a device",
+                "$ref": "../common/currentConsumption.json#/currentConsumption"
+            },
+            "componentProtectionThresholds": {
+                "description": "thermal and power supply protection thresholds of a device",
+                "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
             }
-        },
-        "instances": {
-            "description": "definition (specification) of each instance of a component in the device",
-            "type": "array",
-            "items": {
-                "$ref": "#/$defs/powerComponentDefinitions"
-            }
-        },
-        "vin": {
-            "description": "input voltage under which a device can be expected to reliabily operate",
-            "comment": "units of volts",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "currentConsumption": {
-            "description": "current consumption of a device",
-            "$ref": "../common/currentConsumption.json#/currentConsumption"
-        },
-        "componentProtectionThresholds": {
-            "description": "thermal and power supply protection thresholds of a device",
-            "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
         }
     },
     "$defs": {

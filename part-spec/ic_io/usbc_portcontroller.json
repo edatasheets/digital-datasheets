@@ -2,96 +2,98 @@
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/usbc_portcontroller.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "usb-c port controller",
-    "type": "object",
-    "required": [
-        "pdVersion"
-    ],
-    "properties": {
-        "pdVersion": {
-            "description": "version of power delivery spec implemented by controller",
-            "examples": [
-                "pd2.0",
-                "pd3.1"
-            ],
-            "type": "string"
-        },
-        "usbTypecRevision": {
-            "description": "usb type-c spec revision implemented by controller",
-            "examples": [
-                "1.2",
-                "1.3"
-            ],
-            "type": "string"
-        },
-        "usbTcpiRevision": {
-            "description": "usb type-c port controller interface spec revision implemented by controller",
-            "examples": [
-                "1.2",
-                "1.3"
-            ],
-            "type": "string"
-        },
-        "powerRoleSupported": {
-            "description": "roles supported by pd controller",
-            "examples": [
-                "Source",
-                "Sink",
-                "Dual Role Port"
-            ],
-            "type": "string"
-        },
-        "fastRoleSwapSupport": {
-            "description": "whether the port controller supports fast role swap (FRS)",
-            "type": "boolean"
-        },
-        "vconnPowerSupport": {
-            "description": "whether the port controller has support for vconn power",
-            "type": "boolean"
-        },
-        "vconnFetOnResistance": {
-            "description": "on-resistance of the integrated Vconn FET",
-            "comment": "units of ohms",
-            "$ref": "..common/unit.json#/unit"
-        },
-        "vconnPowerLimit": {
-            "description": "power limit supported by internal vconn switch (if supported)",
-            "comment": "units of watts",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "vconnMaxCurrent": {
-            "description": "maximum continuous current supported by internal vconn switch (if supported)",
-            "comment": "units of amps",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "vconnOverCurrentLimit": {
-            "description": "over current limit supported by internal vconn switch (if supported)",
-            "comment": "units of amps",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "integratedVbusDischargeSwitch": {
-            "description": "whether the port controller has one or more integrated vbus discharge switches ",
-            "type": "boolean"
-        },
-        "integratedMux": {
-            "description": "whether the port controller has one or more integrated high speed muxes",
-            "type": "boolean"
-        },
-        "interface": {
-            "description": "describes the communication interface from the controller to the policy manager",
-            "examples": [
-                "i2c",
-                "spi",
-                "etc."
-            ],
-            "type": "string"
-        },
-        "currentConsumption": {
-            "description": "current used by device in various power modes",
-            "$ref": "../common/currentConsumption.json#/currentConsumption"
-        },
-        "componentProtectionThresholds": {
-            "description": "thermal and power supply protection thresholds of a device",
-            "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
+    "usbc_portcontroller": {
+        "type": "object",
+        "required": [
+            "pdVersion"
+        ],
+        "properties": {
+            "pdVersion": {
+                "description": "version of power delivery spec implemented by controller",
+                "examples": [
+                    "pd2.0",
+                    "pd3.1"
+                ],
+                "type": "string"
+            },
+            "usbTypecRevision": {
+                "description": "usb type-c spec revision implemented by controller",
+                "examples": [
+                    "1.2",
+                    "1.3"
+                ],
+                "type": "string"
+            },
+            "usbTcpiRevision": {
+                "description": "usb type-c port controller interface spec revision implemented by controller",
+                "examples": [
+                    "1.2",
+                    "1.3"
+                ],
+                "type": "string"
+            },
+            "powerRoleSupported": {
+                "description": "roles supported by pd controller",
+                "examples": [
+                    "Source",
+                    "Sink",
+                    "Dual Role Port"
+                ],
+                "type": "string"
+            },
+            "fastRoleSwapSupport": {
+                "description": "whether the port controller supports fast role swap (FRS)",
+                "type": "boolean"
+            },
+            "vconnPowerSupport": {
+                "description": "whether the port controller has support for vconn power",
+                "type": "boolean"
+            },
+            "vconnFetOnResistance": {
+                "description": "on-resistance of the integrated Vconn FET",
+                "comment": "units of ohms",
+                "$ref": "..common/unit.json#/unit"
+            },
+            "vconnPowerLimit": {
+                "description": "power limit supported by internal vconn switch (if supported)",
+                "comment": "units of watts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "vconnMaxCurrent": {
+                "description": "maximum continuous current supported by internal vconn switch (if supported)",
+                "comment": "units of amps",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "vconnOverCurrentLimit": {
+                "description": "over current limit supported by internal vconn switch (if supported)",
+                "comment": "units of amps",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "integratedVbusDischargeSwitch": {
+                "description": "whether the port controller has one or more integrated vbus discharge switches ",
+                "type": "boolean"
+            },
+            "integratedMux": {
+                "description": "whether the port controller has one or more integrated high speed muxes",
+                "type": "boolean"
+            },
+            "interface": {
+                "description": "describes the communication interface from the controller to the policy manager",
+                "examples": [
+                    "i2c",
+                    "spi",
+                    "etc."
+                ],
+                "type": "string"
+            },
+            "currentConsumption": {
+                "description": "current used by device in various power modes",
+                "$ref": "../common/currentConsumption.json#/currentConsumption"
+            },
+            "componentProtectionThresholds": {
+                "description": "thermal and power supply protection thresholds of a device",
+                "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
+            }
         }
     }
 }

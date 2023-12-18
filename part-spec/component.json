@@ -13,7 +13,7 @@
 		},
 		"coreProperties": {
 			"description": "core component properties as definied by the specific component spec file",
-			"type": "object"
+			"$ref": "./common/coreProperties.json#/coreProperties"
 		},
 		"pins": {
 			"description": "array of pin objects with associated properties",

@@ -2,32 +2,34 @@
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/redriver.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "redriver",
-    "type": "object",
-    "properties": {
-        "numberChannels": {
-            "description": "number of lanes (single ended or differential) supported by redriver",
-            "type": "number"
-        },
-        "interface": {
-            "description": "list of interface(s) supported by redriver",
-            "examples": [
-                "HDMI",
-                "DP HBR3",
-                "USB3.1 Gen2"
-            ],
-            "type": "array",
-            "items": {
-                "type": "string"
+    "redriver": {
+        "type": "object",
+        "properties": {
+            "numberChannels": {
+                "description": "number of lanes (single ended or differential) supported by redriver",
+                "type": "number"
+            },
+            "interface": {
+                "description": "list of interface(s) supported by redriver",
+                "examples": [
+                    "HDMI",
+                    "DP HBR3",
+                    "USB3.1 Gen2"
+                ],
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "maxDataRate": {
+                "description": "maximum data rate supported by redriver",
+                "comment": "units of Hz",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "currentConsumption": {
+                "description": "current used by device in various power modes",
+                "$ref": "../common/currentConsumption.json#/currentConsumption"
             }
-        },
-        "maxDataRate": {
-            "description": "maximum data rate supported by redriver",
-            "comment": "units of Hz",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "currentConsumption": {
-            "description": "current used by device in various power modes",
-            "$ref": "../common/currentConsumption.json#/currentConsumption"
         }
     }
 }

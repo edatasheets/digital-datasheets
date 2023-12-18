@@ -1,0 +1,285 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/coreProperties.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "reference to all core properties specifications",
+    "coreProperties": {
+        "oneOf": [
+            {
+                "title": "clock",
+                "type": "object",
+                "description": "specification of clock",
+                "$ref": "../clock/clock.json#/clock"
+            },
+            {
+                "title": "oscillator",
+                "type": "object",
+                "description": "specification of oscillator",
+                "$ref": "../clock/oscillator.json#/oscillator"
+            },
+            {
+                "title": "adc",
+                "type": "object",
+                "description": "specification of adc",
+                "$ref": "../data_converter/adc.json#/adc"
+            },
+            {
+                "title": "dac",
+                "type": "object",
+                "description": "specification of dac",
+                "$ref": "../data_converter/dac.json#/dac"
+            },
+            {
+                "title": "connector",
+                "type": "object",
+                "description": "specification of connector",
+                "$ref": "../hardware/connector.json#/connector"
+            },
+            {
+                "title": "switch",
+                "type": "object",
+                "description": "specification of switch",
+                "$ref": "../hardware/switch.json#/switch"
+            },
+            {
+                "title": "bridge_chip",
+                "type": "object",
+                "description": "specification of bridge chip",
+                "$ref": "../ic_io/bridge_chip.json#/bridge_chip"
+            },
+            {
+                "title": "highspeed_mux",
+                "type": "object",
+                "description": "specification of high speed mux",
+                "$ref": "../ic_io/highspeed_mux.json#/highspeed_mux"
+            },
+            {
+                "title": "level_shifter",
+                "type": "object",
+                "description": "specification of level shifter",
+                "$ref": "../ic_io/level_shifter.json#/level_shifter"
+            },
+            {
+                "title": "redriver",
+                "type": "object",
+                "description": "specification of redriver",
+                "$ref": "../ic_io/redriver.json#/redriver"
+            },
+            {
+                "title": "retimer",
+                "type": "object",
+                "description": "specification of retimer",
+                "$ref": "../ic_io/retimer.json#/retimer"
+            },
+            {
+                "title": "usb_bc12",
+                "type": "object",
+                "description": "specification of USB battery charging 1.2 (bc12) detector",
+                "$ref": "../ic_io/usb_bc12.json#/usb_bc12"
+            },
+            {
+                "title": "usbc_pdcontroller",
+                "type": "object",
+                "description": "specification of usb-c pd controller",
+                "$ref": "../ic_io/usbc_pdcontroller.json#/usbc_pdcontroller"
+            },
+            {
+                "title": "usbc_portcontroller",
+                "type": "object",
+                "description": "specification of usb-c port controller",
+                "$ref": "../ic_io/usbc_portcontroller.json#/usbc_portcontroller"
+            },
+            {
+                "title": "microcontroller",
+                "type": "object",
+                "description": "specification of microcontroller/ec",
+                "$ref": "../ic_microcontroller/microcontroller.json#/microcontroller"
+            },
+            {
+                "title": "audio_codec",
+                "type": "object",
+                "description": "specification of audio codec",
+                "$ref": "../ic_misc/audio_codec.json#/audio_codec"
+            },
+            {
+                "title": "speaker_amplifier",
+                "type": "object",
+                "description": "specification of speaker amplifier",
+                "$ref": "../ic_misc/speaker_amplifier.json#/speaker_amplifier"
+            },
+            {
+                "title": "tpm",
+                "type": "object",
+                "description": "specification of tpm",
+                "$ref": "../ic_misc/tpm.json#/tpm"
+            },
+            {
+                "title": "wlan_module",
+                "type": "object",
+                "description": "specification of wlan module",
+                "$ref": "../ic_misc/wlan_module.json#/wlan_module"
+            },
+            {
+                "title": "wwan_module",
+                "type": "object",
+                "description": "specification of wwan module",
+                "$ref": "../ic_misc/wwan_module.json#/wwan_module"
+            },
+            {
+                "title": "logic_gate",
+                "type": "object",
+                "description": "specification of logic gate",
+                "$ref": "../logic/logic_gate.json#/logic_gate"
+            },
+            {
+                "title": "dram",
+                "type": "object",
+                "description": "specification of dram",
+                "$ref": "../memory/dram.json#/dram"
+            },
+            {
+                "title": "flash_memory",
+                "type": "object",
+                "description": "specification of flash memory",
+                "$ref": "../memory/flash_memory.json#/flash_memory"
+            },
+            {
+                "title": "eeprom",
+                "type": "object",
+                "description": "specification of eeprom",
+                "$ref": "../memory/eeprom.json#/eeprom"
+            },
+            {
+                "title": "rom",
+                "type": "object",
+                "description": "specification of rom",
+                "$ref": "../memory/rom.json#/rom"
+            },
+            {
+                "title": "capacitor",
+                "type": "object",
+                "description": "specification of capacitor",
+                "$ref": "../passives/capacitor.json#/capacitor"
+            },
+            {
+                "title": "common_mode_choke",
+                "type": "object",
+                "description": "specification of common mode choke",
+                "$ref": "../passives/common_mode_choke.json#/common_mode_choke"
+            },
+            {
+                "title": "ferrite_bead",
+                "type": "object",
+                "description": "specification of ferrite bead",
+                "$ref": "../passives/ferrite_bead.json#/ferrite_bead"
+            },
+            {
+                "title": "inductor",
+                "type": "object",
+                "description": "specification of inductor",
+                "$ref": "../passives/inductor.json#/inductor"
+            },
+            {
+                "title": "resistor",
+                "type": "object",
+                "description": "specification of resistor",
+                "$ref": "../passives/resistor.json#/resistor"
+            },
+            {
+                "title": "battery_charger",
+                "type": "object",
+                "description": "specification of battery charger",
+                "$ref": "../power/battery_charger.json#/battery_charger"
+            },
+            {
+                "title": "displaybacklight_driver",
+                "type": "object",
+                "description": "specification of display backlight driver",
+                "$ref": "../power/displaybacklight_driver.json#/displaybacklight_driver"
+            },
+            {
+                "title": "linear_regulator",
+                "type": "object",
+                "description": "specification of linear regulator",
+                "$ref": "../power/linear_regulator.json#/linear_regulator"
+            },
+            {
+                "title": "load_switch",
+                "type": "object",
+                "description": "specification of load switch",
+                "$ref": "../power/load_switch.json#/load_switch"
+            },
+            {
+                "title": "pmic",
+                "type": "object",
+                "description": "specification of pmic",
+                "$ref": "../power/pmic.json#/pmic"
+            },
+            {
+                "title": "switching_regulator",
+                "type": "object",
+                "description": "specification of switching regulator",
+                "$ref": "../power/switching_regulator.json#/switching_regulator"
+            },
+            {
+                "title": "bjt",
+                "type": "object",
+                "description": "specification of bjt",
+                "$ref": "../semiconductor/bjt.json#/bjt"
+            },
+            {
+                "title": "diode",
+                "type": "object",
+                "description": "specification of diode",
+                "$ref": "../semiconductor/diode.json#/diode"
+            },
+            {
+                "title": "led",
+                "type": "object",
+                "description": "specification of LED",
+                "$ref": "../semiconductor/led.json#/led"
+            },
+            {
+                "title": "mosfet",
+                "type": "object",
+                "description": "specification of mosfet",
+                "$ref": "../semiconductor/mosfet.json#/mosfet"
+            },
+            {
+                "title": "accelerometer",
+                "type": "object",
+                "description": "specification of accelerometer",
+                "$ref": "../sensor/accelerometer.json#/accelerometer"
+            },
+            {
+                "title": "gyroscope",
+                "type": "object",
+                "description": "specification of gyroscope",
+                "$ref": "../sensor/gyroscope.json#/gyroscope"
+            },
+            {
+                "title": "magnetic_sensor",
+                "type": "object",
+                "description": "specification of magnetic sensor",
+                "$ref": "../sensor/magnetic_sensor.json#/magnetic_sensor"
+            },
+            {
+                "title": "thermal_sensor",
+                "type": "object",
+                "description": "specification of thermal sensor",
+                "$ref": "../sensor/thermal_sensor.json#/thermal_sensor"
+            },
+            {
+                "title": "sd_card",
+                "type": "object",
+                "description": "specification of sd card",
+                "$ref": "../storage/sd_card.json#/sd_card"
+            },
+            {
+                "title": "ssd",
+                "type": "object",
+                "description": "specification of ssd",
+                "$ref": "../storage/ssd.json#/ssd"
+            }
+        ]
+    }
+}

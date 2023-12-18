@@ -2,82 +2,84 @@
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/displaybacklight_driver.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "display backlight driver",
-    "type": "object",
-    "required": [
-        "iout",
-        "vin"
-    ],
-    "properties": {
-        "vin": {
-            "description": "input voltage under which a device can be expected to operate properly",
-            "comment": "units of volts",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "vout": {
-            "description": "output voltage range a device can regulate",
-            "comment": "units of volts",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "ioutPerString": {
-            "description": "output current per string a device can regulate",
-            "comment": "units of amps",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "ioutAccuracy": {
-            "description": "accuracy of per string current regulated by a device",
-            "comment": "units of percentage",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "fsw": {
-            "description": "switching frequency of a device",
-            "comment": "units of hertz",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "currentConsumption": {
-            "description": "current consumption of a device",
-            "$ref": "../common/currentConsumption.json#/currentConsumption"
-        },
-        "integratedFets": {
-            "description": "whether a device contains integrated switching mosfets",
-            "type": "boolean"
-        },
-        "integratedFetProperties": {
-            "description": "describes integrated fet current limits and rdson properties",
-            "$ref": "../common/powerFetProperties.json#/powerFetProperties"
-        },
-        "currentMatchingAccuracy": {
-            "description": "current matching between LED strings",
-            "comment": "units of percentage",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "dimmingSupport": {
-            "description": "whether a device supports output current dimming",
-            "type": "boolean"
-        },
-        "dimmingControl": {
-            "description": "whether a device is dimmed by PWM or I2C",
-            "type": "string",
-            "enum": [
-                "i2c",
-                "pwm"
-            ]
-        },
-        "dimmingFrequency": {
-            "description": "dimming frequency of a device",
-            "comment": "units of hertz",
-            "$ref": "../common/unit.json#/unit"
-        },
-        "dimmingRatio": {
-            "description": "dimming ratio of a device",
-            "$ref": "../common/ratio.json#/ratio"
-        },
-        "componentProtectionThresholds": {
-            "description": "thermal and power supply protection thresholds of a device",
-            "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
-        },
-        "efficiency": {
-            "description": "backlight driver efficiency as a function of forward current",
-            "$ref": "../common/graph.json#/graph"
+    "displaybacklight_driver": {
+        "type": "object",
+        "required": [
+            "iout",
+            "vin"
+        ],
+        "properties": {
+            "vin": {
+                "description": "input voltage under which a device can be expected to operate properly",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "vout": {
+                "description": "output voltage range a device can regulate",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "ioutPerString": {
+                "description": "output current per string a device can regulate",
+                "comment": "units of amps",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "ioutAccuracy": {
+                "description": "accuracy of per string current regulated by a device",
+                "comment": "units of percentage",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "fsw": {
+                "description": "switching frequency of a device",
+                "comment": "units of hertz",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "currentConsumption": {
+                "description": "current consumption of a device",
+                "$ref": "../common/currentConsumption.json#/currentConsumption"
+            },
+            "integratedFets": {
+                "description": "whether a device contains integrated switching mosfets",
+                "type": "boolean"
+            },
+            "integratedFetProperties": {
+                "description": "describes integrated fet current limits and rdson properties",
+                "$ref": "../common/powerFetProperties.json#/powerFetProperties"
+            },
+            "currentMatchingAccuracy": {
+                "description": "current matching between LED strings",
+                "comment": "units of percentage",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "dimmingSupport": {
+                "description": "whether a device supports output current dimming",
+                "type": "boolean"
+            },
+            "dimmingControl": {
+                "description": "whether a device is dimmed by PWM or I2C",
+                "type": "string",
+                "enum": [
+                    "i2c",
+                    "pwm"
+                ]
+            },
+            "dimmingFrequency": {
+                "description": "dimming frequency of a device",
+                "comment": "units of hertz",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "dimmingRatio": {
+                "description": "dimming ratio of a device",
+                "$ref": "../common/ratio.json#/ratio"
+            },
+            "componentProtectionThresholds": {
+                "description": "thermal and power supply protection thresholds of a device",
+                "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
+            },
+            "efficiency": {
+                "description": "backlight driver efficiency as a function of forward current",
+                "$ref": "../common/graph.json#/graph"
+            }
         }
     }
 }
