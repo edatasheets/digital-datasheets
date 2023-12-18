@@ -47,8 +47,7 @@
                     "megahertz",
                     "percentage",
                     "bit",
-                    "byte",
-                    "mega transfers per second"
+                    "byte"
                 ],
                 "type": "string"
             },
