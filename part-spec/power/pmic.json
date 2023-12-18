@@ -95,9 +95,9 @@
                 "instanceName": {
                     "description": "name of component instance",
                     "examples": [
-                        "LDOA",
-                        "BUCK1",
-                        "BUCK3",
+                        "ldoa",
+                        "buck1",
+                        "buck3",
                         "clock1"
                     ],
                     "type": "string"
