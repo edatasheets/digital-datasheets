@@ -1,48 +1,48 @@
 {
-  "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/pinPaths.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Specification of pinPaths through an IC", 
-  "pinPaths": {
-    "type": "object",
-    "required": [
-      "partPinPaths"
-    ],
-    "properties": {
-      "numberOfPinPaths": {
-        "description": "number of pinPaths defined. This number should not be higher than the number of components included in the part",
-        "type": "number"
-      },
-      "partPinPaths": {
-        "description": "list of pins associated with each component in a multi-component part",
-        "example": " for a dual FET part with components FET1 and FET2: list of pins associated with FET1 and list of pins associated with FET2",
-        "type": "array",
-        "items": {
-          "$ref": "#/$defs/partPinPaths"
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/pinPaths.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "specification of pinpaths through an ic",
+    "pinPaths": {
+        "type": "object",
+        "required": [
+            "partPinPaths"
+        ],
+        "properties": {
+            "numberOfPinPaths": {
+                "description": "number of pinPaths defined. This number should not be higher than the number of components included in the part",
+                "type": "number"
+            },
+            "partPinPaths": {
+                "description": "list of pins associated with each component in a multi-component part",
+                "example": " for a dual FET part with components FET1 and FET2: list of pins associated with FET1 and list of pins associated with FET2",
+                "type": "array",
+                "items": {
+                    "$ref": "#/$defs/partPinPaths"
+                }
+            }
         }
-      }
-    }
-  },
-  "$defs": {
-    "partPinPaths": {
-      "type": "object",
-      "properties": {
-        "componentName": {
-          "description": "name of a component within a part ",
-          "examples": [
-            "LDO1",
-            "BUCK1",
-            "DIODEA"
-          ],
-          "type": "string"
-        },
-        "componentPinNames": {
-          "description": "names of pins associated with each of the component in the part. Pin names must match the name used in part pin definition",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+    },
+    "$defs": {
+        "partPinPaths": {
+            "type": "object",
+            "properties": {
+                "componentName": {
+                    "description": "name of a component within a part ",
+                    "examples": [
+                        "LDO1",
+                        "BUCK1",
+                        "DIODEA"
+                    ],
+                    "type": "string"
+                },
+                "componentPinNames": {
+                    "description": "names of pins associated with each of the component in the part. Pin names must match the name used in part pin definition",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }

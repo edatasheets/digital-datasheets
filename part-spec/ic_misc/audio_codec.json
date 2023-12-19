@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/audio_codec.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "audio codec",
+    "title": "specification of audio codec",
     "audio_codec": {
         "type": "object",
         "properties": {

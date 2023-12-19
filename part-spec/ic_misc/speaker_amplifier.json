@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/speaker_amplifier.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "speaker amplifier",
+    "title": "specification of speaker amplifier",
     "speaker_amplifier": {
         "type": "object",
         "properties": {

@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/componentID.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Specification to capture information to identify components",
+    "title": "specification to capture information to identify components",
     "componentID": {
         "type": "object",
         "required": [

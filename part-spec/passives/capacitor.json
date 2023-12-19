@@ -1,7 +1,7 @@
 {
-    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/passives/capacitor.json",
+    "$id": "https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/passives/capacitor.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "capacitor",
+    "title": "specification of capacitor",
     "capacitor": {
         "type": "object",
         "required": [

@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/level_shifter.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "level shifter",
+    "title": "specification of level shifter",
     "level_shifter": {
         "type": "object",
         "properties": {

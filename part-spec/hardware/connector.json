@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/hardware/connector.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "connector",
+    "title": "specification of connector",
     "connector": {
         "type": "object",
         "required": [

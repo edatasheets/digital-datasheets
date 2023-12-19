@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/usbc_portcontroller.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "usb-c port controller",
+    "title": "specification of usb-c port controller",
     "usbc_portcontroller": {
         "type": "object",
         "required": [

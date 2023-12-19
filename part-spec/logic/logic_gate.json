@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/logic/logic_gate.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "logic gate",
+    "title": "specification of logic gate",
     "logic_gate": {
         "type": "object",
         "required": [

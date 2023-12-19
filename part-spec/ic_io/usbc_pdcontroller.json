@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/usbc_pdcontroller.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "usb-c pd controller",
+    "title": "specification of usb-c pd controller",
     "usbc_pdcontroller": {
         "type": "object",
         "required": [

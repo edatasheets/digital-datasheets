@@ -1,22 +1,22 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/componentProtectionThresholds.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Specification to capture protection thresholds data of a component",
+    "title": "specification to capture protection thresholds data of a component",
     "componentProtectionThresholds": {
         "type": "object",
         "properties": {
             "thermalShutdownThresholdRising": {
-                "description": "Thermal Shutdown (tsd) Threshold with temperature rising",
+                "description": "thermal Shutdown (tsd) Threshold with temperature rising",
                 "comment": "units of celsius",
                 "$ref": "../common/unit.json#/unit"
             },
             "thermalShutdownThresholdFalling": {
-                "description": "Thermal Shutdown (tsd) Threshold with temperature falling",
+                "description": "thermal Shutdown (tsd) Threshold with temperature falling",
                 "comment": "units of celsius",
                 "$ref": "../common/unit.json#/unit"
             },
             "thermalShutdownHysteresis": {
-                "description": "Thermal Shutdown (tsd) Hysteresis",
+                "description": "thermal Shutdown (tsd) Hysteresis",
                 "comment": "units of celsius",
                 "$ref": "../common/unit.json#/unit"
             },
@@ -71,4 +71,3 @@
         }
     }
 }
-      

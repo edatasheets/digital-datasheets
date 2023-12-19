@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/wlan_module.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "wlan module",
+    "title": "specification of wlan module",
     "wlan_module": {
         "type": "object",
         "properties": {

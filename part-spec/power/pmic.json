@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/pmic.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "pmic",
+    "title": "specification of pmic",
     "pmic": {
         "type": "object",
         "properties": {

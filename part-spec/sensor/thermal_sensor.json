@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/sensor/thermal_sensor.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "thermal sensor",
+    "title": "specification of thermal sensor",
     "thermal_sensor": {
         "type": "object",
         "properties": {

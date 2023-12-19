@@ -1,71 +1,71 @@
 {
-  "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/passives/inductor.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "inductor",
-  "inductor": {
-    "type": "object",
-    "required": [
-      "value"
-    ],
-    "properties": {
-      "value": {
-        "description": "inductor value",
-        "comment": "units of henry",
-        "$ref": "../common/unit.json#/unit"
-      },
-      "tolerance": {
-        "description": "nominal tolerance of an inductor",
-        "comment": "units of percentage",
-        "$ref": "../common/unit.json#/unit"
-      },
-      "ratedCurrent": {
-        "description": "maximum continuous current the inductor can handle",
-        "comment": "units of amps",
-        "$ref": "../common/unit.json#/unit"
-      },
-      "saturationCurrent": {
-        "description": "current where the inductor enters the magnetic state, and the inductance drops a specified amount",
-        "comment": "units of amps",
-        "$ref": "../common/unit.json#/unit"
-      },
-      "rmsCurrent": {
-        "description": "DC current that produces an inductor temperature rise of 40 degrees Celsius",
-        "comment": "units of amps",
-        "$ref": "../common/unit.json#/unit"
-      },
-      "selfResonantFrequency": {
-        "description": "frequency at which the inductor starts behaving like a capacitor",
-        "comment": "units of hertz",
-        "$ref": "../common/unit.json#/unit"
-      },
-      "dcResistance": {
-        "description": "DC resistance of the inductor",
-        "comment": "units of ohms",
-        "$ref": "../common/unit.json#/unit"
-      },
-      "temperatureCoefficient": {
-        "description": "change in inductance when the temperature is changed",
-        "comment": "units of henry/degree (Celsius or Kelvin)",
-        "type": "number"
-      },
-      "minTemperature": {
-        "description": "minimum temperature under which a inductor can be expected to reliably operate",
-        "comment": "units of degrees (Celsius or Kelvin)",
-        "$ref": "../common/unit.json#/unit"
-      },
-      "maxTemperature": {
-        "description": "maximum temperature under which a inductor can be expected to reliably operate",
-        "comment": "units of degrees (Celsius or Kelvin)",
-        "$ref": "../common/unit.json#/unit"
-      },
-      "saturationCurve": {
-        "description": "graph object to capture inductance as a function of current",
-        "$ref": "../common/graph.json#/graph"
-      },
-      "resonantFrequencyCurve": {
-        "description": "graph object to capture inductance as a function of frequency",
-        "$ref": "../common/graph.json#/graph"
-      }
+    "$id": "https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/passives/inductor.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "specification of inductor",
+    "inductor": {
+        "type": "object",
+        "required": [
+            "value"
+        ],
+        "properties": {
+            "value": {
+                "description": "inductor value",
+                "comment": "units of henry",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "tolerance": {
+                "description": "nominal tolerance of an inductor",
+                "comment": "units of percentage",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "ratedCurrent": {
+                "description": "maximum continuous current the inductor can handle",
+                "comment": "units of amps",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "saturationCurrent": {
+                "description": "current where the inductor enters the magnetic state, and the inductance drops a specified amount",
+                "comment": "units of amps",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "rmsCurrent": {
+                "description": "DC current that produces an inductor temperature rise of 40 degrees Celsius",
+                "comment": "units of amps",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "selfResonantFrequency": {
+                "description": "frequency at which the inductor starts behaving like a capacitor",
+                "comment": "units of hertz",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "dcResistance": {
+                "description": "DC resistance of the inductor",
+                "comment": "units of ohms",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "temperatureCoefficient": {
+                "description": "change in inductance when the temperature is changed",
+                "comment": "units of henry/degree (Celsius or Kelvin)",
+                "type": "number"
+            },
+            "minTemperature": {
+                "description": "minimum temperature under which a inductor can be expected to reliably operate",
+                "comment": "units of degrees (Celsius or Kelvin)",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "maxTemperature": {
+                "description": "maximum temperature under which a inductor can be expected to reliably operate",
+                "comment": "units of degrees (Celsius or Kelvin)",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "saturationCurve": {
+                "description": "graph object to capture inductance as a function of current",
+                "$ref": "../common/graph.json#/graph"
+            },
+            "resonantFrequencyCurve": {
+                "description": "graph object to capture inductance as a function of frequency",
+                "$ref": "../common/graph.json#/graph"
+            }
+        }
     }
-  }
 }
