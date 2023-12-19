@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/pinSpec.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Specification of pins",
+    "title": "specification of pins",
     "pinSpec": {
         "type": "object",
         "required": [

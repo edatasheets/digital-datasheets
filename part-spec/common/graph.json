@@ -1,7 +1,7 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/graph.json",
+    "$id": "https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/graph.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Specification of a graph",
+    "title": "specification of a graph",
     "graph": {
         "type": "object",
         "properties": {

@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/wwan_module.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "wwan module",
+    "title": "specification of wwan module",
     "wwan_module": {
         "type": "object",
         "properties": {

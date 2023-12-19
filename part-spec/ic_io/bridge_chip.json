@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/bridge_chip.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "bridge chip",
+    "title": "specification of bridge chip",
     "bridge_chip": {
         "type": "object",
         "properties": {

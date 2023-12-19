@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/powerFetProperties.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Specification of power FETs properties",
+    "title": "specification of power fets properties",
     "powerFetProperties": {
         "type": "object",
         "properties": {

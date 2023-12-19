@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/memory/flash_memory.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "flash memory",
+    "title": "specification of flash memory",
     "flash_memory": {
         "type": "object",
         "required": [

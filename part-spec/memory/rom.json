@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/memory/rom.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "rom",
+    "title": "specification of rom",
     "rom": {
         "type": "object",
         "properties": {

@@ -1,7 +1,7 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/displaybacklight_driver.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "display backlight driver",
+    "title": "specification of display backlight driver",
     "displaybacklight_driver": {
         "type": "object",
         "required": [

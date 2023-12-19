@@ -1,0 +1,63 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/memory/eeprom.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "specification of eeprom",
+    "eeprom": {
+        "type": "object",
+        "required": [
+            "capacity"
+        ],
+        "properties": {
+            "accessTime": {
+                "$ref": "../common/unit.json#/unit",
+                "comment": "units of seconds (s)",
+                "description": "time to access the eeprom"
+            },
+            "bitsPerWords": {
+                "description": "number of columns in the eeprom",
+                "type": "number"
+            },
+            "bootBlockSize": {
+                "$ref": "../common/unit.json#/unit",
+                "comment": "units of bits",
+                "description": "size of the eeprom boot block"
+            },
+            "capacity": {
+                "$ref": "../common/unit.json#/unit",
+                "comment": "units of bits",
+                "description": "capacity/density of eeprom"
+            },
+            "clockFrequency": {
+                "$ref": "../common/unit.json#/unit",
+                "comment": "units of Hertz (Hz)",
+                "description": "eeprom clock frequency"
+            },
+            "currentConsumption": {
+                "$ref": "../common/currentConsumption.json#/currentConsumption",
+                "comment": "units of amps",
+                "description": "current consumption of a device"
+            },
+            "dataRetention": {
+                "description": "maximum number of read and write cycle the part can support",
+                "type": "number"
+            },
+            "endurance": {
+                "description": "time in years a bit in the eeprom can retain its data state ",
+                "type": "number"
+            },
+            "interface": {
+                "description": "interface of eeprom to host",
+                "examples": [
+                    "spi",
+                    "i2c",
+                    "serial 1-wire"
+                ],
+                "type": "string"
+            },
+            "numberOfWords": {
+                "description": "number of rows in the eeprom",
+                "type": "number"
+            }
+        }
+    }
+}

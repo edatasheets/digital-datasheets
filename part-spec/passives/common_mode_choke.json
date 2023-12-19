@@ -1,7 +1,7 @@
 {
-    "$id": "https://github.com/chromeos/digital-datasheets/blob/main/part-spec/passives/common_mode_choke.json",
+    "$id": "https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/passives/common_mode_choke.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "common mode choke",
+    "title": "specification of common mode choke",
     "common_mode_choke": {
         "type": "object",
         "properties": {
