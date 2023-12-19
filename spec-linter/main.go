@@ -5,10 +5,11 @@ import (
 	"flag"
 	"fmt"
 	"io/fs"
-	"maps"
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/iancoleman/orderedmap"
 )
 
 var (
@@ -19,14 +20,10 @@ func main() {
 	flag.Parse()
 
 	fileList := []string{}
-	err := filepath.Walk(*digitalDatasheetDir, func(path string, info fs.FileInfo, err error) error {
+	partSpecDir := filepath.Join(*digitalDatasheetDir, "part-spec")
+	err := filepath.Walk(partSpecDir, func(path string, info fs.FileInfo, err error) error {
 		if err != nil {
 			return err
-		}
-
-		// Skip .git and part-spec-proto directories
-		if info.IsDir() && (strings.Contains(info.Name(), ".git") || strings.Contains(info.Name(), "part-spec-proto")) {
-			return filepath.SkipDir
 		}
 
 		if !info.IsDir() && strings.HasSuffix(info.Name(), ".json") {
@@ -45,37 +42,40 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
-		var anyJson map[string]interface{}
+		// var anyJson map[string]interface{}
+		anyJson := orderedmap.New()
 		err = json.Unmarshal(b, &anyJson)
 		if err != nil {
 			panic(err)
 		}
 
 		// struct fields in the digital datasheet schema
-		keyList := maps.Keys(anyJson)
+		keyList := anyJson.Keys()
 
 		// each file should contain "$schema"
-		v, ok := anyJson["$schema"]
+		v, ok := anyJson.Get("$schema")
 		if !ok {
 			panic(fmt.Errorf("expecting $schema key in %v", keyList))
 		}
 
 		// $title should start with "specification"
-		v, ok = anyJson["title"]
+		v, ok = anyJson.Get("title")
 		if !ok {
 			panic(fmt.Errorf("expecting title key in %v", keyList))
 		}
 		title := fmt.Sprintf("%v", v)
 		if strings.HasPrefix(title, "Specification") {
-			anyJson["title"] = strings.ToLower(title)
-			fmt.Printf("fixed title: %s\n", anyJson["title"])
+			newTitle := strings.ToLower(title)
+			anyJson.Set("title", newTitle)
+			fmt.Printf("fixed title: %v\n", newTitle)
 		} else if !strings.HasPrefix(title, "specification") {
-			anyJson["title"] = fmt.Sprintf("specification of %s", title)
-			fmt.Printf("fixed title: %s\n", anyJson["title"])
+			newTitle := fmt.Sprintf("specification of %s", title)
+			anyJson.Set("title", newTitle)
+			fmt.Printf("fixed title: %v\n", newTitle)
 		}
 
 		// $id should have this format: "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/clock/oscillator.json"
-		v, ok = anyJson["$id"]
+		v, ok = anyJson.Get("$id")
 		if !ok {
 			panic(fmt.Errorf("expecting $id key in %v", keyList))
 		}
@@ -86,8 +86,9 @@ func main() {
 		suffixPath := filepath.Join(filePieces[len(filePieces)-2], filePieces[len(filePieces)-1])
 		correctPath := strings.HasSuffix(idString, suffixPath)
 		if !correctPrefix || !correctPath {
-			anyJson["$id"] = filepath.Join(prefixPath, suffixPath)
-			fmt.Printf("fixed $id: %s\n", anyJson["$id"])
+			newId := filepath.Join(prefixPath, suffixPath)
+			anyJson.Set("$id", newId)
+			fmt.Printf("fixed $id: %s\n", newId)
 		}
 
 		// For each property key:
@@ -99,7 +100,7 @@ func main() {
 
 		// Drill into the structure to get to the component properties
 		objectName := strings.TrimSuffix(filepath.Base(file), ".json")
-		v, ok = anyJson[objectName]
+		v, ok = anyJson.Get(objectName)
 		if !ok {
 			fmt.Printf("expecting %s key in %v\n", objectName, keyList)
 			continue
@@ -110,9 +111,10 @@ func main() {
 			continue
 		}
 
-		v, ok = vMap["properties"]
+		v, ok = vMap.Get("properties")
 		if !ok {
-			fmt.Printf("expecting properties key in %v\n", maps.Keys(vMap))
+			fmt.Printf("expecting properties key in %v\n", vMap.Keys())
+			continue
 		}
 		vMap, err = castToMap(v)
 		if err != nil {
@@ -120,31 +122,39 @@ func main() {
 			continue
 		}
 
-		for k, v := range vMap {
+		for _, k := range vMap.Keys() {
+			v, ok := vMap.Get(k)
+			if !ok {
+				panic(fmt.Errorf("key %s should exist!", k))
+			}
 			// make sure the property names start with a lowercase letter
 			if checkForCapitalWithSkips(k) {
 				newK := strings.ToLower(string(k[0])) + k[1:]
-				vMap[newK] = v
-				delete(vMap, k)
+				vMap.Delete(k)
+				vMap.Set(newK, v)
 				fmt.Printf("fixed property name: %s\n", newK)
 			}
 		}
 
-		for _, v := range vMap {
+		for _, k := range vMap.Keys() {
+			v, ok := vMap.Get(k)
+			if !ok {
+				panic(fmt.Errorf("key %s should exist!", k))
+			}
 			// For each property name, the description field should start with a lowercase letter and NOT end in a period
 			propMap, err := castToMap(v)
 			if err != nil {
 				fmt.Println(err)
 				continue
 			}
-			desc, ok := propMap["description"]
+			desc, ok := propMap.Get("description")
 			if !ok {
-				fmt.Printf("expecting description key in %v\n", maps.Keys(propMap))
+				fmt.Printf("expecting description key in %v\n", propMap.Keys())
 			}
 			descStr := fmt.Sprintf("%v", desc)
 			if checkForCapitalWithSkips(descStr) {
 				newDesc := strings.ToLower(string(descStr[0])) + descStr[1:]
-				propMap["description"] = newDesc
+				propMap.Set("description", newDesc)
 				// needed to modify below
 				descStr = newDesc
 				fmt.Printf("fixed capital: %s\n", newDesc)
@@ -152,12 +162,12 @@ func main() {
 
 			if string(descStr[len(descStr)-1]) == "." {
 				newDesc := descStr[0 : len(descStr)-1]
-				propMap["description"] = newDesc
+				propMap.Set("description", newDesc)
 				fmt.Printf("fixed period: %s\n", newDesc)
 			}
 		}
 
-		newB, err := json.Marshal(anyJson)
+		newB, err := json.MarshalIndent(anyJson, "", "    ")
 		if err != nil {
 			panic(err)
 		}
@@ -170,10 +180,10 @@ func main() {
 
 }
 
-func castToMap(v any) (map[string]interface{}, error) {
-	vMap, ok := v.(map[string]interface{})
+func castToMap(v any) (orderedmap.OrderedMap, error) {
+	vMap, ok := v.(orderedmap.OrderedMap)
 	if !ok {
-		return nil, fmt.Errorf("cannot type cast %+v to a map", v)
+		return orderedmap.OrderedMap{}, fmt.Errorf("cannot type cast %+v to a map", v)
 	}
 	return vMap, nil
 }
