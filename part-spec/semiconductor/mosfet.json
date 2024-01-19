@@ -6,7 +6,7 @@
         "type": "object",
         "required": [
             "mosfetType",
-            "channel"
+            "mosfetChannelType"
         ],
         "properties": {
             "mosfetType": {
