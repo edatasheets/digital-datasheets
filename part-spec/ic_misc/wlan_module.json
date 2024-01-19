@@ -52,7 +52,7 @@
                 "type": "string"
             },
             "lteCoexFilter": {
-                "description": "describes whether module supports lte coexistance filtering",
+                "description": "describes whether module supports lte coexistence filtering",
                 "type": "boolean"
             },
             "interface": {
