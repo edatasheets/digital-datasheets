@@ -58,6 +58,7 @@
                 "description": "number of rows in the eeprom",
                 "type": "number"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }
