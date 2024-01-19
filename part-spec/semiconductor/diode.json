@@ -105,7 +105,7 @@
             },
             "pTot": {
                 "description": "maximum power dissipation of a forward biased diode",
-                "$comment": "conditions include temeprature",
+                "$comment": "conditions include temperature",
                 "$ref": "../common/conditionalProperty.json#/conditionalProperty"
             },
             "ifVsVf": {
