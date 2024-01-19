@@ -22,7 +22,7 @@
             "micInputSNR": {
                 "description": "microphone input SNR",
                 "comment": "units of dB",
-                "$ref": "number"
+                "type": "number"
             },
             "micInputTHD+N": {
                 "description": "microphone input total harmonic distortion plus noise",
@@ -44,8 +44,9 @@
             },
             "currentConsumption": {
                 "description": "current used by device in various power modes",
-                "$ref": "..common/currentConsumption.json#/currentConsumption"
+                "$ref": "../common/currentConsumption.json#/currentConsumption"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }
