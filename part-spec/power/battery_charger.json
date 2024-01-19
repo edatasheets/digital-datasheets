@@ -215,6 +215,7 @@
                 ],
                 "type": "string"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }
