@@ -49,17 +49,18 @@
                 "type": "boolean"
             },
             "sris": {
-                "description": "whether a device supports Seperate Reference clock with Independent Spread spectrum clocking(SRIS)",
+                "description": "whether a device supports Separate Reference clock with Independent Spread spectrum clocking(SRIS)",
                 "type": "boolean"
             },
             "srns": {
-                "description": "whether a device supports Seperate Reference clock with No Spread spectrum clocking (SRNS)",
+                "description": "whether a device supports Separate Reference clock with No Spread spectrum clocking (SRNS)",
                 "type": "boolean"
             },
             "currentConsumption": {
                 "description": "current used by device in various power modes",
                 "$ref": "../common/currentConsumption.json#/currentConsumption"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }
