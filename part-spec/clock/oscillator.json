@@ -62,6 +62,7 @@
                 "comment": "units of seconds",
                 "$ref": "../common/conditionalProperty.json#/conditionalProperty"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }
