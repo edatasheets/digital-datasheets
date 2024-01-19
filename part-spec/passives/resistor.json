@@ -52,6 +52,7 @@
                 "description": "graph object to capture resistance changes with temperature",
                 "$ref": "../common/graph.json#/graph"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }
