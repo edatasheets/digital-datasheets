@@ -112,6 +112,7 @@
                 "description": "graph of forward current (If) as a function of forward voltage (VfTyp)",
                 "$ref": "../common/graph.json#/graph"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }
