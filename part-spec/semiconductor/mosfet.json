@@ -36,7 +36,7 @@
                 "$ref": "../common/unit.json#/unit"
             },
             "vgsMax": {
-                "description": "maximum gate to source voltage difference that can be continously applied to a MOSFET. This is a limiting value",
+                "description": "maximum gate to source voltage difference that can be continuously applied to a MOSFET. This is a limiting value",
                 "comment": "units of volts",
                 "$ref": "../common/unit.json#/unit"
             },
@@ -46,7 +46,7 @@
                 "$ref": "../common/unit.json#/unit"
             },
             "vdsMax": {
-                "description": "maximum drain to source voltage difference that can be continously applied to a MOSFET. This is a limiting value",
+                "description": "maximum drain to source voltage difference that can be continuously applied to a MOSFET. This is a limiting value",
                 "comment": "units of volts",
                 "$ref": "../common/unit.json#/unit"
             },
@@ -71,7 +71,7 @@
                 "$ref": "../common/unit.json#/unit"
             },
             "iDrain": {
-                "description": "maximum continous DC current that can flow through a MOSFET channel.This is a limiting value",
+                "description": "maximum continuous DC current that can flow through a MOSFET channel.This is a limiting value",
                 "comment": "units of amps",
                 "$ref": "../common/unit.json#/unit"
             },
@@ -185,7 +185,7 @@
             },
             "pTot": {
                 "description": "maximum power dissipation of a MOSFET",
-                "$comment": "conditions include temeprature",
+                "$comment": "conditions include temperature",
                 "$ref": "../common/conditionalProperty.json#/conditionalProperty"
             },
             "pdVsTemp": {
