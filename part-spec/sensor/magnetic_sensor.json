@@ -73,6 +73,7 @@
                 "description": "current consumption of a device",
                 "$ref": "../common/currentConsumption.json#/currentConsumption"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }
