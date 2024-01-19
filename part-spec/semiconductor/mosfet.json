@@ -192,6 +192,7 @@
                 "description": "graph of power dissipation vs temperature",
                 "$ref": "../common/graph.json#/graph"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }
