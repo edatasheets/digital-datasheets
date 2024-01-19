@@ -17,6 +17,7 @@
                 "description": "whether device mode is supported by bc12 chip",
                 "type": "boolean"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }
