@@ -57,7 +57,7 @@
                 "$ref": "../common/unit.json#/unit"
             },
             "pTot": {
-                "description": "maximum power that can be continously dissipated under temperature conditions",
+                "description": "maximum power that can be continuously dissipated under temperature conditions",
                 "$comment": "conditions include temperature",
                 "$ref": "../common/conditionalProperty.json#/conditionalProperty"
             },
