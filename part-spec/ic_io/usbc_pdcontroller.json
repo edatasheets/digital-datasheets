@@ -111,6 +111,7 @@
                 "description": "thermal and power supply protection thresholds of a device",
                 "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

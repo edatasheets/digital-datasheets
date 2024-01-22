@@ -27,6 +27,7 @@
                 "comment": "units of amps",
                 "$ref": "../common/currentConsumption.json#/currentConsumption"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

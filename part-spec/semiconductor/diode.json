@@ -105,13 +105,14 @@
             },
             "pTot": {
                 "description": "maximum power dissipation of a forward biased diode",
-                "$comment": "conditions include temeprature",
+                "$comment": "conditions include temperature",
                 "$ref": "../common/conditionalProperty.json#/conditionalProperty"
             },
             "ifVsVf": {
                 "description": "graph of forward current (If) as a function of forward voltage (VfTyp)",
                 "$ref": "../common/graph.json#/graph"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

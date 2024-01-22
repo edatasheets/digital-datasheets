@@ -58,7 +58,7 @@
                 "description": "definition (specification) of each instance of a component in the device",
                 "type": "array",
                 "items": {
-                    "$ref": "#/$defs/powerComponentDefinitions"
+                    "$ref": "#/$defs/instances"
                 }
             },
             "vin": {
@@ -76,8 +76,9 @@
             }
         }
     },
+    "additionalProperties": false,
     "$defs": {
-        "powerComponentDefinitions": {
+        "instances": {
             "type": "object",
             "properties": {
                 "componentName": {

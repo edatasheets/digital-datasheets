@@ -27,7 +27,7 @@
             "sampleRate": {
                 "description": "sample rate of data out of amplifier",
                 "comment": "units of Hz",
-                "$ref": "..common/unit.json#/unit"
+                "$ref": "../common/unit.json#/unit"
             },
             "interface": {
                 "description": "describes the communication interface from the chip to the host",
@@ -40,8 +40,9 @@
             },
             "currentConsumption": {
                 "description": "current used by device in various power modes",
-                "$ref": "..common/currentConsumption.json#/currentConsumption"
+                "$ref": "../common/currentConsumption.json#/currentConsumption"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

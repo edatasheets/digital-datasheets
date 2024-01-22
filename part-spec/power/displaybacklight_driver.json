@@ -5,7 +5,7 @@
     "displaybacklight_driver": {
         "type": "object",
         "required": [
-            "iout",
+            "ioutPerString",
             "vin"
         ],
         "properties": {
@@ -80,6 +80,7 @@
                 "description": "backlight driver efficiency as a function of forward current",
                 "$ref": "../common/graph.json#/graph"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

@@ -66,6 +66,7 @@
                 "description": "graph object to capture inductance as a function of frequency",
                 "$ref": "../common/graph.json#/graph"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

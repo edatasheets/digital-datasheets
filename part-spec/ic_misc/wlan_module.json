@@ -52,7 +52,7 @@
                 "type": "string"
             },
             "lteCoexFilter": {
-                "description": "describes whether module supports lte coexistance filtering",
+                "description": "describes whether module supports lte coexistence filtering",
                 "type": "boolean"
             },
             "interface": {
@@ -66,8 +66,9 @@
             },
             "currentConsumption": {
                 "description": "current used by device in various power modes",
-                "$ref": "..common/currentConsumption.json#/currentConsumption"
+                "$ref": "../common/currentConsumption.json#/currentConsumption"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

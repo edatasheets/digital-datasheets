@@ -60,6 +60,7 @@
                 "description": "graph object to capture capacitance changes with voltage changes",
                 "$ref": "../common/graph.json#/graph"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

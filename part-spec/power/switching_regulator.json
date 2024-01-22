@@ -92,6 +92,7 @@
                 "description": "power efficiency of a regulator as a function of output current",
                 "$ref": "../common/graph.json#/graph"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

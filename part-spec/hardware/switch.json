@@ -61,6 +61,7 @@
                 "comment": "units of volts",
                 "$ref": "../common/unit.json#/unit"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

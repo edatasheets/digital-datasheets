@@ -46,6 +46,7 @@
                 "description": "property describing whether a connector has an asymmetry to prevent it from being plugged in the wrong direction",
                 "type": "boolean"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

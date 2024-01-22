@@ -25,6 +25,7 @@
                 "comment": "units of percentage",
                 "$ref": "../common/unit.json#/unit"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }
