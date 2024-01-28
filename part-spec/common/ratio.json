@@ -13,6 +13,7 @@
                 "description": "denominator of ratio",
                 "type": "number"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

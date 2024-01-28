@@ -22,7 +22,7 @@
                 "type": "string"
             },
             "vin": {
-                "description": "input voltage range under which a device can be expected to reliabily operate",
+                "description": "input voltage range under which a device can be expected to reliably operate",
                 "comment": "units of volts",
                 "$ref": "../common/unit.json#/unit"
             },

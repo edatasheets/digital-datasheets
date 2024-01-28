@@ -33,7 +33,7 @@
                 "$ref": "../common/currentConsumption.json#/currentConsumption"
             },
             "outputLoad": {
-                "description": "maxium capacitive load that can be supported by oscillator",
+                "description": "maximum capacitive load that can be supported by oscillator",
                 "comment": "units of farads",
                 "$ref": "../common/unit.json#/unit"
             },

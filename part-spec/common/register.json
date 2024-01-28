@@ -55,7 +55,8 @@
                 "description": "describes the bit fields in the register",
                 "$ref": "#/$defs/registerBitField"
             }
-        }
+        },
+        "additionalProperties": false
     },
     "$defs": {
         "registerBitField": {

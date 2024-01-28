@@ -20,7 +20,8 @@
                     "$ref": "#/$defs/partPinPaths"
                 }
             }
-        }
+        },
+        "additionalProperties": false
     },
     "$defs": {
         "partPinPaths": {

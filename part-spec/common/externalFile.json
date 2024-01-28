@@ -39,6 +39,7 @@
                 "example": "could be a URL or file path with filename",
                 "type": "string"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

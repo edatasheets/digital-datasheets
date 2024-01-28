@@ -59,6 +59,7 @@
                     "tssop"
                 ]
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

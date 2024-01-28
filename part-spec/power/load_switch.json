@@ -23,12 +23,12 @@
                 "type": "number"
             },
             "vin": {
-                "description": "input voltage under which a device can be expected to reliabily operate",
+                "description": "input voltage under which a device can be expected to reliably operate",
                 "comment": "units of volts",
                 "$ref": "../common/unit.json#/unit"
             },
             "outputCurrent": {
-                "description": "continuous DC cuurent supported by a device",
+                "description": "continuous DC current supported by a device",
                 "comment": "units of amps",
                 "$ref": "../common/unit.json#/unit"
             },

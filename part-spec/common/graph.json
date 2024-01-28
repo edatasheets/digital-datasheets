@@ -36,7 +36,8 @@
                     "$ref": "#/$defs/curve"
                 }
             }
-        }
+        },
+        "additionalProperties": false
     },
     "$defs": {
         "curve": {
