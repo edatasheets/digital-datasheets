@@ -39,7 +39,7 @@
             "rampTime": {
                 "description": "time for output to go from 10% nominal output voltage to 90% nominal output voltage",
                 "comment": "units of seconds",
-                "$ref": "units.json#/unit"
+                "$ref": "../common/unit.json#/unit"
             },
             "currentConsumption": {
                 "description": "current used by device in various power modes",
