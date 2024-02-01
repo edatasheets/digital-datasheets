@@ -146,8 +146,8 @@
             "pdVsTemp": {
                 "description": "graph of power dissipation as a function of temperature",
                 "$ref": "../common/graph.json#/graph"
-            },
-            "additionalProperties": false
-        }
+            }
+        },
+        "additionalProperties": false
     }
 }
