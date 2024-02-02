@@ -5,9 +5,17 @@
     "battery_charger": {
         "type": "object",
         "required": [
-            "batteryChargeCurrent"
+            "batteryChargeCurrent",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "battery_charger"
+                ],
+                "type": "string"
+            },
             "chargerType": {
                 "description": "battery charger type",
                 "examples": [
