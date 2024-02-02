@@ -4,10 +4,10 @@
     "title": "specification of a pmic",
     "pmic": {
         "type": "object",
-        "required": "partName",
+        "required": "partType",
         "properties": {
-            "partName": {
-                "description": "generic name of the part",
+            "partType": {
+                "description": "part type",
                 "enum": [
                     "pmic"
                 ]
