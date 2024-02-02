@@ -54,7 +54,7 @@
             "onResistance": {
                 "description": "nominal resistance of a closed switch",
                 "comment": "units of ohms",
-                "$ref": "../comon/unit.json#/unit"
+                "$ref": "../common/unit.json#/unit"
             },
             "dielectricRating": {
                 "description": "maximum AC voltage potential that can be applied across an open switch for one minute",

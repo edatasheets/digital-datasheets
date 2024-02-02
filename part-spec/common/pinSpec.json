@@ -142,12 +142,13 @@
                 "items": {
                     "$ref": "#/$defs/externalComponents"
                 }
+            },
+            "pinPaths": {
+                "description": "information on pin paths - pins associated with each component in a multi-component part (such as A1,Y1 and A2,Y2)",
+                "$ref": "../common/pinPaths.json#/pinPaths"
             }
         },
-        "pinPaths": {
-            "description": "information on pin paths - pins associated with each component in a multi-component part (such as A1,Y1 and A2,Y2)",
-            "$ref": "../common/pinPaths.json#/pinPaths"
-        }
+        "additionalProperties": false
     },
     "$defs": {
         "externalComponents": {

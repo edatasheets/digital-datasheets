@@ -72,7 +72,8 @@
                     "type": "string"
                 }
             }
-        }
+        },
+        "additionalProperties": false
     },
     "$defs": {
         "sourceDatasheetID": {

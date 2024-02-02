@@ -60,7 +60,7 @@
             },
             "zerogOffsetOverTemperature": {
                 "description": "accelerometer zero-g offset change over temperature",
-                "comment": "units of milli g-force per degree celsius (mg/Celcius)",
+                "comment": "units of milli g-force per degree celsius (mg/Celsius)",
                 "type": "number"
             },
             "outputType": {

@@ -25,6 +25,7 @@
                 "comment": "units of ohms",
                 "$ref": "../common/unit.json#/unit"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

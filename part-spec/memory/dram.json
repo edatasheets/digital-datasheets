@@ -61,7 +61,7 @@
                 "description": "number of rows per channel of dram",
                 "type": "number"
             },
-            "colunms": {
+            "columns": {
                 "description": "number of columns per row of dram",
                 "type": "number"
             },
