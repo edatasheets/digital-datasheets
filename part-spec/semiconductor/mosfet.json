@@ -6,9 +6,17 @@
         "type": "object",
         "required": [
             "mosfetType",
-            "mosfetChannelType"
+            "mosfetChannelType",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "mosfet"
+                ],
+                "type": "string"
+            },
             "mosfetType": {
                 "description": "type of MOSFET",
                 "examples": [
