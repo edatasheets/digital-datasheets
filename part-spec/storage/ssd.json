@@ -5,9 +5,17 @@
     "ssd": {
         "type": "object",
         "required": [
-            "capacity"
+            "capacity",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "ssd"
+                ],
+                "type": "string"
+            },
             "type": {
                 "description": "type of ssd storage as defined by interface and technology",
                 "examples": [
