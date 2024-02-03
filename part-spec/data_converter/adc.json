@@ -4,7 +4,17 @@
     "title": "specification of adc",
     "adc": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "adc"
+                ],
+                "type": "string"
+            },
             "digitalResolution": {
                 "description": "number of bits of resolution in the digital output",
                 "type": "number"
