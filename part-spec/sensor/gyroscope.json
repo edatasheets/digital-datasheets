@@ -4,7 +4,17 @@
     "title": "specification of gyroscope",
     "gyroscope": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "gyroscope"
+                ],
+                "type": "string"
+            },
             "gyroRanges": {
                 "description": "range of angular speed that gyro can measure",
                 "comment": "units of degrees-per-second (dps)",
