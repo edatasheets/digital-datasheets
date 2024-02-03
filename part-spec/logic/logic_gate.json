@@ -5,9 +5,17 @@
     "logic_gate": {
         "type": "object",
         "required": [
-            "type"
+            "type",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "logic_gate"
+                ],
+                "type": "string"
+            },
             "type": {
                 "description": "logical operation performed by logic gate",
                 "enum": [
