@@ -7,9 +7,17 @@
         "required": [
             "vin",
             "vout",
-            "loadCurrent"
+            "loadCurrent",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "linear_regulator"
+                ],
+                "type": "string"
+            },
             "vin": {
                 "description": "minimum input voltage under which the part can be expected to operate without the output dropping",
                 "comment": "units of volts",
