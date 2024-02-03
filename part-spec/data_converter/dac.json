@@ -4,7 +4,17 @@
     "title": "specification of dac",
     "dac": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "dac"
+                ],
+                "type": "string"
+            },
             "digitalResolution": {
                 "description": "number of bits of resolution",
                 "type": "number"
