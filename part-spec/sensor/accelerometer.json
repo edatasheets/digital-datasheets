@@ -13,7 +13,7 @@
                 "enum": [
                     "accelerometer"
                 ],
-                "type": 'string"
+                "type": "string"
             },
             "accelerometerType": {
                 "description": "type of accelerometer",
