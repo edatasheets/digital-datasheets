@@ -11,10 +11,10 @@
             "partName": {
                 "description": "name of the part defined in the digital datasheets specifications",
                 "examples": [
-                    "linear regulator",
-                    "switching regulator",
-                    "load switch",
-                    "display backlight driver",
+                    "linear_regulator",
+                    "switching_regulator",
+                    "load_switch",
+                    "displaybacklight_driver",
                     "adc",
                     "clock"
                 ],
