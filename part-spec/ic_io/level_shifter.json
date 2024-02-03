@@ -4,7 +4,17 @@
     "title": "specification of level shifter",
     "level_shifter": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "level_shifter"
+                ],
+                "type": "string"
+            },
             "inputVoltage": {
                 "description": "nominal input voltage of level shifter",
                 "comment": "units of volts",
