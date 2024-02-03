@@ -5,9 +5,17 @@
     "resistor": {
         "type": "object",
         "required": [
-            "value"
+            "value",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "resistor"
+                ],
+                "type": "string"
+            },
             "value": {
                 "description": "resistance value",
                 "comment": "units of ohms",
