@@ -4,7 +4,17 @@
     "title": "specification of tpm",
     "tpm": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "tpm"
+                ],
+                "type": "string"
+            },
             "interface": {
                 "description": "describes the communication interface from the chip to the host",
                 "examples": [
