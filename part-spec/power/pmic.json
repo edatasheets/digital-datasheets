@@ -10,7 +10,8 @@
                 "description": "part type",
                 "enum": [
                     "pmic"
-                ]
+                ],
+                "type": "string"
             },
             "instanceSpec": {
                 "description": "array of specifications of instances in the pmic ",
