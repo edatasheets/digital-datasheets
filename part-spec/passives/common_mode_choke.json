@@ -4,7 +4,17 @@
     "title": "specification of common mode choke",
     "common_mode_choke": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "common_mode_choke"
+                ],
+                "type": "string"
+            },
             "diffModeCutoff": {
                 "description": "frequency at which the differential mode attenuation equals -3dB",
                 "comment": "units of Hz",
