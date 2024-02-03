@@ -4,7 +4,17 @@
     "title": "specification of audio codec",
     "audio_codec": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "audio_codec"
+                ],
+                "type": "string"
+            },
             "dataLength": {
                 "description": "number of bits in a data word",
                 "type": "number"
