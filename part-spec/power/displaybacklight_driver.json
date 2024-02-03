@@ -6,9 +6,17 @@
         "type": "object",
         "required": [
             "ioutPerString",
-            "vin"
+            "vin",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "displaybacklight_driver"
+                ],
+                "type": "string"
+            },
             "vin": {
                 "description": "input voltage under which a device can be expected to operate properly",
                 "comment": "units of volts",
