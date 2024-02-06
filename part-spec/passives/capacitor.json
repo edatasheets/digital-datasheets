@@ -5,9 +5,17 @@
     "capacitor": {
         "type": "object",
         "required": [
-            "value"
+            "value",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "capacitor"
+                ],
+                "type": "string"
+            },
             "value": {
                 "description": "capacitor value",
                 "comment": "units of farads",

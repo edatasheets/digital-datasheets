@@ -4,7 +4,17 @@
     "title": "specification of retimer",
     "retimer": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "retimer"
+                ],
+                "type": "string"
+            },
             "numberOfLanes": {
                 "description": "number of lanes (single ended or differential) supported by a device",
                 "type": "number"

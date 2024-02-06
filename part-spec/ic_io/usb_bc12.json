@@ -6,9 +6,17 @@
         "type": "object",
         "required": [
             "hostMode",
-            "deviceMode"
+            "deviceMode",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "usb_bc12"
+                ],
+                "type": "string"
+            },
             "hostMode": {
                 "description": "whether host mode is supported by bc12 chip",
                 "type": "boolean"

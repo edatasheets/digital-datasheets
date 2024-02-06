@@ -7,9 +7,17 @@
         "required": [
             "vin",
             "outputCurrent",
-            "onResistance"
+            "onResistance",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "load_switch"
+                ],
+                "type": "string"
+            },    
             "fetType": {
                 "description": "type of pass FET in a device",
                 "enum": [

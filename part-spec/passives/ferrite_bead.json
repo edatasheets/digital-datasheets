@@ -4,7 +4,17 @@
     "title": "specification of ferrite bead",
     "ferrite_bead": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "ferrite_bead"
+                ],
+                "type": "string"
+            },
             "dcResistance": {
                 "description": "dc resistance (DCR) of ferrite bead",
                 "comment": "units of ohms",

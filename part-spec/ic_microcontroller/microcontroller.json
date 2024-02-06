@@ -4,7 +4,17 @@
     "title": "specification of microcontroller/ec",
     "microcontroller": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "microcontroller"
+                ],
+                "type": "string"
+            },
             "onChipFlash": {
                 "description": "capacity of built-in flash in a microprocessor",
                 "comment": "units of kilobytes",

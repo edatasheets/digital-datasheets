@@ -5,9 +5,17 @@
     "usbc_pdcontroller": {
         "type": "object",
         "required": [
-            "pdVersion"
+            "pdVersion",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "usbc_pdcontroller"
+                ],
+                "type": "string"
+            },
             "pdVersion": {
                 "description": "version of power delivery spec implemented by controller",
                 "examples": [

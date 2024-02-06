@@ -5,9 +5,17 @@
     "switch": {
         "type": "object",
         "required": [
-            "onResistance"
+            "onResistance",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "switch"
+                ],
+                "type": "string"
+            },
             "type": {
                 "description": "property describing the way in which the switch is activated",
                 "examples": [

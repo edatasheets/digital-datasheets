@@ -4,7 +4,17 @@
     "title": "specification of rom",
     "rom": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "rom"
+                ],
+                "type": "string"
+            },
             "capacity": {
                 "description": "capacity of rom",
                 "comment": "units of bytes (B)",

@@ -5,9 +5,17 @@
     "bjt": {
         "type": "object",
         "required": [
-            "bjtChannelType"
+            "bjtChannelType",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "bjt"
+                ],
+                "type": "string"
+            },
             "bjtChannelType": {
                 "description": "doping of a transistor's channel - describes whether a transistor is n-type or p-type",
                 "enum": [

@@ -5,9 +5,17 @@
     "eeprom": {
         "type": "object",
         "required": [
-            "capacity"
+            "capacity",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "eeprom"
+                ],
+                "type": "string"
+            },
             "accessTime": {
                 "$ref": "../common/unit.json#/unit",
                 "comment": "units of seconds (s)",

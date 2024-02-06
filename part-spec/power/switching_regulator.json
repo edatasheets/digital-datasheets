@@ -8,9 +8,17 @@
             "regulatorTopology",
             "vin",
             "vout",
-            "loadCurrent"
+            "loadCurrent",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "switching_regulator"
+                ],
+                "type": "string"
+            },
             "regulatorTopology": {
                 "description": "switching voltage regulator topology",
                 "examples": [

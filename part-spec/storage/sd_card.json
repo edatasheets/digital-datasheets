@@ -5,9 +5,17 @@
     "sd_card": {
         "type": "object",
         "required": [
-            "capacity"
+            "capacity",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "sd_card"
+                ],
+                "type": "string"
+            },
             "type": {
                 "description": "type of sd card",
                 "examples": [

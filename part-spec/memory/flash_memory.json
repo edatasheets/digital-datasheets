@@ -5,9 +5,17 @@
     "flash_memory": {
         "type": "object",
         "required": [
-            "capacity"
+            "capacity",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "flash_memory"
+                ],
+                "type": "string"
+            },
             "capacity": {
                 "description": "capacity/density of flash memory",
                 "comment": "units of bits",

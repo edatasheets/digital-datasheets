@@ -5,9 +5,17 @@
     "oscillator": {
         "type": "object",
         "required": [
-            "frequency"
+            "frequency",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "oscillator"
+                ],
+                "type": "string"
+            },
             "baseResonator": {
                 "description": "technology producing resonance",
                 "type": "string",

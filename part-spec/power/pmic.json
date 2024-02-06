@@ -1,70 +1,24 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/pmic.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "specification of pmic",
+    "title": "specification of a pmic",
     "pmic": {
         "type": "object",
+        "required": "partType",
         "properties": {
-            "linearRegulatorCount": {
-                "description": "number of linear regulators in the device",
-                "type": "number"
-            },
-            "buckRegulatorCount": {
-                "description": "number of buck regulators in the device",
-                "type": "number"
-            },
-            "boostRegulatorCount": {
-                "description": "number of boost regulators in the device",
-                "type": "number"
-            },
-            "buckBoostRegulatorCount": {
-                "description": "number of buck-boost regulators in the device",
-                "type": "number"
-            },
-            "adcCount": {
-                "description": "number of analog to digital converters in the device",
-                "type": "number"
-            },
-            "externalClockCount": {
-                "description": "number of external clocks the device requires",
-                "type": "number"
-            },
-            "internalClockCount": {
-                "description": "number of clocks/oscillators in the device",
-                "type": "number"
-            },
-            "loadSwitchCount": {
-                "description": "number of load switches in the device",
-                "type": "number"
-            },
-            "usbSwitchCount": {
-                "description": "number of USB switches in the device",
-                "type": "number"
-            },
-            "componentList": {
-                "description": "list of components integrated in the device",
-                "comment": "list should include components with an existing digital datasheet specification",
-                "examples": [
-                    "load switch",
-                    "linear regulator",
-                    "switching regulator"
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "pmic"
                 ],
+                "type": "string"
+            },
+            "instanceSpec": {
+                "description": "array of specifications of instances in the pmic ",
                 "type": "array",
                 "items": {
-                    "type": "string"
+                    "$ref": "../common/instanceSpec.json#/instanceSpec"
                 }
-            },
-            "instances": {
-                "description": "definition (specification) of each instance of a component in the device",
-                "type": "array",
-                "items": {
-                    "$ref": "#/$defs/instances"
-                }
-            },
-            "vin": {
-                "description": "input voltage under which a device can be expected to reliably operate",
-                "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
             },
             "currentConsumption": {
                 "description": "current consumption of a device",
@@ -76,41 +30,5 @@
             }
         },
         "additionalProperties": false
-    },
-    "$defs": {
-        "instances": {
-            "type": "object",
-            "properties": {
-                "componentName": {
-                    "description": "name of the component defined in the digital datasheets specifications",
-                    "examples": [
-                        "linear regulator",
-                        "switching regulator",
-                        "load switch",
-                        "displaybacklight driver",
-                        "adc",
-                        "clock"
-                    ],
-                    "type": "string"
-                },
-                "instanceName": {
-                    "description": "name of component instance",
-                    "examples": [
-                        "ldoa",
-                        "buck1",
-                        "buck3",
-                        "clock1"
-                    ],
-                    "type": "string"
-                },
-                "instanceDefinition": {
-                    "description": "definition of the component instance as defined in the specifications",
-                    "type": "array",
-                    "items": {
-                        "type": "object"
-                    }
-                }
-            }
-        }
     }
 }

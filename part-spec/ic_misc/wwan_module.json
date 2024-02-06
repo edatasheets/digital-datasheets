@@ -4,7 +4,17 @@
     "title": "specification of wwan module",
     "wwan_module": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "wwan_module"
+                ],
+                "type": "string"
+            },
             "networkSupport": {
                 "description": "networks supported by wwan module",
                 "enum": [

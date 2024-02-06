@@ -4,7 +4,17 @@
     "title": "specification of clock",
     "clock": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "clock"
+                ],
+                "type": "string"
+            },
             "fixedFrequency": {
                 "description": "clock frequency value if the clock has a fixed frequency",
                 "comment": "units of Hz",

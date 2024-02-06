@@ -4,7 +4,17 @@
     "title": "specification of high speed mux",
     "highspeed_mux": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "highspeed_mux"
+                ],
+                "type": "string"
+            },
             "muxRatio": {
                 "description": "ratio of inputs to outputs",
                 "$ref": "../common/ratio.json#/ratio"

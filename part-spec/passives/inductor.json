@@ -5,9 +5,17 @@
     "inductor": {
         "type": "object",
         "required": [
-            "value"
+            "value",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "inductor"
+                ],
+                "type": "string"
+            },
             "value": {
                 "description": "inductor value",
                 "comment": "units of henry",

@@ -5,9 +5,17 @@
     "dram": {
         "type": "object",
         "required": [
-            "capacity"
+            "capacity",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "dram"
+                ],
+                "type": "string"
+            },
             "type": {
                 "description": "type of dram",
                 "examples": [

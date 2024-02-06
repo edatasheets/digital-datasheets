@@ -5,9 +5,17 @@
     "connector": {
         "type": "object",
         "required": [
-            "contactCount"
+            "contactCount",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "connector"
+                ],
+                "type": "string"
+            },
             "function": {
                 "description": "intended function of a connector",
                 "examples": [
