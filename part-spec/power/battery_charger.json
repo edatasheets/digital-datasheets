@@ -111,6 +111,26 @@
                 "comment": "units of amps",
                 "$ref": "../common/unit.json#/unit"
             },
+            "preChargeToChargeThreshold": {
+                "description": "the per-cell voltage at which a charger transitions from the pre-charge to fast charge current",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "trickleChargeTopreChargeThreshold": {
+                "description": "the per-cell voltage at which a charger transitions from the trickle charge to pre-charge current",
+                "comment": "units of volts",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "minVinRegulation": {
+                "description": "minimum VIN required to support the max input charger current",
+                "comment": "units of amps",
+                "$ref": "../common/unit.json#/unit"
+            },
+            "chargerInputCurrentLimit": {
+                "description": "the maximum current drawn from the input",
+                "comment": "units of amps",
+                "$ref": "../common/unit.json#/unit"
+            },
             "batteryTerminationChargeCurrentAccuracy": {
                 "description": "termination charging current regulation accuracy of a device",
                 "comment": "units of percentage",
