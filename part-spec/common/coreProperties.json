@@ -279,6 +279,12 @@
                 "type": "object",
                 "description": "specification of ssd",
                 "$ref": "../storage/ssd.json#/ssd"
+            },
+            {
+                "title": "undefined_ic",
+                "type": "object",
+                "description": "specification of undefined IC",
+                "$ref": "../undefined/undefined_ic.json#/undefined_ic"
             }
         ]
     }
