@@ -13,7 +13,7 @@
             "gyroSensitivity": {
                 "description": "smallest change in angular speed gyro is able to capture (typical) at a given gyro range",
                 "comment": "units of LSB/dps",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "gyroSensitivityOverTemperature": {
                 "description": "gyroscope sensitivity change over temperature",

@@ -35,7 +35,7 @@
             "onResistance": {
                 "description": "on state resistance of FET",
                 "comment": "conditions includes vin and output current",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "pullDownResistance": {
                 "description": "pull-down resistance of a device from the output to the ground",
@@ -65,22 +65,22 @@
             "enableTime": {
                 "description": "time between enable asserted and output voltage rising to 10% nominal",
                 "comment": "conditions include output capacitor value, vin",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "offTime": {
                 "description": "time between enable deasserted and output voltage falling to 90% nominal",
                 "comment": "conditions include output capacitor value, vin",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "rampTime": {
                 "description": "time for output voltage to go from 10% vout nominal to 90% vout nominal",
                 "comment": "conditions include output capacitor value, vin",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "fallTime": {
                 "description": "time for output voltage to go from 90% vout nominal to 10% vout nominal",
                 "comment": "conditions include output capacitor value, current output, and vin",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "currentConsumption": {
                 "description": "current consumption of a device",

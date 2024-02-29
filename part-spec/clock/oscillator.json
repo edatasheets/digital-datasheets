@@ -60,7 +60,7 @@
             "phaseJitter": {
                 "description": "variation of waveform period",
                 "comment": "units of seconds",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             }
         }
     }

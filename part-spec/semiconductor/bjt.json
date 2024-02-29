@@ -59,32 +59,32 @@
             "pTot": {
                 "description": "maximum power that can be continously dissipated under temperature conditions",
                 "$comment": "conditions include temperature",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "collectorBaseCutOffCurrent": {
                 "description": "current into the collector terminal when the BJT's base and collector are reverse biased and the emitter is open (I_CBO)",
                 "$comment": "conditions include collector-base voltage",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "emitterBaseCutOffCurrent": {
                 "description": "current into the base terminal when the BJT's base and emitter are reverse biased and the collector is open (I_EBO)",
                 "$comment": "conditions include emitter-base voltage",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "dcCurrentGain": {
                 "description": "ratio of collector current to base current (hfe)",
                 "$comment": "conditions include collector current and collector-emitter voltage",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "collectorEmitterSaturationVoltage": {
                 "description": "collector-emitter voltage below which a change in base current does not impact collector current (VCE_SAT)",
                 "$comment": "conditions include collector current and base current",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "baseEmitterSaturationVoltage": {
                 "description": "base-emitter voltage required to ensure the collector is forward biased for certain current conditions (VBE_SAT)",
                 "$comment": "conditions include collector current and base current",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "collectorEmitterBreakdownVoltage": {
                 "description": "collector-emitter voltage at which a specified current flows with the base open",
@@ -99,37 +99,37 @@
             "delayTime": {
                 "description": "time delay between input signal rising and when collector current rises to 10% of Isat (td)",
                 "$comment": "conditions include collector current and base current",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "riseTime": {
                 "description": "time for collector current to rise through active region from 10% to 90% of Isat (tr)",
                 "$comment": "conditions include collector current and base current",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "storageTime": {
                 "description": "time delay between input signal falling and when collector current falls to 90% of Isat (ts)",
                 "$comment": "conditions include collector current and base current",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "fallTime": {
                 "description": "time for collector current to fall from 90% to 10% of Isat (tf)",
                 "$comment": "conditions include collector current and base current",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "collectorCapacitance": {
                 "description": "parasitic capacitance of collector terminal under certain conditions (Cc)",
                 "$comment": "conditions include collector-base voltage",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "emitterCapacitance": {
                 "description": "parasitic capacitance of emitter terminal under certain conditions (Ce)",
                 "$comment": "conditions include emitter-base voltage",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "transitionFrequency": {
                 "description": "frequency of unity current gain with a short circuit output (ft)",
                 "$comment": "conditions include collector current, collector-emitter voltage",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "icVsHfe": {
                 "description": "graph of collector current (Ic) as a function of dc current gain (Hfe)",

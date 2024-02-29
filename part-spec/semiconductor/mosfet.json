@@ -83,12 +83,12 @@
             "iDss": {
                 "description": "drain-source leakage current of a MOSFET when the gate to source voltage difference is zero",
                 "$comment": "condition includes drain-source voltage",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "iGss": {
                 "description": "gate-source leakage current of a MOSFET when the drain to source voltage difference is zero",
                 "$comment": "conditions include gate-source voltage",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "diodeContinuousCurrent": {
                 "description": "maximum continuous forward current of the body diode of a MOSFET (IS).This is a limiting value",
@@ -103,52 +103,52 @@
             "forwardTransconductance": {
                 "description": "signal gain, change in drain current with variation of gate-source voltage of a MOSFET (gFS)",
                 "$comment": "conditions include vds, iDrain",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "rdson": {
                 "description": "on-state resistance of a MOSFET",
                 "$comment": "conditions include vds, vgs, temperature",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "rg": {
                 "description": "internal gate resistance of a MOSFET",
                 "$comment": "conditions include vds, vgs, temperature",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "ciss": {
                 "description": "input capacitance of a MOSFET",
                 "$comment": "conditions include vds, vgs",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "coss": {
                 "description": "output capacitance of a MOSFET",
                 "$comment": "conditions include vds, vgs",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "crss": {
                 "description": "reverse transfer capacitance of a MOSFET",
                 "$comment": "conditions include vds, vgs",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "qg": {
                 "description": "total gate charge of a MOSFET",
                 "$comment": "conditions include drain-source voltage and drain current",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "qgd": {
                 "description": "gate to drain charge of a MOSFET",
                 "$comment": "conditions include drain-source voltage and drain current",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "qgs": {
                 "description": "gate to source charge of a MOSFET",
                 "$comment": "conditions include drain-source voltage and drain current",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "qrr": {
                 "description": "reverse recovery charge of the body diode of a MOSFET",
                 "$comment": "conditions include diode forward current",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "idVsVds": {
                 "description": "graph of drain current (iD) as a function of drain source voltage (vds)",
@@ -161,32 +161,32 @@
             "tdON": {
                 "description": "turn-on delay time of a MOSFET",
                 "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "tdOFF": {
                 "description": "turn-off delay time of a MOSFET",
                 "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "riseTime": {
                 "description": "rise time of a MOSFET",
                 "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "fallTime": {
                 "description": "fall time of a MOSFET",
                 "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "trr": {
                 "description": "reverse recovery time of the body diode of a MOSFET",
                 "$comment": "conditions include body diode forward current value and ramp rate.",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "pTot": {
                 "description": "maximum power dissipation of a MOSFET",
                 "$comment": "conditions include temeprature",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/unit.json#/unit"
             },
             "pdVsTemp": {
                 "description": "graph of power dissipation vs temperature",
