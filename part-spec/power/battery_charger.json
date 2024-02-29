@@ -77,7 +77,7 @@
                 "$ref": "../common/unit.json#/unit"
             },
             "batteryChargeCurrent": {
-                "description": "charging current of a device",
+                "description": "charging (fast charge) current of a device",
                 "comment": "units of amps",
                 "$ref": "../common/unit.json#/unit"
             },
