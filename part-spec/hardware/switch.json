@@ -52,22 +52,22 @@
             "voltageRating": {
                 "description": "maximum DC voltage potential that can be applied across an open switch",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "currentRating": {
                 "description": "maximum DC current that can flow through a closed switch without causing excessive heating",
                 "comment": "units of amps",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "onResistance": {
                 "description": "nominal resistance of a closed switch",
                 "comment": "units of ohms",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "dielectricRating": {
                 "description": "maximum AC voltage potential that can be applied across an open switch for one minute",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             }
         },
         "additionalProperties": false

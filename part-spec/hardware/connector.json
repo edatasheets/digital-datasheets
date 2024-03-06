@@ -48,7 +48,7 @@
             "pitch": {
                 "description": "distance from the center of one contact on the connector to the center of the next contact",
                 "comment": "units of mm",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "keying": {
                 "description": "property describing whether a connector has an asymmetry to prevent it from being plugged in the wrong direction",

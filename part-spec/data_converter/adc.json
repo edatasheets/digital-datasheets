@@ -22,12 +22,12 @@
             "conversionTime": {
                 "description": "time required to convert from an analog signal to digital output",
                 "comment": "units of seconds",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "sampleRate": {
                 "description": "maximum rate at which the ADC can convert samples",
                 "$comment": "unit of hertz",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "offsetError": {
                 "description": "difference (in LSB) of the output at the zero point between an actual and ideal ADC",

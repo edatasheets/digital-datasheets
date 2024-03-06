@@ -23,7 +23,7 @@
             "gyroSensitivity": {
                 "description": "smallest change in angular speed gyro is able to capture (typical) at a given gyro range",
                 "comment": "units of LSB/dps",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "gyroSensitivityOverTemperature": {
                 "description": "gyroscope sensitivity change over temperature",
@@ -59,12 +59,12 @@
             "bandwidth": {
                 "description": "bandwidth of gyroscope",
                 "comment": "units of Hertz (Hz)",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "outputDataRate": {
                 "description": "output Data rate (ODR) of a device",
                 "comment": "units of Hertz (Hz)",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "outputType": {
                 "description": "measurement output type",

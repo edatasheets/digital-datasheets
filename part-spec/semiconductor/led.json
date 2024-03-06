@@ -27,57 +27,57 @@
             "vf": {
                 "description": "forward voltage of an LED ",
                 "comment": "conditions include: forward current of LED under which a given forward voltage was measured",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "if": {
                 "description": "continuous forward current of an LED",
                 "comment": "units of amps",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "ifp": {
                 "description": "peak forward current of an LED",
                 "comment": "units of amps",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "vr": {
                 "description": "maximum continuous reverse biased voltage an LED can support",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "ir": {
                 "description": "reverse current (leakage) of an LED",
                 "comment": "conditions include: reverse biased voltage under which LED ir was measured",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "ledCapacitance": {
                 "description": "capacitance of an LED",
                 "$comment": "units of farads (F)",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "iv": {
                 "description": "LED luminous intensity",
                 "$comment": "units of candela (cd). Measurement conditions include LED forward current, if",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "peakWavelength": {
                 "description": "light spectrum output value emitted by an LED at highest wavelength",
                 "$comment": "units of nanometer(nm). Measurement conditions include LED forward current, if",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "dominantWavelength": {
                 "description": "dominant wavelength an LED emits the majority of the time",
                 "$comment": "units of nanometer(nm). Measurement conditions include LED forward current, if",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "angleHalfIntensity": {
                 "description": "angle at which LED intensity falls to 50% of its maximum value",
                 "$comment": "units of degrees",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "pd": {
                 "description": "power dissipation of an LED",
                 "$comment": "units of watts (W)",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             }
         },
         "additionalProperties": false
