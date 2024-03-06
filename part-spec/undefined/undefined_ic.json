@@ -1,0 +1,14 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/undefined/undefined_ic.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "specification of undefined ic",
+    "undefined_ic": {
+        "type": "object",
+        "properties": {
+            "currentConsumption": {
+                "description": "current used by device in various power modes",
+                "$ref": "..common/currentConsumption.json#/currentConsumption"
+            }
+        }
+    }
+}

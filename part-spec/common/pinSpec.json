@@ -45,23 +45,13 @@
                     "$ref": "#/$defs/functionProperties"
                 }
             },
-            "vihMin": {
-                "description": "the lowest value of high-level input voltage for which operation of the logic element within specification limits is to be expected",
+            "vih": {
+                "description": "the high-level input voltage for which operation of the logic element within specification limits is to be expected",
                 "comment": "units of volts",
                 "$ref": "../common/unit.json#/unit"
             },
-            "vihMax": {
-                "description": "the highest value of high-level input voltage for which operation of the logic element within specification limits is to be expected",
-                "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
-            },
-            "vilMax": {
-                "description": "the highest value of low-level input voltage for which operation of the logic element within specification limits is to be expected",
-                "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
-            },
-            "vilMin": {
-                "description": "the lowest value of low-level input voltage for which operation of the logic element within specification limits is to be expected",
+            "vil": {
+                "description": "the low-level input voltage for which operation of the logic element within specification limits is to be expected",
                 "comment": "units of volts",
                 "$ref": "../common/unit.json#/unit"
             },
@@ -77,7 +67,7 @@
             },
             "absVmax": {
                 "description": "maximum voltage rating beyond which damage to the device may occur",
-                "comment": "units of volts",
+                "comment": "units of volts, if this voltage is between two pins, make a note in the conditions field",
                 "$ref": "../common/unit.json#/unit"
             },
             "absVmin": {
@@ -163,32 +153,24 @@
                     "type": "string",
                     "enum": [
                         "resistor",
-                        "capacitor",
-                        "inductor"
+                        "capacitor"
                     ]
                 },
                 "configuration": {
                     "description": "electrical configuration of component connected to pin with respect to the pin",
                     "examples": [
                         "pu (pull up to power)",
-                        "pd (pull down to ground)",
-                        "series (in series)"
+                        "pd (pull down to ground)"
                     ],
                     "enum": [
                         "pu",
-                        "pd",
-                        "series"
+                        "pd"
                     ],
                     "type": "string"
                 },
                 "value": {
                     "description": "value of component",
                     "$ref": "../common/unit.json#/unit"
-                },
-                "connectionPin": {
-                    "description": "name of pin to which an external component should be pulled up",
-                    "comment": "mostly commonly power or ground pin",
-                    "type": "string"
                 }
             }
         },
