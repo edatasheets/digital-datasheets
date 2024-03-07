@@ -27,7 +27,7 @@
             "capacity": {
                 "description": "capacity of the ssd",
                 "comment": "units of bytes (B)",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "dataRate": {
                 "description": "maximum data rate of the ssd",

@@ -19,17 +19,17 @@
             "value": {
                 "description": "capacitor value",
                 "comment": "units of farads",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "tolerance": {
                 "description": "nominal tolerance of a capacitor",
                 "comment": "units of %",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "ratedVoltage": {
                 "description": "maximum voltage which may be applied continuously to a capacitance",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "dielectric": {
                 "description": "dielectric material used in the capacitor",
@@ -47,7 +47,7 @@
             "equivalentSeriesResistance": {
                 "description": "equivalent series resistance (ESR) of the capacitor",
                 "comment": "units of ohms",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "temperatureCoefficient": {
                 "description": "change in capacitance when the temperature is changed",
@@ -57,12 +57,12 @@
             "minTemperature": {
                 "description": "minimum temperature under which a capacitor can be expected to reliably operate",
                 "comment": "units of degrees (Celsius or Kelvin)",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "maxTemperature": {
                 "description": "maximum temperature under which a capacitor can be expected to reliably operate",
                 "comment": "units of degrees (Celsius or Kelvin)",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "capacitorDerating": {
                 "description": "graph object to capture capacitance changes with voltage changes",

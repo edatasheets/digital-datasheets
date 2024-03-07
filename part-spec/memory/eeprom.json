@@ -17,7 +17,7 @@
                 "type": "string"
             },
             "accessTime": {
-                "$ref": "../common/unit.json#/unit",
+                "$ref": "../common/values.json#/valueOptions",
                 "comment": "units of seconds (s)",
                 "description": "time to access the eeprom"
             },
@@ -26,17 +26,17 @@
                 "type": "number"
             },
             "bootBlockSize": {
-                "$ref": "../common/unit.json#/unit",
+                "$ref": "../common/values.json#/valueOptions",
                 "comment": "units of bits",
                 "description": "size of the eeprom boot block"
             },
             "capacity": {
-                "$ref": "../common/unit.json#/unit",
+                "$ref": "../common/values.json#/valueOptions",
                 "comment": "units of bits",
                 "description": "capacity/density of eeprom"
             },
             "clockFrequency": {
-                "$ref": "../common/unit.json#/unit",
+                "$ref": "../common/values.json#/valueOptions",
                 "comment": "units of Hertz (Hz)",
                 "description": "eeprom clock frequency"
             },

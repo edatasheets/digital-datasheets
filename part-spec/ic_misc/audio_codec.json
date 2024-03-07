@@ -27,7 +27,7 @@
             "hpOutputTHD+N": {
                 "description": "headphone output total harmonic distortion plus noise",
                 "comment": "units of percentage",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "micInputSNR": {
                 "description": "microphone input SNR",
@@ -37,7 +37,7 @@
             "micInputTHD+N": {
                 "description": "microphone input total harmonic distortion plus noise",
                 "comment": "units of percentage",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "jackDetect": {
                 "description": "describes whether headphone jack detection is supported",

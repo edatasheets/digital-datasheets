@@ -20,27 +20,27 @@
             "vin": {
                 "description": "input voltage under which a device can be expected to operate properly",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "vout": {
                 "description": "output voltage range a device can regulate",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "ioutPerString": {
                 "description": "output current per string a device can regulate",
                 "comment": "units of amps",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "ioutAccuracy": {
                 "description": "accuracy of per string current regulated by a device",
                 "comment": "units of percentage",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "fsw": {
                 "description": "switching frequency of a device",
                 "comment": "units of hertz",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "currentConsumption": {
                 "description": "current consumption of a device",
@@ -57,7 +57,7 @@
             "currentMatchingAccuracy": {
                 "description": "current matching between LED strings",
                 "comment": "units of percentage",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "dimmingSupport": {
                 "description": "whether a device supports output current dimming",
@@ -74,7 +74,7 @@
             "dimmingFrequency": {
                 "description": "dimming frequency of a device",
                 "comment": "units of hertz",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "dimmingRatio": {
                 "description": "dimming ratio of a device",

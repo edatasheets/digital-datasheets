@@ -34,7 +34,7 @@
             "maxDataRate": {
                 "description": "maximum data rate supported by redriver",
                 "comment": "units of Hz",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "currentConsumption": {
                 "description": "current used by device in various power modes",

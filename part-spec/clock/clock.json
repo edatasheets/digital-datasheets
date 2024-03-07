@@ -18,7 +18,7 @@
             "fixedFrequency": {
                 "description": "clock frequency value if the clock has a fixed frequency",
                 "comment": "units of Hz",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "numberClockOutputs": {
                 "description": "number of clock outputs in a clock IC",
@@ -35,12 +35,12 @@
             "jitter": {
                 "description": "cycle to cycle clock jitter",
                 "comment": "units of seconds",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "frequencyTolerance": {
                 "description": "amount of frequency variation from nominal frequency",
                 "comment": "units of percentage",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "powerSupplyRejectionRatio": {
                 "description": "power supply rejection ratio (PSRR) or ratio between power supply variation and output variation",

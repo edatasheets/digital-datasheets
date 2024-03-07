@@ -48,64 +48,64 @@
             "vih": {
                 "description": "the high-level input voltage for which operation of the logic element within specification limits is to be expected",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "vil": {
                 "description": "the low-level input voltage for which operation of the logic element within specification limits is to be expected",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "vol": {
                 "description": "the voltage level at an output terminal with input conditions applied that, according to the product specification, will establish a low level at the output",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "voh": {
                 "description": "the voltage level at an output terminal with input conditions applied that, according to the product specification, will establish a high level at the output",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "absVmax": {
                 "description": "maximum voltage rating beyond which damage to the device may occur",
                 "comment": "units of volts, if this voltage is between two pins, make a note in the conditions field",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "absVmin": {
                 "description": "absolute minimum voltage that can be applied to a pin",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "vmax": {
                 "description": "maximum continuous voltage that can safely be applied to a pin",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "imax": {
                 "description": "maximum continuous current that can safely be drawn from a pin",
                 "comment": "units of amps",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "inputLeakage": {
                 "description": "maximum current draw out of a high impedance input pin",
                 "comment": "units of amps",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "outputLeakage": {
                 "description": "maximum current flow from a pin during the off state",
                 "comment": "units of amps",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "dcResistance": {
                 "description": "resistance of a pin of a connector",
                 "comment": "units of ohms",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "voltageOptions": {
                 "description": "list of voltage levels supported by a pin",
                 "comment": "units of volts",
                 "type": "array",
                 "items": {
-                    "$ref": "../common/unit.json#/unit"
+                    "$ref": "../common/values.json#/valueOptions"
                 }
             },
             "floatUnused": {
@@ -115,12 +115,12 @@
             "internalPullUp": {
                 "description": "indicates the value of an internal pull-up on a pin",
                 "comment": "units of resistance",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "internalPullDown": {
                 "description": "indicates the value of an internal pull-down on a pin",
                 "comment": "units of resistance",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "esd": {
                 "description": "indicates whether ESD protection exists on a pin",
@@ -170,7 +170,7 @@
                 },
                 "value": {
                     "description": "value of component",
-                    "$ref": "../common/unit.json#/unit"
+                    "$ref": "../common/values.json#/valueOptions"
                 }
             }
         },

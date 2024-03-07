@@ -33,7 +33,7 @@
             "maxDataRate": {
                 "description": "maximum data rate supported by high speed mux",
                 "comment": "units of Hz",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "insertionLoss": {
                 "description": "insertion loss through high speed mux",

@@ -48,7 +48,7 @@
             "maxDataRate": {
                 "description": "maximum data rate supported by a device",
                 "comment": "units of Hz",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "integratedAuxLsSwitch": {
                 "description": "whether the AUX/LSx switch for SBU is integrated",

@@ -47,12 +47,12 @@
             "accuracy": {
                 "description": "accuracy of temperature sensor",
                 "comment": "units of degrees C",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "temperatureRange": {
                 "description": "range of temperature sensor",
                 "comment": "units of degrees C",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "resolution": {
                 "description": "maximum resolution of temperature sensor",
