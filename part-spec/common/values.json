@@ -105,13 +105,13 @@
                         "add",
                         "subtract"
                     ]
-                }
-            },
-            "conditions": {
-                "description": "conditions under which the property is measured",
-                "type": "array",
-                "items": {
-                    "type": "string"
+                },
+                "conditions": {
+                    "description": "conditions under which the property is measured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             },
             "additionalProperties": false
