@@ -28,7 +28,7 @@
             "frequency": {
                 "description": "output frequency of oscillator",
                 "$comment": "units of hertz",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "frequencyStability": {
                 "description": "frequency change over temperature, load, supply voltage change and aging",
@@ -43,32 +43,32 @@
             "outputLoad": {
                 "description": "maximum capacitive load that can be supported by oscillator",
                 "comment": "units of farads",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "riseTime": {
                 "description": "time for output to go from 10% to 90% of output max",
                 "comment": "units of seconds",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "fallTime": {
                 "description": "time for output to go from 90% to 10% of output max",
                 "comment": "units of seconds",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "startUpTime": {
                 "description": "time between enable and output reaching 10% of output max",
                 "comment": "units of seconds",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "dutyCycle": {
                 "description": "time above 50% of output max over entire period",
                 "comment": "units of percent",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "phaseJitter": {
                 "description": "variation of waveform period",
                 "comment": "units of seconds",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             }
         },
         "additionalProperties": false

@@ -19,37 +19,37 @@
             "value": {
                 "description": "inductor value",
                 "comment": "units of henry",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "tolerance": {
                 "description": "nominal tolerance of an inductor",
                 "comment": "units of percentage",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "ratedCurrent": {
                 "description": "maximum continuous current the inductor can handle",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "saturationCurrent": {
                 "description": "current where the inductor enters the magnetic state, and the inductance drops a specified amount",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "rmsCurrent": {
                 "description": "DC current that produces an inductor temperature rise of 40 degrees Celsius",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "selfResonantFrequency": {
                 "description": "frequency at which the inductor starts behaving like a capacitor",
                 "comment": "units of hertz",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "dcResistance": {
                 "description": "DC resistance of the inductor",
                 "comment": "units of ohms",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "temperatureCoefficient": {
                 "description": "change in inductance when the temperature is changed",
@@ -59,12 +59,12 @@
             "minTemperature": {
                 "description": "minimum temperature under which a inductor can be expected to reliably operate",
                 "comment": "units of degrees (Celsius or Kelvin)",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "maxTemperature": {
                 "description": "maximum temperature under which a inductor can be expected to reliably operate",
                 "comment": "units of degrees (Celsius or Kelvin)",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "saturationCurve": {
                 "description": "graph object to capture inductance as a function of current",

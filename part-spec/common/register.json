@@ -25,7 +25,7 @@
             "registerSize": {
                 "description": "size of a register",
                 "comment": "units of byte",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "registerType": {
                 "description": "type of a register",

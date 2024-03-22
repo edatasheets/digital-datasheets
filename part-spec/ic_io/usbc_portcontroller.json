@@ -65,17 +65,17 @@
             "vconnPowerLimit": {
                 "description": "power limit supported by internal vconn switch (if supported)",
                 "comment": "units of watts",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "vconnMaxCurrent": {
                 "description": "maximum continuous current supported by internal vconn switch (if supported)",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "vconnOverCurrentLimit": {
                 "description": "over current limit supported by internal vconn switch (if supported)",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "integratedVbusDischargeSwitch": {
                 "description": "whether the port controller has one or more integrated vbus discharge switches ",

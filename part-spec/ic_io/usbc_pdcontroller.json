@@ -52,17 +52,17 @@
             "vconnPowerLimit": {
                 "description": "power limit supported by internal vconn switch (if supported)",
                 "comment": "units of watts",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "vconnMaxCurrent": {
                 "description": "maximum continuous current supported by internal vconn switch (if supported)",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "vconnOverCurrentLimit": {
                 "description": "over current limit supported by internal vconn switch (if supported)",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "integratedVbusDischargeSwitch": {
                 "description": "whether the pd controller has one or more integrated vbus discharge switches ",
@@ -75,32 +75,32 @@
             "maxSinkCurrent": {
                 "description": "maximum continuous current supported by pd controller integrated sink load switch",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "maxSourceCurrent": {
                 "description": "maximum continuous current supported by pd controller integrated source load switch",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "sinkfetOverCurrentLimit": {
                 "description": "over current limit supported by pd controller integrated sink load switch",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "sourcefetOverCurrentLimit": {
                 "description": "over current limit supported by pd controller integrated source load switch",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "onResistanceSinkFet": {
                 "description": "on-resistance of the integrated sink load switch",
                 "comment": "units of ohms",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "onResistanceSourceFet": {
                 "description": "on-resistance of the integrated source load switch",
                 "comment": "units of ohms",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "interface": {
                 "description": "describes the communication interface from the chip to the host",

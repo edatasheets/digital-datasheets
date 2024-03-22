@@ -12,27 +12,27 @@
             "quiescentCurrent": {
                 "description": "quiescent current (Iq) of a device",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "shutdownCurrent": {
                 "description": "shutdown current (Isd) of a device",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "activeCurrent": {
                 "description": "current consumption when a device is in active mode",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "sleepCurrent": {
                 "description": "current consumption when a device is in sleep mode",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "idleCurrent": {
                 "description": "current consumption when a device is in idle mode",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             }
         },
         "additionalProperties": false

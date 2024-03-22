@@ -41,122 +41,122 @@
             "vgs": {
                 "description": "gate to source voltage difference of a MOSFET",
                 "comment": "units of volts",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "vgsMax": {
                 "description": "maximum gate to source voltage difference that can be continuously applied to a MOSFET. This is a limiting value",
                 "comment": "units of volts",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "vds": {
                 "description": "drain to source voltage difference of a MOSFET",
                 "comment": "units of volts",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "vdsMax": {
                 "description": "maximum drain to source voltage difference that can be continuously applied to a MOSFET. This is a limiting value",
                 "comment": "units of volts",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "vdsVbr": {
                 "description": "drain to source breakdown voltage of a MOSFET",
                 "comment": "units of volts",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "vgsTh": {
                 "description": "gate to source voltage difference required to produce a conducting path between drain and source",
                 "comment": "units of volts",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "vsdDiodeVf": {
                 "description": "reverse diode forward voltage when a MOSFET is in off-state",
                 "comment": "units of volts",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "iD": {
                 "description": "drain Current of a MOSFET",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "iDrain": {
                 "description": "maximum continuous DC current that can flow through a MOSFET channel.This is a limiting value",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "idPulsed": {
                 "description": "maximum pulsed DC current that can flow through a MOSFET channel.This is a limiting value",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "iDss": {
                 "description": "drain-source leakage current of a MOSFET when the gate to source voltage difference is zero",
                 "$comment": "condition includes drain-source voltage",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "iGss": {
                 "description": "gate-source leakage current of a MOSFET when the drain to source voltage difference is zero",
                 "$comment": "conditions include gate-source voltage",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "diodeContinuousCurrent": {
                 "description": "maximum continuous forward current of the body diode of a MOSFET (IS).This is a limiting value",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "diodePulsedCurrent": {
                 "description": "maximum pulsed forward current of the body diode of a MOSFET. This is a limiting value",
                 "comment": "units of amps",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "forwardTransconductance": {
                 "description": "signal gain, change in drain current with variation of gate-source voltage of a MOSFET (gFS)",
                 "$comment": "conditions include vds, iDrain",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "rdson": {
                 "description": "on-state resistance of a MOSFET",
                 "$comment": "conditions include vds, vgs, temperature",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "rg": {
                 "description": "internal gate resistance of a MOSFET",
                 "$comment": "conditions include vds, vgs, temperature",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "ciss": {
                 "description": "input capacitance of a MOSFET",
                 "$comment": "conditions include vds, vgs",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "coss": {
                 "description": "output capacitance of a MOSFET",
                 "$comment": "conditions include vds, vgs",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "crss": {
                 "description": "reverse transfer capacitance of a MOSFET",
                 "$comment": "conditions include vds, vgs",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "qg": {
                 "description": "total gate charge of a MOSFET",
                 "$comment": "conditions include drain-source voltage and drain current",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "qgd": {
                 "description": "gate to drain charge of a MOSFET",
                 "$comment": "conditions include drain-source voltage and drain current",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "qgs": {
                 "description": "gate to source charge of a MOSFET",
                 "$comment": "conditions include drain-source voltage and drain current",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "qrr": {
                 "description": "reverse recovery charge of the body diode of a MOSFET",
                 "$comment": "conditions include diode forward current",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "idVsVds": {
                 "description": "graph of drain current (iD) as a function of drain source voltage (vds)",
@@ -169,32 +169,32 @@
             "tdON": {
                 "description": "turn-on delay time of a MOSFET",
                 "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "tdOFF": {
                 "description": "turn-off delay time of a MOSFET",
                 "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "riseTime": {
                 "description": "rise time of a MOSFET",
                 "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "fallTime": {
                 "description": "fall time of a MOSFET",
                 "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "trr": {
                 "description": "reverse recovery time of the body diode of a MOSFET",
                 "$comment": "conditions include body diode forward current value and ramp rate.",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "pTot": {
                 "description": "maximum power dissipation of a MOSFET",
                 "$comment": "conditions include temperature",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "pdVsTemp": {
                 "description": "graph of power dissipation vs temperature",

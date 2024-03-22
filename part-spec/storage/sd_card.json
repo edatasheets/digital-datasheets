@@ -28,7 +28,7 @@
             "capacity": {
                 "description": "capacity of sd card",
                 "comment": "units of bytes (B)",
-                "$ref": "../common/values.json#/valueOptions"
+                "$ref": "../common/valueOptions.json#/valueOptions"
             },
             "dataRate": {
                 "description": "maximum data rate of the sd card",
