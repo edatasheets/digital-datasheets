@@ -7,7 +7,7 @@
         "properties": {
             "currentConsumption": {
                 "description": "current used by device in various power modes",
-                "$ref": "..common/currentConsumption.json#/currentConsumption"
+                "$ref": "../common/currentConsumption.json#/currentConsumption"
             }
         }
     }
