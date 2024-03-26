@@ -27,22 +27,22 @@
                 "ilimHSFET": {
                     "description": "maximum sustained output current under which the high side FET will operate properly",
                     "comment": "units of amps",
-                    "$ref": "../common/valueOptions.json#/valueOptions"
+                    "$ref": "../common/values.json#/valueOptions"
                 },
                 "ilimLSFET": {
                     "description": "maximum sustained output current under which the low side FET will operate properly",
                     "comment": "units of amps",
-                    "$ref": "../common/valueOptions.json#/valueOptions"
+                    "$ref": "../common/values.json#/valueOptions"
                 },
                 "rdsonHSFET": {
                     "description": "high side FET on-resistance",
                     "comment": "units of ohms",
-                    "$ref": "../common/valueOptions.json#/valueOptions"
+                    "$ref": "../common/values.json#/valueOptions"
                 },
                 "rdsonLSFET": {
                     "description": "low side FET on-resistance",
                     "comment": "units of ohms",
-                    "$ref": "../common/valueOptions.json#/valueOptions"
+                    "$ref": "../common/values.json#/valueOptions"
                 }
             },
             "additionalProperties": false

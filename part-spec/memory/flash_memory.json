@@ -19,22 +19,22 @@
             "capacity": {
                 "description": "capacity/density of flash memory",
                 "comment": "units of bits",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "pageSize": {
                 "description": "page size of flash memory",
                 "comment": "units of bits",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "blockSize": {
                 "description": "block size of flash memory",
                 "comment": "units of bits",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "bootBlockSize": {
                 "description": "size of the flash memory boot block",
                 "comment": "units of bits",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "interface": {
                 "description": "interface of flash memory to host",
@@ -48,27 +48,27 @@
             "clockFrequency": {
                 "description": "flash memory clock frequency",
                 "comment": "units of Hertz (Hz)",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "blockEraseTime": {
                 "description": "time it takes to erase a block (largest erasable unit) of the flash memory",
                 "comment": "units of seconds (s)",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "sectorEraseTime": {
                 "description": "time it takes to erase a sector (smallest erasable unit) of the flash memory",
                 "comment": "units of seconds (s)",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "chipEraseTime": {
                 "description": "time it takes to erase the flash memory",
                 "comment": "units of seconds (s)",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "pageProgramTime": {
                 "description": "time it takes to program a page of the flash memory",
                 "comment": "units of seconds (s)",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "endurance": {
                 "description": "time in years a bit in the eeprom can retain its data state ",

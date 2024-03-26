@@ -18,22 +18,22 @@
             "dcResistance": {
                 "description": "dc resistance (DCR) of ferrite bead",
                 "comment": "units of ohms",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "rmsCurrent": {
                 "description": "applied DC current (IRMS) that produces a ferrite bead temperature rise of 40 deg C",
                 "comment": "units of amps",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "impedance100MHz": {
                 "description": "impedance of ferrite bead under standard testing conditions at 100MHz",
                 "comment": "units of ohms",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "impedanceTolerance": {
                 "description": "variation of ferrite bead impedance expressed as +/- percentage",
                 "comment": "units of percentage",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             }
         },
         "additionalProperties": false

@@ -84,7 +84,7 @@
             "outputResolution": {
                 "description": "output resolution of acceleration measurement",
                 "comment": "units of bits",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "interface": {
                 "description": "interface(s) for communication to host",
@@ -101,12 +101,12 @@
             "bandwidth": {
                 "description": "bandwidth of acceleration measurement",
                 "comment": "units of hertz (Hz)",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "outputDataRate": {
                 "description": "output Data rate (ODR) of a device",
                 "comment": "units of Hz",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "rmsNoise": {
                 "description": "broadband rms noise of a device",

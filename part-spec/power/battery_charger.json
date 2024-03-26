@@ -82,77 +82,77 @@
             "inputCurrentAccuracy": {
                 "description": "accuracy of input current when set",
                 "comment": "units of percentage",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "batteryChargeCurrent": {
                 "description": "charging (fast charge) current of a device",
                 "comment": "units of amps",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "batteryChargeCurrentAccuracy": {
                 "description": "charging current regulation accuracy of a device",
                 "comment": "units of percentage",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "batteryPreChargeCurrent": {
                 "description": "charging current of a device in pre-charge phase",
                 "comment": "units of amps",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "batteryPreChargeCurrentAccuracy": {
                 "description": "pre-charging current regulation accuracy of a device",
                 "comment": "units of percentage",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "batteryTrickleChargeCurrent": {
                 "description": "charging current of a device in trickle charge phase",
                 "comment": "units of amps",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "batteryTrickleChargeCurrentAccuracy": {
                 "description": "trickle charging current regulation accuracy of a device",
                 "comment": "units of percentage",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "batteryTerminationChargeCurrent": {
                 "description": "charging current of a device in charge termination phase",
                 "comment": "units of amps",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "preChargeToChargeThreshold": {
                 "description": "the per-cell voltage at which a charger transitions from the pre-charge to fast charge current",
                 "comment": "units of volts",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "trickleChargeTopreChargeThreshold": {
                 "description": "the per-cell voltage at which a charger transitions from the trickle charge to pre-charge current",
                 "comment": "units of volts",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "minVinRegulation": {
                 "description": "minimum VIN required to support the max input charger current",
                 "comment": "units of amps",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "chargerInputCurrentLimit": {
                 "description": "the maximum current drawn from the input",
                 "comment": "units of amps",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "batteryTerminationChargeCurrentAccuracy": {
                 "description": "termination charging current regulation accuracy of a device",
                 "comment": "units of percentage",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "batteryChargeVoltage": {
                 "description": "battery charge voltage regulated by a device",
                 "comment": "units of volts",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "batteryChargeVoltageAccuracy": {
                 "description": "accuracy of battery charge voltage regulated by a device",
                 "comment": "units of percentage",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "efficiency": {
                 "description": "charger efficiency as a function of charge current of a device",
@@ -161,12 +161,12 @@
             "vin": {
                 "description": "input voltage under which a device can be expected to reliably operate",
                 "comment": "units of volts",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "fsw": {
                 "description": "switching frequency of a device",
                 "comment": "units of hertz",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "currentConsumption": {
                 "description": "current consumption of a device",
@@ -203,17 +203,17 @@
             "gateCapacitance": {
                 "description": "describes gate capacitance supported on external fets",
                 "comment": "units of farads",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "inputSenseResistor": {
                 "description": "describes input sense resistor value",
                 "comment": "units of ohms",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "batterySenseResistor": {
                 "description": "describes battery sense resistor value",
                 "comment": "units of ohms",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "passThroughMode": {
                 "description": "whether pass through mode is supported",

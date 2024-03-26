@@ -32,37 +32,37 @@
             "vin": {
                 "description": "input voltage range under which a device can be expected to reliably operate",
                 "comment": "units of volts",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "vout": {
                 "description": "output voltage a device can regulate",
                 "comment": "units of volts",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "feedbackVoltage": {
                 "description": "voltage comparison point at the feedback node",
                 "comment": "units of volts",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "loadCurrent": {
                 "description": "load current supported by a device",
                 "comment": "units of amps",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "voutAccuracy": {
                 "description": "output voltage variation at no load",
                 "comment": "units of volts",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "loadRegulation": {
                 "description": "output voltage variation from no load to full load ",
                 "comment": "units of volts",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "lineRegulation": {
                 "description": "output voltage variation from minimum input voltage to maximum input voltage ",
                 "comment": "units of volts",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "currentConsumption": {
                 "description": "current consumption of a device",
@@ -72,17 +72,17 @@
             "switchingFrequency": {
                 "description": "switching frequency (fsw) of voltage regulator",
                 "comment": "units of Hertz (Hz)",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "enableTime": {
                 "description": "time between enable asserted and output voltage rising to 10% nominal",
                 "comment": "units of seconds",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "rampTime": {
                 "description": "time for output voltage to go from 10% vout nominal to 90% vout nominal",
                 "comment": "units of seconds",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "integratedFets": {
                 "description": "whether the regulator contains integrated switching mosfets",

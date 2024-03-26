@@ -32,7 +32,7 @@
             "capacity": {
                 "description": "capacity of dram chip",
                 "comment": "units of bytes (B)",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "ranksperModule": {
                 "description": "numbers of ranks on dram module",
@@ -53,17 +53,17 @@
             "bitsPerChannel": {
                 "description": "channel density of dram",
                 "comment": "units of bits (b)",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "bitsPerDie": {
                 "description": "total die density of dram",
                 "comment": "units of bits (b)",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "pageSize": {
                 "description": "page size of dram",
                 "comment": "units of bytes (B)",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "rows": {
                 "description": "number of rows per channel of dram",
@@ -81,7 +81,7 @@
             "speed": {
                 "description": "dram maximum speed",
                 "comment": "units of Hertz(Hz)",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "latencyCas": {
                 "description": "cl/tCAS, delay between read command issued and first output data available for read",
@@ -91,17 +91,17 @@
             "delayRasCas": {
                 "description": "tRCD,delay between activation of row and activation of column where data is stored in the dram",
                 "comment": "units of ns",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "delayRasPrecharge": {
                 "description": "tRP, delay between closing access to a row through the precharge command and activating a new row to access data ",
                 "comment": "units of ns",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "delayActivePrecharge": {
                 "description": "tRAS, delay between row active command issued and precharge command issued ",
                 "comment": "units of ns",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "currentConsumption": {
                 "description": "current consumption of a device",

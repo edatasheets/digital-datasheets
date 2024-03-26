@@ -18,7 +18,7 @@
             "diffModeCutoff": {
                 "description": "frequency at which the differential mode attenuation equals -3dB",
                 "comment": "units of Hz",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "commonModeAttenuation": {
                 "description": "graph object to capture common mode attenuation of a common mode choke at various frequencies",
@@ -27,12 +27,12 @@
             "dcResistance": {
                 "description": "dc resistance (DCR) of a common mode choke",
                 "comment": "units of ohms",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "rmsCurrent": {
                 "description": "applied DC current (IRMS) that produces a common mode choke temperature rise of 40 deg C",
                 "comment": "units of amps",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "intendedApplication": {
                 "description": "intended application of a particular common mode choke",

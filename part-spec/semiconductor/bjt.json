@@ -32,112 +32,112 @@
             "collectorCurrent": {
                 "description": "maximum current flow of BJT as measured at the collector (Icc)",
                 "$comment": "units of amps",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "peakCollectorCurrent": {
                 "description": "maximum pulsed current flow of BJT as measured at the collector (Icm)",
                 "$comment": "units of amps",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "baseCurrent": {
                 "description": "maximum current flow of BJT as measured at the base (Ib)",
                 "$comment": "units of amps",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "peakBaseCurrent": {
                 "description": "maximum pulsed current flow of BJT as measured at the base (Ibm)",
                 "$comment": "units of amps",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "collectorBaseVoltage": {
                 "description": "maximum voltage between collector and base terminals of BJT with an open emitter terminal (V_CBO)",
                 "$comment": "units of volts",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "collectorEmitterVoltage": {
                 "description": "maximum voltage between collector and emitter terminals of BJT with an open base terminal (V_CEO)",
                 "$comment": "units of volts",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "emitterBaseVoltage": {
                 "description": "maximum voltage between emitter and base terminals of BJT with an open collector terminal (V_EBO)",
                 "$comment": "units of volts",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "pTot": {
                 "description": "maximum power that can be continuously dissipated under temperature conditions",
                 "$comment": "conditions include temperature",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "collectorBaseCutOffCurrent": {
                 "description": "current into the collector terminal when the BJT's base and collector are reverse biased and the emitter is open (I_CBO)",
                 "$comment": "conditions include collector-base voltage",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "emitterBaseCutOffCurrent": {
                 "description": "current into the base terminal when the BJT's base and emitter are reverse biased and the collector is open (I_EBO)",
                 "$comment": "conditions include emitter-base voltage",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "dcCurrentGain": {
                 "description": "ratio of collector current to base current (hfe)",
                 "$comment": "conditions include collector current and collector-emitter voltage",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "collectorEmitterSaturationVoltage": {
                 "description": "collector-emitter voltage below which a change in base current does not impact collector current (VCE_SAT)",
                 "$comment": "conditions include collector current and base current",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "baseEmitterSaturationVoltage": {
                 "description": "base-emitter voltage required to ensure the collector is forward biased for certain current conditions (VBE_SAT)",
                 "$comment": "conditions include collector current and base current",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "collectorEmitterBreakdownVoltage": {
                 "description": "collector-emitter voltage at which a specified current flows with the base open",
                 "$comment": "units of volts",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "baseEmitterBreakdownVoltage": {
                 "description": "base-emitter voltage at which a specified current flows with the collector open",
                 "$comment": "units of volts",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "delayTime": {
                 "description": "time delay between input signal rising and when collector current rises to 10% of Isat (td)",
                 "$comment": "conditions include collector current and base current",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "riseTime": {
                 "description": "time for collector current to rise through active region from 10% to 90% of Isat (tr)",
                 "$comment": "conditions include collector current and base current",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "storageTime": {
                 "description": "time delay between input signal falling and when collector current falls to 90% of Isat (ts)",
                 "$comment": "conditions include collector current and base current",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "fallTime": {
                 "description": "time for collector current to fall from 90% to 10% of Isat (tf)",
                 "$comment": "conditions include collector current and base current",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "collectorCapacitance": {
                 "description": "parasitic capacitance of collector terminal under certain conditions (Cc)",
                 "$comment": "conditions include collector-base voltage",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "emitterCapacitance": {
                 "description": "parasitic capacitance of emitter terminal under certain conditions (Ce)",
                 "$comment": "conditions include emitter-base voltage",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "transitionFrequency": {
                 "description": "frequency of unity current gain with a short circuit output (ft)",
                 "$comment": "conditions include collector current, collector-emitter voltage",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "icVsHfe": {
                 "description": "graph of collector current (Ic) as a function of dc current gain (Hfe)",

@@ -8,17 +8,17 @@
             "length": {
                 "description": "length of a side of a package",
                 "$comment": "units of millimeter",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "width": {
                 "description": "width of a side of a package",
                 "$comment": "units of millimeter",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "height": {
                 "description": "height of a package",
                 "$comment": "units of millimeter",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "nominalFootprints": {
                 "description": "references to external footprints in standard CAD formats",

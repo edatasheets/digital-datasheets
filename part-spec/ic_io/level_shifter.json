@@ -18,12 +18,12 @@
             "inputVoltage": {
                 "description": "nominal input voltage of level shifter",
                 "comment": "units of volts",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "outputVoltage": {
                 "description": "nominal output voltage of level shifter",
                 "comment": "units of volts",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "currentConsumption": {
                 "description": "current used by device in various power modes",

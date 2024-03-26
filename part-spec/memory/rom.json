@@ -18,7 +18,7 @@
             "capacity": {
                 "description": "capacity of rom",
                 "comment": "units of bytes (B)",
-                "$ref": "../common/valueOptions.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "interface": {
                 "description": "interface of rom to host",
