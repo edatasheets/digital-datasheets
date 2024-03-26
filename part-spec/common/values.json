@@ -11,9 +11,9 @@
                 "items": {
                     "$ref": "#/$defs/value"
                 }
-            },
-            "additionalProperties": false
-        }
+            }
+        },
+        "additionalProperties": false
     },
     "$defs": {
         "value": {
