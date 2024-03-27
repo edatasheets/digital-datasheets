@@ -119,8 +119,11 @@
                 "type": "number"
             },
             "currentConsumption": {
-                "description": "current consumption of a device",
-                "$ref": "../common/currentConsumption.json#/currentConsumption"
+                "description": "current used by device in various power modes",
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             }
         },
         "additionalProperties": false
