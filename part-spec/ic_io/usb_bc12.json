@@ -24,6 +24,13 @@
             "deviceMode": {
                 "description": "whether device mode is supported by bc12 chip",
                 "type": "boolean"
+            },
+            "currentConsumption": {
+                "description": "current used by device in various power modes",
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             }
         },
         "additionalProperties": false

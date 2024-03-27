@@ -35,7 +35,7 @@
             "type": "object",
             "properties": {
                 "supplyPinName": {
-                    "description": "name of the power supply pin",
+                    "description": "name of the power supply pin or any other pin monitored",
                     "type": "string"
                 },
                 "overVoltageProtectionThresholdRising": {
