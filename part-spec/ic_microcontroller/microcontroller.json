@@ -53,7 +53,7 @@
                 "description": "firmware version of the part",
                 "type": "string"
             },
-             "currentConsumption": {
+            "currentConsumption": {
                 "description": "current used by device in various power modes",
                 "type": "array",
                 "items": {
