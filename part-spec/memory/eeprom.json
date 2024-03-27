@@ -41,9 +41,11 @@
                 "description": "eeprom clock frequency"
             },
             "currentConsumption": {
-                "$ref": "../common/currentConsumption.json#/currentConsumption",
-                "comment": "units of amps",
-                "description": "current consumption of a device"
+                "description": "current used by device in various power modes",
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             },
             "dataRetention": {
                 "description": "maximum number of read and write cycle the part can support",
