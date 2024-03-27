@@ -86,8 +86,11 @@
                 "$ref": "../common/values.json#/valueOptions"
             },
             "currentConsumption": {
-                "description": "current consumption of a device",
-                "$ref": "../common/currentConsumption.json#/currentConsumption"
+                "description": "current used by device in various power modes",
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             },
             "componentProtectionThresholds": {
                 "description": "thermal and power supply protection thresholds of a device",
