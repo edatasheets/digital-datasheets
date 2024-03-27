@@ -108,8 +108,8 @@
                 },
                 "eDataheetSpecRevision": {
                     "description": "revision of the digital datasheet specifications used to create the digital datasheet",
-                    "example": "rev 1.0",
-                    "type": "string"
+                    "type": "string",
+                    "enum": ["1.0"]
                 },
                 "guid": {
                     "description": "vendor defined guid (see https://www.guidgenerator.com/) to uniquely identify digital datasheet version",
