@@ -53,9 +53,12 @@
                 "description": "firmware version of the part",
                 "type": "string"
             },
-            "currentConsumption": {
+             "currentConsumption": {
                 "description": "current used by device in various power modes",
-                "$ref": "../common/currentConsumption.json#/currentConsumption"
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             }
         },
         "additionalProperties": false
