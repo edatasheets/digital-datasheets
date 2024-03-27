@@ -106,7 +106,7 @@
                     "example": "2022-03-31",
                     "type": "string"
                 },
-                "eDataheetSpecRevision": {
+                "eDatasheetSpecRevision": {
                     "description": "revision of the digital datasheet specifications used to create the digital datasheet",
                     "type": "string",
                     "enum": ["1.0"]
