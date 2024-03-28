@@ -100,6 +100,9 @@
         },
         "digitalDatasheetID": {
             "type": "object",
+            "required": [
+                "eDatasheetSpecRevision"
+            ],
             "properties": {
                 "publishedDate": {
                     "description": "date the digital datasheet was published",
