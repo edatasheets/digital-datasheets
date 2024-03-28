@@ -1,0 +1,1142 @@
+{
+    "componentID": {
+        "partType": "usbc_pdcontroller",
+        "manufacturer": "STMicrolectronics",
+        "componentName": "STUSB4500",
+        "orderableMPN": [
+            "STUSB4500BJR"
+        ],
+        "sourceDatasheetID": {
+            "publishedDate": "November 4,2022",
+            "version": "Rev 8",
+            "datasheetURI": "https://www.st.com/resource/en/datasheet/stusb4500.pdf",
+            "productURI": "https://www.st.com/en/interfaces-and-transceivers/stusb4500.html"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "March 31st,2024",
+            "eDatasheetSpecRevision": "1.0"
+        },
+        "status": "production"
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "B4",
+            "name": "CC1DB",
+            "description": "Dead battery enable on CC1 pin",
+            "functionProperties": [
+                {
+                    "interfaceType": "HV AIO"
+                }
+            ],
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 22
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 5.5
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "B5",
+            "name": "CC1",
+            "description": "Type-C configuration channel 1",
+            "functionProperties": [
+                {
+                    "interfaceType": "HV AIO",
+                    "direction": "bidir"
+                }
+            ],
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 22
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 5.5
+                    }
+                ]
+            },
+            "internalPullDown": {
+                "values": [
+                    {
+                        "typValue": 5.1,
+                        "siUnit": "kilohm",
+                        "minValue": 4.59,
+                        "maxValue": 5.61,
+                        "conditions": [
+                            "-40 °C < TA < +105 °C",
+                            ""
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "B3",
+            "name": "NC"
+        },
+        {
+            "terminalIdentifier": "C3",
+            "name": "NC"
+        },
+        {
+            "terminalIdentifier": "C5",
+            "name": "CC2",
+            "description": "Type-C configuration channel 2",
+            "functionProperties": [
+                {
+                    "interfaceType": "HV AIO",
+                    "direction": "bidir"
+                }
+            ],
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 22
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 5.5
+                    }
+                ]
+            },
+            "internalPullDown": {
+                "values": [
+                    {
+                        "typValue": 5.1,
+                        "siUnit": "kilohm",
+                        "minValue": 4.59,
+                        "maxValue": 5.61,
+                        "conditions": [
+                            "-40 °C < TA < +105 °C",
+                            ""
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "C4",
+            "name": "CC2DB",
+            "description": "Dead battery enable on CC2 pin",
+            "functionProperties": [
+                {
+                    "interfaceType": "HV AIO",
+                    "direction": "bidir"
+                }
+            ],
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 22
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 5.5
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "D4",
+            "name": "RESET",
+            "description": "Reset input, active high",
+            "functionProperties": [
+                {
+                    "interfaceType": "DI",
+                    "direction": "in",
+                    "polarity": "high"
+                }
+            ],
+            "vih": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": 1.2
+                    }
+                ]
+            },
+            "vil": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.35
+                    }
+                ]
+            },
+            "vol": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.4,
+                        "conditions": [
+                            "Ioh=3mA"
+                        ]
+                    }
+                ]
+            },
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 6
+                    }
+                ]
+            },
+            "absVmin": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": -0.3
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 4.5
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "D5",
+            "name": "SCL",
+            "description": "I2C clock input",
+            "functionProperties": [
+                {
+                    "interfaceType": "DI",
+                    "direction": "in"
+                }
+            ],
+            "vih": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": 1.2
+                    }
+                ]
+            },
+            "vil": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.35
+                    }
+                ]
+            },
+            "vol": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.4,
+                        "conditions": [
+                            "Ioh=3mA"
+                        ]
+                    }
+                ]
+            },
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 6
+                    }
+                ]
+            },
+            "absVmin": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": -0.3
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 4.5
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "E5",
+            "name": "SDA",
+            "description": "I2C data input/output, active low open drain",
+            "functionProperties": [
+                {
+                    "interfaceType": "DI/OD",
+                    "direction": "bidir",
+                    "polarity": "low"
+                }
+            ],
+            "vih": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": 1.2
+                    }
+                ]
+            },
+            "vil": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.35
+                    }
+                ]
+            },
+            "vol": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.4,
+                        "conditions": [
+                            "Ioh=3mA"
+                        ]
+                    }
+                ]
+            },
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 6
+                    }
+                ]
+            },
+            "absVmin": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": -0.3
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 4.5
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "E4",
+            "name": "DISCH",
+            "description": "Internal discharge path or external discharge path enable, active low open drain",
+            "functionProperties": [
+                {
+                    "interfaceType": "HV AI/OD",
+                    "direction": "bidir",
+                    "polarity": "low"
+                }
+            ],
+            "vol": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.4,
+                        "conditions": [
+                            "Ioh=3mA"
+                        ]
+                    }
+                ]
+            },
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 28
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 22
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "E3",
+            "name": "GND",
+            "description": "Ground",
+            "functionProperties": [
+                {
+                    "interfaceType": "GND"
+                }
+            ]
+        },
+        {
+            "terminalIdentifier": "E2",
+            "name": "ATTACH",
+            "description": "Attachment detection, active low open drain",
+            "functionProperties": [
+                {
+                    "interfaceType": "OD",
+                    "direction": "out",
+                    "polarity": "low"
+                }
+            ],
+            "vih": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": 1.2
+                    }
+                ]
+            },
+            "vil": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.35
+                    }
+                ]
+            },
+            "vol": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.4,
+                        "conditions": [
+                            "Ioh=3mA"
+                        ]
+                    }
+                ]
+            },
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 6
+                    }
+                ]
+            },
+            "absVmin": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": -0.3
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 4.5
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "D3",
+            "name": "ADDR0",
+            "description": "I C device address setting",
+            "functionProperties": [
+                {
+                    "interfaceType": "DI",
+                    "direction": "in"
+                }
+            ],
+            "vih": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": 1.2
+                    }
+                ]
+            },
+            "vil": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.35
+                    }
+                ]
+            },
+            "vol": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.4,
+                        "conditions": [
+                            "Ioh=3mA"
+                        ]
+                    }
+                ]
+            },
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 6
+                    }
+                ]
+            },
+            "absVmin": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": -0.3
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 4.5
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "D2",
+            "name": "ADDR1",
+            "description": "I C device address setting",
+            "functionProperties": [
+                {
+                    "interfaceType": "DI",
+                    "direction": "in"
+                }
+            ],
+            "vih": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": 1.2
+                    }
+                ]
+            },
+            "vil": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.35
+                    }
+                ]
+            },
+            "vol": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.4,
+                        "conditions": [
+                            "Ioh=3mA"
+                        ]
+                    }
+                ]
+            },
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 6
+                    }
+                ]
+            },
+            "absVmin": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": -0.3
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 4.5
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "E1",
+            "name": "POWER_OK3",
+            "description": "Power contract flag, active low open drain",
+            "functionProperties": [
+                {
+                    "interfaceType": "OD",
+                    "direction": "out",
+                    "polarity": "low"
+                }
+            ],
+            "vih": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": 1.2
+                    }
+                ]
+            },
+            "vil": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.35
+                    }
+                ]
+            },
+            "vol": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.4,
+                        "conditions": [
+                            "Ioh=3mA"
+                        ]
+                    }
+                ]
+            },
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 6
+                    }
+                ]
+            },
+            "absVmin": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": -0.3
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 4.5
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "D1",
+            "name": "GPIO",
+            "description": "General purpose output, active low open drain",
+            "functionProperties": [
+                {
+                    "interfaceType": "OD",
+                    "direction": "out",
+                    "polarity": "low"
+                }
+            ],
+            "vih": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": 1.2
+                    }
+                ]
+            },
+            "vil": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.35
+                    }
+                ]
+            },
+            "vol": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.4,
+                        "conditions": [
+                            "Ioh=3mA"
+                        ]
+                    }
+                ]
+            },
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 6
+                    }
+                ]
+            },
+            "absVmin": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": -0.3
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 4.5
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "C1",
+            "name": "VBUS_EN_SNK",
+            "description": "VBUS sink power path enable, active low open drain",
+            "functionProperties": [
+                {
+                    "interfaceType": "HV OD",
+                    "direction": "out",
+                    "polarity": "low"
+                }
+            ],
+            "vol": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.4,
+                        "conditions": [
+                            "Ioh=3mA"
+                        ]
+                    }
+                ]
+            },
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 28
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 22
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "C2",
+            "name": "A_B_SIDE",
+            "description": "Cable orientation, active low open drain",
+            "functionProperties": [
+                {
+                    "interfaceType": "OD",
+                    "direction": "out",
+                    "polarity": "low"
+                }
+            ],
+            "vih": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": 1.2
+                    }
+                ]
+            },
+            "vil": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.35
+                    }
+                ]
+            },
+            "vol": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.4,
+                        "conditions": [
+                            "Ioh=3mA"
+                        ]
+                    }
+                ]
+            },
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 6
+                    }
+                ]
+            },
+            "absVmin": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": -0.3
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 4.5
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "A1",
+            "name": "VBUS_VS_DISCH",
+            "description": "VBUS voltage monitoring and discharge path",
+            "functionProperties": [
+                {
+                    "interfaceType": "HV AI",
+                    "direction": "in"
+                }
+            ],
+            "vol": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.4,
+                        "conditions": [
+                            "Ioh=3mA"
+                        ]
+                    }
+                ]
+            },
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 28
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 22
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "B2",
+            "name": "ALERT",
+            "description": "I2C interrupt, active low open drain",
+            "functionProperties": [
+                {
+                    "interfaceType": "OD",
+                    "direction": "out",
+                    "polarity": "low"
+                }
+            ],
+            "vih": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": 1.2
+                    }
+                ]
+            },
+            "vil": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.35
+                    }
+                ]
+            },
+            "vol": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.4,
+                        "conditions": [
+                            "Ioh=3mA"
+                        ]
+                    }
+                ]
+            },
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 6
+                    }
+                ]
+            },
+            "absVmin": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": -0.3
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 4.5
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "A2",
+            "name": "POWER_OK2",
+            "description": "Power contract flag, active low open drain",
+            "functionProperties": [
+                {
+                    "interfaceType": "HV OD",
+                    "direction": "out",
+                    "polarity": "low"
+                }
+            ],
+            "vol": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.4,
+                        "conditions": [
+                            "Ioh=3mA"
+                        ]
+                    }
+                ]
+            },
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 28
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 22
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "A3",
+            "name": "VREG_1V2",
+            "description": "1.2 V internal regulator output",
+            "functionProperties": [
+                {
+                    "interfaceType": "PWR"
+                }
+            ],
+            "externalComponents": [
+                {
+                    "componentType": "capacitor",
+                    "configuration": "pd",
+                    "values": [
+                        {
+                            "typValue": 1,
+                            "siUnit": "microfarad",
+                            "minValue": 0.5,
+                            "maxValue": 10
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "terminalIdentifier": "B1",
+            "name": "VSYS",
+            "description": "Power supply from system",
+            "functionProperties": [
+                {
+                    "interfaceType": "PWR"
+                }
+            ],
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 6
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 5.5
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "A4",
+            "name": "VREG_2V7",
+            "description": "2.7 V internal regulator output",
+            "functionProperties": [
+                {
+                    "interfaceType": "PWR"
+                }
+            ],
+            "externalComponents": [
+                {
+                    "componentType": "capacitor",
+                    "configuration": "pd",
+                    "values": [
+                        {
+                            "typValue": 1,
+                            "siUnit": "microfarad",
+                            "minValue": 0.5,
+                            "maxValue": 10
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "terminalIdentifier": "A5",
+            "name": "VDD",
+            "description": "Power supply from USB power line",
+            "functionProperties": [
+                {
+                    "interfaceType": "HV PWR"
+                }
+            ],
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 28
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 22
+                    }
+                ]
+            }
+        }
+    ],
+    "coreProperties": {
+        "pdVersion": "USB PD rev 2.0",
+        "usbTypecRevision": "USB Type-C rev 1.2",
+        "powerRoleSupported": "sink",
+        "fastRoleSwapSupport": false,
+        "vconnPowerSupport": false,
+        "integratedVbusDischargeSwitch": true,
+        "integratedLoadSwitch": false,
+        "maxSinkCurrent": {
+            "values": [
+                {
+                    "siUnit": "amp",
+                    "minValue": 0.5,
+                    "maxValue": 5,
+                    "conditions": [
+                        "I_SINK_PDO_LUT[3:0] incremented from 0001b(0.5A) to 1111b(5A)"
+                    ]
+                }
+            ]
+        },
+        "interface": "i2c",
+        "partType": "usbc_pdcontroller",
+        "currentConsumption": {
+            "supplyName": "VDD",
+            "idleCurrent": {
+                "values": [
+                    {
+                        "typValue": 140,
+                        "siUnit": "microamp",
+                        "minValue": 115,
+                        "maxValue": 165,
+                        "conditions": [
+                            "VSYS=3.3V",
+                            "Device idle as a sink"
+                        ]
+                    },
+                    {
+                        "typValue": 160,
+                        "siUnit": "microamp",
+                        "minValue": 110,
+                        "maxValue": 210,
+                        "conditions": [
+                            "VDD=5V",
+                            "Device idle as a sink"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "package": {
+        "length": {
+            "values": [
+                {
+                    "typValue": 2.593,
+                    "siUnit": "millimeter",
+                    "minValue": 2.563,
+                    "maxValue": 2.623
+                }
+            ]
+        },
+        "width": {
+            "values": [
+                {
+                    "typValue": 2.593,
+                    "siUnit": "millimeter",
+                    "minValue": 2.563,
+                    "maxValue": 2.623
+                }
+            ]
+        },
+        "height": {
+            "values": [
+                {
+                    "typValue": 0.5,
+                    "siUnit": "millimeter",
+                    "minValue": 0.456,
+                    "maxValue": 0.544
+                }
+            ]
+        },
+        "standardPackageSize": "2.6x2.6x0.5",
+        "standardPackageType": "WLCSP"
+    }
+}
