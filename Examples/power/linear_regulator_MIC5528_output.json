@@ -1,0 +1,364 @@
+{
+    "componentID": {
+        "partType": "linear_regulator",
+        "manufacturer": "Microchip",
+        "componentName": "MIC5528",
+        "orderableMPN": [
+            "MIC5528-1.2YMT-TR"
+        ],
+        "sourceDatasheetID": {
+            "publishedDate": "2018-10-01",
+            "version": "B",
+            "datasheetURI": "https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ProductDocuments/DataSheets/MIC5528-High-Performance-500mA-LDO-in-Thin-and-Extra-Thin-DFN-Packages-DS20005982B.pdf",
+            "productURI": "https://www.microchip.com/en-us/product/mic5528"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2024-03-31",
+            "eDatasheetSpecRevision": "1.0"
+        },
+        "status": "production",
+        "complianceList": [
+            "ROHS"
+        ]
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "VOUT",
+            "description": "Output Voltage. When disabled, the MIC5528 switches in an internal 25Ω load to discharge the external capacitors.",
+            "functionProperties": [
+                {
+                    "direction": "out"
+                }
+            ]
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "VOUT",
+            "description": "Output Voltage. When disabled, the MIC5528 switches in an internal 25Ω load to discharge the external capacitors.",
+            "functionProperties": [
+                {
+                    "direction": "out"
+                }
+            ]
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "GND",
+            "description": "Ground",
+            "functionProperties": [
+                {
+                    "interfaceType": "GND"
+                }
+            ]
+        },
+        {
+            "terminalIdentifier": "4",
+            "name": "EN",
+            "description": "Enable Input: Active-High. High = ON; Low = OFF. The MIC5528 has an internal pull-down and this pin can be left floating.",
+            "functionProperties": [
+                {
+                    "direction": "in"
+                }
+            ],
+            "vih": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": 1.2,
+                        "unitFactor": 1
+                    }
+                ]
+            },
+            "vil": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "maxValue": 0.2,
+                        "unitFactor": 1
+                    }
+                ]
+            },
+            "absVmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "unitFactor": 1,
+                        "relativeValueReference": "VIN",
+                        "relativeValueModifier": 0,
+                        "relativeValueOperator": "add"
+                    }
+                ]
+            },
+            "absVmin": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "minValue": -0.3,
+                        "unitFactor": 1
+                    }
+                ]
+            },
+            "vmax": {
+                "values": [
+                    {
+                        "siUnit": "volt",
+                        "unitFactor": 1,
+                        "relativeValueReference": "VIN",
+                        "relativeValueModifier": 0,
+                        "relativeValueOperator": "add"
+                    }
+                ]
+            },
+            "inputLeakage": {
+                "values": [
+                    {
+                        "siUnit": "microamp",
+                        "minValue": 0.01,
+                        "maxValue": 1,
+                        "unitFactor": 1,
+                        "conditions": [
+                            "VEN=0V"
+                        ]
+                    },
+                    {
+                        "siUnit": "microamp",
+                        "minValue": 1.4,
+                        "maxValue": 2,
+                        "unitFactor": 1,
+                        "conditions": [
+                            "VEN=5.5V"
+                        ]
+                    }
+                ]
+            },
+            "internalPullDown": {
+                "values": [
+                    {
+                        "typValue": 4,
+                        "siUnit": "megaohm"
+                    }
+                ]
+            }
+        },
+        {
+            "terminalIdentifier": "5",
+            "name": "NC",
+            "description": "No Connection."
+        },
+        {
+            "terminalIdentifier": "EP",
+            "name": "ePad",
+            "description": "Exposed Heatsink Pad. Connect to GND for best thermal performance."
+        }
+    ],
+    "coreProperties": {
+        "vin": {
+            "values": [
+                {
+                    "siUnit": "volt",
+                    "minValue": 2.5,
+                    "maxValue": 5.5,
+                    "unitFactor": 1
+                }
+            ]
+        },
+        "vout": {
+            "values": [
+                {
+                    "typValue": 1.2,
+                    "siUnit": "volt",
+                    "unitFactor": 1
+                }
+            ]
+        },
+        "dropoutVoltage": {
+            "values": [
+                {
+                    "typValue": 80,
+                    "siUnit": "millivolt",
+                    "maxValue": 120,
+                    "unitFactor": 1,
+                    "conditions": [
+                        "Iout=150mA"
+                    ]
+                },
+                {
+                    "typValue": 260,
+                    "siUnit": "millivolt",
+                    "maxValue": 500,
+                    "unitFactor": 1,
+                    "conditions": [
+                        "Iout=500mA"
+                    ]
+                }
+            ]
+        },
+        "loadCurrent": {
+            "values": [
+                {
+                    "siUnit": "milliamp",
+                    "minValue": 0,
+                    "maxValue": 500
+                }
+            ]
+        },
+        "currentLimit": {
+            "values": [
+                {
+                    "typValue": 525,
+                    "siUnit": "milliamp",
+                    "minValue": 0,
+                    "maxValue": 800,
+                    "conditions": [
+                        "Vout=0V"
+                    ]
+                }
+            ]
+        },
+        "voutAccuracy": {
+            "values": [
+                {
+                    "typValue": 1,
+                    "siUnit": "percentage",
+                    "minValue": -2,
+                    "maxValue": 2,
+                    "unitFactor": 1,
+                    "conditions": [
+                        "Variation from nominal Vout"
+                    ]
+                },
+                {
+                    "siUnit": "percentage",
+                    "minValue": -3,
+                    "maxValue": 3,
+                    "conditions": [
+                        "Variation from nominal VOUT",
+                        "–40°C to +85°C"
+                    ]
+                }
+            ]
+        },
+        "loadRegulation": {
+            "values": [
+                {
+                    "typValue": 14,
+                    "siUnit": "millivolt",
+                    "maxValue": 65,
+                    "unitFactor": 1,
+                    "conditions": [
+                        "Iout=100uA to 500mA"
+                    ]
+                }
+            ]
+        },
+        "lineRegulation": {
+            "values": [
+                {
+                    "typValue": 0.02,
+                    "unitName": "%/V",
+                    "maxValue": 0.03,
+                    "unitFactor": 1,
+                    "conditions": [
+                        "VIN = VOUT + 1V to 5.5V",
+                        "IOUT=100 µA"
+                    ]
+                }
+            ]
+        },
+        "totalOutputNoise": {
+            "values": [
+                {
+                    "typValue": 175,
+                    "unitName": "uVrms",
+                    "conditions": [
+                        "f=10Hz to 100Khz"
+                    ]
+                }
+            ]
+        },
+        "enableTime": {
+            "values": [
+                {
+                    "typValue": 50,
+                    "siUnit": "microsecond",
+                    "maxValue": 125,
+                    "unitFactor": 1,
+                    "conditions": [
+                        "Iout=150mA"
+                    ]
+                }
+            ]
+        },
+        "partType": "linear_regulator",
+        "currentConsumption": {
+            "supplyName": "GND",
+            "quiescentCurrent": {
+                "values": [
+                    {
+                        "typValue": 38,
+                        "siUnit": "microamp",
+                        "maxValue": 55,
+                        "unitFactor": 1,
+                        "conditions": [
+                            "Iout=0A"
+                        ]
+                    },
+                    {
+                        "typValue": 42,
+                        "siUnit": "microamp",
+                        "maxValue": 65,
+                        "unitFactor": 1
+                    }
+                ]
+            },
+            "shutdownCurrent": {
+                "values": [
+                    {
+                        "typValue": 0.05,
+                        "siUnit": "microamp",
+                        "maxValue": 1,
+                        "unitFactor": 1,
+                        "conditions": [
+                            "VEN=0V"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "package": {
+        "length": {
+            "values": [
+                {
+                    "typValue": 1.2,
+                    "siUnit": "millimeter",
+                    "minValue": 1.15,
+                    "maxValue": 1.25
+                }
+            ]
+        },
+        "width": {
+            "values": [
+                {
+                    "typValue": 1.2,
+                    "siUnit": "millimeter",
+                    "minValue": 1.15,
+                    "maxValue": 1.25
+                }
+            ]
+        },
+        "height": {
+            "values": [
+                {
+                    "typValue": 0.55,
+                    "siUnit": "millimeter",
+                    "minValue": 0.5,
+                    "maxValue": 0.6
+                }
+            ]
+        },
+        "standardPackageSize": "1.2mmx1.2mm",
+        "standardPackageType": "TDFN"
+    }
+}
