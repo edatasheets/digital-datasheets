@@ -1,0 +1,272 @@
+{
+    "componentID": {
+        "partType": "diode",
+        "manufacturer": "Nexperia",
+        "componentName": "BAS16",
+        "orderableMPN": [
+            "BAS16"
+        ],
+        "sourceDatasheetID": {
+            "publishedDate": "October 1st,2022",
+            "version": "BAS16 v.7",
+            "datasheetURI": "https://assets.nexperia.com/documents/data-sheet/BAS16.pdf",
+            "productURI": "https://assets.nexperia.com/documents/data-sheet/BAS16.pdf"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "march 31st, 2024",
+            "eDatasheetSpecRevision": "1.0"
+        },
+        "status": "production"
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "A1",
+            "numberOfSupportedFunctions": 1,
+            "standardizedName": "anode",
+            "description": "anode (diode 1)"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "n.c",
+            "numberOfSupportedFunctions": 1,
+            "description": "not connected"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "K",
+            "numberOfSupportedFunctions": 1,
+            "standardizedName": "cathode",
+            "description": "cathode"
+        }
+    ],
+    "coreProperties": {
+        "partType": "diode",
+        "type": "switching",
+        "diodeCount": 1,
+        "if": {
+            "values": [
+                {
+                    "siUnit": "milliamp",
+                    "maxValue": 215
+                }
+            ]
+        },
+        "ifrm": {
+            "values": [
+                {
+                    "siUnit": "milliamp",
+                    "maxValue": 500,
+                    "conditions": [
+                        "tp ≤ 0.5 ms",
+                        "δ ≤ 0.25"
+                    ]
+                }
+            ]
+        },
+        "ifsm": {
+            "values": [
+                {
+                    "siUnit": "amp",
+                    "maxValue": 4,
+                    "conditions": [
+                        "tp = 1 µs",
+                        "square wave",
+                        "Tj(init) = 25 °C"
+                    ]
+                },
+                {
+                    "siUnit": "amp",
+                    "maxValue": 1,
+                    "conditions": [
+                        "tp = 1 ms",
+                        "square wave",
+                        "Tj(init) = 25 °C"
+                    ]
+                },
+                {
+                    "siUnit": "amp",
+                    "maxValue": 0.5,
+                    "conditions": [
+                        "tp = 1 s",
+                        "square wave",
+                        "Tj(init) = 25 °C"
+                    ]
+                }
+            ]
+        },
+        "vr": {
+            "values": [
+                {
+                    "siUnit": "volt",
+                    "maxValue": 100
+                }
+            ]
+        },
+        "vrrm": {
+            "values": [
+                {
+                    "siUnit": "volt",
+                    "maxValue": 100
+                }
+            ]
+        },
+        "cd": {
+            "values": [
+                {
+                    "siUnit": "picofarad",
+                    "maxValue": 1.5,
+                    "conditions": [
+                        "VR = 0 V",
+                        "f = 1 MHz",
+                        "Tamb = 25 °C"
+                    ]
+                }
+            ]
+        },
+        "trr": {
+            "values": [
+                {
+                    "siUnit": "nanosecond",
+                    "maxValue": 4,
+                    "conditions": [
+                        "IF = 10 mA",
+                        "IR = 10 mA",
+                        "RL = 100 Ω",
+                        "IR(meas) = 1 mA",
+                        "Tamb = 25 °C"
+                    ]
+                }
+            ]
+        },
+        "pTot": {
+            "values": [
+                {
+                    "siUnit": "milliwatt",
+                    "maxValue": 250,
+                    "conditions": [
+                        "Tamb ≤ 25 °C"
+                    ]
+                }
+            ]
+        },
+        "vf": {
+            "values": [
+                {
+                    "siUnit": "millivolt",
+                    "maxValue": 715,
+                    "conditions": [
+                        "IF = 1 mA",
+                        "tp ≤ 300 µs",
+                        "δ ≤ 0.02",
+                        "pulsed",
+                        "Tamb = 25 °C"
+                    ]
+                },
+                {
+                    "siUnit": "millivolt",
+                    "maxValue": 855,
+                    "conditions": [
+                        "IF = 10 mA",
+                        "tp ≤ 300 µs",
+                        "δ ≤ 0.02",
+                        "pulsed",
+                        "Tamb = 25 °C"
+                    ]
+                },
+                {
+                    "siUnit": "volt",
+                    "maxValue": 1,
+                    "conditions": [
+                        "IF = 50 mA",
+                        "tp ≤ 300 µs",
+                        "δ ≤ 0.02",
+                        "pulsed",
+                        "Tamb = 25 °C"
+                    ]
+                },
+                {
+                    "siUnit": "volt",
+                    "maxValue": 1.25,
+                    "conditions": [
+                        "IF = 150 mA",
+                        "tp ≤ 300 µs",
+                        "δ ≤ 0.02",
+                        "pulsed",
+                        "Tamb = 25 °C"
+                    ]
+                }
+            ]
+        },
+        "ir": {
+            "values": [
+                {
+                    "siUnit": "microamp",
+                    "maxValue": 30,
+                    "unitFactor": 0.001,
+                    "conditions": [
+                        "VR = 25 V",
+                        "Tamb = 25 °C"
+                    ]
+                },
+                {
+                    "siUnit": "microamp",
+                    "maxValue": 0.5,
+                    "conditions": [
+                        "VR = 80 V",
+                        "Tamb = 25 °C"
+                    ]
+                },
+                {
+                    "siUnit": "microamp",
+                    "maxValue": 30,
+                    "conditions": [
+                        "VR = 25 V",
+                        "Tj = 150 °C"
+                    ]
+                },
+                {
+                    "siUnit": "microamp",
+                    "maxValue": 50,
+                    "conditions": [
+                        "VR = 80 V",
+                        "Tj = 150 °C"
+                    ]
+                }
+            ]
+        }
+    },
+    "package": {
+        "length": {
+            "values": [
+                {
+                    "typValue": 2.9,
+                    "siUnit": "millimeter",
+                    "minValue": 2.8,
+                    "maxValue": 3
+                }
+            ]
+        },
+        "width": {
+            "values": [
+                {
+                    "typValue": 1.3,
+                    "siUnit": "millimeter",
+                    "minValue": 1.2,
+                    "maxValue": 1.4
+                }
+            ]
+        },
+        "height": {
+            "values": [
+                {
+                    "typValue": 1,
+                    "siUnit": "millimeter",
+                    "minValue": 0.9,
+                    "maxValue": 1.1
+                }
+            ]
+        },
+        "standardPackageType": "SOT23"
+    }
+}
