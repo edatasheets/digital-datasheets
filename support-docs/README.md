@@ -69,9 +69,21 @@ A digital datasheet shall include the following information:
 #### 4.3 Date Format
 A digital datasheet shall follow the international standard notation, YYYY-MM-DD.
 
-### 4.4	 Common
+####  4.4	 Top Level Component Specification 
 
-####  4.4.1	 Specification To Capture Information To Identify Components
+Source: [component.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/component.json)
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|componentID|methods for identifying the version of the digital datasheet|./common/componentID.json#/componentID|Yes|
+|coreProperties|core component properties as defined by the specific component spec file|./common/coreProperties.json#/coreProperties|No|
+|pins|array of pin objects with associated properties|./common/pinSpec.json#/pinSpec|No |
+|package|component package information|./common/package.json#/package|No|
+|externalFileMap|external files that describe key component properties. External files can be used in lieu of defining core properties, pins, and package information in the same file|#/$defs/externalFileMap|No|
+
+### 4.5	 Common
+
+####  4.5.1	 Specification To Capture Information To Identify Components
 
 Source: [componentID.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/componentID.json)
 
@@ -86,7 +98,7 @@ Source: [componentID.json](https://github.com/edatasheets/digital-datasheets/blo
 |status|production status of a component|String| |
 |complianceList|list of standards the part complies with|array of String| |
 
-####  4.4.2	 DigitalDatasheetID
+####  4.5.2	 DigitalDatasheetID
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -94,7 +106,7 @@ Source: [componentID.json](https://github.com/edatasheets/digital-datasheets/blo
 |eDatasheetSpecRevision|revision of the digital datasheet specifications used to create the digital datasheet|String|Yes|
 |guid|vendor defined guid (see https://www.guidgenerator.com/) to uniquely identify digital datasheet version|String| |
 
-####  4.4.3	 SourceDatasheetID
+####  4.5.3	 SourceDatasheetID
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -103,7 +115,7 @@ Source: [componentID.json](https://github.com/edatasheets/digital-datasheets/blo
 |datasheetURI|uri to the source datasheet pdf or html view|String| |
 |productURI|uri to the source datasheet's product page'|String| |
 
-####  4.4.4	 specification to capture protection thresholds data of a component
+####  4.5.4	 specification to capture protection thresholds data of a component
 
 Source: [componentProtectionThresholds.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/componentProtectionThresholds.json)
 
@@ -114,7 +126,7 @@ Source: [componentProtectionThresholds.json](https://github.com/edatasheets/digi
 |thermalShutdownHysteresis|thermal Shutdown (tsd) Hysteresis|../common/values.json#/valueOptions| |
 |powerSupplyProtection|undervoltage lockout, overvoltage protection thresholds of a supply|array of #/$defs/powerSupplyProtection| |
 
-####  4.4.5	 PowerSupplyProtection
+####  4.5.5	 PowerSupplyProtection
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -126,7 +138,7 @@ Source: [componentProtectionThresholds.json](https://github.com/edatasheets/digi
 |underVoltageLockoutThresholdFalling|Undervoltage Lockout (UVLO) Threshold with power supply falling|../common/values.json#/valueOptions| |
 |underVoltageLockoutHysteresis|Undervoltage Lockout (UVLO) Hysteresis|../common/values.json#/valueOptions| |
 
-####  4.4.6	 specification to capture the current consumption data of a component
+####  4.5.6	 specification to capture the current consumption data of a component
 
 Source: [currentConsumption.json](https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/currentConsumption.json)
 
@@ -139,7 +151,7 @@ Source: [currentConsumption.json](https:/github.com/edatasheets/digital-datashee
 |sleepCurrent|current consumption when a device is in sleep mode|../common/values.json#/valueOptions| |
 |idleCurrent|current consumption when a device is in idle mode|../common/values.json#/valueOptions| |
 
-####  4.4.7	 Specification For Referencing An External File
+####  4.5.7	 Specification For Referencing An External File
 
 Source: [externalFile.json](https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/externalFile.json)
 
@@ -152,7 +164,7 @@ Source: [externalFile.json](https:/github.com/edatasheets/digital-datasheets/blo
 |standardReferenced|optional, name of the standard the file is written in|String| |
 |fileURI|URI linking to the CAD file|String| |
 
-####  4.4.8	 specification of a graph
+####  4.5.8	 specification of a graph
 
 Source: [graph.json](https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/graph.json)
 
@@ -166,7 +178,7 @@ Source: [graph.json](https:/github.com/edatasheets/digital-datasheets/blob/main/
 |numberOfCurves|total number of curves in graph|Number| |
 |curve|data represented by one or more curves in a graph|array of #/$defs/curve| |
 
-####  4.4.9	 Curve
+####  4.5.9	 Curve
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -174,7 +186,7 @@ Source: [graph.json](https:/github.com/edatasheets/digital-datasheets/blob/main/
 |xData|x-axis values of the curve|array of Number| |
 |yData|y-axis values of the curve|array of Number| |
 
-####  4.4.10	 specification of an instance in a part
+####  4.5.10	 specification of an instance in a part
 
 Source: [instanceSpec.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/instanceSpec.json)
 
@@ -184,7 +196,7 @@ Source: [instanceSpec.json](https://github.com/edatasheets/digital-datasheets/bl
 |instanceName|name of an instance of the part|String| |
 |instanceProperties|instance properties, as defined in the part specification|../common/coreProperties.json#/coreProperties| |
 
-####  4.4.11	 specification of a package
+####  4.5.11	 specification of a package
 
 Source: [package.json](https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/package.json)
 
@@ -199,7 +211,7 @@ Source: [package.json](https:/github.com/edatasheets/digital-datasheets/blob/mai
 |standardPackageSize|name of standard package size (imperial)|String| |
 |standardPackageType|name of standard package types|String| |
 
-####  4.4.12	 Specification Of Pinpaths Through An IC
+####  4.5.12	 Specification Of Pinpaths Through An IC
 
 Source: [pinPaths.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/pinPaths.json)
 
@@ -208,14 +220,14 @@ Source: [pinPaths.json](https://github.com/edatasheets/digital-datasheets/blob/m
 |numberOfPinPaths|number of pinPaths defined. This number should not be higher than the number of components included in the part|Number| |
 |partPinPaths|list of pins associated with each component in a multi-component part|array of #/$defs/partPinPaths|Yes|
 
-####  4.4.13	 PartPinPaths
+####  4.5.13	 PartPinPaths
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
 |componentName|name of a component within a part |String| |
 |componentPinNames|names of pins associated with each of the component in the part. Pin names must match the name used in part pin definition|array of String| |
 
-####  4.4.14	 Specification Of Pins
+####  4.5.14	 Specification Of Pins
 
 Source: [pinSpec.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/pinSpec.json)
 
@@ -246,7 +258,7 @@ Source: [pinSpec.json](https://github.com/edatasheets/digital-datasheets/blob/ma
 |externalComponents|list of external component structures recommended to be attached to a pin|array of #/$defs/externalComponents| |
 |pinPaths|information on pin paths - pins associated with each component in a multi-component part (such as A1,Y1 and A2,Y2)|../common/pinPaths.json#/pinPaths| |
 
-####  4.4.15	 ExternalComponents
+####  4.5.15	 ExternalComponents
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -254,7 +266,7 @@ Source: [pinSpec.json](https://github.com/edatasheets/digital-datasheets/blob/ma
 |configuration|electrical configuration of component connected to pin with respect to the pin|String|Yes|
 |value|value of component|../common/values.json#/valueOptions| |
 
-####  4.4.16	 FunctionProperties
+####  4.5.16	 FunctionProperties
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -265,7 +277,7 @@ Source: [pinSpec.json](https://github.com/edatasheets/digital-datasheets/blob/ma
 |electricalConfiguration|electrical configuration of a pin|String| |
 |polarity|whether the active state of a pin is high or low|String| |
 
-####  4.4.17	 Specification Of Power Fets Properties
+####  4.5.17	 Specification Of Power Fets Properties
 
 Source: [powerFetProperties.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/powerFetProperties.json)
 
@@ -275,7 +287,7 @@ Source: [powerFetProperties.json](https://github.com/edatasheets/digital-datashe
 |inputPowerFetPair|input power fet pair (in a buck-boost configuration)|#/$defs/powerFetPair| |
 |outputPowerFetPair|output power fet pair (in a buck-boost configuration)|#/$defs/powerFetPair| |
 
-####  4.4.18	 PowerFetPair
+####  4.5.18	 PowerFetPair
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -284,7 +296,7 @@ Source: [powerFetProperties.json](https://github.com/edatasheets/digital-datashe
 |rdsonHSFET|high side FET on-resistance|../common/values.json#/valueOptions| |
 |rdsonLSFET|low side FET on-resistance|../common/values.json#/valueOptions| |
 
-####  4.4.19	 specifications of a ratio
+####  4.5.19	 specifications of a ratio
 
 Source: [ratio.json](https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/ratio.json)
 
@@ -293,7 +305,7 @@ Source: [ratio.json](https:/github.com/edatasheets/digital-datasheets/blob/main/
 |numerator|numerator of ratio|Number| |
 |denominator|denominator of ratio|Number| |
 
-####  4.4.20	 specification of a register
+####  4.5.20	 specification of a register
 
 Source: [register.json](https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/register.json)
 
@@ -309,7 +321,7 @@ Source: [register.json](https:/github.com/edatasheets/digital-datasheets/blob/ma
 |registerAccessType|access type of a Register|String| |
 |registerBitField|describes the bit fields in the register|#/$defs/registerBitField| |
 
-####  4.4.21	 RegisterBitField
+####  4.5.21	 RegisterBitField
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -321,7 +333,7 @@ Source: [register.json](https:/github.com/edatasheets/digital-datasheets/blob/ma
 |bitFieldResetValue|Reset value of a bit field|String| |
 |bitFieldAccessType|Access type of a bit field|String| |
 
-####  4.4.22	 Specification Of Value
+####  4.5.22	 Specification Of Value
 
 Source: [values.json](https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/values.json)
 
@@ -329,7 +341,7 @@ Source: [values.json](https:/github.com/edatasheets/digital-datasheets/blob/main
 |:----|:----|:----|:----|
 |values|list of values that reflect possible values for a property|array of #/$defs/value| |
 
-####  4.4.23	 Value
+####  4.5.23	 Value
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -344,9 +356,9 @@ Source: [values.json](https:/github.com/edatasheets/digital-datasheets/blob/main
 |relativeValueOperator|if a unit quantity is based on another reference, the operation that is performed with the modifier|String| |
 |conditions|conditions under which the property is measured|array of String| |
 
-### 4.5	 Clock
+### 4.6	 Clock
 
-####  4.5.1	 Specification Of Clock
+####  4.6.1	 Specification Of Clock
 
 Source: [clock.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/clock/clock.json)
 
@@ -362,7 +374,7 @@ Source: [clock.json](https://github.com/edatasheets/digital-datasheets/blob/main
 |outputFormat|signal format of clock output|String| |
 |currentConsumption|current used by device in various power modes|../common/currentConsumption.json#/currentConsumption| |
 
-####  4.5.2	 Specification Of Oscillator
+####  4.6.2	 Specification Of Oscillator
 
 Source: [oscillator.json](https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/clock/oscillator.json)
 
@@ -380,9 +392,9 @@ Source: [oscillator.json](https:/github.com/edatasheets/digital-datasheets/blob/
 |dutyCycle|time above 50% of output max over entire period|../common/values.json#/valueOptions| |
 |phaseJitter|variation of waveform period|../common/values.json#/valueOptions| |
 
-### 4.6	 Data_converter
+### 4.7	 Data_converter
 
-####  4.6.1	 Specification Of Adc
+####  4.7.1	 Specification Of Adc
 
 Source: [adc.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/data_converter/adc.json)
 
@@ -403,7 +415,7 @@ Source: [adc.json](https://github.com/edatasheets/digital-datasheets/blob/main/p
 |inputChannels|number of input channels|Number| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-####  4.6.2	 Specification Of Dac
+####  4.7.2	 Specification Of Dac
 
 Source: [dac.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/data_converter/dac.json)
 
@@ -422,9 +434,9 @@ Source: [dac.json](https://github.com/edatasheets/digital-datasheets/blob/main/p
 |outputChannelCount|number of output channels|Number| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-### 4.7	 Hardware
+### 4.8	 Hardware
 
-####  4.7.1	 Specification Of Connector
+####  4.8.1	 Specification Of Connector
 
 Source: [connector.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/hardware/connector.json)
 
@@ -438,7 +450,7 @@ Source: [connector.json](https://github.com/edatasheets/digital-datasheets/blob/
 |pitch|distance from the center of one contact on the connector to the center of the next contact|../common/values.json#/valueOptions| |
 |keying|property describing whether a connector has an asymmetry to prevent it from being plugged in the wrong direction|Boolean| |
 
-####  4.7.2	 Specification Of Switch
+####  4.8.2	 Specification Of Switch
 
 Source: [switch.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/hardware/switch.json)
 
@@ -454,9 +466,9 @@ Source: [switch.json](https://github.com/edatasheets/digital-datasheets/blob/mai
 |onResistance|nominal resistance of a closed switch|../common/values.json#/valueOptions|Yes|
 |dielectricRating|maximum AC voltage potential that can be applied across an open switch for one minute|../common/values.json#/valueOptions| |
 
-### 4.8	 Ic_io
+### 4.9	 Ic_io
 
-####  4.8.1	 Specification Of Bridge Chip
+####  4.9.1	 Specification Of Bridge Chip
 
 Source: [bridge_chip.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/bridge_chip.json)
 
@@ -468,7 +480,7 @@ Source: [bridge_chip.json](https://github.com/edatasheets/digital-datasheets/blo
 |outputInterfaces|list of interfaces at the output of the bridge|array of String| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-####  4.8.2	 Specification Of High Speed Mux
+####  4.9.2	 Specification Of High Speed Mux
 
 Source: [highspeed_mux.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/highspeed_mux.json)
 
@@ -481,7 +493,7 @@ Source: [highspeed_mux.json](https://github.com/edatasheets/digital-datasheets/b
 |insertionLoss|insertion loss through high speed mux|Number| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-####  4.8.3	 Specification Of Level Shifter
+####  4.9.3	 Specification Of Level Shifter
 
 Source: [level_shifter.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/level_shifter.json)
 
@@ -492,7 +504,7 @@ Source: [level_shifter.json](https://github.com/edatasheets/digital-datasheets/b
 |outputVoltage|nominal output voltage of level shifter|../common/values.json#/valueOptions| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-####  4.8.4	 Specification Of Redriver
+####  4.9.4	 Specification Of Redriver
 
 Source: [redriver.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/redriver.json)
 
@@ -504,7 +516,7 @@ Source: [redriver.json](https://github.com/edatasheets/digital-datasheets/blob/m
 |maxDataRate|maximum data rate supported by redriver|../common/values.json#/valueOptions| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-####  4.8.5	 Specification Of Retimer
+####  4.9.5	 Specification Of Retimer
 
 Source: [retimer.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/retimer.json)
 
@@ -521,7 +533,7 @@ Source: [retimer.json](https://github.com/edatasheets/digital-datasheets/blob/ma
 |srns|whether a device supports Separate Reference clock with No Spread spectrum clocking (SRNS)|Boolean| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-####  4.8.6	 Specification Of USB Battery Charging 1.2 (bc12) Detector
+####  4.9.6	 Specification Of USB Battery Charging 1.2 (bc12) Detector
 
 Source: [usb_bc12.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/usb_bc12.json)
 
@@ -532,7 +544,7 @@ Source: [usb_bc12.json](https://github.com/edatasheets/digital-datasheets/blob/m
 |deviceMode|whether device mode is supported by bc12 chip|Boolean|Yes|
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-####  4.8.7	 Specification Of Usb-c Pd Controller
+####  4.9.7	 Specification Of Usb-c Pd Controller
 
 Source: [usbc_pdcontroller.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/usbc_pdcontroller.json)
 
@@ -559,7 +571,7 @@ Source: [usbc_pdcontroller.json](https://github.com/edatasheets/digital-datashee
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 |componentProtectionThresholds|thermal and power supply protection thresholds of a device|../common/componentProtectionThresholds.json#/componentProtectionThresholds| |
 
-####  4.8.8	 Specification Of Usb-c Port Controller
+####  4.9.8	 Specification Of Usb-c Port Controller
 
 Source: [usbc_portcontroller.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/usbc_portcontroller.json)
 
@@ -582,9 +594,9 @@ Source: [usbc_portcontroller.json](https://github.com/edatasheets/digital-datash
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 |componentProtectionThresholds|thermal and power supply protection thresholds of a device|../common/componentProtectionThresholds.json#/componentProtectionThresholds| |
 
-### 4.9	 Ic_microcontroller
+### 4.10	 Ic_microcontroller
 
-####  4.9.1	 Specification Of Microcontroller/ec
+####  4.10.1	 Specification Of Microcontroller/ec
 
 Source: [microcontroller.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_microcontroller/microcontroller.json)
 
@@ -600,9 +612,9 @@ Source: [microcontroller.json](https://github.com/edatasheets/digital-datasheets
 |firmwareVersion|firmware version of the part|String| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-### 4.10	 Ic_misc
+### 4.11	 Ic_misc
 
-####  4.10.1	 Specification Of Audio Codec
+####  4.11.1	 Specification Of Audio Codec
 
 Source: [audio_codec.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/audio_codec.json)
 
@@ -618,7 +630,7 @@ Source: [audio_codec.json](https://github.com/edatasheets/digital-datasheets/blo
 |interface|describes the communication interface from the chip to the host|String| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-####  4.10.2	 Specification Of Speaker Amplifier
+####  4.11.2	 Specification Of Speaker Amplifier
 
 Source: [speaker_amplifier.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/speaker_amplifier.json)
 
@@ -633,7 +645,7 @@ Source: [speaker_amplifier.json](https://github.com/edatasheets/digital-datashee
 |interface|describes the communication interface from the chip to the host|String| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-####  4.10.3	 Specification Of Tpm
+####  4.11.3	 Specification Of Tpm
 
 Source: [tpm.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/tpm.json)
 
@@ -643,7 +655,7 @@ Source: [tpm.json](https://github.com/edatasheets/digital-datasheets/blob/main/p
 |interface|describes the communication interface from the chip to the host|array of String| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-####  4.10.4	 Specification Of WLAN Module
+####  4.11.4	 Specification Of WLAN Module
 
 Source: [wlan_module.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/wlan_module.json)
 
@@ -659,7 +671,7 @@ Source: [wlan_module.json](https://github.com/edatasheets/digital-datasheets/blo
 |interface|describes the communication interface from the chip to the host|String| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-####  4.10.5	 Specification Of WWAN Module
+####  4.11.5	 Specification Of WWAN Module
 
 Source: [wwan_module.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/wwan_module.json)
 
@@ -673,9 +685,9 @@ Source: [wwan_module.json](https://github.com/edatasheets/digital-datasheets/blo
 |interface|describes the communication interface from the chip to the host|String| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-### 4.11	 Logic
+### 4.12	 Logic
 
-####  4.11.1	 Specification Of Logic Gate
+####  4.12.1	 Specification Of Logic Gate
 
 Source: [logic_gate.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/logic/logic_gate.json)
 
@@ -689,9 +701,9 @@ Source: [logic_gate.json](https://github.com/edatasheets/digital-datasheets/blob
 |rampTime|time for output to go from 10% nominal output voltage to 90% nominal output voltage|../common/values.json#/valueOptions| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-### 4.12	 Memory
+### 4.13	 Memory
 
-####  4.12.1	 Specification Of Dram
+####  4.13.1	 Specification Of Dram
 
 Source: [dram.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/memory/dram.json)
 
@@ -717,7 +729,7 @@ Source: [dram.json](https://github.com/edatasheets/digital-datasheets/blob/main/
 |delayActivePrecharge|tRAS, delay between row active command issued and precharge command issued |../common/values.json#/valueOptions| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-####  4.12.2	 Specification Of Eeprom
+####  4.13.2	 Specification Of Eeprom
 
 Source: [eeprom.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/memory/eeprom.json)
 
@@ -735,7 +747,7 @@ Source: [eeprom.json](https://github.com/edatasheets/digital-datasheets/blob/mai
 |interface|interface of eeprom to host|String| |
 |numberOfWords|number of rows in the eeprom|Number| |
 
-####  4.12.3	 Specification Of Flash Memory
+####  4.13.3	 Specification Of Flash Memory
 
 Source: [flash_memory.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/memory/flash_memory.json)
 
@@ -758,7 +770,7 @@ Source: [flash_memory.json](https://github.com/edatasheets/digital-datasheets/bl
 |writeProtect|whether the part has a write protect pin|Boolean| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-####  4.12.4	 Specification Of Rom
+####  4.13.4	 Specification Of Rom
 
 Source: [rom.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/memory/rom.json)
 
@@ -770,9 +782,9 @@ Source: [rom.json](https://github.com/edatasheets/digital-datasheets/blob/main/p
 |qeStatus|indicates whether the Quad Enable(QE) bit is set|Boolean| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-### 4.13	 Passives
+### 4.14	 Passives
 
-####  4.13.1	 Specification Of Capacitor
+####  4.14.1	 Specification Of Capacitor
 
 Source: [capacitor.json](https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/passives/capacitor.json)
 
@@ -790,7 +802,7 @@ Source: [capacitor.json](https:/github.com/edatasheets/digital-datasheets/blob/m
 |maxTemperature|maximum temperature under which a capacitor can be expected to reliably operate|../common/values.json#/valueOptions| |
 |capacitorDerating|graph object to capture capacitance changes with voltage changes|../common/graph.json#/graph| |
 
-####  4.13.2	 Specification Of Common Mode Choke
+####  4.14.2	 Specification Of Common Mode Choke
 
 Source: [common_mode_choke.json](https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/passives/common_mode_choke.json)
 
@@ -803,7 +815,7 @@ Source: [common_mode_choke.json](https:/github.com/edatasheets/digital-datasheet
 |rmsCurrent|applied DC current (IRMS) that produces a common mode choke temperature rise of 40 deg C|../common/values.json#/valueOptions| |
 |intendedApplication|intended application of a particular common mode choke|String| |
 
-####  4.13.3	 Specification Of Ferrite Bead
+####  4.14.3	 Specification Of Ferrite Bead
 
 Source: [ferrite_bead.json](https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/passives/ferrite_bead.json)
 
@@ -815,7 +827,7 @@ Source: [ferrite_bead.json](https:/github.com/edatasheets/digital-datasheets/blo
 |impedance100MHz|impedance of ferrite bead under standard testing conditions at 100MHz|../common/values.json#/valueOptions| |
 |impedanceTolerance|variation of ferrite bead impedance expressed as +/- percentage|../common/values.json#/valueOptions| |
 
-####  4.13.4	 Specification Of Inductor
+####  4.14.4	 Specification Of Inductor
 
 Source: [inductor.json](https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/passives/inductor.json)
 
@@ -835,7 +847,7 @@ Source: [inductor.json](https:/github.com/edatasheets/digital-datasheets/blob/ma
 |saturationCurve|graph object to capture inductance as a function of current|../common/graph.json#/graph| |
 |resonantFrequencyCurve|graph object to capture inductance as a function of frequency|../common/graph.json#/graph| |
 
-####  4.13.5	 Specification Of Resistor
+####  4.14.5	 Specification Of Resistor
 
 Source: [resistor.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/passives/resistor.json)
 
@@ -852,9 +864,9 @@ Source: [resistor.json](https://github.com/edatasheets/digital-datasheets/blob/m
 |maxTemperature|maximum temperature under which a resistor can be expected to reliably operate|../common/values.json#/valueOptions| |
 |resistorDerating|graph object to capture resistance changes with temperature|../common/graph.json#/graph| |
 
-### 4.14	 Power
+### 4.15	 Power
 
-####  4.14.1	 Specification Of Battery Charger
+####  4.15.1	 Specification Of Battery Charger
 
 Source: [battery_charger.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/battery_charger.json)
 
@@ -900,7 +912,7 @@ Source: [battery_charger.json](https://github.com/edatasheets/digital-datasheets
 |usbTypecRevision|usb type-c spec revision supported by a device|String| |
 |pdVersion|version of power delivery spec supported by a device|String| |
 
-####  4.14.2	 Specification Of Display Backlight Driver
+####  4.15.2	 Specification Of Display Backlight Driver
 
 Source: [displaybacklight_driver.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/displaybacklight_driver.json)
 
@@ -923,7 +935,7 @@ Source: [displaybacklight_driver.json](https://github.com/edatasheets/digital-da
 |componentProtectionThresholds|thermal and power supply protection thresholds of a device|../common/componentProtectionThresholds.json#/componentProtectionThresholds| |
 |efficiency|backlight driver efficiency as a function of forward current|../common/graph.json#/graph| |
 
-####  4.14.3	 Specification Of Linear Regulator
+####  4.15.3	 Specification Of Linear Regulator
 
 Source: [linear_regulator.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/linear_regulator.json)
 
@@ -947,7 +959,7 @@ Source: [linear_regulator.json](https://github.com/edatasheets/digital-datasheet
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 |componentProtectionThresholds|thermal and power supply protection thresholds of a device|../common/componentProtectionThresholds.json#/componentProtectionThresholds| |
 
-####  4.14.4	 Specification Of Load Switch
+####  4.15.4	 Specification Of Load Switch
 
 Source: [load_switch.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/load_switch.json)
 
@@ -972,7 +984,7 @@ Source: [load_switch.json](https://github.com/edatasheets/digital-datasheets/blo
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 |componentProtectionThresholds|thermal and power supply protection thresholds of a device|../common/componentProtectionThresholds.json#/componentProtectionThresholds| |
 
-####  4.14.5	 specification of a pmic
+####  4.15.5	 specification of a pmic
 
 Source: [pmic.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/pmic.json)
 
@@ -983,7 +995,7 @@ Source: [pmic.json](https://github.com/edatasheets/digital-datasheets/blob/main/
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 |componentProtectionThresholds|thermal and power supply protection thresholds of a device|../common/componentProtectionThresholds.json#/componentProtectionThresholds| |
 
-####  4.14.6	 Specification Of Switching Regulator
+####  4.15.6	 Specification Of Switching Regulator
 
 Source: [switching_regulator.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/switching_regulator.json)
 
@@ -1007,9 +1019,9 @@ Source: [switching_regulator.json](https://github.com/edatasheets/digital-datash
 |componentProtectionThresholds|thermal and power supply protection thresholds of a device|../common/componentProtectionThresholds.json#/componentProtectionThresholds| |
 |efficiency|power efficiency of a regulator as a function of output current|../common/graph.json#/graph| |
 
-### 4.15	 Semiconductor
+### 4.16	 Semiconductor
 
-####  4.15.1	 Specification Of Bjt
+####  4.16.1	 Specification Of Bjt
 
 Source: [bjt.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/semiconductor/bjt.json)
 
@@ -1045,7 +1057,7 @@ Source: [bjt.json](https://github.com/edatasheets/digital-datasheets/blob/main/p
 |ibVsVce|graph of base current (Ib) as a function of collector-emitter voltage (VCE)|../common/graph.json#/graph| |
 |pdVsTemp|graph of power dissipation as a function of temperature|../common/graph.json#/graph| |
 
-####  4.15.2	 Specification Of Diode
+####  4.16.2	 Specification Of Diode
 
 Source: [diode.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/semiconductor/diode.json)
 
@@ -1073,7 +1085,7 @@ Source: [diode.json](https://github.com/edatasheets/digital-datasheets/blob/main
 |pTot|maximum power dissipation of a forward biased diode|../common/values.json#/valueOptions| |
 |ifVsVf|graph of forward current (If) as a function of forward voltage (VfTyp)|../common/graph.json#/graph| |
 
-####  4.15.3	 Specification Of LED
+####  4.16.3	 Specification Of LED
 
 Source: [led.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/semiconductor/led.json)
 
@@ -1093,7 +1105,7 @@ Source: [led.json](https://github.com/edatasheets/digital-datasheets/blob/main/p
 |angleHalfIntensity|angle at which LED intensity falls to 50% of its maximum value|../common/values.json#/valueOptions| |
 |pd|power dissipation of an LED|../common/values.json#/valueOptions| |
 
-####  4.15.4	 Specification Of Mosfet
+####  4.16.4	 Specification Of Mosfet
 
 Source: [mosfet.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/semiconductor/mosfet.json)
 
@@ -1137,9 +1149,9 @@ Source: [mosfet.json](https://github.com/edatasheets/digital-datasheets/blob/mai
 |pTot|maximum power dissipation of a MOSFET|../common/values.json#/valueOptions| |
 |pdVsTemp|graph of power dissipation vs temperature|../common/graph.json#/graph| |
 
-### 4.16	 Sensor
+### 4.17	 Sensor
 
-####  4.16.1	 Specification Of Accelerometer
+####  4.17.1	 Specification Of Accelerometer
 
 Source: [accelerometer.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/sensor/accelerometer.json)
 
@@ -1162,7 +1174,7 @@ Source: [accelerometer.json](https://github.com/edatasheets/digital-datasheets/b
 |spectralNoiseDensity|spectral noise density of a device|Number| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-####  4.16.2	 Specification Of Gyroscope
+####  4.17.2	 Specification Of Gyroscope
 
 Source: [gyroscope.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/sensor/gyroscope.json)
 
@@ -1183,7 +1195,7 @@ Source: [gyroscope.json](https://github.com/edatasheets/digital-datasheets/blob/
 |spectralNoiseDensity|spectral noise density of a device|Number| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-####  4.16.3	 Specification Of Magnetic Sensor
+####  4.17.3	 Specification Of Magnetic Sensor
 
 Source: [magnetic_sensor.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/sensor/magnetic_sensor.json)
 
@@ -1203,7 +1215,7 @@ Source: [magnetic_sensor.json](https://github.com/edatasheets/digital-datasheets
 |bandwidth|sensing bandwidth|../common/values.json#/valueOptions| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-####  4.16.4	 Specification Of Thermal Sensor
+####  4.17.4	 Specification Of Thermal Sensor
 
 Source: [thermal_sensor.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/sensor/thermal_sensor.json)
 
@@ -1219,9 +1231,9 @@ Source: [thermal_sensor.json](https://github.com/edatasheets/digital-datasheets/
 |gain|amount of change in the output voltage for a change in temperature|Number| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-### 4.17	 Storage
+### 4.18	 Storage
 
-####  4.17.1	 Specification Of SD Card
+####  4.18.1	 Specification Of SD Card
 
 Source: [sd_card.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/storage/sd_card.json)
 
@@ -1233,7 +1245,7 @@ Source: [sd_card.json](https://github.com/edatasheets/digital-datasheets/blob/ma
 |dataRate|maximum data rate of the sd card|Number| |
 |currentConsumption|current used by device in various power modes|array of ../common/currentConsumption.json#/currentConsumption| |
 
-####  4.17.2	 Specification Of SSD
+####  4.18.2	 Specification Of SSD
 
 Source: [ssd.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/storage/ssd.json)
 
