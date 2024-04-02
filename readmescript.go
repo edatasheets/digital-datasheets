@@ -141,16 +141,18 @@ func main() {
 
 		// Process component values and $defs
 		if len(opt.Properties) > 0 {
+			fmt.Printf("")
 			prefix := fmt.Sprintf(" %s.%d", sectionNum, i)
 			_, shortName := path.Split(top.ID)
 			processComponentOption(prefix, top.Title, source{shortName: shortName, uri: top.ID}, opt)
 			i += 1
 		} else if len(top.Defs) == 0 {
-			fmt.Fprintf(os.Stderr, "invalid top-level object %q: no oneOf, properties, or definitions field found", top.Title)
+			fmt.Fprintf(os.Stderr, "invalid top-level object %q: no oneOf, properties, or definitions field found\n", top.Title)
 		}
 		if len(top.Defs) > 0 {
-			processDefs(" "+sectionNum, i, top.Defs)
+			i = processDefs(" "+sectionNum, i, top.Defs)
 			i += 1
+
 		}
 
 	}
@@ -187,9 +189,9 @@ func processComponentOption(titlePrefix, title string, link source, opt componen
 	fmt.Println()
 }
 
-func processDefs(titlePrefix string, idOffset int, defs map[string]componentOption) {
+func processDefs(titlePrefix string, idOffset int, defs map[string]componentOption) int {
 	if len(defs) == 0 {
-		return
+		return idOffset
 	}
 
 	var subDefNames []string
@@ -197,11 +199,13 @@ func processDefs(titlePrefix string, idOffset int, defs map[string]componentOpti
 		subDefNames = append(subDefNames, name)
 	}
 	sort.Strings(subDefNames)
+	idx := 0
 	for i, subDefName := range subDefNames {
 		subDef := defs[subDefName]
-		idx := i + idOffset
+		idx = i + idOffset
 		processComponentOption(fmt.Sprintf("%s.%d", titlePrefix, idx), subDefName, source{}, subDef)
 	}
+	return idx
 }
 
 func processProperties(raw json.RawMessage) ([]string, map[string]property) {
