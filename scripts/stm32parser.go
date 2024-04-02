@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/csv"
 	"encoding/json"
-	"fmt"
 	"os"
 	"regexp"
 	"strings"
@@ -386,6 +385,7 @@ func getElectricalProps(ioType string) pinSpec {
 			},
 			Esd: true,
 		}
+	case "VSS":
 	case "VBAT":
 		props = pinSpec{
 			AbsVmax: &ValueOptions{
@@ -655,7 +655,6 @@ func translateFnName(fnName string) FunctionProperties {
 	} else if spicipoRE.MatchString(fnName) {
 		return FunctionProperties{InterfaceType: "spi", PinUsage: "SPI_CIPO", Direction: "in"}
 	} else if spiclkRE.MatchString(fnName) {
-		fmt.Printf("do we get here?: %s\n", fnName)
 		return FunctionProperties{InterfaceType: "spi", PinUsage: "SPI_CLK", Direction: "out", ElectricalConfiguration: "push-pull"}
 	} else if spicsRE.MatchString(fnName) {
 		return FunctionProperties{InterfaceType: "spi", PinUsage: "SPI_CS", Direction: "in"}
@@ -936,7 +935,6 @@ func main() {
 	extraFns2 := 9
 
 	for _, eachrecord := range records[1:] {
-		fmt.Println(eachrecord)
 		ioTypeStr := sanitizeIOType(eachrecord[ioType], eachrecord[pinName])
 		pin := getElectricalProps(ioTypeStr)
 		pin.TerminalIdentifier = eachrecord[pinNum]
