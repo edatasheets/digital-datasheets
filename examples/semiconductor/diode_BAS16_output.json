@@ -7,13 +7,13 @@
             "BAS16"
         ],
         "sourceDatasheetID": {
-            "publishedDate": "October 1st,2022",
-            "version": "BAS16 v.7",
+            "publishedDate": "2022-10-01",
+            "version": "7",
             "datasheetURI": "https://assets.nexperia.com/documents/data-sheet/BAS16.pdf",
-            "productURI": "https://assets.nexperia.com/documents/data-sheet/BAS16.pdf"
+            "productURI": "https://www.nexperia.com/product/BAS16"
         },
         "digitalDatasheetID": {
-            "publishedDate": "march 31st, 2024",
+            "publishedDate": "2024-03-31",
             "eDatasheetSpecRevision": "1.0"
         },
         "status": "production"
