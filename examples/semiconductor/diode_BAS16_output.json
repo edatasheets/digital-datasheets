@@ -4,16 +4,17 @@
         "manufacturer": "Nexperia",
         "componentName": "BAS16",
         "orderableMPN": [
-            "BAS16"
+            "BAS16,215",
+            "BAS16,235"
         ],
         "sourceDatasheetID": {
-            "publishedDate": "October 1st,2022",
-            "version": "BAS16 v.7",
+            "publishedDate": "2022-10-01",
+            "version": "7.0",
             "datasheetURI": "https://assets.nexperia.com/documents/data-sheet/BAS16.pdf",
-            "productURI": "https://assets.nexperia.com/documents/data-sheet/BAS16.pdf"
+            "productURI": "https://www.nexperia.com/product/BAS16"
         },
         "digitalDatasheetID": {
-            "publishedDate": "march 31st, 2024",
+            "publishedDate": "2024-03-31",
             "eDatasheetSpecRevision": "1.0"
         },
         "status": "production"
@@ -204,6 +205,7 @@
                     "siUnit": "microamp",
                     "maxValue": 30,
                     "unitFactor": 0.001,
+                    "unitName": "nanoamp",
                     "conditions": [
                         "VR = 25 V",
                         "Tamb = 25 °C"
