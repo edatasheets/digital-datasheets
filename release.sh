@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SRC=~/digital-datasheets-worktree1
-DST=~/edatasheets.github.io
+SRC=~/Documents/digital-datasheets
+DST=~/Documents/edatasheets.github.io
 
 rm -r "$DST/*"
 
