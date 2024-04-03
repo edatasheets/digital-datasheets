@@ -7,13 +7,13 @@
             "TPS62A01AQDRLRQ1"
         ],
         "sourceDatasheetID": {
-            "publishedDate": "November, 2023",
-            "version": "Revision A",
+            "publishedDate": "2023-11-00",
+            "version": "A",
             "datasheetURI": "https://www.ti.com/document-viewer/TPS62A01A-Q1/datasheet",
             "productURI": "https://www.ti.com/product/TPS62A01A-Q1"
         },
         "digitalDatasheetID": {
-            "publishedDate": "March 31, 2024",
+            "publishedDate": "2024-03-31",
             "eDatasheetSpecRevision": "1.0"
         },
         "status": "production",

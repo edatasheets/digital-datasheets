@@ -7,13 +7,13 @@
             "PI2EQX22024XEAEX"
         ],
         "sourceDatasheetID": {
-            "publishedDate": "December, 2022",
-            "version": "Rev 1-2",
+            "publishedDate": "2022-12-00",
+            "version": "1.2",
             "datasheetURI": "https://www.diodes.com/assets/Datasheets/PI2EQX22024.pdf",
             "productURI": "https://www.diodes.com/part/view/PI2EQX22024"
         },
         "digitalDatasheetID": {
-            "publishedDate": "March 31st, 2024",
+            "publishedDate": "2024-03-31",
             "eDatasheetSpecRevision": "1.0"
         },
         "status": "production",

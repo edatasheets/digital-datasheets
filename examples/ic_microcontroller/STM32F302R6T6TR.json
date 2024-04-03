@@ -8,13 +8,13 @@
       "STM32F302R6T6xxx"
     ],
     "sourceDatasheetID": {
-      "publishedDate": "March2020",
-      "version": "Rev 8",
+      "publishedDate": "2020-03-00",
+      "version": "8",
       "datasheetURI": "https://www.st.com/resource/en/datasheet/stm32f302r6.pdf",
       "productURI": "https://www.st.com/en/microcontrollers-microprocessors/stm32f302r6.html"
     },
     "digitalDatasheetID": {
-      "publishedDate": "April2024",
+      "publishedDate": "2024-03-31",
       "eDatasheetSpecRevision": "1.0"
     },
     "status": "production",

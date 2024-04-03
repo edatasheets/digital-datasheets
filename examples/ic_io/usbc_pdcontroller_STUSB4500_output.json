@@ -7,13 +7,13 @@
             "STUSB4500BJR"
         ],
         "sourceDatasheetID": {
-            "publishedDate": "November 4,2022",
-            "version": "Rev 8",
+            "publishedDate": "2022-11-04",
+            "version": "8",
             "datasheetURI": "https://www.st.com/resource/en/datasheet/stusb4500.pdf",
             "productURI": "https://www.st.com/en/interfaces-and-transceivers/stusb4500.html"
         },
         "digitalDatasheetID": {
-            "publishedDate": "March 31st,2024",
+            "publishedDate": "2024-03-31",
             "eDatasheetSpecRevision": "1.0"
         },
         "status": "production"
