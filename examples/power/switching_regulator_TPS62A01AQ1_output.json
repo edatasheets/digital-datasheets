@@ -43,13 +43,12 @@
                 "values": [
                     {
                         "siUnit": "volt",
-                        "minValue": 2.8,
-                        "unitFactor": 1,
                         "relativeValueReference": "VIN",
                         "relativeValueModifier": 0.3,
                         "relativeValueOperator": "add",
                         "conditions": [
-                            "DC"
+                            "DC",
+                            "maxValue = VIN+0.3"
                         ]
                     },
                     {
@@ -144,8 +143,7 @@
                 "values": [
                     {
                         "siUnit": "volt",
-                        "minValue": 0.2,
-                        "unitFactor": 1,
+                        "minValue": 1.2,
                         "conditions": [
                             "EN rising"
                         ]
@@ -206,7 +204,7 @@
                 "values": [
                     {
                         "siUnit": "volt",
-                        "maxValue": 6
+                        "maxValue": 3
                     }
                 ]
             },
@@ -257,7 +255,7 @@
                 "values": [
                     {
                         "siUnit": "volt",
-                        "maxValue": 3
+                        "maxValue": 6
                     }
                 ]
             },
@@ -353,7 +351,7 @@
         "enableTime": {
             "values": [
                 {
-                    "typValue": 1,
+                    "maxValue": 1,
                     "siUnit": "millisecond",
                     "unitFactor": 1,
                     "conditions": [
