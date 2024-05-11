@@ -1,0 +1,81 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/thermals.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "specification of thermals ",
+    "thermalSpec": {
+        "type": "object",
+        "properties": {
+            "junctionTemp": {
+                "description": "recommended operating junction temperature range of a part",
+                "comment": "units of Celsius",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "junctionTempMax": {
+                "description": "absolute maximum junction temperature range of a part",
+                "comment": "units of Celsius",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "ambientTemp": {
+                "description": "recommended operating ambient air temperature range of a part",
+                "comment": "units of Celsius",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "ambientTempMax": {
+                "description": "absolute maximum ambient air temperature range under which a part operates",
+                "comment": "units of Celsius",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "caseTemp": {
+                "description": "case temperature range of a part",
+                "comment": "units of Celsius",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "caseTempMax": {
+                "description": "absolute maximum case temperature range of a part",
+                "comment": "units of Celsius",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "leadTempMax": {
+                "description": "absolute maximum lead temperature of a part",
+                "comment": "units of Celsius",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "storageTempMax": {
+                "description": "absolute maximum storage temperature range of a part",
+                "comment": "units of Celsius",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "packageThermalResistance": {
+                "description": "package thermal resistance of a part",
+                "comment": "units of Celsius/watt or kelvin/watt",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "ThermalResistanceJunctionToAmbient": {
+                "description": "thermal resistance between the semiconductor junction of a part and the ambient air",
+                "comment": "units of Celsius/watt or kelvin/watt",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "ThermalResistanceJunctionToCase": {
+                "description": "thermal resistance between the semiconductor junction and the package surface of a part",
+                "comment": "units of Celsius/watt or kelvin/watt",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "ThermalResistanceJunctionToboard": {
+                "description": "thermal resistance between the semiconduction junction of a part and the board",
+                "comment": "units of Celsius/watt or kelvin/watt",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "ThermalResistanceJunctionToLead": {
+                "description": "thermal resistance between the semiconduction junction of a part and the soldering point",
+                "comment": "units of Celsius/watt or kelvin/watt",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "ThermalResistanceCaseToAmbient": {
+                "description": "thermal resistance between the package surface of a part and the ambient air",
+                "comment": "units of Celsius/watt or kelvin/watt",
+                "$ref": "../common/values.json#/valueOptions"
+            }
+        },
+        "additionalProperties": false
+    }
+}
