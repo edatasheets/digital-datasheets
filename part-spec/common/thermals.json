@@ -10,8 +10,8 @@
                 "comment": "units of Celsius",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "junctionTemperatureMax": {
-                "description": "absolute maximum junction temperature range of a part",
+            "junctionTemperatureAbsMax": {
+                "description": "absolute maximum junction temperature of a part",
                 "comment": "units of Celsius",
                 "$ref": "../common/values.json#/valueOptions"
             },
@@ -20,8 +20,8 @@
                 "comment": "units of Celsius",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "ambientTemperatureMax": {
-                "description": "absolute maximum ambient air temperature range under which a part operates",
+            "ambientTemperatureAbsMax": {
+                "description": "absolute maximum ambient air temperature of a part",
                 "comment": "units of Celsius",
                 "$ref": "../common/values.json#/valueOptions"
             },
@@ -30,18 +30,18 @@
                 "comment": "units of Celsius",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "caseTemperatureMax": {
-                "description": "absolute maximum case temperature range of a part",
+            "caseTemperatureAbsMax": {
+                "description": "absolute maximum case temperature of a part",
                 "comment": "units of Celsius",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "leadTemperatureMax": {
+            "leadTemperatureAbsMax": {
                 "description": "absolute maximum lead temperature of a part",
                 "comment": "units of Celsius",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "storageTemperatureMax": {
-                "description": "absolute maximum storage temperature range of a part",
+            "storageTemperatureAbsMax": {
+                "description": "absolute maximum storage temperature of a part",
                 "comment": "units of Celsius",
                 "$ref": "../common/values.json#/valueOptions"
             },
