@@ -1,46 +1,46 @@
 {
     "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/thermals.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "specification of thermals ",
-    "thermalSpec": {
+    "title": "specification of thermal properties on components ",
+    "thermalProperties": {
         "type": "object",
         "properties": {
-            "junctionTemp": {
+            "junctionTemperature": {
                 "description": "recommended operating junction temperature range of a part",
                 "comment": "units of Celsius",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "junctionTempMax": {
+            "junctionTemperatureMax": {
                 "description": "absolute maximum junction temperature range of a part",
                 "comment": "units of Celsius",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "ambientTemp": {
+            "ambientTemperature": {
                 "description": "recommended operating ambient air temperature range of a part",
                 "comment": "units of Celsius",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "ambientTempMax": {
+            "ambientTemperatureMax": {
                 "description": "absolute maximum ambient air temperature range under which a part operates",
                 "comment": "units of Celsius",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "caseTemp": {
+            "caseTemperature": {
                 "description": "case temperature range of a part",
                 "comment": "units of Celsius",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "caseTempMax": {
+            "caseTemperatureMax": {
                 "description": "absolute maximum case temperature range of a part",
                 "comment": "units of Celsius",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "leadTempMax": {
+            "leadTemperatureMax": {
                 "description": "absolute maximum lead temperature of a part",
                 "comment": "units of Celsius",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "storageTempMax": {
+            "storageTemperatureMax": {
                 "description": "absolute maximum storage temperature range of a part",
                 "comment": "units of Celsius",
                 "$ref": "../common/values.json#/valueOptions"
@@ -50,27 +50,27 @@
                 "comment": "units of Celsius/watt or kelvin/watt",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "ThermalResistanceJunctionToAmbient": {
+            "thermalResistanceJunctionToAmbient": {
                 "description": "thermal resistance between the semiconductor junction of a part and the ambient air",
                 "comment": "units of Celsius/watt or kelvin/watt",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "ThermalResistanceJunctionToCase": {
+            "thermalResistanceJunctionToCase": {
                 "description": "thermal resistance between the semiconductor junction and the package surface of a part",
                 "comment": "units of Celsius/watt or kelvin/watt",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "ThermalResistanceJunctionToboard": {
+            "thermalResistanceJunctionToboard": {
                 "description": "thermal resistance between the semiconduction junction of a part and the board",
                 "comment": "units of Celsius/watt or kelvin/watt",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "ThermalResistanceJunctionToLead": {
-                "description": "thermal resistance between the semiconduction junction of a part and the soldering point",
+            "thermalResistanceJunctionToLead": {
+                "description": "thermal resistance between the semiconduction junction of a part and the solder pad",
                 "comment": "units of Celsius/watt or kelvin/watt",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "ThermalResistanceCaseToAmbient": {
+            "thermalResistanceCaseToAmbient": {
                 "description": "thermal resistance between the package surface of a part and the ambient air",
                 "comment": "units of Celsius/watt or kelvin/watt",
                 "$ref": "../common/values.json#/valueOptions"
