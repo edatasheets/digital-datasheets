@@ -27,8 +27,8 @@
 			"$ref": "./common/package.json#/package"
 		},
 		"thermal": {
-			"description": "component temperature and thermalresistance information",
-			"$ref": "./common/thermals.json#/thermalSpec"
+			"description": "component temperature and thermal resistance information",
+			"$ref": "./common/thermals.json#/thermalProperties"
 		},
 		"externalFileMap": {
 			"description": "external files that describe key component properties. External files can be used in lieu of defining core properties, pins, and package information in the same file",
