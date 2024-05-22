@@ -47,7 +47,12 @@ Given the importance of component accuracy in a PLM system, it is likely that co
 
 Converting this internal company datasheet database to information in the PLM system can be done automatically because datasheets in the internal database have already been manually verified. To do this conversion, a one-time mapping file between properties in the digital datasheet schema and the specific properties in a company’s PLM is created. Companies can then write a simple generator script using this mapping file to convert digital datasheet entries to PLM properties. Additionally, as digital datasheets will likely contain new information not available in the PLM system, this information can be added or exist in a separate database alongside the PLM system. As tooling advances, these new properties can be leveraged to provide richer schematic validation. 
 
-The advantage of this system is it leverages existing PLM systems, which are often deeply integrated with engineering workflows. However, it makes these PLM systems more efficient to generate and update. 
+The advantage of this system is it leverages existing PLM systems, which are often deeply integrated with engineering workflows. However, it makes these PLM systems more efficient to generate and update.
+
+#### 2.3 Tools to Generate Digital Datasheets 
+The digital datasheet creator is an open-source tool that is available to make datasheet
+creation less time consuming. The tool can be found here: [datasheet creator](https://github.com/intel/digital-datasheet-creator). It consists of a series of template spreadsheets for each 
+part type that can be filled in and run through the creator script to generate a specification-compliant json datasheet file. 
 
 ### 3. Use Cases 
 Digital datasheets can be used for many applications. The list of use cases included here is not meant to be exhaustive and it is expected that new applications will be developed as more people start using these digital datasheets. Sample applications include automated hardware design checks to identify bugs earlier in the design cycle, automated hardware designs to speed up board development, components comparison to identify replacement components on a design. 
