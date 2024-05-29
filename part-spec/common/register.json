@@ -35,6 +35,14 @@
                 ],
                 "type": "string"
             },
+            "registerEndianness": {
+                "description": "memory storage order for the bytes",
+                "enum": [
+                    "little-endian",
+                    "big-endian"
+                ],
+                "type": "string"
+            },
             "registerResetValue": {
                 "description": "reset value of a register",
                 "type": "string"
@@ -43,11 +51,31 @@
                 "description": "value of a register",
                 "type": "string"
             },
+            "registerIpName": {
+                "description": "name of the IP or interface controlled by changes in the register",
+                "example": [
+                    "GPIO",
+                    "timers",
+                    "ADC",
+                    "PCIe interface"
+                ],
+                "type": "string"
+            },
             "registerAccessType": {
                 "description": "access type of a Register",
                 "enum": [
+                    "R",
+                    "W",
                     "RO",
-                    "RW"
+                    "RW",
+                    "R1C",
+                    "WO",
+                    "W1C",
+                    "RW1C",
+                    "RW1T",
+                    "RW1CS",
+                    "RWC",
+                    "RWS"
                 ],
                 "type": "string"
             },
@@ -94,12 +122,23 @@
                 "bitFieldAccessType": {
                     "description": "Access type of a bit field",
                     "enum": [
+                        "R",
+                        "W",
                         "RO",
-                        "RW"
+                        "RW",
+                        "R1C",
+                        "WO",
+                        "W1C",
+                        "RW1C",
+                        "RW1T",
+                        "RW1CS",
+                        "RWC",
+                        "RWS"
                     ],
                     "type": "string"
                 }
-            }
+            },
+            "additionalProperties": false
         }
     }
 }
