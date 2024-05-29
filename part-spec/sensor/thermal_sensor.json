@@ -44,7 +44,7 @@
                     "type": "string"
                 }
             },
-            "operatingTemperatureMaximum": {
+            "operatingTemperature": {
                 "description": "maximum operating temperature of a part",
                 "comment": "units of degrees C",
                 "$ref": "../common/values.json#/valueOptions"
@@ -54,7 +54,7 @@
                 "comment": "units of watts",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "maximumTurboPower": {
+            "peakPower": {
                 "description": "maximum transient power the part will dissipate",
                 "comment": "units of watts",
                 "$ref": "../common/values.json#/valueOptions"
