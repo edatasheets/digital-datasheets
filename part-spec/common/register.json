@@ -137,7 +137,8 @@
                     ],
                     "type": "string"
                 }
-            }
+            },
+            "additionalProperties": false
         }
     }
 }
