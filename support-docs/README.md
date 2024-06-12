@@ -54,6 +54,11 @@ The digital datasheet creator is an open-source tool that is available to make d
 creation less time consuming. The tool can be found here: [datasheet creator](https://github.com/intel/digital-datasheet-creator). It consists of a series of template spreadsheets for each 
 part type that can be filled in and run through the creator script to generate a specification-compliant json datasheet file. 
 
+#### 2.3 Tools to Generate Digital Datasheets 
+The digital datasheet creator is an open-source tool that is available to make datasheet
+creation less time consuming. The tool can be found here: [datasheet creator](https://github.com/intel/digital-datasheet-creator). It consists of a series of template spreadsheets for each 
+part type that can be filled in and run through the creator script to generate a specification-compliant json datasheet file. 
+
 ### 3. Use Cases 
 Digital datasheets can be used for many applications. The list of use cases included here is not meant to be exhaustive and it is expected that new applications will be developed as more people start using these digital datasheets. Sample applications include automated hardware design checks to identify bugs earlier in the design cycle, automated hardware designs to speed up board development, components comparison to identify replacement components on a design. 
 
