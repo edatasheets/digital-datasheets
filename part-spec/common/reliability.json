@@ -1,0 +1,21 @@
+{
+    "$id": "https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/reliability.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "description of the reliability of a component",
+    "reliability": {
+        "type": "object",
+        "properties": {
+            "failuresInTime": {
+                "description": "the number of expected failures per one billion hours of operation for a device",
+                "comment": "expressed as a number with conditions on how FIT is measured",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "meanTimeToFail": {
+                "description": "the average time a product or system functions before its first failure under normal conditions",
+                "comment": "units of time",
+                "$ref": "../common/values.json#/valueOptions"
+            }
+        },
+        "additionalProperties": false
+    }
+}
