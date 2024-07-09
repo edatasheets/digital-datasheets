@@ -37,6 +37,10 @@
 		"reliability": {
 			"description": "reliability information about the component",
 			"$ref": "./common/reliability.json#/reliability"
+		},
+		"powerSequence": {
+			"description": "information about component power sequencing",
+			"$ref": "./common/powerSequence.json#/powerSequenceTable"
 		}
 	},
 	"additionalProperties": false,
@@ -61,6 +65,14 @@
 				"package": {
 					"description": "package information specified by the package spec file",
 					"$ref": "./common/externalFile.json#/externalFile"
+				},
+				"reliability": {
+					"description": "reliability information about the component",
+					"$ref": "./common/reliability.json#/reliability"
+				},
+				"powerSequence": {
+					"description": "information about component power sequencing",
+					"$ref": "./common/powerSequence.json#/powerSequenceTable"
 				}
 			}
 		}

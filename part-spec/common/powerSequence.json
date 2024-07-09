@@ -1,0 +1,76 @@
+{
+    "$id": "https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/powerSequence.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "specification of power sequencing information",
+    "powerSequenceTable": {
+        "type": "object",
+        "properties": {
+            "values": {
+                "description": "list of power sequence conditions that apply to a component",
+                "type": "array",
+                "items": {
+                    "$ref": "#/$defs/powerSequence"
+                }
+            }
+        },
+        "additionalProperties": false
+    },
+    "$defs": {
+        "powerSequence": {
+            "type": "object",
+            "properties": {
+                "signal1": {
+                    "description": "Power signal that comes up first in the sequence ",
+                    "type": "string"
+                },
+                "signal1Pins": {
+                    "description": "List of component pins associated with signal 1",
+                    "type": "array",
+                    "items": {
+                        "$ref": "string"
+                    }
+                },
+                "signal2": {
+                    "description": "Power signal that comes up second in the sequence ",
+                    "type": "string"
+                },
+                "signal2Pins": {
+                    "description": "List of component pins associated with signal 2",
+                    "type": "array",
+                    "items": {
+                        "$ref": "string"
+                    }
+                },
+                "timeCondition": {
+                    "description": "Time between the the signal 1 and signal 2 event",
+                    "comment": "units of time",
+                    "$ref": "../common/values.json#/valueOptions"
+                },
+                "powerDirection": {
+                    "description": "Whether this is a power up or power down event",
+                    "enum": [
+                        "Up",
+                        "Down"
+                    ]
+                },
+                "powerStateEntering": {
+                    "description": "Power state the device enters after the signal transition",
+                    "type": "string",
+                    "examples": [
+                        "suspend",
+                        "active"
+                    ]
+                },
+                "powerStateLeaving": {
+                    "description": "Power state the device leaves after the signal transition",
+                    "type": "string",
+                    "examples": [
+                        "suspend",
+                        "active"
+                    ]
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}
