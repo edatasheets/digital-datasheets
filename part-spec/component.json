@@ -26,6 +26,10 @@
 			"description": "component package information",
 			"$ref": "./common/package.json#/package"
 		},
+		"registers": {
+			"description": "register information",
+			"$ref": "./common/register.json#/register"
+		},
 		"thermal": {
 			"description": "component temperature and thermal resistance information",
 			"$ref": "./common/thermals.json#/thermalProperties"
@@ -61,6 +65,18 @@
 				"package": {
 					"description": "package information specified by the package spec file",
 					"$ref": "./common/externalFile.json#/externalFile"
+				},
+				"registers": {
+					"description": "register information",
+					"$ref": "./common/register.json#/register"
+				},
+				"thermal": {
+					"description": "component temperature and thermal resistance information",
+					"$ref": "./common/thermals.json#/thermalProperties"
+				},
+				"reliability": {
+					"description": "reliability information about the component",
+					"$ref": "./common/reliability.json#/reliability"
 				}
 			}
 		}
