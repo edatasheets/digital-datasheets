@@ -60,7 +60,7 @@
                 "comment": "units of Celsius/watt or kelvin/watt",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "thermalResistanceJunctionToboard": {
+            "thermalResistanceJunctionToBoard": {
                 "description": "thermal resistance between the semiconduction junction of a part and the board",
                 "comment": "units of Celsius/watt or kelvin/watt",
                 "$ref": "../common/values.json#/valueOptions"
