@@ -72,7 +72,7 @@
 				},
 				"thermal": {
 					"description": "component temperature and thermal resistance information",
-					"$ref": "./common/thermals.json#/thermalProperties"
+					"$ref": "./common/thermal.json#/thermal"
 				},
 				"reliability": {
 					"description": "reliability information about the component",
