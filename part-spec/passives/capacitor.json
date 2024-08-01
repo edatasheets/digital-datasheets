@@ -27,7 +27,7 @@
                 "$ref": "../common/values.json#/valueOptions"
             },
             "ratedVoltage": {
-                "description": "maximum voltage which may be applied continuously to a capacitance",
+                "description": "maximum voltage which may be applied continuously to a capacitor",
                 "comment": "units of volts",
                 "$ref": "../common/values.json#/valueOptions"
             },
@@ -57,6 +57,11 @@
             "equivalentSeriesResistance": {
                 "description": "equivalent series resistance (ESR) of the capacitor",
                 "comment": "units of ohms",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "powerRating": {
+                "description": "maximum power which may be applied continuously to a capacitor without degrading performance",
+                "comment": "units of watts",
                 "$ref": "../common/values.json#/valueOptions"
             },
             "temperatureCoefficient": {
