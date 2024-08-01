@@ -31,6 +31,16 @@
                 "comment": "units of volts",
                 "$ref": "../common/values.json#/valueOptions"
             },
+            "ratedReverseVoltage": {
+                "description": "maximum reverse voltage which may be applied continuously to a capacitor",
+                "comment": "units of volts",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "ratedRippleCurrent": {
+                "description": "maximum alternating current that can flow through a capacitor",
+                "comment": "units of amps",
+                "$ref": "../common/values.json#/valueOptions"
+            },
             "dielectric": {
                 "description": "dielectric material used in the capacitor",
                 "examples": [
