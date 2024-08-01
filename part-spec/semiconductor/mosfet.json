@@ -48,6 +48,26 @@
                 "comment": "units of volts",
                 "$ref": "../common/values.json#/valueOptions"
             },
+            "vgsf": {
+                "description": "forward gate to source voltage difference of a MOSFET that causes the channel resistance to decrease",
+                "comment": "units of volts",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "vgsrMax": {
+                "description": "maximum forward gate to source voltage difference of a MOSFET that causes the channel resistance to decrease. This is a limiting value",
+                "comment": "units of volts",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+              "vgsr": {
+                "description": "reverse gate to source voltage difference of a MOSFET that causes the channel resistance to increase",
+                "comment": "units of volts",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "vgsrMax": {
+                "description": "maximum reverse gate to source voltage difference of a MOSFET that causes the channel resistance to increase. This is a limiting value",
+                "comment": "units of volts",
+                "$ref": "../common/values.json#/valueOptions"
+            },
             "vds": {
                 "description": "drain to source voltage difference of a MOSFET",
                 "comment": "units of volts",
@@ -55,6 +75,21 @@
             },
             "vdsMax": {
                 "description": "maximum drain to source voltage difference that can be continuously applied to a MOSFET. This is a limiting value",
+                "comment": "units of volts",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "vdg": {
+                "description": "drain to gate voltage difference of a MOSFET",
+                "comment": "units of volts",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "vdgMax": {
+                "description":"maximum drain to gate voltage difference that can be continuously applied to a MOSFET. This is a limiting value",
+                "comment": "units of volts",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "vgsrVbr": {
+                "description": "gate to source reverse breakdown voltage of a MOSFET",
                 "comment": "units of volts",
                 "$ref": "../common/values.json#/valueOptions"
             },
