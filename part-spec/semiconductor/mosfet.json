@@ -53,7 +53,7 @@
                 "comment": "units of volts",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "vgsrMax": {
+            "vgsfMax": {
                 "description": "maximum forward gate to source voltage difference of a MOSFET that causes the channel resistance to decrease. This is a limiting value",
                 "comment": "units of volts",
                 "$ref": "../common/values.json#/valueOptions"
