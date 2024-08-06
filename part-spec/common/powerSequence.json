@@ -19,24 +19,48 @@
         "powerSequence": {
             "type": "object",
             "properties": {
-                "signal1": {
-                    "description": "Power signal that comes up first in the sequence ",
+                "powerTransitionName": {
+                    "description": "Datasheet specific name given to a particular power transition for tracking",
+                    "examples": [
+                        "tPWONVDD15",
+                        "tVDDRise"
+                    ],
                     "type": "string"
                 },
-                "signal1Pins": {
+                "signal1": {
+                    "description": "Signal that comes up first in the sequence. Also used if there is only one relevant signal for a power transition (such as rise time) ",
+                    "examples": [
+                        "vdd",
+                        "en"
+                    ],
+                    "type": "string"
+                },
+                "signal1TerminalIdentifiers": {
                     "description": "List of component pins associated with signal 1",
                     "type": "array",
+                    "examples": [
+                        "23",
+                        "A1"
+                    ],
                     "items": {
                         "$ref": "string"
                     }
                 },
                 "signal2": {
-                    "description": "Power signal that comes up second in the sequence ",
+                    "description": "Signal that comes up second in the sequence ",
+                    "examples": [
+                        "vdd",
+                        "en"
+                    ],
                     "type": "string"
                 },
-                "signal2Pins": {
+                "signal2TerminalIdentifiers": {
                     "description": "List of component pins associated with signal 2",
                     "type": "array",
+                    "examples": [
+                        "23",
+                        "A1"
+                    ],
                     "items": {
                         "$ref": "string"
                     }
@@ -53,7 +77,7 @@
                         "Down"
                     ]
                 },
-                "powerStateEntering": {
+                "nextPowerState": {
                     "description": "Power state the device enters after the signal transition",
                     "type": "string",
                     "examples": [
@@ -61,13 +85,41 @@
                         "active"
                     ]
                 },
-                "powerStateLeaving": {
-                    "description": "Power state the device leaves after the signal transition",
+                "currentPowerState": {
+                    "description": "Power state the device is currently in before the signal transition",
                     "type": "string",
                     "examples": [
                         "suspend",
                         "active"
                     ]
+                },
+                "riseTime": {
+                    "description": "Time for a signal to go from low to high",
+                    "comment": "units of time",
+                    "$ref": "../common/values.json#/valueOptions"
+                },
+                "fallTime": {
+                    "description": "Time for a signal to go from high to low",
+                    "comment": "units of time",
+                    "$ref": "../common/values.json#/valueOptions"
+                },
+                "transitionStartCondition": {
+                    "description": "The percentage of max voltage where rise or fall time starts being measured for timing",
+                    "examples": [
+                        "10%",
+                        "90%"
+                    ],
+                    "comment": "units of percentage",
+                    "$ref": "../common/values.json#/valueOptions"
+                },
+                "transitionEndCondition": {
+                    "description": "The percentage of max voltage where rise or fall time stops being measured for timing",
+                    "examples": [
+                        "90%",
+                        "10%"
+                    ],
+                    "comment": "units of percentage",
+                    "$ref": "../common/values.json#/valueOptions"
                 }
             },
             "additionalProperties": false
