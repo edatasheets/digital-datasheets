@@ -44,21 +44,6 @@
                     "type": "string"
                 }
             },
-            "operatingTemperature": {
-                "description": "maximum operating temperature of a part",
-                "comment": "units of degrees C",
-                "$ref": "../common/values.json#/valueOptions"
-            },
-            "thermalDesignPower": {
-                "description": "power at which thermal compliance should be evaluated at steady-state",
-                "comment": "units of watts",
-                "$ref": "../common/values.json#/valueOptions"
-            },
-            "peakPower": {
-                "description": "maximum transient power the part will dissipate",
-                "comment": "units of watts",
-                "$ref": "../common/values.json#/valueOptions"
-            },
             "accuracy": {
                 "description": "accuracy of temperature sensor",
                 "comment": "units of degrees C",
