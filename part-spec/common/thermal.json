@@ -74,6 +74,16 @@
                 "description": "thermal resistance between the package surface of a part and the ambient air",
                 "comment": "units of Celsius/watt or kelvin/watt",
                 "$ref": "../common/values.json#/valueOptions"
+            },
+            "thermalDesignPower": {
+                "description": "power at which thermal compliance should be evaluated at steady-state",
+                "comment": "units of watts",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "peakPower": {
+                "description": "maximum transient power the part will dissipate",
+                "comment": "units of watts",
+                "$ref": "../common/values.json#/valueOptions"
             }
         },
         "additionalProperties": false
