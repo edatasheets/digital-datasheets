@@ -27,6 +27,10 @@
                     ],
                     "type": "string"
                 },
+                "powerTransitionDescription": {
+                    "description": "Description of power transition",
+                    "type": "string"
+                },
                 "signal1": {
                     "description": "Signal that comes up first in the sequence. Also used if there is only one relevant signal for a power transition (such as rise time) ",
                     "examples": [
