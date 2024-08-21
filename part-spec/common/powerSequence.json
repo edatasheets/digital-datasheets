@@ -20,7 +20,7 @@
             "type": "object",
             "properties": {
                 "powerTransitionName": {
-                    "description": "Datasheet specific name given to a particular power transition for tracking",
+                    "description": "datasheet specific name given to a particular power transition for tracking",
                     "examples": [
                         "tPWONVDD15",
                         "tVDDRise"
@@ -28,11 +28,11 @@
                     "type": "string"
                 },
                 "powerTransitionDescription": {
-                    "description": "Description of power transition",
+                    "description": "description of power transition",
                     "type": "string"
                 },
                 "signal1": {
-                    "description": "Signal that comes up first in the sequence. Also used if there is only one relevant signal for a power transition (such as rise time) ",
+                    "description": "signal that comes up first in the sequence. Also used if there is only one relevant signal for a power transition (such as rise time) ",
                     "examples": [
                         "vdd",
                         "en"
@@ -40,18 +40,18 @@
                     "type": "string"
                 },
                 "signal1TerminalIdentifiers": {
-                    "description": "List of component pins associated with signal 1",
+                    "description": "list of component pins associated with signal 1",
                     "type": "array",
                     "examples": [
                         "23",
                         "A1"
                     ],
                     "items": {
-                        "$ref": "string"
+                        "type": "string"
                     }
                 },
                 "signal2": {
-                    "description": "Signal that comes up second in the sequence ",
+                    "description": "signal that comes up second in the sequence ",
                     "examples": [
                         "vdd",
                         "en"
@@ -59,30 +59,30 @@
                     "type": "string"
                 },
                 "signal2TerminalIdentifiers": {
-                    "description": "List of component pins associated with signal 2",
+                    "description": "list of component pins associated with signal 2",
                     "type": "array",
                     "examples": [
                         "23",
                         "A1"
                     ],
                     "items": {
-                        "$ref": "string"
+                        "type": "string"
                     }
                 },
                 "timeCondition": {
-                    "description": "Time between the the signal 1 and signal 2 event",
+                    "description": "time between the signal 1 and signal 2 events",
                     "comment": "units of time",
                     "$ref": "../common/values.json#/valueOptions"
                 },
                 "powerDirection": {
-                    "description": "Whether this is a power up or power down event",
+                    "description": "whether this is a power up or power down event",
                     "enum": [
-                        "Up",
-                        "Down"
+                        "up",
+                        "down"
                     ]
                 },
                 "nextPowerState": {
-                    "description": "Power state the device enters after the signal transition",
+                    "description": "power state the device enters after the signal transition",
                     "type": "string",
                     "examples": [
                         "suspend",
@@ -90,7 +90,7 @@
                     ]
                 },
                 "currentPowerState": {
-                    "description": "Power state the device is currently in before the signal transition",
+                    "description": "power state the device is currently in before the signal transition",
                     "type": "string",
                     "examples": [
                         "suspend",
@@ -98,17 +98,22 @@
                     ]
                 },
                 "riseTime": {
-                    "description": "Time for a signal to go from low to high",
+                    "description": "time for a signal to go from low to high (signal 1 only)",
                     "comment": "units of time",
                     "$ref": "../common/values.json#/valueOptions"
                 },
+                "slewRate": {
+                    "description": "maximum rate at which a voltrage rail changes per time (signal 1 only)",
+                    "comment": "units of voltage per time",
+                    "$ref": "../common/values.json#/valueOptions"
+                },
                 "fallTime": {
-                    "description": "Time for a signal to go from high to low",
+                    "description": "time for a signal to go from high to low (signal 1 only)",
                     "comment": "units of time",
                     "$ref": "../common/values.json#/valueOptions"
                 },
                 "transitionStartCondition": {
-                    "description": "The percentage of max voltage where rise or fall time starts being measured for timing",
+                    "description": "the percentage of max voltage where rise or fall time starts being measured for timing (signal 1 only)",
                     "examples": [
                         "10%",
                         "90%"
@@ -117,7 +122,7 @@
                     "$ref": "../common/values.json#/valueOptions"
                 },
                 "transitionEndCondition": {
-                    "description": "The percentage of max voltage where rise or fall time stops being measured for timing",
+                    "description": "the percentage of max voltage where rise or fall time stops being measured for timing (signal 1 only)",
                     "examples": [
                         "90%",
                         "10%"
