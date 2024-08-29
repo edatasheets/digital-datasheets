@@ -117,23 +117,23 @@
           "comment": "units of volts",
           "$ref": "../common/values.json#/valueOptions"
         },
-        "vmax": {
-          "description": "maximum continuous voltage that can safely be applied to a pin",
+        "voltageOperatingRange": {
+          "description": "voltage operating range that can safely be applied to a pin",
           "comment": "units of volts",
           "$ref": "../common/values.json#/valueOptions"
         },
-        "imax": {
-          "description": "maximum continuous current that can safely be drawn from a pin",
+        "currentRange": {
+          "description": "current range that can safely be drawn/injected from/to a pin",
           "comment": "units of amps",
           "$ref": "../common/values.json#/valueOptions"
         },
         "inputLeakage": {
-          "description": "maximum current draw out of a high impedance input pin",
+          "description": "current draw out of a high impedance input pin",
           "comment": "units of amps",
           "$ref": "../common/values.json#/valueOptions"
         },
         "outputLeakage": {
-          "description": "maximum current flow from a pin during the off state",
+          "description": "current flow from a pin during the off state",
           "comment": "units of amps",
           "$ref": "../common/values.json#/valueOptions"
         },
