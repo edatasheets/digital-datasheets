@@ -10,7 +10,7 @@
     ],
     "properties": {
       "terminalIdentifier": {
-        "description": "pin or ball number as defined by datasheet",
+        "description": "pin or ball number(s) as defined by datasheet",
         "type": "array",
         "items": {
           "type": "string"
@@ -43,10 +43,7 @@
       },
       "pinProperties": {
         "description": "list of properties for each pin",
-        "type": "array",
-        "items": {
-          "$ref": "#/$defs/pinProperties"
-        }
+        "$ref": "#/$defs/pinProperties" 
       },
       "functionProperties": {
         "description": "list of properties for each pin function configuration",
@@ -77,9 +74,7 @@
         },
         "perFunctionProperties": {
           "description": "list of pin properties that change based on the pin function configuration",
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/pinProperties"
+          "$ref": "#/$defs/pinProperties"
           }
         }
       }
