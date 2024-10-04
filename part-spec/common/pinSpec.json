@@ -43,7 +43,7 @@
       },
       "pinProperties": {
         "description": "list of properties for each pin",
-        "$ref": "#/$defs/pinProperties" 
+        "$ref": "#/$defs/pinProperties"
       },
       "functionProperties": {
         "description": "list of properties for each pin function configuration",
@@ -75,7 +75,6 @@
         "perFunctionProperties": {
           "description": "list of pin properties that change based on the pin function configuration",
           "$ref": "#/$defs/pinProperties"
-          }
         }
       }
     },
