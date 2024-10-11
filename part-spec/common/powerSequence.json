@@ -98,22 +98,22 @@
                     ]
                 },
                 "riseTime": {
-                    "description": "time for a signal to go from low to high (signal 1 only)",
+                    "description": "time for a signal to go from low to high (only applies to one signal)",
                     "comment": "units of time",
                     "$ref": "../common/values.json#/valueOptions"
                 },
                 "slewRate": {
-                    "description": "maximum rate at which a voltrage rail changes per time (signal 1 only)",
+                    "description": "maximum rate at which a voltage rail changes per time (only applies to one signal)",
                     "comment": "units of voltage per time",
                     "$ref": "../common/values.json#/valueOptions"
                 },
                 "fallTime": {
-                    "description": "time for a signal to go from high to low (signal 1 only)",
+                    "description": "time for a signal to go from high to low (only applies to one signal)",
                     "comment": "units of time",
                     "$ref": "../common/values.json#/valueOptions"
                 },
                 "transitionStartCondition": {
-                    "description": "the percentage of max voltage where rise or fall time starts being measured for timing (signal 1 only)",
+                    "description": "the percentage of max voltage where rise or fall time starts being measured for timing (only applies to one signal)",
                     "examples": [
                         "10%",
                         "90%"
@@ -122,7 +122,7 @@
                     "$ref": "../common/values.json#/valueOptions"
                 },
                 "transitionEndCondition": {
-                    "description": "the percentage of max voltage where rise or fall time stops being measured for timing (signal 1 only)",
+                    "description": "the percentage of max voltage where rise or fall time stops being measured for timing (only applies to one signal)",
                     "examples": [
                         "90%",
                         "10%"

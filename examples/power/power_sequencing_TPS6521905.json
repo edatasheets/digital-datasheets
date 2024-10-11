@@ -219,45 +219,6 @@
             "powerDirection": "up"
         },
         {
-            "powerTransitionDescription": "LDO2 to MCU_OSC0_XI (internal oscillator) time",
-            "signal1": "LDO2",
-            "signal1TerminalIdentifiers": [
-                "19"
-            ],
-            "signal2": "MCU_OSC0_XI",
-            "timeCondition": {
-                "values": [
-                    {
-                        "siUnit": "second",
-                        "typValue": 1.5,
-                        "unitFactor": 1e-3
-                    }
-                ]
-            },
-            "powerDirection": "up"
-        },
-        {
-            "powerTransitionDescription": "LDO2 to nRSTOUT time",
-            "signal1": "LDO2",
-            "signal1TerminalIdentifiers": [
-                "19"
-            ],
-            "signal2": "nRSTOUT",
-            "signal2TerminalIdentifiers": [
-                "18"
-            ],
-            "timeCondition": {
-                "values": [
-                    {
-                        "siUnit": "second",
-                        "typValue": 1.5,
-                        "unitFactor": 1e-3
-                    }
-                ]
-            },
-            "powerDirection": "up"
-        },
-        {
             "powerTransitionDescription": "nRSTOUT to RESET is relevant time",
             "signal1": "nRSTOUT",
             "signal1TerminalIdentifiers": [
@@ -271,7 +232,7 @@
                 "values": [
                     {
                         "siUnit": "second",
-                        "typValue": 1.5,
+                        "typValue": 10,
                         "unitFactor": 1e-3
                     }
                 ]
@@ -292,7 +253,7 @@
                 "values": [
                     {
                         "siUnit": "second",
-                        "typValue": 1.5,
+                        "typValue": 10,
                         "unitFactor": 1e-3
                     }
                 ]
