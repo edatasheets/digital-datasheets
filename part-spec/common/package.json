@@ -20,24 +20,6 @@
                 "$comment": "units of millimeter",
                 "$ref": "../common/values.json#/valueOptions"
             },
-            "nominalFootprints": {
-                "description": "references to external footprints in standard CAD formats",
-                "type": "array",
-                "items": {
-                    "$ref": "../common/externalFile.json#/externalFile"
-                }
-            },
-            "breakoutExamples": {
-                "description": "references to external board file that contains layout breakout example",
-                "type": "array",
-                "items": {
-                    "$ref": "../common/externalFile.json#/externalFile"
-                }
-            },
-            "partModelInformation": {
-                "description": "reference to an external XML file that contains a part model in IPC/DAC2552 format",
-                "$ref": "../common/externalFile.json#/externalFile"
-            },
             "standardPackageSize": {
                 "description": "name of standard package size (imperial)",
                 "type": "string",
