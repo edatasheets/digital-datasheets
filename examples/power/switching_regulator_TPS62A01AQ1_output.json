@@ -1,493 +1,517 @@
 {
-    "componentID": {
-        "partType": "switching_regulator",
-        "manufacturer": "Texas Instruments",
-        "componentName": "TPS62A01A-Q1",
-        "orderableMPN": [
-            "TPS62A01AQDRLRQ1"
-        ],
-        "sourceDatasheetID": {
-            "publishedDate": "2023-11-01",
-            "version": "A",
-            "datasheetURI": "https://www.ti.com/document-viewer/TPS62A01A-Q1/datasheet",
-            "productURI": "https://www.ti.com/product/TPS62A01A-Q1"
-        },
-        "digitalDatasheetID": {
-            "publishedDate": "2024-03-31",
-            "eDatasheetSpecRevision": "1.0"
-        },
-        "status": "production",
-        "complianceList": [
-            "RoHS",
-            "Green"
-        ]
-    },
-    "pins": [
-        {
-            "terminalIdentifier": "1",
-            "name": "GND",
-            "numberOfSupportedFunctions": 1,
-            "description": "Ground pin"
-        },
-        {
-            "terminalIdentifier": "2",
-            "name": "SW",
-            "numberOfSupportedFunctions": 1,
-            "description": "Switch pin connected to the internal FET switches and inductor terminal. Connect the inductor of the output filter to this pin.",
-            "functionProperties": [
-                {
-                    "direction": "out"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "relativeValueReference": "VIN",
-                        "relativeValueModifier": 0.3,
-                        "relativeValueOperator": "add",
-                        "conditions": [
-                            "DC",
-                            "maxValue = VIN+0.3"
-                        ]
-                    },
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 10,
-                        "conditions": [
-                            "transient <10ns"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "conditions": [
-                            "DC"
-                        ]
-                    },
-                    {
-                        "siUnit": "volt",
-                        "minValue": -3,
-                        "conditions": [
-                            "transient<10ns"
-                        ]
-                    }
-                ]
-            },
-            "vmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": 0.6,
-                        "relativeValueReference": "VIN",
-                        "relativeValueModifier": 0,
-                        "relativeValueOperator": "add",
-                        "conditions": [
-                            "SWmax=VIN"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "3",
-            "name": "VIN",
-            "numberOfSupportedFunctions": 1,
-            "description": "Power supply voltage pin",
-            "functionProperties": [
-                {
-                    "direction": "in"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 6
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "vmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 5.5
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "4",
-            "name": "EN",
-            "numberOfSupportedFunctions": 1,
-            "description": "Device enable logic input. Logic high enables the device. Logic low disables the device and turns the device into shutdown. Do not leave the pin floating.",
-            "functionProperties": [
-                {
-                    "direction": "in",
-                    "polarity": "high"
-                }
-            ],
-            "vih": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": 1.2,
-                        "conditions": [
-                            "EN rising"
-                        ]
-                    }
-                ]
-            },
-            "vil": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 0.4,
-                        "conditions": [
-                            "EN falling"
-                        ]
-                    }
-                ]
-            },
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 6
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "inputLeakage": {
-                "values": [
-                    {
-                        "siUnit": "microamp",
-                        "maxValue": 100,
-                        "unitFactor": 0.001,
-                        "conditions": [
-                            "VIN=5V"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "5",
-            "name": "FB",
-            "numberOfSupportedFunctions": 1,
-            "description": "Feedback pin for the internal control loop. Connect this pin to an external feedback divider",
-            "functionProperties": [
-                {
-                    "direction": "in"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 3
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "inputLeakage": {
-                "values": [
-                    {
-                        "siUnit": "microamp",
-                        "maxValue": 250,
-                        "unitFactor": 0.001,
-                        "conditions": [
-                            "VFB=0.6V"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "6",
-            "name": "PG",
-            "numberOfSupportedFunctions": 1,
-            "description": "Power-good open-drain output pin. The pullup resistor cannot be connected to any voltage higher than 5.5 V. If unused, leave the pin open or connect to GND.",
-            "functionProperties": [
-                {
-                    "direction": "out"
-                }
-            ],
-            "vol": {
-                "values": [
-                    {
-                        "siUnit": "millivolt",
-                        "maxValue": 400,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "PG=1mA"
-                        ]
-                    }
-                ]
-            },
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 6
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "outputLeakage": {
-                "values": [
-                    {
-                        "siUnit": "microamp",
-                        "maxValue": 100,
-                        "unitFactor": 0.001,
-                        "conditions": [
-                            "open drain output is high",
-                            "VPG=5V"
-                        ]
-                    }
-                ]
-            }
-        }
+  "componentID": {
+    "partType": "switching_regulator",
+    "manufacturer": "Texas Instruments",
+    "componentName": "TPS62A01A-Q1",
+    "orderableMPN": [
+      "TPS62A01AQDRLRQ1"
     ],
-    "coreProperties": {
-        "regulatorTopology": "buck",
-        "integratedFets": true,
-        "vin": {
-            "values": [
-                {
-                    "siUnit": "volt",
-                    "minValue": 2.5,
-                    "maxValue": 5.5,
-                    "unitFactor": 1
-                }
-            ]
-        },
-        "vout": {
-            "values": [
-                {
-                    "siUnit": "volt",
-                    "minValue": 0.6,
-                    "relativeValueReference": "VIN",
-                    "relativeValueModifier": 0,
-                    "relativeValueOperator": "add",
-                    "conditions": [
-                        "VOUT Max =VIN"
-                    ]
-                }
-            ]
-        },
-        "feedbackVoltage": {
-            "values": [
-                {
-                    "typValue": 600,
-                    "siUnit": "millivolt",
-                    "minValue": 591,
-                    "maxValue": 609,
-                    "unitFactor": 1,
-                    "conditions": [
-                        "PWM mode"
-                    ]
-                }
-            ]
-        },
-        "loadCurrent": {
-            "values": [
-                {
-                    "siUnit": "amp",
-                    "minValue": 0,
-                    "maxValue": 1,
-                    "conditions": [
-                        "PSM and PWM modes"
-                    ]
-                }
-            ]
-        },
-        "switchingFrequency": {
-            "values": [
-                {
-                    "typValue": 2400,
-                    "siUnit": "kilohertz",
-                    "conditions": [
-                        "Vin=5V",
-                        "Vout=1.8V",
-                        "FPWM operation"
-                    ]
-                }
-            ]
-        },
-        "enableTime": {
-            "values": [
-                {
-                    "maxValue": 1,
-                    "siUnit": "millisecond",
-                    "unitFactor": 1,
-                    "conditions": [
-                        "From EN=High to VFB=0.56V"
-                    ]
-                }
-            ]
-        },
-        "partType": "switching_regulator",
-        "componentProtectionThresholds": {
-            "thermalShutdownThresholdRising": {
-                "values": [
-                    {
-                        "typValue": 170,
-                        "siUnit": "celsius",
-                        "conditions": [
-                            "Temperature rising"
-                        ]
-                    }
-                ]
-            },
-            "thermalShutdownHysteresis": {
-                "values": [
-                    {
-                        "typValue": 20,
-                        "siUnit": "celsius"
-                    }
-                ]
-            }
-        },
-        "currentConsumption": {
-            "supplyName": "VIN",
-            "quiescentCurrent": {
-                "values": [
-                    {
-                        "typValue": 23,
-                        "siUnit": "microamp",
-                        "unitFactor": 1,
-                        "conditions": [
-                            "VIN=5V",
-                            "Non-switching",
-                            "VEN=High",
-                            "VFB=610mV"
-                        ]
-                    }
-                ]
-            },
-            "shutdownCurrent": {
-                "values": [
-                    {
-                        "typValue": 0.01,
-                        "siUnit": "microamp",
-                        "maxValue": 4,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Vin=5V",
-                            "VEN=Low"
-                        ]
-                    }
-                ]
-            }
-        },
-        "integratedFetProperties": {
-            "singlePowerFetPair": {
-                "ilimHSFET": {
-                    "values": [
-                        {
-                            "typValue": 1.8,
-                            "siUnit": "amp",
-                            "minValue": 1.5
-                        }
-                    ]
-                },
-                "ilimLSFET": {
-                    "values": [
-                        {
-                            "typValue": 1.8,
-                            "siUnit": "amp"
-                        }
-                    ]
-                },
-                "rdsonHSFET": {
-                    "values": [
-                        {
-                            "typValue": 100,
-                            "siUnit": "milliohm",
-                            "conditions": [
-                                "VIN=5V"
-                            ]
-                        }
-                    ]
-                },
-                "rdsonLSFET": {
-                    "values": [
-                        {
-                            "typValue": 67,
-                            "siUnit": "milliohm",
-                            "conditions": [
-                                "VIN=5V"
-                            ]
-                        }
-                    ]
-                }
-            }
-        }
+    "sourceDatasheetID": {
+      "publishedDate": "2023-11-01",
+      "version": "A",
+      "datasheetURI": "https://www.ti.com/document-viewer/TPS62A01A-Q1/datasheet",
+      "productURI": "https://www.ti.com/product/TPS62A01A-Q1"
     },
-    "package": {
-        "length": {
-            "values": [
-                {
-                    "typValue": 1.6,
-                    "siUnit": "millimeter",
-                    "minValue": 1.7,
-                    "maxValue": 1.5
-                }
-            ]
+    "digitalDatasheetID": {
+      "publishedDate": "2024-03-31",
+      "eDatasheetSpecRevision": "1.0"
+    },
+    "status": "production",
+    "complianceList": [
+      "RoHS",
+      "Green"
+    ]
+  },
+  "coreProperties": {
+    "componentProtectionThresholds": {
+      "thermalShutdownHysteresis": {
+        "values": [
+          {
+            "siUnit": "celsius",
+            "typValue": 20
+          }
+        ]
+      },
+      "thermalShutdownThresholdRising": {
+        "values": [
+          {
+            "conditions": [
+              "Temperature rising"
+            ],
+            "siUnit": "celsius",
+            "typValue": 170
+          }
+        ]
+      }
+    },
+    "currentConsumption": [
+      {
+        "quiescentCurrent": {
+          "values": [
+            {
+              "conditions": [
+                "VIN=5V",
+                "Non-switching",
+                "VEN=High",
+                "VFB=610mV"
+              ],
+              "siUnit": "microamp",
+              "typValue": 23,
+              "unitFactor": 1
+            }
+          ]
         },
-        "width": {
-            "values": [
-                {
-                    "typValue": 1.6,
-                    "siUnit": "millimeter",
-                    "minValue": 1.7,
-                    "maxValue": 1.5
-                }
-            ]
+        "shutdownCurrent": {
+          "values": [
+            {
+              "conditions": [
+                "Vin=5V",
+                "VEN=Low"
+              ],
+              "maxValue": 4,
+              "siUnit": "microamp",
+              "typValue": 0.01,
+              "unitFactor": 1
+            }
+          ]
         },
-        "height": {
-            "values": [
-                {
-                    "siUnit": "millimeter",
-                    "maxValue": 0.6
-                }
-            ]
+        "supplyName": "VIN"
+      }
+    ],
+    "enableTime": {
+      "values": [
+        {
+          "conditions": [
+            "From EN=High to VFB=0.56V"
+          ],
+          "maxValue": 1,
+          "siUnit": "millisecond",
+          "unitFactor": 1
+        }
+      ]
+    },
+    "feedbackVoltage": {
+      "values": [
+        {
+          "conditions": [
+            "PWM mode"
+          ],
+          "maxValue": 609,
+          "minValue": 591,
+          "siUnit": "millivolt",
+          "typValue": 600,
+          "unitFactor": 1
+        }
+      ]
+    },
+    "integratedFetProperties": {
+      "singlePowerFetPair": {
+        "ilimHSFET": {
+          "values": [
+            {
+              "minValue": 1.5,
+              "siUnit": "amp",
+              "typValue": 1.8
+            }
+          ]
         },
-        "standardPackageSize": "1.60mmx1.60mm",
-        "standardPackageType": "SOT-563"
+        "ilimLSFET": {
+          "values": [
+            {
+              "siUnit": "amp",
+              "typValue": 1.8
+            }
+          ]
+        },
+        "rdsonHSFET": {
+          "values": [
+            {
+              "conditions": [
+                "VIN=5V"
+              ],
+              "siUnit": "milliohm",
+              "typValue": 100
+            }
+          ]
+        },
+        "rdsonLSFET": {
+          "values": [
+            {
+              "conditions": [
+                "VIN=5V"
+              ],
+              "siUnit": "milliohm",
+              "typValue": 67
+            }
+          ]
+        }
+      }
+    },
+    "integratedFets": true,
+    "loadCurrent": {
+      "values": [
+        {
+          "conditions": [
+            "PSM and PWM modes"
+          ],
+          "maxValue": 1,
+          "minValue": 0,
+          "siUnit": "amp"
+        }
+      ]
+    },
+    "partType": "switching_regulator",
+    "regulatorTopology": "buck",
+    "switchingFrequency": {
+      "values": [
+        {
+          "conditions": [
+            "Vin=5V",
+            "Vout=1.8V",
+            "FPWM operation"
+          ],
+          "siUnit": "kilohertz",
+          "typValue": 2400
+        }
+      ]
+    },
+    "vin": {
+      "values": [
+        {
+          "maxValue": 5.5,
+          "minValue": 2.5,
+          "siUnit": "volt",
+          "unitFactor": 1
+        }
+      ]
+    },
+    "vout": {
+      "values": [
+        {
+          "conditions": [
+            "VOUT Max =VIN"
+          ],
+          "minValue": 0.6,
+          "relativeValueModifier": 0,
+          "relativeValueOperator": "add",
+          "relativeValueReference": "VIN",
+          "siUnit": "volt"
+        }
+      ]
     }
+  },
+  "pins": [
+    {
+      "terminalIdentifier": [
+        "1"
+      ],
+      "name": "GND",
+      "numberOfSupportedFunctions": 1,
+      "description": "Ground pin"
+    },
+    {
+      "terminalIdentifier": [
+        "2"
+      ],
+      "name": "SW",
+      "numberOfSupportedFunctions": 1,
+      "description": "Switch pin connected to the internal FET switches and inductor terminal. Connect the inductor of the output filter to this pin.",
+      "functionProperties": [
+        {
+          "direction": "out"
+        }
+      ],
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "relativeValueReference": "VIN",
+              "relativeValueModifier": 0.3,
+              "relativeValueOperator": "add",
+              "conditions": [
+                "DC",
+                "maxValue = VIN+0.3"
+              ]
+            },
+            {
+              "siUnit": "volt",
+              "maxValue": 10,
+              "conditions": [
+                "transient <10ns"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "conditions": [
+                "DC"
+              ]
+            },
+            {
+              "siUnit": "volt",
+              "minValue": -3,
+              "conditions": [
+                "transient<10ns"
+              ]
+            }
+          ]
+        },
+        "vmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": 0.6,
+              "relativeValueReference": "VIN",
+              "relativeValueModifier": 0,
+              "relativeValueOperator": "add",
+              "conditions": [
+                "SWmax=VIN"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "3"
+      ],
+      "name": "VIN",
+      "numberOfSupportedFunctions": 1,
+      "description": "Power supply voltage pin",
+      "functionProperties": [
+        {
+          "direction": "in"
+        }
+      ],
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 6
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "vmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 5.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "4"
+      ],
+      "name": "EN",
+      "numberOfSupportedFunctions": 1,
+      "description": "Device enable logic input. Logic high enables the device. Logic low disables the device and turns the device into shutdown. Do not leave the pin floating.",
+      "functionProperties": [
+        {
+          "direction": "in",
+          "polarity": "high"
+        }
+      ],
+      "pinProperties": {
+        "vih": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": 1.2,
+              "conditions": [
+                "EN rising"
+              ]
+            }
+          ]
+        },
+        "vil": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 0.4,
+              "conditions": [
+                "EN falling"
+              ]
+            }
+          ]
+        },
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 6
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "inputLeakage": {
+          "values": [
+            {
+              "siUnit": "microamp",
+              "maxValue": 100,
+              "unitFactor": 0.001,
+              "conditions": [
+                "VIN=5V"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "5"
+      ],
+      "name": "FB",
+      "numberOfSupportedFunctions": 1,
+      "description": "Feedback pin for the internal control loop. Connect this pin to an external feedback divider",
+      "functionProperties": [
+        {
+          "direction": "in"
+        }
+      ],
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 3
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "inputLeakage": {
+          "values": [
+            {
+              "siUnit": "microamp",
+              "maxValue": 250,
+              "unitFactor": 0.001,
+              "conditions": [
+                "VFB=0.6V"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "6"
+      ],
+      "name": "PG",
+      "numberOfSupportedFunctions": 1,
+      "description": "Power-good open-drain output pin. The pullup resistor cannot be connected to any voltage higher than 5.5 V. If unused, leave the pin open or connect to GND.",
+      "functionProperties": [
+        {
+          "direction": "out"
+        }
+      ],
+      "pinProperties": {
+        "vol": {
+          "values": [
+            {
+              "siUnit": "millivolt",
+              "maxValue": 400,
+              "unitFactor": 1,
+              "conditions": [
+                "PG=1mA"
+              ]
+            }
+          ]
+        },
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 6
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "outputLeakage": {
+          "values": [
+            {
+              "siUnit": "microamp",
+              "maxValue": 100,
+              "unitFactor": 0.001,
+              "conditions": [
+                "open drain output is high",
+                "VPG=5V"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "package": {
+    "length": {
+      "values": [
+        {
+          "siUnit": "millimeter",
+          "typValue": 1.6,
+          "minValue": 1.7,
+          "maxValue": 1.5
+        }
+      ]
+    },
+    "width": {
+      "values": [
+        {
+          "siUnit": "millimeter",
+          "typValue": 1.6,
+          "minValue": 1.7,
+          "maxValue": 1.5
+        }
+      ]
+    },
+    "height": {
+      "values": [
+        {
+          "siUnit": "millimeter",
+          "maxValue": 0.6
+        }
+      ]
+    },
+    "standardPackageSize": "1.60mmx1.60mm",
+    "standardPackageType": "SOT-563"
+  }
 }

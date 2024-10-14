@@ -1,2362 +1,2477 @@
 {
-    "componentID": {
-        "partType": "battery charger",
-        "manufacturer": "Monolithic Power Systems",
-        "componentName": "MP2651",
-        "orderableMPN": [
-            "MP2651GVT-040A"
-        ],
-        "sourceDatasheetID": {
-            "publishedDate": "2023-06-15",
-            "version": "1.1",
-            "datasheetURI": "https://www.monolithicpower.com/en/documentview/productdocument/index/version/2/document_type/Datasheet/lang/en/sku/MP2651GVT/document_id/9948/",
-            "productURI": "https://www.monolithicpower.com/en/products/battery-management/chargers/mp2651.html"
-        },
-        "digitalDatasheetID": {
-            "publishedDate": "2024-03-31",
-            "eDatasheetSpecRevision": "1.0"
-        },
-        "status": "production"
-    },
-    "coreProperties": {
-        "chargerType": "switching",
-        "converterType": "buck-boost",
-        "batteryConfig": [
-            "1S",
-            "2S",
-            "3S",
-            "4S"
-        ],
-        "integratedFets": true,
-        "integratedLoadSwitch": false,
-        "tcpcSupport": false,
-        "vin": {
-            "values": [
-                {
-                    "siUnit": "volt",
-                    "minValue": 4,
-                    "maxValue": 22,
-                    "unitFactor": 1
-                }
-            ]
-        },
-        "inputCurrentAccuracy": {
-            "values": [
-                {
-                    "typValue": 0.43,
-                    "siUnit": "amp",
-                    "minValue": 0.368,
-                    "maxValue": 0.5,
-                    "unitFactor": 1,
-                    "conditions": [
-                        "REG08h and bits[6:0]=0001010",
-                        "Iin_lim=0.5A"
-                    ]
-                },
-                {
-                    "typValue": 0.82,
-                    "siUnit": "amp",
-                    "minValue": 0.768,
-                    "maxValue": 0.9,
-                    "unitFactor": 1,
-                    "conditions": [
-                        "REG08h and bits[6:0]=0010010",
-                        "Iin_lim=0.9A"
-                    ]
-                },
-                {
-                    "typValue": 1.41,
-                    "siUnit": "amp",
-                    "minValue": 1.32,
-                    "maxValue": 1.5,
-                    "conditions": [
-                        "REG08h and bits[6:0]=0011110",
-                        "Iin_lim=1.5A"
-                    ]
-                },
-                {
-                    "typValue": 2.87,
-                    "siUnit": "amp",
-                    "minValue": 2.76,
-                    "maxValue": 2.98,
-                    "conditions": [
-                        "REG08h and bits[6:0]=0111100",
-                        "Iin_lim=3A"
-                    ]
-                },
-                {
-                    "typValue": 4.836,
-                    "siUnit": "amp",
-                    "minValue": 4.688,
-                    "maxValue": 4.98,
-                    "conditions": [
-                        "REG08h and bits[6:0]=1100100",
-                        "Ilin_lim=5A"
-                    ]
-                }
-            ]
-        },
-        "batteryChargeCurrent": {
-            "values": [
-                {
-                    "siUnit": "amp",
-                    "minValue": 0,
-                    "maxValue": 6.35,
-                    "conditions": [
-                        "RS2=10mohms",
-                        "REG10h bit[7]=0"
-                    ]
-                }
-            ]
-        },
-        "batteryChargeCurrentAccuracy": {
-            "values": [
-                {
-                    "typValue": 6,
-                    "siUnit": "amp",
-                    "minValue": 5.79,
-                    "maxValue": 6.2,
-                    "conditions": [
-                        "ICC = 6A",
-                        "REG14h",
-                        "bits[13:6] = 0111 1000"
-                    ]
-                },
-                {
-                    "typValue": 3,
-                    "siUnit": "amp",
-                    "minValue": 2.84,
-                    "maxValue": 3.14,
-                    "conditions": [
-                        "ICC = 3A",
-                        "REG14h",
-                        "bits[13:6] = 0011 1100"
-                    ]
-                },
-                {
-                    "typValue": 2,
-                    "siUnit": "amp",
-                    "minValue": 1.88,
-                    "maxValue": 2.13,
-                    "conditions": [
-                        "ICC = 2A",
-                        "REG14h",
-                        "bits[13:6] = 0010 1000"
-                    ]
-                },
-                {
-                    "typValue": 0.5,
-                    "siUnit": "amp",
-                    "minValue": 0.4,
-                    "maxValue": 0.6,
-                    "conditions": [
-                        "ICC = 500mA",
-                        "REG14h",
-                        "bits[13:6] = 0000 1010"
-                    ]
-                }
-            ]
-        },
-        "batteryPreChargeCurrent": {
-            "values": [
-                {
-                    "siUnit": "amp",
-                    "minValue": 0,
-                    "maxValue": 1.5,
-                    "unitFactor": 1,
-                    "conditions": [
-                        "RS2=10mohms",
-                        "REG10h",
-                        "bit[7]=0"
-                    ]
-                }
-            ]
-        },
-        "batteryPreChargeCurrentAccuracy": {
-            "values": [
-                {
-                    "siUnit": "percentage",
-                    "minValue": -20,
-                    "maxValue": 20,
-                    "unitFactor": 1,
-                    "conditions": [
-                        "VBATT = 5V",
-                        "IPRE = 300mA",
-                        "REG0Fh",
-                        "bits[7:4] = 0011"
-                    ]
-                },
-                {
-                    "siUnit": "percentage",
-                    "minValue": -15,
-                    "maxValue": 15,
-                    "conditions": [
-                        "VBATT = 5V",
-                        "IPRE = 500mA",
-                        "REG0Fh",
-                        "bits[7:4] = 0101"
-                    ]
-                }
-            ]
-        },
-        "batteryTrickleChargeCurrent": {
-            "values": [
-                {
-                    "siUnit": "milliamp",
-                    "minValue": 0,
-                    "maxValue": 750,
-                    "unitFactor": 1,
-                    "conditions": [
-                        "RS2=10mohms",
-                        "REG10h",
-                        "bit[7]=0"
-                    ]
-                }
-            ]
-        },
-        "batteryTrickleChargeCurrentAccuracy": {
-            "values": [
-                {
-                    "typValue": 100,
-                    "siUnit": "milliamp",
-                    "minValue": 50,
-                    "maxValue": 160,
-                    "unitFactor": 1,
-                    "conditions": [
-                        "BATT = 5V",
-                        "REG0Fh",
-                        "bits[11:8] = 0010",
-                        "ITC = 100mA"
-                    ]
-                }
-            ]
-        },
-        "batteryTerminationChargeCurrentAccuracy": {
-            "values": [
-                {
-                    "typValue": 120,
-                    "siUnit": "milliamp",
-                    "minValue": 60,
-                    "maxValue": 180,
-                    "conditions": [
-                        "ITERM = 100mA",
-                        "REG0Fh",
-                        "bits[3:0] = 0010"
-                    ]
-                },
-                {
-                    "typValue": 220,
-                    "siUnit": "milliamp",
-                    "minValue": 160,
-                    "maxValue": 290,
-                    "conditions": [
-                        "ITERM = 200mA",
-                        "REG0Fh",
-                        "bits[3:0] = 0100"
-                    ]
-                },
-                {
-                    "typValue": 420,
-                    "siUnit": "milliamp",
-                    "minValue": 360,
-                    "maxValue": 490,
-                    "conditions": [
-                        "ITERM = 400mA",
-                        "REG0Fh",
-                        "bits[3:0] = 1000"
-                    ]
-                }
-            ]
-        },
-        "batteryChargeVoltage": {
-            "values": [
-                {
-                    "siUnit": "volt",
-                    "minValue": 3.4,
-                    "maxValue": 4.7,
-                    "conditions": [
-                        "1-cell OTP code setting"
-                    ]
-                },
-                {
-                    "siUnit": "volt",
-                    "minValue": 6.8,
-                    "maxValue": 9.34,
-                    "conditions": [
-                        "2-cell OTP code setting"
-                    ]
-                },
-                {
-                    "siUnit": "volt",
-                    "minValue": 10.2,
-                    "maxValue": 14.01,
-                    "conditions": [
-                        "3-cell OTP code setting"
-                    ]
-                },
-                {
-                    "siUnit": "volt",
-                    "minValue": 13.6,
-                    "maxValue": 18.68,
-                    "conditions": [
-                        "4-cell OTP code setting"
-                    ]
-                }
-            ]
-        },
-        "batteryChargeVoltageAccuracy": {
-            "values": [
-                {
-                    "siUnit": "percentage",
-                    "minValue": -0.5,
-                    "maxValue": 0.5,
-                    "conditions": [
-                        "TA = 25°C",
-                        "VBATT_REG = 4.35V",
-                        "1-cell OTP setting"
-                    ]
-                },
-                {
-                    "siUnit": "percentage",
-                    "minValue": -0.7,
-                    "maxValue": 0.7,
-                    "conditions": [
-                        "TA = 0°C to 70°C",
-                        "VBATT_REG = 4.35V",
-                        "1-cell OTP setting"
-                    ]
-                },
-                {
-                    "siUnit": "percentage",
-                    "minValue": -0.5,
-                    "maxValue": 0.5,
-                    "conditions": [
-                        "TA = 25°C",
-                        "VBATT_REG = 8.4V",
-                        "2-cell OTP setting"
-                    ]
-                },
-                {
-                    "siUnit": "percentage",
-                    "minValue": -0.7,
-                    "maxValue": 0.7,
-                    "conditions": [
-                        "TA = 0°C to 70°C",
-                        "VBATT_REG = 8.4V",
-                        "2-cell OTP setting"
-                    ]
-                },
-                {
-                    "siUnit": "percentage",
-                    "minValue": -0.5,
-                    "maxValue": 0.5,
-                    "conditions": [
-                        "TA = 25°C",
-                        "VBATT_REG = 12.6V",
-                        "3-cell OTP setting"
-                    ]
-                },
-                {
-                    "siUnit": "percentage",
-                    "minValue": -0.7,
-                    "maxValue": 0.7,
-                    "conditions": [
-                        "TA = 0°C to 70°C",
-                        "VBATT_REG = 12.6V",
-                        "3-cell OTP setting"
-                    ]
-                },
-                {
-                    "siUnit": "percentage",
-                    "minValue": -0.5,
-                    "maxValue": 0.7,
-                    "conditions": [
-                        "TA = 25°C",
-                        "VBATT_REG = 16.8V",
-                        "4-cell OTP setting"
-                    ]
-                },
-                {
-                    "siUnit": "percentage",
-                    "minValue": -0.7,
-                    "maxValue": 0.7,
-                    "conditions": [
-                        "TA = 0°C to 70°C",
-                        "VBATT_REG = 16.8V",
-                        "4-cell OTP setting"
-                    ]
-                }
-            ]
-        },
-        "fsw": {
-            "values": [
-                {
-                    "typValue": 500,
-                    "siUnit": "kilohertz",
-                    "minValue": 450,
-                    "maxValue": 550,
-                    "conditions": [
-                        "REG0Eh",
-                        "bit[6:4]=000"
-                    ]
-                },
-                {
-                    "typValue": 600,
-                    "siUnit": "kilohertz",
-                    "minValue": 540,
-                    "maxValue": 660,
-                    "conditions": [
-                        "REG0Eh",
-                        "bit[6:4]=001"
-                    ]
-                },
-                {
-                    "typValue": 700,
-                    "siUnit": "kilohertz",
-                    "minValue": 630,
-                    "maxValue": 770,
-                    "conditions": [
-                        "REG0Eh",
-                        "bit[6:4]= 010"
-                    ]
-                },
-                {
-                    "typValue": 750,
-                    "siUnit": "kilohertz",
-                    "minValue": 675,
-                    "maxValue": 825,
-                    "conditions": [
-                        "REG0Eh",
-                        "bit[6:4]=100"
-                    ]
-                },
-                {
-                    "typValue": 800,
-                    "siUnit": "kilohertz",
-                    "minValue": 720,
-                    "maxValue": 880,
-                    "conditions": [
-                        "REG0Eh",
-                        "bit[6:4]= 011"
-                    ]
-                },
-                {
-                    "typValue": 900,
-                    "siUnit": "kilohertz",
-                    "minValue": 810,
-                    "maxValue": 990,
-                    "conditions": [
-                        "REG0Eh",
-                        "bits[6:4] = 101"
-                    ]
-                },
-                {
-                    "typValue": 1000,
-                    "siUnit": "kilohertz",
-                    "minValue": 900,
-                    "maxValue": 1100,
-                    "conditions": [
-                        "REG0Eh",
-                        "bits[6:4] = 110"
-                    ]
-                },
-                {
-                    "typValue": 1200,
-                    "siUnit": "kilohertz",
-                    "minValue": 1070,
-                    "maxValue": 1280,
-                    "conditions": [
-                        "REG0Eh",
-                        "bits[6:4] = 111"
-                    ]
-                }
-            ]
-        },
-        "partType": "battery_charger",
-        "preChargeToChargeThreshold": {
-            "values": [
-                {
-                    "typValue": 3,
-                    "unitName": "V/cell",
-                    "minValue": 2.9,
-                    "maxValue": 3.1,
-                    "conditions": [
-                        "REG0Bh",
-                        "bit[12] = 1"
-                    ]
-                },
-                {
-                    "typValue": 2.55,
-                    "unitName": "V/cell",
-                    "minValue": 2.45,
-                    "maxValue": 2.6,
-                    "conditions": [
-                        "REG0Bh",
-                        "bit[12] = 0"
-                    ]
-                }
-            ]
-        },
-        "trickleChargeTopreChargeThreshold": {
-            "values": [
-                {
-                    "typValue": 2,
-                    "unitName": "V/cell"
-                }
-            ]
-        },
-        "minVinRegulation": {
-            "values": [
-                {
-                    "typValue": 4.58,
-                    "siUnit": "volt",
-                    "minValue": 4.44,
-                    "maxValue": 4.72,
-                    "conditions": [
-                        "REG06h",
-                        "bits[7:0] = 0011 1001",
-                        "VIN_MIN = 4.56V"
-                    ]
-                },
-                {
-                    "typValue": 10.4,
-                    "siUnit": "volt",
-                    "minValue": 10.19,
-                    "maxValue": 10.61,
-                    "conditions": [
-                        "REG06h",
-                        "bits[7:0] = 1000 0010",
-                        "VIN_MIN = 10.4V"
-                    ]
-                },
-                {
-                    "typValue": 13.6,
-                    "siUnit": "volt",
-                    "minValue": 13.33,
-                    "maxValue": 13.87,
-                    "conditions": [
-                        "REG06h",
-                        "bits[7:0] = 1010 1010",
-                        "VIN_MIN = 13.6V"
-                    ]
-                },
-                {
-                    "typValue": 18.48,
-                    "siUnit": "volt",
-                    "minValue": 18.11,
-                    "maxValue": 18.85,
-                    "conditions": [
-                        "REG06h",
-                        "bits[7:0] = 1110 0111",
-                        "VIN_MIN = 18.48V"
-                    ]
-                }
-            ]
-        },
-        "chargerInputCurrentLimit": {
-            "values": [
-                {
-                    "siUnit": "amp",
-                    "minValue": 0,
-                    "maxValue": 5.8,
-                    "conditions": [
-                        "RS1 = 10mΩ",
-                        "REG10",
-                        "bit[8] =0"
-                    ]
-                }
-            ]
-        },
-        "componentProtectionThresholds": {
-            "thermalShutdownThresholdRising": {
-                "values": [
-                    {
-                        "typValue": 150,
-                        "siUnit": "celsius"
-                    }
-                ]
-            },
-            "thermalShutdownHysteresis": {
-                "values": [
-                    {
-                        "typValue": 20,
-                        "siUnit": "celsius"
-                    }
-                ]
-            },
-            "powerSupplyProtection": [
-                {
-                    "supplyName": "ADP",
-                    "overVoltageProtectionThresholdRising": {
-                        "values": [
-                            {
-                                "typValue": 23.9,
-                                "siUnit": "volt",
-                                "minValue": 23,
-                                "maxValue": 24.7
-                            }
-                        ]
-                    },
-                    "overVoltageProtectionHysteresis": {
-                        "values": [
-                            {
-                                "typValue": 500,
-                                "siUnit": "millivolt"
-                            }
-                        ]
-                    },
-                    "underVoltageLockoutThresholdFalling": {
-                        "values": [
-                            {
-                                "typValue": 2.6,
-                                "siUnit": "volt",
-                                "unitName": "2.4",
-                                "minValue": 2.8
-                            }
-                        ]
-                    },
-                    "underVoltageLockoutHysteresis": {
-                        "values": [
-                            {
-                                "typValue": 1,
-                                "siUnit": "volt"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "supplyName": "IN",
-                    "overVoltageProtectionThresholdRising": {
-                        "values": [
-                            {
-                                "typValue": 7.25,
-                                "siUnit": "volt",
-                                "minValue": 6.9,
-                                "maxValue": 7.6,
-                                "conditions": [
-                                    "VIN rising",
-                                    "REG11h",
-                                    "bits[7:6] = 00"
-                                ]
-                            },
-                            {
-                                "typValue": 11.25,
-                                "siUnit": "volt",
-                                "minValue": 10.8,
-                                "maxValue": 11.7,
-                                "conditions": [
-                                    "VIN rising",
-                                    "REG11h",
-                                    "bits[7:6] = 01"
-                                ]
-                            },
-                            {
-                                "typValue": 17.65,
-                                "siUnit": "volt",
-                                "minValue": 17,
-                                "maxValue": 18.25,
-                                "conditions": [
-                                    "VIN rising",
-                                    "REG11h",
-                                    "bits[7:6] = 10"
-                                ]
-                            },
-                            {
-                                "typValue": 22.45,
-                                "siUnit": "volt",
-                                "minValue": 22,
-                                "maxValue": 23.15,
-                                "conditions": [
-                                    "VIN rising",
-                                    "REG11h",
-                                    "bits[7:6] = 11"
-                                ]
-                            }
-                        ]
-                    },
-                    "overVoltageProtectionHysteresis": {
-                        "values": [
-                            {
-                                "typValue": 320,
-                                "siUnit": "millivolt",
-                                "conditions": [
-                                    "VIN falling"
-                                ]
-                            }
-                        ]
-                    },
-                    "underVoltageLockoutThresholdFalling": {
-                        "values": [
-                            {
-                                "typValue": 3.2,
-                                "siUnit": "volt",
-                                "minValue": 2.9,
-                                "maxValue": 3.5,
-                                "conditions": [
-                                    "VIN falling",
-                                    "REG11h",
-                                    "bits[9:8] = 00"
-                                ]
-                            },
-                            {
-                                "typValue": 6.4,
-                                "siUnit": "volt",
-                                "minValue": 6,
-                                "maxValue": 6.8,
-                                "conditions": [
-                                    "VIN falling",
-                                    "REG11h",
-                                    "bits[9:8] = 01"
-                                ]
-                            },
-                            {
-                                "typValue": 12,
-                                "siUnit": "volt",
-                                "minValue": 11.5,
-                                "maxValue": 12.5,
-                                "conditions": [
-                                    "VIN falling",
-                                    "REG11h",
-                                    "bits[9:8] = 10"
-                                ]
-                            },
-                            {
-                                "typValue": 16.8,
-                                "siUnit": "volt",
-                                "minValue": 16.2,
-                                "maxValue": 17.4,
-                                "conditions": [
-                                    "VIN falling",
-                                    "REG11h",
-                                    "bits[9:8] = 11"
-                                ]
-                            }
-                        ]
-                    },
-                    "underVoltageLockoutHysteresis": {
-                        "values": [
-                            {
-                                "typValue": 328,
-                                "siUnit": "millivolt",
-                                "conditions": [
-                                    "VIN rising",
-                                    "REG11h",
-                                    "bits[9:8] = 01/10/11"
-                                ]
-                            },
-                            {
-                                "typValue": 490,
-                                "siUnit": "millivolt",
-                                "conditions": [
-                                    "VIN rising",
-                                    "REG11h",
-                                    "bits[9:8] = 00"
-                                ]
-                            }
-                        ]
-                    }
-                },
-                {
-                    "supplyName": "BATT",
-                    "underVoltageLockoutThresholdFalling": {
-                        "values": [
-                            {
-                                "typValue": 2.6,
-                                "unitName": "V/cell",
-                                "minValue": 2.5,
-                                "maxValue": 2.7
-                            }
-                        ]
-                    },
-                    "underVoltageLockoutHysteresis": {
-                        "values": [
-                            {
-                                "typValue": 280,
-                                "siUnit": "millivolt"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "currentConsumption": [
-            {
-                "supplyName": "IN",
-                "quiescentCurrent": {
-                    "values": [
-                        {
-                            "typValue": 550,
-                            "siUnit": "microamp",
-                            "maxValue": 620,
-                            "unitFactor": 1,
-                            "conditions": [
-                                "Vin=5V",
-                                "buck-boost and the ACGATE are disabled"
-                            ]
-                        },
-                        {
-                            "typValue": 1,
-                            "siUnit": "milliamp",
-                            "maxValue": 1.2,
-                            "unitFactor": 1,
-                            "conditions": [
-                                "Vin_uvlo<Vin<Vin_ovlo",
-                                "buck-boost is disabled",
-                                "ACGATE is enabled."
-                            ]
-                        }
-                    ]
-                }
-            },
-            {
-                "supplyName": "BATT",
-                "quiescentCurrent": {
-                    "values": [
-                        {
-                            "typValue": 33,
-                            "siUnit": "microamp",
-                            "maxValue": 39.5,
-                            "unitFactor": 1,
-                            "conditions": [
-                                "Vin=5V",
-                                "buck-boost and the ACGATE are disabled",
-                                "VIN = 0V and VBATT=8.4V",
-                                "source mode is disabled",
-                                "ADC and watchdog timer and ACGATE driver are disabled"
-                            ]
-                        },
-                        {
-                            "siUnit": "milliamp",
-                            "maxValue": 0.655,
-                            "unitFactor": 1,
-                            "conditions": [
-                                "Vin_uvlo<Vin<Vin_ovlo",
-                                "buck-boost is disabled",
-                                "ACGATE is enabled.",
-                                "VIN = 0V and VBATT = 8.4V",
-                                "source mode is disabled",
-                                "ADC and ACGATE driver are disabled",
-                                "Watchdog timer is enabled"
-                            ]
-                        },
-                        {
-                            "siUnit": "milliamp",
-                            "maxValue": 3.2,
-                            "unitFactor": 1,
-                            "conditions": [
-                                "VIN= 0V and = 8.4V",
-                                "source mode is disabled",
-                                "ADC and watchdog timer are enabled",
-                                "ACGATE driver is disabled"
-                            ]
-                        }
-                    ]
-                }
-            }
-        ],
-        "integratedFetProperties": {
-            "inputPowerFetPair": {
-                "rdsonHSFET": {
-                    "values": [
-                        {
-                            "typValue": 10,
-                            "siUnit": "milliohm"
-                        }
-                    ]
-                },
-                "rdsonLSFET": {
-                    "values": [
-                        {
-                            "typValue": 8,
-                            "siUnit": "milliohm"
-                        }
-                    ]
-                }
-            },
-            "outputPowerFetPair": {
-                "rdsonHSFET": {
-                    "values": [
-                        {
-                            "typValue": 8,
-                            "siUnit": "milliohm"
-                        }
-                    ]
-                },
-                "rdsonLSFET": {
-                    "values": [
-                        {
-                            "typValue": 20,
-                            "siUnit": "milliohm"
-                        }
-                    ]
-                }
-            }
-        }
-    },
-    "pins": [
-        {
-            "terminalIdentifier": "1",
-            "name": "VCC",
-            "numberOfSupportedFunctions": 1,
-            "description": "VCC LDO Output",
-            "functionProperties": [
-                {
-                    "electricalConfiguration": "power"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "externalComponents": [
-                {
-                    "componentType": "capacitor",
-                    "configuration": "pd",
-                    "values": [
-                        {
-                            "typValue": 4.7,
-                            "siUnit": "microfarad",
-                            "unitFactor": 1,
-                            "conditions": [
-                                "ceramic cap",
-                                "pull down to AGND"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "2",
-            "name": "AGND",
-            "numberOfSupportedFunctions": 1,
-            "description": "Analog ground",
-            "functionProperties": [
-                {
-                    "electricalConfiguration": "ground"
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "3",
-            "name": "SDA",
-            "numberOfSupportedFunctions": 1,
-            "description": "I2C/SMBUS data",
-            "functionProperties": [
-                {
-                    "interfaceType": "i2c",
-                    "pinUsage": "i2c_sda",
-                    "direction": "bidir"
-                }
-            ],
-            "vih": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": 1.3,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Vpull up=1.8V"
-                        ]
-                    }
-                ]
-            },
-            "vil": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 0.4,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Vpull up=1.8V"
-                        ]
-                    }
-                ]
-            },
-            "vol": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 0.4,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Isink=1mA"
-                        ]
-                    }
-                ]
-            },
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "inputLeakage": {
-                "values": [
-                    {
-                        "siUnit": "microamp",
-                        "minValue": -0.2,
-                        "maxValue": 0.2,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Vin=5V",
-                            "VBATT=3.7V/cell",
-                            "Tambient=25C"
-                        ]
-                    }
-                ]
-            },
-            "externalComponents": [
-                {
-                    "componentType": "resistor",
-                    "configuration": "pu",
-                    "values": [
-                        {
-                            "typValue": 10,
-                            "siUnit": "kilohm",
-                            "unitFactor": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "4",
-            "name": "SCL",
-            "numberOfSupportedFunctions": 1,
-            "description": "I2C/SMBUS clock",
-            "functionProperties": [
-                {
-                    "interfaceType": "i2c",
-                    "pinUsage": "i2c_scl",
-                    "direction": "in",
-                    "electricalConfiguration": "open-drain"
-                }
-            ],
-            "vih": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": 1.3,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Vpull up=1.8V"
-                        ]
-                    }
-                ]
-            },
-            "vil": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 0.4,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Vpull up=1.8V"
-                        ]
-                    }
-                ]
-            },
-            "vol": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 0.4,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Isink=1mA"
-                        ]
-                    }
-                ]
-            },
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "inputLeakage": {
-                "values": [
-                    {
-                        "siUnit": "microamp",
-                        "minValue": -0.2,
-                        "maxValue": 0.2,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Vin=5V",
-                            "VBATT=3.7V/cell",
-                            "Tambient=25C"
-                        ]
-                    }
-                ]
-            },
-            "externalComponents": [
-                {
-                    "componentType": "resistor",
-                    "configuration": "pu",
-                    "values": [
-                        {
-                            "typValue": 10,
-                            "siUnit": "kilohm",
-                            "unitFactor": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "5",
-            "name": "INT",
-            "numberOfSupportedFunctions": 1,
-            "description": "Interrupt request output",
-            "functionProperties": [
-                {
-                    "direction": "out",
-                    "electricalConfiguration": "open-drain",
-                    "polarity": "low"
-                }
-            ],
-            "vol": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 0.4,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "10mA sink current"
-                        ]
-                    }
-                ]
-            },
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "externalComponents": [
-                {
-                    "componentType": "resistor",
-                    "configuration": "pu",
-                    "values": [
-                        {
-                            "conditions": [
-                                "pull up to VCC"
-                            ],
-                            "typValue": 10,
-                            "siUnit": "kilohm",
-                            "unitFactor": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "6",
-            "name": "ADDR",
-            "numberOfSupportedFunctions": 1,
-            "description": "Internal Use",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "externalComponents": [
-                {
-                    "componentType": "resistor",
-                    "configuration": "pd",
-                    "values": [
-                        {
-                            "conditions": [
-                                "resistor <115Kohms",
-                                "pull down to AGND"
-                            ],
-                            "typValue": 100,
-                            "siUnit": "kilohm",
-                            "unitFactor": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "7",
-            "name": "TS/IMON",
-            "numberOfSupportedFunctions": 2,
-            "description": "Configured for the temperature sense (TS)",
-            "functionProperties": [
-                {
-                    "perFunctionName": "TS"
-                },
-                {
-                    "perFunctionName": "IMON"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "8",
-            "name": "VNTC",
-            "numberOfSupportedFunctions": 1,
-            "description": "Battery temperature-sense bias. The VNTC pin is the voltage bias of the NTC comparator’s resistor divider for both the feedback NTC voltage and reference NTC voltage.",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "9",
-            "name": "NTC",
-            "numberOfSupportedFunctions": 1,
-            "description": "Negative temperature coefficient (NTC) thermistor pin. The NTC pin is the battery temperature sense’s input.",
-            "functionProperties": [
-                {
-                    "direction": "in"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "10",
-            "name": "NTC",
-            "numberOfSupportedFunctions": 1,
-            "description": "Negative temperature coefficient (NTC) thermistor pin. The NTC pin is the battery temperature sense’s input.",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "11",
-            "name": "ACOK",
-            "numberOfSupportedFunctions": 1,
-            "description": "Input power good (PG) indication. This pin is an open-drain output that indicates whether the adapter is present. Connect this pin to a voltage source through a resistor.",
-            "functionProperties": [
-                {
-                    "direction": "out",
-                    "electricalConfiguration": "open-drain",
-                    "polarity": "low"
-                }
-            ],
-            "vol": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 0.4,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "10mA sink current"
-                        ]
-                    }
-                ]
-            },
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "externalComponents": [
-                {
-                    "componentType": "resistor",
-                    "configuration": "pu",
-                    "values": [
-                        {
-                            "typValue": 10,
-                            "siUnit": "kilohm",
-                            "unitFactor": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "12",
-            "name": "BATT",
-            "numberOfSupportedFunctions": 1,
-            "description": "Battery pin. BATT is the battery’s positive terminal.",
-            "functionProperties": [
-                {
-                    "electricalConfiguration": "power"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 24,
-                        "unitFactor": 1
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": -0.3,
-                        "unitFactor": 1
-                    }
-                ]
-            },
-            "externalComponents": [
-                {
-                    "componentType": "capacitor",
-                    "configuration": "pd",
-                    "values": [
-                        {
-                            "conditions": [
-                                "Ceramic cap",
-                                "pull down to PGND"
-                            ],
-                            "typValue": 22,
-                            "siUnit": "microfarad",
-                            "unitFactor": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "13",
-            "name": "NC",
-            "description": "No Connect",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 24,
-                        "unitFactor": 1
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "unitFactor": 1
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "14",
-            "name": "SRN",
-            "description": "Battery current-sense resistor negative terminal",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 24,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Relative to PGND"
-                        ]
-                    },
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 3.6,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Relative to SRP"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Relative to PGND"
-                        ]
-                    },
-                    {
-                        "siUnit": "volt",
-                        "minValue": -3.6,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Relative to SRP"
-                        ]
-                    }
-                ]
-            },
-            "inputLeakage": {
-                "values": [
-                    {
-                        "siUnit": "microamp",
-                        "minValue": -0.5,
-                        "maxValue": 0.5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Vin=5V",
-                            "VBATT=3.7V/cell",
-                            "Tambient=25C"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "15",
-            "name": "SRP",
-            "description": "Battery current-sense resistor positive terminal.",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 24,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Relative to PGND"
-                        ]
-                    },
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 3.6,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Relative to SRN"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Relative to PGND"
-                        ]
-                    },
-                    {
-                        "siUnit": "volt",
-                        "minValue": -3.6,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Relative to SRN"
-                        ]
-                    }
-                ]
-            },
-            "inputLeakage": {
-                "values": [
-                    {
-                        "siUnit": "microamp",
-                        "minValue": -0.5,
-                        "maxValue": 0.5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Vin=5V",
-                            "VBATT=3.7V/cell",
-                            "Tambient=25C"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "16",
-            "name": "SRP",
-            "description": "Battery current-sense resistor positive terminal.",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 24,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Relative to PGND"
-                        ]
-                    },
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 3.6,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Relative to SRN"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Relative to PGND"
-                        ]
-                    },
-                    {
-                        "siUnit": "volt",
-                        "minValue": -3.6,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Relative to SRN"
-                        ]
-                    }
-                ]
-            },
-            "inputLeakage": {
-                "values": [
-                    {
-                        "siUnit": "microamp",
-                        "minValue": -0.5,
-                        "maxValue": 0.5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Vin=5V",
-                            "VBATT=3.7V/cell",
-                            "Tambient=25C"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "17",
-            "name": "BST2",
-            "description": "Bootstrap. Connect a 100nF bootstrap capacitor between the BST2 and SW2 pins to form a floating supply across the power MOSFET driver. This drives the power MOSFET’s gate above the supply voltage",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Relative to SW2"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": 0,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Relative to SW2"
-                        ]
-                    }
-                ]
-            },
-            "externalComponents": [
-                {
-                    "componentType": "capacitor",
-                    "configuration": "pd",
-                    "values": [
-                        {
-                            "conditions": [
-                                "connect to SW2"
-                            ],
-                            "typValue": 100,
-                            "siUnit": "nanofarad",
-                            "unitFactor": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "18",
-            "name": "CFLR",
-            "description": "DC/DC power stage output.",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 24,
-                        "unitFactor": 1
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "unitFactor": 1
-                    }
-                ]
-            },
-            "externalComponents": [
-                {
-                    "componentType": "capacitor",
-                    "configuration": "pd",
-                    "values": [
-                        {
-                            "conditions": [
-                                "2x22uF",
-                                "ceramic caps"
-                            ],
-                            "typValue": 44,
-                            "siUnit": "microfarad",
-                            "unitFactor": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "19",
-            "name": "SW2",
-            "description": "Switching node. SW2 is the middle point of the boost phase’s half-bridge.",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 24,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "DC",
-                            "relative to PGND"
-                        ]
-                    },
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 28,
-                        "conditions": [
-                            "20ns",
-                            "relative to PGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "DC",
-                            "relative to PGND"
-                        ]
-                    },
-                    {
-                        "siUnit": "volt",
-                        "minValue": -2,
-                        "conditions": [
-                            "elative to PGNS"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "20",
-            "name": "PGND",
-            "description": "Power ground."
-        },
-        {
-            "terminalIdentifier": "21",
-            "name": "SW1",
-            "description": "Switching node. SW1 is the middle point of the buck phase’s half-bridge",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 24,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "DC",
-                            "relative to PGND"
-                        ]
-                    },
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 28,
-                        "conditions": [
-                            "20ns",
-                            "relative to PGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "DC",
-                            "relative to PGND"
-                        ]
-                    },
-                    {
-                        "siUnit": "volt",
-                        "minValue": -2,
-                        "conditions": [
-                            "elative to PGNS"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "22",
-            "name": "IN",
-            "description": "Input. The IN pin is the IC’s power stage input.",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 26,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "DC",
-                            "relative to PGND"
-                        ]
-                    },
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 28,
-                        "conditions": [
-                            "20ns",
-                            "relative to PGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to PGND"
-                        ]
-                    }
-                ]
-            },
-            "externalComponents": [
-                {
-                    "componentType": "capacitor",
-                    "configuration": "pd",
-                    "values": [
-                        {
-                            "conditions": [
-                                "4x10uF",
-                                "ceramic caps",
-                                "pull down to PGND"
-                            ],
-                            "typValue": 40,
-                            "siUnit": "microfarad",
-                            "unitFactor": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "23",
-            "name": "BST1",
-            "description": "Bootstrap. Connect a 100nF bootstrap capacitor between the BST1 and SW1 pins to form a floating supply across the power MOSFET driver. This drives the power MOSFET’s gate above the supply voltage",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Relative to SW1"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": 0,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Relative to SW1"
-                        ]
-                    }
-                ]
-            },
-            "externalComponents": [
-                {
-                    "componentType": "capacitor",
-                    "configuration": "pd",
-                    "values": [
-                        {
-                            "conditions": [
-                                "connect to SW1"
-                            ],
-                            "typValue": 100,
-                            "siUnit": "nanofarad",
-                            "unitFactor": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "24",
-            "name": "IAN",
-            "description": "Input current-sense negative terminal",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 26,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "DC",
-                            "relative to PGND"
-                        ]
-                    },
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 28,
-                        "conditions": [
-                            "20ns",
-                            "relative to PGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to PGND"
-                        ]
-                    }
-                ]
-            },
-            "inputLeakage": {
-                "values": [
-                    {
-                        "siUnit": "microamp",
-                        "minValue": -0.5,
-                        "maxValue": 0.5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Vin=5V",
-                            "VBATT=3.7V/cell",
-                            "Tambient=25C"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "25",
-            "name": "IAN",
-            "description": "Input current-sense negative terminal",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 26,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "DC",
-                            "relative to PGND"
-                        ]
-                    },
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 28,
-                        "conditions": [
-                            "20ns",
-                            "relative to PGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to PGND"
-                        ]
-                    }
-                ]
-            },
-            "inputLeakage": {
-                "values": [
-                    {
-                        "siUnit": "microamp",
-                        "minValue": -0.5,
-                        "maxValue": 0.5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Vin=5V",
-                            "VBATT=3.7V/cell",
-                            "Tambient=25C"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "26",
-            "name": "IAP",
-            "description": "Input current-sense positive terminal",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 26,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "DC",
-                            "relative to PGND"
-                        ]
-                    },
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 28,
-                        "conditions": [
-                            "20ns",
-                            "relative to PGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to PGND"
-                        ]
-                    }
-                ]
-            },
-            "inputLeakage": {
-                "values": [
-                    {
-                        "siUnit": "microamp",
-                        "minValue": -0.5,
-                        "maxValue": 0.5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "Vin=5V",
-                            "VBATT=3.7V/cell",
-                            "Tambient=25C"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "27",
-            "name": "ACGATE",
-            "description": "Input N-channel MOSFET gate driver. The ACGATE pin drives the external pass-through N-channel MOSFET.",
-            "vih": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": 6,
-                        "unitFactor": 1,
-                        "relativeValueReference": "ADP",
-                        "relativeValueOperator": "add"
-                    }
-                ]
-            },
-            "vil": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": 0,
-                        "unitFactor": 1,
-                        "relativeValueReference": "ADP",
-                        "relativeValueOperator": "add"
-                    }
-                ]
-            },
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 28,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to PGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to PGND"
-                        ]
-                    }
-                ]
-            },
-            "externalComponents": [
-                {
-                    "componentType": "resistor",
-                    "configuration": "pd",
-                    "values": [
-                        {
-                            "conditions": [
-                                "Connect beween ACGATE and the external N-channel pass-through MOSFET's source"
-                            ],
-                            "typValue": 1,
-                            "siUnit": "megaohm",
-                            "unitFactor": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "28",
-            "name": "ADP",
-            "description": "Adapter voltage sense. If ADP over-voltage lockout (OVLO) is triggered, the external OVP MOSFET (if used) and power stage turn off. The ADP pin also provides the IC’s internal bias voltage.",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 28,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to PGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to PGND"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "29",
-            "name": "FB",
-            "description": "Feedback. In source mode, FB is the IN output voltage in source mode (VIN_SRC) feedback pin. If VIN_SRC feedback is configured via the register, this pin is not functional. Float FB or connect it to AGND.",
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "30",
-            "name": "VCC",
-            "standardizedName": "vdd",
-            "description": "VCC LDO Output",
-            "functionProperties": [
-                {
-                    "electricalConfiguration": "power"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 5,
-                        "unitFactor": 1,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3,
-                        "conditions": [
-                            "relative to AGND"
-                        ]
-                    }
-                ]
-            },
-            "externalComponents": [
-                {
-                    "componentType": "capacitor",
-                    "configuration": "pd",
-                    "values": [
-                        {
-                            "conditions": [
-                                "ceramic cap",
-                                "pull down to AGND"
-                            ],
-                            "typValue": 4.7,
-                            "siUnit": "microfarad",
-                            "unitFactor": 1
-                        }
-                    ]
-                }
-            ]
-        }
+  "componentID": {
+    "partType": "battery charger",
+    "manufacturer": "Monolithic Power Systems",
+    "componentName": "MP2651",
+    "orderableMPN": [
+      "MP2651GVT-040A"
     ],
-    "package": {
-        "length": {
-            "values": [
-                {
-                    "typValue": 5,
-                    "siUnit": "millimeter",
-                    "minValue": 4.9,
-                    "maxValue": 5.1,
-                    "unitFactor": 1
-                }
-            ]
+    "sourceDatasheetID": {
+      "publishedDate": "2023-06-15",
+      "version": "1.1",
+      "datasheetURI": "https://www.monolithicpower.com/en/documentview/productdocument/index/version/2/document_type/Datasheet/lang/en/sku/MP2651GVT/document_id/9948/",
+      "productURI": "https://www.monolithicpower.com/en/products/battery-management/chargers/mp2651.html"
+    },
+    "digitalDatasheetID": {
+      "publishedDate": "2024-03-31",
+      "eDatasheetSpecRevision": "1.0"
+    },
+    "status": "production"
+  },
+  "coreProperties": {
+    "batteryChargeCurrent": {
+      "values": [
+        {
+          "conditions": [
+            "RS2=10mohms",
+            "REG10h bit[7]=0"
+          ],
+          "maxValue": 6.35,
+          "minValue": 0,
+          "siUnit": "amp"
+        }
+      ]
+    },
+    "batteryChargeCurrentAccuracy": {
+      "values": [
+        {
+          "conditions": [
+            "ICC = 6A",
+            "REG14h",
+            "bits[13:6] = 0111 1000"
+          ],
+          "maxValue": 6.2,
+          "minValue": 5.79,
+          "siUnit": "amp",
+          "typValue": 6
         },
-        "width": {
-            "values": [
-                {
-                    "typValue": 4,
-                    "siUnit": "millimeter",
-                    "minValue": 3.9,
-                    "maxValue": 4.1,
-                    "unitFactor": 1
-                }
-            ]
+        {
+          "conditions": [
+            "ICC = 3A",
+            "REG14h",
+            "bits[13:6] = 0011 1100"
+          ],
+          "maxValue": 3.14,
+          "minValue": 2.84,
+          "siUnit": "amp",
+          "typValue": 3
         },
-        "height": {
-            "values": [
-                {
-                    "siUnit": "millimeter",
-                    "minValue": 0.7,
-                    "maxValue": 0.8
-                }
-            ]
+        {
+          "conditions": [
+            "ICC = 2A",
+            "REG14h",
+            "bits[13:6] = 0010 1000"
+          ],
+          "maxValue": 2.13,
+          "minValue": 1.88,
+          "siUnit": "amp",
+          "typValue": 2
         },
-        "standardPackageSize": "4mmx5mm",
-        "standardPackageType": "TQFN"
+        {
+          "conditions": [
+            "ICC = 500mA",
+            "REG14h",
+            "bits[13:6] = 0000 1010"
+          ],
+          "maxValue": 0.6,
+          "minValue": 0.4,
+          "siUnit": "amp",
+          "typValue": 0.5
+        }
+      ]
+    },
+    "batteryChargeVoltage": {
+      "values": [
+        {
+          "conditions": [
+            "1-cell OTP code setting"
+          ],
+          "maxValue": 4.7,
+          "minValue": 3.4,
+          "siUnit": "volt"
+        },
+        {
+          "conditions": [
+            "2-cell OTP code setting"
+          ],
+          "maxValue": 9.34,
+          "minValue": 6.8,
+          "siUnit": "volt"
+        },
+        {
+          "conditions": [
+            "3-cell OTP code setting"
+          ],
+          "maxValue": 14.01,
+          "minValue": 10.2,
+          "siUnit": "volt"
+        },
+        {
+          "conditions": [
+            "4-cell OTP code setting"
+          ],
+          "maxValue": 18.68,
+          "minValue": 13.6,
+          "siUnit": "volt"
+        }
+      ]
+    },
+    "batteryChargeVoltageAccuracy": {
+      "values": [
+        {
+          "conditions": [
+            "TA = 25°C",
+            "VBATT_REG = 4.35V",
+            "1-cell OTP setting"
+          ],
+          "maxValue": 0.5,
+          "minValue": -0.5,
+          "siUnit": "percentage"
+        },
+        {
+          "conditions": [
+            "TA = 0°C to 70°C",
+            "VBATT_REG = 4.35V",
+            "1-cell OTP setting"
+          ],
+          "maxValue": 0.7,
+          "minValue": -0.7,
+          "siUnit": "percentage"
+        },
+        {
+          "conditions": [
+            "TA = 25°C",
+            "VBATT_REG = 8.4V",
+            "2-cell OTP setting"
+          ],
+          "maxValue": 0.5,
+          "minValue": -0.5,
+          "siUnit": "percentage"
+        },
+        {
+          "conditions": [
+            "TA = 0°C to 70°C",
+            "VBATT_REG = 8.4V",
+            "2-cell OTP setting"
+          ],
+          "maxValue": 0.7,
+          "minValue": -0.7,
+          "siUnit": "percentage"
+        },
+        {
+          "conditions": [
+            "TA = 25°C",
+            "VBATT_REG = 12.6V",
+            "3-cell OTP setting"
+          ],
+          "maxValue": 0.5,
+          "minValue": -0.5,
+          "siUnit": "percentage"
+        },
+        {
+          "conditions": [
+            "TA = 0°C to 70°C",
+            "VBATT_REG = 12.6V",
+            "3-cell OTP setting"
+          ],
+          "maxValue": 0.7,
+          "minValue": -0.7,
+          "siUnit": "percentage"
+        },
+        {
+          "conditions": [
+            "TA = 25°C",
+            "VBATT_REG = 16.8V",
+            "4-cell OTP setting"
+          ],
+          "maxValue": 0.7,
+          "minValue": -0.5,
+          "siUnit": "percentage"
+        },
+        {
+          "conditions": [
+            "TA = 0°C to 70°C",
+            "VBATT_REG = 16.8V",
+            "4-cell OTP setting"
+          ],
+          "maxValue": 0.7,
+          "minValue": -0.7,
+          "siUnit": "percentage"
+        }
+      ]
+    },
+    "batteryConfig": [
+      "1S",
+      "2S",
+      "3S",
+      "4S"
+    ],
+    "batteryPreChargeCurrent": {
+      "values": [
+        {
+          "conditions": [
+            "RS2=10mohms",
+            "REG10h",
+            "bit[7]=0"
+          ],
+          "maxValue": 1.5,
+          "minValue": 0,
+          "siUnit": "amp",
+          "unitFactor": 1
+        }
+      ]
+    },
+    "batteryPreChargeCurrentAccuracy": {
+      "values": [
+        {
+          "conditions": [
+            "VBATT = 5V",
+            "IPRE = 300mA",
+            "REG0Fh",
+            "bits[7:4] = 0011"
+          ],
+          "maxValue": 20,
+          "minValue": -20,
+          "siUnit": "percentage",
+          "unitFactor": 1
+        },
+        {
+          "conditions": [
+            "VBATT = 5V",
+            "IPRE = 500mA",
+            "REG0Fh",
+            "bits[7:4] = 0101"
+          ],
+          "maxValue": 15,
+          "minValue": -15,
+          "siUnit": "percentage"
+        }
+      ]
+    },
+    "batteryTerminationChargeCurrentAccuracy": {
+      "values": [
+        {
+          "conditions": [
+            "ITERM = 100mA",
+            "REG0Fh",
+            "bits[3:0] = 0010"
+          ],
+          "maxValue": 180,
+          "minValue": 60,
+          "siUnit": "milliamp",
+          "typValue": 120
+        },
+        {
+          "conditions": [
+            "ITERM = 200mA",
+            "REG0Fh",
+            "bits[3:0] = 0100"
+          ],
+          "maxValue": 290,
+          "minValue": 160,
+          "siUnit": "milliamp",
+          "typValue": 220
+        },
+        {
+          "conditions": [
+            "ITERM = 400mA",
+            "REG0Fh",
+            "bits[3:0] = 1000"
+          ],
+          "maxValue": 490,
+          "minValue": 360,
+          "siUnit": "milliamp",
+          "typValue": 420
+        }
+      ]
+    },
+    "batteryTrickleChargeCurrent": {
+      "values": [
+        {
+          "conditions": [
+            "RS2=10mohms",
+            "REG10h",
+            "bit[7]=0"
+          ],
+          "maxValue": 750,
+          "minValue": 0,
+          "siUnit": "milliamp",
+          "unitFactor": 1
+        }
+      ]
+    },
+    "batteryTrickleChargeCurrentAccuracy": {
+      "values": [
+        {
+          "conditions": [
+            "BATT = 5V",
+            "REG0Fh",
+            "bits[11:8] = 0010",
+            "ITC = 100mA"
+          ],
+          "maxValue": 160,
+          "minValue": 50,
+          "siUnit": "milliamp",
+          "typValue": 100,
+          "unitFactor": 1
+        }
+      ]
+    },
+    "chargerInputCurrentLimit": {
+      "values": [
+        {
+          "conditions": [
+            "RS1 = 10mΩ",
+            "REG10",
+            "bit[8] =0"
+          ],
+          "maxValue": 5.8,
+          "minValue": 0,
+          "siUnit": "amp"
+        }
+      ]
+    },
+    "chargerType": "switching",
+    "componentProtectionThresholds": {
+      "powerSupplyProtection": [
+        {
+          "overVoltageProtectionHysteresis": {
+            "values": [
+              {
+                "siUnit": "millivolt",
+                "typValue": 500
+              }
+            ]
+          },
+          "overVoltageProtectionThresholdRising": {
+            "values": [
+              {
+                "maxValue": 24.7,
+                "minValue": 23,
+                "siUnit": "volt",
+                "typValue": 23.9
+              }
+            ]
+          },
+          "supplyName": "ADP",
+          "underVoltageLockoutHysteresis": {
+            "values": [
+              {
+                "siUnit": "volt",
+                "typValue": 1
+              }
+            ]
+          },
+          "underVoltageLockoutThresholdFalling": {
+            "values": [
+              {
+                "minValue": 2.8,
+                "siUnit": "volt",
+                "typValue": 2.6,
+                "unitName": "2.4"
+              }
+            ]
+          }
+        },
+        {
+          "overVoltageProtectionHysteresis": {
+            "values": [
+              {
+                "conditions": [
+                  "VIN falling"
+                ],
+                "siUnit": "millivolt",
+                "typValue": 320
+              }
+            ]
+          },
+          "overVoltageProtectionThresholdRising": {
+            "values": [
+              {
+                "conditions": [
+                  "VIN rising",
+                  "REG11h",
+                  "bits[7:6] = 00"
+                ],
+                "maxValue": 7.6,
+                "minValue": 6.9,
+                "siUnit": "volt",
+                "typValue": 7.25
+              },
+              {
+                "conditions": [
+                  "VIN rising",
+                  "REG11h",
+                  "bits[7:6] = 01"
+                ],
+                "maxValue": 11.7,
+                "minValue": 10.8,
+                "siUnit": "volt",
+                "typValue": 11.25
+              },
+              {
+                "conditions": [
+                  "VIN rising",
+                  "REG11h",
+                  "bits[7:6] = 10"
+                ],
+                "maxValue": 18.25,
+                "minValue": 17,
+                "siUnit": "volt",
+                "typValue": 17.65
+              },
+              {
+                "conditions": [
+                  "VIN rising",
+                  "REG11h",
+                  "bits[7:6] = 11"
+                ],
+                "maxValue": 23.15,
+                "minValue": 22,
+                "siUnit": "volt",
+                "typValue": 22.45
+              }
+            ]
+          },
+          "supplyName": "IN",
+          "underVoltageLockoutHysteresis": {
+            "values": [
+              {
+                "conditions": [
+                  "VIN rising",
+                  "REG11h",
+                  "bits[9:8] = 01/10/11"
+                ],
+                "siUnit": "millivolt",
+                "typValue": 328
+              },
+              {
+                "conditions": [
+                  "VIN rising",
+                  "REG11h",
+                  "bits[9:8] = 00"
+                ],
+                "siUnit": "millivolt",
+                "typValue": 490
+              }
+            ]
+          },
+          "underVoltageLockoutThresholdFalling": {
+            "values": [
+              {
+                "conditions": [
+                  "VIN falling",
+                  "REG11h",
+                  "bits[9:8] = 00"
+                ],
+                "maxValue": 3.5,
+                "minValue": 2.9,
+                "siUnit": "volt",
+                "typValue": 3.2
+              },
+              {
+                "conditions": [
+                  "VIN falling",
+                  "REG11h",
+                  "bits[9:8] = 01"
+                ],
+                "maxValue": 6.8,
+                "minValue": 6,
+                "siUnit": "volt",
+                "typValue": 6.4
+              },
+              {
+                "conditions": [
+                  "VIN falling",
+                  "REG11h",
+                  "bits[9:8] = 10"
+                ],
+                "maxValue": 12.5,
+                "minValue": 11.5,
+                "siUnit": "volt",
+                "typValue": 12
+              },
+              {
+                "conditions": [
+                  "VIN falling",
+                  "REG11h",
+                  "bits[9:8] = 11"
+                ],
+                "maxValue": 17.4,
+                "minValue": 16.2,
+                "siUnit": "volt",
+                "typValue": 16.8
+              }
+            ]
+          }
+        },
+        {
+          "supplyName": "BATT",
+          "underVoltageLockoutHysteresis": {
+            "values": [
+              {
+                "siUnit": "millivolt",
+                "typValue": 280
+              }
+            ]
+          },
+          "underVoltageLockoutThresholdFalling": {
+            "values": [
+              {
+                "maxValue": 2.7,
+                "minValue": 2.5,
+                "typValue": 2.6,
+                "unitName": "V/cell"
+              }
+            ]
+          }
+        }
+      ],
+      "thermalShutdownHysteresis": {
+        "values": [
+          {
+            "siUnit": "celsius",
+            "typValue": 20
+          }
+        ]
+      },
+      "thermalShutdownThresholdRising": {
+        "values": [
+          {
+            "siUnit": "celsius",
+            "typValue": 150
+          }
+        ]
+      }
+    },
+    "converterType": "buck-boost",
+    "currentConsumption": [
+      {
+        "quiescentCurrent": {
+          "values": [
+            {
+              "conditions": [
+                "Vin=5V",
+                "buck-boost and the ACGATE are disabled"
+              ],
+              "maxValue": 620,
+              "siUnit": "microamp",
+              "typValue": 550,
+              "unitFactor": 1
+            },
+            {
+              "conditions": [
+                "Vin_uvlo\u003cVin\u003cVin_ovlo",
+                "buck-boost is disabled",
+                "ACGATE is enabled."
+              ],
+              "maxValue": 1.2,
+              "siUnit": "milliamp",
+              "typValue": 1,
+              "unitFactor": 1
+            }
+          ]
+        },
+        "supplyName": "IN"
+      },
+      {
+        "quiescentCurrent": {
+          "values": [
+            {
+              "conditions": [
+                "Vin=5V",
+                "buck-boost and the ACGATE are disabled",
+                "VIN = 0V and VBATT=8.4V",
+                "source mode is disabled",
+                "ADC and watchdog timer and ACGATE driver are disabled"
+              ],
+              "maxValue": 39.5,
+              "siUnit": "microamp",
+              "typValue": 33,
+              "unitFactor": 1
+            },
+            {
+              "conditions": [
+                "Vin_uvlo\u003cVin\u003cVin_ovlo",
+                "buck-boost is disabled",
+                "ACGATE is enabled.",
+                "VIN = 0V and VBATT = 8.4V",
+                "source mode is disabled",
+                "ADC and ACGATE driver are disabled",
+                "Watchdog timer is enabled"
+              ],
+              "maxValue": 0.655,
+              "siUnit": "milliamp",
+              "unitFactor": 1
+            },
+            {
+              "conditions": [
+                "VIN= 0V and = 8.4V",
+                "source mode is disabled",
+                "ADC and watchdog timer are enabled",
+                "ACGATE driver is disabled"
+              ],
+              "maxValue": 3.2,
+              "siUnit": "milliamp",
+              "unitFactor": 1
+            }
+          ]
+        },
+        "supplyName": "BATT"
+      }
+    ],
+    "fsw": {
+      "values": [
+        {
+          "conditions": [
+            "REG0Eh",
+            "bit[6:4]=000"
+          ],
+          "maxValue": 550,
+          "minValue": 450,
+          "siUnit": "kilohertz",
+          "typValue": 500
+        },
+        {
+          "conditions": [
+            "REG0Eh",
+            "bit[6:4]=001"
+          ],
+          "maxValue": 660,
+          "minValue": 540,
+          "siUnit": "kilohertz",
+          "typValue": 600
+        },
+        {
+          "conditions": [
+            "REG0Eh",
+            "bit[6:4]= 010"
+          ],
+          "maxValue": 770,
+          "minValue": 630,
+          "siUnit": "kilohertz",
+          "typValue": 700
+        },
+        {
+          "conditions": [
+            "REG0Eh",
+            "bit[6:4]=100"
+          ],
+          "maxValue": 825,
+          "minValue": 675,
+          "siUnit": "kilohertz",
+          "typValue": 750
+        },
+        {
+          "conditions": [
+            "REG0Eh",
+            "bit[6:4]= 011"
+          ],
+          "maxValue": 880,
+          "minValue": 720,
+          "siUnit": "kilohertz",
+          "typValue": 800
+        },
+        {
+          "conditions": [
+            "REG0Eh",
+            "bits[6:4] = 101"
+          ],
+          "maxValue": 990,
+          "minValue": 810,
+          "siUnit": "kilohertz",
+          "typValue": 900
+        },
+        {
+          "conditions": [
+            "REG0Eh",
+            "bits[6:4] = 110"
+          ],
+          "maxValue": 1100,
+          "minValue": 900,
+          "siUnit": "kilohertz",
+          "typValue": 1000
+        },
+        {
+          "conditions": [
+            "REG0Eh",
+            "bits[6:4] = 111"
+          ],
+          "maxValue": 1280,
+          "minValue": 1070,
+          "siUnit": "kilohertz",
+          "typValue": 1200
+        }
+      ]
+    },
+    "inputCurrentAccuracy": {
+      "values": [
+        {
+          "conditions": [
+            "REG08h and bits[6:0]=0001010",
+            "Iin_lim=0.5A"
+          ],
+          "maxValue": 0.5,
+          "minValue": 0.368,
+          "siUnit": "amp",
+          "typValue": 0.43,
+          "unitFactor": 1
+        },
+        {
+          "conditions": [
+            "REG08h and bits[6:0]=0010010",
+            "Iin_lim=0.9A"
+          ],
+          "maxValue": 0.9,
+          "minValue": 0.768,
+          "siUnit": "amp",
+          "typValue": 0.82,
+          "unitFactor": 1
+        },
+        {
+          "conditions": [
+            "REG08h and bits[6:0]=0011110",
+            "Iin_lim=1.5A"
+          ],
+          "maxValue": 1.5,
+          "minValue": 1.32,
+          "siUnit": "amp",
+          "typValue": 1.41
+        },
+        {
+          "conditions": [
+            "REG08h and bits[6:0]=0111100",
+            "Iin_lim=3A"
+          ],
+          "maxValue": 2.98,
+          "minValue": 2.76,
+          "siUnit": "amp",
+          "typValue": 2.87
+        },
+        {
+          "conditions": [
+            "REG08h and bits[6:0]=1100100",
+            "Ilin_lim=5A"
+          ],
+          "maxValue": 4.98,
+          "minValue": 4.688,
+          "siUnit": "amp",
+          "typValue": 4.836
+        }
+      ]
+    },
+    "integratedFetProperties": {
+      "inputPowerFetPair": {
+        "rdsonHSFET": {
+          "values": [
+            {
+              "siUnit": "milliohm",
+              "typValue": 10
+            }
+          ]
+        },
+        "rdsonLSFET": {
+          "values": [
+            {
+              "siUnit": "milliohm",
+              "typValue": 8
+            }
+          ]
+        }
+      },
+      "outputPowerFetPair": {
+        "rdsonHSFET": {
+          "values": [
+            {
+              "siUnit": "milliohm",
+              "typValue": 8
+            }
+          ]
+        },
+        "rdsonLSFET": {
+          "values": [
+            {
+              "siUnit": "milliohm",
+              "typValue": 20
+            }
+          ]
+        }
+      }
+    },
+    "integratedFets": true,
+    "integratedLoadSwitch": false,
+    "minVinRegulation": {
+      "values": [
+        {
+          "conditions": [
+            "REG06h",
+            "bits[7:0] = 0011 1001",
+            "VIN_MIN = 4.56V"
+          ],
+          "maxValue": 4.72,
+          "minValue": 4.44,
+          "siUnit": "volt",
+          "typValue": 4.58
+        },
+        {
+          "conditions": [
+            "REG06h",
+            "bits[7:0] = 1000 0010",
+            "VIN_MIN = 10.4V"
+          ],
+          "maxValue": 10.61,
+          "minValue": 10.19,
+          "siUnit": "volt",
+          "typValue": 10.4
+        },
+        {
+          "conditions": [
+            "REG06h",
+            "bits[7:0] = 1010 1010",
+            "VIN_MIN = 13.6V"
+          ],
+          "maxValue": 13.87,
+          "minValue": 13.33,
+          "siUnit": "volt",
+          "typValue": 13.6
+        },
+        {
+          "conditions": [
+            "REG06h",
+            "bits[7:0] = 1110 0111",
+            "VIN_MIN = 18.48V"
+          ],
+          "maxValue": 18.85,
+          "minValue": 18.11,
+          "siUnit": "volt",
+          "typValue": 18.48
+        }
+      ]
+    },
+    "partType": "battery_charger",
+    "preChargeToChargeThreshold": {
+      "values": [
+        {
+          "conditions": [
+            "REG0Bh",
+            "bit[12] = 1"
+          ],
+          "maxValue": 3.1,
+          "minValue": 2.9,
+          "typValue": 3,
+          "unitName": "V/cell"
+        },
+        {
+          "conditions": [
+            "REG0Bh",
+            "bit[12] = 0"
+          ],
+          "maxValue": 2.6,
+          "minValue": 2.45,
+          "typValue": 2.55,
+          "unitName": "V/cell"
+        }
+      ]
+    },
+    "tcpcSupport": false,
+    "trickleChargeTopreChargeThreshold": {
+      "values": [
+        {
+          "typValue": 2,
+          "unitName": "V/cell"
+        }
+      ]
+    },
+    "vin": {
+      "values": [
+        {
+          "maxValue": 22,
+          "minValue": 4,
+          "siUnit": "volt",
+          "unitFactor": 1
+        }
+      ]
     }
+  },
+  "pins": [
+    {
+      "terminalIdentifier": [
+        "1"
+      ],
+      "name": "VCC",
+      "numberOfSupportedFunctions": 1,
+      "description": "VCC LDO Output",
+      "functionProperties": [
+        {
+          "electricalConfiguration": "power"
+        }
+      ],
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 5,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "externalComponents": [
+          {
+            "componentType": "capacitor",
+            "configuration": "pd",
+            "values": [
+              {
+                "conditions": [
+                  "ceramic cap",
+                  "pull down to AGND"
+                ],
+                "siUnit": "microfarad",
+                "typValue": 4.7,
+                "unitFactor": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "2"
+      ],
+      "name": "AGND",
+      "numberOfSupportedFunctions": 1,
+      "description": "Analog ground",
+      "functionProperties": [
+        {
+          "electricalConfiguration": "ground"
+        }
+      ]
+    },
+    {
+      "terminalIdentifier": [
+        "3"
+      ],
+      "name": "SDA",
+      "numberOfSupportedFunctions": 1,
+      "description": "I2C/SMBUS data",
+      "functionProperties": [
+        {
+          "interfaceType": "i2c",
+          "pinUsage": "i2c_sda",
+          "direction": "bidir"
+        }
+      ],
+      "pinProperties": {
+        "vih": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": 1.3,
+              "unitFactor": 1,
+              "conditions": [
+                "Vpull up=1.8V"
+              ]
+            }
+          ]
+        },
+        "vil": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 0.4,
+              "unitFactor": 1,
+              "conditions": [
+                "Vpull up=1.8V"
+              ]
+            }
+          ]
+        },
+        "vol": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 0.4,
+              "unitFactor": 1,
+              "conditions": [
+                "Isink=1mA"
+              ]
+            }
+          ]
+        },
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 5,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "inputLeakage": {
+          "values": [
+            {
+              "siUnit": "microamp",
+              "minValue": -0.2,
+              "maxValue": 0.2,
+              "unitFactor": 1,
+              "conditions": [
+                "Vin=5V",
+                "VBATT=3.7V/cell",
+                "Tambient=25C"
+              ]
+            }
+          ]
+        },
+        "externalComponents": [
+          {
+            "componentType": "resistor",
+            "configuration": "pu",
+            "values": [
+              {
+                "siUnit": "kilohm",
+                "typValue": 10,
+                "unitFactor": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "4"
+      ],
+      "name": "SCL",
+      "numberOfSupportedFunctions": 1,
+      "description": "I2C/SMBUS clock",
+      "functionProperties": [
+        {
+          "interfaceType": "i2c",
+          "pinUsage": "i2c_scl",
+          "direction": "in",
+          "electricalConfiguration": "open-drain"
+        }
+      ],
+      "pinProperties": {
+        "vih": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": 1.3,
+              "unitFactor": 1,
+              "conditions": [
+                "Vpull up=1.8V"
+              ]
+            }
+          ]
+        },
+        "vil": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 0.4,
+              "unitFactor": 1,
+              "conditions": [
+                "Vpull up=1.8V"
+              ]
+            }
+          ]
+        },
+        "vol": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 0.4,
+              "unitFactor": 1,
+              "conditions": [
+                "Isink=1mA"
+              ]
+            }
+          ]
+        },
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 5,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "inputLeakage": {
+          "values": [
+            {
+              "siUnit": "microamp",
+              "minValue": -0.2,
+              "maxValue": 0.2,
+              "unitFactor": 1,
+              "conditions": [
+                "Vin=5V",
+                "VBATT=3.7V/cell",
+                "Tambient=25C"
+              ]
+            }
+          ]
+        },
+        "externalComponents": [
+          {
+            "componentType": "resistor",
+            "configuration": "pu",
+            "values": [
+              {
+                "siUnit": "kilohm",
+                "typValue": 10,
+                "unitFactor": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "5"
+      ],
+      "name": "INT",
+      "numberOfSupportedFunctions": 1,
+      "description": "Interrupt request output",
+      "functionProperties": [
+        {
+          "direction": "out",
+          "electricalConfiguration": "open-drain",
+          "polarity": "low"
+        }
+      ],
+      "pinProperties": {
+        "vol": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 0.4,
+              "unitFactor": 1,
+              "conditions": [
+                "10mA sink current"
+              ]
+            }
+          ]
+        },
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 5,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "externalComponents": [
+          {
+            "componentType": "resistor",
+            "configuration": "pu",
+            "values": [
+              {
+                "conditions": [
+                  "pull up to VCC"
+                ],
+                "siUnit": "kilohm",
+                "typValue": 10,
+                "unitFactor": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "6"
+      ],
+      "name": "ADDR",
+      "numberOfSupportedFunctions": 1,
+      "description": "Internal Use",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 5,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "externalComponents": [
+          {
+            "componentType": "resistor",
+            "configuration": "pd",
+            "values": [
+              {
+                "conditions": [
+                  "resistor <115Kohms",
+                  "pull down to AGND"
+                ],
+                "siUnit": "kilohm",
+                "typValue": 100,
+                "unitFactor": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "7"
+      ],
+      "name": "TS/IMON",
+      "numberOfSupportedFunctions": 2,
+      "description": "Configured for the temperature sense (TS)",
+      "functionProperties": [
+        {
+          "perFunctionName": "TS"
+        },
+        {
+          "perFunctionName": "IMON"
+        }
+      ],
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 5,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "8"
+      ],
+      "name": "VNTC",
+      "numberOfSupportedFunctions": 1,
+      "description": "Battery temperature-sense bias. The VNTC pin is the voltage bias of the NTC comparator’s resistor divider for both the feedback NTC voltage and reference NTC voltage.",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 5,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "9"
+      ],
+      "name": "NTC",
+      "numberOfSupportedFunctions": 1,
+      "description": "Negative temperature coefficient (NTC) thermistor pin. The NTC pin is the battery temperature sense’s input.",
+      "functionProperties": [
+        {
+          "direction": "in"
+        }
+      ],
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 5,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "10"
+      ],
+      "name": "NTC",
+      "numberOfSupportedFunctions": 1,
+      "description": "Negative temperature coefficient (NTC) thermistor pin. The NTC pin is the battery temperature sense’s input.",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 5,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "11"
+      ],
+      "name": "ACOK",
+      "numberOfSupportedFunctions": 1,
+      "description": "Input power good (PG) indication. This pin is an open-drain output that indicates whether the adapter is present. Connect this pin to a voltage source through a resistor.",
+      "functionProperties": [
+        {
+          "direction": "out",
+          "electricalConfiguration": "open-drain",
+          "polarity": "low"
+        }
+      ],
+      "pinProperties": {
+        "vol": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 0.4,
+              "unitFactor": 1,
+              "conditions": [
+                "10mA sink current"
+              ]
+            }
+          ]
+        },
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 5,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "externalComponents": [
+          {
+            "componentType": "resistor",
+            "configuration": "pu",
+            "values": [
+              {
+                "siUnit": "kilohm",
+                "typValue": 10,
+                "unitFactor": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "12"
+      ],
+      "name": "BATT",
+      "numberOfSupportedFunctions": 1,
+      "description": "Battery pin. BATT is the battery’s positive terminal.",
+      "functionProperties": [
+        {
+          "electricalConfiguration": "power"
+        }
+      ],
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 24,
+              "unitFactor": 1
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": -0.3,
+              "unitFactor": 1
+            }
+          ]
+        },
+        "externalComponents": [
+          {
+            "componentType": "capacitor",
+            "configuration": "pd",
+            "values": [
+              {
+                "conditions": [
+                  "Ceramic cap",
+                  "pull down to PGND"
+                ],
+                "siUnit": "microfarad",
+                "typValue": 22,
+                "unitFactor": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "13"
+      ],
+      "name": "NC",
+      "description": "No Connect",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 24,
+              "unitFactor": 1
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "unitFactor": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "14"
+      ],
+      "name": "SRN",
+      "description": "Battery current-sense resistor negative terminal",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 24,
+              "unitFactor": 1,
+              "conditions": [
+                "Relative to PGND"
+              ]
+            },
+            {
+              "siUnit": "volt",
+              "maxValue": 3.6,
+              "unitFactor": 1,
+              "conditions": [
+                "Relative to SRP"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "unitFactor": 1,
+              "conditions": [
+                "Relative to PGND"
+              ]
+            },
+            {
+              "siUnit": "volt",
+              "minValue": -3.6,
+              "unitFactor": 1,
+              "conditions": [
+                "Relative to SRP"
+              ]
+            }
+          ]
+        },
+        "inputLeakage": {
+          "values": [
+            {
+              "siUnit": "microamp",
+              "minValue": -0.5,
+              "maxValue": 0.5,
+              "unitFactor": 1,
+              "conditions": [
+                "Vin=5V",
+                "VBATT=3.7V/cell",
+                "Tambient=25C"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "15"
+      ],
+      "name": "SRP",
+      "description": "Battery current-sense resistor positive terminal.",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 24,
+              "unitFactor": 1,
+              "conditions": [
+                "Relative to PGND"
+              ]
+            },
+            {
+              "siUnit": "volt",
+              "maxValue": 3.6,
+              "unitFactor": 1,
+              "conditions": [
+                "Relative to SRN"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "unitFactor": 1,
+              "conditions": [
+                "Relative to PGND"
+              ]
+            },
+            {
+              "siUnit": "volt",
+              "minValue": -3.6,
+              "unitFactor": 1,
+              "conditions": [
+                "Relative to SRN"
+              ]
+            }
+          ]
+        },
+        "inputLeakage": {
+          "values": [
+            {
+              "siUnit": "microamp",
+              "minValue": -0.5,
+              "maxValue": 0.5,
+              "unitFactor": 1,
+              "conditions": [
+                "Vin=5V",
+                "VBATT=3.7V/cell",
+                "Tambient=25C"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "16"
+      ],
+      "name": "SRP",
+      "description": "Battery current-sense resistor positive terminal.",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 24,
+              "unitFactor": 1,
+              "conditions": [
+                "Relative to PGND"
+              ]
+            },
+            {
+              "siUnit": "volt",
+              "maxValue": 3.6,
+              "unitFactor": 1,
+              "conditions": [
+                "Relative to SRN"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "unitFactor": 1,
+              "conditions": [
+                "Relative to PGND"
+              ]
+            },
+            {
+              "siUnit": "volt",
+              "minValue": -3.6,
+              "unitFactor": 1,
+              "conditions": [
+                "Relative to SRN"
+              ]
+            }
+          ]
+        },
+        "inputLeakage": {
+          "values": [
+            {
+              "siUnit": "microamp",
+              "minValue": -0.5,
+              "maxValue": 0.5,
+              "unitFactor": 1,
+              "conditions": [
+                "Vin=5V",
+                "VBATT=3.7V/cell",
+                "Tambient=25C"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "17"
+      ],
+      "name": "BST2",
+      "description": "Bootstrap. Connect a 100nF bootstrap capacitor between the BST2 and SW2 pins to form a floating supply across the power MOSFET driver. This drives the power MOSFET’s gate above the supply voltage",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 5,
+              "unitFactor": 1,
+              "conditions": [
+                "Relative to SW2"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": 0,
+              "unitFactor": 1,
+              "conditions": [
+                "Relative to SW2"
+              ]
+            }
+          ]
+        },
+        "externalComponents": [
+          {
+            "componentType": "capacitor",
+            "configuration": "pd",
+            "values": [
+              {
+                "conditions": [
+                  "connect to SW2"
+                ],
+                "siUnit": "nanofarad",
+                "typValue": 100,
+                "unitFactor": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "18"
+      ],
+      "name": "CFLR",
+      "description": "DC/DC power stage output.",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 24,
+              "unitFactor": 1
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "unitFactor": 1
+            }
+          ]
+        },
+        "externalComponents": [
+          {
+            "componentType": "capacitor",
+            "configuration": "pd",
+            "values": [
+              {
+                "conditions": [
+                  "2x22uF",
+                  "ceramic caps"
+                ],
+                "siUnit": "microfarad",
+                "typValue": 44,
+                "unitFactor": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "19"
+      ],
+      "name": "SW2",
+      "description": "Switching node. SW2 is the middle point of the boost phase’s half-bridge.",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 24,
+              "unitFactor": 1,
+              "conditions": [
+                "DC",
+                "relative to PGND"
+              ]
+            },
+            {
+              "siUnit": "volt",
+              "maxValue": 28,
+              "conditions": [
+                "20ns",
+                "relative to PGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "unitFactor": 1,
+              "conditions": [
+                "DC",
+                "relative to PGND"
+              ]
+            },
+            {
+              "siUnit": "volt",
+              "minValue": -2,
+              "conditions": [
+                "elative to PGNS"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "20"
+      ],
+      "name": "PGND",
+      "description": "Power ground."
+    },
+    {
+      "terminalIdentifier": [
+        "21"
+      ],
+      "name": "SW1",
+      "description": "Switching node. SW1 is the middle point of the buck phase’s half-bridge",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 24,
+              "unitFactor": 1,
+              "conditions": [
+                "DC",
+                "relative to PGND"
+              ]
+            },
+            {
+              "siUnit": "volt",
+              "maxValue": 28,
+              "conditions": [
+                "20ns",
+                "relative to PGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "unitFactor": 1,
+              "conditions": [
+                "DC",
+                "relative to PGND"
+              ]
+            },
+            {
+              "siUnit": "volt",
+              "minValue": -2,
+              "conditions": [
+                "elative to PGNS"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "22"
+      ],
+      "name": "IN",
+      "description": "Input. The IN pin is the IC’s power stage input.",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 26,
+              "unitFactor": 1,
+              "conditions": [
+                "DC",
+                "relative to PGND"
+              ]
+            },
+            {
+              "siUnit": "volt",
+              "maxValue": 28,
+              "conditions": [
+                "20ns",
+                "relative to PGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to PGND"
+              ]
+            }
+          ]
+        },
+        "externalComponents": [
+          {
+            "componentType": "capacitor",
+            "configuration": "pd",
+            "values": [
+              {
+                "conditions": [
+                  "4x10uF",
+                  "ceramic caps",
+                  "pull down to PGND"
+                ],
+                "siUnit": "microfarad",
+                "typValue": 40,
+                "unitFactor": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "23"
+      ],
+      "name": "BST1",
+      "description": "Bootstrap. Connect a 100nF bootstrap capacitor between the BST1 and SW1 pins to form a floating supply across the power MOSFET driver. This drives the power MOSFET’s gate above the supply voltage",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 5,
+              "unitFactor": 1,
+              "conditions": [
+                "Relative to SW1"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": 0,
+              "unitFactor": 1,
+              "conditions": [
+                "Relative to SW1"
+              ]
+            }
+          ]
+        },
+        "externalComponents": [
+          {
+            "componentType": "capacitor",
+            "configuration": "pd",
+            "values": [
+              {
+                "conditions": [
+                  "connect to SW1"
+                ],
+                "siUnit": "nanofarad",
+                "typValue": 100,
+                "unitFactor": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "24"
+      ],
+      "name": "IAN",
+      "description": "Input current-sense negative terminal",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 26,
+              "unitFactor": 1,
+              "conditions": [
+                "DC",
+                "relative to PGND"
+              ]
+            },
+            {
+              "siUnit": "volt",
+              "maxValue": 28,
+              "conditions": [
+                "20ns",
+                "relative to PGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to PGND"
+              ]
+            }
+          ]
+        },
+        "inputLeakage": {
+          "values": [
+            {
+              "siUnit": "microamp",
+              "minValue": -0.5,
+              "maxValue": 0.5,
+              "unitFactor": 1,
+              "conditions": [
+                "Vin=5V",
+                "VBATT=3.7V/cell",
+                "Tambient=25C"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "25"
+      ],
+      "name": "IAN",
+      "description": "Input current-sense negative terminal",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 26,
+              "unitFactor": 1,
+              "conditions": [
+                "DC",
+                "relative to PGND"
+              ]
+            },
+            {
+              "siUnit": "volt",
+              "maxValue": 28,
+              "conditions": [
+                "20ns",
+                "relative to PGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to PGND"
+              ]
+            }
+          ]
+        },
+        "inputLeakage": {
+          "values": [
+            {
+              "siUnit": "microamp",
+              "minValue": -0.5,
+              "maxValue": 0.5,
+              "unitFactor": 1,
+              "conditions": [
+                "Vin=5V",
+                "VBATT=3.7V/cell",
+                "Tambient=25C"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "26"
+      ],
+      "name": "IAP",
+      "description": "Input current-sense positive terminal",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 26,
+              "unitFactor": 1,
+              "conditions": [
+                "DC",
+                "relative to PGND"
+              ]
+            },
+            {
+              "siUnit": "volt",
+              "maxValue": 28,
+              "conditions": [
+                "20ns",
+                "relative to PGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to PGND"
+              ]
+            }
+          ]
+        },
+        "inputLeakage": {
+          "values": [
+            {
+              "siUnit": "microamp",
+              "minValue": -0.5,
+              "maxValue": 0.5,
+              "unitFactor": 1,
+              "conditions": [
+                "Vin=5V",
+                "VBATT=3.7V/cell",
+                "Tambient=25C"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "27"
+      ],
+      "name": "ACGATE",
+      "description": "Input N-channel MOSFET gate driver. The ACGATE pin drives the external pass-through N-channel MOSFET.",
+      "pinProperties": {
+        "vih": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": 6,
+              "relativeValueReference": "ADP",
+              "relativeValueOperator": "add",
+              "unitFactor": 1
+            }
+          ]
+        },
+        "vil": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "relativeValueReference": "ADP",
+              "relativeValueOperator": "add",
+              "unitFactor": 1
+            }
+          ]
+        },
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 28,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to PGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to PGND"
+              ]
+            }
+          ]
+        },
+        "externalComponents": [
+          {
+            "componentType": "resistor",
+            "configuration": "pd",
+            "values": [
+              {
+                "conditions": [
+                  "Connect beween ACGATE and the external N-channel pass-through MOSFET's source"
+                ],
+                "siUnit": "megaohm",
+                "typValue": 1,
+                "unitFactor": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "28"
+      ],
+      "name": "ADP",
+      "description": "Adapter voltage sense. If ADP over-voltage lockout (OVLO) is triggered, the external OVP MOSFET (if used) and power stage turn off. The ADP pin also provides the IC’s internal bias voltage.",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 28,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to PGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to PGND"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "29"
+      ],
+      "name": "FB",
+      "description": "Feedback. In source mode, FB is the IN output voltage in source mode (VIN_SRC) feedback pin. If VIN_SRC feedback is configured via the register, this pin is not functional. Float FB or connect it to AGND.",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 5,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "30"
+      ],
+      "name": "VCC",
+      "standardizedName": "vdd",
+      "description": "VCC LDO Output",
+      "functionProperties": [
+        {
+          "electricalConfiguration": "power"
+        }
+      ],
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 5,
+              "unitFactor": 1,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3,
+              "conditions": [
+                "relative to AGND"
+              ]
+            }
+          ]
+        },
+        "externalComponents": [
+          {
+            "componentType": "capacitor",
+            "configuration": "pd",
+            "values": [
+              {
+                "conditions": [
+                  "ceramic cap",
+                  "pull down to AGND"
+                ],
+                "siUnit": "microfarad",
+                "typValue": 4.7,
+                "unitFactor": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "package": {
+    "length": {
+      "values": [
+        {
+          "siUnit": "millimeter",
+          "typValue": 5,
+          "minValue": 4.9,
+          "maxValue": 5.1,
+          "unitFactor": 1
+        }
+      ]
+    },
+    "width": {
+      "values": [
+        {
+          "siUnit": "millimeter",
+          "typValue": 4,
+          "minValue": 3.9,
+          "maxValue": 4.1,
+          "unitFactor": 1
+        }
+      ]
+    },
+    "height": {
+      "values": [
+        {
+          "siUnit": "millimeter",
+          "minValue": 0.7,
+          "maxValue": 0.8
+        }
+      ]
+    },
+    "standardPackageSize": "4mmx5mm",
+    "standardPackageType": "TQFN"
+  }
 }
