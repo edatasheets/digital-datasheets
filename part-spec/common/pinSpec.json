@@ -200,7 +200,6 @@
         "voltageOptions": {
           "description": "list of voltage levels supported by a pin",
           "comment": "units of volts",
-          "type": "array",
           "items": {
             "$ref": "../common/values.json#/valueOptions"
           }
