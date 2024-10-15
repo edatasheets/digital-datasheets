@@ -1,0 +1,319 @@
+{
+    "values": [
+        {
+            "powerTransitionName": "tEEPROM_LOAD",
+            "powerTransitionDescription": "VSYS rising on On-Request",
+            "signal1": "VSYS",
+            "signal1TerminalIdentifiers": [
+                "13"
+            ],
+            "signal2": "ON-Request",
+            "signal2TerminalIdentifiers": [
+                "25"
+            ],
+            "timeCondition": {
+                "values": [
+                    {
+                        "siUnit": "second",
+                        "typValue": 2.3,
+                        "unitFactor": 1e-3
+                    }
+                ]
+            },
+            "powerDirection": "up"
+        },
+        {
+            "powerTransitionName": "tEN_PB_VSENSE_DEGL",
+            "powerTransitionDescription": "On-Request to Buck2 deglitch time",
+            "signal1": "ON-Request",
+            "signal1TerminalIdentifiers": [
+                "25"
+            ],
+            "signal2": "Buck2",
+            "signal2TerminalIdentifiers": [
+                "29"
+            ],
+            "timeCondition": {
+                "values": [
+                    {
+                        "siUnit": "second",
+                        "minValue": 115,
+                        "typValue": 200,
+                        "maxValue": 275,
+                        "unitFactor": 1e-3,
+                        "conditions": [
+                            "PB, rising Edge, applicable after the successful long-press-OFF-request"
+                        ]
+                    },
+                    {
+                        "siUnit": "second",
+                        "minValue": 45,
+                        "typValue": 50,
+                        "maxValue": 55,
+                        "unitFactor": 1e-3,
+                        "conditions": [
+                            "EN, rising Edge, slow"
+                        ]
+                    },
+                    {
+                        "siUnit": "second",
+                        "minValue": 60,
+                        "typValue": 120,
+                        "maxValue": 160,
+                        "unitFactor": 1e-6,
+                        "conditions": [
+                            "EN, rising Edge, fast"
+                        ]
+                    }
+                ]
+            },
+            "powerDirection": "up"
+        },
+        {
+            "powerTransitionDescription": "Buck2 to GPO1 time",
+            "signal1": "Buck2",
+            "signal1TerminalIdentifiers": [
+                "29"
+            ],
+            "signal2": "GPO1",
+            "signal2TerminalIdentifiers": [
+                "8"
+            ],
+            "timeCondition": {
+                "values": [
+                    {
+                        "siUnit": "second",
+                        "typValue": 1.5,
+                        "unitFactor": 1e-3
+                    }
+                ]
+            },
+            "powerDirection": "up"
+        },
+        {
+            "powerTransitionDescription": "Buck2 to LDO4 time",
+            "signal1": "Buck2",
+            "signal1TerminalIdentifiers": [
+                "29"
+            ],
+            "signal2": "LDO4",
+            "signal2TerminalIdentifiers": [
+                "23"
+            ],
+            "timeCondition": {
+                "values": [
+                    {
+                        "siUnit": "second",
+                        "typValue": 1.5,
+                        "unitFactor": 1e-3
+                    }
+                ]
+            },
+            "powerDirection": "up"
+        },
+        {
+            "powerTransitionDescription": "Buck2 to LDO1 time",
+            "signal1": "Buck2",
+            "signal1TerminalIdentifiers": [
+                "29"
+            ],
+            "signal2": "LDO1",
+            "signal2TerminalIdentifiers": [
+                "7"
+            ],
+            "timeCondition": {
+                "values": [
+                    {
+                        "siUnit": "second",
+                        "typValue": 1.5,
+                        "unitFactor": 1e-3
+                    }
+                ]
+            },
+            "powerDirection": "up"
+        },
+        {
+            "powerTransitionDescription": "Buck2 to LDO3 time",
+            "signal1": "Buck2",
+            "signal1TerminalIdentifiers": [
+                "29"
+            ],
+            "signal2": "LDO3",
+            "signal2TerminalIdentifiers": [
+                "21"
+            ],
+            "timeCondition": {
+                "values": [
+                    {
+                        "siUnit": "second",
+                        "typValue": 1.5,
+                        "unitFactor": 1e-3
+                    }
+                ]
+            },
+            "powerDirection": "up"
+        },
+        {
+            "powerTransitionDescription": "LDO3 to Buck3 time",
+            "signal1": "LDO3",
+            "signal1TerminalIdentifiers": [
+                "21"
+            ],
+            "signal2": "Buck3",
+            "signal2TerminalIdentifiers": [
+                "27"
+            ],
+            "timeCondition": {
+                "values": [
+                    {
+                        "siUnit": "second",
+                        "typValue": 4.5,
+                        "unitFactor": 1e-3
+                    }
+                ]
+            },
+            "powerDirection": "up"
+        },
+        {
+            "powerTransitionDescription": "Buck3 to Buck1 time",
+            "signal1": "Buck3",
+            "signal1TerminalIdentifiers": [
+                "27"
+            ],
+            "signal2": "Buck1",
+            "signal2TerminalIdentifiers": [
+                "2",
+                "3"
+            ],
+            "timeCondition": {
+                "values": [
+                    {
+                        "siUnit": "second",
+                        "typValue": 1.5,
+                        "unitFactor": 1e-3
+                    }
+                ]
+            },
+            "powerDirection": "up"
+        },
+        {
+            "powerTransitionDescription": "Buck1 to LDO2 time",
+            "signal1": "Buck1",
+            "signal1TerminalIdentifiers": [
+                "2",
+                "3"
+            ],
+            "signal2": "LDO2",
+            "signal2TerminalIdentifiers": [
+                "19"
+            ],
+            "timeCondition": {
+                "values": [
+                    {
+                        "siUnit": "second",
+                        "typValue": 1.5,
+                        "unitFactor": 1e-3
+                    }
+                ]
+            },
+            "powerDirection": "up"
+        },
+        {
+            "powerTransitionDescription": "nRSTOUT to RESET is relevant time",
+            "signal1": "nRSTOUT",
+            "signal1TerminalIdentifiers": [
+                "18"
+            ],
+            "signal2": "RESET",
+            "signal2TerminalIdentifiers": [
+                "28"
+            ],
+            "timeCondition": {
+                "values": [
+                    {
+                        "siUnit": "second",
+                        "typValue": 10,
+                        "unitFactor": 1e-3
+                    }
+                ]
+            },
+            "powerDirection": "up"
+        },
+        {
+            "powerTransitionDescription": "nRSTOUT to STBY relevant time",
+            "signal1": "nRSTOUT",
+            "signal1TerminalIdentifiers": [
+                "18"
+            ],
+            "signal2": "STBY",
+            "signal2TerminalIdentifiers": [
+                "31"
+            ],
+            "timeCondition": {
+                "values": [
+                    {
+                        "siUnit": "second",
+                        "typValue": 10,
+                        "unitFactor": 1e-3
+                    }
+                ]
+            },
+            "powerDirection": "up"
+        },
+        {
+            "powerTransitionName": "tRAMP",
+            "powerTransitionDescription": "Ramp Time LDO in LDO- and bypass-mode",
+            "signal1": "LDO",
+            "signal1TerminalIdentifiers": [
+                "7",
+                "19",
+                "21",
+                "23"
+            ],
+            "riseTime": {
+                "values": [
+                    {
+                        "siUnit": "second",
+                        "maxValue": 950,
+                        "unitFactor": 1e-6,
+                        "conditions": [
+                            "Measured from enable to 98% of target value, LDO-mode or bypassmode, measured when enabled individually, assuming no residual voltage"
+                        ]
+                    },
+                    {
+                        "siUnit": "second",
+                        "maxValue": 1250,
+                        "unitFactor": 1e-6,
+                        "conditions": [
+                            "Measured from enable to target value, LSW-mode, assuming no residual voltage"
+                        ]
+                    }
+                ]
+            },
+            "powerDirection": "up"
+        },
+        {
+            "powerTransitionName": "tRAMP_SLEW",
+            "powerTransitionDescription": "Ramp up Slew Rate",
+            "signal1": "LDO",
+            "signal1TerminalIdentifiers": [
+                "7",
+                "19",
+                "21",
+                "23"
+            ],
+            "slewRate": {
+                "values": [
+                    {
+                        "unitName": "mV/uS",
+                        "maxValue": 12,
+                        "conditions": [
+                            "VOUT from 0.3 V to 90% of VOUT in LDO and Bypassand LSW mode"
+                        ]
+                    }
+                ]
+            },
+            "powerDirection": "up"
+        }
+    ]
+}
