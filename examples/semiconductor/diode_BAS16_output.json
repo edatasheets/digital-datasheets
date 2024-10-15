@@ -21,20 +21,26 @@
     },
     "pins": [
         {
-            "terminalIdentifier": "1",
+            "terminalIdentifier": [
+                "1"
+            ],
             "name": "A1",
             "numberOfSupportedFunctions": 1,
             "standardizedName": "anode",
             "description": "anode (diode 1)"
         },
         {
-            "terminalIdentifier": "2",
+            "terminalIdentifier": [
+                "2"
+            ],
             "name": "n.c",
             "numberOfSupportedFunctions": 1,
             "description": "not connected"
         },
         {
-            "terminalIdentifier": "3",
+            "terminalIdentifier": [
+                "3"
+            ],
             "name": "K",
             "numberOfSupportedFunctions": 1,
             "standardizedName": "cathode",

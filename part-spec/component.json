@@ -26,13 +26,24 @@
 			"description": "component package information",
 			"$ref": "./common/package.json#/package"
 		},
+		"register": {
+			"description": "register information",
+			"$ref": "./common/register.json#/register"
+		},
 		"thermal": {
 			"description": "component temperature and thermal resistance information",
-			"$ref": "./common/thermals.json#/thermalProperties"
+			"$ref": "./common/thermal.json#/thermal"
 		},
-		"externalFileMap": {
+		"componentPropertyExternalFiles": {
 			"description": "external files that describe key component properties. External files can be used in lieu of defining core properties, pins, and package information in the same file",
 			"$ref": "#/$defs/externalFileMap"
+		},
+		"additionalSpecExternalFiles": {
+			"description": "external files that contain information outside of the json spec. Examples include layout, simulation, etc.",
+			"type": "array",
+			"items": {
+				"$ref": "./common/externalFile.json#/externalFile"
+			}
 		},
 		"reliability": {
 			"description": "reliability information about the component",
@@ -66,13 +77,21 @@
 					"description": "package information specified by the package spec file",
 					"$ref": "./common/externalFile.json#/externalFile"
 				},
-				"reliability": {
-					"description": "reliability information about the component",
-					"$ref": "./common/reliability.json#/reliability"
-				},
 				"powerSequence": {
 					"description": "information about component power sequencing",
 					"$ref": "./common/powerSequence.json#/powerSequenceTable"
+        },
+				"register": {
+					"description": "register information",
+					"$ref": "./common/externalFile.json#/externalFile"
+				},
+				"thermal": {
+					"description": "component temperature and thermal resistance information",
+					"$ref": "./common/externalFile.json#/externalFile"
+				},
+				"reliability": {
+					"description": "reliability information about the component",
+					"$ref": "./common/externalFile.json#/externalFile"
 				}
 			}
 		}

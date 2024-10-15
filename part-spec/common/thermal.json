@@ -1,0 +1,91 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/thermal.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "specification of thermal properties on components ",
+    "thermal": {
+        "type": "object",
+        "properties": {
+            "junctionTemperature": {
+                "description": "recommended operating junction temperature range of a part",
+                "comment": "units of Celsius",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "junctionTemperatureAbsMax": {
+                "description": "absolute maximum junction temperature of a part",
+                "comment": "units of Celsius",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "ambientTemperature": {
+                "description": "recommended operating ambient air temperature range of a part",
+                "comment": "units of Celsius",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "ambientTemperatureAbsMax": {
+                "description": "absolute maximum ambient air temperature of a part",
+                "comment": "units of Celsius",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "caseTemperature": {
+                "description": "case temperature range of a part",
+                "comment": "units of Celsius",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "caseTemperatureAbsMax": {
+                "description": "absolute maximum case temperature of a part",
+                "comment": "units of Celsius",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "leadTemperatureAbsMax": {
+                "description": "absolute maximum lead temperature of a part",
+                "comment": "units of Celsius",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "storageTemperatureAbsMax": {
+                "description": "absolute maximum storage temperature of a part",
+                "comment": "units of Celsius",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "packageThermalResistance": {
+                "description": "package thermal resistance of a part",
+                "comment": "units of Celsius/watt or kelvin/watt",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "thermalResistanceJunctionToAmbient": {
+                "description": "thermal resistance between the semiconductor junction of a part and the ambient air",
+                "comment": "units of Celsius/watt or kelvin/watt",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "thermalResistanceJunctionToCase": {
+                "description": "thermal resistance between the semiconductor junction and the package surface of a part",
+                "comment": "units of Celsius/watt or kelvin/watt",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "thermalResistanceJunctionToBoard": {
+                "description": "thermal resistance between the semiconduction junction of a part and the board",
+                "comment": "units of Celsius/watt or kelvin/watt",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "thermalResistanceJunctionToLead": {
+                "description": "thermal resistance between the semiconduction junction of a part and the solder pad",
+                "comment": "units of Celsius/watt or kelvin/watt",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "thermalResistanceCaseToAmbient": {
+                "description": "thermal resistance between the package surface of a part and the ambient air",
+                "comment": "units of Celsius/watt or kelvin/watt",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "thermalDesignPower": {
+                "description": "power at which thermal compliance should be evaluated at steady-state",
+                "comment": "units of watts",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "peakPower": {
+                "description": "maximum transient power the part will dissipate",
+                "comment": "units of watts",
+                "$ref": "../common/values.json#/valueOptions"
+            }
+        },
+        "additionalProperties": false
+    }
+}

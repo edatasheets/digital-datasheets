@@ -9,13 +9,22 @@
                 "description": "text description of the contents of an external file",
                 "type": "string"
             },
-            "fileType": {
+            "standardFileType": {
                 "description": "type of file being linked",
-                "examples": [
-                    "brd",
+                "enum": [
+                    "spice",
+                    "ipc2581",
+                    "ami",
                     "ibis",
-                    "json"
+                    "step",
+                    "delphi",
+                    "verilog",
+                    "brd"
                 ],
+                "type": "string"
+            },
+            "otherFileType": {
+                "description": "type of file being linked, if not in the standard list",
                 "type": "string"
             },
             "fileExtension": {
