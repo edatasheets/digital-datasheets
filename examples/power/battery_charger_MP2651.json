@@ -901,12 +901,8 @@
       "name": "VCC",
       "numberOfSupportedFunctions": 1,
       "description": "VCC LDO Output",
-      "functionProperties": [
-        {
-          "electricalConfiguration": "power"
-        }
-      ],
       "pinProperties": {
+        "electricalConfiguration": "power",
         "absVmax": {
           "values": [
             {
@@ -956,11 +952,9 @@
       "name": "AGND",
       "numberOfSupportedFunctions": 1,
       "description": "Analog ground",
-      "functionProperties": [
-        {
-          "electricalConfiguration": "ground"
-        }
-      ]
+      "pinProperties": {
+        "electricalConfiguration": "ground"
+      }
     },
     {
       "terminalIdentifier": [
@@ -969,14 +963,10 @@
       "name": "SDA",
       "numberOfSupportedFunctions": 1,
       "description": "I2C/SMBUS data",
-      "functionProperties": [
-        {
-          "interfaceType": "i2c",
-          "pinUsage": "i2c_sda",
-          "direction": "bidir"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "i2c",
+          "pinUsage": "i2c_sda",
+          "direction": "bidir",
         "vih": {
           "values": [
             {
@@ -1073,15 +1063,11 @@
       "name": "SCL",
       "numberOfSupportedFunctions": 1,
       "description": "I2C/SMBUS clock",
-      "functionProperties": [
-        {
-          "interfaceType": "i2c",
-          "pinUsage": "i2c_scl",
-          "direction": "in",
-          "electricalConfiguration": "open-drain"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "i2c",
+        "pinUsage": "i2c_scl",
+        "direction": "in",
+        "electricalConfiguration": "open-drain",
         "vih": {
           "values": [
             {
@@ -1178,14 +1164,10 @@
       "name": "INT",
       "numberOfSupportedFunctions": 1,
       "description": "Interrupt request output",
-      "functionProperties": [
-        {
-          "direction": "out",
-          "electricalConfiguration": "open-drain",
-          "polarity": "low"
-        }
-      ],
       "pinProperties": {
+        "direction": "out",
+        "electricalConfiguration": "open-drain",
+        "polarity": "low",
         "vol": {
           "values": [
             {
@@ -1370,12 +1352,8 @@
       "name": "NTC",
       "numberOfSupportedFunctions": 1,
       "description": "Negative temperature coefficient (NTC) thermistor pin. The NTC pin is the battery temperature sense’s input.",
-      "functionProperties": [
-        {
-          "direction": "in"
-        }
-      ],
       "pinProperties": {
+        "direction": "in",
         "absVmax": {
           "values": [
             {
@@ -1441,14 +1419,10 @@
       "name": "ACOK",
       "numberOfSupportedFunctions": 1,
       "description": "Input power good (PG) indication. This pin is an open-drain output that indicates whether the adapter is present. Connect this pin to a voltage source through a resistor.",
-      "functionProperties": [
-        {
-          "direction": "out",
-          "electricalConfiguration": "open-drain",
-          "polarity": "low"
-        }
-      ],
       "pinProperties": {
+        "direction": "out",
+        "electricalConfiguration": "open-drain",
+        "polarity": "low",
         "vol": {
           "values": [
             {
@@ -1506,12 +1480,8 @@
       "name": "BATT",
       "numberOfSupportedFunctions": 1,
       "description": "Battery pin. BATT is the battery’s positive terminal.",
-      "functionProperties": [
-        {
-          "electricalConfiguration": "power"
-        }
-      ],
       "pinProperties": {
+        "electricalConfiguration": "power",
         "absVmax": {
           "values": [
             {
@@ -2390,12 +2360,8 @@
       "name": "VCC",
       "standardizedName": "vdd",
       "description": "VCC LDO Output",
-      "functionProperties": [
-        {
-          "electricalConfiguration": "power"
-        }
-      ],
       "pinProperties": {
+        "electricalConfiguration": "power",
         "absVmax": {
           "values": [
             {

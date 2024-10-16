@@ -77,12 +77,8 @@
       ],
       "name": "CC1DB",
       "description": "Dead battery enable on CC1 pin",
-      "functionProperties": [
-        {
-          "interfaceType": "HV AIO"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "HV AIO",
         "absVmax": {
           "values": [
             {
@@ -107,13 +103,9 @@
       ],
       "name": "CC1",
       "description": "Type-C configuration channel 1",
-      "functionProperties": [
-        {
-          "interfaceType": "HV AIO",
-          "direction": "bidir"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "HV AIO",
+          "direction": "bidir",
         "absVmax": {
           "values": [
             {
@@ -164,13 +156,9 @@
       ],
       "name": "CC2",
       "description": "Type-C configuration channel 2",
-      "functionProperties": [
-        {
-          "interfaceType": "HV AIO",
-          "direction": "bidir"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "HV AIO",
+          "direction": "bidir",
         "absVmax": {
           "values": [
             {
@@ -209,13 +197,9 @@
       ],
       "name": "CC2DB",
       "description": "Dead battery enable on CC2 pin",
-      "functionProperties": [
-        {
-          "interfaceType": "HV AIO",
-          "direction": "bidir"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "HV AIO",
+          "direction": "bidir",
         "absVmax": {
           "values": [
             {
@@ -240,14 +224,10 @@
       ],
       "name": "RESET",
       "description": "Reset input, active high",
-      "functionProperties": [
-        {
-          "interfaceType": "DI",
-          "direction": "in",
-          "polarity": "high"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "DI",
+        "direction": "in",
+        "polarity": "high",
         "vih": {
           "values": [
             {
@@ -307,13 +287,9 @@
       ],
       "name": "SCL",
       "description": "I2C clock input",
-      "functionProperties": [
-        {
-          "interfaceType": "DI",
-          "direction": "in"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "DI",
+        "direction": "in",
         "vih": {
           "values": [
             {
@@ -373,14 +349,10 @@
       ],
       "name": "SDA",
       "description": "I2C data input/output, active low open drain",
-      "functionProperties": [
-        {
-          "interfaceType": "DI/OD",
-          "direction": "bidir",
-          "polarity": "low"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "DI/OD",
+        "direction": "bidir",
+        "polarity": "low",
         "vih": {
           "values": [
             {
@@ -440,14 +412,10 @@
       ],
       "name": "DISCH",
       "description": "Internal discharge path or external discharge path enable, active low open drain",
-      "functionProperties": [
-        {
-          "interfaceType": "HV AI/OD",
-          "direction": "bidir",
-          "polarity": "low"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "HV AI/OD",
+        "direction": "bidir",
+        "polarity": "low",
         "vol": {
           "values": [
             {
@@ -483,11 +451,9 @@
       ],
       "name": "GND",
       "description": "Ground",
-      "functionProperties": [
-        {
-          "interfaceType": "GND"
-        }
-      ]
+      "pinProperties": {
+        "interfaceType": "GND"
+      }
     },
     {
       "terminalIdentifier": [
@@ -495,14 +461,10 @@
       ],
       "name": "ATTACH",
       "description": "Attachment detection, active low open drain",
-      "functionProperties": [
-        {
-          "interfaceType": "OD",
-          "direction": "out",
-          "polarity": "low"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "OD",
+        "direction": "out",
+        "polarity": "low",
         "vih": {
           "values": [
             {
@@ -562,13 +524,9 @@
       ],
       "name": "ADDR0",
       "description": "I C device address setting",
-      "functionProperties": [
-        {
-          "interfaceType": "DI",
-          "direction": "in"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "DI",
+        "direction": "in",
         "vih": {
           "values": [
             {
@@ -628,13 +586,9 @@
       ],
       "name": "ADDR1",
       "description": "I C device address setting",
-      "functionProperties": [
-        {
-          "interfaceType": "DI",
-          "direction": "in"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "DI",
+        "direction": "in",
         "vih": {
           "values": [
             {
@@ -694,14 +648,10 @@
       ],
       "name": "POWER_OK3",
       "description": "Power contract flag, active low open drain",
-      "functionProperties": [
-        {
-          "interfaceType": "OD",
-          "direction": "out",
-          "polarity": "low"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "OD",
+        "direction": "out",
+        "polarity": "low",
         "vih": {
           "values": [
             {
@@ -761,14 +711,10 @@
       ],
       "name": "GPIO",
       "description": "General purpose output, active low open drain",
-      "functionProperties": [
-        {
-          "interfaceType": "OD",
-          "direction": "out",
-          "polarity": "low"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "OD",
+        "direction": "out",
+        "polarity": "low",
         "vih": {
           "values": [
             {
@@ -828,14 +774,10 @@
       ],
       "name": "VBUS_EN_SNK",
       "description": "VBUS sink power path enable, active low open drain",
-      "functionProperties": [
-        {
-          "interfaceType": "HV OD",
-          "direction": "out",
-          "polarity": "low"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "HV OD",
+        "direction": "out",
+        "polarity": "low",
         "vol": {
           "values": [
             {
@@ -871,14 +813,10 @@
       ],
       "name": "A_B_SIDE",
       "description": "Cable orientation, active low open drain",
-      "functionProperties": [
-        {
-          "interfaceType": "OD",
-          "direction": "out",
-          "polarity": "low"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "OD",
+        "direction": "out",
+        "polarity": "low",
         "vih": {
           "values": [
             {
@@ -938,13 +876,9 @@
       ],
       "name": "VBUS_VS_DISCH",
       "description": "VBUS voltage monitoring and discharge path",
-      "functionProperties": [
-        {
-          "interfaceType": "HV AI",
-          "direction": "in"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "HV AI",
+        "direction": "in",
         "vol": {
           "values": [
             {
@@ -980,14 +914,10 @@
       ],
       "name": "ALERT",
       "description": "I2C interrupt, active low open drain",
-      "functionProperties": [
-        {
-          "interfaceType": "OD",
-          "direction": "out",
-          "polarity": "low"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "OD",
+        "direction": "out",
+        "polarity": "low",
         "vih": {
           "values": [
             {
@@ -1047,14 +977,10 @@
       ],
       "name": "POWER_OK2",
       "description": "Power contract flag, active low open drain",
-      "functionProperties": [
-        {
-          "interfaceType": "HV OD",
-          "direction": "out",
-          "polarity": "low"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "HV OD",
+        "direction": "out",
+        "polarity": "low",
         "vol": {
           "values": [
             {
@@ -1090,12 +1016,8 @@
       ],
       "name": "VREG_1V2",
       "description": "1.2 V internal regulator output",
-      "functionProperties": [
-        {
-          "interfaceType": "PWR"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "PWR",
         "externalComponents": [
           {
             "componentType": "capacitor",
@@ -1118,12 +1040,8 @@
       ],
       "name": "VSYS",
       "description": "Power supply from system",
-      "functionProperties": [
-        {
-          "interfaceType": "PWR"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "PWR",
         "absVmax": {
           "values": [
             {
@@ -1148,12 +1066,8 @@
       ],
       "name": "VREG_2V7",
       "description": "2.7 V internal regulator output",
-      "functionProperties": [
-        {
-          "interfaceType": "PWR"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "PWR",
         "externalComponents": [
           {
             "componentType": "capacitor",
@@ -1176,12 +1090,8 @@
       ],
       "name": "VDD",
       "description": "Power supply from USB power line",
-      "functionProperties": [
-        {
-          "interfaceType": "HV PWR"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "HV PWR",
         "absVmax": {
           "values": [
             {

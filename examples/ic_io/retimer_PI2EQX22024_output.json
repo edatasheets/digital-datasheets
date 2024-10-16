@@ -151,11 +151,6 @@
       ],
       "name": "AP_RX2P",
       "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
-      "functionProperties": [
-        {
-          "direction": "in"
-        }
-      ],
       "pinProperties": {
         "absVmax": {
           "values": [
@@ -173,6 +168,7 @@
             }
           ]
         },
+        "direction": "in",
         "internalPullDown": {
           "values": [
             {
@@ -220,12 +216,8 @@
       ],
       "name": "AP_RX2N",
       "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
-      "functionProperties": [
-        {
-          "direction": "in"
-        }
-      ],
       "pinProperties": {
+        "direction": "in",
         "absVmax": {
           "values": [
             {
@@ -289,12 +281,8 @@
       ],
       "name": "CAP_CON2",
       "description": "The CON2 VDD1V external decoupling capacitor",
-      "functionProperties": [
-        {
-          "electricalConfiguration": "power"
-        }
-      ],
       "pinProperties": {
+        "electricalConfiguration": "power",
         "absVmax": {
           "values": [
             {
@@ -334,12 +322,8 @@
       ],
       "name": "AP_TX2P",
       "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
-      "functionProperties": [
-        {
-          "direction": "out"
-        }
-      ],
       "pinProperties": {
+        "direction": "out",
         "absVmax": {
           "values": [
             {
@@ -409,12 +393,8 @@
       ],
       "name": "AP_TX2N",
       "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
-      "functionProperties": [
-        {
-          "direction": "out"
-        }
-      ],
       "pinProperties": {
+        "direction": "out",
         "absVmax": {
           "values": [
             {
@@ -480,16 +460,12 @@
     },
     {
       "terminalIdentifier": [
-        "6"
+        "6", "19", "25"
       ],
       "name": "VDD1P8",
       "description": "1.8V power supply, +/- 5%",
-      "functionProperties": [
-        {
-          "electricalConfiguration": "power"
-        }
-      ],
       "pinProperties": {
+        "electricalConfiguration": "power",
         "absVmax": {
           "values": [
             {
@@ -522,12 +498,8 @@
       ],
       "name": "AP_RX1N",
       "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
-      "functionProperties": [
-        {
-          "direction": "in"
-        }
-      ],
       "pinProperties": {
+        "direction": "in",
         "absVmax": {
           "values": [
             {
@@ -591,12 +563,8 @@
       ],
       "name": "AP_RX1P",
       "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
-      "functionProperties": [
-        {
-          "direction": "in"
-        }
-      ],
       "pinProperties": {
+        "direction": "in",
         "absVmax": {
           "values": [
             {
@@ -660,12 +628,8 @@
       ],
       "name": "CAP_CON1",
       "description": "The CON1 VDD1V external decoupling capacitor",
-      "functionProperties": [
-        {
-          "electricalConfiguration": "power"
-        }
-      ],
       "pinProperties": {
+        "electricalConfiguration": "power",
         "absVmax": {
           "values": [
             {
@@ -705,12 +669,8 @@
       ],
       "name": "AP_TX1N",
       "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
-      "functionProperties": [
-        {
-          "direction": "out"
-        }
-      ],
       "pinProperties": {
+        "direction": "out",
         "absVmax": {
           "values": [
             {
@@ -780,12 +740,8 @@
       ],
       "name": "AP_TX1P",
       "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
-      "functionProperties": [
-        {
-          "direction": "out"
-        }
-      ],
       "pinProperties": {
+        "direction": "out",
         "absVmax": {
           "values": [
             {
@@ -851,63 +807,13 @@
     },
     {
       "terminalIdentifier": [
-        "12"
+        "12", "13", "14", "15", "16", "22", "30"
       ],
       "name": "GND",
       "description": "Supply Ground",
-      "functionProperties": [
-        {
-          "electricalConfiguration": "gnd"
-        }
-      ]
-    },
-    {
-      "terminalIdentifier": [
-        "13"
-      ],
-      "name": "GND",
-      "description": "Supply Ground",
-      "functionProperties": [
-        {
-          "electricalConfiguration": "gnd"
-        }
-      ]
-    },
-    {
-      "terminalIdentifier": [
-        "14"
-      ],
-      "name": "GND",
-      "description": "Supply Ground",
-      "functionProperties": [
-        {
-          "electricalConfiguration": "gnd"
-        }
-      ]
-    },
-    {
-      "terminalIdentifier": [
-        "15"
-      ],
-      "name": "GND",
-      "description": "Supply Ground",
-      "functionProperties": [
-        {
-          "electricalConfiguration": "gnd"
-        }
-      ]
-    },
-    {
-      "terminalIdentifier": [
-        "16"
-      ],
-      "name": "GND",
-      "description": "Supply Ground",
-      "functionProperties": [
-        {
-          "electricalConfiguration": "gnd"
-        }
-      ]
+      "pinProperties": {
+        "electricalConfiguration": "gnd"
+      }
     },
     {
       "terminalIdentifier": [
@@ -915,12 +821,8 @@
       ],
       "name": "CON_RX1P",
       "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
-      "functionProperties": [
-        {
-          "direction": "in"
-        }
-      ],
       "pinProperties": {
+        "direction": "in",
         "absVmax": {
           "values": [
             {
@@ -984,12 +886,8 @@
       ],
       "name": "CON_RX1N",
       "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
-      "functionProperties": [
-        {
-          "direction": "in"
-        }
-      ],
       "pinProperties": {
+        "direction": "in",
         "absVmax": {
           "values": [
             {
@@ -1049,54 +947,12 @@
     },
     {
       "terminalIdentifier": [
-        "19"
-      ],
-      "name": "VDD1P8",
-      "description": "1.8V power supply, +/- 5%",
-      "functionProperties": [
-        {
-          "electricalConfiguration": "power"
-        }
-      ],
-      "pinProperties": {
-        "absVmax": {
-          "values": [
-            {
-              "siUnit": "volt",
-              "maxValue": 2
-            }
-          ]
-        },
-        "absVmin": {
-          "values": [
-            {
-              "siUnit": "volt",
-              "minValue": -0.3
-            }
-          ]
-        },
-        "vmax": {
-          "values": [
-            {
-              "siUnit": "volt",
-              "maxValue": 1.89
-            }
-          ]
-        }
-      }
-    },
-    {
-      "terminalIdentifier": [
         "20"
       ],
       "name": "CON_TX1P",
       "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND.",
-      "functionProperties": [
-        {
-          "direction": "out"
-        }
-      ],
       "pinProperties": {
+        "direction": "out",
         "absVmax": {
           "values": [
             {
@@ -1166,12 +1022,8 @@
       ],
       "name": "CON_TX1N",
       "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND.",
-      "functionProperties": [
-        {
-          "direction": "out"
-        }
-      ],
       "pinProperties": {
+        "direction": "out",
         "absVmax": {
           "values": [
             {
@@ -1237,28 +1089,12 @@
     },
     {
       "terminalIdentifier": [
-        "22"
-      ],
-      "name": "GND",
-      "description": "Supply Ground",
-      "functionProperties": [
-        {
-          "electricalConfiguration": "gnd"
-        }
-      ]
-    },
-    {
-      "terminalIdentifier": [
         "23"
       ],
       "name": "CON_RX2N",
       "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND.",
-      "functionProperties": [
-        {
-          "direction": "in"
-        }
-      ],
       "pinProperties": {
+        "direction": "in",
         "absVmax": {
           "values": [
             {
@@ -1322,12 +1158,8 @@
       ],
       "name": "CON_RX2P",
       "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND.",
-      "functionProperties": [
-        {
-          "direction": "in"
-        }
-      ],
       "pinProperties": {
+        "direction": "in",
         "absVmax": {
           "values": [
             {
@@ -1387,54 +1219,12 @@
     },
     {
       "terminalIdentifier": [
-        "25"
-      ],
-      "name": "VDD1P8",
-      "description": "1.8V power supply, +/- 5%",
-      "functionProperties": [
-        {
-          "electricalConfiguration": "power"
-        }
-      ],
-      "pinProperties": {
-        "absVmax": {
-          "values": [
-            {
-              "siUnit": "volt",
-              "maxValue": 2
-            }
-          ]
-        },
-        "absVmin": {
-          "values": [
-            {
-              "siUnit": "volt",
-              "minValue": -0.3
-            }
-          ]
-        },
-        "vmax": {
-          "values": [
-            {
-              "siUnit": "volt",
-              "maxValue": 1.89
-            }
-          ]
-        }
-      }
-    },
-    {
-      "terminalIdentifier": [
         "26"
       ],
       "name": "CON_TX2N",
       "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
-      "functionProperties": [
-        {
-          "direction": "out"
-        }
-      ],
       "pinProperties": {
+        "direction": "out",
         "absVmax": {
           "values": [
             {
@@ -1504,12 +1294,8 @@
       ],
       "name": "CON_TX2P",
       "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
-      "functionProperties": [
-        {
-          "direction": "out"
-        }
-      ],
       "pinProperties": {
+        "direction": "out",
         "absVmax": {
           "values": [
             {
@@ -1579,15 +1365,11 @@
       ],
       "name": "SCL_3P3",
       "description": "SCL is I2C control bus clock. Open drain structure (3.3V tolerance)",
-      "functionProperties": [
-        {
-          "interfaceType": "i2c",
-          "pinUsage": "i2c_clk",
-          "direction": "in",
-          "electricalConfiguration": "open-drain"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "i2c",
+        "pinUsage": "i2c_clk",
+        "direction": "in",
+        "electricalConfiguration": "open-drain",
         "vih": {
           "values": [
             {
@@ -1656,15 +1438,11 @@
       ],
       "name": "SDA_3P3",
       "description": "SDA is I2C control bus data. Open drain structure. (3.3V tolerance)",
-      "functionProperties": [
-        {
-          "interfaceType": "i2c",
-          "pinUsage": "i2c_sda",
-          "direction": "bidir",
-          "electricalConfiguration": "open-drain"
-        }
-      ],
       "pinProperties": {
+        "interfaceType": "i2c",
+        "pinUsage": "i2c_sda",
+        "direction": "bidir",
+        "electricalConfiguration": "open-drain",
         "vih": {
           "values": [
             {
@@ -1726,18 +1504,6 @@
           ]
         }
       }
-    },
-    {
-      "terminalIdentifier": [
-        "30"
-      ],
-      "name": "GND",
-      "description": "Supply Ground",
-      "functionProperties": [
-        {
-          "electricalConfiguration": "gnd"
-        }
-      ]
     },
     {
       "terminalIdentifier": [
@@ -1804,12 +1570,8 @@
       ],
       "name": "EN",
       "description": "Chip Enable. With internal 340kΩ pull-up resistor. “Low”: Chip Power Down“High”: Normal Operation (Default)",
-      "functionProperties": [
-        {
-          "polarity": "high"
-        }
-      ],
       "pinProperties": {
+        "polarity": "high",
         "vih": {
           "values": [
             {

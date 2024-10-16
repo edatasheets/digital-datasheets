@@ -205,11 +205,9 @@
       ],
       "name": "VOUT",
       "description": "Output Voltage. When disabled, the MIC5528 switches in an internal 25Ω load to discharge the external capacitors.",
-      "functionProperties": [
-        {
-          "direction": "out"
-        }
-      ]
+      "pinProperties":{
+        "direction": "out"
+      }
     },
     {
       "terminalIdentifier": [
@@ -217,11 +215,9 @@
       ],
       "name": "VOUT",
       "description": "Output Voltage. When disabled, the MIC5528 switches in an internal 25Ω load to discharge the external capacitors.",
-      "functionProperties": [
-        {
-          "direction": "out"
-        }
-      ]
+      "pinProperties":{
+        "direction": "out"
+      }
     },
     {
       "terminalIdentifier": [
@@ -229,11 +225,9 @@
       ],
       "name": "GND",
       "description": "Ground",
-      "functionProperties": [
-        {
-          "interfaceType": "GND"
-        }
-      ]
+      "pinProperties":{
+        "interfaceType": "GND"
+      }
     },
     {
       "terminalIdentifier": [
@@ -241,12 +235,8 @@
       ],
       "name": "EN",
       "description": "Enable Input: Active-High. High = ON; Low = OFF. The MIC5528 has an internal pull-down and this pin can be left floating.",
-      "functionProperties": [
-        {
-          "direction": "in"
-        }
-      ],
       "pinProperties": {
+        "direction": "in",
         "vih": {
           "values": [
             {

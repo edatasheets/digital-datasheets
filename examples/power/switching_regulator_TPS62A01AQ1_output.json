@@ -216,12 +216,8 @@
       "name": "SW",
       "numberOfSupportedFunctions": 1,
       "description": "Switch pin connected to the internal FET switches and inductor terminal. Connect the inductor of the output filter to this pin.",
-      "functionProperties": [
-        {
-          "direction": "out"
-        }
-      ],
       "pinProperties": {
+        "direction": "out",
         "absVmax": {
           "values": [
             {
@@ -284,12 +280,8 @@
       "name": "VIN",
       "numberOfSupportedFunctions": 1,
       "description": "Power supply voltage pin",
-      "functionProperties": [
-        {
-          "direction": "in"
-        }
-      ],
       "pinProperties": {
+        "direction": "in",
         "absVmax": {
           "values": [
             {
@@ -323,13 +315,9 @@
       "name": "EN",
       "numberOfSupportedFunctions": 1,
       "description": "Device enable logic input. Logic high enables the device. Logic low disables the device and turns the device into shutdown. Do not leave the pin floating.",
-      "functionProperties": [
-        {
-          "direction": "in",
-          "polarity": "high"
-        }
-      ],
       "pinProperties": {
+        "direction": "in",
+        "polarity": "high",
         "vih": {
           "values": [
             {
@@ -389,12 +377,8 @@
       "name": "FB",
       "numberOfSupportedFunctions": 1,
       "description": "Feedback pin for the internal control loop. Connect this pin to an external feedback divider",
-      "functionProperties": [
-        {
-          "direction": "in"
-        }
-      ],
       "pinProperties": {
+        "direction": "in",
         "absVmax": {
           "values": [
             {
@@ -432,12 +416,8 @@
       "name": "PG",
       "numberOfSupportedFunctions": 1,
       "description": "Power-good open-drain output pin. The pullup resistor cannot be connected to any voltage higher than 5.5 V. If unused, leave the pin open or connect to GND.",
-      "functionProperties": [
-        {
-          "direction": "out"
-        }
-      ],
       "pinProperties": {
+        "direction": "out",
         "vol": {
           "values": [
             {
