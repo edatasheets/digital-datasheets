@@ -99,34 +99,39 @@ type Value struct {
 }
 
 type FunctionProperties struct {
-	PerFunctionName         string `json:"perFunctionName,omitempty"`
-	InterfaceType           string `json:"interfaceType,omitempty"`
-	PinUsage                string `json:"pinUsage,omitempty"`
-	Direction               string `json:"direction,omitempty"`
-	ElectricalConfiguration string `json:"electricalConfiguration,omitempty"`
+	PerFunctionName         string    `json:"perFunctionName,omitempty"`
+	InterfaceType           string    `json:"interfaceType,omitempty"`
+	PinUsage                string    `json:"pinUsage,omitempty"`
+	Direction               string    `json:"direction,omitempty"`
+	ElectricalConfiguration string    `json:"electricalConfiguration,omitempty"`
+	PerFunctionProperties   *PinProps `json:"perFunctionProperties,omitempty"`
 }
 
 type pinSpec struct {
-	TerminalIdentifier         string               `json:"terminalIdentifier,omitempty"`
+	TerminalIdentifier         []string             `json:"terminalIdentifier,omitempty"`
 	Name                       string               `json:"name,omitempty"`
 	NumberOfSupportedFunctions int                  `json:"numberOfSupportedFunctions,omitempty"`
 	FunctionProperties         []FunctionProperties `json:"functionProperties,omitempty"`
-	Vih                        *ValueOptions        `json:"vih,omitempty"`
-	Vil                        *ValueOptions        `json:"vil,omitempty"`
-	Vol                        *ValueOptions        `json:"vol,omitempty"`
-	Voh                        *ValueOptions        `json:"voh,omitempty"`
-	AbsVmax                    *ValueOptions        `json:"absVmax,omitempty"`
-	AbsVmin                    *ValueOptions        `json:"absVmin,omitempty"`
-	Vmax                       *ValueOptions        `json:"vmax,omitempty"`
-	Imax                       *ValueOptions        `json:"imax,omitempty"`
-	InputLeakage               *ValueOptions        `json:"inputLeakage,omitempty"`
-	VoltageOptions             *ValueOptions        `json:"voltageOptions,omitempty"`
-	Esd                        bool                 `json:"esd,omitempty"`
-	InternalPullUp             *ValueOptions        `json:"internalPullUp,omitempty"`
+	PinProperties              *PinProps            `json:"pinProperties,omitempty"`
+}
+
+type PinProps struct {
+	Vih            *ValueOptions `json:"vih,omitempty"`
+	Vil            *ValueOptions `json:"vil,omitempty"`
+	Vol            *ValueOptions `json:"vol,omitempty"`
+	Voh            *ValueOptions `json:"voh,omitempty"`
+	AbsVmax        *ValueOptions `json:"absVmax,omitempty"`
+	AbsVmin        *ValueOptions `json:"absVmin,omitempty"`
+	Vmax           *ValueOptions `json:"vmax,omitempty"`
+	Imax           *ValueOptions `json:"imax,omitempty"`
+	InputLeakage   *ValueOptions `json:"inputLeakage,omitempty"`
+	VoltageOptions *ValueOptions `json:"voltageOptions,omitempty"`
+	Esd            bool          `json:"esd,omitempty"`
+	InternalPullUp *ValueOptions `json:"internalPullUp,omitempty"`
 }
 
 func addVOLProps(props pinSpec) pinSpec {
-	props.Vol = &ValueOptions{
+	props.PinProperties.Vol = &ValueOptions{
 		Values: []Value{
 			{
 				SiUnit:     "volt",
@@ -150,7 +155,7 @@ func addVOLProps(props pinSpec) pinSpec {
 			},
 		},
 	}
-	props.Voh = &ValueOptions{
+	props.PinProperties.Voh = &ValueOptions{
 		Values: []Value{
 			{
 				SiUnit:                 "volt",
@@ -180,7 +185,7 @@ func addVOLProps(props pinSpec) pinSpec {
 			},
 		},
 	}
-	props.Imax = &ValueOptions{
+	props.PinProperties.Imax = &ValueOptions{
 		Values: []Value{
 			{
 				SiUnit:   "milliamp",
@@ -188,7 +193,7 @@ func addVOLProps(props pinSpec) pinSpec {
 			},
 		},
 	}
-	props.Esd = true
+	props.PinProperties.Esd = true
 	return props
 }
 
@@ -198,41 +203,43 @@ func getElectricalProps(ioType string) pinSpec {
 	switch ioType {
 	case "TTa", "TT":
 		props = pinSpec{
-			Vih: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:                 "volt",
-						RelativeValueReference: "0.445VDD",
-						RelativeValueModifier:  0.398,
-						RelativeValueOperator:  "add",
+			PinProperties: &PinProps{
+				Vih: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:                 "volt",
+							RelativeValueReference: "0.445VDD",
+							RelativeValueModifier:  0.398,
+							RelativeValueOperator:  "add",
+						},
 					},
 				},
-			},
-			Vil: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:                 "volt",
-						RelativeValueReference: "0.3VDD",
-						RelativeValueModifier:  0.07,
-						RelativeValueOperator:  "add",
+				Vil: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:                 "volt",
+							RelativeValueReference: "0.3VDD",
+							RelativeValueModifier:  0.07,
+							RelativeValueOperator:  "add",
+						},
 					},
 				},
-			},
-			AbsVmax: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:   "volt",
-						MaxValue: 4,
+				AbsVmax: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:   "volt",
+							MaxValue: 4,
+						},
 					},
 				},
-			},
-			AbsVmin: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:                 "volt",
-						RelativeValueReference: "VSS",
-						RelativeValueModifier:  -0.3,
-						RelativeValueOperator:  "add",
+				AbsVmin: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:                 "volt",
+							RelativeValueReference: "VSS",
+							RelativeValueModifier:  -0.3,
+							RelativeValueOperator:  "add",
+						},
 					},
 				},
 			},
@@ -240,43 +247,45 @@ func getElectricalProps(ioType string) pinSpec {
 		props = addVOLProps(props)
 	case "FT", "FTf":
 		props = pinSpec{
-			Vih: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:                 "volt",
-						RelativeValueReference: "0.5VDD",
-						RelativeValueModifier:  0.2,
-						RelativeValueOperator:  "add",
+			PinProperties: &PinProps{
+				Vih: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:                 "volt",
+							RelativeValueReference: "0.5VDD",
+							RelativeValueModifier:  0.2,
+							RelativeValueOperator:  "add",
+						},
 					},
 				},
-			},
-			Vil: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:                 "volt",
-						RelativeValueReference: ".475VDD",
-						RelativeValueModifier:  -0.2,
-						RelativeValueOperator:  "add",
+				Vil: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:                 "volt",
+							RelativeValueReference: ".475VDD",
+							RelativeValueModifier:  -0.2,
+							RelativeValueOperator:  "add",
+						},
 					},
 				},
-			},
-			AbsVmax: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:                 "volt",
-						RelativeValueReference: "VDD",
-						RelativeValueModifier:  0.4,
-						RelativeValueOperator:  "add",
+				AbsVmax: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:                 "volt",
+							RelativeValueReference: "VDD",
+							RelativeValueModifier:  0.4,
+							RelativeValueOperator:  "add",
+						},
 					},
 				},
-			},
-			AbsVmin: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:                 "volt",
-						RelativeValueReference: "VSS",
-						RelativeValueModifier:  -0.3,
-						RelativeValueOperator:  "add",
+				AbsVmin: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:                 "volt",
+							RelativeValueReference: "VSS",
+							RelativeValueModifier:  -0.3,
+							RelativeValueOperator:  "add",
+						},
 					},
 				},
 			},
@@ -284,39 +293,41 @@ func getElectricalProps(ioType string) pinSpec {
 		props = addVOLProps(props)
 	case "B":
 		props = pinSpec{
-			Vih: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:                 "volt",
-						RelativeValueReference: "0.2VDD",
-						RelativeValueModifier:  0.95,
-						RelativeValueOperator:  "add",
+			PinProperties: &PinProps{
+				Vih: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:                 "volt",
+							RelativeValueReference: "0.2VDD",
+							RelativeValueModifier:  0.95,
+							RelativeValueOperator:  "add",
+						},
 					},
 				},
-			},
-			Vil: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:                 "volt",
-						RelativeValueReference: "0.3VDD",
-						RelativeValueModifier:  -0.3,
-						RelativeValueOperator:  "add",
+				Vil: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:                 "volt",
+							RelativeValueReference: "0.3VDD",
+							RelativeValueModifier:  -0.3,
+							RelativeValueOperator:  "add",
+						},
 					},
 				},
-			},
-			AbsVmax: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:   "volt",
-						MaxValue: 9,
+				AbsVmax: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:   "volt",
+							MaxValue: 9,
+						},
 					},
 				},
-			},
-			AbsVmin: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:   "volt",
-						MinValue: 0,
+				AbsVmin: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:   "volt",
+							MinValue: 0,
+						},
 					},
 				},
 			},
@@ -324,170 +335,180 @@ func getElectricalProps(ioType string) pinSpec {
 		props = addVOLProps(props)
 	case "RST":
 		props = pinSpec{
-			Vih: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:                 "volt",
-						RelativeValueReference: "0.445VVDD",
-						RelativeValueModifier:  0.398,
-						RelativeValueOperator:  "add",
+			PinProperties: &PinProps{
+				Vih: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:                 "volt",
+							RelativeValueReference: "0.445VVDD",
+							RelativeValueModifier:  0.398,
+							RelativeValueOperator:  "add",
+						},
 					},
 				},
-			},
-			Vil: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:                 "volt",
-						RelativeValueReference: ".3VDD",
-						RelativeValueModifier:  0.7,
-						RelativeValueOperator:  "add",
+				Vil: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:                 "volt",
+							RelativeValueReference: ".3VDD",
+							RelativeValueModifier:  0.7,
+							RelativeValueOperator:  "add",
+						},
 					},
 				},
-			},
-			InternalPullUp: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:   "ohm",
-						MaxValue: 55,
-						TypValue: 40,
-						MinValue: 25,
+				InternalPullUp: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:   "ohm",
+							MaxValue: 55,
+							TypValue: 40,
+							MinValue: 25,
+						},
 					},
 				},
+				Esd: true,
 			},
-			Esd: true,
 		}
 	case "VDD":
 		props = pinSpec{
-			Vmax: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:   "volt",
-						MinValue: 2,
-						MaxValue: 3.6,
+			PinProperties: &PinProps{
+				Vmax: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:   "volt",
+							MinValue: 2,
+							MaxValue: 3.6,
+						},
 					},
 				},
-			},
-			AbsVmax: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:   "volt",
-						MaxValue: 4,
+				AbsVmax: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:   "volt",
+							MaxValue: 4,
+						},
 					},
 				},
-			},
-			AbsVmin: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:   "volt",
-						MinValue: -.3,
+				AbsVmin: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:   "volt",
+							MinValue: -.3,
+						},
 					},
 				},
+				Esd: true,
 			},
-			Esd: true,
 		}
 	case "VSS":
 	case "VBAT":
 		props = pinSpec{
-			AbsVmax: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:   "volt",
-						MaxValue: 4,
+			PinProperties: &PinProps{
+				AbsVmax: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:   "volt",
+							MaxValue: 4,
+						},
 					},
 				},
-			},
-			AbsVmin: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:   "volt",
-						MinValue: -.3,
+				AbsVmin: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:   "volt",
+							MinValue: -.3,
+						},
 					},
 				},
-			},
-			Vmax: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:   "volt",
-						MinValue: 1.65,
-						MaxValue: 3.6,
+				Vmax: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:   "volt",
+							MinValue: 1.65,
+							MaxValue: 3.6,
+						},
 					},
 				},
+				Esd: true,
 			},
-			Esd: true,
 		}
 	case "VDDA":
 		props = pinSpec{
-			AbsVmax: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:   "volt",
-						MaxValue: 4,
+			PinProperties: &PinProps{
+				AbsVmax: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:   "volt",
+							MaxValue: 4,
+						},
 					},
 				},
-			},
-			AbsVmin: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:   "volt",
-						MinValue: -.3,
+				AbsVmin: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:   "volt",
+							MinValue: -.3,
+						},
 					},
 				},
-			},
-			Vmax: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:     "volt",
-						MaxValue:   3.6,
-						MinValue:   2,
-						Conditions: []string{"OPAMP and DAC not used"},
-					},
-					{
-						SiUnit:     "volt",
-						MaxValue:   3.6,
-						MinValue:   2.4,
-						Conditions: []string{"OPAMP and DAC used"},
+				Vmax: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:     "volt",
+							MaxValue:   3.6,
+							MinValue:   2,
+							Conditions: []string{"OPAMP and DAC not used"},
+						},
+						{
+							SiUnit:     "volt",
+							MaxValue:   3.6,
+							MinValue:   2.4,
+							Conditions: []string{"OPAMP and DAC used"},
+						},
 					},
 				},
+				Esd: true,
 			},
-			Esd: true,
 		}
 	default:
 		props = pinSpec{
-			Vih: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:                 "volt",
-						RelativeValueReference: "VDD",
-						RelativeValueModifier:  0.7,
-						RelativeValueOperator:  "multiply",
+			PinProperties: &PinProps{
+				Vih: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:                 "volt",
+							RelativeValueReference: "VDD",
+							RelativeValueModifier:  0.7,
+							RelativeValueOperator:  "multiply",
+						},
 					},
 				},
-			},
-			Vil: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:                 "volt",
-						RelativeValueReference: "VDD",
-						RelativeValueModifier:  0.3,
-						RelativeValueOperator:  "multiply",
+				Vil: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:                 "volt",
+							RelativeValueReference: "VDD",
+							RelativeValueModifier:  0.3,
+							RelativeValueOperator:  "multiply",
+						},
 					},
 				},
-			},
-			AbsVmax: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:   "volt",
-						MaxValue: 4,
+				AbsVmax: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:   "volt",
+							MaxValue: 4,
+						},
 					},
 				},
-			},
-			AbsVmin: &ValueOptions{
-				Values: []Value{
-					{
-						SiUnit:                 "volt",
-						RelativeValueReference: "VSS",
-						RelativeValueModifier:  -0.3,
-						RelativeValueOperator:  "add",
+				AbsVmin: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:                 "volt",
+							RelativeValueReference: "VSS",
+							RelativeValueModifier:  -0.3,
+							RelativeValueOperator:  "add",
+						},
 					},
 				},
 			},
@@ -498,7 +519,7 @@ func getElectricalProps(ioType string) pinSpec {
 
 	switch ioType {
 	case "TC":
-		props.Vmax = &ValueOptions{
+		props.PinProperties.Vmax = &ValueOptions{
 			Values: []Value{
 				{
 					SiUnit:                 "volt",
@@ -509,7 +530,7 @@ func getElectricalProps(ioType string) pinSpec {
 			},
 		}
 	case "TTa":
-		props.Vmax = &ValueOptions{
+		props.PinProperties.Vmax = &ValueOptions{
 			Values: []Value{
 				{
 					SiUnit:                 "volt",
@@ -520,7 +541,7 @@ func getElectricalProps(ioType string) pinSpec {
 			},
 		}
 	case "FT", "FTf", "B":
-		props.Vmax = &ValueOptions{
+		props.PinProperties.Vmax = &ValueOptions{
 			Values: []Value{
 				{
 					SiUnit:   "volt",
@@ -529,7 +550,7 @@ func getElectricalProps(ioType string) pinSpec {
 			},
 		}
 	case "TT":
-		props.Vmax = &ValueOptions{
+		props.PinProperties.Vmax = &ValueOptions{
 			Values: []Value{
 				{
 					SiUnit:   "volt",
@@ -541,7 +562,7 @@ func getElectricalProps(ioType string) pinSpec {
 
 	switch ioType {
 	case "TC":
-		props.InputLeakage = &ValueOptions{
+		props.PinProperties.InputLeakage = &ValueOptions{
 			Values: []Value{
 				{
 					SiUnit:   "microamp",
@@ -550,7 +571,7 @@ func getElectricalProps(ioType string) pinSpec {
 			},
 		}
 	case "TTa":
-		props.InputLeakage = &ValueOptions{
+		props.PinProperties.InputLeakage = &ValueOptions{
 			Values: []Value{
 				{
 					SiUnit:     "microamp",
@@ -570,7 +591,7 @@ func getElectricalProps(ioType string) pinSpec {
 			},
 		}
 	case "FT", "FTf":
-		props.InputLeakage = &ValueOptions{
+		props.PinProperties.InputLeakage = &ValueOptions{
 			Values: []Value{
 				{
 					SiUnit:     "microamp",
@@ -665,9 +686,35 @@ func translateFnName(fnName string) FunctionProperties {
 	} else if gpioRE.MatchString(fnName) {
 		return FunctionProperties{Direction: "bidir"}
 	} else if compinRE.MatchString(fnName) || adcRE.MatchString(fnName) || opampinRE.MatchString(fnName) {
-		return FunctionProperties{Direction: "in", ElectricalConfiguration: "analog"}
+		return FunctionProperties{
+			Direction:               "in",
+			ElectricalConfiguration: "analog",
+			PerFunctionProperties: &PinProps{
+				InputLeakage: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:     "microamp",
+							MaxValue:   0.2,
+							Conditions: []string{"analog mode", "VSS ≤ VIN ≤ VDDA"},
+						},
+					},
+				},
+			}}
 	} else if compoutRE.MatchString(fnName) || opampoutRE.MatchString(fnName) {
-		return FunctionProperties{Direction: "out", ElectricalConfiguration: "analog"}
+		return FunctionProperties{
+			Direction:               "out",
+			ElectricalConfiguration: "analog",
+			PerFunctionProperties: &PinProps{
+				InputLeakage: &ValueOptions{
+					Values: []Value{
+						{
+							SiUnit:     "microamp",
+							MaxValue:   0.2,
+							Conditions: []string{"analog mode", "VSS ≤ VIN ≤ VDDA"},
+						},
+					},
+				},
+			}}
 	} else if usbRE.MatchString(fnName) {
 		return FunctionProperties{InterfaceType: "USB", Direction: "bidir", ElectricalConfiguration: "push-pull"}
 	} else if canRE.MatchString(fnName) {
@@ -937,7 +984,7 @@ func main() {
 	for _, eachrecord := range records[1:] {
 		ioTypeStr := sanitizeIOType(eachrecord[ioType], eachrecord[pinName])
 		pin := getElectricalProps(ioTypeStr)
-		pin.TerminalIdentifier = eachrecord[pinNum]
+		pin.TerminalIdentifier = []string{eachrecord[pinNum]}
 		pin.Name = eachrecord[pinName]
 		pin.FunctionProperties = generateFunctionProps(eachrecord[pinName], eachrecord[extraFns1], eachrecord[extraFns2])
 		pin.NumberOfSupportedFunctions = len(pin.FunctionProperties)

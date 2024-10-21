@@ -1,1786 +1,1662 @@
 {
-    "componentID": {
-        "partType": "retimer",
-        "manufacturer": "DIODES",
-        "componentName": "PI2EQX22024",
-        "orderableMPN": [
-            "PI2EQX22024XEAEX"
-        ],
-        "sourceDatasheetID": {
-            "publishedDate": "2022-12-01",
-            "version": "1.2",
-            "datasheetURI": "https://www.diodes.com/assets/Datasheets/PI2EQX22024.pdf",
-            "productURI": "https://www.diodes.com/part/view/PI2EQX22024"
-        },
-        "digitalDatasheetID": {
-            "publishedDate": "2024-03-31",
-            "eDatasheetSpecRevision": "1.0"
-        },
-        "status": "production",
-        "complianceList": [
-            "RoHS",
-            "Green",
-            "AEC_Q100/101/104/200"
-        ]
-    },
-    "pins": [
-        {
-            "terminalIdentifier": "1",
-            "name": "AP_RX2P",
-            "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
-            "functionProperties": [
-                {
-                    "direction": "in"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Input Resistance at power down mode"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance at U0 condition"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance at U1"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance in U2/U3"
-                        ]
-                    },
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Input resistance in RXDET"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "2",
-            "name": "AP_RX2N",
-            "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
-            "functionProperties": [
-                {
-                    "direction": "in"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Input Resistance at power down mode"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance at U0 condition"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance at U1"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance in U2/U3"
-                        ]
-                    },
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Input resistance in RXDET"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "3",
-            "name": "CAP_CON2",
-            "description": "The CON2 VDD1V external decoupling capacitor",
-            "functionProperties": [
-                {
-                    "electricalConfiguration": "power"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "externalComponents": [
-                {
-                    "componentType": "capacitor",
-                    "configuration": "pd",
-                    "values": [
-                        {
-                            "conditions": [
-                                "External VDD1V_CON1/2 decoupling capacitors with max ±20% tolerance"
-                            ],
-                            "siUnit": "nanofarad",
-                            "maxValue": 15
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "4",
-            "name": "AP_TX2P",
-            "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
-            "functionProperties": [
-                {
-                    "direction": "out"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullUp": {
-                "values": [
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Output resistance at U0 condition",
-                            "pulled to VbiasTx"
-                        ]
-                    },
-                    {
-                        "typValue": 1.5,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in U1 mode",
-                            "pulled to VbiasTx"
-                        ]
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance at power down"
-                        ]
-                    },
-                    {
-                        "typValue": 3,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in U2/U3 mode"
-                        ]
-                    },
-                    {
-                        "typValue": 3,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in RXDET mode"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "5",
-            "name": "AP_TX2N",
-            "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
-            "functionProperties": [
-                {
-                    "direction": "out"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullUp": {
-                "values": [
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Output resistance at U0 condition",
-                            "pulled to VbiasTx"
-                        ]
-                    },
-                    {
-                        "typValue": 1.5,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in U1 mode",
-                            "pulled to VbiasTx"
-                        ]
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance at power down"
-                        ]
-                    },
-                    {
-                        "typValue": 3,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in U2/U3 mode"
-                        ]
-                    },
-                    {
-                        "typValue": 3,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in RXDET mode"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "6",
-            "name": "VDD1P8",
-            "description": "1.8V power supply, +/- 5%",
-            "functionProperties": [
-                {
-                    "electricalConfiguration": "power"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 2
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "vmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.89
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "7",
-            "name": "AP_RX1N",
-            "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
-            "functionProperties": [
-                {
-                    "direction": "in"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Input Resistance at power down mode"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance at U0 condition"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance at U1"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance in U2/U3"
-                        ]
-                    },
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Input resistance in RXDET"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "8",
-            "name": "AP_RX1P",
-            "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
-            "functionProperties": [
-                {
-                    "direction": "in"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Input Resistance at power down mode"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance at U0 condition"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance at U1"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance in U2/U3"
-                        ]
-                    },
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Input resistance in RXDET"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "9",
-            "name": "CAP_CON1",
-            "description": "The CON1 VDD1V external decoupling capacitor",
-            "functionProperties": [
-                {
-                    "electricalConfiguration": "power"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "externalComponents": [
-                {
-                    "componentType": "capacitor",
-                    "configuration": "pd",
-                    "values": [
-                        {
-                            "conditions": [
-                                "External VDD1V_CON1/2 decoupling capacitors with max ±20% tolerance"
-                            ],
-                            "siUnit": "nanofarad",
-                            "maxValue": 15
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "10",
-            "name": "AP_TX1N",
-            "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
-            "functionProperties": [
-                {
-                    "direction": "out"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullUp": {
-                "values": [
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Output resistance at U0 condition",
-                            "pulled to VbiasTx"
-                        ]
-                    },
-                    {
-                        "typValue": 1.5,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in U1 mode",
-                            "pulled to VbiasTx"
-                        ]
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance at power down"
-                        ]
-                    },
-                    {
-                        "typValue": 3,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in U2/U3 mode"
-                        ]
-                    },
-                    {
-                        "typValue": 3,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in RXDET mode"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "11",
-            "name": "AP_TX1P",
-            "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
-            "functionProperties": [
-                {
-                    "direction": "out"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullUp": {
-                "values": [
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Output resistance at U0 condition",
-                            "pulled to VbiasTx"
-                        ]
-                    },
-                    {
-                        "typValue": 1.5,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in U1 mode",
-                            "pulled to VbiasTx"
-                        ]
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance at power down"
-                        ]
-                    },
-                    {
-                        "typValue": 3,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in U2/U3 mode"
-                        ]
-                    },
-                    {
-                        "typValue": 3,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in RXDET mode"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "12",
-            "name": "GND",
-            "description": "Supply Ground",
-            "functionProperties": [
-                {
-                    "electricalConfiguration": "gnd"
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "13",
-            "name": "GND",
-            "description": "Supply Ground",
-            "functionProperties": [
-                {
-                    "electricalConfiguration": "gnd"
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "14",
-            "name": "GND",
-            "description": "Supply Ground",
-            "functionProperties": [
-                {
-                    "electricalConfiguration": "gnd"
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "15",
-            "name": "GND",
-            "description": "Supply Ground",
-            "functionProperties": [
-                {
-                    "electricalConfiguration": "gnd"
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "16",
-            "name": "GND",
-            "description": "Supply Ground",
-            "functionProperties": [
-                {
-                    "electricalConfiguration": "gnd"
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "17",
-            "name": "CON_RX1P",
-            "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
-            "functionProperties": [
-                {
-                    "direction": "in"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Input Resistance at power down mode"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance at U0 condition"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance at U1"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance in U2/U3"
-                        ]
-                    },
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Input resistance in RXDET"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "18",
-            "name": "CON_RX1N",
-            "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
-            "functionProperties": [
-                {
-                    "direction": "in"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Input Resistance at power down mode"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance at U0 condition"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance at U1"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance in U2/U3"
-                        ]
-                    },
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Input resistance in RXDET"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "19",
-            "name": "VDD1P8",
-            "description": "1.8V power supply, +/- 5%",
-            "functionProperties": [
-                {
-                    "electricalConfiguration": "power"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 2
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "vmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.89
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "20",
-            "name": "CON_TX1P",
-            "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND.",
-            "functionProperties": [
-                {
-                    "direction": "out"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullUp": {
-                "values": [
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Output resistance at U0 condition",
-                            "pulled to VbiasTx"
-                        ]
-                    },
-                    {
-                        "typValue": 1.5,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in U1 mode",
-                            "pulled to VbiasTx"
-                        ]
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance at power down"
-                        ]
-                    },
-                    {
-                        "typValue": 3,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in U2/U3 mode"
-                        ]
-                    },
-                    {
-                        "typValue": 3,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in RXDET mode"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "21",
-            "name": "CON_TX1N",
-            "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND.",
-            "functionProperties": [
-                {
-                    "direction": "out"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullUp": {
-                "values": [
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Output resistance at U0 condition",
-                            "pulled to VbiasTx"
-                        ]
-                    },
-                    {
-                        "typValue": 1.5,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in U1 mode",
-                            "pulled to VbiasTx"
-                        ]
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance at power down"
-                        ]
-                    },
-                    {
-                        "typValue": 3,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in U2/U3 mode"
-                        ]
-                    },
-                    {
-                        "typValue": 3,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in RXDET mode"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "22",
-            "name": "GND",
-            "description": "Supply Ground",
-            "functionProperties": [
-                {
-                    "electricalConfiguration": "gnd"
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "23",
-            "name": "CON_RX2N",
-            "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND.",
-            "functionProperties": [
-                {
-                    "direction": "in"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Input Resistance at power down mode"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance at U0 condition"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance at U1"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance in U2/U3"
-                        ]
-                    },
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Input resistance in RXDET"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "24",
-            "name": "CON_RX2P",
-            "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND.",
-            "functionProperties": [
-                {
-                    "direction": "in"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Input Resistance at power down mode"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance at U0 condition"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance at U1"
-                        ]
-                    },
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Input resistance in U2/U3"
-                        ]
-                    },
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Input resistance in RXDET"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "25",
-            "name": "VDD1P8",
-            "description": "1.8V power supply, +/- 5%",
-            "functionProperties": [
-                {
-                    "electricalConfiguration": "power"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 2
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "vmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.89
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "26",
-            "name": "CON_TX2N",
-            "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
-            "functionProperties": [
-                {
-                    "direction": "out"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullUp": {
-                "values": [
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Output resistance at U0 condition",
-                            "pulled to VbiasTx"
-                        ]
-                    },
-                    {
-                        "typValue": 1.5,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in U1 mode",
-                            "pulled to VbiasTx"
-                        ]
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance at power down"
-                        ]
-                    },
-                    {
-                        "typValue": 3,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in U2/U3 mode"
-                        ]
-                    },
-                    {
-                        "typValue": 3,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in RXDET mode"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "27",
-            "name": "CON_TX2P",
-            "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
-            "functionProperties": [
-                {
-                    "direction": "out"
-                }
-            ],
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 1.15
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullUp": {
-                "values": [
-                    {
-                        "typValue": 50,
-                        "siUnit": "ohm",
-                        "conditions": [
-                            "Output resistance at U0 condition",
-                            "pulled to VbiasTx"
-                        ]
-                    },
-                    {
-                        "typValue": 1.5,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in U1 mode",
-                            "pulled to VbiasTx"
-                        ]
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 75,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance at power down"
-                        ]
-                    },
-                    {
-                        "typValue": 3,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in U2/U3 mode"
-                        ]
-                    },
-                    {
-                        "typValue": 3,
-                        "siUnit": "kilohm",
-                        "conditions": [
-                            "Output resistance in RXDET mode"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "28",
-            "name": "SCL_3P3",
-            "description": "SCL is I2C control bus clock. Open drain structure (3.3V tolerance)",
-            "functionProperties": [
-                {
-                    "interfaceType": "i2c",
-                    "pinUsage": "i2c_clk",
-                    "direction": "in",
-                    "electricalConfiguration": "open-drain"
-                }
-            ],
-            "vih": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": 1.2,
-                        "relativeValueReference": "VDD",
-                        "relativeValueModifier": 0,
-                        "relativeValueOperator": "add",
-                        "conditions": [
-                            "VIHmax=VDD"
-                        ]
-                    }
-                ]
-            },
-            "vil": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.5,
-                        "maxValue": 0.4
-                    }
-                ]
-            },
-            "vol": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": 0,
-                        "maxValue": 0.4,
-                        "conditions": [
-                            "(open-drain or open-collector) at 3 mA sink current"
-                        ]
-                    }
-                ]
-            },
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 3.8
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "inputLeakage": {
-                "values": [
-                    {
-                        "siUnit": "microamp",
-                        "minValue": -10,
-                        "maxValue": 10
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "29",
-            "name": "SDA_3P3",
-            "description": "SDA is I2C control bus data. Open drain structure. (3.3V tolerance)",
-            "functionProperties": [
-                {
-                    "interfaceType": "i2c",
-                    "pinUsage": "i2c_sda",
-                    "direction": "bidir",
-                    "electricalConfiguration": "open-drain"
-                }
-            ],
-            "vih": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": 1.2,
-                        "relativeValueReference": "VDD",
-                        "relativeValueModifier": 0,
-                        "relativeValueOperator": "add",
-                        "conditions": [
-                            "VIHmax=VDD"
-                        ]
-                    }
-                ]
-            },
-            "vil": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.5,
-                        "maxValue": 0.4
-                    }
-                ]
-            },
-            "vol": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": 0,
-                        "maxValue": 0.4,
-                        "conditions": [
-                            "(open-drain or open-collector) at 3 mA sink current"
-                        ]
-                    }
-                ]
-            },
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 3.8
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "inputLeakage": {
-                "values": [
-                    {
-                        "siUnit": "microamp",
-                        "minValue": -10,
-                        "maxValue": 10
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "30",
-            "name": "GND",
-            "description": "Supply Ground",
-            "functionProperties": [
-                {
-                    "electricalConfiguration": "gnd"
-                }
-            ]
-        },
-        {
-            "terminalIdentifier": "31",
-            "name": "A0",
-            "description": "2-level I2C address selection pins. With internal 340kΩ pull-down resistor.",
-            "vih": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "relativeValueReference": "VDD",
-                        "relativeValueModifier": 0.65,
-                        "relativeValueOperator": "multiply",
-                        "conditions": [
-                            "VIHmin=0.65*VDD"
-                        ]
-                    }
-                ]
-            },
-            "vil": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "relativeValueReference": "VDD",
-                        "relativeValueModifier": 0.35,
-                        "relativeValueOperator": "multiply",
-                        "conditions": [
-                            "VILmax=0.35*VDD"
-                        ]
-                    }
-                ]
-            },
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 2
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 340,
-                        "siUnit": "kilohm"
-                    }
-                ]
-            }
-        },
-        {
-            "terminalIdentifier": "32",
-            "name": "EN",
-            "description": "Chip Enable. With internal 340kΩ pull-up resistor. “Low”: Chip Power Down“High”: Normal Operation (Default)",
-            "functionProperties": [
-                {
-                    "polarity": "high"
-                }
-            ],
-            "vih": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "relativeValueReference": "VDD",
-                        "relativeValueModifier": 0.65,
-                        "relativeValueOperator": "multiply",
-                        "conditions": [
-                            "VIHmin=0.65*VDD"
-                        ]
-                    }
-                ]
-            },
-            "vil": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "relativeValueReference": "VDD",
-                        "relativeValueModifier": 0.35,
-                        "relativeValueOperator": "multiply",
-                        "conditions": [
-                            "VILmax=0.35*VDD"
-                        ]
-                    }
-                ]
-            },
-            "absVmax": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "maxValue": 2
-                    }
-                ]
-            },
-            "absVmin": {
-                "values": [
-                    {
-                        "siUnit": "volt",
-                        "minValue": -0.3
-                    }
-                ]
-            },
-            "internalPullDown": {
-                "values": [
-                    {
-                        "typValue": 340,
-                        "siUnit": "kilohm"
-                    }
-                ]
-            }
-        }
+  "componentID": {
+    "partType": "retimer",
+    "manufacturer": "DIODES",
+    "componentName": "PI2EQX22024",
+    "orderableMPN": [
+      "PI2EQX22024XEAEX"
     ],
-    "coreProperties": {
-        "interface": [
-            "USB3.2 Gen2x1",
-            "USB3.2 Gen 2x2"
-        ],
-        "numberOfLanes": 2,
-        "maxDataRate": {
-            "values": [
-                {
-                    "unitName": "Gbps",
-                    "maxValue": 10
-                }
-            ]
-        },
-        "integratedAuxLsSwitch": false,
-        "commonClock": false,
-        "sris": false,
-        "srns": false,
-        "partType": "retimer",
-        "currentConsumption": [
-            {
-                "supplyName": "VDD1P8",
-                "activeCurrent": {
-                    "values": [
-                        {
-                            "typValue": 180,
-                            "siUnit": "milliamp",
-                            "maxValue": 210,
-                            "conditions": [
-                                "EN=1",
-                                "USB Gen2",
-                                "U0 mode",
-                                "Gen2x1"
-                            ]
-                        },
-                        {
-                            "typValue": 360,
-                            "siUnit": "milliamp",
-                            "maxValue": 420,
-                            "conditions": [
-                                "EN=1",
-                                "USB Gen2",
-                                "U0 mode",
-                                "Gen2x2"
-                            ]
-                        }
-                    ]
-                },
-                "idleCurrent": {
-                    "values": [
-                        {
-                            "typValue": 16,
-                            "siUnit": "milliamp",
-                            "maxValue": 20,
-                            "conditions": [
-                                "EN=1",
-                                "USB U1 mode",
-                                "VDD=1.8V",
-                                "1 Lane"
-                            ]
-                        },
-                        {
-                            "typValue": 32,
-                            "siUnit": "milliamp",
-                            "maxValue": 40,
-                            "conditions": [
-                                "EN=1",
-                                "USB U1 mode",
-                                "VDD=1.8V",
-                                "2 Lane"
-                            ]
-                        },
-                        {
-                            "typValue": 800,
-                            "siUnit": "microamp",
-                            "maxValue": 1800,
-                            "conditions": [
-                                "EN=1",
-                                "USB U2/U3 mode",
-                                "VDD= 1.8V",
-                                "1 Lane"
-                            ]
-                        },
-                        {
-                            "typValue": 900,
-                            "siUnit": "microamp",
-                            "maxValue": 2000,
-                            "conditions": [
-                                "EN=1",
-                                "USB U2/U3 mode",
-                                "VDD= 1.8V",
-                                "2 Lane"
-                            ]
-                        },
-                        {
-                            "typValue": 735,
-                            "siUnit": "microamp",
-                            "maxValue": 1700,
-                            "conditions": [
-                                "EN=1",
-                                "USB RXDET mode",
-                                "VDD =1.8V",
-                                "1 Lane"
-                            ]
-                        },
-                        {
-                            "typValue": 800,
-                            "siUnit": "microamp",
-                            "maxValue": 1900,
-                            "conditions": [
-                                "EN=1",
-                                "USB RXDET mode",
-                                "VDD =1.8V",
-                                "2 Lane"
-                            ]
-                        }
-                    ]
-                }
-            }
-        ]
+    "sourceDatasheetID": {
+      "publishedDate": "2022-12-01",
+      "version": "1.2",
+      "datasheetURI": "https://www.diodes.com/assets/Datasheets/PI2EQX22024.pdf",
+      "productURI": "https://www.diodes.com/part/view/PI2EQX22024"
     },
-    "package": {
-        "length": {
-            "values": [
-                {
-                    "typValue": 4.5,
-                    "siUnit": "millimeter",
-                    "minValue": 4.4,
-                    "maxValue": 4.6
-                }
-            ]
+    "digitalDatasheetID": {
+      "publishedDate": "2024-03-31",
+      "eDatasheetSpecRevision": "1.0"
+    },
+    "status": "production",
+    "complianceList": [
+      "RoHS",
+      "Green",
+      "AEC_Q100/101/104/200"
+    ]
+  },
+  "coreProperties": {
+    "commonClock": false,
+    "currentConsumption": [
+      {
+        "activeCurrent": {
+          "values": [
+            {
+              "conditions": [
+                "EN=1",
+                "USB Gen2",
+                "U0 mode",
+                "Gen2x1"
+              ],
+              "maxValue": 210,
+              "siUnit": "milliamp",
+              "typValue": 180
+            },
+            {
+              "conditions": [
+                "EN=1",
+                "USB Gen2",
+                "U0 mode",
+                "Gen2x2"
+              ],
+              "maxValue": 420,
+              "siUnit": "milliamp",
+              "typValue": 360
+            }
+          ]
         },
-        "width": {
-            "values": [
-                {
-                    "typValue": 2.85,
-                    "siUnit": "millimeter",
-                    "minValue": 2.75,
-                    "maxValue": 2.95
-                }
-            ]
+        "idleCurrent": {
+          "values": [
+            {
+              "conditions": [
+                "EN=1",
+                "USB U1 mode",
+                "VDD=1.8V",
+                "1 Lane"
+              ],
+              "maxValue": 20,
+              "siUnit": "milliamp",
+              "typValue": 16
+            },
+            {
+              "conditions": [
+                "EN=1",
+                "USB U1 mode",
+                "VDD=1.8V",
+                "2 Lane"
+              ],
+              "maxValue": 40,
+              "siUnit": "milliamp",
+              "typValue": 32
+            },
+            {
+              "conditions": [
+                "EN=1",
+                "USB U2/U3 mode",
+                "VDD= 1.8V",
+                "1 Lane"
+              ],
+              "maxValue": 1800,
+              "siUnit": "microamp",
+              "typValue": 800
+            },
+            {
+              "conditions": [
+                "EN=1",
+                "USB U2/U3 mode",
+                "VDD= 1.8V",
+                "2 Lane"
+              ],
+              "maxValue": 2000,
+              "siUnit": "microamp",
+              "typValue": 900
+            },
+            {
+              "conditions": [
+                "EN=1",
+                "USB RXDET mode",
+                "VDD =1.8V",
+                "1 Lane"
+              ],
+              "maxValue": 1700,
+              "siUnit": "microamp",
+              "typValue": 735
+            },
+            {
+              "conditions": [
+                "EN=1",
+                "USB RXDET mode",
+                "VDD =1.8V",
+                "2 Lane"
+              ],
+              "maxValue": 1900,
+              "siUnit": "microamp",
+              "typValue": 800
+            }
+          ]
         },
-        "height": {
-            "values": [
-                {
-                    "typValue": 0.45,
-                    "siUnit": "millimeter",
-                    "minValue": 0.4,
-                    "maxValue": 9.5
-                }
-            ]
+        "supplyName": "VDD1P8"
+      }
+    ],
+    "integratedAuxLsSwitch": false,
+    "interface": [
+      "USB3.2 Gen2x1",
+      "USB3.2 Gen 2x2"
+    ],
+    "maxDataRate": {
+      "values": [
+        {
+          "maxValue": 10,
+          "unitName": "Gbps"
+        }
+      ]
+    },
+    "numberOfLanes": 2,
+    "partType": "retimer",
+    "sris": false,
+    "srns": false
+  },
+  "pins": [
+    {
+      "terminalIdentifier": [
+        "1"
+      ],
+      "name": "AP_RX2P",
+      "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
+      "pinProperties": {
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
         },
-        "standardPackageSize": "2.85mmx4.5mm",
-        "standardPackageType": "X1QFN"
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "direction": "in",
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Input Resistance at power down mode"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance at U0 condition"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance at U1"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance in U2/U3"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Input resistance in RXDET"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "2"
+      ],
+      "name": "AP_RX2N",
+      "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
+      "pinProperties": {
+        "direction": "in",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Input Resistance at power down mode"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance at U0 condition"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance at U1"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance in U2/U3"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Input resistance in RXDET"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "3"
+      ],
+      "name": "CAP_CON2",
+      "description": "The CON2 VDD1V external decoupling capacitor",
+      "pinProperties": {
+        "electricalConfiguration": "power",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "externalComponents": [
+          {
+            "componentType": "capacitor",
+            "configuration": "pd",
+            "values": [
+              {
+                "conditions": [
+                  "External VDD1V_CON1/2 decoupling capacitors with max ±20% tolerance"
+                ],
+                "maxValue": 15,
+                "siUnit": "nanofarad"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "4"
+      ],
+      "name": "AP_TX2P",
+      "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
+      "pinProperties": {
+        "direction": "out",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "internalPullUp": {
+          "values": [
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Output resistance at U0 condition",
+                "pulled to VbiasTx"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 1.5,
+              "conditions": [
+                "Output resistance in U1 mode",
+                "pulled to VbiasTx"
+              ]
+            }
+          ]
+        },
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Output resistance at power down"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 3,
+              "conditions": [
+                "Output resistance in U2/U3 mode"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 3,
+              "conditions": [
+                "Output resistance in RXDET mode"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "5"
+      ],
+      "name": "AP_TX2N",
+      "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
+      "pinProperties": {
+        "direction": "out",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "internalPullUp": {
+          "values": [
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Output resistance at U0 condition",
+                "pulled to VbiasTx"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 1.5,
+              "conditions": [
+                "Output resistance in U1 mode",
+                "pulled to VbiasTx"
+              ]
+            }
+          ]
+        },
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Output resistance at power down"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 3,
+              "conditions": [
+                "Output resistance in U2/U3 mode"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 3,
+              "conditions": [
+                "Output resistance in RXDET mode"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "6", "19", "25"
+      ],
+      "name": "VDD1P8",
+      "description": "1.8V power supply, +/- 5%",
+      "pinProperties": {
+        "electricalConfiguration": "power",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 2
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "vmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.89
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "7"
+      ],
+      "name": "AP_RX1N",
+      "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
+      "pinProperties": {
+        "direction": "in",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Input Resistance at power down mode"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance at U0 condition"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance at U1"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance in U2/U3"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Input resistance in RXDET"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "8"
+      ],
+      "name": "AP_RX1P",
+      "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
+      "pinProperties": {
+        "direction": "in",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Input Resistance at power down mode"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance at U0 condition"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance at U1"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance in U2/U3"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Input resistance in RXDET"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "9"
+      ],
+      "name": "CAP_CON1",
+      "description": "The CON1 VDD1V external decoupling capacitor",
+      "pinProperties": {
+        "electricalConfiguration": "power",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "externalComponents": [
+          {
+            "componentType": "capacitor",
+            "configuration": "pd",
+            "values": [
+              {
+                "conditions": [
+                  "External VDD1V_CON1/2 decoupling capacitors with max ±20% tolerance"
+                ],
+                "maxValue": 15,
+                "siUnit": "nanofarad"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "10"
+      ],
+      "name": "AP_TX1N",
+      "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
+      "pinProperties": {
+        "direction": "out",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "internalPullUp": {
+          "values": [
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Output resistance at U0 condition",
+                "pulled to VbiasTx"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 1.5,
+              "conditions": [
+                "Output resistance in U1 mode",
+                "pulled to VbiasTx"
+              ]
+            }
+          ]
+        },
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Output resistance at power down"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 3,
+              "conditions": [
+                "Output resistance in U2/U3 mode"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 3,
+              "conditions": [
+                "Output resistance in RXDET mode"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "11"
+      ],
+      "name": "AP_TX1P",
+      "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
+      "pinProperties": {
+        "direction": "out",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "internalPullUp": {
+          "values": [
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Output resistance at U0 condition",
+                "pulled to VbiasTx"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 1.5,
+              "conditions": [
+                "Output resistance in U1 mode",
+                "pulled to VbiasTx"
+              ]
+            }
+          ]
+        },
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Output resistance at power down"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 3,
+              "conditions": [
+                "Output resistance in U2/U3 mode"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 3,
+              "conditions": [
+                "Output resistance in RXDET mode"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "12", "13", "14", "15", "16", "22", "30"
+      ],
+      "name": "GND",
+      "description": "Supply Ground",
+      "pinProperties": {
+        "electricalConfiguration": "gnd"
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "17"
+      ],
+      "name": "CON_RX1P",
+      "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
+      "pinProperties": {
+        "direction": "in",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Input Resistance at power down mode"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance at U0 condition"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance at U1"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance in U2/U3"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Input resistance in RXDET"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "18"
+      ],
+      "name": "CON_RX1N",
+      "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND",
+      "pinProperties": {
+        "direction": "in",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Input Resistance at power down mode"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance at U0 condition"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance at U1"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance in U2/U3"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Input resistance in RXDET"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "20"
+      ],
+      "name": "CON_TX1P",
+      "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND.",
+      "pinProperties": {
+        "direction": "out",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "internalPullUp": {
+          "values": [
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Output resistance at U0 condition",
+                "pulled to VbiasTx"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 1.5,
+              "conditions": [
+                "Output resistance in U1 mode",
+                "pulled to VbiasTx"
+              ]
+            }
+          ]
+        },
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Output resistance at power down"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 3,
+              "conditions": [
+                "Output resistance in U2/U3 mode"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 3,
+              "conditions": [
+                "Output resistance in RXDET mode"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "21"
+      ],
+      "name": "CON_TX1N",
+      "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND.",
+      "pinProperties": {
+        "direction": "out",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "internalPullUp": {
+          "values": [
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Output resistance at U0 condition",
+                "pulled to VbiasTx"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 1.5,
+              "conditions": [
+                "Output resistance in U1 mode",
+                "pulled to VbiasTx"
+              ]
+            }
+          ]
+        },
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Output resistance at power down"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 3,
+              "conditions": [
+                "Output resistance in U2/U3 mode"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 3,
+              "conditions": [
+                "Output resistance in RXDET mode"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "23"
+      ],
+      "name": "CON_RX2N",
+      "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND.",
+      "pinProperties": {
+        "direction": "in",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Input Resistance at power down mode"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance at U0 condition"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance at U1"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance in U2/U3"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Input resistance in RXDET"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "24"
+      ],
+      "name": "CON_RX2P",
+      "description": "RX CML input terminals.Input with termination 50Ω to GND or 75kΩ to GND.",
+      "pinProperties": {
+        "direction": "in",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Input Resistance at power down mode"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance at U0 condition"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance at U1"
+              ]
+            },
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Input resistance in U2/U3"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Input resistance in RXDET"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "26"
+      ],
+      "name": "CON_TX2N",
+      "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
+      "pinProperties": {
+        "direction": "out",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "internalPullUp": {
+          "values": [
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Output resistance at U0 condition",
+                "pulled to VbiasTx"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 1.5,
+              "conditions": [
+                "Output resistance in U1 mode",
+                "pulled to VbiasTx"
+              ]
+            }
+          ]
+        },
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Output resistance at power down"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 3,
+              "conditions": [
+                "Output resistance in U2/U3 mode"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 3,
+              "conditions": [
+                "Output resistance in RXDET mode"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "27"
+      ],
+      "name": "CON_TX2P",
+      "description": "TX CML output terminals.Output termination 50/1.5kΩ to VbiasTX, 3kΩ to GND or 75kΩ to GND",
+      "pinProperties": {
+        "direction": "out",
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 1.15
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "internalPullUp": {
+          "values": [
+            {
+              "siUnit": "ohm",
+              "typValue": 50,
+              "conditions": [
+                "Output resistance at U0 condition",
+                "pulled to VbiasTx"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 1.5,
+              "conditions": [
+                "Output resistance in U1 mode",
+                "pulled to VbiasTx"
+              ]
+            }
+          ]
+        },
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 75,
+              "conditions": [
+                "Output resistance at power down"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 3,
+              "conditions": [
+                "Output resistance in U2/U3 mode"
+              ]
+            },
+            {
+              "siUnit": "kilohm",
+              "typValue": 3,
+              "conditions": [
+                "Output resistance in RXDET mode"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "28"
+      ],
+      "name": "SCL_3P3",
+      "description": "SCL is I2C control bus clock. Open drain structure (3.3V tolerance)",
+      "pinProperties": {
+        "interfaceType": "i2c",
+        "pinUsage": "i2c_clk",
+        "direction": "in",
+        "electricalConfiguration": "open-drain",
+        "vih": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": 1.2,
+              "relativeValueReference": "VDD",
+              "relativeValueModifier": 0,
+              "relativeValueOperator": "add",
+              "conditions": [
+                "VIHmax=VDD"
+              ]
+            }
+          ]
+        },
+        "vil": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.5,
+              "maxValue": 0.4
+            }
+          ]
+        },
+        "vol": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": 0,
+              "maxValue": 0.4,
+              "conditions": [
+                "(open-drain or open-collector) at 3 mA sink current"
+              ]
+            }
+          ]
+        },
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 3.8
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "inputLeakage": {
+          "values": [
+            {
+              "siUnit": "microamp",
+              "minValue": -10,
+              "maxValue": 10
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "29"
+      ],
+      "name": "SDA_3P3",
+      "description": "SDA is I2C control bus data. Open drain structure. (3.3V tolerance)",
+      "pinProperties": {
+        "interfaceType": "i2c",
+        "pinUsage": "i2c_sda",
+        "direction": "bidir",
+        "electricalConfiguration": "open-drain",
+        "vih": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": 1.2,
+              "relativeValueReference": "VDD",
+              "relativeValueModifier": 0,
+              "relativeValueOperator": "add",
+              "conditions": [
+                "VIHmax=VDD"
+              ]
+            }
+          ]
+        },
+        "vil": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.5,
+              "maxValue": 0.4
+            }
+          ]
+        },
+        "vol": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": 0,
+              "maxValue": 0.4,
+              "conditions": [
+                "(open-drain or open-collector) at 3 mA sink current"
+              ]
+            }
+          ]
+        },
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 3.8
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "inputLeakage": {
+          "values": [
+            {
+              "siUnit": "microamp",
+              "minValue": -10,
+              "maxValue": 10
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "31"
+      ],
+      "name": "A0",
+      "description": "2-level I2C address selection pins. With internal 340kΩ pull-down resistor.",
+      "pinProperties": {
+        "vih": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "relativeValueReference": "VDD",
+              "relativeValueModifier": 0.65,
+              "relativeValueOperator": "multiply",
+              "conditions": [
+                "VIHmin=0.65*VDD"
+              ]
+            }
+          ]
+        },
+        "vil": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "relativeValueReference": "VDD",
+              "relativeValueModifier": 0.35,
+              "relativeValueOperator": "multiply",
+              "conditions": [
+                "VILmax=0.35*VDD"
+              ]
+            }
+          ]
+        },
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 2
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 340
+            }
+          ]
+        }
+      }
+    },
+    {
+      "terminalIdentifier": [
+        "32"
+      ],
+      "name": "EN",
+      "description": "Chip Enable. With internal 340kΩ pull-up resistor. “Low”: Chip Power Down“High”: Normal Operation (Default)",
+      "pinProperties": {
+        "polarity": "high",
+        "vih": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "relativeValueReference": "VDD",
+              "relativeValueModifier": 0.65,
+              "relativeValueOperator": "multiply",
+              "conditions": [
+                "VIHmin=0.65*VDD"
+              ]
+            }
+          ]
+        },
+        "vil": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "relativeValueReference": "VDD",
+              "relativeValueModifier": 0.35,
+              "relativeValueOperator": "multiply",
+              "conditions": [
+                "VILmax=0.35*VDD"
+              ]
+            }
+          ]
+        },
+        "absVmax": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "maxValue": 2
+            }
+          ]
+        },
+        "absVmin": {
+          "values": [
+            {
+              "siUnit": "volt",
+              "minValue": -0.3
+            }
+          ]
+        },
+        "internalPullDown": {
+          "values": [
+            {
+              "siUnit": "kilohm",
+              "typValue": 340
+            }
+          ]
+        }
+      }
     }
+  ],
+  "package": {
+    "length": {
+      "values": [
+        {
+          "siUnit": "millimeter",
+          "typValue": 4.5,
+          "minValue": 4.4,
+          "maxValue": 4.6
+        }
+      ]
+    },
+    "width": {
+      "values": [
+        {
+          "siUnit": "millimeter",
+          "typValue": 2.85,
+          "minValue": 2.75,
+          "maxValue": 2.95
+        }
+      ]
+    },
+    "height": {
+      "values": [
+        {
+          "siUnit": "millimeter",
+          "typValue": 0.45,
+          "minValue": 0.4,
+          "maxValue": 9.5
+        }
+      ]
+    },
+    "standardPackageSize": "2.85mmx4.5mm",
+    "standardPackageType": "X1QFN"
+  }
 }
