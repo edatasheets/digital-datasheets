@@ -1,0 +1,129 @@
+{
+    "componentID": {
+        "partType": "capacitor",
+        "manufacturer": "global_reliability_example",
+        "componentName": "capacitor_reliability_example",
+        "orderableMPN": [
+            "GRC01"
+        ],
+        "sourceDatasheetID": {
+            "publishedDate": "2000-01-01 00:00:00",
+            "version": "1.0",
+            "datasheetURI": "www.reliabily_example_grc.com",
+            "productURI": "www.global_reliability_example_grc01.com"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2024-10-31 00:00:00",
+            "eDatasheetSpecRevision": "1.0"
+        },
+        "status": "end-of-life"
+    },
+    "coreProperties": {
+        "dielectric": "ceramic",
+        "value": {
+            "values": [
+                {
+                    "typValue": 4.7,
+                    "siUnit": "nanofarad"
+                }
+            ]
+        },
+        "tolerance": {
+            "values": [
+                {
+                    "typValue": 10.0,
+                    "siUnit": "percentage"
+                }
+            ]
+        },
+        "ratedVoltage": {
+            "values": [
+                {
+                    "siUnit": "volt",
+                    "maxValue": 100.0
+                }
+            ]
+        },
+        "equivalentSeriesResistance": {
+            "values": [
+                {
+                    "typValue": 10.0,
+                    "siUnit": "milliohm"
+                }
+            ]
+        },
+        "minTemperature": {
+            "values": [
+                {
+                    "siUnit": "celsius",
+                    "minValue": -55.0
+                }
+            ]
+        },
+        "maxTemperature": {
+            "values": [
+                {
+                    "siUnit": "celsius",
+                    "maxValue": 125.0
+                }
+            ]
+        },
+        "partType": "capacitor"
+    },
+    "reliability": {
+        "failuresInTime": {
+            "values": [
+                {
+                    "typValue": 0.2,
+                    "unitName": "FITs",
+                    "conditions": [
+                        "10000 components tested",
+                        "1000000 operating hours"
+                    ]
+                    
+                }
+            ]
+        },
+        "meantTimeToFail": {
+            "values": [
+                {
+                    "typValue": 5000000,
+                    "unitName": "hours"
+                }
+            ]
+        }
+    },
+    "package": {
+        "length": {
+            "values": [
+                {
+                    "typValue": 4.5,
+                    "siUnit": "millimeter",
+                    "minValue": 4.2,
+                    "maxValue": 4.8
+                }
+            ]
+        },
+        "width": {
+            "values": [
+                {
+                    "typValue": 3.2,
+                    "siUnit": "millimeter",
+                    "minValue": 3.0,
+                    "maxValue": 3.4
+                }
+            ]
+        },
+        "height": {
+            "values": [
+                {
+                    "typValue": 1.9,
+                    "siUnit": "millimeter",
+                    "minValue": 1.7,
+                    "maxValue": 2.1
+                }
+            ]
+        },
+        "standardPackageSize": "1812"
+    }
+}
