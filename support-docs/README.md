@@ -89,7 +89,12 @@ Source: [component.json](https://github.com/edatasheets/digital-datasheets/blob/
 |coreProperties|core component properties as defined by the specific component spec file|./common/coreProperties.json#/coreProperties|No|
 |pins|array of pin objects with associated properties|./common/pinSpec.json#/pinSpec|No |
 |package|component package information|./common/package.json#/package|No|
-|externalFileMap|external files that describe key component properties. External files can be used in lieu of defining core properties, pins, and package information in the same file|#/$defs/externalFileMap|No|
+|register|register information|./common/register.json#/register|No|
+|thermal|component temperature and thermal resistance information|./common/thermal.json#/thermal|No|
+|componentPropertyExternalFiles|external files that describe key component properties. External files can be used in lieu of defining core properties, pins, and package information in the same file|#/$defs/externalFileMap|No|
+|additionalSpecExternalFiles|external files that contain information outside of the json spec. Examples include layout, simulation, etc.|./common/externalFile.json#/externalFile|No|
+|reliability|reliability information about the component|./common/reliability.json#/reliability|No|
+|powerSequence|information about component power sequencing|./common/powerSequence.json#/powerSequenceTable|No|
 
 ### 4.5	 Common
 
