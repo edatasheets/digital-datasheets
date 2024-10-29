@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Run the readmegenscript
+
+
 SRC=~/Documents/digital-datasheets
 DST=~/Documents/edatasheets.github.io
 
