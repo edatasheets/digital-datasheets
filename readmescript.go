@@ -248,18 +248,30 @@ func processProperties(raw json.RawMessage) ([]string, map[string]property) {
 }
 
 var upperAcronyms = map[string]string{
-	"io":   "IO",
-	"ic":   "IC",
-	"sd":   "SD",
-	"ssd":  "SSD",
-	"wwan": "WWAN",
-	"wlan": "WLAN",
+	"io":     "IO",
+	"ic":     "IC",
+	"sd":     "SD",
+	"ssd":    "SSD",
+	"wwan":   "WWAN",
+	"wlan":   "WLAN",
+	"dac":    "DAC",
+	"adc":    "ADC",
+	"bc12":   "BC1.2",
+	"usb-c":  "USB-C",
+	"pd":     "PD",
+	"tpm":    "TPM",
+	"dram":   "DRAM",
+	"eeprom": "EEPROM",
+	"rom":    "ROM",
+	"pmic":   "PMIC",
+	"bjt":    "BJT",
+	"mosfet": "MOSFET",
 }
 
 func titleCase(sentence string) string {
+
 	var out []string
 	for _, word := range strings.Fields(sentence) {
-
 		upperWord, ok := upperAcronyms[word]
 		if !ok {
 			var firstChar rune
@@ -274,12 +286,12 @@ func titleCase(sentence string) string {
 				break
 			}
 			if secondCharStart == 0 {
-				return sentence
-				// panic("one letter word? " + sentence)
+				// one letter word (like "a"), don't capatialize
+				upperWord = word
+			} else {
+				upperWord = string(unicode.ToTitle(firstChar)) + word[secondCharStart:]
 			}
-			upperWord = string(unicode.ToTitle(firstChar)) + word[secondCharStart:]
 		}
-
 		out = append(out, upperWord)
 	}
 
