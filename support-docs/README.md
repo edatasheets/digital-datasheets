@@ -376,7 +376,7 @@ Source: [register.json](https:/github.com/edatasheets/digital-datasheets/blob/ma
 |bitFieldResetValue|Reset value of a bit field|String| |
 |bitFieldAccessType|Access type of a bit field|String| |
 
-####  4.5.25	 Description Of The Reliability Of a Component
+####  4.5.25	 Specification Of The Reliability Of a Component
 
 Source: [reliability.json](https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/reliability.json)
 
