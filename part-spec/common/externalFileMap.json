@@ -25,7 +25,7 @@
             },
             "powerSequence": {
                 "description": "information about component power sequencing",
-                "$ref": "../common/powerSequence.json#/powerSequenceTable"
+                "$ref": "../common/externalFile.json#/externalFile"
             },
             "register": {
                 "description": "register information",
