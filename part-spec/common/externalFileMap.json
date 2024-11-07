@@ -1,0 +1,44 @@
+{
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/externalFileMap.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "specification for referencing an external file for different components",
+    "externalFileMap": {
+        "type": "object",
+        "properties": {
+            "coreProperties": {
+                "description": "core component properties as defined by the specific component spec file. These properties are described by the common part of the part number",
+                "example": "this might include everything about an MCU other than flash size",
+                "$ref": "../common/externalFile.json#/externalFile"
+            },
+            "additionalCoreProperties": {
+                "description": "core component properties as defined by the specific component spec file. These properties are described by the changing part of the part number",
+                "example": "this might include the MCU flash size",
+                "$ref": "../common/externalFile.json#/externalFile"
+            },
+            "pins": {
+                "description": "pin properties specified by the pin spec file",
+                "$ref": "../common/externalFile.json#/externalFile"
+            },
+            "package": {
+                "description": "package information specified by the package spec file",
+                "$ref": "../common/externalFile.json#/externalFile"
+            },
+            "powerSequence": {
+                "description": "information about component power sequencing",
+                "$ref": "../common/powerSequence.json#/powerSequenceTable"
+            },
+            "register": {
+                "description": "register information",
+                "$ref": "../common/externalFile.json#/externalFile"
+            },
+            "thermal": {
+                "description": "component temperature and thermal resistance information",
+                "$ref": "../common/externalFile.json#/externalFile"
+            },
+            "reliability": {
+                "description": "reliability information about the component",
+                "$ref": "../common/externalFile.json#/externalFile"
+            }
+        }
+    }
+}
