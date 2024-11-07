@@ -84,7 +84,7 @@ Source: [component.json](https://github.com/edatasheets/digital-datasheets/blob/
 |package|component package information|./common/package.json#/package|No|
 |register|register information|./common/register.json#/register|No|
 |thermal|component temperature and thermal resistance information|./common/thermal.json#/thermal|No|
-|componentPropertyExternalFiles|external files that describe key component properties. External files can be used in lieu of defining core properties, pins, and package information in the same file|#/$defs/externalFileMap|No|
+|componentPropertyExternalFiles|external files that describe key component properties. External files can be used in lieu of defining core properties, pins, and package information in the same file|./common/externalFileMap.json#/externalFileMap|No|
 |additionalSpecExternalFiles|external files that contain information outside of the json spec. Examples include layout, simulation, etc.|./common/externalFile.json#/externalFile|No|
 |reliability|reliability information about the component|./common/reliability.json#/reliability|No|
 |powerSequence|information about component power sequencing|./common/powerSequence.json#/powerSequenceTable|No|
