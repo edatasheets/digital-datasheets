@@ -199,10 +199,8 @@
         },
         "voltageOptions": {
           "description": "list of voltage levels supported by a pin",
-          "comment": "units of volts",
-          "items": {
-            "$ref": "../common/values.json#/valueOptions"
-          }
+          "comment": "units of volts",          
+          "$ref": "../common/values.json#/valueOptions"          
         },
         "floatUnused": {
           "description": "description of whether pin can safely be floated if it is not used",
