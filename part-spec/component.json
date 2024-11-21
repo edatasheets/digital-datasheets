@@ -50,8 +50,11 @@
 			"$ref": "./common/reliability.json#/reliability"
 		},
 		"powerSequence": {
-			"description": "information about component power sequencing",
-			"$ref": "./common/powerSequence.json#/powerSequenceTable"
+			"description": ". list of power sequence conditions that apply to a component",
+			"type": "array",
+			"items": {
+				"$ref": "./common/powerSequence.json#/powerSequence"
+			}
 		}
 	},
 	"additionalProperties": false
