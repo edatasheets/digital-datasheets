@@ -2,136 +2,123 @@
     "$id": "https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/powerSequence.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of power sequencing information",
-    "powerSequenceTable": {
+    "powerSequence": {
+        "description": "information about component power sequencing",
         "type": "object",
         "properties": {
-            "values": {
-                "description": "list of power sequence conditions that apply to a component",
+            "powerTransitionName": {
+                "description": "datasheet specific name given to a particular power transition for tracking",
+                "examples": [
+                    "tPWONVDD15",
+                    "tVDDRise"
+                ],
+                "type": "string"
+            },
+            "powerTransitionDescription": {
+                "description": "description of power transition",
+                "type": "string"
+            },
+            "signal1": {
+                "description": "signal that comes up first in the sequence. Also used if there is only one relevant signal for a power transition (such as rise time) ",
+                "examples": [
+                    "vdd",
+                    "en"
+                ],
+                "type": "string"
+            },
+            "signal1TerminalIdentifiers": {
+                "description": "list of component pins associated with signal 1",
                 "type": "array",
+                "examples": [
+                    "23",
+                    "A1"
+                ],
                 "items": {
-                    "$ref": "#/$defs/powerSequence"
+                    "type": "string"
                 }
+            },
+            "signal2": {
+                "description": "signal that comes up second in the sequence ",
+                "examples": [
+                    "vdd",
+                    "en"
+                ],
+                "type": "string"
+            },
+            "signal2TerminalIdentifiers": {
+                "description": "list of component pins associated with signal 2",
+                "type": "array",
+                "examples": [
+                    "23",
+                    "A1"
+                ],
+                "items": {
+                    "type": "string"
+                }
+            },
+            "timeCondition": {
+                "description": "time between the signal 1 and signal 2 events",
+                "comment": "units of time",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "powerDirection": {
+                "description": "whether this is a power up or power down event",
+                "enum": [
+                    "up",
+                    "down"
+                ],
+                "type": "string"
+            },
+            "nextPowerState": {
+                "description": "power state the device enters after the signal transition",
+                "type": "string",
+                "examples": [
+                    "suspend",
+                    "active"
+                ]
+            },
+            "currentPowerState": {
+                "description": "power state the device is currently in before the signal transition",
+                "type": "string",
+                "examples": [
+                    "suspend",
+                    "active"
+                ]
+            },
+            "riseTime": {
+                "description": "time for a signal to go from low to high (only applies to one signal)",
+                "comment": "units of time",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "slewRate": {
+                "description": "maximum rate at which a voltage rail changes per time (only applies to one signal)",
+                "comment": "units of voltage per time",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "fallTime": {
+                "description": "time for a signal to go from high to low (only applies to one signal)",
+                "comment": "units of time",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "transitionStartCondition": {
+                "description": "the percentage of max voltage where rise or fall time starts being measured for timing (only applies to one signal)",
+                "examples": [
+                    "10%",
+                    "90%"
+                ],
+                "comment": "units of percentage",
+                "$ref": "../common/values.json#/valueOptions"
+            },
+            "transitionEndCondition": {
+                "description": "the percentage of max voltage where rise or fall time stops being measured for timing (only applies to one signal)",
+                "examples": [
+                    "90%",
+                    "10%"
+                ],
+                "comment": "units of percentage",
+                "$ref": "../common/values.json#/valueOptions"
             }
         },
         "additionalProperties": false
-    },
-    "$defs": {
-        "powerSequence": {
-            "type": "object",
-            "properties": {
-                "powerTransitionName": {
-                    "description": "datasheet specific name given to a particular power transition for tracking",
-                    "examples": [
-                        "tPWONVDD15",
-                        "tVDDRise"
-                    ],
-                    "type": "string"
-                },
-                "powerTransitionDescription": {
-                    "description": "description of power transition",
-                    "type": "string"
-                },
-                "signal1": {
-                    "description": "signal that comes up first in the sequence. Also used if there is only one relevant signal for a power transition (such as rise time) ",
-                    "examples": [
-                        "vdd",
-                        "en"
-                    ],
-                    "type": "string"
-                },
-                "signal1TerminalIdentifiers": {
-                    "description": "list of component pins associated with signal 1",
-                    "type": "array",
-                    "examples": [
-                        "23",
-                        "A1"
-                    ],
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "signal2": {
-                    "description": "signal that comes up second in the sequence ",
-                    "examples": [
-                        "vdd",
-                        "en"
-                    ],
-                    "type": "string"
-                },
-                "signal2TerminalIdentifiers": {
-                    "description": "list of component pins associated with signal 2",
-                    "type": "array",
-                    "examples": [
-                        "23",
-                        "A1"
-                    ],
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "timeCondition": {
-                    "description": "time between the signal 1 and signal 2 events",
-                    "comment": "units of time",
-                    "$ref": "../common/values.json#/valueOptions"
-                },
-                "powerDirection": {
-                    "description": "whether this is a power up or power down event",
-                    "enum": [
-                        "up",
-                        "down"
-                    ]
-                },
-                "nextPowerState": {
-                    "description": "power state the device enters after the signal transition",
-                    "type": "string",
-                    "examples": [
-                        "suspend",
-                        "active"
-                    ]
-                },
-                "currentPowerState": {
-                    "description": "power state the device is currently in before the signal transition",
-                    "type": "string",
-                    "examples": [
-                        "suspend",
-                        "active"
-                    ]
-                },
-                "riseTime": {
-                    "description": "time for a signal to go from low to high (only applies to one signal)",
-                    "comment": "units of time",
-                    "$ref": "../common/values.json#/valueOptions"
-                },
-                "slewRate": {
-                    "description": "maximum rate at which a voltage rail changes per time (only applies to one signal)",
-                    "comment": "units of voltage per time",
-                    "$ref": "../common/values.json#/valueOptions"
-                },
-                "fallTime": {
-                    "description": "time for a signal to go from high to low (only applies to one signal)",
-                    "comment": "units of time",
-                    "$ref": "../common/values.json#/valueOptions"
-                },
-                "transitionStartCondition": {
-                    "description": "the percentage of max voltage where rise or fall time starts being measured for timing (only applies to one signal)",
-                    "examples": [
-                        "10%",
-                        "90%"
-                    ],
-                    "comment": "units of percentage",
-                    "$ref": "../common/values.json#/valueOptions"
-                },
-                "transitionEndCondition": {
-                    "description": "the percentage of max voltage where rise or fall time stops being measured for timing (only applies to one signal)",
-                    "examples": [
-                        "90%",
-                        "10%"
-                    ],
-                    "comment": "units of percentage",
-                    "$ref": "../common/values.json#/valueOptions"
-                }
-            },
-            "additionalProperties": false
-        }
     }
 }
