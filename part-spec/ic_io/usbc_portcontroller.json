@@ -60,7 +60,7 @@
             "vconnFetOnResistance": {
                 "description": "on-resistance of the integrated Vconn FET",
                 "comment": "units of ohms",
-                "$ref": "..common/values.json#/valueOptions"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "vconnPowerLimit": {
                 "description": "power limit supported by internal vconn switch (if supported)",
